@@ -69,8 +69,7 @@ where
 {
     /// Converts `TypedBox<T>` to a `TypeErasedError` where `T` implements `Error`.
     pub fn erase_error(self) -> TypeErasedError {
-        let inner = self.inner.downcast::<T>().expect("typechecked");
-        TypeErasedError::new(inner)
+        TypeErasedError::new(self.unwrap())
     }
 }
 
@@ -297,5 +296,15 @@ mod tests {
             .downcast::<TestErr>()
             .expect("type erased error can be downcast into original type");
         assert_eq!(test_err, *actual);
+    }
+
+    #[test]
+    fn test_typed_erased_errors_can_be_unwrapped() {
+        let test_err = TestErr::new("something failed!");
+        let type_erased_test_err = TypedBox::new(test_err.clone()).erase_error();
+        let actual = TypedBox::<TestErr>::assume_from(type_erased_test_err.into())
+            .expect("type erased error can be downcast into original type")
+            .unwrap();
+        assert_eq!(test_err, actual);
     }
 }
