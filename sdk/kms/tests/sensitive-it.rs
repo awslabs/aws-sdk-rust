@@ -21,14 +21,14 @@ fn validate_sensitive_trait() {
     let builder = GenerateRandomOutput::builder().plaintext(Blob::new("some output"));
     assert_eq!(
         format!("{:?}", builder),
-        "GenerateRandomOutputBuilder { plaintext: \"*** Sensitive Data Redacted ***\", _request_id: None }"
+        "GenerateRandomOutputBuilder { plaintext: \"*** Sensitive Data Redacted ***\", ciphertext_for_recipient: None, _request_id: None }"
     );
     let output = GenerateRandomOutput::builder()
         .plaintext(Blob::new("some output"))
         .build();
     assert_eq!(
         format!("{:?}", output),
-        "GenerateRandomOutput { plaintext: \"*** Sensitive Data Redacted ***\", _request_id: None }"
+        "GenerateRandomOutput { plaintext: \"*** Sensitive Data Redacted ***\", ciphertext_for_recipient: None, _request_id: None }"
     );
 }
 
