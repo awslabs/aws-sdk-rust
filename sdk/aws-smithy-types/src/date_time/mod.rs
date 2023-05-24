@@ -310,10 +310,7 @@ impl PartialOrd for DateTime {
 
 impl Ord for DateTime {
     fn cmp(&self, other: &Self) -> Ordering {
-        match self.seconds.cmp(&other.seconds) {
-            Ordering::Equal => self.subsecond_nanos.cmp(&other.subsecond_nanos),
-            ordering => ordering,
-        }
+        self.as_nanos().cmp(&other.as_nanos())
     }
 }
 
@@ -350,6 +347,7 @@ pub enum Format {
 mod test {
     use crate::date_time::Format;
     use crate::DateTime;
+    use proptest::proptest;
     use std::convert::TryFrom;
     use std::time::SystemTime;
     use time::format_description::well_known::Rfc3339;
@@ -572,28 +570,59 @@ mod test {
     #[test]
     fn ord() {
         let first = DateTime::from_secs_and_nanos(-1, 0);
-        let second = DateTime::from_secs_and_nanos(0, 0);
-        let third = DateTime::from_secs_and_nanos(0, 1);
-        let fourth = DateTime::from_secs_and_nanos(1, 0);
+        let second = DateTime::from_secs_and_nanos(-1, 1);
+        let third = DateTime::from_secs_and_nanos(0, 0);
+        let fourth = DateTime::from_secs_and_nanos(0, 1);
+        let fifth = DateTime::from_secs_and_nanos(1, 0);
 
         assert!(first == first);
         assert!(first < second);
         assert!(first < third);
         assert!(first < fourth);
+        assert!(first < fifth);
 
         assert!(second > first);
         assert!(second == second);
         assert!(second < third);
         assert!(second < fourth);
+        assert!(second < fifth);
 
         assert!(third > first);
         assert!(third > second);
         assert!(third == third);
         assert!(third < fourth);
+        assert!(third < fifth);
 
         assert!(fourth > first);
         assert!(fourth > second);
         assert!(fourth > third);
         assert!(fourth == fourth);
+        assert!(fourth < fifth);
+
+        assert!(fifth > first);
+        assert!(fifth > second);
+        assert!(fifth > third);
+        assert!(fifth > fourth);
+        assert!(fifth == fifth);
+    }
+
+    const MIN_RFC_3339_MILLIS: i64 = -62135596800000;
+    const MAX_RFC_3339_MILLIS: i64 = 253402300799999;
+
+    // This test uses milliseconds, because `Format::DateTime` does not support nanoseconds.
+    proptest! {
+        #[test]
+        fn ord_proptest(
+            left_millis in MIN_RFC_3339_MILLIS..MAX_RFC_3339_MILLIS,
+            right_millis in MIN_RFC_3339_MILLIS..MAX_RFC_3339_MILLIS,
+        ) {
+            let left = DateTime::from_millis(left_millis);
+            let right = DateTime::from_millis(right_millis);
+
+            let left_str = left.fmt(Format::DateTime).unwrap();
+            let right_str = right.fmt(Format::DateTime).unwrap();
+
+            assert_eq!(left.cmp(&right), left_str.cmp(&right_str));
+        }
     }
 }
