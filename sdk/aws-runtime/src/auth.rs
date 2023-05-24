@@ -11,11 +11,10 @@ pub mod sigv4 {
         SignableRequest, SignatureLocation, SigningParams, SigningSettings,
         UriPathNormalizationMode,
     };
-    use aws_smithy_http::property_bag::PropertyBag;
+    use aws_smithy_runtime_api::client::auth::{AuthSchemeId, HttpAuthScheme, HttpRequestSigner};
     use aws_smithy_runtime_api::client::identity::{Identity, IdentityResolver, IdentityResolvers};
-    use aws_smithy_runtime_api::client::orchestrator::{
-        BoxError, HttpAuthScheme, HttpRequest, HttpRequestSigner,
-    };
+    use aws_smithy_runtime_api::client::orchestrator::{BoxError, ConfigBagAccessors, HttpRequest};
+    use aws_smithy_runtime_api::config_bag::ConfigBag;
     use aws_types::region::SigningRegion;
     use aws_types::SigningService;
     use std::time::{Duration, SystemTime};
@@ -24,7 +23,7 @@ pub mod sigv4 {
         `expires_in` duration because the credentials used to sign it will expire first.";
 
     /// Auth scheme ID for SigV4.
-    pub const SCHEME_ID: &str = "sigv4";
+    pub const SCHEME_ID: AuthSchemeId = AuthSchemeId::new("sigv4");
 
     /// SigV4 auth scheme.
     #[derive(Debug, Default)]
@@ -40,7 +39,7 @@ pub mod sigv4 {
     }
 
     impl HttpAuthScheme for SigV4HttpAuthScheme {
-        fn scheme_id(&self) -> &'static str {
+        fn scheme_id(&self) -> AuthSchemeId {
             SCHEME_ID
         }
 
@@ -88,8 +87,6 @@ pub mod sigv4 {
         pub signing_optional: bool,
         /// Optional expiration (for presigning)
         pub expires_in: Option<Duration>,
-        /// Timestamp to sign with.
-        pub request_timestamp: SystemTime,
     }
 
     impl Default for SigningOptions {
@@ -103,7 +100,6 @@ pub mod sigv4 {
                 signature_type: HttpSignatureType::HttpRequestHeaders,
                 signing_optional: false,
                 expires_in: None,
-                request_timestamp: SystemTime::now(),
             }
         }
     }
@@ -168,11 +164,11 @@ pub mod sigv4 {
             settings: SigningSettings,
             credentials: &'a Credentials,
             operation_config: &'a SigV4OperationSigningConfig,
+            request_timestamp: SystemTime,
         ) -> SigningParams<'a> {
             if let Some(expires_in) = settings.expires_in {
                 if let Some(creds_expires_time) = credentials.expiry() {
-                    let presigned_expires_time =
-                        operation_config.signing_options.request_timestamp + expires_in;
+                    let presigned_expires_time = request_timestamp + expires_in;
                     if presigned_expires_time > creds_expires_time {
                         tracing::warn!(EXPIRATION_WARNING);
                     }
@@ -184,7 +180,7 @@ pub mod sigv4 {
                 .secret_key(credentials.secret_access_key())
                 .region(operation_config.region.as_ref())
                 .service_name(operation_config.service.as_ref())
-                .time(operation_config.signing_options.request_timestamp)
+                .time(request_timestamp)
                 .settings(settings);
             builder.set_security_token(credentials.session_token());
             builder.build().expect("all required fields set")
@@ -196,12 +192,12 @@ pub mod sigv4 {
             &self,
             request: &mut HttpRequest,
             identity: &Identity,
-            // TODO(enableNewSmithyRuntime): should this be the config bag?
-            signing_properties: &PropertyBag,
+            config_bag: &ConfigBag,
         ) -> Result<(), BoxError> {
-            let operation_config = signing_properties
+            let operation_config = config_bag
                 .get::<SigV4OperationSigningConfig>()
                 .ok_or("missing operation signing config for SigV4")?;
+            let request_time = config_bag.request_time().unwrap_or_default().system_time();
 
             let credentials = if let Some(creds) = identity.data::<Credentials>() {
                 creds
@@ -213,7 +209,8 @@ pub mod sigv4 {
             };
 
             let settings = Self::settings(operation_config);
-            let signing_params = Self::signing_params(settings, credentials, operation_config);
+            let signing_params =
+                Self::signing_params(settings, credentials, operation_config, request_time);
 
             let (signing_instructions, _signature) = {
                 // A body that is already in memory can be signed directly. A body that is not in memory
@@ -283,17 +280,16 @@ pub mod sigv4 {
                     signature_type: HttpSignatureType::HttpRequestHeaders,
                     signing_optional: false,
                     expires_in: None,
-                    request_timestamp: now,
                     payload_override: None,
                 },
             };
-            SigV4HttpRequestSigner::signing_params(settings, &credentials, &operation_config);
+            SigV4HttpRequestSigner::signing_params(settings, &credentials, &operation_config, now);
             assert!(!logs_contain(EXPIRATION_WARNING));
 
             let mut settings = SigningSettings::default();
             settings.expires_in = Some(creds_expire_in + Duration::from_secs(10));
 
-            SigV4HttpRequestSigner::signing_params(settings, &credentials, &operation_config);
+            SigV4HttpRequestSigner::signing_params(settings, &credentials, &operation_config, now);
             assert!(logs_contain(EXPIRATION_WARNING));
         }
     }

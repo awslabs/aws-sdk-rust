@@ -30,20 +30,18 @@ pub(super) async fn orchestrate_auth(
         identity_resolvers = ?identity_resolvers,
         "orchestrating auth",
     );
-    for option in auth_options.as_ref() {
-        let scheme_id = option.scheme_id();
-        let scheme_properties = option.properties();
+    for &scheme_id in auth_options.as_ref() {
         if let Some(auth_scheme) = cfg.http_auth_schemes().scheme(scheme_id) {
             if let Some(identity_resolver) = auth_scheme.identity_resolver(identity_resolvers) {
                 let request_signer = auth_scheme.request_signer();
 
                 let identity = identity_resolver
-                    .resolve_identity(scheme_properties)
+                    .resolve_identity(cfg)
                     .await
                     .map_err(construction_failure)?;
                 return dispatch_phase.include_mut(|ctx| {
                     let request = ctx.request_mut()?;
-                    request_signer.sign_request(request, &identity, scheme_properties)?;
+                    request_signer.sign_request(request, &identity, cfg)?;
                     Result::<_, BoxError>::Ok(())
                 });
             }
@@ -59,23 +57,21 @@ pub(super) async fn orchestrate_auth(
 mod tests {
     use super::*;
     use aws_smithy_http::body::SdkBody;
-    use aws_smithy_http::property_bag::PropertyBag;
-    use aws_smithy_runtime_api::client::auth::option_resolver::AuthOptionListResolver;
+    use aws_smithy_runtime_api::client::auth::option_resolver::StaticAuthOptionResolver;
+    use aws_smithy_runtime_api::client::auth::{
+        AuthOptionResolverParams, AuthSchemeId, HttpAuthScheme, HttpAuthSchemes, HttpRequestSigner,
+    };
     use aws_smithy_runtime_api::client::identity::{Identity, IdentityResolver, IdentityResolvers};
     use aws_smithy_runtime_api::client::interceptors::InterceptorContext;
-    use aws_smithy_runtime_api::client::orchestrator::{
-        AuthOptionResolverParams, Future, HttpAuthOption, HttpAuthScheme, HttpAuthSchemes,
-        HttpRequest, HttpRequestSigner,
-    };
+    use aws_smithy_runtime_api::client::orchestrator::{Future, HttpRequest};
     use aws_smithy_runtime_api::type_erasure::TypedBox;
-    use std::sync::Arc;
 
     #[tokio::test]
     async fn basic_case() {
         #[derive(Debug)]
         struct TestIdentityResolver;
         impl IdentityResolver for TestIdentityResolver {
-            fn resolve_identity(&self, _identity_properties: &PropertyBag) -> Future<Identity> {
+            fn resolve_identity(&self, _config_bag: &ConfigBag) -> Future<Identity> {
                 Future::ready(Ok(Identity::new("doesntmatter", None)))
             }
         }
@@ -88,7 +84,7 @@ mod tests {
                 &self,
                 request: &mut HttpRequest,
                 _identity: &Identity,
-                _signing_properties: &PropertyBag,
+                _config_bag: &ConfigBag,
             ) -> Result<(), BoxError> {
                 request
                     .headers_mut()
@@ -97,13 +93,15 @@ mod tests {
             }
         }
 
+        const TEST_SCHEME_ID: AuthSchemeId = AuthSchemeId::new("test-scheme");
+
         #[derive(Debug)]
         struct TestAuthScheme {
             signer: TestSigner,
         }
         impl HttpAuthScheme for TestAuthScheme {
-            fn scheme_id(&self) -> &'static str {
-                "test-scheme"
+            fn scheme_id(&self) -> AuthSchemeId {
+                TEST_SCHEME_ID
             }
 
             fn identity_resolver<'a>(
@@ -124,18 +122,15 @@ mod tests {
 
         let mut cfg = ConfigBag::base();
         cfg.set_auth_option_resolver_params(AuthOptionResolverParams::new("doesntmatter"));
-        cfg.set_auth_option_resolver(AuthOptionListResolver::new(vec![HttpAuthOption::new(
-            "test-scheme",
-            Arc::new(PropertyBag::new()),
-        )]));
+        cfg.set_auth_option_resolver(StaticAuthOptionResolver::new(vec![TEST_SCHEME_ID]));
         cfg.set_identity_resolvers(
             IdentityResolvers::builder()
-                .identity_resolver("test-scheme", TestIdentityResolver)
+                .identity_resolver(TEST_SCHEME_ID, TestIdentityResolver)
                 .build(),
         );
         cfg.set_http_auth_schemes(
             HttpAuthSchemes::builder()
-                .auth_scheme("test-scheme", TestAuthScheme { signer: TestSigner })
+                .auth_scheme(TEST_SCHEME_ID, TestAuthScheme { signer: TestSigner })
                 .build(),
         );
 
@@ -170,9 +165,9 @@ mod tests {
 
         let mut cfg = ConfigBag::base();
         cfg.set_auth_option_resolver_params(AuthOptionResolverParams::new("doesntmatter"));
-        cfg.set_auth_option_resolver(AuthOptionListResolver::new(vec![
-            HttpAuthOption::new(HTTP_BASIC_AUTH_SCHEME_ID, Arc::new(PropertyBag::new())),
-            HttpAuthOption::new(HTTP_BEARER_AUTH_SCHEME_ID, Arc::new(PropertyBag::new())),
+        cfg.set_auth_option_resolver(StaticAuthOptionResolver::new(vec![
+            HTTP_BASIC_AUTH_SCHEME_ID,
+            HTTP_BEARER_AUTH_SCHEME_ID,
         ]));
         cfg.set_http_auth_schemes(
             HttpAuthSchemes::builder()

@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use super::identity::{IdentityResolver, IdentityResolvers};
-use crate::client::identity::Identity;
+use crate::client::auth::{AuthOptionResolver, AuthOptionResolverParams, HttpAuthSchemes};
+use crate::client::identity::IdentityResolvers;
 use crate::client::interceptors::context::{Input, OutputOrError};
 use crate::client::retries::RetryClassifiers;
 use crate::client::retries::RetryStrategy;
@@ -13,13 +13,10 @@ use crate::type_erasure::{TypeErasedBox, TypedBox};
 use aws_smithy_async::future::now_or_later::NowOrLater;
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::endpoint::EndpointPrefix;
-use aws_smithy_http::property_bag::PropertyBag;
 use std::any::Any;
-use std::borrow::Cow;
 use std::fmt::Debug;
 use std::future::Future as StdFuture;
 use std::pin::Pin;
-use std::sync::Arc;
 use std::time::SystemTime;
 
 pub type HttpRequest = http::Request<SdkBody>;
@@ -53,104 +50,6 @@ impl Connection for Box<dyn Connection> {
     fn call(&self, request: HttpRequest) -> BoxFuture<HttpResponse> {
         (**self).call(request)
     }
-}
-
-#[derive(Debug)]
-pub struct AuthOptionResolverParams(TypeErasedBox);
-
-impl AuthOptionResolverParams {
-    pub fn new<T: Any + Send + Sync + 'static>(params: T) -> Self {
-        Self(TypedBox::new(params).erase())
-    }
-
-    pub fn get<T: 'static>(&self) -> Option<&T> {
-        self.0.downcast_ref()
-    }
-}
-
-pub trait AuthOptionResolver: Send + Sync + Debug {
-    fn resolve_auth_options<'a>(
-        &'a self,
-        params: &AuthOptionResolverParams,
-    ) -> Result<Cow<'a, [HttpAuthOption]>, BoxError>;
-}
-
-impl AuthOptionResolver for Box<dyn AuthOptionResolver> {
-    fn resolve_auth_options<'a>(
-        &'a self,
-        params: &AuthOptionResolverParams,
-    ) -> Result<Cow<'a, [HttpAuthOption]>, BoxError> {
-        (**self).resolve_auth_options(params)
-    }
-}
-
-#[derive(Clone, Debug)]
-pub struct HttpAuthOption {
-    scheme_id: &'static str,
-    properties: Arc<PropertyBag>,
-}
-
-impl HttpAuthOption {
-    pub fn new(scheme_id: &'static str, properties: Arc<PropertyBag>) -> Self {
-        Self {
-            scheme_id,
-            properties,
-        }
-    }
-
-    pub fn scheme_id(&self) -> &'static str {
-        self.scheme_id
-    }
-
-    pub fn properties(&self) -> &PropertyBag {
-        &self.properties
-    }
-}
-
-#[derive(Debug)]
-struct HttpAuthSchemesInner {
-    schemes: Vec<(&'static str, Box<dyn HttpAuthScheme>)>,
-}
-#[derive(Debug)]
-pub struct HttpAuthSchemes {
-    inner: Arc<HttpAuthSchemesInner>,
-}
-
-impl HttpAuthSchemes {
-    pub fn builder() -> builders::HttpAuthSchemesBuilder {
-        Default::default()
-    }
-
-    pub fn scheme(&self, name: &'static str) -> Option<&dyn HttpAuthScheme> {
-        self.inner
-            .schemes
-            .iter()
-            .find(|scheme| scheme.0 == name)
-            .map(|scheme| &*scheme.1)
-    }
-}
-
-pub trait HttpAuthScheme: Send + Sync + Debug {
-    fn scheme_id(&self) -> &'static str;
-
-    fn identity_resolver<'a>(
-        &self,
-        identity_resolvers: &'a IdentityResolvers,
-    ) -> Option<&'a dyn IdentityResolver>;
-
-    fn request_signer(&self) -> &dyn HttpRequestSigner;
-}
-
-pub trait HttpRequestSigner: Send + Sync + Debug {
-    /// Return a signed version of the given request using the given identity.
-    ///
-    /// If the provided identity is incompatible with this signer, an error must be returned.
-    fn sign_request(
-        &self,
-        request: &mut HttpRequest,
-        identity: &Identity,
-        signing_properties: &PropertyBag,
-    ) -> Result<(), BoxError>;
 }
 
 #[derive(Debug)]
@@ -376,37 +275,5 @@ impl ConfigBagAccessors for ConfigBag {
 
     fn set_request_time(&mut self, request_time: RequestTime) {
         self.put::<RequestTime>(request_time);
-    }
-}
-
-pub mod builders {
-    use super::*;
-
-    #[derive(Debug, Default)]
-    pub struct HttpAuthSchemesBuilder {
-        schemes: Vec<(&'static str, Box<dyn HttpAuthScheme>)>,
-    }
-
-    impl HttpAuthSchemesBuilder {
-        pub fn new() -> Self {
-            Default::default()
-        }
-
-        pub fn auth_scheme(
-            mut self,
-            name: &'static str,
-            auth_scheme: impl HttpAuthScheme + 'static,
-        ) -> Self {
-            self.schemes.push((name, Box::new(auth_scheme) as _));
-            self
-        }
-
-        pub fn build(self) -> HttpAuthSchemes {
-            HttpAuthSchemes {
-                inner: Arc::new(HttpAuthSchemesInner {
-                    schemes: self.schemes,
-                }),
-            }
-        }
     }
 }

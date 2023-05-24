@@ -3,8 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use crate::client::auth::AuthSchemeId;
 use crate::client::orchestrator::Future;
-use aws_smithy_http::property_bag::PropertyBag;
+use crate::config_bag::ConfigBag;
 use std::any::Any;
 use std::fmt::Debug;
 use std::sync::Arc;
@@ -14,12 +15,12 @@ use std::time::SystemTime;
 pub mod http;
 
 pub trait IdentityResolver: Send + Sync + Debug {
-    fn resolve_identity(&self, identity_properties: &PropertyBag) -> Future<Identity>;
+    fn resolve_identity(&self, config_bag: &ConfigBag) -> Future<Identity>;
 }
 
 #[derive(Clone, Debug, Default)]
 pub struct IdentityResolvers {
-    identity_resolvers: Vec<(&'static str, Arc<dyn IdentityResolver>)>,
+    identity_resolvers: Vec<(AuthSchemeId, Arc<dyn IdentityResolver>)>,
 }
 
 impl IdentityResolvers {
@@ -27,10 +28,10 @@ impl IdentityResolvers {
         builders::IdentityResolversBuilder::new()
     }
 
-    pub fn identity_resolver(&self, identity_type: &'static str) -> Option<&dyn IdentityResolver> {
+    pub fn identity_resolver(&self, scheme_id: AuthSchemeId) -> Option<&dyn IdentityResolver> {
         self.identity_resolvers
             .iter()
-            .find(|resolver| resolver.0 == identity_type)
+            .find(|resolver| resolver.0 == scheme_id)
             .map(|resolver| &*resolver.1)
     }
 
@@ -83,17 +84,18 @@ impl AnonymousIdentityResolver {
 }
 
 impl IdentityResolver for AnonymousIdentityResolver {
-    fn resolve_identity(&self, _: &PropertyBag) -> Future<Identity> {
+    fn resolve_identity(&self, _: &ConfigBag) -> Future<Identity> {
         Future::ready(Ok(Identity::new(AnonymousIdentity::new(), None)))
     }
 }
 
 pub mod builders {
     use super::*;
+    use crate::client::auth::AuthSchemeId;
 
     #[derive(Debug, Default)]
     pub struct IdentityResolversBuilder {
-        pub(super) identity_resolvers: Vec<(&'static str, Arc<dyn IdentityResolver>)>,
+        pub(super) identity_resolvers: Vec<(AuthSchemeId, Arc<dyn IdentityResolver>)>,
     }
 
     impl IdentityResolversBuilder {
@@ -103,11 +105,11 @@ pub mod builders {
 
         pub fn identity_resolver(
             mut self,
-            name: &'static str,
+            scheme_id: AuthSchemeId,
             resolver: impl IdentityResolver + 'static,
         ) -> Self {
             self.identity_resolvers
-                .push((name, Arc::new(resolver) as _));
+                .push((scheme_id, Arc::new(resolver) as _));
             self
         }
 

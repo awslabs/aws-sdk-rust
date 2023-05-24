@@ -3,17 +3,16 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_smithy_http::property_bag::PropertyBag;
 use aws_smithy_http::query_writer::QueryWriter;
 use aws_smithy_runtime_api::client::auth::http::{
     HTTP_API_KEY_AUTH_SCHEME_ID, HTTP_BASIC_AUTH_SCHEME_ID, HTTP_BEARER_AUTH_SCHEME_ID,
     HTTP_DIGEST_AUTH_SCHEME_ID,
 };
+use aws_smithy_runtime_api::client::auth::{AuthSchemeId, HttpAuthScheme, HttpRequestSigner};
 use aws_smithy_runtime_api::client::identity::http::{Login, Token};
 use aws_smithy_runtime_api::client::identity::{Identity, IdentityResolver, IdentityResolvers};
-use aws_smithy_runtime_api::client::orchestrator::{
-    BoxError, HttpAuthScheme, HttpRequest, HttpRequestSigner,
-};
+use aws_smithy_runtime_api::client::orchestrator::{BoxError, HttpRequest};
+use aws_smithy_runtime_api::config_bag::ConfigBag;
 use aws_smithy_types::base64::encode;
 use http::header::HeaderName;
 use http::HeaderValue;
@@ -49,7 +48,7 @@ impl ApiKeyAuthScheme {
 }
 
 impl HttpAuthScheme for ApiKeyAuthScheme {
-    fn scheme_id(&self) -> &'static str {
+    fn scheme_id(&self) -> AuthSchemeId {
         HTTP_API_KEY_AUTH_SCHEME_ID
     }
 
@@ -77,7 +76,7 @@ impl HttpRequestSigner for ApiKeySigner {
         &self,
         request: &mut HttpRequest,
         identity: &Identity,
-        _signing_properties: &PropertyBag,
+        _config_bag: &ConfigBag,
     ) -> Result<(), BoxError> {
         let api_key = identity
             .data::<Token>()
@@ -118,7 +117,7 @@ impl BasicAuthScheme {
 }
 
 impl HttpAuthScheme for BasicAuthScheme {
-    fn scheme_id(&self) -> &'static str {
+    fn scheme_id(&self) -> AuthSchemeId {
         HTTP_BASIC_AUTH_SCHEME_ID
     }
 
@@ -142,7 +141,7 @@ impl HttpRequestSigner for BasicAuthSigner {
         &self,
         request: &mut HttpRequest,
         identity: &Identity,
-        _signing_properties: &PropertyBag,
+        _config_bag: &ConfigBag,
     ) -> Result<(), BoxError> {
         let login = identity
             .data::<Login>()
@@ -175,7 +174,7 @@ impl BearerAuthScheme {
 }
 
 impl HttpAuthScheme for BearerAuthScheme {
-    fn scheme_id(&self) -> &'static str {
+    fn scheme_id(&self) -> AuthSchemeId {
         HTTP_BEARER_AUTH_SCHEME_ID
     }
 
@@ -199,7 +198,7 @@ impl HttpRequestSigner for BearerAuthSigner {
         &self,
         request: &mut HttpRequest,
         identity: &Identity,
-        _signing_properties: &PropertyBag,
+        _config_bag: &ConfigBag,
     ) -> Result<(), BoxError> {
         let token = identity
             .data::<Token>()
@@ -230,7 +229,7 @@ impl DigestAuthScheme {
 }
 
 impl HttpAuthScheme for DigestAuthScheme {
-    fn scheme_id(&self) -> &'static str {
+    fn scheme_id(&self) -> AuthSchemeId {
         HTTP_DIGEST_AUTH_SCHEME_ID
     }
 
@@ -254,7 +253,7 @@ impl HttpRequestSigner for DigestAuthSigner {
         &self,
         _request: &mut HttpRequest,
         _identity: &Identity,
-        _signing_properties: &PropertyBag,
+        _config_bag: &ConfigBag,
     ) -> Result<(), BoxError> {
         unimplemented!(
             "support for signing with Smithy's `@httpDigestAuth` auth scheme is not implemented yet"
@@ -275,14 +274,14 @@ mod tests {
             location: ApiKeyLocation::Header,
             name: "some-header-name".into(),
         };
-        let signing_properties = PropertyBag::new();
+        let config_bag = ConfigBag::base();
         let identity = Identity::new(Token::new("some-token", None), None);
         let mut request = http::Request::builder()
             .uri("http://example.com/Foobaz")
             .body(SdkBody::empty())
             .unwrap();
         signer
-            .sign_request(&mut request, &identity, &signing_properties)
+            .sign_request(&mut request, &identity, &config_bag)
             .expect("success");
         assert_eq!(
             "SomeSchemeName some-token",
@@ -298,14 +297,14 @@ mod tests {
             location: ApiKeyLocation::Query,
             name: "some-query-name".into(),
         };
-        let signing_properties = PropertyBag::new();
+        let config_bag = ConfigBag::base();
         let identity = Identity::new(Token::new("some-token", None), None);
         let mut request = http::Request::builder()
             .uri("http://example.com/Foobaz")
             .body(SdkBody::empty())
             .unwrap();
         signer
-            .sign_request(&mut request, &identity, &signing_properties)
+            .sign_request(&mut request, &identity, &config_bag)
             .expect("success");
         assert!(request.headers().get("some-query-name").is_none());
         assert_eq!(
@@ -317,12 +316,12 @@ mod tests {
     #[test]
     fn test_basic_auth() {
         let signer = BasicAuthSigner;
-        let signing_properties = PropertyBag::new();
+        let config_bag = ConfigBag::base();
         let identity = Identity::new(Login::new("Aladdin", "open sesame", None), None);
         let mut request = http::Request::builder().body(SdkBody::empty()).unwrap();
 
         signer
-            .sign_request(&mut request, &identity, &signing_properties)
+            .sign_request(&mut request, &identity, &config_bag)
             .expect("success");
         assert_eq!(
             "Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==",
@@ -334,11 +333,11 @@ mod tests {
     fn test_bearer_auth() {
         let signer = BearerAuthSigner;
 
-        let signing_properties = PropertyBag::new();
+        let config_bag = ConfigBag::base();
         let identity = Identity::new(Token::new("some-token", None), None);
         let mut request = http::Request::builder().body(SdkBody::empty()).unwrap();
         signer
-            .sign_request(&mut request, &identity, &signing_properties)
+            .sign_request(&mut request, &identity, &config_bag)
             .expect("success");
         assert_eq!(
             "Bearer some-token",
