@@ -4,7 +4,6 @@
  */
 
 use crate::client::orchestrator::interceptors::RequestAttempts;
-use aws_smithy_runtime_api::client::interceptors::context::phase::AfterDeserialization;
 use aws_smithy_runtime_api::client::interceptors::InterceptorContext;
 use aws_smithy_runtime_api::client::orchestrator::BoxError;
 use aws_smithy_runtime_api::client::retries::{
@@ -41,7 +40,7 @@ impl RetryStrategy for FixedDelayRetryStrategy {
 
     fn should_attempt_retry(
         &self,
-        ctx: &InterceptorContext<AfterDeserialization>,
+        ctx: &InterceptorContext,
         cfg: &ConfigBag,
     ) -> Result<ShouldAttempt, BoxError> {
         // Look a the result. If it's OK then we're done; No retry required. Otherwise, we need to inspect it

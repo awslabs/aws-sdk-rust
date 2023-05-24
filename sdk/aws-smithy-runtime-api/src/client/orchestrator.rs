@@ -3,6 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+/// Errors that can occur while running the orchestrator.
+mod error;
+
 use crate::client::auth::{AuthOptionResolver, AuthOptionResolverParams, HttpAuthSchemes};
 use crate::client::identity::IdentityResolvers;
 use crate::client::interceptors::context::{Error, Input, Output};
@@ -20,6 +23,8 @@ use std::pin::Pin;
 use std::sync::Arc;
 use std::time::SystemTime;
 
+pub use error::OrchestratorError;
+
 pub type HttpRequest = http::Request<SdkBody>;
 pub type HttpResponse = http::Response<SdkBody>;
 pub type BoxError = Box<dyn std::error::Error + Send + Sync + 'static>;
@@ -31,12 +36,18 @@ pub trait RequestSerializer: Send + Sync + fmt::Debug {
 }
 
 pub trait ResponseDeserializer: Send + Sync + fmt::Debug {
-    fn deserialize_streaming(&self, response: &mut HttpResponse) -> Option<Result<Output, Error>> {
+    fn deserialize_streaming(
+        &self,
+        response: &mut HttpResponse,
+    ) -> Option<Result<Output, OrchestratorError<Error>>> {
         let _ = response;
         None
     }
 
-    fn deserialize_nonstreaming(&self, response: &HttpResponse) -> Result<Output, Error>;
+    fn deserialize_nonstreaming(
+        &self,
+        response: &HttpResponse,
+    ) -> Result<Output, OrchestratorError<Error>>;
 }
 
 pub trait Connection: Send + Sync + fmt::Debug {

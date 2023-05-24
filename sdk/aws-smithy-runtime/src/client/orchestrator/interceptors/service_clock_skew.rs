@@ -3,8 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_smithy_runtime_api::client::interceptors::context::phase::BeforeDeserialization;
-use aws_smithy_runtime_api::client::interceptors::{BoxError, Interceptor, InterceptorContext};
+use aws_smithy_runtime_api::client::interceptors::{
+    BeforeDeserializationInterceptorContextMut, BoxError, Interceptor,
+};
 use aws_smithy_runtime_api::config_bag::ConfigBag;
 use aws_smithy_types::date_time::Format;
 use aws_smithy_types::DateTime;
@@ -48,7 +49,7 @@ fn calculate_skew(time_sent: DateTime, time_received: DateTime) -> Duration {
 }
 
 fn extract_time_sent_from_response(
-    ctx: &mut InterceptorContext<BeforeDeserialization>,
+    ctx: &mut BeforeDeserializationInterceptorContextMut<'_>,
 ) -> Result<DateTime, BoxError> {
     let date_header = ctx
         .response()
@@ -62,7 +63,7 @@ fn extract_time_sent_from_response(
 impl Interceptor for ServiceClockSkewInterceptor {
     fn modify_before_deserialization(
         &self,
-        ctx: &mut InterceptorContext<BeforeDeserialization>,
+        ctx: &mut BeforeDeserializationInterceptorContextMut<'_>,
         cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
         let time_received = DateTime::from(SystemTime::now());

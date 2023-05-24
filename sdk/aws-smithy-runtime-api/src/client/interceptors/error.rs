@@ -61,6 +61,11 @@ impl InterceptorError {
     interceptor_error_fn!(modify_before_completion => ModifyBeforeCompletion (with source));
     interceptor_error_fn!(read_after_execution => ReadAfterExecution (with source));
 
+    interceptor_error_fn!(modify_before_attempt_completion_failed => ModifyBeforeAttemptCompletion (with source));
+    interceptor_error_fn!(read_after_attempt_failed => ReadAfterAttempt (with source));
+    interceptor_error_fn!(modify_before_completion_failed => ModifyBeforeCompletion (with source));
+    interceptor_error_fn!(read_after_execution_failed => ReadAfterExecution (with source));
+
     interceptor_error_fn!(invalid_request_access => InvalidRequestAccess (invalid request access));
     interceptor_error_fn!(invalid_response_access => InvalidResponseAccess (invalid response access));
     interceptor_error_fn!(invalid_input_access => InvalidInputAccess (invalid input access));

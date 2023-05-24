@@ -4,9 +4,10 @@
  */
 
 use aws_http::user_agent::{ApiMetadata, AwsUserAgent};
-use aws_smithy_runtime_api::client::interceptors::context::phase::BeforeTransmit;
 use aws_smithy_runtime_api::client::interceptors::error::BoxError;
-use aws_smithy_runtime_api::client::interceptors::{Interceptor, InterceptorContext};
+use aws_smithy_runtime_api::client::interceptors::{
+    BeforeTransmitInterceptorContextMut, Interceptor,
+};
 use aws_smithy_runtime_api::config_bag::ConfigBag;
 use aws_types::app_name::AppName;
 use aws_types::os_shim_internal::Env;
@@ -73,7 +74,7 @@ fn header_values(
 impl Interceptor for UserAgentInterceptor {
     fn modify_before_signing(
         &self,
-        context: &mut InterceptorContext<BeforeTransmit>,
+        context: &mut BeforeTransmitInterceptorContextMut<'_>,
         cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
         let api_metadata = cfg
@@ -113,10 +114,7 @@ mod tests {
     use aws_smithy_runtime_api::type_erasure::TypedBox;
     use aws_smithy_types::error::display::DisplayErrorContext;
 
-    fn expect_header<'a>(
-        context: &'a InterceptorContext<BeforeTransmit>,
-        header_name: &str,
-    ) -> &'a str {
+    fn expect_header<'a>(context: &'a InterceptorContext, header_name: &str) -> &'a str {
         context
             .request()
             .headers()
@@ -126,12 +124,13 @@ mod tests {
             .unwrap()
     }
 
-    fn context() -> InterceptorContext<BeforeTransmit> {
-        let mut context = InterceptorContext::<()>::new(TypedBox::new("doesntmatter").erase())
-            .into_serialization_phase();
+    fn context() -> InterceptorContext {
+        let mut context = InterceptorContext::new(TypedBox::new("doesntmatter").erase());
+        context.enter_serialization_phase();
         context.set_request(http::Request::builder().body(SdkBody::empty()).unwrap());
         let _ = context.take_input();
-        context.into_before_transmit_phase()
+        context.enter_before_transmit_phase();
+        context
     }
 
     #[test]
@@ -143,8 +142,9 @@ mod tests {
         config.put(ApiMetadata::new("unused", "unused"));
 
         let interceptor = UserAgentInterceptor::new();
+        let mut ctx = Into::into(&mut context);
         interceptor
-            .modify_before_signing(&mut context, &mut config)
+            .modify_before_signing(&mut ctx, &mut config)
             .unwrap();
 
         let header = expect_header(&context, "user-agent");
@@ -166,8 +166,9 @@ mod tests {
         config.put(api_metadata.clone());
 
         let interceptor = UserAgentInterceptor::new();
+        let mut ctx = Into::into(&mut context);
         interceptor
-            .modify_before_signing(&mut context, &mut config)
+            .modify_before_signing(&mut ctx, &mut config)
             .unwrap();
 
         let expected_ua = AwsUserAgent::new_from_environment(Env::real(), api_metadata);
@@ -195,8 +196,9 @@ mod tests {
         config.put(AppName::new("my_awesome_app").unwrap());
 
         let interceptor = UserAgentInterceptor::new();
+        let mut ctx = Into::into(&mut context);
         interceptor
-            .modify_before_signing(&mut context, &mut config)
+            .modify_before_signing(&mut ctx, &mut config)
             .unwrap();
 
         let app_value = "app/my_awesome_app";
@@ -219,11 +221,13 @@ mod tests {
         let mut config = ConfigBag::base();
 
         let interceptor = UserAgentInterceptor::new();
+        let mut ctx = Into::into(&mut context);
+
         let error = format!(
             "{}",
             DisplayErrorContext(
                 &*interceptor
-                    .modify_before_signing(&mut context, &mut config)
+                    .modify_before_signing(&mut ctx, &mut config)
                     .expect_err("it should error")
             )
         );

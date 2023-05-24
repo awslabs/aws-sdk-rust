@@ -3,25 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use crate::{bail, handle_err};
-use aws_smithy_http::result::SdkError;
-use aws_smithy_runtime_api::client::interceptors::context::{AttemptCheckpoint, Error};
-use aws_smithy_runtime_api::client::orchestrator::{BoxError, ConfigBagAccessors, HttpResponse};
+use aws_smithy_runtime_api::client::interceptors::InterceptorContext;
+use aws_smithy_runtime_api::client::orchestrator::{BoxError, ConfigBagAccessors};
 use aws_smithy_runtime_api::config_bag::ConfigBag;
+use std::fmt;
 
 pub(super) async fn orchestrate_auth(
-    mut checkpoint: AttemptCheckpoint,
+    ctx: &mut InterceptorContext,
     cfg: &ConfigBag,
-) -> Result<AttemptCheckpoint, SdkError<Error, HttpResponse>> {
-    fn construction_failure(err: impl Into<BoxError>) -> SdkError<Error, HttpResponse> {
-        SdkError::construction_failure(err)
-    }
-
+) -> Result<(), BoxError> {
     let params = cfg.auth_option_resolver_params();
-    let auth_options = cfg
-        .auth_option_resolver()
-        .resolve_auth_options(params)
-        .map_err(construction_failure)?;
+    let auth_options = cfg.auth_option_resolver().resolve_auth_options(params)?;
     let identity_resolvers = cfg.identity_resolvers();
 
     tracing::trace!(
@@ -35,22 +27,30 @@ pub(super) async fn orchestrate_auth(
             if let Some(identity_resolver) = auth_scheme.identity_resolver(identity_resolvers) {
                 let request_signer = auth_scheme.request_signer();
 
-                let identity = identity_resolver
-                    .resolve_identity(cfg)
-                    .await
-                    .map_err(construction_failure)?;
-                let request = checkpoint.before_transmit().request_mut();
-                handle_err!([checkpoint] => request_signer.sign_request(request, &identity, cfg));
-                return Ok(checkpoint);
+                let identity = identity_resolver.resolve_identity(cfg).await?;
+                let request = ctx.request_mut();
+                request_signer.sign_request(request, &identity, cfg)?;
+                return Ok(());
             }
         }
     }
 
-    bail!(
-        [checkpoint],
-        "no auth scheme matched auth options. This is a bug. Please file an issue."
-    );
+    Err(NoMatchingAuthScheme.into())
 }
+
+#[derive(Debug)]
+struct NoMatchingAuthScheme;
+
+impl fmt::Display for NoMatchingAuthScheme {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(
+            f,
+            "no auth scheme matched auth options. This is a bug. Please file an issue."
+        )
+    }
+}
+
+impl std::error::Error for NoMatchingAuthScheme {}
 
 #[cfg(test)]
 mod tests {
@@ -115,11 +115,11 @@ mod tests {
             }
         }
 
-        let input = TypedBox::new("doesnt-matter").erase();
-        let mut context = InterceptorContext::<()>::new(input).into_serialization_phase();
-        context.set_request(http::Request::builder().body(SdkBody::empty()).unwrap());
-        let _ = context.take_input();
-        let checkpoint = AttemptCheckpoint::new(context.into_before_transmit_phase());
+        let mut ctx = InterceptorContext::new(TypedBox::new("doesnt-matter").erase());
+        ctx.enter_serialization_phase();
+        ctx.set_request(http::Request::builder().body(SdkBody::empty()).unwrap());
+        let _ = ctx.take_input();
+        ctx.enter_before_transmit_phase();
 
         let mut cfg = ConfigBag::base();
         cfg.set_auth_option_resolver_params(AuthOptionResolverParams::new("doesntmatter"));
@@ -135,16 +135,11 @@ mod tests {
                 .build(),
         );
 
-        let mut checkpoint = orchestrate_auth(checkpoint, &cfg).await.expect("success");
+        orchestrate_auth(&mut ctx, &cfg).await.expect("success");
 
         assert_eq!(
             "success!",
-            checkpoint
-                .before_transmit()
-                .request()
-                .headers()
-                .get("Authorization")
-                .unwrap()
+            ctx.request().headers().get("Authorization").unwrap()
         );
     }
 
@@ -157,11 +152,11 @@ mod tests {
         };
         use aws_smithy_runtime_api::client::identity::http::{Login, Token};
 
-        let mut context = InterceptorContext::<()>::new(TypedBox::new("doesnt-matter").erase())
-            .into_serialization_phase();
-        context.set_request(http::Request::builder().body(SdkBody::empty()).unwrap());
-        let _ = context.take_input();
-        let checkpoint = AttemptCheckpoint::new(context.into_before_transmit_phase());
+        let mut ctx = InterceptorContext::new(TypedBox::new("doesnt-matter").erase());
+        ctx.enter_serialization_phase();
+        ctx.set_request(http::Request::builder().body(SdkBody::empty()).unwrap());
+        let _ = ctx.take_input();
+        ctx.enter_before_transmit_phase();
 
         let mut cfg = ConfigBag::base();
         cfg.set_auth_option_resolver_params(AuthOptionResolverParams::new("doesntmatter"));
@@ -183,17 +178,11 @@ mod tests {
                 .build(),
         );
 
-        let mut checkpoint = orchestrate_auth(checkpoint, &cfg).await.expect("success");
-
+        orchestrate_auth(&mut ctx, &cfg).await.expect("success");
         assert_eq!(
             // "YTpi" == "a:b" in base64
             "Basic YTpi",
-            checkpoint
-                .before_transmit()
-                .request()
-                .headers()
-                .get("Authorization")
-                .unwrap()
+            ctx.request().headers().get("Authorization").unwrap()
         );
 
         // Next, test the presence of a bearer token and absence of basic auth
@@ -203,21 +192,15 @@ mod tests {
                 .build(),
         );
 
-        let mut context = InterceptorContext::<()>::new(TypedBox::new("doesnt-matter").erase())
-            .into_serialization_phase();
-        context.set_request(http::Request::builder().body(SdkBody::empty()).unwrap());
-        let _ = context.take_input();
-        let checkpoint = AttemptCheckpoint::new(context.into_before_transmit_phase());
-
-        let mut checkpoint = orchestrate_auth(checkpoint, &cfg).await.expect("success");
+        let mut ctx = InterceptorContext::new(TypedBox::new("doesnt-matter").erase());
+        ctx.enter_serialization_phase();
+        ctx.set_request(http::Request::builder().body(SdkBody::empty()).unwrap());
+        let _ = ctx.take_input();
+        ctx.enter_before_transmit_phase();
+        orchestrate_auth(&mut ctx, &cfg).await.expect("success");
         assert_eq!(
             "Bearer t",
-            checkpoint
-                .before_transmit()
-                .request()
-                .headers()
-                .get("Authorization")
-                .unwrap()
+            ctx.request().headers().get("Authorization").unwrap()
         );
     }
 }

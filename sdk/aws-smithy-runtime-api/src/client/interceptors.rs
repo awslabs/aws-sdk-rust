@@ -6,12 +6,21 @@
 pub mod context;
 pub mod error;
 
-use crate::client::interceptors::context::phase::{
-    AfterDeserialization, BeforeDeserialization, BeforeSerialization, BeforeTransmit,
+use crate::client::interceptors::context::wrappers::{
+    FinalizerInterceptorContextMut, FinalizerInterceptorContextRef,
 };
 use crate::config_bag::ConfigBag;
 use aws_smithy_types::error::display::DisplayErrorContext;
-pub use context::InterceptorContext;
+pub use context::{
+    wrappers::{
+        AfterDeserializationInterceptorContextMut, AfterDeserializationInterceptorContextRef,
+        BeforeDeserializationInterceptorContextMut, BeforeDeserializationInterceptorContextRef,
+        BeforeSerializationInterceptorContextMut, BeforeSerializationInterceptorContextRef,
+        BeforeTransmitInterceptorContextMut, BeforeTransmitInterceptorContextRef,
+    },
+    InterceptorContext,
+};
+use context::{Error, Input, Output};
 pub use error::{BoxError, InterceptorError};
 use std::ops::Deref;
 use std::sync::Arc;
@@ -19,11 +28,7 @@ use std::sync::Arc;
 macro_rules! interceptor_trait_fn {
     ($name:ident, $phase:ident, $docs:tt) => {
         #[doc = $docs]
-        fn $name(
-            &self,
-            context: &InterceptorContext<$phase>,
-            cfg: &mut ConfigBag,
-        ) -> Result<(), BoxError> {
+        fn $name(&self, context: &$phase<'_>, cfg: &mut ConfigBag) -> Result<(), BoxError> {
             let _ctx = context;
             let _cfg = cfg;
             Ok(())
@@ -31,11 +36,7 @@ macro_rules! interceptor_trait_fn {
     };
     (mut $name:ident, $phase:ident, $docs:tt) => {
         #[doc = $docs]
-        fn $name(
-            &self,
-            context: &mut InterceptorContext<$phase>,
-            cfg: &mut ConfigBag,
-        ) -> Result<(), BoxError> {
+        fn $name(&self, context: &mut $phase<'_>, cfg: &mut ConfigBag) -> Result<(), BoxError> {
             let _ctx = context;
             let _cfg = cfg;
             Ok(())
@@ -56,7 +57,7 @@ macro_rules! interceptor_trait_fn {
 pub trait Interceptor: std::fmt::Debug {
     interceptor_trait_fn!(
         read_before_execution,
-        BeforeSerialization,
+        BeforeSerializationInterceptorContextRef,
         "
         A hook called at the start of an execution, before the SDK
         does anything else.
@@ -80,7 +81,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         mut modify_before_serialization,
-        BeforeSerialization,
+        BeforeSerializationInterceptorContextMut,
         "
         A hook called before the input message is marshalled into a
         transport message.
@@ -108,7 +109,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         read_before_serialization,
-        BeforeSerialization,
+        BeforeSerializationInterceptorContextRef,
         "
         A hook called before the input message is marshalled
         into a transport
@@ -130,7 +131,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         read_after_serialization,
-        BeforeTransmit,
+        BeforeTransmitInterceptorContextRef,
         "
         /// A hook called after the input message is marshalled into
         /// a transport message.
@@ -152,7 +153,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         mut modify_before_retry_loop,
-        BeforeTransmit,
+        BeforeTransmitInterceptorContextMut,
         "
         A hook called before the retry loop is entered. This method
         has the ability to modify and return a new transport request
@@ -174,7 +175,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         read_before_attempt,
-        BeforeTransmit,
+        BeforeTransmitInterceptorContextRef,
         "
         A hook called before each attempt at sending the transmission
         request message to the service.
@@ -201,7 +202,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         mut modify_before_signing,
-        BeforeTransmit,
+        BeforeTransmitInterceptorContextMut,
         "
         A hook called before the transport request message is signed.
         This method has the ability to modify and return a new transport
@@ -233,7 +234,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         read_before_signing,
-        BeforeTransmit,
+        BeforeTransmitInterceptorContextRef,
         "
         A hook called before the transport request message is signed.
 
@@ -257,7 +258,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         read_after_signing,
-        BeforeTransmit,
+        BeforeTransmitInterceptorContextRef,
         "
         A hook called after the transport request message is signed.
 
@@ -281,7 +282,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         mut modify_before_transmit,
-        BeforeTransmit,
+        BeforeTransmitInterceptorContextMut,
         "
         /// A hook called before the transport request message is sent to the
         /// service. This method has the ability to modify and return
@@ -313,7 +314,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         read_before_transmit,
-        BeforeTransmit,
+        BeforeTransmitInterceptorContextRef,
         "
         A hook called before the transport request message is sent to the
         service.
@@ -341,7 +342,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         read_after_transmit,
-        BeforeDeserialization,
+        BeforeDeserializationInterceptorContextRef,
         "
         A hook called after the transport request message is sent to the
         service and a transport response message is received.
@@ -369,7 +370,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         mut modify_before_deserialization,
-        BeforeDeserialization,
+        BeforeDeserializationInterceptorContextMut,
         "
         A hook called before the transport response message is unmarshalled.
         This method has the ability to modify and return a new transport
@@ -401,7 +402,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         read_before_deserialization,
-        BeforeDeserialization,
+        BeforeDeserializationInterceptorContextRef,
         "
         A hook called before the transport response message is unmarshalled
 
@@ -428,7 +429,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         read_after_deserialization,
-        AfterDeserialization,
+        AfterDeserializationInterceptorContextRef,
         "
         A hook called after the transport response message is unmarshalled.
 
@@ -453,115 +454,127 @@ pub trait Interceptor: std::fmt::Debug {
         "
     );
 
-    interceptor_trait_fn!(
-        mut modify_before_attempt_completion,
-        AfterDeserialization,
-        "
-        A hook called when an attempt is completed. This method has the
-        ability to modify and return a new output message or error
-        matching the currently-executing operation.
+    /// A hook called when an attempt is completed. This method has the
+    /// ability to modify and return a new output message or error
+    /// matching the currently-executing operation.
+    ///
+    /// **When:** This will **ALWAYS** be called once per attempt, except when a
+    /// failure occurs before `before_attempt`. This method may
+    /// be called multiple times in the event of retries.
+    ///
+    /// **Available Information:** The [InterceptorContext::input()],
+    /// [InterceptorContext::request()],
+    /// [InterceptorContext::response()] and
+    /// [InterceptorContext::output_or_error()] are **ALWAYS** available. In the event
+    /// of retries, the `InterceptorContext` will not include changes made
+    /// in previous attempts (e.g. by request signers or other interceptors).
+    ///
+    /// **Error Behavior:** If errors are raised by this
+    /// hook, execution will jump to `after_attempt` with
+    /// the raised error as the [InterceptorContext::output_or_error()].
+    ///
+    /// **Return Constraints:** Any output message returned by this
+    /// hook MUST match the operation being invoked. Any error type can be
+    /// returned, replacing the response currently in the context.
+    fn modify_before_attempt_completion(
+        &self,
+        context: &mut FinalizerInterceptorContextMut<'_>,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), BoxError> {
+        let _ctx = context;
+        let _cfg = cfg;
+        Ok(())
+    }
 
-        **When:** This will **ALWAYS** be called once per attempt, except when a
-        failure occurs before `before_attempt`. This method may
-        be called multiple times in the event of retries.
+    /// A hook called when an attempt is completed.
+    ///
+    /// **When:** This will **ALWAYS** be called once per attempt, as long as
+    /// `before_attempt` has been executed.
+    ///
+    /// **Available Information:** The [InterceptorContext::input()],
+    /// [InterceptorContext::request()] and
+    /// [InterceptorContext::output_or_error()] are **ALWAYS** available.
+    /// The [InterceptorContext::response()] is available if a
+    /// response was received by the service for this attempt.
+    /// In the event of retries, the `InterceptorContext` will not include
+    /// changes made in previous attempts (e.g. by request signers or other
+    /// interceptors).
+    ///
+    /// **Error Behavior:** Errors raised by this hook will be stored
+    /// until all interceptors have had their `after_attempt` invoked.
+    /// If multiple `after_execution` methods raise errors, the latest
+    /// will be used and earlier ones will be logged and dropped. If the
+    /// retry strategy determines that the execution is retryable,
+    /// execution will then jump to `before_attempt`. Otherwise,
+    /// execution will jump to `modify_before_attempt_completion` with the
+    /// raised error as the [InterceptorContext::output_or_error()].
+    fn read_after_attempt(
+        &self,
+        context: &FinalizerInterceptorContextRef<'_>,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), BoxError> {
+        let _ctx = context;
+        let _cfg = cfg;
+        Ok(())
+    }
 
-        **Available Information:** The [InterceptorContext::input()],
-        [InterceptorContext::request()],
-        [InterceptorContext::response()] and
-        [InterceptorContext::output_or_error()] are **ALWAYS** available. In the event
-        of retries, the `InterceptorContext` will not include changes made
-        in previous attempts (e.g. by request signers or other interceptors).
+    /// A hook called when an execution is completed.
+    /// This method has the ability to modify and return a new
+    /// output message or error matching the currently - executing
+    /// operation.
+    ///
+    /// **When:** This will **ALWAYS** be called once per execution.
+    ///
+    /// **Available Information:** The [InterceptorContext::input()]
+    /// and [InterceptorContext::output_or_error()] are **ALWAYS** available. The
+    /// [InterceptorContext::request()]
+    /// and [InterceptorContext::response()] are available if the
+    /// execution proceeded far enough for them to be generated.
+    ///
+    /// **Error Behavior:** If errors are raised by this
+    /// hook , execution will jump to `after_attempt` with
+    /// the raised error as the [InterceptorContext::output_or_error()].
+    ///
+    /// **Return Constraints:** Any output message returned by this
+    /// hook MUST match the operation being invoked. Any error type can be
+    /// returned , replacing the response currently in the context.
+    fn modify_before_completion(
+        &self,
+        context: &mut FinalizerInterceptorContextMut<'_>,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), BoxError> {
+        let _ctx = context;
+        let _cfg = cfg;
+        Ok(())
+    }
 
-        **Error Behavior:** If errors are raised by this
-        hook, execution will jump to `after_attempt` with
-        the raised error as the [InterceptorContext::output_or_error()].
-
-        **Return Constraints:** Any output message returned by this
-        hook MUST match the operation being invoked. Any error type can be
-        returned, replacing the response currently in the context.
-        "
-    );
-
-    interceptor_trait_fn!(
-        read_after_attempt,
-        AfterDeserialization,
-        "
-        A hook called when an attempt is completed.
-
-        **When:** This will **ALWAYS** be called once per attempt, as long as
-        `before_attempt` has been executed.
-
-        **Available Information:** The [InterceptorContext::input()],
-        [InterceptorContext::request()] and
-        [InterceptorContext::output_or_error()] are **ALWAYS** available.
-        The [InterceptorContext::response()] is available if a
-        response was received by the service for this attempt.
-        In the event of retries, the `InterceptorContext` will not include
-        changes made in previous attempts (e.g. by request signers or other
-        interceptors).
-
-        **Error Behavior:** Errors raised by this hook will be stored
-        until all interceptors have had their `after_attempt` invoked.
-        If multiple `after_execution` methods raise errors, the latest
-        will be used and earlier ones will be logged and dropped. If the
-        retry strategy determines that the execution is retryable,
-        execution will then jump to `before_attempt`. Otherwise,
-        execution will jump to `modify_before_attempt_completion` with the
-        raised error as the [InterceptorContext::output_or_error()].
-        "
-    );
-
-    interceptor_trait_fn!(
-        mut modify_before_completion,
-        AfterDeserialization,
-        "
-        A hook called when an execution is completed.
-        This method has the ability to modify and return a new
-        output message or error matching the currently - executing
-        operation.
-
-        **When:** This will **ALWAYS** be called once per execution.
-
-        **Available Information:** The [InterceptorContext::input()]
-        and [InterceptorContext::output_or_error()] are **ALWAYS** available. The
-        [InterceptorContext::request()]
-        and [InterceptorContext::response()] are available if the
-        execution proceeded far enough for them to be generated.
-
-        **Error Behavior:** If errors are raised by this
-        hook , execution will jump to `after_attempt` with
-        the raised error as the [InterceptorContext::output_or_error()].
-
-        **Return Constraints:** Any output message returned by this
-        hook MUST match the operation being invoked. Any error type can be
-        returned , replacing the response currently in the context.
-        "
-    );
-
-    interceptor_trait_fn!(
-        read_after_execution,
-        AfterDeserialization,
-        "
-        A hook called when an execution is completed.
-
-        **When:** This will **ALWAYS** be called once per execution. The duration
-        between invocation of this hook and `before_execution` is very
-        close to the full duration of the execution.
-
-        **Available Information:** The [InterceptorContext::input()]
-        and [InterceptorContext::output_or_error()] are **ALWAYS** available. The
-        [InterceptorContext::request()] and
-        [InterceptorContext::response()] are available if the
-        execution proceeded far enough for them to be generated.
-
-        **Error Behavior:** Errors raised by this hook will be stored
-        until all interceptors have had their `after_execution` invoked.
-        The error will then be treated as the
-        [InterceptorContext::output_or_error()] to the customer. If multiple
-        `after_execution` methods raise errors , the latest will be
-        used and earlier ones will be logged and dropped.
-        "
-    );
+    /// A hook called when an execution is completed.
+    ///
+    /// **When:** This will **ALWAYS** be called once per execution. The duration
+    /// between invocation of this hook and `before_execution` is very
+    /// close to the full duration of the execution.
+    ///
+    /// **Available Information:** The [InterceptorContext::input()]
+    /// and [InterceptorContext::output_or_error()] are **ALWAYS** available. The
+    /// [InterceptorContext::request()] and
+    /// [InterceptorContext::response()] are available if the
+    /// execution proceeded far enough for them to be generated.
+    ///
+    /// **Error Behavior:** Errors raised by this hook will be stored
+    /// until all interceptors have had their `after_execution` invoked.
+    /// The error will then be treated as the
+    /// [InterceptorContext::output_or_error()] to the customer. If multiple
+    /// `after_execution` methods raise errors , the latest will be
+    /// used and earlier ones will be logged and dropped.
+    fn read_after_execution(
+        &self,
+        context: &FinalizerInterceptorContextRef<'_>,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), BoxError> {
+        let _ctx = context;
+        let _cfg = cfg;
+        Ok(())
+    }
 }
 
 /// Interceptor wrapper that may be shared
@@ -619,40 +632,42 @@ pub struct Interceptors {
 }
 
 macro_rules! interceptor_impl_fn {
-    (context, $name:ident, $phase:ident) => {
-        interceptor_impl_fn!(context, $name, $name, $phase);
-    };
-    (mut context, $name:ident, $phase:ident) => {
-        interceptor_impl_fn!(mut context, $name, $name, $phase);
-    };
-    (context, $outer_name:ident, $inner_name:ident, $phase:ident) => {
-        interceptor_impl_fn!(
-            $outer_name,
-            $inner_name(context: &InterceptorContext<$phase>)
-        );
-    };
-    (mut context, $outer_name:ident, $inner_name:ident, $phase:ident) => {
-        interceptor_impl_fn!(
-            $outer_name,
-            $inner_name(context: &mut InterceptorContext<$phase>)
-        );
-    };
-    ($outer_name:ident, $inner_name:ident ($context:ident : $context_ty:ty)) => {
-        pub fn $outer_name(
+    (mut $interceptor:ident) => {
+        pub fn $interceptor(
             &self,
-            $context: $context_ty,
+            ctx: &mut InterceptorContext,
             cfg: &mut ConfigBag,
         ) -> Result<(), InterceptorError> {
             let mut result: Result<(), BoxError> = Ok(());
+            let mut ctx = ctx.into();
             for interceptor in self.interceptors() {
-                if let Err(new_error) = interceptor.$inner_name($context, cfg) {
+                if let Err(new_error) = interceptor.$interceptor(&mut ctx, cfg) {
                     if let Err(last_error) = result {
                         tracing::debug!("{}", DisplayErrorContext(&*last_error));
                     }
                     result = Err(new_error);
                 }
             }
-            result.map_err(InterceptorError::$inner_name)
+            result.map_err(InterceptorError::$interceptor)
+        }
+    };
+    (ref $interceptor:ident) => {
+        pub fn $interceptor(
+            &self,
+            ctx: &InterceptorContext,
+            cfg: &mut ConfigBag,
+        ) -> Result<(), InterceptorError> {
+            let mut result: Result<(), BoxError> = Ok(());
+            let ctx = ctx.into();
+            for interceptor in self.interceptors() {
+                if let Err(new_error) = interceptor.$interceptor(&ctx, cfg) {
+                    if let Err(last_error) = result {
+                        tracing::debug!("{}", DisplayErrorContext(&*last_error));
+                    }
+                    result = Err(new_error);
+                }
+            }
+            result.map_err(InterceptorError::$interceptor)
         }
     };
 }
@@ -679,48 +694,128 @@ impl Interceptors {
         &mut self.operation_interceptors
     }
 
-    interceptor_impl_fn!(
-        context,
-        client_read_before_execution,
-        read_before_execution,
-        BeforeSerialization
-    );
-    interceptor_impl_fn!(
-        context,
-        operation_read_before_execution,
-        read_before_execution,
-        BeforeSerialization
-    );
-    interceptor_impl_fn!(
-        mut context,
-        modify_before_serialization,
-        BeforeSerialization
-    );
-    interceptor_impl_fn!(context, read_before_serialization, BeforeSerialization);
-    interceptor_impl_fn!(context, read_after_serialization, BeforeTransmit);
-    interceptor_impl_fn!(mut context, modify_before_retry_loop, BeforeTransmit);
-    interceptor_impl_fn!(context, read_before_attempt, BeforeTransmit);
-    interceptor_impl_fn!(mut context, modify_before_signing, BeforeTransmit);
-    interceptor_impl_fn!(context, read_before_signing, BeforeTransmit);
-    interceptor_impl_fn!(context, read_after_signing, BeforeTransmit);
-    interceptor_impl_fn!(mut context, modify_before_transmit, BeforeTransmit);
-    interceptor_impl_fn!(context, read_before_transmit, BeforeTransmit);
-    interceptor_impl_fn!(context, read_after_transmit, BeforeDeserialization);
-    interceptor_impl_fn!(
-        mut context,
-        modify_before_deserialization,
-        BeforeDeserialization
-    );
-    interceptor_impl_fn!(context, read_before_deserialization, BeforeDeserialization);
-    interceptor_impl_fn!(context, read_after_deserialization, AfterDeserialization);
-    interceptor_impl_fn!(
-        mut context,
-        modify_before_attempt_completion,
-        AfterDeserialization
-    );
-    interceptor_impl_fn!(context, read_after_attempt, AfterDeserialization);
-    interceptor_impl_fn!(mut context, modify_before_completion, AfterDeserialization);
-    interceptor_impl_fn!(context, read_after_execution, AfterDeserialization);
+    pub fn client_read_before_execution(
+        &self,
+        ctx: &InterceptorContext<Input, Output, Error>,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), InterceptorError> {
+        let mut result: Result<(), BoxError> = Ok(());
+        let ctx: BeforeSerializationInterceptorContextRef<'_> = ctx.into();
+        for interceptor in self.client_interceptors.0.iter() {
+            if let Err(new_error) = interceptor.read_before_execution(&ctx, cfg) {
+                if let Err(last_error) = result {
+                    tracing::debug!("{}", DisplayErrorContext(&*last_error));
+                }
+                result = Err(new_error);
+            }
+        }
+        result.map_err(InterceptorError::read_before_execution)
+    }
+
+    pub fn operation_read_before_execution(
+        &self,
+        ctx: &InterceptorContext<Input, Output, Error>,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), InterceptorError> {
+        let mut result: Result<(), BoxError> = Ok(());
+        let ctx: BeforeSerializationInterceptorContextRef<'_> = ctx.into();
+        for interceptor in self.operation_interceptors.0.iter() {
+            if let Err(new_error) = interceptor.read_before_execution(&ctx, cfg) {
+                if let Err(last_error) = result {
+                    tracing::debug!("{}", DisplayErrorContext(&*last_error));
+                }
+                result = Err(new_error);
+            }
+        }
+        result.map_err(InterceptorError::read_before_execution)
+    }
+
+    interceptor_impl_fn!(mut modify_before_serialization);
+    interceptor_impl_fn!(ref read_before_serialization);
+    interceptor_impl_fn!(ref read_after_serialization);
+    interceptor_impl_fn!(mut modify_before_retry_loop);
+    interceptor_impl_fn!(ref read_before_attempt);
+    interceptor_impl_fn!(mut modify_before_signing);
+    interceptor_impl_fn!(ref read_before_signing);
+    interceptor_impl_fn!(ref read_after_signing);
+    interceptor_impl_fn!(mut modify_before_transmit);
+    interceptor_impl_fn!(ref read_before_transmit);
+    interceptor_impl_fn!(ref read_after_transmit);
+    interceptor_impl_fn!(mut modify_before_deserialization);
+    interceptor_impl_fn!(ref read_before_deserialization);
+    interceptor_impl_fn!(ref read_after_deserialization);
+
+    pub fn modify_before_attempt_completion(
+        &self,
+        ctx: &mut InterceptorContext<Input, Output, Error>,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), InterceptorError> {
+        let mut result: Result<(), BoxError> = Ok(());
+        let mut ctx: FinalizerInterceptorContextMut<'_> = ctx.into();
+        for interceptor in self.interceptors() {
+            if let Err(new_error) = interceptor.modify_before_attempt_completion(&mut ctx, cfg) {
+                if let Err(last_error) = result {
+                    tracing::debug!("{}", DisplayErrorContext(&*last_error));
+                }
+                result = Err(new_error);
+            }
+        }
+        result.map_err(InterceptorError::modify_before_attempt_completion)
+    }
+
+    pub fn read_after_attempt(
+        &self,
+        ctx: &InterceptorContext<Input, Output, Error>,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), InterceptorError> {
+        let mut result: Result<(), BoxError> = Ok(());
+        let ctx: FinalizerInterceptorContextRef<'_> = ctx.into();
+        for interceptor in self.interceptors() {
+            if let Err(new_error) = interceptor.read_after_attempt(&ctx, cfg) {
+                if let Err(last_error) = result {
+                    tracing::debug!("{}", DisplayErrorContext(&*last_error));
+                }
+                result = Err(new_error);
+            }
+        }
+        result.map_err(InterceptorError::read_after_attempt)
+    }
+
+    pub fn modify_before_completion(
+        &self,
+        ctx: &mut InterceptorContext<Input, Output, Error>,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), InterceptorError> {
+        let mut result: Result<(), BoxError> = Ok(());
+        let mut ctx: FinalizerInterceptorContextMut<'_> = ctx.into();
+        for interceptor in self.interceptors() {
+            if let Err(new_error) = interceptor.modify_before_completion(&mut ctx, cfg) {
+                if let Err(last_error) = result {
+                    tracing::debug!("{}", DisplayErrorContext(&*last_error));
+                }
+                result = Err(new_error);
+            }
+        }
+        result.map_err(InterceptorError::modify_before_completion)
+    }
+
+    pub fn read_after_execution(
+        &self,
+        ctx: &InterceptorContext<Input, Output, Error>,
+        cfg: &mut ConfigBag,
+    ) -> Result<(), InterceptorError> {
+        let mut result: Result<(), BoxError> = Ok(());
+        let ctx: FinalizerInterceptorContextRef<'_> = ctx.into();
+        for interceptor in self.interceptors() {
+            if let Err(new_error) = interceptor.read_after_execution(&ctx, cfg) {
+                if let Err(last_error) = result {
+                    tracing::debug!("{}", DisplayErrorContext(&*last_error));
+                }
+                result = Err(new_error);
+            }
+        }
+        result.map_err(InterceptorError::read_after_execution)
+    }
 }
 
 #[cfg(test)]

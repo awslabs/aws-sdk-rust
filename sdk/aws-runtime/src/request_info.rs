@@ -4,8 +4,9 @@
  */
 
 use aws_smithy_runtime::client::orchestrator::interceptors::{RequestAttempts, ServiceClockSkew};
-use aws_smithy_runtime_api::client::interceptors::context::phase::BeforeTransmit;
-use aws_smithy_runtime_api::client::interceptors::{BoxError, Interceptor, InterceptorContext};
+use aws_smithy_runtime_api::client::interceptors::{
+    BeforeTransmitInterceptorContextMut, BoxError, Interceptor,
+};
 use aws_smithy_runtime_api::config_bag::ConfigBag;
 use aws_smithy_types::date_time::Format;
 use aws_smithy_types::retry::RetryConfig;
@@ -79,7 +80,7 @@ impl RequestInfoInterceptor {
 impl Interceptor for RequestInfoInterceptor {
     fn modify_before_transmit(
         &self,
-        context: &mut InterceptorContext<BeforeTransmit>,
+        context: &mut BeforeTransmitInterceptorContextMut<'_>,
         cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
         let mut pairs = RequestPairs::new();
@@ -156,7 +157,6 @@ mod tests {
     use crate::request_info::RequestPairs;
     use aws_smithy_http::body::SdkBody;
     use aws_smithy_runtime::client::orchestrator::interceptors::RequestAttempts;
-    use aws_smithy_runtime_api::client::interceptors::context::phase::BeforeTransmit;
     use aws_smithy_runtime_api::client::interceptors::{Interceptor, InterceptorContext};
     use aws_smithy_runtime_api::config_bag::ConfigBag;
     use aws_smithy_runtime_api::type_erasure::TypedBox;
@@ -165,10 +165,7 @@ mod tests {
     use http::HeaderValue;
     use std::time::Duration;
 
-    fn expect_header<'a>(
-        context: &'a InterceptorContext<BeforeTransmit>,
-        header_name: &str,
-    ) -> &'a str {
+    fn expect_header<'a>(context: &'a InterceptorContext, header_name: &str) -> &'a str {
         context
             .request()
             .headers()
@@ -180,8 +177,8 @@ mod tests {
 
     #[test]
     fn test_request_pairs_for_initial_attempt() {
-        let context = InterceptorContext::<()>::new(TypedBox::new("doesntmatter").erase());
-        let mut context = context.into_serialization_phase();
+        let mut context = InterceptorContext::new(TypedBox::new("doesntmatter").erase());
+        context.enter_serialization_phase();
         context.set_request(http::Request::builder().body(SdkBody::empty()).unwrap());
 
         let mut config = ConfigBag::base();
@@ -194,10 +191,11 @@ mod tests {
         config.put(RequestAttempts::new());
 
         let _ = context.take_input();
-        let mut context = context.into_before_transmit_phase();
+        context.enter_before_transmit_phase();
         let interceptor = RequestInfoInterceptor::new();
+        let mut ctx = (&mut context).into();
         interceptor
-            .modify_before_transmit(&mut context, &mut config)
+            .modify_before_transmit(&mut ctx, &mut config)
             .unwrap();
 
         assert_eq!(
