@@ -4,16 +4,12 @@
  */
 
 use aws_credential_types::provider::SharedCredentialsProvider;
-use aws_http::user_agent::AwsUserAgent;
 use aws_sdk_s3::{config::Credentials, config::Region, types::ObjectAttributes, Client};
 use aws_smithy_client::test_connection::TestConnection;
 use aws_smithy_http::body::SdkBody;
 use aws_types::SdkConfig;
 use http::header::AUTHORIZATION;
-use std::{
-    convert::Infallible,
-    time::{Duration, UNIX_EPOCH},
-};
+use std::time::{Duration, UNIX_EPOCH};
 
 const RESPONSE_BODY_XML: &[u8] = b"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<GetObjectAttributesResponse xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\"><Checksum><ChecksumSHA1>e1AsOh9IyGCa4hLN+2Od7jlnP14=</ChecksumSHA1></Checksum></GetObjectAttributesResponse>";
 
@@ -60,14 +56,8 @@ async fn ignore_invalid_xml_body_root() {
         .customize()
         .await
         .unwrap()
-        .map_operation(|mut op| {
-            op.properties_mut()
-                .insert(UNIX_EPOCH + Duration::from_secs(1624036048));
-            op.properties_mut().insert(AwsUserAgent::for_tests());
-
-            Result::Ok::<_, Infallible>(op)
-        })
-        .unwrap()
+        .request_time_for_tests(UNIX_EPOCH + Duration::from_secs(1624036048))
+        .user_agent_for_tests()
         .send()
         .await
         .unwrap();

@@ -5,7 +5,6 @@
 
 use aws_config::SdkConfig;
 use aws_credential_types::provider::SharedCredentialsProvider;
-use aws_http::user_agent::AwsUserAgent;
 use aws_sdk_s3::config::{Credentials, Region};
 use aws_sdk_s3::types::ChecksumMode;
 use aws_sdk_s3::Client;
@@ -14,10 +13,7 @@ use aws_smithy_client::test_connection::{capture_request, TestConnection};
 use aws_smithy_http::body::SdkBody;
 use http::header::AUTHORIZATION;
 use http::{HeaderValue, Uri};
-use std::{
-    convert::Infallible,
-    time::{Duration, UNIX_EPOCH},
-};
+use std::time::{Duration, UNIX_EPOCH};
 use tracing_test::traced_test;
 
 /// Test connection for the movies IT
@@ -77,14 +73,8 @@ async fn test_checksum_on_streaming_response(
         .customize()
         .await
         .unwrap()
-        .map_operation(|mut op| {
-            op.properties_mut()
-                .insert(UNIX_EPOCH + Duration::from_secs(1624036048));
-            op.properties_mut().insert(AwsUserAgent::for_tests());
-
-            Result::Ok::<_, Infallible>(op)
-        })
-        .unwrap()
+        .request_time_for_tests(UNIX_EPOCH + Duration::from_secs(1624036048))
+        .user_agent_for_tests()
         .send()
         .await
         .unwrap();
@@ -191,14 +181,8 @@ async fn test_checksum_on_streaming_request<'a>(
         .customize()
         .await
         .unwrap()
-        .map_operation(|mut op| {
-            op.properties_mut()
-                .insert(UNIX_EPOCH + Duration::from_secs(1624036048));
-            op.properties_mut().insert(AwsUserAgent::for_tests());
-
-            Result::Ok::<_, Infallible>(op)
-        })
-        .unwrap()
+        .request_time_for_tests(UNIX_EPOCH + Duration::from_secs(1624036048))
+        .user_agent_for_tests()
         .send()
         .await
         .unwrap();

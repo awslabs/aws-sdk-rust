@@ -60,6 +60,22 @@ impl<O, Retry> CustomizableOperation<O, Retry> {
     pub fn request_mut(&mut self) -> &mut ::http::Request<::aws_smithy_http::body::SdkBody> {
         self.operation.request_mut()
     }
+
+    #[doc(hidden)]
+    // This is a temporary method for testing. NEVER use it in production
+    pub fn request_time_for_tests(mut self, request_time: ::std::time::SystemTime) -> Self {
+        self.operation.properties_mut().insert(request_time);
+        self
+    }
+
+    #[doc(hidden)]
+    // This is a temporary method for testing. NEVER use it in production
+    pub fn user_agent_for_tests(mut self) -> Self {
+        self.operation
+            .properties_mut()
+            .insert(::aws_http::user_agent::AwsUserAgent::for_tests());
+        self
+    }
 }
 
 impl<O, Retry> CustomizableOperation<O, Retry> {
