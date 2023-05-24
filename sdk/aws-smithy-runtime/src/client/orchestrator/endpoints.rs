@@ -48,6 +48,23 @@ impl EndpointResolver for StaticUriEndpointResolver {
     }
 }
 
+/// Empty params to be used with [`StaticUriEndpointResolver`].
+#[derive(Debug, Default)]
+pub struct StaticUriEndpointResolverParams;
+
+impl StaticUriEndpointResolverParams {
+    /// Creates a new `StaticUriEndpointResolverParams`.
+    pub fn new() -> Self {
+        Self
+    }
+}
+
+impl From<StaticUriEndpointResolverParams> for EndpointResolverParams {
+    fn from(params: StaticUriEndpointResolverParams) -> Self {
+        EndpointResolverParams::new(params)
+    }
+}
+
 #[derive(Debug, Clone)]
 pub struct DefaultEndpointResolver<Params> {
     inner: SharedEndpointResolver<Params>,

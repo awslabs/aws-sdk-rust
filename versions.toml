@@ -1,4 +1,4 @@
-smithy_rs_revision = 'ee1637887bea53afa71265b4b9a9d5568242a146'
+smithy_rs_revision = '5cfd37a70a1e78f00f0f01a0aef9342f13b11ca7'
 aws_doc_sdk_examples_revision = 'f4fc46139c2ea0784e31cadd19b430fcd2bbc21a'
 
 [manual_interventions]
@@ -2147,12 +2147,12 @@ source_hash = 'd12701f76780a15d39af40294ba0ad347e3060ec722b450d29db8ebbc097bd29'
 [crates.aws-smithy-runtime]
 category = 'SmithyRuntime'
 version = '0.55.2'
-source_hash = '8891afa46bc9ce1923cf74b2e3dddbae4a692a09135a4a6f4e81c5608ce3a7b9'
+source_hash = '64f2756f32598254c690ebc16f751ec3b1a6a9ece5882a29da3325fa85c0b761'
 
 [crates.aws-smithy-runtime-api]
 category = 'SmithyRuntime'
 version = '0.55.2'
-source_hash = '242d800ba99dcb92b6d10e0c5d88c93e217d6d74b2ce828f7c19f98c88942d6f'
+source_hash = 'ab6612080eaa325f3f3f47b49497d6613116f2be54ba67f3c041f70c1ce7ee8d'
 
 [crates.aws-smithy-types]
 category = 'SmithyRuntime'
@@ -2173,11 +2173,6 @@ source_hash = '20cfa396b9319ee9af43481afb08888a33ee0071b95a663952a6ddd719b25a21'
 category = 'AwsRuntime'
 version = '0.55.2'
 source_hash = '4d038ddfbef121dbea2e4ae535a1165a93c79de9ff0f7615831a31ba40482941'
-
-[crates.aws-wasm]
-category = 'AwsRuntime'
-version = '0.1.0'
-source_hash = '7591778bbf75f0788a4d186f114fba1ea29677f41848619ee9df93a7d3026043'
 [release.crates]
 aws-sdk-accessanalyzer = '0.28.0'
 aws-sdk-account = '0.28.0'
@@ -2520,4 +2515,3 @@ aws-sdk-workmailmessageflow = '0.28.0'
 aws-sdk-workspaces = '0.28.0'
 aws-sdk-workspacesweb = '0.28.0'
 aws-sdk-xray = '0.28.0'
-aws-wasm = '0.1.0'

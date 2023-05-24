@@ -3,10 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use crate::client::orchestrator::AttemptCheckpoint;
 use crate::{bail, handle_err};
 use aws_smithy_http::result::SdkError;
-use aws_smithy_runtime_api::client::interceptors::context::Error;
+use aws_smithy_runtime_api::client::interceptors::context::{AttemptCheckpoint, Error};
 use aws_smithy_runtime_api::client::orchestrator::{BoxError, ConfigBagAccessors, HttpResponse};
 use aws_smithy_runtime_api::config_bag::ConfigBag;
 
