@@ -15,3 +15,5 @@ pub mod connections;
 /// This code defines when and how failed requests should be retried. It also defines the behavior
 /// used to limit the rate at which requests are sent.
 pub mod retries;
+
+mod timeout;

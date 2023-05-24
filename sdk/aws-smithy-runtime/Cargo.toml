@@ -20,8 +20,13 @@ test-util = ["dep:aws-smithy-protocol-test"]
 bytes = "1"
 http = "0.2.8"
 http-body = "0.4.5"
+pin-project-lite = "0.2.7"
 pin-utils = "0.1.0"
 tracing = "0.1"
+
+[dependencies.aws-smithy-async]
+path = "../aws-smithy-async"
+version = "0.55.2"
 
 [dependencies.aws-smithy-client]
 path = "../aws-smithy-client"
@@ -47,6 +52,11 @@ version = "0.55.2"
 [dependencies.tokio]
 version = "1.25"
 features = []
+[dev-dependencies.aws-smithy-async]
+path = "../aws-smithy-async"
+features = ["rt-tokio"]
+version = "0.55.2"
+
 [dev-dependencies.tokio]
 version = "1.25"
-features = ["macros", "rt"]
+features = ["macros", "rt", "test-util"]

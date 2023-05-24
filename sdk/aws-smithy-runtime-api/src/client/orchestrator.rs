@@ -11,12 +11,14 @@ use crate::client::retries::RetryStrategy;
 use crate::config_bag::ConfigBag;
 use crate::type_erasure::{TypeErasedBox, TypedBox};
 use aws_smithy_async::future::now_or_later::NowOrLater;
+use aws_smithy_async::rt::sleep::AsyncSleep;
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::endpoint::EndpointPrefix;
 use std::any::Any;
 use std::fmt::Debug;
 use std::future::Future as StdFuture;
 use std::pin::Pin;
+use std::sync::Arc;
 use std::time::SystemTime;
 
 pub type HttpRequest = http::Request<SdkBody>;
@@ -142,6 +144,9 @@ pub trait ConfigBagAccessors {
 
     fn request_time(&self) -> Option<RequestTime>;
     fn set_request_time(&mut self, request_time: RequestTime);
+
+    fn sleep_impl(&self) -> Option<Arc<dyn AsyncSleep>>;
+    fn set_sleep_impl(&mut self, async_sleep: Option<Arc<dyn AsyncSleep>>);
 }
 
 impl ConfigBagAccessors for ConfigBag {
@@ -275,5 +280,17 @@ impl ConfigBagAccessors for ConfigBag {
 
     fn set_request_time(&mut self, request_time: RequestTime) {
         self.put::<RequestTime>(request_time);
+    }
+
+    fn sleep_impl(&self) -> Option<Arc<dyn AsyncSleep>> {
+        self.get::<Arc<dyn AsyncSleep>>().cloned()
+    }
+
+    fn set_sleep_impl(&mut self, sleep_impl: Option<Arc<dyn AsyncSleep>>) {
+        if let Some(sleep_impl) = sleep_impl {
+            self.put::<Arc<dyn AsyncSleep>>(sleep_impl);
+        } else {
+            self.unset::<Arc<dyn AsyncSleep>>();
+        }
     }
 }

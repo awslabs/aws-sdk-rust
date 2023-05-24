@@ -65,7 +65,12 @@ async fn test_timeout_service_ends_request_that_never_completes() {
         .await
         .unwrap_err();
 
-    assert_eq!("TimeoutError(TimeoutError { source: RequestTimeoutError { kind: \"operation timeout (all attempts including retries)\", duration: 500ms } })", format!("{:?}", err));
+    let expected = "operation timeout (all attempts including retries) occurred after 500ms";
+    let message = format!("{}", DisplayErrorContext(err));
+    assert!(
+        message.contains(expected),
+        "expected '{message}' to contain '{expected}'"
+    );
     assert_elapsed!(now, std::time::Duration::from_secs_f32(0.5));
 }
 
