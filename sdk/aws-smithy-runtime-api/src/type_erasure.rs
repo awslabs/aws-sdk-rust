@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use std::any::{type_name, Any};
+use std::any::Any;
+use std::error::Error as StdError;
 use std::fmt;
 use std::marker::PhantomData;
 use std::ops::{Deref, DerefMut};
@@ -62,13 +63,24 @@ where
     }
 }
 
+impl<T> TypedBox<T>
+where
+    T: StdError + fmt::Debug + Send + Sync + 'static,
+{
+    /// Converts `TypedBox<T>` to a `TypeErasedError` where `T` implements `Error`.
+    pub fn erase_error(self) -> TypeErasedError {
+        let inner = self.inner.downcast::<T>().expect("typechecked");
+        TypeErasedError::new(inner)
+    }
+}
+
 impl<T> fmt::Debug for TypedBox<T>
 where
     T: Send + Sync + 'static,
 {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.write_str("TypedBox:")?;
-        (self.inner.debug)(&self.inner, f)
+        (self.inner.debug)(&self.inner.field, f)
     }
 }
 
@@ -89,47 +101,34 @@ impl<T: fmt::Debug + Send + Sync + 'static> DerefMut for TypedBox<T> {
 /// A new-type around `Box<dyn Debug + Send + Sync>`
 pub struct TypeErasedBox {
     field: Box<dyn Any + Send + Sync>,
-    #[allow(dead_code)]
-    type_name: &'static str,
     #[allow(clippy::type_complexity)]
-    debug: Box<dyn Fn(&TypeErasedBox, &mut fmt::Formatter<'_>) -> fmt::Result + Send + Sync>,
+    debug: Box<
+        dyn Fn(&Box<dyn Any + Send + Sync>, &mut fmt::Formatter<'_>) -> fmt::Result + Send + Sync,
+    >,
 }
 
 impl fmt::Debug for TypeErasedBox {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.write_str("TypeErasedBox:")?;
-        (self.debug)(self, f)
+        (self.debug)(&self.field, f)
     }
 }
 
 impl TypeErasedBox {
     pub fn new<T: Send + Sync + fmt::Debug + 'static>(value: T) -> Self {
-        let debug = |value: &TypeErasedBox, f: &mut fmt::Formatter<'_>| {
+        let debug = |value: &Box<dyn Any + Send + Sync>, f: &mut fmt::Formatter<'_>| {
             fmt::Debug::fmt(value.downcast_ref::<T>().expect("typechecked"), f)
         };
-        let name = type_name::<T>();
         Self {
             field: Box::new(value),
-            type_name: name,
             debug: Box::new(debug),
         }
     }
 
     // Downcast into a `Box<T>`, or return `Self` if it is not a `T`.
     pub fn downcast<T: fmt::Debug + Send + Sync + 'static>(self) -> Result<Box<T>, Self> {
-        let TypeErasedBox {
-            field,
-            type_name,
-            debug,
-        } = self;
-        match field.downcast() {
-            Ok(t) => Ok(t),
-            Err(s) => Err(Self {
-                field: s,
-                type_name,
-                debug,
-            }),
-        }
+        let TypeErasedBox { field, debug } = self;
+        field.downcast().map_err(|field| Self { field, debug })
     }
 
     /// Downcast as a `&T`, or return `None` if it is not a `T`.
@@ -139,6 +138,88 @@ impl TypeErasedBox {
 
     /// Downcast as a `&mut T`, or return `None` if it is not a `T`.
     pub fn downcast_mut<T: fmt::Debug + Send + Sync + 'static>(&mut self) -> Option<&mut T> {
+        self.field.downcast_mut()
+    }
+}
+
+impl From<TypeErasedError> for TypeErasedBox {
+    fn from(value: TypeErasedError) -> Self {
+        TypeErasedBox {
+            field: value.field,
+            debug: value.debug,
+        }
+    }
+}
+
+/// A new-type around `Box<dyn Error + Debug + Send + Sync>` that also implements `Error`
+pub struct TypeErasedError {
+    field: Box<dyn Any + Send + Sync>,
+    #[allow(clippy::type_complexity)]
+    debug: Box<
+        dyn Fn(&Box<dyn Any + Send + Sync>, &mut fmt::Formatter<'_>) -> fmt::Result + Send + Sync,
+    >,
+    #[allow(clippy::type_complexity)]
+    as_error: Box<dyn for<'a> Fn(&'a TypeErasedError) -> &'a (dyn StdError) + Send + Sync>,
+}
+
+impl fmt::Debug for TypeErasedError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.write_str("TypeErasedError:")?;
+        (self.debug)(&self.field, f)
+    }
+}
+
+impl fmt::Display for TypeErasedError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        fmt::Display::fmt((self.as_error)(self), f)
+    }
+}
+
+impl StdError for TypeErasedError {
+    fn source(&self) -> Option<&(dyn StdError + 'static)> {
+        (self.as_error)(self).source()
+    }
+}
+
+impl TypeErasedError {
+    pub fn new<T: StdError + Send + Sync + fmt::Debug + 'static>(value: T) -> Self {
+        let debug = |value: &Box<dyn Any + Send + Sync>, f: &mut fmt::Formatter<'_>| {
+            fmt::Debug::fmt(value.downcast_ref::<T>().expect("typechecked"), f)
+        };
+        Self {
+            field: Box::new(value),
+            debug: Box::new(debug),
+            as_error: Box::new(|value: &TypeErasedError| {
+                value.downcast_ref::<T>().expect("typechecked") as _
+            }),
+        }
+    }
+
+    // Downcast into a `Box<T>`, or return `Self` if it is not a `T`.
+    pub fn downcast<T: StdError + fmt::Debug + Send + Sync + 'static>(
+        self,
+    ) -> Result<Box<T>, Self> {
+        let TypeErasedError {
+            field,
+            debug,
+            as_error,
+        } = self;
+        field.downcast().map_err(|field| Self {
+            field,
+            debug,
+            as_error,
+        })
+    }
+
+    /// Downcast as a `&T`, or return `None` if it is not a `T`.
+    pub fn downcast_ref<T: StdError + fmt::Debug + Send + Sync + 'static>(&self) -> Option<&T> {
+        self.field.downcast_ref()
+    }
+
+    /// Downcast as a `&mut T`, or return `None` if it is not a `T`.
+    pub fn downcast_mut<T: StdError + fmt::Debug + Send + Sync + 'static>(
+        &mut self,
+    ) -> Option<&mut T> {
         self.field.downcast_mut()
     }
 }

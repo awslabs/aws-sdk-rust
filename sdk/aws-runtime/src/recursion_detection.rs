@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use aws_smithy_runtime_api::client::interceptors::context::phase::BeforeTransmit;
 use aws_smithy_runtime_api::client::interceptors::{BoxError, Interceptor, InterceptorContext};
 use aws_smithy_runtime_api::config_bag::ConfigBag;
 use aws_types::os_shim_internal::Env;
@@ -39,10 +40,10 @@ impl RecursionDetectionInterceptor {
 impl Interceptor for RecursionDetectionInterceptor {
     fn modify_before_signing(
         &self,
-        context: &mut InterceptorContext,
+        context: &mut InterceptorContext<BeforeTransmit>,
         _cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
-        let request = context.request_mut()?;
+        let request = context.request_mut();
         if request.headers().contains_key(TRACE_ID_HEADER) {
             return Ok(());
         }
@@ -145,14 +146,17 @@ mod tests {
             request = request.header(name, value);
         }
         let request = request.body(SdkBody::empty()).expect("must be valid");
-        let mut context = InterceptorContext::new(TypedBox::new("doesntmatter").erase());
+        let mut context = InterceptorContext::<()>::new(TypedBox::new("doesntmatter").erase())
+            .into_serialization_phase();
         context.set_request(request);
+        let _ = context.take_input();
+        let mut context = context.into_before_transmit_phase();
         let mut config = ConfigBag::base();
 
         RecursionDetectionInterceptor { env }
             .modify_before_signing(&mut context, &mut config)
             .expect("interceptor must succeed");
-        let mutated_request = context.request().expect("request is still set");
+        let mutated_request = context.request();
         for name in mutated_request.headers().keys() {
             assert_eq!(
                 mutated_request.headers().get_all(name).iter().count(),

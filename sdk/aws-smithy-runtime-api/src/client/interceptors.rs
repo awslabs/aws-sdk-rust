@@ -6,6 +6,9 @@
 pub mod context;
 pub mod error;
 
+use crate::client::interceptors::context::phase::{
+    AfterDeserialization, BeforeDeserialization, BeforeSerialization, BeforeTransmit,
+};
 use crate::config_bag::ConfigBag;
 use aws_smithy_types::error::display::DisplayErrorContext;
 pub use context::InterceptorContext;
@@ -13,19 +16,23 @@ pub use error::{BoxError, InterceptorError};
 use std::sync::Arc;
 
 macro_rules! interceptor_trait_fn {
-    ($name:ident, $docs:tt) => {
+    ($name:ident, $phase:ident, $docs:tt) => {
         #[doc = $docs]
-        fn $name(&self, context: &InterceptorContext, cfg: &mut ConfigBag) -> Result<(), BoxError> {
+        fn $name(
+            &self,
+            context: &InterceptorContext<$phase>,
+            cfg: &mut ConfigBag,
+        ) -> Result<(), BoxError> {
             let _ctx = context;
             let _cfg = cfg;
             Ok(())
         }
     };
-    (mut $name:ident, $docs:tt) => {
+    (mut $name:ident, $phase:ident, $docs:tt) => {
         #[doc = $docs]
         fn $name(
             &self,
-            context: &mut InterceptorContext,
+            context: &mut InterceptorContext<$phase>,
             cfg: &mut ConfigBag,
         ) -> Result<(), BoxError> {
             let _ctx = context;
@@ -48,6 +55,7 @@ macro_rules! interceptor_trait_fn {
 pub trait Interceptor: std::fmt::Debug {
     interceptor_trait_fn!(
         read_before_execution,
+        BeforeSerialization,
         "
         A hook called at the start of an execution, before the SDK
         does anything else.
@@ -71,6 +79,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         mut modify_before_serialization,
+        BeforeSerialization,
         "
         A hook called before the input message is marshalled into a
         transport message.
@@ -98,6 +107,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         read_before_serialization,
+        BeforeSerialization,
         "
         A hook called before the input message is marshalled
         into a transport
@@ -119,6 +129,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         read_after_serialization,
+        BeforeTransmit,
         "
         /// A hook called after the input message is marshalled into
         /// a transport message.
@@ -140,6 +151,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         mut modify_before_retry_loop,
+        BeforeTransmit,
         "
         A hook called before the retry loop is entered. This method
         has the ability to modify and return a new transport request
@@ -161,6 +173,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         read_before_attempt,
+        BeforeTransmit,
         "
         A hook called before each attempt at sending the transmission
         request message to the service.
@@ -187,6 +200,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         mut modify_before_signing,
+        BeforeTransmit,
         "
         A hook called before the transport request message is signed.
         This method has the ability to modify and return a new transport
@@ -218,6 +232,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         read_before_signing,
+        BeforeTransmit,
         "
         A hook called before the transport request message is signed.
 
@@ -241,6 +256,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         read_after_signing,
+        BeforeTransmit,
         "
         A hook called after the transport request message is signed.
 
@@ -264,6 +280,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         mut modify_before_transmit,
+        BeforeTransmit,
         "
         /// A hook called before the transport request message is sent to the
         /// service. This method has the ability to modify and return
@@ -295,6 +312,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         read_before_transmit,
+        BeforeTransmit,
         "
         A hook called before the transport request message is sent to the
         service.
@@ -322,6 +340,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         read_after_transmit,
+        BeforeDeserialization,
         "
         A hook called after the transport request message is sent to the
         service and a transport response message is received.
@@ -349,6 +368,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         mut modify_before_deserialization,
+        BeforeDeserialization,
         "
         A hook called before the transport response message is unmarshalled.
         This method has the ability to modify and return a new transport
@@ -380,6 +400,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         read_before_deserialization,
+        BeforeDeserialization,
         "
         A hook called before the transport response message is unmarshalled
 
@@ -406,6 +427,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         read_after_deserialization,
+        AfterDeserialization,
         "
         A hook called after the transport response message is unmarshalled.
 
@@ -432,6 +454,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         mut modify_before_attempt_completion,
+        AfterDeserialization,
         "
         A hook called when an attempt is completed. This method has the
         ability to modify and return a new output message or error
@@ -460,6 +483,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         read_after_attempt,
+        AfterDeserialization,
         "
         A hook called when an attempt is completed.
 
@@ -488,6 +512,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         mut modify_before_completion,
+        AfterDeserialization,
         "
         A hook called when an execution is completed.
         This method has the ability to modify and return a new
@@ -514,6 +539,7 @@ pub trait Interceptor: std::fmt::Debug {
 
     interceptor_trait_fn!(
         read_after_execution,
+        AfterDeserialization,
         "
         A hook called when an execution is completed.
 
@@ -546,17 +572,23 @@ pub struct Interceptors {
 }
 
 macro_rules! interceptor_impl_fn {
-    (context, $name:ident) => {
-        interceptor_impl_fn!(context, $name, $name);
+    (context, $name:ident, $phase:ident) => {
+        interceptor_impl_fn!(context, $name, $name, $phase);
     };
-    (mut context, $name:ident) => {
-        interceptor_impl_fn!(mut context, $name, $name);
+    (mut context, $name:ident, $phase:ident) => {
+        interceptor_impl_fn!(mut context, $name, $name, $phase);
     };
-    (context, $outer_name:ident, $inner_name:ident) => {
-        interceptor_impl_fn!($outer_name, $inner_name(context: &InterceptorContext));
+    (context, $outer_name:ident, $inner_name:ident, $phase:ident) => {
+        interceptor_impl_fn!(
+            $outer_name,
+            $inner_name(context: &InterceptorContext<$phase>)
+        );
     };
-    (mut context, $outer_name:ident, $inner_name:ident) => {
-        interceptor_impl_fn!($outer_name, $inner_name(context: &mut InterceptorContext));
+    (mut context, $outer_name:ident, $inner_name:ident, $phase:ident) => {
+        interceptor_impl_fn!(
+            $outer_name,
+            $inner_name(context: &mut InterceptorContext<$phase>)
+        );
     };
     ($outer_name:ident, $inner_name:ident ($context:ident : $context_ty:ty)) => {
         pub fn $outer_name(
@@ -601,28 +633,46 @@ impl Interceptors {
         self
     }
 
-    interceptor_impl_fn!(context, client_read_before_execution, read_before_execution);
+    interceptor_impl_fn!(
+        context,
+        client_read_before_execution,
+        read_before_execution,
+        BeforeSerialization
+    );
     interceptor_impl_fn!(
         context,
         operation_read_before_execution,
-        read_before_execution
+        read_before_execution,
+        BeforeSerialization
     );
-    interceptor_impl_fn!(mut context, modify_before_serialization);
-    interceptor_impl_fn!(context, read_before_serialization);
-    interceptor_impl_fn!(context, read_after_serialization);
-    interceptor_impl_fn!(mut context, modify_before_retry_loop);
-    interceptor_impl_fn!(context, read_before_attempt);
-    interceptor_impl_fn!(mut context, modify_before_signing);
-    interceptor_impl_fn!(context, read_before_signing);
-    interceptor_impl_fn!(context, read_after_signing);
-    interceptor_impl_fn!(mut context, modify_before_transmit);
-    interceptor_impl_fn!(context, read_before_transmit);
-    interceptor_impl_fn!(context, read_after_transmit);
-    interceptor_impl_fn!(mut context, modify_before_deserialization);
-    interceptor_impl_fn!(context, read_before_deserialization);
-    interceptor_impl_fn!(context, read_after_deserialization);
-    interceptor_impl_fn!(mut context, modify_before_attempt_completion);
-    interceptor_impl_fn!(context, read_after_attempt);
-    interceptor_impl_fn!(mut context, modify_before_completion);
-    interceptor_impl_fn!(context, read_after_execution);
+    interceptor_impl_fn!(
+        mut context,
+        modify_before_serialization,
+        BeforeSerialization
+    );
+    interceptor_impl_fn!(context, read_before_serialization, BeforeSerialization);
+    interceptor_impl_fn!(context, read_after_serialization, BeforeTransmit);
+    interceptor_impl_fn!(mut context, modify_before_retry_loop, BeforeTransmit);
+    interceptor_impl_fn!(context, read_before_attempt, BeforeTransmit);
+    interceptor_impl_fn!(mut context, modify_before_signing, BeforeTransmit);
+    interceptor_impl_fn!(context, read_before_signing, BeforeTransmit);
+    interceptor_impl_fn!(context, read_after_signing, BeforeTransmit);
+    interceptor_impl_fn!(mut context, modify_before_transmit, BeforeTransmit);
+    interceptor_impl_fn!(context, read_before_transmit, BeforeTransmit);
+    interceptor_impl_fn!(context, read_after_transmit, BeforeDeserialization);
+    interceptor_impl_fn!(
+        mut context,
+        modify_before_deserialization,
+        BeforeDeserialization
+    );
+    interceptor_impl_fn!(context, read_before_deserialization, BeforeDeserialization);
+    interceptor_impl_fn!(context, read_after_deserialization, AfterDeserialization);
+    interceptor_impl_fn!(
+        mut context,
+        modify_before_attempt_completion,
+        AfterDeserialization
+    );
+    interceptor_impl_fn!(context, read_after_attempt, AfterDeserialization);
+    interceptor_impl_fn!(mut context, modify_before_completion, AfterDeserialization);
+    interceptor_impl_fn!(context, read_after_execution, AfterDeserialization);
 }

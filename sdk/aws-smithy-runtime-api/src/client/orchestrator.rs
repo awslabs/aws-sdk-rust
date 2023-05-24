@@ -5,7 +5,7 @@
 
 use crate::client::auth::{AuthOptionResolver, AuthOptionResolverParams, HttpAuthSchemes};
 use crate::client::identity::IdentityResolvers;
-use crate::client::interceptors::context::{Input, OutputOrError};
+use crate::client::interceptors::context::{Error, Input, Output};
 use crate::client::retries::RetryClassifiers;
 use crate::client::retries::RetryStrategy;
 use crate::config_bag::ConfigBag;
@@ -26,21 +26,17 @@ pub type BoxError = Box<dyn std::error::Error + Send + Sync + 'static>;
 pub type BoxFuture<T> = Pin<Box<dyn StdFuture<Output = Result<T, BoxError>>>>;
 pub type Future<T> = NowOrLater<Result<T, BoxError>, BoxFuture<T>>;
 
-pub trait TraceProbe: Send + Sync + fmt::Debug {
-    fn dispatch_events(&self);
-}
-
 pub trait RequestSerializer: Send + Sync + fmt::Debug {
     fn serialize_input(&self, input: Input) -> Result<HttpRequest, BoxError>;
 }
 
 pub trait ResponseDeserializer: Send + Sync + fmt::Debug {
-    fn deserialize_streaming(&self, response: &mut HttpResponse) -> Option<OutputOrError> {
+    fn deserialize_streaming(&self, response: &mut HttpResponse) -> Option<Result<Output, Error>> {
         let _ = response;
         None
     }
 
-    fn deserialize_nonstreaming(&self, response: &HttpResponse) -> OutputOrError;
+    fn deserialize_nonstreaming(&self, response: &HttpResponse) -> Result<Output, Error>;
 }
 
 pub trait Connection: Send + Sync + fmt::Debug {
@@ -137,9 +133,6 @@ pub trait ConfigBagAccessors {
 
     fn retry_strategy(&self) -> &dyn RetryStrategy;
     fn set_retry_strategy(&mut self, retry_strategy: impl RetryStrategy + 'static);
-
-    fn trace_probe(&self) -> &dyn TraceProbe;
-    fn set_trace_probe(&mut self, trace_probe: impl TraceProbe + 'static);
 
     fn request_time(&self) -> Option<RequestTime>;
     fn set_request_time(&mut self, request_time: RequestTime);
@@ -261,16 +254,6 @@ impl ConfigBagAccessors for ConfigBag {
 
     fn set_retry_strategy(&mut self, retry_strategy: impl RetryStrategy + 'static) {
         self.put::<Box<dyn RetryStrategy>>(Box::new(retry_strategy));
-    }
-
-    fn trace_probe(&self) -> &dyn TraceProbe {
-        &**self
-            .get::<Box<dyn TraceProbe>>()
-            .expect("missing trace probe")
-    }
-
-    fn set_trace_probe(&mut self, trace_probe: impl TraceProbe + 'static) {
-        self.put::<Box<dyn TraceProbe>>(Box::new(trace_probe));
     }
 
     fn request_time(&self) -> Option<RequestTime> {

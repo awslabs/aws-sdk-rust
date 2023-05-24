@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use aws_smithy_runtime_api::client::interceptors::context::phase::BeforeTransmit;
 use aws_smithy_runtime_api::client::interceptors::error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::{Interceptor, InterceptorContext};
 use aws_smithy_runtime_api::config_bag::ConfigBag;
@@ -37,10 +38,10 @@ impl Default for InvocationIdInterceptor {
 impl Interceptor for InvocationIdInterceptor {
     fn modify_before_retry_loop(
         &self,
-        context: &mut InterceptorContext,
+        context: &mut InterceptorContext<BeforeTransmit>,
         _cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
-        let headers = context.request_mut()?.headers_mut();
+        let headers = context.request_mut().headers_mut();
         let id = _cfg.get::<InvocationId>().unwrap_or(&self.id);
         headers.append(AMZ_SDK_INVOCATION_ID, id.0.clone());
         Ok(())
@@ -72,24 +73,26 @@ impl InvocationId {
 mod tests {
     use crate::invocation_id::InvocationIdInterceptor;
     use aws_smithy_http::body::SdkBody;
+    use aws_smithy_runtime_api::client::interceptors::context::phase::BeforeTransmit;
     use aws_smithy_runtime_api::client::interceptors::{Interceptor, InterceptorContext};
     use aws_smithy_runtime_api::config_bag::ConfigBag;
     use aws_smithy_runtime_api::type_erasure::TypedBox;
     use http::HeaderValue;
 
-    fn expect_header<'a>(context: &'a InterceptorContext, header_name: &str) -> &'a HeaderValue {
-        context
-            .request()
-            .unwrap()
-            .headers()
-            .get(header_name)
-            .unwrap()
+    fn expect_header<'a>(
+        context: &'a InterceptorContext<BeforeTransmit>,
+        header_name: &str,
+    ) -> &'a HeaderValue {
+        context.request().headers().get(header_name).unwrap()
     }
 
     #[test]
     fn test_id_is_generated_and_set() {
-        let mut context = InterceptorContext::new(TypedBox::new("doesntmatter").erase());
+        let mut context = InterceptorContext::<()>::new(TypedBox::new("doesntmatter").erase())
+            .into_serialization_phase();
         context.set_request(http::Request::builder().body(SdkBody::empty()).unwrap());
+        let _ = context.take_input();
+        let mut context = context.into_before_transmit_phase();
 
         let mut config = ConfigBag::base();
         let interceptor = InvocationIdInterceptor::new();

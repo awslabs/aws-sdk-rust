@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use aws_smithy_runtime_api::client::interceptors::context::phase::AfterDeserialization;
 use aws_smithy_runtime_api::client::interceptors::InterceptorContext;
 use aws_smithy_runtime_api::client::orchestrator::BoxError;
 use aws_smithy_runtime_api::client::retries::{RetryStrategy, ShouldAttempt};
@@ -24,7 +25,7 @@ impl RetryStrategy for NeverRetryStrategy {
 
     fn should_attempt_retry(
         &self,
-        _context: &InterceptorContext,
+        _context: &InterceptorContext<AfterDeserialization>,
         _cfg: &ConfigBag,
     ) -> Result<ShouldAttempt, BoxError> {
         Ok(ShouldAttempt::No)
