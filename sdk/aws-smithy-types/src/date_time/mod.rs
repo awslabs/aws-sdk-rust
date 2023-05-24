@@ -9,6 +9,7 @@ use crate::date_time::format::rfc3339::AllowOffsets;
 use crate::date_time::format::DateTimeParseErrorKind;
 use num_integer::div_mod_floor;
 use num_integer::Integer;
+use std::cmp::Ordering;
 use std::convert::TryFrom;
 use std::error::Error as StdError;
 use std::fmt;
@@ -301,6 +302,21 @@ impl From<SystemTime> for DateTime {
     }
 }
 
+impl PartialOrd for DateTime {
+    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
+        Some(self.cmp(other))
+    }
+}
+
+impl Ord for DateTime {
+    fn cmp(&self, other: &Self) -> Ordering {
+        match self.seconds.cmp(&other.seconds) {
+            Ordering::Equal => self.subsecond_nanos.cmp(&other.subsecond_nanos),
+            ordering => ordering,
+        }
+    }
+}
+
 /// Failure to convert a `DateTime` to or from another type.
 #[derive(Debug)]
 #[non_exhaustive]
@@ -551,5 +567,33 @@ mod test {
             SystemTime::from(off_date_time),
             SystemTime::try_from(date_time).unwrap()
         );
+    }
+
+    #[test]
+    fn ord() {
+        let first = DateTime::from_secs_and_nanos(-1, 0);
+        let second = DateTime::from_secs_and_nanos(0, 0);
+        let third = DateTime::from_secs_and_nanos(0, 1);
+        let fourth = DateTime::from_secs_and_nanos(1, 0);
+
+        assert!(first == first);
+        assert!(first < second);
+        assert!(first < third);
+        assert!(first < fourth);
+
+        assert!(second > first);
+        assert!(second == second);
+        assert!(second < third);
+        assert!(second < fourth);
+
+        assert!(third > first);
+        assert!(third > second);
+        assert!(third == third);
+        assert!(third < fourth);
+
+        assert!(fourth > first);
+        assert!(fourth > second);
+        assert!(fourth > third);
+        assert!(fourth == fourth);
     }
 }
