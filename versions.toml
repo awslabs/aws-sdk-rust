@@ -1,4 +1,4 @@
-smithy_rs_revision = '3b5fc51a41700c88270145e38fa708eca72dc414'
+smithy_rs_revision = 'e3c65ffe1be1f319e69b65e4b2cbdc72b00279fa'
 aws_doc_sdk_examples_revision = 'f4fc46139c2ea0784e31cadd19b430fcd2bbc21a'
 
 [manual_interventions]
@@ -2173,6 +2173,10 @@ source_hash = '44187abe0ad08f90e8e20238b298966c8de83f6ddede2a2266e90a274b80820f'
 category = 'AwsRuntime'
 version = '0.55.3'
 source_hash = '1d030b71fffc3f77436425ea04bf13f1620f8a83079d1bff0eeda28f6b669c50'
+
+[release]
+tag = 'release-2023-05-24'
+
 [release.crates]
 aws-config = '0.55.3'
 aws-credential-types = '0.55.3'
