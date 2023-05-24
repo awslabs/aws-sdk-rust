@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetModel {
         if !success && status != 200 {
             crate::protocol_serde::shape_get_model::de_get_model_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_model::de_get_model_http_response(
+            crate::protocol_serde::shape_get_model::de_get_model_http_response_with_props(
                 status, headers, body,
             )
         }

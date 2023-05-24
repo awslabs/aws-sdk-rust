@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAlias {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_alias::de_update_alias_http_response(
+            crate::protocol_serde::shape_update_alias::de_update_alias_http_response_with_props(
                 status, headers, body,
             )
         }

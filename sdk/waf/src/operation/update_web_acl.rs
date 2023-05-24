@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateWebACL {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_web_acl::de_update_web_acl_http_response(
+            crate::protocol_serde::shape_update_web_acl::de_update_web_acl_http_response_with_props(
                 status, headers, body,
             )
         }

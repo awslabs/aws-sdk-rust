@@ -156,7 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDeviceProfile {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_device_profile::de_delete_device_profile_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_device_profile::de_delete_device_profile_http_response_with_props(status, headers, body)
         }
     }
 }

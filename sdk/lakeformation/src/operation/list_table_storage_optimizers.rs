@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTableStorageOptimize
         if !success && status != 200 {
             crate::protocol_serde::shape_list_table_storage_optimizers::de_list_table_storage_optimizers_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_table_storage_optimizers::de_list_table_storage_optimizers_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_table_storage_optimizers::de_list_table_storage_optimizers_http_response_with_props(status, headers, body)
         }
     }
 }

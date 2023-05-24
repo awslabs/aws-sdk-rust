@@ -156,7 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableCrl {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_disable_crl::de_disable_crl_http_response(
+            crate::protocol_serde::shape_disable_crl::de_disable_crl_http_response_with_props(
                 status, headers, body,
             )
         }

@@ -107,7 +107,7 @@ pub fn de_describe_access_control_configuration_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_access_control_configuration_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_access_control_configuration::DescribeAccessControlConfigurationOutput, crate::operation::describe_access_control_configuration::DescribeAccessControlConfigurationError>{
+pub fn de_describe_access_control_configuration_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_access_control_configuration::DescribeAccessControlConfigurationOutput, crate::operation::describe_access_control_configuration::DescribeAccessControlConfigurationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_access_control_configuration::builders::DescribeAccessControlConfigurationOutputBuilder::default();

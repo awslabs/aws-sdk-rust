@@ -170,7 +170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBot {
         if !success && status != 202 {
             crate::protocol_serde::shape_delete_bot::de_delete_bot_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_bot::de_delete_bot_http_response(
+            crate::protocol_serde::shape_delete_bot::de_delete_bot_http_response_with_props(
                 status, headers, body,
             )
         }

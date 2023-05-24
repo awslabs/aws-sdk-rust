@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFlowDefinitions {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_flow_definitions::de_list_flow_definitions_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_flow_definitions::de_list_flow_definitions_http_response_with_props(status, headers, body)
         }
     }
 }

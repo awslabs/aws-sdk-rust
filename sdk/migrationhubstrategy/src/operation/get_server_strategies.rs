@@ -160,7 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServerStrategies {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_server_strategies::de_get_server_strategies_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_server_strategies::de_get_server_strategies_http_response_with_props(status, headers, body)
         }
     }
 }

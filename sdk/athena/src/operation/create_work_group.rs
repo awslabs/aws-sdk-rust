@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkGroup {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_work_group::de_create_work_group_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_work_group::de_create_work_group_http_response_with_props(status, headers, body)
         }
     }
 }

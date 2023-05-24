@@ -180,9 +180,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveFlowOutput {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_remove_flow_output::de_remove_flow_output_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_remove_flow_output::de_remove_flow_output_http_response_with_props(status, headers, body)
         }
     }
 }

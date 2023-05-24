@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AllowCustomRoutingTraffi
         if !success && status != 200 {
             crate::protocol_serde::shape_allow_custom_routing_traffic::de_allow_custom_routing_traffic_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_allow_custom_routing_traffic::de_allow_custom_routing_traffic_http_response(status, headers, body)
+            crate::protocol_serde::shape_allow_custom_routing_traffic::de_allow_custom_routing_traffic_http_response_with_props(status, headers, body)
         }
     }
 }

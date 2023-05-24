@@ -107,7 +107,7 @@ pub fn de_list_permission_sets_provisioned_to_account_http_error(_response_statu
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_permission_sets_provisioned_to_account_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountOutput, crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountError>{
+pub fn de_list_permission_sets_provisioned_to_account_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountOutput, crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_permission_sets_provisioned_to_account::builders::ListPermissionSetsProvisionedToAccountOutputBuilder::default();

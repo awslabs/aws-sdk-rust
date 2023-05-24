@@ -192,7 +192,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRefreshSchedule {
         if !success && status != 200 {
             crate::protocol_serde::shape_update_refresh_schedule::de_update_refresh_schedule_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_update_refresh_schedule::de_update_refresh_schedule_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_refresh_schedule::de_update_refresh_schedule_http_response_with_props(status, headers, body)
         }
     }
 }

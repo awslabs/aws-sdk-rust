@@ -139,7 +139,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNetworkInterfacePe
         if !success && status != 200 {
             crate::protocol_serde::shape_create_network_interface_permission::de_create_network_interface_permission_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_network_interface_permission::de_create_network_interface_permission_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_network_interface_permission::de_create_network_interface_permission_http_response_with_props(status, headers, body)
         }
     }
 }

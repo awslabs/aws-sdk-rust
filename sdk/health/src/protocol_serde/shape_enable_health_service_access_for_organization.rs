@@ -39,7 +39,7 @@ pub fn de_enable_health_service_access_for_organization_http_error(_response_sta
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_enable_health_service_access_for_organization_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationOutput, crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationError>{
+pub fn de_enable_health_service_access_for_organization_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationOutput, crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::enable_health_service_access_for_organization::builders::EnableHealthServiceAccessForOrganizationOutputBuilder::default();

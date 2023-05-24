@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutCompositeAlarm {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_put_composite_alarm::de_put_composite_alarm_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_put_composite_alarm::de_put_composite_alarm_http_response_with_props(status, headers, body)
         }
     }
 }

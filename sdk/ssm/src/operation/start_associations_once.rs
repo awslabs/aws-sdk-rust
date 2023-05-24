@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartAssociationsOnce {
         if !success && status != 200 {
             crate::protocol_serde::shape_start_associations_once::de_start_associations_once_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_start_associations_once::de_start_associations_once_http_response(status, headers, body)
+            crate::protocol_serde::shape_start_associations_once::de_start_associations_once_http_response_with_props(status, headers, body)
         }
     }
 }

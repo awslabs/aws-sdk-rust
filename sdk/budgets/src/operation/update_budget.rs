@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBudget {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_budget::de_update_budget_http_response(
+            crate::protocol_serde::shape_update_budget::de_update_budget_http_response_with_props(
                 status, headers, body,
             )
         }

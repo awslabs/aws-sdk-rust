@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePolicies {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_policies::de_describe_policies_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_describe_policies::de_describe_policies_http_response_with_props(status, headers, body)
         }
     }
 }

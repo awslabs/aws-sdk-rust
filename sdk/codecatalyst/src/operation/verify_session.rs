@@ -123,7 +123,7 @@ impl aws_smithy_http::response::ParseStrictResponse for VerifySession {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_verify_session::de_verify_session_http_response(
+            crate::protocol_serde::shape_verify_session::de_verify_session_http_response_with_props(
                 status, headers, body,
             )
         }

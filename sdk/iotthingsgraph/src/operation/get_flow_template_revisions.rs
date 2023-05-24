@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFlowTemplateRevisions
         if !success && status != 200 {
             crate::protocol_serde::shape_get_flow_template_revisions::de_get_flow_template_revisions_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_flow_template_revisions::de_get_flow_template_revisions_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_flow_template_revisions::de_get_flow_template_revisions_http_response_with_props(status, headers, body)
         }
     }
 }

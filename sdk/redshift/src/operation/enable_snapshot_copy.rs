@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableSnapshotCopy {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_enable_snapshot_copy::de_enable_snapshot_copy_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_enable_snapshot_copy::de_enable_snapshot_copy_http_response_with_props(status, headers, body)
         }
     }
 }

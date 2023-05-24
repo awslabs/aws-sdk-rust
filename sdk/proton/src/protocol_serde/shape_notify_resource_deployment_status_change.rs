@@ -139,7 +139,7 @@ pub fn de_notify_resource_deployment_status_change_http_error(_response_status: 
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_notify_resource_deployment_status_change_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeOutput, crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeError>{
+pub fn de_notify_resource_deployment_status_change_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeOutput, crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::notify_resource_deployment_status_change::builders::NotifyResourceDeploymentStatusChangeOutputBuilder::default();

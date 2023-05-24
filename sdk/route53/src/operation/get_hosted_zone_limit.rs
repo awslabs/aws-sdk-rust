@@ -181,7 +181,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetHostedZoneLimit {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_hosted_zone_limit::de_get_hosted_zone_limit_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_hosted_zone_limit::de_get_hosted_zone_limit_http_response_with_props(status, headers, body)
         }
     }
 }

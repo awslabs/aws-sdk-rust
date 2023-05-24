@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachLoadBalancerTlsCer
         if !success && status != 200 {
             crate::protocol_serde::shape_attach_load_balancer_tls_certificate::de_attach_load_balancer_tls_certificate_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_attach_load_balancer_tls_certificate::de_attach_load_balancer_tls_certificate_http_response(status, headers, body)
+            crate::protocol_serde::shape_attach_load_balancer_tls_certificate::de_attach_load_balancer_tls_certificate_http_response_with_props(status, headers, body)
         }
     }
 }

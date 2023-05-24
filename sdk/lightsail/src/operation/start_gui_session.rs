@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartGUISession {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_start_gui_session::de_start_gui_session_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_start_gui_session::de_start_gui_session_http_response_with_props(status, headers, body)
         }
     }
 }

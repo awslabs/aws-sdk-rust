@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNetworkAcl {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_network_acl::de_create_network_acl_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_network_acl::de_create_network_acl_http_response_with_props(status, headers, body)
         }
     }
 }

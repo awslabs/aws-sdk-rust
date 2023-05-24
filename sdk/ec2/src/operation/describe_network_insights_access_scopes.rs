@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeNetworkInsightsA
         if !success && status != 200 {
             crate::protocol_serde::shape_describe_network_insights_access_scopes::de_describe_network_insights_access_scopes_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_describe_network_insights_access_scopes::de_describe_network_insights_access_scopes_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_network_insights_access_scopes::de_describe_network_insights_access_scopes_http_response_with_props(status, headers, body)
         }
     }
 }

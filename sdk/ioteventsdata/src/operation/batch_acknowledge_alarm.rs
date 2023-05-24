@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchAcknowledgeAlarm {
         if !success && status != 202 {
             crate::protocol_serde::shape_batch_acknowledge_alarm::de_batch_acknowledge_alarm_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_batch_acknowledge_alarm::de_batch_acknowledge_alarm_http_response(status, headers, body)
+            crate::protocol_serde::shape_batch_acknowledge_alarm::de_batch_acknowledge_alarm_http_response_with_props(status, headers, body)
         }
     }
 }

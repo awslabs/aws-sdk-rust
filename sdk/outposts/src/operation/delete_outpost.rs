@@ -156,7 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteOutpost {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_outpost::de_delete_outpost_http_response(
+            crate::protocol_serde::shape_delete_outpost::de_delete_outpost_http_response_with_props(
                 status, headers, body,
             )
         }

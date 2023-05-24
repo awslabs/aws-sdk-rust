@@ -214,9 +214,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateThemeAlias {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_theme_alias::de_create_theme_alias_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_theme_alias::de_create_theme_alias_http_response_with_props(status, headers, body)
         }
     }
 }

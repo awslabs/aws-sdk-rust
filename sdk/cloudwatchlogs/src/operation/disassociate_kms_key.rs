@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateKmsKey {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_disassociate_kms_key::de_disassociate_kms_key_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_disassociate_kms_key::de_disassociate_kms_key_http_response_with_props(status, headers, body)
         }
     }
 }

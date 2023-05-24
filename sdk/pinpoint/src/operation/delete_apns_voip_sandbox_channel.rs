@@ -158,7 +158,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteApnsVoipSandboxCha
         if !success && status != 200 {
             crate::protocol_serde::shape_delete_apns_voip_sandbox_channel::de_delete_apns_voip_sandbox_channel_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_apns_voip_sandbox_channel::de_delete_apns_voip_sandbox_channel_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_apns_voip_sandbox_channel::de_delete_apns_voip_sandbox_channel_http_response_with_props(status, headers, body)
         }
     }
 }

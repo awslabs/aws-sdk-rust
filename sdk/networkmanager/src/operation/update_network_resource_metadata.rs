@@ -193,7 +193,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateNetworkResourceMet
         if !success && status != 200 {
             crate::protocol_serde::shape_update_network_resource_metadata::de_update_network_resource_metadata_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_update_network_resource_metadata::de_update_network_resource_metadata_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_network_resource_metadata::de_update_network_resource_metadata_http_response_with_props(status, headers, body)
         }
     }
 }

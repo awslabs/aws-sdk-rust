@@ -152,7 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAwsLogSource {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_aws_log_source::de_delete_aws_log_source_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_aws_log_source::de_delete_aws_log_source_http_response_with_props(status, headers, body)
         }
     }
 }

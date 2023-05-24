@@ -154,7 +154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchAssociateAssessment
         if !success && status != 200 {
             crate::protocol_serde::shape_batch_associate_assessment_report_evidence::de_batch_associate_assessment_report_evidence_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_batch_associate_assessment_report_evidence::de_batch_associate_assessment_report_evidence_http_response(status, headers, body)
+            crate::protocol_serde::shape_batch_associate_assessment_report_evidence::de_batch_associate_assessment_report_evidence_http_response_with_props(status, headers, body)
         }
     }
 }

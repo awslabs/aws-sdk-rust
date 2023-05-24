@@ -139,7 +139,7 @@ pub fn de_associate_signin_delegate_groups_with_account_http_error(_response_sta
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_associate_signin_delegate_groups_with_account_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountOutput, crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountError>{
+pub fn de_associate_signin_delegate_groups_with_account_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountOutput, crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::associate_signin_delegate_groups_with_account::builders::AssociateSigninDelegateGroupsWithAccountOutputBuilder::default();

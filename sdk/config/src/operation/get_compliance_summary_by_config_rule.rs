@@ -128,7 +128,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetComplianceSummaryByCo
         if !success && status != 200 {
             crate::protocol_serde::shape_get_compliance_summary_by_config_rule::de_get_compliance_summary_by_config_rule_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_compliance_summary_by_config_rule::de_get_compliance_summary_by_config_rule_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_compliance_summary_by_config_rule::de_get_compliance_summary_by_config_rule_http_response_with_props(status, headers, body)
         }
     }
 }

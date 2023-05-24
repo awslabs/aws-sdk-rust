@@ -180,7 +180,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateModel {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_model::de_create_model_http_response(
+            crate::protocol_serde::shape_create_model::de_create_model_http_response_with_props(
                 status, headers, body,
             )
         }

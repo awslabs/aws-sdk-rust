@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateHost {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_host::de_create_host_http_response(
+            crate::protocol_serde::shape_create_host::de_create_host_http_response_with_props(
                 status, headers, body,
             )
         }

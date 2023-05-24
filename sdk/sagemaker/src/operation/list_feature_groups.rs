@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFeatureGroups {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_feature_groups::de_list_feature_groups_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_feature_groups::de_list_feature_groups_http_response_with_props(status, headers, body)
         }
     }
 }

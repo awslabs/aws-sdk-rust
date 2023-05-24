@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDBSnapshot {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_db_snapshot::de_create_db_snapshot_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_db_snapshot::de_create_db_snapshot_http_response_with_props(status, headers, body)
         }
     }
 }

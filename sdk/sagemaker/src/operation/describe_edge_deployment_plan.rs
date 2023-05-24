@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEdgeDeploymentPl
         if !success && status != 200 {
             crate::protocol_serde::shape_describe_edge_deployment_plan::de_describe_edge_deployment_plan_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_describe_edge_deployment_plan::de_describe_edge_deployment_plan_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_edge_deployment_plan::de_describe_edge_deployment_plan_http_response_with_props(status, headers, body)
         }
     }
 }

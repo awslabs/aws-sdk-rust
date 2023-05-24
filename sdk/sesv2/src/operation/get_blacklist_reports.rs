@@ -161,7 +161,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBlacklistReports {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_blacklist_reports::de_get_blacklist_reports_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_blacklist_reports::de_get_blacklist_reports_http_response_with_props(status, headers, body)
         }
     }
 }

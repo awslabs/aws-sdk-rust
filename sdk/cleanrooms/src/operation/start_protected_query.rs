@@ -176,7 +176,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartProtectedQuery {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_start_protected_query::de_start_protected_query_http_response(status, headers, body)
+            crate::protocol_serde::shape_start_protected_query::de_start_protected_query_http_response_with_props(status, headers, body)
         }
     }
     fn sensitive(&self) -> bool {

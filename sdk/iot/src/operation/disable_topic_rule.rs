@@ -156,9 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableTopicRule {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_disable_topic_rule::de_disable_topic_rule_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_disable_topic_rule::de_disable_topic_rule_http_response_with_props(status, headers, body)
         }
     }
 }

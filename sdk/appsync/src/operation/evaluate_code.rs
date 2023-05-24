@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EvaluateCode {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_evaluate_code::de_evaluate_code_http_response(
+            crate::protocol_serde::shape_evaluate_code::de_evaluate_code_http_response_with_props(
                 status, headers, body,
             )
         }

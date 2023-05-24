@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutDashboard {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_put_dashboard::de_put_dashboard_http_response(
+            crate::protocol_serde::shape_put_dashboard::de_put_dashboard_http_response_with_props(
                 status, headers, body,
             )
         }

@@ -160,9 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetApnsChannel {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_apns_channel::de_get_apns_channel_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_apns_channel::de_get_apns_channel_http_response_with_props(status, headers, body)
         }
     }
 }

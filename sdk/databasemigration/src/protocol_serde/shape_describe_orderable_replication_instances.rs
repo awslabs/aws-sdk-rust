@@ -19,7 +19,7 @@ pub fn de_describe_orderable_replication_instances_http_error(_response_status: 
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_orderable_replication_instances_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstancesOutput, crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstancesError>{
+pub fn de_describe_orderable_replication_instances_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstancesOutput, crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstancesError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_orderable_replication_instances::builders::DescribeOrderableReplicationInstancesOutputBuilder::default();

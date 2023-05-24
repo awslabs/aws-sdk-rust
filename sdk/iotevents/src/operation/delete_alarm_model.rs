@@ -160,9 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAlarmModel {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_alarm_model::de_delete_alarm_model_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_delete_alarm_model::de_delete_alarm_model_http_response_with_props(status, headers, body)
         }
     }
 }

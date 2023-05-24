@@ -183,9 +183,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProjectAssets {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_project_assets::de_list_project_assets_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_project_assets::de_list_project_assets_http_response_with_props(status, headers, body)
         }
     }
 }

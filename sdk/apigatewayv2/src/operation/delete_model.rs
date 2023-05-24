@@ -180,7 +180,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteModel {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_model::de_delete_model_http_response(
+            crate::protocol_serde::shape_delete_model::de_delete_model_http_response_with_props(
                 status, headers, body,
             )
         }

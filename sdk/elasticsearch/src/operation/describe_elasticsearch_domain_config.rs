@@ -140,7 +140,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeElasticsearchDom
         if !success && status != 200 {
             crate::protocol_serde::shape_describe_elasticsearch_domain_config::de_describe_elasticsearch_domain_config_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_describe_elasticsearch_domain_config::de_describe_elasticsearch_domain_config_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_elasticsearch_domain_config::de_describe_elasticsearch_domain_config_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -178,9 +178,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListThingGroups {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_thing_groups::de_list_thing_groups_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_thing_groups::de_list_thing_groups_http_response_with_props(status, headers, body)
         }
     }
 }

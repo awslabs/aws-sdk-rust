@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachObject {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_attach_object::de_attach_object_http_response(
+            crate::protocol_serde::shape_attach_object::de_attach_object_http_response_with_props(
                 status, headers, body,
             )
         }

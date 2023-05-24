@@ -200,7 +200,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRouteResponse {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_route_response::de_delete_route_response_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_route_response::de_delete_route_response_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDistributionWithTa
         if !success && status != 201 {
             crate::protocol_serde::shape_create_distribution_with_tags::de_create_distribution_with_tags_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_distribution_with_tags::de_create_distribution_with_tags_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_distribution_with_tags::de_create_distribution_with_tags_http_response_with_props(status, headers, body)
         }
     }
     fn sensitive(&self) -> bool {

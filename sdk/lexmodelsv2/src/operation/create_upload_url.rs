@@ -136,9 +136,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateUploadUrl {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_upload_url::de_create_upload_url_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_upload_url::de_create_upload_url_http_response_with_props(status, headers, body)
         }
     }
 }

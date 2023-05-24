@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSatellites {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_satellites::de_list_satellites_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_satellites::de_list_satellites_http_response_with_props(status, headers, body)
         }
     }
 }

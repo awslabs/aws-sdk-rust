@@ -147,7 +147,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateTagOptionWithRe
         if !success && status != 200 {
             crate::protocol_serde::shape_associate_tag_option_with_resource::de_associate_tag_option_with_resource_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_associate_tag_option_with_resource::de_associate_tag_option_with_resource_http_response(status, headers, body)
+            crate::protocol_serde::shape_associate_tag_option_with_resource::de_associate_tag_option_with_resource_http_response_with_props(status, headers, body)
         }
     }
 }

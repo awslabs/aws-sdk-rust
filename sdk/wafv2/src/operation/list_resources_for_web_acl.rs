@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourcesForWebACL {
         if !success && status != 200 {
             crate::protocol_serde::shape_list_resources_for_web_acl::de_list_resources_for_web_acl_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_resources_for_web_acl::de_list_resources_for_web_acl_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_resources_for_web_acl::de_list_resources_for_web_acl_http_response_with_props(status, headers, body)
         }
     }
 }

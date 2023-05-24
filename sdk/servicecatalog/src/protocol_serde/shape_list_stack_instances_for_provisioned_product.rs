@@ -59,7 +59,7 @@ pub fn de_list_stack_instances_for_provisioned_product_http_error(_response_stat
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_stack_instances_for_provisioned_product_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductOutput, crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductError>{
+pub fn de_list_stack_instances_for_provisioned_product_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductOutput, crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_stack_instances_for_provisioned_product::builders::ListStackInstancesForProvisionedProductOutputBuilder::default();

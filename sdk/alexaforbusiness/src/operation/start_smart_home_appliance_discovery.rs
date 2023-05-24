@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSmartHomeApplianceD
         if !success && status != 200 {
             crate::protocol_serde::shape_start_smart_home_appliance_discovery::de_start_smart_home_appliance_discovery_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_start_smart_home_appliance_discovery::de_start_smart_home_appliance_discovery_http_response(status, headers, body)
+            crate::protocol_serde::shape_start_smart_home_appliance_discovery::de_start_smart_home_appliance_discovery_http_response_with_props(status, headers, body)
         }
     }
 }

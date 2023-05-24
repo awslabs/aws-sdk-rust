@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeElasticGpus {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_elastic_gpus::de_describe_elastic_gpus_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_elastic_gpus::de_describe_elastic_gpus_http_response_with_props(status, headers, body)
         }
     }
 }

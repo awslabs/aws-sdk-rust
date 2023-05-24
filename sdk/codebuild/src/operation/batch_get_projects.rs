@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetProjects {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_batch_get_projects::de_batch_get_projects_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_batch_get_projects::de_batch_get_projects_http_response_with_props(status, headers, body)
         }
     }
 }

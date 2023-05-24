@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDeviceInstances {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_device_instances::de_list_device_instances_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_device_instances::de_list_device_instances_http_response_with_props(status, headers, body)
         }
     }
 }

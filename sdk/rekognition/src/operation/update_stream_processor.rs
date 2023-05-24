@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateStreamProcessor {
         if !success && status != 200 {
             crate::protocol_serde::shape_update_stream_processor::de_update_stream_processor_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_update_stream_processor::de_update_stream_processor_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_stream_processor::de_update_stream_processor_http_response_with_props(status, headers, body)
         }
     }
 }

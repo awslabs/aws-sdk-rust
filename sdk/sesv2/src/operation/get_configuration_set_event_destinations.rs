@@ -140,7 +140,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConfigurationSetEvent
         if !success && status != 200 {
             crate::protocol_serde::shape_get_configuration_set_event_destinations::de_get_configuration_set_event_destinations_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_configuration_set_event_destinations::de_get_configuration_set_event_destinations_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_configuration_set_event_destinations::de_get_configuration_set_event_destinations_http_response_with_props(status, headers, body)
         }
     }
 }

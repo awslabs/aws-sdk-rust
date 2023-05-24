@@ -185,7 +185,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRuntimeManagementConf
         if !success && status != 200 {
             crate::protocol_serde::shape_put_runtime_management_config::de_put_runtime_management_config_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_put_runtime_management_config::de_put_runtime_management_config_http_response(status, headers, body)
+            crate::protocol_serde::shape_put_runtime_management_config::de_put_runtime_management_config_http_response_with_props(status, headers, body)
         }
     }
 }

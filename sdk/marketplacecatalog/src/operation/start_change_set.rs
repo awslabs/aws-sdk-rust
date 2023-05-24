@@ -153,9 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartChangeSet {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_start_change_set::de_start_change_set_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_start_change_set::de_start_change_set_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAccountSuppressionAtt
         if !success && status != 200 {
             crate::protocol_serde::shape_put_account_suppression_attributes::de_put_account_suppression_attributes_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_put_account_suppression_attributes::de_put_account_suppression_attributes_http_response(status, headers, body)
+            crate::protocol_serde::shape_put_account_suppression_attributes::de_put_account_suppression_attributes_http_response_with_props(status, headers, body)
         }
     }
 }

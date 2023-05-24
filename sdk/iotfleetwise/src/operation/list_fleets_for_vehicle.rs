@@ -174,7 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFleetsForVehicle {
         if !success && status != 200 {
             crate::protocol_serde::shape_list_fleets_for_vehicle::de_list_fleets_for_vehicle_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_fleets_for_vehicle::de_list_fleets_for_vehicle_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_fleets_for_vehicle::de_list_fleets_for_vehicle_http_response_with_props(status, headers, body)
         }
     }
 }

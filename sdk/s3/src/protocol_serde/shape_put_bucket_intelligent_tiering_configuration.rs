@@ -11,7 +11,7 @@ pub fn de_put_bucket_intelligent_tiering_configuration_http_error(_response_stat
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_bucket_intelligent_tiering_configuration_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationOutput, crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationError>{
+pub fn de_put_bucket_intelligent_tiering_configuration_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationOutput, crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::put_bucket_intelligent_tiering_configuration::builders::PutBucketIntelligentTieringConfigurationOutputBuilder::default();

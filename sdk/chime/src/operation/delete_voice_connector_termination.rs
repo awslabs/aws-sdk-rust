@@ -152,7 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVoiceConnectorTerm
         if !success && status != 204 {
             crate::protocol_serde::shape_delete_voice_connector_termination::de_delete_voice_connector_termination_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_voice_connector_termination::de_delete_voice_connector_termination_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_voice_connector_termination::de_delete_voice_connector_termination_http_response_with_props(status, headers, body)
         }
     }
 }

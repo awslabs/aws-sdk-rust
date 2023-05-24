@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListActions {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_actions::de_list_actions_http_response(
+            crate::protocol_serde::shape_list_actions::de_list_actions_http_response_with_props(
                 status, headers, body,
             )
         }

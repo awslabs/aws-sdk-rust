@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddApplicationInputProce
         if !success && status != 200 {
             crate::protocol_serde::shape_add_application_input_processing_configuration::de_add_application_input_processing_configuration_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_add_application_input_processing_configuration::de_add_application_input_processing_configuration_http_response(status, headers, body)
+            crate::protocol_serde::shape_add_application_input_processing_configuration::de_add_application_input_processing_configuration_http_response_with_props(status, headers, body)
         }
     }
 }

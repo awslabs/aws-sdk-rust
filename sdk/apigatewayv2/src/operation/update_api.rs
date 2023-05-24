@@ -168,7 +168,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateApi {
         if !success && status != 200 {
             crate::protocol_serde::shape_update_api::de_update_api_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_update_api::de_update_api_http_response(
+            crate::protocol_serde::shape_update_api::de_update_api_http_response_with_props(
                 status, headers, body,
             )
         }

@@ -156,7 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGatewayCapabilityC
         if !success && status != 201 {
             crate::protocol_serde::shape_update_gateway_capability_configuration::de_update_gateway_capability_configuration_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_update_gateway_capability_configuration::de_update_gateway_capability_configuration_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_gateway_capability_configuration::de_update_gateway_capability_configuration_http_response_with_props(status, headers, body)
         }
     }
 }

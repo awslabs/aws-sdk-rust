@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAttributes {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_put_attributes::de_put_attributes_http_response(
+            crate::protocol_serde::shape_put_attributes::de_put_attributes_http_response_with_props(
                 status, headers, body,
             )
         }

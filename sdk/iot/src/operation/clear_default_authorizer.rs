@@ -134,7 +134,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ClearDefaultAuthorizer {
         if !success && status != 200 {
             crate::protocol_serde::shape_clear_default_authorizer::de_clear_default_authorizer_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_clear_default_authorizer::de_clear_default_authorizer_http_response(status, headers, body)
+            crate::protocol_serde::shape_clear_default_authorizer::de_clear_default_authorizer_http_response_with_props(status, headers, body)
         }
     }
 }

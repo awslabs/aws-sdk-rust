@@ -147,7 +147,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGroupsOlderThanOrder
         if !success && status != 200 {
             crate::protocol_serde::shape_list_groups_older_than_ordering_id::de_list_groups_older_than_ordering_id_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_groups_older_than_ordering_id::de_list_groups_older_than_ordering_id_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_groups_older_than_ordering_id::de_list_groups_older_than_ordering_id_http_response_with_props(status, headers, body)
         }
     }
 }

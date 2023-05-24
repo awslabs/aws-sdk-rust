@@ -9,7 +9,7 @@ pub fn de_get_host_reservation_purchase_preview_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_host_reservation_purchase_preview_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewOutput, crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewError>{
+pub fn de_get_host_reservation_purchase_preview_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewOutput, crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_host_reservation_purchase_preview::builders::GetHostReservationPurchasePreviewOutputBuilder::default();

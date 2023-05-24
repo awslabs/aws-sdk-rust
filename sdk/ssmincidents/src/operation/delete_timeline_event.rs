@@ -152,7 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTimelineEvent {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_timeline_event::de_delete_timeline_event_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_timeline_event::de_delete_timeline_event_http_response_with_props(status, headers, body)
         }
     }
 }

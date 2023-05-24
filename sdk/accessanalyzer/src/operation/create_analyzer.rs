@@ -153,9 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAnalyzer {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_analyzer::de_create_analyzer_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_analyzer::de_create_analyzer_http_response_with_props(status, headers, body)
         }
     }
 }

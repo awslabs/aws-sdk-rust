@@ -159,7 +159,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetProgrammaticAccessCre
         if !success && status != 200 {
             crate::protocol_serde::shape_get_programmatic_access_credentials::de_get_programmatic_access_credentials_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_programmatic_access_credentials::de_get_programmatic_access_credentials_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_programmatic_access_credentials::de_get_programmatic_access_credentials_http_response_with_props(status, headers, body)
         }
     }
 }

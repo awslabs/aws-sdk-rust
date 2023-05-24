@@ -179,7 +179,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetObjectLegalHold {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_object_legal_hold::de_get_object_legal_hold_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_object_legal_hold::de_get_object_legal_hold_http_response_with_props(status, headers, body)
         }
     }
 }

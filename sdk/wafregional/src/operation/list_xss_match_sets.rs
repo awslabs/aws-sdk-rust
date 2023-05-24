@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListXssMatchSets {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_xss_match_sets::de_list_xss_match_sets_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_xss_match_sets::de_list_xss_match_sets_http_response_with_props(status, headers, body)
         }
     }
 }

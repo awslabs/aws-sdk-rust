@@ -170,7 +170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateControl {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_control::de_update_control_http_response(
+            crate::protocol_serde::shape_update_control::de_update_control_http_response_with_props(
                 status, headers, body,
             )
         }

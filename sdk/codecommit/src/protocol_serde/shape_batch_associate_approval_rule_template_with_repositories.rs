@@ -187,7 +187,7 @@ pub fn de_batch_associate_approval_rule_template_with_repositories_http_error(_r
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_batch_associate_approval_rule_template_with_repositories_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesOutput, crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesError>{
+pub fn de_batch_associate_approval_rule_template_with_repositories_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesOutput, crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::batch_associate_approval_rule_template_with_repositories::builders::BatchAssociateApprovalRuleTemplateWithRepositoriesOutputBuilder::default();

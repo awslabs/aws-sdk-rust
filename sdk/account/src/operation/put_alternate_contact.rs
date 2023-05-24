@@ -152,7 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAlternateContact {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_put_alternate_contact::de_put_alternate_contact_http_response(status, headers, body)
+            crate::protocol_serde::shape_put_alternate_contact::de_put_alternate_contact_http_response_with_props(status, headers, body)
         }
     }
 }

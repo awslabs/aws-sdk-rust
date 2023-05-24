@@ -155,7 +155,7 @@ pub fn de_delete_license_manager_report_generator_http_error(_response_status: u
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_license_manager_report_generator_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorOutput, crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError>{
+pub fn de_delete_license_manager_report_generator_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorOutput, crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_license_manager_report_generator::builders::DeleteLicenseManagerReportGeneratorOutputBuilder::default();

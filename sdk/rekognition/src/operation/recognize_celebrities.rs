@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RecognizeCelebrities {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_recognize_celebrities::de_recognize_celebrities_http_response(status, headers, body)
+            crate::protocol_serde::shape_recognize_celebrities::de_recognize_celebrities_http_response_with_props(status, headers, body)
         }
     }
 }

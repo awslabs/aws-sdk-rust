@@ -9,7 +9,7 @@ pub fn de_get_instance_types_from_instance_requirements_http_error(_response_sta
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_instance_types_from_instance_requirements_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsOutput, crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsError>{
+pub fn de_get_instance_types_from_instance_requirements_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsOutput, crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_instance_types_from_instance_requirements::builders::GetInstanceTypesFromInstanceRequirementsOutputBuilder::default();

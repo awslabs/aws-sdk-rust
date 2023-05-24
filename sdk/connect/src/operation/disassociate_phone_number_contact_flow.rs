@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociatePhoneNumberC
         if !success && status != 200 {
             crate::protocol_serde::shape_disassociate_phone_number_contact_flow::de_disassociate_phone_number_contact_flow_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_disassociate_phone_number_contact_flow::de_disassociate_phone_number_contact_flow_http_response(status, headers, body)
+            crate::protocol_serde::shape_disassociate_phone_number_contact_flow::de_disassociate_phone_number_contact_flow_http_response_with_props(status, headers, body)
         }
     }
 }

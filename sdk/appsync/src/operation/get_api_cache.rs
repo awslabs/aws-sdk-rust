@@ -156,7 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetApiCache {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_api_cache::de_get_api_cache_http_response(
+            crate::protocol_serde::shape_get_api_cache::de_get_api_cache_http_response_with_props(
                 status, headers, body,
             )
         }

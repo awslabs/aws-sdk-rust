@@ -191,7 +191,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReimportApi {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_reimport_api::de_reimport_api_http_response(
+            crate::protocol_serde::shape_reimport_api::de_reimport_api_http_response_with_props(
                 status, headers, body,
             )
         }

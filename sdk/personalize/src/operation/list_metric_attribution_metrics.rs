@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMetricAttributionMet
         if !success && status != 200 {
             crate::protocol_serde::shape_list_metric_attribution_metrics::de_list_metric_attribution_metrics_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_metric_attribution_metrics::de_list_metric_attribution_metrics_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_metric_attribution_metrics::de_list_metric_attribution_metrics_http_response_with_props(status, headers, body)
         }
     }
 }

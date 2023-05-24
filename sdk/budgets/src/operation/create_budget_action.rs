@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBudgetAction {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_budget_action::de_create_budget_action_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_budget_action::de_create_budget_action_http_response_with_props(status, headers, body)
         }
     }
 }

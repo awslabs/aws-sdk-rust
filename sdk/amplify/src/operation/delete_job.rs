@@ -198,7 +198,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteJob {
         if !success && status != 200 {
             crate::protocol_serde::shape_delete_job::de_delete_job_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_job::de_delete_job_http_response(
+            crate::protocol_serde::shape_delete_job::de_delete_job_http_response_with_props(
                 status, headers, body,
             )
         }

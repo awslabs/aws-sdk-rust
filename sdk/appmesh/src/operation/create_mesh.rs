@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMesh {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_mesh::de_create_mesh_http_response(
+            crate::protocol_serde::shape_create_mesh::de_create_mesh_http_response_with_props(
                 status, headers, body,
             )
         }

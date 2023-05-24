@@ -153,9 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkspace {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_workspace::de_create_workspace_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_workspace::de_create_workspace_http_response_with_props(status, headers, body)
         }
     }
 }

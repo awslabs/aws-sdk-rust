@@ -15,7 +15,7 @@ pub fn de_get_sagemaker_servicecatalog_portfolio_status_http_error(_response_sta
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_sagemaker_servicecatalog_portfolio_status_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_sagemaker_servicecatalog_portfolio_status::GetSagemakerServicecatalogPortfolioStatusOutput, crate::operation::get_sagemaker_servicecatalog_portfolio_status::GetSagemakerServicecatalogPortfolioStatusError>{
+pub fn de_get_sagemaker_servicecatalog_portfolio_status_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_sagemaker_servicecatalog_portfolio_status::GetSagemakerServicecatalogPortfolioStatusOutput, crate::operation::get_sagemaker_servicecatalog_portfolio_status::GetSagemakerServicecatalogPortfolioStatusError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_sagemaker_servicecatalog_portfolio_status::builders::GetSagemakerServicecatalogPortfolioStatusOutputBuilder::default();

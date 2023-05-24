@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTrial {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_trial::de_update_trial_http_response(
+            crate::protocol_serde::shape_update_trial::de_update_trial_http_response_with_props(
                 status, headers, body,
             )
         }

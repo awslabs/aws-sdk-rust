@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUsagePlan {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_usage_plan::de_get_usage_plan_http_response(
+            crate::protocol_serde::shape_get_usage_plan::de_get_usage_plan_http_response_with_props(
                 status, headers, body,
             )
         }

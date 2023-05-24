@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStaticIp {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_static_ip::de_get_static_ip_http_response(
+            crate::protocol_serde::shape_get_static_ip::de_get_static_ip_http_response_with_props(
                 status, headers, body,
             )
         }

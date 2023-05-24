@@ -180,7 +180,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetJobRun {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_job_run::de_get_job_run_http_response(
+            crate::protocol_serde::shape_get_job_run::de_get_job_run_http_response_with_props(
                 status, headers, body,
             )
         }

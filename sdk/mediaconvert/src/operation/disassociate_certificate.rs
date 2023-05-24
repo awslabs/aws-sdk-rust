@@ -154,7 +154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateCertificate 
         if !success && status != 202 {
             crate::protocol_serde::shape_disassociate_certificate::de_disassociate_certificate_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_disassociate_certificate::de_disassociate_certificate_http_response(status, headers, body)
+            crate::protocol_serde::shape_disassociate_certificate::de_disassociate_certificate_http_response_with_props(status, headers, body)
         }
     }
 }

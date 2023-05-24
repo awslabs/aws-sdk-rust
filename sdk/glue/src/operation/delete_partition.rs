@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePartition {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_partition::de_delete_partition_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_delete_partition::de_delete_partition_http_response_with_props(status, headers, body)
         }
     }
 }

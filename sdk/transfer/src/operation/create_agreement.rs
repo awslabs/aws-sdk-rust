@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAgreement {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_agreement::de_create_agreement_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_agreement::de_create_agreement_http_response_with_props(status, headers, body)
         }
     }
 }

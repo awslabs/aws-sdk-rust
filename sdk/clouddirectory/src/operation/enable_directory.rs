@@ -141,9 +141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableDirectory {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_enable_directory::de_enable_directory_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_enable_directory::de_enable_directory_http_response_with_props(status, headers, body)
         }
     }
 }

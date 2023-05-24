@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachDisk {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_detach_disk::de_detach_disk_http_response(
+            crate::protocol_serde::shape_detach_disk::de_detach_disk_http_response_with_props(
                 status, headers, body,
             )
         }

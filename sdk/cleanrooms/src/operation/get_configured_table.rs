@@ -160,9 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConfiguredTable {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_configured_table::de_get_configured_table_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_configured_table::de_get_configured_table_http_response_with_props(status, headers, body)
         }
     }
 }

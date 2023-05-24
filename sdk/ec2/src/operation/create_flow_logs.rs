@@ -152,9 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFlowLogs {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_flow_logs::de_create_flow_logs_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_flow_logs::de_create_flow_logs_http_response_with_props(status, headers, body)
         }
     }
 }

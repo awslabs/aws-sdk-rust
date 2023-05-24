@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterPublisher {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_register_publisher::de_register_publisher_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_register_publisher::de_register_publisher_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -194,9 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportBackendAuth {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_import_backend_auth::de_import_backend_auth_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_import_backend_auth::de_import_backend_auth_http_response_with_props(status, headers, body)
         }
     }
 }

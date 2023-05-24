@@ -160,7 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableProfile {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_enable_profile::de_enable_profile_http_response(
+            crate::protocol_serde::shape_enable_profile::de_enable_profile_http_response_with_props(
                 status, headers, body,
             )
         }

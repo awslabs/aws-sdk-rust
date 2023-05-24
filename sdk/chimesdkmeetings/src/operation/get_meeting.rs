@@ -156,7 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMeeting {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_meeting::de_get_meeting_http_response(
+            crate::protocol_serde::shape_get_meeting::de_get_meeting_http_response_with_props(
                 status, headers, body,
             )
         }

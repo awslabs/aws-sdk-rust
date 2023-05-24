@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartImport {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_start_import::de_start_import_http_response(
+            crate::protocol_serde::shape_start_import::de_start_import_http_response_with_props(
                 status, headers, body,
             )
         }

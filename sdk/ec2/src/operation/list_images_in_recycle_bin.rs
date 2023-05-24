@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListImagesInRecycleBin {
         if !success && status != 200 {
             crate::protocol_serde::shape_list_images_in_recycle_bin::de_list_images_in_recycle_bin_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_images_in_recycle_bin::de_list_images_in_recycle_bin_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_images_in_recycle_bin::de_list_images_in_recycle_bin_http_response_with_props(status, headers, body)
         }
     }
 }

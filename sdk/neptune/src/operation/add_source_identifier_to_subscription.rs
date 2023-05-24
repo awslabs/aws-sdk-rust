@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddSourceIdentifierToSub
         if !success && status != 200 {
             crate::protocol_serde::shape_add_source_identifier_to_subscription::de_add_source_identifier_to_subscription_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_add_source_identifier_to_subscription::de_add_source_identifier_to_subscription_http_response(status, headers, body)
+            crate::protocol_serde::shape_add_source_identifier_to_subscription::de_add_source_identifier_to_subscription_http_response_with_props(status, headers, body)
         }
     }
 }

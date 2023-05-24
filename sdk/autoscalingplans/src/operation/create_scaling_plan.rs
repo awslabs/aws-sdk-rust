@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateScalingPlan {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_scaling_plan::de_create_scaling_plan_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_scaling_plan::de_create_scaling_plan_http_response_with_props(status, headers, body)
         }
     }
 }

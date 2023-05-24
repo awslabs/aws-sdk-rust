@@ -75,7 +75,7 @@ pub fn de_associate_device_with_network_profile_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_associate_device_with_network_profile_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::associate_device_with_network_profile::AssociateDeviceWithNetworkProfileOutput, crate::operation::associate_device_with_network_profile::AssociateDeviceWithNetworkProfileError>{
+pub fn de_associate_device_with_network_profile_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::associate_device_with_network_profile::AssociateDeviceWithNetworkProfileOutput, crate::operation::associate_device_with_network_profile::AssociateDeviceWithNetworkProfileError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::associate_device_with_network_profile::builders::AssociateDeviceWithNetworkProfileOutputBuilder::default();

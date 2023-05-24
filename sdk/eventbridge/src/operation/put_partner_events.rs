@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutPartnerEvents {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_put_partner_events::de_put_partner_events_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_put_partner_events::de_put_partner_events_http_response_with_props(status, headers, body)
         }
     }
 }

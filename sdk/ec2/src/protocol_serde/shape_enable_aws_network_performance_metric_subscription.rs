@@ -9,7 +9,7 @@ pub fn de_enable_aws_network_performance_metric_subscription_http_error(_respons
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_enable_aws_network_performance_metric_subscription_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::enable_aws_network_performance_metric_subscription::EnableAwsNetworkPerformanceMetricSubscriptionOutput, crate::operation::enable_aws_network_performance_metric_subscription::EnableAwsNetworkPerformanceMetricSubscriptionError>{
+pub fn de_enable_aws_network_performance_metric_subscription_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::enable_aws_network_performance_metric_subscription::EnableAwsNetworkPerformanceMetricSubscriptionOutput, crate::operation::enable_aws_network_performance_metric_subscription::EnableAwsNetworkPerformanceMetricSubscriptionError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::enable_aws_network_performance_metric_subscription::builders::EnableAwsNetworkPerformanceMetricSubscriptionOutputBuilder::default();

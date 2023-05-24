@@ -217,7 +217,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutObjectLegalHold {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_put_object_legal_hold::de_put_object_legal_hold_http_response(status, headers, body)
+            crate::protocol_serde::shape_put_object_legal_hold::de_put_object_legal_hold_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAsset {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_asset::de_create_asset_http_response(
+            crate::protocol_serde::shape_create_asset::de_create_asset_http_response_with_props(
                 status, headers, body,
             )
         }

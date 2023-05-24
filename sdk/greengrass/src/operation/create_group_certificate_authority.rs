@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGroupCertificateAu
         if !success && status != 200 {
             crate::protocol_serde::shape_create_group_certificate_authority::de_create_group_certificate_authority_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_group_certificate_authority::de_create_group_certificate_authority_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_group_certificate_authority::de_create_group_certificate_authority_http_response_with_props(status, headers, body)
         }
     }
 }

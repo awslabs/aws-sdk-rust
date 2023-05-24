@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSnapshot {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_start_snapshot::de_start_snapshot_http_response(
+            crate::protocol_serde::shape_start_snapshot::de_start_snapshot_http_response_with_props(
                 status, headers, body,
             )
         }

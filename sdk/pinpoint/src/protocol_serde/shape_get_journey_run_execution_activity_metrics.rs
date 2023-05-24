@@ -129,7 +129,7 @@ pub fn de_get_journey_run_execution_activity_metrics_http_error(_response_status
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_journey_run_execution_activity_metrics_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_journey_run_execution_activity_metrics::GetJourneyRunExecutionActivityMetricsOutput, crate::operation::get_journey_run_execution_activity_metrics::GetJourneyRunExecutionActivityMetricsError>{
+pub fn de_get_journey_run_execution_activity_metrics_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_journey_run_execution_activity_metrics::GetJourneyRunExecutionActivityMetricsOutput, crate::operation::get_journey_run_execution_activity_metrics::GetJourneyRunExecutionActivityMetricsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_journey_run_execution_activity_metrics::builders::GetJourneyRunExecutionActivityMetricsOutputBuilder::default();

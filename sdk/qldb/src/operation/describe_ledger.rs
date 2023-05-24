@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLedger {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_ledger::de_describe_ledger_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_describe_ledger::de_describe_ledger_http_response_with_props(status, headers, body)
         }
     }
 }

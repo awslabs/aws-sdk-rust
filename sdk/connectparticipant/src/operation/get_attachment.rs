@@ -154,7 +154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAttachment {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_attachment::de_get_attachment_http_response(
+            crate::protocol_serde::shape_get_attachment::de_get_attachment_http_response_with_props(
                 status, headers, body,
             )
         }

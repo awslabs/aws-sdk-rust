@@ -185,7 +185,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketOwnershipContro
         if !success && status != 200 {
             crate::protocol_serde::shape_put_bucket_ownership_controls::de_put_bucket_ownership_controls_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_put_bucket_ownership_controls::de_put_bucket_ownership_controls_http_response(status, headers, body)
+            crate::protocol_serde::shape_put_bucket_ownership_controls::de_put_bucket_ownership_controls_http_response_with_props(status, headers, body)
         }
     }
 }

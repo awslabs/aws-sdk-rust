@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateEndpointWeightsAnd
         if !success && status != 200 {
             crate::protocol_serde::shape_update_endpoint_weights_and_capacities::de_update_endpoint_weights_and_capacities_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_update_endpoint_weights_and_capacities::de_update_endpoint_weights_and_capacities_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_endpoint_weights_and_capacities::de_update_endpoint_weights_and_capacities_http_response_with_props(status, headers, body)
         }
     }
 }

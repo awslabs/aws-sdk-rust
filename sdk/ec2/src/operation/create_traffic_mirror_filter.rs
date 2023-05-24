@@ -151,7 +151,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTrafficMirrorFilte
         if !success && status != 200 {
             crate::protocol_serde::shape_create_traffic_mirror_filter::de_create_traffic_mirror_filter_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_traffic_mirror_filter::de_create_traffic_mirror_filter_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_traffic_mirror_filter::de_create_traffic_mirror_filter_http_response_with_props(status, headers, body)
         }
     }
 }

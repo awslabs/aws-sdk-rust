@@ -91,7 +91,7 @@ pub fn de_describe_dominant_language_detection_job_http_error(_response_status: 
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_dominant_language_detection_job_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_dominant_language_detection_job::DescribeDominantLanguageDetectionJobOutput, crate::operation::describe_dominant_language_detection_job::DescribeDominantLanguageDetectionJobError>{
+pub fn de_describe_dominant_language_detection_job_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_dominant_language_detection_job::DescribeDominantLanguageDetectionJobOutput, crate::operation::describe_dominant_language_detection_job::DescribeDominantLanguageDetectionJobError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_dominant_language_detection_job::builders::DescribeDominantLanguageDetectionJobOutputBuilder::default();

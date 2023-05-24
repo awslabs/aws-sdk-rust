@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLogPatternSets {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_log_pattern_sets::de_list_log_pattern_sets_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_log_pattern_sets::de_list_log_pattern_sets_http_response_with_props(status, headers, body)
         }
     }
 }

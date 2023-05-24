@@ -174,9 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRevision {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_revision::de_create_revision_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_revision::de_create_revision_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWave {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_wave::de_create_wave_http_response(
+            crate::protocol_serde::shape_create_wave::de_create_wave_http_response_with_props(
                 status, headers, body,
             )
         }

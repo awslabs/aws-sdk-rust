@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLicenseManagerRepo
         if !success && status != 200 {
             crate::protocol_serde::shape_create_license_manager_report_generator::de_create_license_manager_report_generator_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_license_manager_report_generator::de_create_license_manager_report_generator_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_license_manager_report_generator::de_create_license_manager_report_generator_http_response_with_props(status, headers, body)
         }
     }
 }

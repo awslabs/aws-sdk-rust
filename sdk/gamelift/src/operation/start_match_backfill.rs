@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartMatchBackfill {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_start_match_backfill::de_start_match_backfill_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_start_match_backfill::de_start_match_backfill_http_response_with_props(status, headers, body)
         }
     }
 }

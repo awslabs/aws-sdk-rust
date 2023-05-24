@@ -152,7 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSolNetworkPackageDesc
         if !success && status != 200 {
             crate::protocol_serde::shape_get_sol_network_package_descriptor::de_get_sol_network_package_descriptor_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_sol_network_package_descriptor::de_get_sol_network_package_descriptor_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_sol_network_package_descriptor::de_get_sol_network_package_descriptor_http_response_with_props(status, headers, body)
         }
     }
 }

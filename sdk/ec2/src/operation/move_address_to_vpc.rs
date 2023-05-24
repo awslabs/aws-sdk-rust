@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MoveAddressToVpc {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_move_address_to_vpc::de_move_address_to_vpc_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_move_address_to_vpc::de_move_address_to_vpc_http_response_with_props(status, headers, body)
         }
     }
 }

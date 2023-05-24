@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListS3Buckets {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_s3_buckets::de_list_s3_buckets_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_s3_buckets::de_list_s3_buckets_http_response_with_props(status, headers, body)
         }
     }
 }

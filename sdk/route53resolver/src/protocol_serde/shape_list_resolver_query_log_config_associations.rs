@@ -123,7 +123,7 @@ pub fn de_list_resolver_query_log_config_associations_http_error(_response_statu
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_resolver_query_log_config_associations_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsOutput, crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsError>{
+pub fn de_list_resolver_query_log_config_associations_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsOutput, crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_resolver_query_log_config_associations::builders::ListResolverQueryLogConfigAssociationsOutputBuilder::default();

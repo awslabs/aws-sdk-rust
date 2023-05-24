@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateMobileSdkRelease
         if !success && status != 200 {
             crate::protocol_serde::shape_generate_mobile_sdk_release_url::de_generate_mobile_sdk_release_url_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_generate_mobile_sdk_release_url::de_generate_mobile_sdk_release_url_http_response(status, headers, body)
+            crate::protocol_serde::shape_generate_mobile_sdk_release_url::de_generate_mobile_sdk_release_url_http_response_with_props(status, headers, body)
         }
     }
 }

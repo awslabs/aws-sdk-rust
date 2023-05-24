@@ -177,9 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTimeSeries {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_time_series::de_list_time_series_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_time_series::de_list_time_series_http_response_with_props(status, headers, body)
         }
     }
 }

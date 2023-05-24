@@ -156,9 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfirmSignUp {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_confirm_sign_up::de_confirm_sign_up_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_confirm_sign_up::de_confirm_sign_up_http_response_with_props(status, headers, body)
         }
     }
 }

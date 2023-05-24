@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateResolverRule {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_resolver_rule::de_create_resolver_rule_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_resolver_rule::de_create_resolver_rule_http_response_with_props(status, headers, body)
         }
     }
 }

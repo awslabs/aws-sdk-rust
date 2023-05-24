@@ -75,7 +75,7 @@ pub fn de_describe_custom_routing_accelerator_attributes_http_error(_response_st
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_custom_routing_accelerator_attributes_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_custom_routing_accelerator_attributes::DescribeCustomRoutingAcceleratorAttributesOutput, crate::operation::describe_custom_routing_accelerator_attributes::DescribeCustomRoutingAcceleratorAttributesError>{
+pub fn de_describe_custom_routing_accelerator_attributes_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_custom_routing_accelerator_attributes::DescribeCustomRoutingAcceleratorAttributesOutput, crate::operation::describe_custom_routing_accelerator_attributes::DescribeCustomRoutingAcceleratorAttributesError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_custom_routing_accelerator_attributes::builders::DescribeCustomRoutingAcceleratorAttributesOutputBuilder::default();

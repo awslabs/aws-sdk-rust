@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEndpoints {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_endpoints::de_list_endpoints_http_response(
+            crate::protocol_serde::shape_list_endpoints::de_list_endpoints_http_response_with_props(
                 status, headers, body,
             )
         }

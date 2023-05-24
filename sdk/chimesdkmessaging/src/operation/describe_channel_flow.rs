@@ -160,7 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeChannelFlow {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_channel_flow::de_describe_channel_flow_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_channel_flow::de_describe_channel_flow_http_response_with_props(status, headers, body)
         }
     }
     fn sensitive(&self) -> bool {

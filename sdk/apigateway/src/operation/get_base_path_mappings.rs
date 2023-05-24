@@ -183,7 +183,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBasePathMappings {
         if !success && status != 200 {
             crate::protocol_serde::shape_get_base_path_mappings::de_get_base_path_mappings_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_base_path_mappings::de_get_base_path_mappings_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_base_path_mappings::de_get_base_path_mappings_http_response_with_props(status, headers, body)
         }
     }
 }

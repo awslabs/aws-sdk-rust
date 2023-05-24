@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReplicationJobs {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_replication_jobs::de_get_replication_jobs_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_replication_jobs::de_get_replication_jobs_http_response_with_props(status, headers, body)
         }
     }
 }

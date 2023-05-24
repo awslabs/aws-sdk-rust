@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocationHdfs {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_location_hdfs::de_create_location_hdfs_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_location_hdfs::de_create_location_hdfs_http_response_with_props(status, headers, body)
         }
     }
 }

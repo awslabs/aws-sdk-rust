@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNetworkAcl {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_network_acl::de_delete_network_acl_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_delete_network_acl::de_delete_network_acl_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -158,7 +158,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSipMediaApplicatio
         if !success && status != 204 {
             crate::protocol_serde::shape_delete_sip_media_application::de_delete_sip_media_application_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_sip_media_application::de_delete_sip_media_application_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_sip_media_application::de_delete_sip_media_application_http_response_with_props(status, headers, body)
         }
     }
 }

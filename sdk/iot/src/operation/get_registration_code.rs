@@ -136,7 +136,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRegistrationCode {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_registration_code::de_get_registration_code_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_registration_code::de_get_registration_code_http_response_with_props(status, headers, body)
         }
     }
 }

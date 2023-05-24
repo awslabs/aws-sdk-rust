@@ -211,7 +211,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSourceRepositoryBr
         if !success && status != 201 {
             crate::protocol_serde::shape_create_source_repository_branch::de_create_source_repository_branch_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_source_repository_branch::de_create_source_repository_branch_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_source_repository_branch::de_create_source_repository_branch_http_response_with_props(status, headers, body)
         }
     }
 }

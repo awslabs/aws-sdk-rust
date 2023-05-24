@@ -176,9 +176,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateQuickConnect {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_quick_connect::de_create_quick_connect_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_quick_connect::de_create_quick_connect_http_response_with_props(status, headers, body)
         }
     }
 }

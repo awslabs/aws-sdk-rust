@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for FilterLogEvents {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_filter_log_events::de_filter_log_events_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_filter_log_events::de_filter_log_events_http_response_with_props(status, headers, body)
         }
     }
 }

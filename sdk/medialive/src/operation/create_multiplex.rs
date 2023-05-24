@@ -153,9 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMultiplex {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_multiplex::de_create_multiplex_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_multiplex::de_create_multiplex_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAlarm {
         if !success && status != 200 {
             crate::protocol_serde::shape_put_alarm::de_put_alarm_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_put_alarm::de_put_alarm_http_response(
+            crate::protocol_serde::shape_put_alarm::de_put_alarm_http_response_with_props(
                 status, headers, body,
             )
         }

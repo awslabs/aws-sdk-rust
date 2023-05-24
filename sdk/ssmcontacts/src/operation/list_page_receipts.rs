@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPageReceipts {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_page_receipts::de_list_page_receipts_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_page_receipts::de_list_page_receipts_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteInvitations {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_invitations::de_delete_invitations_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_delete_invitations::de_delete_invitations_http_response_with_props(status, headers, body)
         }
     }
 }

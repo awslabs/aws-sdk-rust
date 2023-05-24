@@ -151,7 +151,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyVerifiedAccessInst
         if !success && status != 200 {
             crate::protocol_serde::shape_modify_verified_access_instance::de_modify_verified_access_instance_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_modify_verified_access_instance::de_modify_verified_access_instance_http_response(status, headers, body)
+            crate::protocol_serde::shape_modify_verified_access_instance::de_modify_verified_access_instance_http_response_with_props(status, headers, body)
         }
     }
 }

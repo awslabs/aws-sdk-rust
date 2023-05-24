@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConditionalForwa
         if !success && status != 200 {
             crate::protocol_serde::shape_describe_conditional_forwarders::de_describe_conditional_forwarders_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_describe_conditional_forwarders::de_describe_conditional_forwarders_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_conditional_forwarders::de_describe_conditional_forwarders_http_response_with_props(status, headers, body)
         }
     }
 }

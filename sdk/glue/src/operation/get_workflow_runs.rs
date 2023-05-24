@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorkflowRuns {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_workflow_runs::de_get_workflow_runs_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_workflow_runs::de_get_workflow_runs_http_response_with_props(status, headers, body)
         }
     }
 }

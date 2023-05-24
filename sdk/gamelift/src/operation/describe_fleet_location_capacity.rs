@@ -154,7 +154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFleetLocationCap
         if !success && status != 200 {
             crate::protocol_serde::shape_describe_fleet_location_capacity::de_describe_fleet_location_capacity_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_describe_fleet_location_capacity::de_describe_fleet_location_capacity_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_fleet_location_capacity::de_describe_fleet_location_capacity_http_response_with_props(status, headers, body)
         }
     }
 }

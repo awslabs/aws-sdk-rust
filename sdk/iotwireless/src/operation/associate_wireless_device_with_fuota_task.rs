@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateWirelessDeviceW
         if !success && status != 204 {
             crate::protocol_serde::shape_associate_wireless_device_with_fuota_task::de_associate_wireless_device_with_fuota_task_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_associate_wireless_device_with_fuota_task::de_associate_wireless_device_with_fuota_task_http_response(status, headers, body)
+            crate::protocol_serde::shape_associate_wireless_device_with_fuota_task::de_associate_wireless_device_with_fuota_task_http_response_with_props(status, headers, body)
         }
     }
 }

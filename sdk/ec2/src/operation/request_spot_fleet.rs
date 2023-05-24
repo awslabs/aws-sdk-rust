@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RequestSpotFleet {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_request_spot_fleet::de_request_spot_fleet_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_request_spot_fleet::de_request_spot_fleet_http_response_with_props(status, headers, body)
         }
     }
 }

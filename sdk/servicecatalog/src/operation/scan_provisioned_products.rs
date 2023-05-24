@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ScanProvisionedProducts 
         if !success && status != 200 {
             crate::protocol_serde::shape_scan_provisioned_products::de_scan_provisioned_products_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_scan_provisioned_products::de_scan_provisioned_products_http_response(status, headers, body)
+            crate::protocol_serde::shape_scan_provisioned_products::de_scan_provisioned_products_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -189,7 +189,7 @@ impl aws_smithy_http::response::ParseStrictResponse for LogoutUser {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_logout_user::de_logout_user_http_response(
+            crate::protocol_serde::shape_logout_user::de_logout_user_http_response_with_props(
                 status, headers, body,
             )
         }

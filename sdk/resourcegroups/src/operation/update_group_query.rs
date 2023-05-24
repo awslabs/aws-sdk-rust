@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGroupQuery {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_group_query::de_update_group_query_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_update_group_query::de_update_group_query_http_response_with_props(status, headers, body)
         }
     }
 }

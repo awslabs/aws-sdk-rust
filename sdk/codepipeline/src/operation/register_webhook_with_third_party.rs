@@ -154,7 +154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterWebhookWithThird
         if !success && status != 200 {
             crate::protocol_serde::shape_register_webhook_with_third_party::de_register_webhook_with_third_party_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_register_webhook_with_third_party::de_register_webhook_with_third_party_http_response(status, headers, body)
+            crate::protocol_serde::shape_register_webhook_with_third_party::de_register_webhook_with_third_party_http_response_with_props(status, headers, body)
         }
     }
 }

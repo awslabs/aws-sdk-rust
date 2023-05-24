@@ -160,9 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConnectPeer {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_connect_peer::de_get_connect_peer_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_connect_peer::de_get_connect_peer_http_response_with_props(status, headers, body)
         }
     }
 }

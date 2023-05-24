@@ -152,9 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetV2LoggingLevel {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_set_v2_logging_level::de_set_v2_logging_level_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_set_v2_logging_level::de_set_v2_logging_level_http_response_with_props(status, headers, body)
         }
     }
 }

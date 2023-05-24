@@ -113,7 +113,7 @@ pub fn de_delete_messaging_streaming_configurations_http_error(_response_status:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_messaging_streaming_configurations_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_messaging_streaming_configurations::DeleteMessagingStreamingConfigurationsOutput, crate::operation::delete_messaging_streaming_configurations::DeleteMessagingStreamingConfigurationsError>{
+pub fn de_delete_messaging_streaming_configurations_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_messaging_streaming_configurations::DeleteMessagingStreamingConfigurationsOutput, crate::operation::delete_messaging_streaming_configurations::DeleteMessagingStreamingConfigurationsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_messaging_streaming_configurations::builders::DeleteMessagingStreamingConfigurationsOutputBuilder::default();

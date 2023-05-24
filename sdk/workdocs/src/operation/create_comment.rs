@@ -198,7 +198,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateComment {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_comment::de_create_comment_http_response(
+            crate::protocol_serde::shape_create_comment::de_create_comment_http_response_with_props(
                 status, headers, body,
             )
         }

@@ -185,9 +185,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateThingShadow {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_thing_shadow::de_update_thing_shadow_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_update_thing_shadow::de_update_thing_shadow_http_response_with_props(status, headers, body)
         }
     }
 }

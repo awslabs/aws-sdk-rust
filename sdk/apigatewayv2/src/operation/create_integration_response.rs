@@ -192,7 +192,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateIntegrationRespons
         if !success && status != 201 {
             crate::protocol_serde::shape_create_integration_response::de_create_integration_response_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_integration_response::de_create_integration_response_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_integration_response::de_create_integration_response_http_response_with_props(status, headers, body)
         }
     }
 }

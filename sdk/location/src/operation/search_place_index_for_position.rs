@@ -174,7 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchPlaceIndexForPosit
         if !success && status != 200 {
             crate::protocol_serde::shape_search_place_index_for_position::de_search_place_index_for_position_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_search_place_index_for_position::de_search_place_index_for_position_http_response(status, headers, body)
+            crate::protocol_serde::shape_search_place_index_for_position::de_search_place_index_for_position_http_response_with_props(status, headers, body)
         }
     }
     fn sensitive(&self) -> bool {

@@ -158,7 +158,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVolume {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_volume::de_delete_volume_http_response(
+            crate::protocol_serde::shape_delete_volume::de_delete_volume_http_response_with_props(
                 status, headers, body,
             )
         }

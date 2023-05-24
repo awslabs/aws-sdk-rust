@@ -113,7 +113,7 @@ pub fn de_delete_configured_table_analysis_rule_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_configured_table_analysis_rule_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_configured_table_analysis_rule::DeleteConfiguredTableAnalysisRuleOutput, crate::operation::delete_configured_table_analysis_rule::DeleteConfiguredTableAnalysisRuleError>{
+pub fn de_delete_configured_table_analysis_rule_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_configured_table_analysis_rule::DeleteConfiguredTableAnalysisRuleOutput, crate::operation::delete_configured_table_analysis_rule::DeleteConfiguredTableAnalysisRuleError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_configured_table_analysis_rule::builders::DeleteConfiguredTableAnalysisRuleOutputBuilder::default();

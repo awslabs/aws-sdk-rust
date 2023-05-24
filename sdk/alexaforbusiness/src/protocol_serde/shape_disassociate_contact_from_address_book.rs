@@ -19,7 +19,7 @@ pub fn de_disassociate_contact_from_address_book_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_disassociate_contact_from_address_book_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookOutput, crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookError>{
+pub fn de_disassociate_contact_from_address_book_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookOutput, crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::disassociate_contact_from_address_book::builders::DisassociateContactFromAddressBookOutputBuilder::default();

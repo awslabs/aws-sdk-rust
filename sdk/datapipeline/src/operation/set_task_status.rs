@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetTaskStatus {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_set_task_status::de_set_task_status_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_set_task_status::de_set_task_status_http_response_with_props(status, headers, body)
         }
     }
 }

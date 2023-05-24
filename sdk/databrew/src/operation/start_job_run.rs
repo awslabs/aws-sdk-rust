@@ -156,7 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartJobRun {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_start_job_run::de_start_job_run_http_response(
+            crate::protocol_serde::shape_start_job_run::de_start_job_run_http_response_with_props(
                 status, headers, body,
             )
         }

@@ -155,7 +155,7 @@ pub fn de_get_ec2_recommendation_projected_metrics_http_error(_response_status: 
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_ec2_recommendation_projected_metrics_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_ec2_recommendation_projected_metrics::GetEc2RecommendationProjectedMetricsOutput, crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError>{
+pub fn de_get_ec2_recommendation_projected_metrics_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_ec2_recommendation_projected_metrics::GetEc2RecommendationProjectedMetricsOutput, crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_ec2_recommendation_projected_metrics::builders::GetEc2RecommendationProjectedMetricsOutputBuilder::default();

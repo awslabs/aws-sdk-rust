@@ -174,9 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateLenses {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_associate_lenses::de_associate_lenses_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_associate_lenses::de_associate_lenses_http_response_with_props(status, headers, body)
         }
     }
 }

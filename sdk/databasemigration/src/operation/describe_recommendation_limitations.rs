@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRecommendationLi
         if !success && status != 200 {
             crate::protocol_serde::shape_describe_recommendation_limitations::de_describe_recommendation_limitations_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_describe_recommendation_limitations::de_describe_recommendation_limitations_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_recommendation_limitations::de_describe_recommendation_limitations_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyLunaClient {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_modify_luna_client::de_modify_luna_client_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_modify_luna_client::de_modify_luna_client_http_response_with_props(status, headers, body)
         }
     }
 }

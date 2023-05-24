@@ -170,9 +170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDetector {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_detector::de_update_detector_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_update_detector::de_update_detector_http_response_with_props(status, headers, body)
         }
     }
 }

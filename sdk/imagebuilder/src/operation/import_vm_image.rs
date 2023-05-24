@@ -153,9 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportVmImage {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_import_vm_image::de_import_vm_image_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_import_vm_image::de_import_vm_image_http_response_with_props(status, headers, body)
         }
     }
 }

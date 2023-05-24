@@ -33,7 +33,7 @@ pub fn de_describe_reserved_db_instances_offerings_http_error(_response_status: 
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_reserved_db_instances_offerings_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDbInstancesOfferingsOutput, crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDBInstancesOfferingsError>{
+pub fn de_describe_reserved_db_instances_offerings_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDbInstancesOfferingsOutput, crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDBInstancesOfferingsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_reserved_db_instances_offerings::builders::DescribeReservedDbInstancesOfferingsOutputBuilder::default();

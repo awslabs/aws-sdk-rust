@@ -180,7 +180,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAttendee {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_attendee::de_get_attendee_http_response(
+            crate::protocol_serde::shape_get_attendee::de_get_attendee_http_response_with_props(
                 status, headers, body,
             )
         }

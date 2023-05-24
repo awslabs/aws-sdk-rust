@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIpamDiscoveredResourc
         if !success && status != 200 {
             crate::protocol_serde::shape_get_ipam_discovered_resource_cidrs::de_get_ipam_discovered_resource_cidrs_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_ipam_discovered_resource_cidrs::de_get_ipam_discovered_resource_cidrs_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_ipam_discovered_resource_cidrs::de_get_ipam_discovered_resource_cidrs_http_response_with_props(status, headers, body)
         }
     }
 }

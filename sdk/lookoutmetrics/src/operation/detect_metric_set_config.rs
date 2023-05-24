@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectMetricSetConfig {
         if !success && status != 200 {
             crate::protocol_serde::shape_detect_metric_set_config::de_detect_metric_set_config_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_detect_metric_set_config::de_detect_metric_set_config_http_response(status, headers, body)
+            crate::protocol_serde::shape_detect_metric_set_config::de_detect_metric_set_config_http_response_with_props(status, headers, body)
         }
     }
 }

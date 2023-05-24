@@ -195,7 +195,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUseCases {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_use_cases::de_list_use_cases_http_response(
+            crate::protocol_serde::shape_list_use_cases::de_list_use_cases_http_response_with_props(
                 status, headers, body,
             )
         }

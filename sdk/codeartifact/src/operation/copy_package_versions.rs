@@ -251,7 +251,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CopyPackageVersions {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_copy_package_versions::de_copy_package_versions_http_response(status, headers, body)
+            crate::protocol_serde::shape_copy_package_versions::de_copy_package_versions_http_response_with_props(status, headers, body)
         }
     }
 }

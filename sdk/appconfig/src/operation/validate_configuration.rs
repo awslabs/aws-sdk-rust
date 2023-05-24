@@ -199,7 +199,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ValidateConfiguration {
         if !success && status != 204 {
             crate::protocol_serde::shape_validate_configuration::de_validate_configuration_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_validate_configuration::de_validate_configuration_http_response(status, headers, body)
+            crate::protocol_serde::shape_validate_configuration::de_validate_configuration_http_response_with_props(status, headers, body)
         }
     }
 }

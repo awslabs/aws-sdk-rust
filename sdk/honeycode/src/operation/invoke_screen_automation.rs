@@ -224,7 +224,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InvokeScreenAutomation {
         if !success && status != 200 {
             crate::protocol_serde::shape_invoke_screen_automation::de_invoke_screen_automation_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_invoke_screen_automation::de_invoke_screen_automation_http_response(status, headers, body)
+            crate::protocol_serde::shape_invoke_screen_automation::de_invoke_screen_automation_http_response_with_props(status, headers, body)
         }
     }
 }

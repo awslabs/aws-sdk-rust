@@ -32,7 +32,7 @@ pub fn de_get_storage_lens_configuration_tagging_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_storage_lens_configuration_tagging_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingOutput, crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingError>{
+pub fn de_get_storage_lens_configuration_tagging_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingOutput, crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_storage_lens_configuration_tagging::builders::GetStorageLensConfigurationTaggingOutputBuilder::default();

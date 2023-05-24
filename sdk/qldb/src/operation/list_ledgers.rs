@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLedgers {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_ledgers::de_list_ledgers_http_response(
+            crate::protocol_serde::shape_list_ledgers::de_list_ledgers_http_response_with_props(
                 status, headers, body,
             )
         }

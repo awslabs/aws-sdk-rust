@@ -198,7 +198,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateComponentType {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_component_type::de_update_component_type_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_component_type::de_update_component_type_http_response_with_props(status, headers, body)
         }
     }
 }

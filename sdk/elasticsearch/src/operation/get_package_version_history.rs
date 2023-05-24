@@ -179,7 +179,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPackageVersionHistory
         if !success && status != 200 {
             crate::protocol_serde::shape_get_package_version_history::de_get_package_version_history_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_package_version_history::de_get_package_version_history_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_package_version_history::de_get_package_version_history_http_response_with_props(status, headers, body)
         }
     }
 }

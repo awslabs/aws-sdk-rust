@@ -191,9 +191,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTaskTemplates {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_task_templates::de_list_task_templates_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_task_templates::de_list_task_templates_http_response_with_props(status, headers, body)
         }
     }
 }

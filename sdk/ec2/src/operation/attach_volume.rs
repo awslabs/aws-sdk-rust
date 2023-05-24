@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachVolume {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_attach_volume::de_attach_volume_http_response(
+            crate::protocol_serde::shape_attach_volume::de_attach_volume_http_response_with_props(
                 status, headers, body,
             )
         }

@@ -156,7 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReleaseFileSystemNfsV3Lo
         if !success && status != 200 {
             crate::protocol_serde::shape_release_file_system_nfs_v3_locks::de_release_file_system_nfs_v3_locks_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_release_file_system_nfs_v3_locks::de_release_file_system_nfs_v3_locks_http_response(status, headers, body)
+            crate::protocol_serde::shape_release_file_system_nfs_v3_locks::de_release_file_system_nfs_v3_locks_http_response_with_props(status, headers, body)
         }
     }
 }

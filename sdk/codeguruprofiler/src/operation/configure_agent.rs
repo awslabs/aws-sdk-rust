@@ -174,9 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfigureAgent {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_configure_agent::de_configure_agent_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_configure_agent::de_configure_agent_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAnomalyGroupSummarie
         if !success && status != 200 {
             crate::protocol_serde::shape_list_anomaly_group_summaries::de_list_anomaly_group_summaries_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_anomaly_group_summaries::de_list_anomaly_group_summaries_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_anomaly_group_summaries::de_list_anomaly_group_summaries_http_response_with_props(status, headers, body)
         }
     }
 }

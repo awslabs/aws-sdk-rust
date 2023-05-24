@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopTrainingEntityRecogn
         if !success && status != 200 {
             crate::protocol_serde::shape_stop_training_entity_recognizer::de_stop_training_entity_recognizer_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_stop_training_entity_recognizer::de_stop_training_entity_recognizer_http_response(status, headers, body)
+            crate::protocol_serde::shape_stop_training_entity_recognizer::de_stop_training_entity_recognizer_http_response_with_props(status, headers, body)
         }
     }
 }

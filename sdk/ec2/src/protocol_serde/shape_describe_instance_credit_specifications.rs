@@ -9,7 +9,7 @@ pub fn de_describe_instance_credit_specifications_http_error(_response_status: u
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_instance_credit_specifications_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsOutput, crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsError>{
+pub fn de_describe_instance_credit_specifications_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsOutput, crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_instance_credit_specifications::builders::DescribeInstanceCreditSpecificationsOutputBuilder::default();

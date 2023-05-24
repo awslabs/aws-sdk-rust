@@ -160,7 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDomainNodes {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_domain_nodes::de_describe_domain_nodes_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_domain_nodes::de_describe_domain_nodes_http_response_with_props(status, headers, body)
         }
     }
 }

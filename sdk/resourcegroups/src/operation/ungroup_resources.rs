@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UngroupResources {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_ungroup_resources::de_ungroup_resources_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_ungroup_resources::de_ungroup_resources_http_response_with_props(status, headers, body)
         }
     }
 }

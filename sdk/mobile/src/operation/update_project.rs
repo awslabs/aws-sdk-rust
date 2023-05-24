@@ -176,7 +176,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateProject {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_project::de_update_project_http_response(
+            crate::protocol_serde::shape_update_project::de_update_project_http_response_with_props(
                 status, headers, body,
             )
         }

@@ -152,9 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCoipPool {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_coip_pool::de_delete_coip_pool_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_delete_coip_pool::de_delete_coip_pool_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -75,7 +75,7 @@ pub fn de_list_conformance_pack_compliance_scores_http_error(_response_status: u
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_conformance_pack_compliance_scores_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresOutput, crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresError>{
+pub fn de_list_conformance_pack_compliance_scores_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresOutput, crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_conformance_pack_compliance_scores::builders::ListConformancePackComplianceScoresOutputBuilder::default();

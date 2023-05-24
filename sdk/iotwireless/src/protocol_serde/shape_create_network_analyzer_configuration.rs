@@ -123,7 +123,7 @@ pub fn de_create_network_analyzer_configuration_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_network_analyzer_configuration_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationOutput, crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationError>{
+pub fn de_create_network_analyzer_configuration_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationOutput, crate::operation::create_network_analyzer_configuration::CreateNetworkAnalyzerConfigurationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_network_analyzer_configuration::builders::CreateNetworkAnalyzerConfigurationOutputBuilder::default();

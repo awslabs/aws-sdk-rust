@@ -187,9 +187,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForVault {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_tags_for_vault::de_list_tags_for_vault_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_tags_for_vault::de_list_tags_for_vault_http_response_with_props(status, headers, body)
         }
     }
 }

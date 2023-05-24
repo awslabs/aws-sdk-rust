@@ -152,9 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopDBCluster {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_stop_db_cluster::de_stop_db_cluster_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_stop_db_cluster::de_stop_db_cluster_http_response_with_props(status, headers, body)
         }
     }
 }

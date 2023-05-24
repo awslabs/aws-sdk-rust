@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListServerNeighbors {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_server_neighbors::de_list_server_neighbors_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_server_neighbors::de_list_server_neighbors_http_response_with_props(status, headers, body)
         }
     }
 }

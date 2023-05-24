@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ScheduleRun {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_schedule_run::de_schedule_run_http_response(
+            crate::protocol_serde::shape_schedule_run::de_schedule_run_http_response_with_props(
                 status, headers, body,
             )
         }

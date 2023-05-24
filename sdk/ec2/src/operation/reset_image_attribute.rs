@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResetImageAttribute {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_reset_image_attribute::de_reset_image_attribute_http_response(status, headers, body)
+            crate::protocol_serde::shape_reset_image_attribute::de_reset_image_attribute_http_response_with_props(status, headers, body)
         }
     }
 }

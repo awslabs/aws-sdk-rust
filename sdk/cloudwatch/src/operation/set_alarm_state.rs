@@ -152,9 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetAlarmState {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_set_alarm_state::de_set_alarm_state_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_set_alarm_state::de_set_alarm_state_http_response_with_props(status, headers, body)
         }
     }
 }

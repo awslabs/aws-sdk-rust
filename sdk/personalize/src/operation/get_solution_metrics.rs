@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSolutionMetrics {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_solution_metrics::de_get_solution_metrics_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_solution_metrics::de_get_solution_metrics_http_response_with_props(status, headers, body)
         }
     }
 }

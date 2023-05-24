@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableFastSnapshotResto
         if !success && status != 200 {
             crate::protocol_serde::shape_disable_fast_snapshot_restores::de_disable_fast_snapshot_restores_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_disable_fast_snapshot_restores::de_disable_fast_snapshot_restores_http_response(status, headers, body)
+            crate::protocol_serde::shape_disable_fast_snapshot_restores::de_disable_fast_snapshot_restores_http_response_with_props(status, headers, body)
         }
     }
 }

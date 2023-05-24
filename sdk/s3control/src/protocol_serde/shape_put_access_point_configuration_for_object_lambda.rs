@@ -47,7 +47,7 @@ pub fn de_put_access_point_configuration_for_object_lambda_http_error(_response_
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_access_point_configuration_for_object_lambda_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaOutput, crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaError>{
+pub fn de_put_access_point_configuration_for_object_lambda_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaOutput, crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::put_access_point_configuration_for_object_lambda::builders::PutAccessPointConfigurationForObjectLambdaOutputBuilder::default();

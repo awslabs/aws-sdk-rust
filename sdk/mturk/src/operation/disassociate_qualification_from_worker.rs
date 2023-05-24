@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateQualificatio
         if !success && status != 200 {
             crate::protocol_serde::shape_disassociate_qualification_from_worker::de_disassociate_qualification_from_worker_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_disassociate_qualification_from_worker::de_disassociate_qualification_from_worker_http_response(status, headers, body)
+            crate::protocol_serde::shape_disassociate_qualification_from_worker::de_disassociate_qualification_from_worker_http_response_with_props(status, headers, body)
         }
     }
 }

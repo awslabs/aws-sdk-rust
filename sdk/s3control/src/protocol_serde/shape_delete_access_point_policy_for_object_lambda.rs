@@ -32,7 +32,7 @@ pub fn de_delete_access_point_policy_for_object_lambda_http_error(_response_stat
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_access_point_policy_for_object_lambda_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaOutput, crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaError>{
+pub fn de_delete_access_point_policy_for_object_lambda_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaOutput, crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_access_point_policy_for_object_lambda::builders::DeleteAccessPointPolicyForObjectLambdaOutputBuilder::default();

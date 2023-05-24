@@ -91,7 +91,7 @@ pub fn de_batch_update_standards_control_associations_http_error(_response_statu
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_batch_update_standards_control_associations_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsOutput, crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsError>{
+pub fn de_batch_update_standards_control_associations_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsOutput, crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::batch_update_standards_control_associations::builders::BatchUpdateStandardsControlAssociationsOutputBuilder::default();

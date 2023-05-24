@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAlertManagerDefinitio
         if !success && status != 202 {
             crate::protocol_serde::shape_put_alert_manager_definition::de_put_alert_manager_definition_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_put_alert_manager_definition::de_put_alert_manager_definition_http_response(status, headers, body)
+            crate::protocol_serde::shape_put_alert_manager_definition::de_put_alert_manager_definition_http_response_with_props(status, headers, body)
         }
     }
 }

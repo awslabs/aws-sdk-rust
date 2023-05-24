@@ -154,7 +154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendContactMethodVerific
         if !success && status != 200 {
             crate::protocol_serde::shape_send_contact_method_verification::de_send_contact_method_verification_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_send_contact_method_verification::de_send_contact_method_verification_http_response(status, headers, body)
+            crate::protocol_serde::shape_send_contact_method_verification::de_send_contact_method_verification_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopCompilationJob {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_stop_compilation_job::de_stop_compilation_job_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_stop_compilation_job::de_stop_compilation_job_http_response_with_props(status, headers, body)
         }
     }
 }

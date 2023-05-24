@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTrust {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_trust::de_update_trust_http_response(
+            crate::protocol_serde::shape_update_trust::de_update_trust_http_response_with_props(
                 status, headers, body,
             )
         }

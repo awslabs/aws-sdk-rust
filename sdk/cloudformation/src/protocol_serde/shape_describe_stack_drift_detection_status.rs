@@ -9,7 +9,7 @@ pub fn de_describe_stack_drift_detection_status_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_stack_drift_detection_status_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusOutput, crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusError>{
+pub fn de_describe_stack_drift_detection_status_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusOutput, crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_stack_drift_detection_status::builders::DescribeStackDriftDetectionStatusOutputBuilder::default();

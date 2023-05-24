@@ -59,7 +59,7 @@ pub fn de_describe_maintenance_window_execution_tasks_http_error(_response_statu
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_maintenance_window_execution_tasks_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_maintenance_window_execution_tasks::DescribeMaintenanceWindowExecutionTasksOutput, crate::operation::describe_maintenance_window_execution_tasks::DescribeMaintenanceWindowExecutionTasksError>{
+pub fn de_describe_maintenance_window_execution_tasks_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_maintenance_window_execution_tasks::DescribeMaintenanceWindowExecutionTasksOutput, crate::operation::describe_maintenance_window_execution_tasks::DescribeMaintenanceWindowExecutionTasksError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_maintenance_window_execution_tasks::builders::DescribeMaintenanceWindowExecutionTasksOutputBuilder::default();

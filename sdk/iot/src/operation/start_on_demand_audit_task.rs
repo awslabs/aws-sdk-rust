@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartOnDemandAuditTask {
         if !success && status != 200 {
             crate::protocol_serde::shape_start_on_demand_audit_task::de_start_on_demand_audit_task_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_start_on_demand_audit_task::de_start_on_demand_audit_task_http_response(status, headers, body)
+            crate::protocol_serde::shape_start_on_demand_audit_task::de_start_on_demand_audit_task_http_response_with_props(status, headers, body)
         }
     }
 }

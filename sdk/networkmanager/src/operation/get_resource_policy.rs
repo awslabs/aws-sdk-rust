@@ -160,9 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourcePolicy {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_resource_policy::de_get_resource_policy_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_resource_policy::de_get_resource_policy_http_response_with_props(status, headers, body)
         }
     }
 }

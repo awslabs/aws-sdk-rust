@@ -180,9 +180,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPromptFile {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_prompt_file::de_get_prompt_file_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_prompt_file::de_get_prompt_file_http_response_with_props(status, headers, body)
         }
     }
 }

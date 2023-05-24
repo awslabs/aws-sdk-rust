@@ -59,7 +59,7 @@ pub fn de_describe_savings_plans_offering_rates_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_savings_plans_offering_rates_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_savings_plans_offering_rates::DescribeSavingsPlansOfferingRatesOutput, crate::operation::describe_savings_plans_offering_rates::DescribeSavingsPlansOfferingRatesError>{
+pub fn de_describe_savings_plans_offering_rates_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_savings_plans_offering_rates::DescribeSavingsPlansOfferingRatesOutput, crate::operation::describe_savings_plans_offering_rates::DescribeSavingsPlansOfferingRatesError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_savings_plans_offering_rates::builders::DescribeSavingsPlansOfferingRatesOutputBuilder::default();

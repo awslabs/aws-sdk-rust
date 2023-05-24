@@ -171,9 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEphemerides {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_ephemerides::de_list_ephemerides_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_ephemerides::de_list_ephemerides_http_response_with_props(status, headers, body)
         }
     }
 }

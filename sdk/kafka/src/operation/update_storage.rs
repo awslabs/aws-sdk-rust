@@ -174,7 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateStorage {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_storage::de_update_storage_http_response(
+            crate::protocol_serde::shape_update_storage::de_update_storage_http_response_with_props(
                 status, headers, body,
             )
         }

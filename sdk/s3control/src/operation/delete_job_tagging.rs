@@ -161,9 +161,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteJobTagging {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_job_tagging::de_delete_job_tagging_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_delete_job_tagging::de_delete_job_tagging_http_response_with_props(status, headers, body)
         }
     }
 }

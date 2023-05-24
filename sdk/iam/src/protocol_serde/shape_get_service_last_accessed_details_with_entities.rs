@@ -49,7 +49,7 @@ pub fn de_get_service_last_accessed_details_with_entities_http_error(_response_s
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_service_last_accessed_details_with_entities_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_service_last_accessed_details_with_entities::GetServiceLastAccessedDetailsWithEntitiesOutput, crate::operation::get_service_last_accessed_details_with_entities::GetServiceLastAccessedDetailsWithEntitiesError>{
+pub fn de_get_service_last_accessed_details_with_entities_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_service_last_accessed_details_with_entities::GetServiceLastAccessedDetailsWithEntitiesOutput, crate::operation::get_service_last_accessed_details_with_entities::GetServiceLastAccessedDetailsWithEntitiesError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_service_last_accessed_details_with_entities::builders::GetServiceLastAccessedDetailsWithEntitiesOutputBuilder::default();

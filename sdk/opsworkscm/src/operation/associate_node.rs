@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateNode {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_associate_node::de_associate_node_http_response(
+            crate::protocol_serde::shape_associate_node::de_associate_node_http_response_with_props(
                 status, headers, body,
             )
         }

@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InferICD10CM {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_infer_icd10_cm::de_infer_icd10_cm_http_response(
+            crate::protocol_serde::shape_infer_icd10_cm::de_infer_icd10_cm_http_response_with_props(
                 status, headers, body,
             )
         }

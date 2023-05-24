@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDocumentTextDetecti
         if !success && status != 200 {
             crate::protocol_serde::shape_start_document_text_detection::de_start_document_text_detection_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_start_document_text_detection::de_start_document_text_detection_http_response(status, headers, body)
+            crate::protocol_serde::shape_start_document_text_detection::de_start_document_text_detection_http_response_with_props(status, headers, body)
         }
     }
 }

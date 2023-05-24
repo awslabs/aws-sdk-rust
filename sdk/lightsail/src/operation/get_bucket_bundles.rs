@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketBundles {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_bucket_bundles::de_get_bucket_bundles_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_bucket_bundles::de_get_bucket_bundles_http_response_with_props(status, headers, body)
         }
     }
 }

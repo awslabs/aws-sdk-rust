@@ -200,7 +200,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInstanceTypeDetails 
         if !success && status != 200 {
             crate::protocol_serde::shape_list_instance_type_details::de_list_instance_type_details_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_instance_type_details::de_list_instance_type_details_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_instance_type_details::de_list_instance_type_details_http_response_with_props(status, headers, body)
         }
     }
 }

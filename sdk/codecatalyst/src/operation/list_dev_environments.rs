@@ -183,7 +183,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDevEnvironments {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_dev_environments::de_list_dev_environments_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_dev_environments::de_list_dev_environments_http_response_with_props(status, headers, body)
         }
     }
 }

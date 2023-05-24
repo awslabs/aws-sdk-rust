@@ -99,7 +99,7 @@ pub fn de_get_failback_replication_configuration_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_failback_replication_configuration_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationOutput, crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationError>{
+pub fn de_get_failback_replication_configuration_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationOutput, crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_failback_replication_configuration::builders::GetFailbackReplicationConfigurationOutputBuilder::default();

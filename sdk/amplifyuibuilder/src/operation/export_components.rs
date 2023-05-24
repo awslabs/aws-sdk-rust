@@ -193,9 +193,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportComponents {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_export_components::de_export_components_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_export_components::de_export_components_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLabels {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_labels::de_list_labels_http_response(
+            crate::protocol_serde::shape_list_labels::de_list_labels_http_response_with_props(
                 status, headers, body,
             )
         }

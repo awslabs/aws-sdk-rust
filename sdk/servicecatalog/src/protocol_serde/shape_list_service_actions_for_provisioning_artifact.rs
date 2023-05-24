@@ -59,7 +59,7 @@ pub fn de_list_service_actions_for_provisioning_artifact_http_error(_response_st
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_service_actions_for_provisioning_artifact_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactOutput, crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactError>{
+pub fn de_list_service_actions_for_provisioning_artifact_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactOutput, crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_service_actions_for_provisioning_artifact::builders::ListServiceActionsForProvisioningArtifactOutputBuilder::default();

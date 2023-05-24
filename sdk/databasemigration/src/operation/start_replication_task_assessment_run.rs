@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartReplicationTaskAsse
         if !success && status != 200 {
             crate::protocol_serde::shape_start_replication_task_assessment_run::de_start_replication_task_assessment_run_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_start_replication_task_assessment_run::de_start_replication_task_assessment_run_http_response(status, headers, body)
+            crate::protocol_serde::shape_start_replication_task_assessment_run::de_start_replication_task_assessment_run_http_response_with_props(status, headers, body)
         }
     }
 }

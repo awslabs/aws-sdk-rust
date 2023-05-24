@@ -139,7 +139,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeClientVpnTargetN
         if !success && status != 200 {
             crate::protocol_serde::shape_describe_client_vpn_target_networks::de_describe_client_vpn_target_networks_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_describe_client_vpn_target_networks::de_describe_client_vpn_target_networks_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_client_vpn_target_networks::de_describe_client_vpn_target_networks_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -180,9 +180,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInAppMessages {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_in_app_messages::de_get_in_app_messages_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_in_app_messages::de_get_in_app_messages_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVehicle {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_vehicle::de_delete_vehicle_http_response(
+            crate::protocol_serde::shape_delete_vehicle::de_delete_vehicle_http_response_with_props(
                 status, headers, body,
             )
         }

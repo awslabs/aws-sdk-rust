@@ -146,7 +146,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetNamespaceDeletionStat
         if !success && status != 200 {
             crate::protocol_serde::shape_get_namespace_deletion_status::de_get_namespace_deletion_status_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_namespace_deletion_status::de_get_namespace_deletion_status_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_namespace_deletion_status::de_get_namespace_deletion_status_http_response_with_props(status, headers, body)
         }
     }
 }

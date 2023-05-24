@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDetectEntities {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_batch_detect_entities::de_batch_detect_entities_http_response(status, headers, body)
+            crate::protocol_serde::shape_batch_detect_entities::de_batch_detect_entities_http_response_with_props(status, headers, body)
         }
     }
 }

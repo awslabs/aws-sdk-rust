@@ -174,9 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchAnalyses {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_search_analyses::de_search_analyses_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_search_analyses::de_search_analyses_http_response_with_props(status, headers, body)
         }
     }
 }

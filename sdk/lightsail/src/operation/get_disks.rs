@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDisks {
         if !success && status != 200 {
             crate::protocol_serde::shape_get_disks::de_get_disks_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_disks::de_get_disks_http_response(
+            crate::protocol_serde::shape_get_disks::de_get_disks_http_response_with_props(
                 status, headers, body,
             )
         }

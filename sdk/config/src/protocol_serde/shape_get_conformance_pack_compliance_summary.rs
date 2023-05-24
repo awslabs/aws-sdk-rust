@@ -75,7 +75,7 @@ pub fn de_get_conformance_pack_compliance_summary_http_error(_response_status: u
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_conformance_pack_compliance_summary_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryOutput, crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryError>{
+pub fn de_get_conformance_pack_compliance_summary_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryOutput, crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_conformance_pack_compliance_summary::builders::GetConformancePackComplianceSummaryOutputBuilder::default();

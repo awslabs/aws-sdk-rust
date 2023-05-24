@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ActivateContactChannel {
         if !success && status != 200 {
             crate::protocol_serde::shape_activate_contact_channel::de_activate_contact_channel_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_activate_contact_channel::de_activate_contact_channel_http_response(status, headers, body)
+            crate::protocol_serde::shape_activate_contact_channel::de_activate_contact_channel_http_response_with_props(status, headers, body)
         }
     }
 }

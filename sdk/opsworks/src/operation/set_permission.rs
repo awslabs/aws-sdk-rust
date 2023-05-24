@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetPermission {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_set_permission::de_set_permission_http_response(
+            crate::protocol_serde::shape_set_permission::de_set_permission_http_response_with_props(
                 status, headers, body,
             )
         }

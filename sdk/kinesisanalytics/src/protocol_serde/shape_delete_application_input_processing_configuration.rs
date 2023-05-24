@@ -107,7 +107,7 @@ pub fn de_delete_application_input_processing_configuration_http_error(_response
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_application_input_processing_configuration_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationOutput, crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationError>{
+pub fn de_delete_application_input_processing_configuration_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationOutput, crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfigurationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_application_input_processing_configuration::builders::DeleteApplicationInputProcessingConfigurationOutputBuilder::default();

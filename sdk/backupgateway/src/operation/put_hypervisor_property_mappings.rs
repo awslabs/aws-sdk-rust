@@ -154,7 +154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutHypervisorPropertyMap
         if !success && status != 200 {
             crate::protocol_serde::shape_put_hypervisor_property_mappings::de_put_hypervisor_property_mappings_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_put_hypervisor_property_mappings::de_put_hypervisor_property_mappings_http_response(status, headers, body)
+            crate::protocol_serde::shape_put_hypervisor_property_mappings::de_put_hypervisor_property_mappings_http_response_with_props(status, headers, body)
         }
     }
 }

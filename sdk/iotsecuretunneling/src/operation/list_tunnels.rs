@@ -181,7 +181,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTunnels {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_tunnels::de_list_tunnels_http_response(
+            crate::protocol_serde::shape_list_tunnels::de_list_tunnels_http_response_with_props(
                 status, headers, body,
             )
         }

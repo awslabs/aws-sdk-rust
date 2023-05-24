@@ -212,7 +212,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteIntent {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_intent::de_delete_intent_http_response(
+            crate::protocol_serde::shape_delete_intent::de_delete_intent_http_response_with_props(
                 status, headers, body,
             )
         }

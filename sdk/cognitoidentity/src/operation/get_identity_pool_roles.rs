@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIdentityPoolRoles {
         if !success && status != 200 {
             crate::protocol_serde::shape_get_identity_pool_roles::de_get_identity_pool_roles_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_identity_pool_roles::de_get_identity_pool_roles_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_identity_pool_roles::de_get_identity_pool_roles_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -19,7 +19,7 @@ pub fn de_delete_notebook_instance_lifecycle_config_http_error(_response_status:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_notebook_instance_lifecycle_config_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigOutput, crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigError>{
+pub fn de_delete_notebook_instance_lifecycle_config_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigOutput, crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_notebook_instance_lifecycle_config::builders::DeleteNotebookInstanceLifecycleConfigOutputBuilder::default();

@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCommandInvocations {
         if !success && status != 200 {
             crate::protocol_serde::shape_list_command_invocations::de_list_command_invocations_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_command_invocations::de_list_command_invocations_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_command_invocations::de_list_command_invocations_http_response_with_props(status, headers, body)
         }
     }
 }

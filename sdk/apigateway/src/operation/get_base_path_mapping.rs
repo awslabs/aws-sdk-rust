@@ -184,7 +184,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBasePathMapping {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_base_path_mapping::de_get_base_path_mapping_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_base_path_mapping::de_get_base_path_mapping_http_response_with_props(status, headers, body)
         }
     }
 }

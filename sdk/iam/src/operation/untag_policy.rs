@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagPolicy {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_untag_policy::de_untag_policy_http_response(
+            crate::protocol_serde::shape_untag_policy::de_untag_policy_http_response_with_props(
                 status, headers, body,
             )
         }

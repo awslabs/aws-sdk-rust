@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeGameServer {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_game_server::de_describe_game_server_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_describe_game_server::de_describe_game_server_http_response_with_props(status, headers, body)
         }
     }
 }

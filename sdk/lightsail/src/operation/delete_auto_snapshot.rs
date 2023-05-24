@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAutoSnapshot {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_auto_snapshot::de_delete_auto_snapshot_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_delete_auto_snapshot::de_delete_auto_snapshot_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -147,7 +147,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutThirdPartyJobSuccessR
         if !success && status != 200 {
             crate::protocol_serde::shape_put_third_party_job_success_result::de_put_third_party_job_success_result_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_put_third_party_job_success_result::de_put_third_party_job_success_result_http_response(status, headers, body)
+            crate::protocol_serde::shape_put_third_party_job_success_result::de_put_third_party_job_success_result_http_response_with_props(status, headers, body)
         }
     }
 }

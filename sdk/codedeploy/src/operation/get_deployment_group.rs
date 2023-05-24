@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDeploymentGroup {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_deployment_group::de_get_deployment_group_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_deployment_group::de_get_deployment_group_http_response_with_props(status, headers, body)
         }
     }
 }

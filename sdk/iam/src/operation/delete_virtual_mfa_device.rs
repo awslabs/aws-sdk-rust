@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVirtualMFADevice {
         if !success && status != 200 {
             crate::protocol_serde::shape_delete_virtual_mfa_device::de_delete_virtual_mfa_device_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_virtual_mfa_device::de_delete_virtual_mfa_device_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_virtual_mfa_device::de_delete_virtual_mfa_device_http_response_with_props(status, headers, body)
         }
     }
 }

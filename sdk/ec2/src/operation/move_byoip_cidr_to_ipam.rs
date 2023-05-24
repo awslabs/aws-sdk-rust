@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MoveByoipCidrToIpam {
         if !success && status != 200 {
             crate::protocol_serde::shape_move_byoip_cidr_to_ipam::de_move_byoip_cidr_to_ipam_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_move_byoip_cidr_to_ipam::de_move_byoip_cidr_to_ipam_http_response(status, headers, body)
+            crate::protocol_serde::shape_move_byoip_cidr_to_ipam::de_move_byoip_cidr_to_ipam_http_response_with_props(status, headers, body)
         }
     }
 }

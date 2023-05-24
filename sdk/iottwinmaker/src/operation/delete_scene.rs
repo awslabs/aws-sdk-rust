@@ -182,7 +182,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteScene {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_scene::de_delete_scene_http_response(
+            crate::protocol_serde::shape_delete_scene::de_delete_scene_http_response_with_props(
                 status, headers, body,
             )
         }

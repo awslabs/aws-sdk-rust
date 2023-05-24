@@ -152,7 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateResourceShare {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_resource_share::de_update_resource_share_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_resource_share::de_update_resource_share_http_response_with_props(status, headers, body)
         }
     }
 }

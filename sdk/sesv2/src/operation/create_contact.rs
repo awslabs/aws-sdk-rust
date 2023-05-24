@@ -174,7 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateContact {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_contact::de_create_contact_http_response(
+            crate::protocol_serde::shape_create_contact::de_create_contact_http_response_with_props(
                 status, headers, body,
             )
         }

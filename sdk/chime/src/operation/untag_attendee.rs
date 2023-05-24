@@ -203,7 +203,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagAttendee {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_untag_attendee::de_untag_attendee_http_response(
+            crate::protocol_serde::shape_untag_attendee::de_untag_attendee_http_response_with_props(
                 status, headers, body,
             )
         }

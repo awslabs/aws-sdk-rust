@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchUpdateVehicle {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_batch_update_vehicle::de_batch_update_vehicle_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_batch_update_vehicle::de_batch_update_vehicle_http_response_with_props(status, headers, body)
         }
     }
 }

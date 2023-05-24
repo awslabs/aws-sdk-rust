@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetResourceConfig {
         if !success && status != 200 {
             crate::protocol_serde::shape_batch_get_resource_config::de_batch_get_resource_config_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_batch_get_resource_config::de_batch_get_resource_config_http_response(status, headers, body)
+            crate::protocol_serde::shape_batch_get_resource_config::de_batch_get_resource_config_http_response_with_props(status, headers, body)
         }
     }
 }

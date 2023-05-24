@@ -154,7 +154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeNodeFromTemplate
         if !success && status != 200 {
             crate::protocol_serde::shape_describe_node_from_template_job::de_describe_node_from_template_job_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_describe_node_from_template_job::de_describe_node_from_template_job_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_node_from_template_job::de_describe_node_from_template_job_http_response_with_props(status, headers, body)
         }
     }
     fn sensitive(&self) -> bool {

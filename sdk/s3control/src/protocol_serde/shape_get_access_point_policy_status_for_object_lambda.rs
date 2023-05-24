@@ -32,7 +32,7 @@ pub fn de_get_access_point_policy_status_for_object_lambda_http_error(_response_
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_access_point_policy_status_for_object_lambda_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_access_point_policy_status_for_object_lambda::GetAccessPointPolicyStatusForObjectLambdaOutput, crate::operation::get_access_point_policy_status_for_object_lambda::GetAccessPointPolicyStatusForObjectLambdaError>{
+pub fn de_get_access_point_policy_status_for_object_lambda_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_access_point_policy_status_for_object_lambda::GetAccessPointPolicyStatusForObjectLambdaOutput, crate::operation::get_access_point_policy_status_for_object_lambda::GetAccessPointPolicyStatusForObjectLambdaError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_access_point_policy_status_for_object_lambda::builders::GetAccessPointPolicyStatusForObjectLambdaOutputBuilder::default();

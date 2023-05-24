@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCacheCluster {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_cache_cluster::de_create_cache_cluster_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_cache_cluster::de_create_cache_cluster_http_response_with_props(status, headers, body)
         }
     }
 }

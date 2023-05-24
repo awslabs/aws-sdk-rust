@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PreviewAgents {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_preview_agents::de_preview_agents_http_response(
+            crate::protocol_serde::shape_preview_agents::de_preview_agents_http_response_with_props(
                 status, headers, body,
             )
         }

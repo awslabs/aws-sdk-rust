@@ -194,9 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveAttributes {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_remove_attributes::de_remove_attributes_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_remove_attributes::de_remove_attributes_http_response_with_props(status, headers, body)
         }
     }
 }

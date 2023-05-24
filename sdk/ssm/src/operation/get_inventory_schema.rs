@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInventorySchema {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_inventory_schema::de_get_inventory_schema_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_inventory_schema::de_get_inventory_schema_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDimensions {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_dimensions::de_list_dimensions_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_dimensions::de_list_dimensions_http_response_with_props(status, headers, body)
         }
     }
 }

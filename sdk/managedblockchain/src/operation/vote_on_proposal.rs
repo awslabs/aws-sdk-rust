@@ -194,9 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for VoteOnProposal {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_vote_on_proposal::de_vote_on_proposal_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_vote_on_proposal::de_vote_on_proposal_http_response_with_props(status, headers, body)
         }
     }
 }

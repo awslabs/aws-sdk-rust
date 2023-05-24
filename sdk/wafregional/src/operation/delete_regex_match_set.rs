@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRegexMatchSet {
         if !success && status != 200 {
             crate::protocol_serde::shape_delete_regex_match_set::de_delete_regex_match_set_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_regex_match_set::de_delete_regex_match_set_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_regex_match_set::de_delete_regex_match_set_http_response_with_props(status, headers, body)
         }
     }
 }

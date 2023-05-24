@@ -194,9 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpgradeLensReview {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_upgrade_lens_review::de_upgrade_lens_review_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_upgrade_lens_review::de_upgrade_lens_review_http_response_with_props(status, headers, body)
         }
     }
 }

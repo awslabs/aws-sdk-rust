@@ -156,9 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateMember {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_disassociate_member::de_disassociate_member_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_disassociate_member::de_disassociate_member_http_response_with_props(status, headers, body)
         }
     }
 }

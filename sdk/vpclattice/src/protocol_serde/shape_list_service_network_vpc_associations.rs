@@ -89,7 +89,7 @@ pub fn de_list_service_network_vpc_associations_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_service_network_vpc_associations_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsOutput, crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsError>{
+pub fn de_list_service_network_vpc_associations_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsOutput, crate::operation::list_service_network_vpc_associations::ListServiceNetworkVpcAssociationsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_service_network_vpc_associations::builders::ListServiceNetworkVpcAssociationsOutputBuilder::default();

@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RespondDecisionTaskCompl
         if !success && status != 200 {
             crate::protocol_serde::shape_respond_decision_task_completed::de_respond_decision_task_completed_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_respond_decision_task_completed::de_respond_decision_task_completed_http_response(status, headers, body)
+            crate::protocol_serde::shape_respond_decision_task_completed::de_respond_decision_task_completed_http_response_with_props(status, headers, body)
         }
     }
 }

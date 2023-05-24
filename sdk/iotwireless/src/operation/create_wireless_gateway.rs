@@ -151,7 +151,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWirelessGateway {
         if !success && status != 201 {
             crate::protocol_serde::shape_create_wireless_gateway::de_create_wireless_gateway_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_wireless_gateway::de_create_wireless_gateway_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_wireless_gateway::de_create_wireless_gateway_http_response_with_props(status, headers, body)
         }
     }
 }

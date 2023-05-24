@@ -172,7 +172,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEventSourceMappings 
         if !success && status != 200 {
             crate::protocol_serde::shape_list_event_source_mappings::de_list_event_source_mappings_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_event_source_mappings::de_list_event_source_mappings_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_event_source_mappings::de_list_event_source_mappings_http_response_with_props(status, headers, body)
         }
     }
 }

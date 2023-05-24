@@ -147,7 +147,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateEmergencyContactSe
         if !success && status != 200 {
             crate::protocol_serde::shape_update_emergency_contact_settings::de_update_emergency_contact_settings_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_update_emergency_contact_settings::de_update_emergency_contact_settings_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_emergency_contact_settings::de_update_emergency_contact_settings_http_response_with_props(status, headers, body)
         }
     }
 }

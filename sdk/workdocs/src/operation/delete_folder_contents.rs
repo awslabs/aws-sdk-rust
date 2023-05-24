@@ -159,7 +159,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFolderContents {
         if !success && status != 204 {
             crate::protocol_serde::shape_delete_folder_contents::de_delete_folder_contents_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_folder_contents::de_delete_folder_contents_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_folder_contents::de_delete_folder_contents_http_response_with_props(status, headers, body)
         }
     }
 }

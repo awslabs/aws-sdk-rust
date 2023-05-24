@@ -59,7 +59,7 @@ pub fn de_create_direct_connect_gateway_association_proposal_http_error(_respons
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_direct_connect_gateway_association_proposal_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalOutput, crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalError>{
+pub fn de_create_direct_connect_gateway_association_proposal_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalOutput, crate::operation::create_direct_connect_gateway_association_proposal::CreateDirectConnectGatewayAssociationProposalError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_direct_connect_gateway_association_proposal::builders::CreateDirectConnectGatewayAssociationProposalOutputBuilder::default();

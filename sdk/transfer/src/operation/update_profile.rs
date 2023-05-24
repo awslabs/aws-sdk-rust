@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateProfile {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_profile::de_update_profile_http_response(
+            crate::protocol_serde::shape_update_profile::de_update_profile_http_response_with_props(
                 status, headers, body,
             )
         }

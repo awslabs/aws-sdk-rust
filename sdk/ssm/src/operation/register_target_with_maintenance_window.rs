@@ -138,7 +138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterTargetWithMainte
         if !success && status != 200 {
             crate::protocol_serde::shape_register_target_with_maintenance_window::de_register_target_with_maintenance_window_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_register_target_with_maintenance_window::de_register_target_with_maintenance_window_http_response(status, headers, body)
+            crate::protocol_serde::shape_register_target_with_maintenance_window::de_register_target_with_maintenance_window_http_response_with_props(status, headers, body)
         }
     }
 }

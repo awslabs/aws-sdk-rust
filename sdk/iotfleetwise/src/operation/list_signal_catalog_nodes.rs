@@ -174,7 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSignalCatalogNodes {
         if !success && status != 200 {
             crate::protocol_serde::shape_list_signal_catalog_nodes::de_list_signal_catalog_nodes_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_signal_catalog_nodes::de_list_signal_catalog_nodes_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_signal_catalog_nodes::de_list_signal_catalog_nodes_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeACLs {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_ac_ls::de_describe_ac_ls_http_response(
+            crate::protocol_serde::shape_describe_ac_ls::de_describe_ac_ls_http_response_with_props(
                 status, headers, body,
             )
         }

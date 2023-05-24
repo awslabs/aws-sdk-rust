@@ -156,7 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSegment {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_segment::de_get_segment_http_response(
+            crate::protocol_serde::shape_get_segment::de_get_segment_http_response_with_props(
                 status, headers, body,
             )
         }

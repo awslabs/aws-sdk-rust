@@ -181,7 +181,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTables {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_tables::de_list_tables_http_response(
+            crate::protocol_serde::shape_list_tables::de_list_tables_http_response_with_props(
                 status, headers, body,
             )
         }

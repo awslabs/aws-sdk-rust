@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDeadLetterSourceQueu
         if !success && status != 200 {
             crate::protocol_serde::shape_list_dead_letter_source_queues::de_list_dead_letter_source_queues_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_dead_letter_source_queues::de_list_dead_letter_source_queues_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_dead_letter_source_queues::de_list_dead_letter_source_queues_http_response_with_props(status, headers, body)
         }
     }
 }

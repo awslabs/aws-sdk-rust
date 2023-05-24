@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFrameworks {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_frameworks::de_list_frameworks_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_frameworks::de_list_frameworks_http_response_with_props(status, headers, body)
         }
     }
 }

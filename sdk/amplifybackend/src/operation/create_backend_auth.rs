@@ -170,9 +170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBackendAuth {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_backend_auth::de_create_backend_auth_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_backend_auth::de_create_backend_auth_http_response_with_props(status, headers, body)
         }
     }
 }

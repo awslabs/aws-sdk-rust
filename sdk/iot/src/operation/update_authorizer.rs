@@ -174,9 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAuthorizer {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_authorizer::de_update_authorizer_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_update_authorizer::de_update_authorizer_http_response_with_props(status, headers, body)
         }
     }
 }

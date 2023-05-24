@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RequestServiceQuotaIncre
         if !success && status != 200 {
             crate::protocol_serde::shape_request_service_quota_increase::de_request_service_quota_increase_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_request_service_quota_increase::de_request_service_quota_increase_http_response(status, headers, body)
+            crate::protocol_serde::shape_request_service_quota_increase::de_request_service_quota_increase_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCrawlers {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_crawlers::de_list_crawlers_http_response(
+            crate::protocol_serde::shape_list_crawlers::de_list_crawlers_http_response_with_props(
                 status, headers, body,
             )
         }

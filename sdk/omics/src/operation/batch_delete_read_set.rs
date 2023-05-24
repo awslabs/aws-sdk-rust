@@ -178,7 +178,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteReadSet {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_batch_delete_read_set::de_batch_delete_read_set_http_response(status, headers, body)
+            crate::protocol_serde::shape_batch_delete_read_set::de_batch_delete_read_set_http_response_with_props(status, headers, body)
         }
     }
 }

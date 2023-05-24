@@ -154,7 +154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteApi {
         if !success && status != 204 {
             crate::protocol_serde::shape_delete_api::de_delete_api_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_api::de_delete_api_http_response(
+            crate::protocol_serde::shape_delete_api::de_delete_api_http_response_with_props(
                 status, headers, body,
             )
         }

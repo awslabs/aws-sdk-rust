@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartTransaction {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_start_transaction::de_start_transaction_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_start_transaction::de_start_transaction_http_response_with_props(status, headers, body)
         }
     }
 }

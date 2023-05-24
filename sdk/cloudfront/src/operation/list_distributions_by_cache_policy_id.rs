@@ -161,7 +161,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDistributionsByCache
         if !success && status != 200 {
             crate::protocol_serde::shape_list_distributions_by_cache_policy_id::de_list_distributions_by_cache_policy_id_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_distributions_by_cache_policy_id::de_list_distributions_by_cache_policy_id_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_distributions_by_cache_policy_id::de_list_distributions_by_cache_policy_id_http_response_with_props(status, headers, body)
         }
     }
 }

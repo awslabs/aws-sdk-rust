@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSMBFileShares {
         if !success && status != 200 {
             crate::protocol_serde::shape_describe_smb_file_shares::de_describe_smb_file_shares_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_describe_smb_file_shares::de_describe_smb_file_shares_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_smb_file_shares::de_describe_smb_file_shares_http_response_with_props(status, headers, body)
         }
     }
 }

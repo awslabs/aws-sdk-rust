@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeProtection {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_protection::de_describe_protection_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_describe_protection::de_describe_protection_http_response_with_props(status, headers, body)
         }
     }
 }

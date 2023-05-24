@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddTagsToStream {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_add_tags_to_stream::de_add_tags_to_stream_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_add_tags_to_stream::de_add_tags_to_stream_http_response_with_props(status, headers, body)
         }
     }
 }

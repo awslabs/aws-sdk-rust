@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachManagedPolicyToPer
         if !success && status != 200 {
             crate::protocol_serde::shape_attach_managed_policy_to_permission_set::de_attach_managed_policy_to_permission_set_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_attach_managed_policy_to_permission_set::de_attach_managed_policy_to_permission_set_http_response(status, headers, body)
+            crate::protocol_serde::shape_attach_managed_policy_to_permission_set::de_attach_managed_policy_to_permission_set_http_response_with_props(status, headers, body)
         }
     }
 }

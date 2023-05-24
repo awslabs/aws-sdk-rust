@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSkillGroup {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_skill_group::de_delete_skill_group_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_delete_skill_group::de_delete_skill_group_http_response_with_props(status, headers, body)
         }
     }
 }

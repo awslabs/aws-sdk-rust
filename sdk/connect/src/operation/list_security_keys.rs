@@ -181,9 +181,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSecurityKeys {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_security_keys::de_list_security_keys_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_security_keys::de_list_security_keys_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -176,7 +176,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TransferInputDevice {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_transfer_input_device::de_transfer_input_device_http_response(status, headers, body)
+            crate::protocol_serde::shape_transfer_input_device::de_transfer_input_device_http_response_with_props(status, headers, body)
         }
     }
 }

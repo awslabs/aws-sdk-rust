@@ -179,9 +179,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetObjectRetention {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_object_retention::de_get_object_retention_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_object_retention::de_get_object_retention_http_response_with_props(status, headers, body)
         }
     }
 }

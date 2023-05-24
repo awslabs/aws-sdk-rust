@@ -152,7 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHITs {
         if !success && status != 200 {
             crate::protocol_serde::shape_list_hi_ts::de_list_hi_ts_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_hi_ts::de_list_hi_ts_http_response(
+            crate::protocol_serde::shape_list_hi_ts::de_list_hi_ts_http_response_with_props(
                 status, headers, body,
             )
         }

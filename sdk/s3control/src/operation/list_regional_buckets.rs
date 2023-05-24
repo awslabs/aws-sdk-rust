@@ -163,7 +163,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRegionalBuckets {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_regional_buckets::de_list_regional_buckets_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_regional_buckets::de_list_regional_buckets_http_response_with_props(status, headers, body)
         }
     }
 }

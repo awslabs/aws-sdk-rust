@@ -128,7 +128,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAssociationForService
         if !success && status != 200 {
             crate::protocol_serde::shape_get_association_for_service_quota_template::de_get_association_for_service_quota_template_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_association_for_service_quota_template::de_get_association_for_service_quota_template_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_association_for_service_quota_template::de_get_association_for_service_quota_template_http_response_with_props(status, headers, body)
         }
     }
 }

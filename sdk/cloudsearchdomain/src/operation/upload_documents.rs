@@ -166,9 +166,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UploadDocuments {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_upload_documents::de_upload_documents_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_upload_documents::de_upload_documents_http_response_with_props(status, headers, body)
         }
     }
 }

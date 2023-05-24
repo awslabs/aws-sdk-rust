@@ -152,7 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelDeploymentJob {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_cancel_deployment_job::de_cancel_deployment_job_http_response(status, headers, body)
+            crate::protocol_serde::shape_cancel_deployment_job::de_cancel_deployment_job_http_response_with_props(status, headers, body)
         }
     }
 }

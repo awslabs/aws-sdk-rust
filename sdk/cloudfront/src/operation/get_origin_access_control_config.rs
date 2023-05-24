@@ -158,7 +158,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOriginAccessControlCo
         if !success && status != 200 {
             crate::protocol_serde::shape_get_origin_access_control_config::de_get_origin_access_control_config_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_origin_access_control_config::de_get_origin_access_control_config_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_origin_access_control_config::de_get_origin_access_control_config_http_response_with_props(status, headers, body)
         }
     }
 }

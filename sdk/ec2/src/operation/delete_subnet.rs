@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSubnet {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_subnet::de_delete_subnet_http_response(
+            crate::protocol_serde::shape_delete_subnet::de_delete_subnet_http_response_with_props(
                 status, headers, body,
             )
         }

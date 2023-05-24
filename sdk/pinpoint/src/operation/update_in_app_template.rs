@@ -193,7 +193,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateInAppTemplate {
         if !success && status != 202 {
             crate::protocol_serde::shape_update_in_app_template::de_update_in_app_template_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_update_in_app_template::de_update_in_app_template_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_in_app_template::de_update_in_app_template_http_response_with_props(status, headers, body)
         }
     }
 }

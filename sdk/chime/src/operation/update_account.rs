@@ -170,7 +170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAccount {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_account::de_update_account_http_response(
+            crate::protocol_serde::shape_update_account::de_update_account_http_response_with_props(
                 status, headers, body,
             )
         }

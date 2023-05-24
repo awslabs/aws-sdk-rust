@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportKeyMaterial {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_import_key_material::de_import_key_material_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_import_key_material::de_import_key_material_http_response_with_props(status, headers, body)
         }
     }
 }

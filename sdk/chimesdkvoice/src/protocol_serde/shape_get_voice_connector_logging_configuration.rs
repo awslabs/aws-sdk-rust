@@ -129,7 +129,7 @@ pub fn de_get_voice_connector_logging_configuration_http_error(_response_status:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_voice_connector_logging_configuration_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_voice_connector_logging_configuration::GetVoiceConnectorLoggingConfigurationOutput, crate::operation::get_voice_connector_logging_configuration::GetVoiceConnectorLoggingConfigurationError>{
+pub fn de_get_voice_connector_logging_configuration_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_voice_connector_logging_configuration::GetVoiceConnectorLoggingConfigurationOutput, crate::operation::get_voice_connector_logging_configuration::GetVoiceConnectorLoggingConfigurationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_voice_connector_logging_configuration::builders::GetVoiceConnectorLoggingConfigurationOutputBuilder::default();

@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateUserPool {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_user_pool::de_update_user_pool_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_update_user_pool::de_update_user_pool_http_response_with_props(status, headers, body)
         }
     }
 }

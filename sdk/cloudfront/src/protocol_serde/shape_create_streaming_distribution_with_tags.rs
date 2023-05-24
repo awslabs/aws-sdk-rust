@@ -241,7 +241,7 @@ pub fn de_create_streaming_distribution_with_tags_http_error(_response_status: u
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_streaming_distribution_with_tags_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsOutput, crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsError>{
+pub fn de_create_streaming_distribution_with_tags_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsOutput, crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_streaming_distribution_with_tags::builders::CreateStreamingDistributionWithTagsOutputBuilder::default();

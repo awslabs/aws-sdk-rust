@@ -170,9 +170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveAllBackends {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_remove_all_backends::de_remove_all_backends_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_remove_all_backends::de_remove_all_backends_http_response_with_props(status, headers, body)
         }
     }
 }

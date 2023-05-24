@@ -210,7 +210,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBotRecommendatio
         if !success && status != 200 {
             crate::protocol_serde::shape_describe_bot_recommendation::de_describe_bot_recommendation_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_describe_bot_recommendation::de_describe_bot_recommendation_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_bot_recommendation::de_describe_bot_recommendation_http_response_with_props(status, headers, body)
         }
     }
     fn sensitive(&self) -> bool {

@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopLabelingJob {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_stop_labeling_job::de_stop_labeling_job_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_stop_labeling_job::de_stop_labeling_job_http_response_with_props(status, headers, body)
         }
     }
 }

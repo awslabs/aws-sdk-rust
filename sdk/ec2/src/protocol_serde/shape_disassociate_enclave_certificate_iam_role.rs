@@ -9,7 +9,7 @@ pub fn de_disassociate_enclave_certificate_iam_role_http_error(_response_status:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_disassociate_enclave_certificate_iam_role_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleOutput, crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleError>{
+pub fn de_disassociate_enclave_certificate_iam_role_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleOutput, crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::disassociate_enclave_certificate_iam_role::builders::DisassociateEnclaveCertificateIamRoleOutputBuilder::default();

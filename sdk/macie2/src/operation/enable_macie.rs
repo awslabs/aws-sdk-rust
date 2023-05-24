@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableMacie {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_enable_macie::de_enable_macie_http_response(
+            crate::protocol_serde::shape_enable_macie::de_enable_macie_http_response_with_props(
                 status, headers, body,
             )
         }

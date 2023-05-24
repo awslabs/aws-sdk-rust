@@ -174,9 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCheckDetails {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_check_details::de_list_check_details_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_check_details::de_list_check_details_http_response_with_props(status, headers, body)
         }
     }
 }

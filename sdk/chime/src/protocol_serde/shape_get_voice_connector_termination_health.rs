@@ -129,7 +129,7 @@ pub fn de_get_voice_connector_termination_health_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_voice_connector_termination_health_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_voice_connector_termination_health::GetVoiceConnectorTerminationHealthOutput, crate::operation::get_voice_connector_termination_health::GetVoiceConnectorTerminationHealthError>{
+pub fn de_get_voice_connector_termination_health_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_voice_connector_termination_health::GetVoiceConnectorTerminationHealthOutput, crate::operation::get_voice_connector_termination_health::GetVoiceConnectorTerminationHealthError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_voice_connector_termination_health::builders::GetVoiceConnectorTerminationHealthOutputBuilder::default();

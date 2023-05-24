@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReservedInstancesExch
         if !success && status != 200 {
             crate::protocol_serde::shape_get_reserved_instances_exchange_quote::de_get_reserved_instances_exchange_quote_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_reserved_instances_exchange_quote::de_get_reserved_instances_exchange_quote_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_reserved_instances_exchange_quote::de_get_reserved_instances_exchange_quote_http_response_with_props(status, headers, body)
         }
     }
 }

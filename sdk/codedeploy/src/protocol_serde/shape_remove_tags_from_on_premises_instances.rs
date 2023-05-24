@@ -139,7 +139,7 @@ pub fn de_remove_tags_from_on_premises_instances_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_remove_tags_from_on_premises_instances_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesOutput, crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesError>{
+pub fn de_remove_tags_from_on_premises_instances_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesOutput, crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::remove_tags_from_on_premises_instances::builders::RemoveTagsFromOnPremisesInstancesOutputBuilder::default();

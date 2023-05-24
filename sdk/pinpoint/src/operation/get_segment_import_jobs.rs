@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSegmentImportJobs {
         if !success && status != 200 {
             crate::protocol_serde::shape_get_segment_import_jobs::de_get_segment_import_jobs_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_segment_import_jobs::de_get_segment_import_jobs_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_segment_import_jobs::de_get_segment_import_jobs_http_response_with_props(status, headers, body)
         }
     }
 }

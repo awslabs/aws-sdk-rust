@@ -218,7 +218,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutObjectAcl {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_put_object_acl::de_put_object_acl_http_response(
+            crate::protocol_serde::shape_put_object_acl::de_put_object_acl_http_response_with_props(
                 status, headers, body,
             )
         }

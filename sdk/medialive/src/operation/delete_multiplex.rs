@@ -160,9 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMultiplex {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_multiplex::de_delete_multiplex_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_delete_multiplex::de_delete_multiplex_http_response_with_props(status, headers, body)
         }
     }
 }

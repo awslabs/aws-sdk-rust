@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetComputeAuthToken {
         if !success && status != 200 {
             crate::protocol_serde::shape_get_compute_auth_token::de_get_compute_auth_token_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_compute_auth_token::de_get_compute_auth_token_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_compute_auth_token::de_get_compute_auth_token_http_response_with_props(status, headers, body)
         }
     }
 }

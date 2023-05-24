@@ -196,9 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateProxySession {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_proxy_session::de_update_proxy_session_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_update_proxy_session::de_update_proxy_session_http_response_with_props(status, headers, body)
         }
     }
     fn sensitive(&self) -> bool {

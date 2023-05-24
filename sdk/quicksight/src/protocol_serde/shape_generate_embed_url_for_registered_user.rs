@@ -171,7 +171,7 @@ pub fn de_generate_embed_url_for_registered_user_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_generate_embed_url_for_registered_user_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserOutput, crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserError>{
+pub fn de_generate_embed_url_for_registered_user_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserOutput, crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::generate_embed_url_for_registered_user::builders::GenerateEmbedUrlForRegisteredUserOutputBuilder::default();

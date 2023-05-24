@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOrder {
         if !success && status != 200 {
             crate::protocol_serde::shape_get_order::de_get_order_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_order::de_get_order_http_response(
+            crate::protocol_serde::shape_get_order::de_get_order_http_response_with_props(
                 status, headers, body,
             )
         }

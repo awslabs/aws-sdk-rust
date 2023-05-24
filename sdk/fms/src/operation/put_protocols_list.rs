@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutProtocolsList {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_put_protocols_list::de_put_protocols_list_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_put_protocols_list::de_put_protocols_list_http_response_with_props(status, headers, body)
         }
     }
 }

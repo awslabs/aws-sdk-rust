@@ -82,7 +82,7 @@ pub fn de_put_email_identity_dkim_attributes_http_error(
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_email_identity_dkim_attributes_http_response(
+pub fn de_put_email_identity_dkim_attributes_http_response_with_props(
     _response_status: u16,
     _response_headers: &http::header::HeaderMap,
     _response_body: &[u8],

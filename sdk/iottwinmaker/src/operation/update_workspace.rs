@@ -176,9 +176,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateWorkspace {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_workspace::de_update_workspace_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_update_workspace::de_update_workspace_http_response_with_props(status, headers, body)
         }
     }
 }

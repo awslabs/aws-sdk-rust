@@ -179,9 +179,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetObjectTagging {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_object_tagging::de_get_object_tagging_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_object_tagging::de_get_object_tagging_http_response_with_props(status, headers, body)
         }
     }
 }

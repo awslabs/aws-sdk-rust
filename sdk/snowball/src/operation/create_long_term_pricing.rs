@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLongTermPricing {
         if !success && status != 200 {
             crate::protocol_serde::shape_create_long_term_pricing::de_create_long_term_pricing_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_long_term_pricing::de_create_long_term_pricing_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_long_term_pricing::de_create_long_term_pricing_http_response_with_props(status, headers, body)
         }
     }
 }

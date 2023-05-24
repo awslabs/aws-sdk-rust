@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAttributeValues {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_attribute_values::de_get_attribute_values_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_attribute_values::de_get_attribute_values_http_response_with_props(status, headers, body)
         }
     }
 }

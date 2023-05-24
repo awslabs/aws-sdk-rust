@@ -91,7 +91,7 @@ pub fn de_get_aggregate_discovered_resource_counts_http_error(_response_status: 
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_aggregate_discovered_resource_counts_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsOutput, crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError>{
+pub fn de_get_aggregate_discovered_resource_counts_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsOutput, crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCountsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_aggregate_discovered_resource_counts::builders::GetAggregateDiscoveredResourceCountsOutputBuilder::default();

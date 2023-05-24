@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProfile {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_profile::de_create_profile_http_response(
+            crate::protocol_serde::shape_create_profile::de_create_profile_http_response_with_props(
                 status, headers, body,
             )
         }

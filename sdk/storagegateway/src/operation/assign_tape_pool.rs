@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssignTapePool {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_assign_tape_pool::de_assign_tape_pool_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_assign_tape_pool::de_assign_tape_pool_http_response_with_props(status, headers, body)
         }
     }
 }

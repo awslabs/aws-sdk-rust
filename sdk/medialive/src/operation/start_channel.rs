@@ -160,7 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartChannel {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_start_channel::de_start_channel_http_response(
+            crate::protocol_serde::shape_start_channel::de_start_channel_http_response_with_props(
                 status, headers, body,
             )
         }

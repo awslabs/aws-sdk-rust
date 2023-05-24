@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIPSet {
         if !success && status != 200 {
             crate::protocol_serde::shape_get_ip_set::de_get_ip_set_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_ip_set::de_get_ip_set_http_response(
+            crate::protocol_serde::shape_get_ip_set::de_get_ip_set_http_response_with_props(
                 status, headers, body,
             )
         }

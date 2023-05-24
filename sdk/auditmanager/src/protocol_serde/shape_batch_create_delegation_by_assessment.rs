@@ -91,7 +91,7 @@ pub fn de_batch_create_delegation_by_assessment_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_batch_create_delegation_by_assessment_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentOutput, crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentError>{
+pub fn de_batch_create_delegation_by_assessment_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentOutput, crate::operation::batch_create_delegation_by_assessment::BatchCreateDelegationByAssessmentError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::batch_create_delegation_by_assessment::builders::BatchCreateDelegationByAssessmentOutputBuilder::default();

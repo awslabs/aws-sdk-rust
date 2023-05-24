@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachToIndex {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_attach_to_index::de_attach_to_index_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_attach_to_index::de_attach_to_index_http_response_with_props(status, headers, body)
         }
     }
 }

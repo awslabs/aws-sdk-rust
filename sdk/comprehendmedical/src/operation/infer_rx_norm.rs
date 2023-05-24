@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InferRxNorm {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_infer_rx_norm::de_infer_rx_norm_http_response(
+            crate::protocol_serde::shape_infer_rx_norm::de_infer_rx_norm_http_response_with_props(
                 status, headers, body,
             )
         }

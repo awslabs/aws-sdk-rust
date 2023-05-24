@@ -75,7 +75,7 @@ pub fn de_get_certificate_authority_certificate_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_certificate_authority_certificate_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_certificate_authority_certificate::GetCertificateAuthorityCertificateOutput, crate::operation::get_certificate_authority_certificate::GetCertificateAuthorityCertificateError>{
+pub fn de_get_certificate_authority_certificate_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_certificate_authority_certificate::GetCertificateAuthorityCertificateOutput, crate::operation::get_certificate_authority_certificate::GetCertificateAuthorityCertificateError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_certificate_authority_certificate::builders::GetCertificateAuthorityCertificateOutputBuilder::default();

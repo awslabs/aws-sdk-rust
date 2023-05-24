@@ -59,7 +59,7 @@ pub fn de_describe_inbound_cross_cluster_search_connections_http_error(_response
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_inbound_cross_cluster_search_connections_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_inbound_cross_cluster_search_connections::DescribeInboundCrossClusterSearchConnectionsOutput, crate::operation::describe_inbound_cross_cluster_search_connections::DescribeInboundCrossClusterSearchConnectionsError>{
+pub fn de_describe_inbound_cross_cluster_search_connections_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_inbound_cross_cluster_search_connections::DescribeInboundCrossClusterSearchConnectionsOutput, crate::operation::describe_inbound_cross_cluster_search_connections::DescribeInboundCrossClusterSearchConnectionsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_inbound_cross_cluster_search_connections::builders::DescribeInboundCrossClusterSearchConnectionsOutputBuilder::default();

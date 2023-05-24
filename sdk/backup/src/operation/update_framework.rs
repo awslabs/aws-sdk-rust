@@ -177,9 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFramework {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_framework::de_update_framework_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_update_framework::de_update_framework_http_response_with_props(status, headers, body)
         }
     }
 }

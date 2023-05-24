@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelTransaction {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_cancel_transaction::de_cancel_transaction_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_cancel_transaction::de_cancel_transaction_http_response_with_props(status, headers, body)
         }
     }
 }

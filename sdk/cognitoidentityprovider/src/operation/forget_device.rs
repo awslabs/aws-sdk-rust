@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ForgetDevice {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_forget_device::de_forget_device_http_response(
+            crate::protocol_serde::shape_forget_device::de_forget_device_http_response_with_props(
                 status, headers, body,
             )
         }

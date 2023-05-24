@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartCutover {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_start_cutover::de_start_cutover_http_response(
+            crate::protocol_serde::shape_start_cutover::de_start_cutover_http_response_with_props(
                 status, headers, body,
             )
         }

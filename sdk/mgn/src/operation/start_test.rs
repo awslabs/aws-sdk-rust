@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartTest {
         if !success && status != 202 {
             crate::protocol_serde::shape_start_test::de_start_test_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_start_test::de_start_test_http_response(
+            crate::protocol_serde::shape_start_test::de_start_test_http_response_with_props(
                 status, headers, body,
             )
         }

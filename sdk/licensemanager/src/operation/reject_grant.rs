@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectGrant {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_reject_grant::de_reject_grant_http_response(
+            crate::protocol_serde::shape_reject_grant::de_reject_grant_http_response_with_props(
                 status, headers, body,
             )
         }

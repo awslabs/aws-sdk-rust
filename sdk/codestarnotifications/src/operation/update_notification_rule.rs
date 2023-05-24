@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateNotificationRule {
         if !success && status != 200 {
             crate::protocol_serde::shape_update_notification_rule::de_update_notification_rule_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_update_notification_rule::de_update_notification_rule_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_notification_rule::de_update_notification_rule_http_response_with_props(status, headers, body)
         }
     }
 }

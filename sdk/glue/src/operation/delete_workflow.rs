@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkflow {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_workflow::de_delete_workflow_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_delete_workflow::de_delete_workflow_http_response_with_props(status, headers, body)
         }
     }
 }

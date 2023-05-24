@@ -123,7 +123,7 @@ pub fn de_skip_wait_time_for_instance_termination_http_error(_response_status: u
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_skip_wait_time_for_instance_termination_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationOutput, crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationError>{
+pub fn de_skip_wait_time_for_instance_termination_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationOutput, crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::skip_wait_time_for_instance_termination::builders::SkipWaitTimeForInstanceTerminationOutputBuilder::default();

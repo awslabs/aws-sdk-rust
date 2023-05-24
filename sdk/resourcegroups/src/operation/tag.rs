@@ -164,7 +164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Tag {
         if !success && status != 200 {
             crate::protocol_serde::shape_tag::de_tag_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_tag::de_tag_http_response(status, headers, body)
+            crate::protocol_serde::shape_tag::de_tag_http_response_with_props(status, headers, body)
         }
     }
 }

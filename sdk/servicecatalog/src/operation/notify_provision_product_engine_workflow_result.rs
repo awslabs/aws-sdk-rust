@@ -138,7 +138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for NotifyProvisionProductEn
         if !success && status != 200 {
             crate::protocol_serde::shape_notify_provision_product_engine_workflow_result::de_notify_provision_product_engine_workflow_result_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_notify_provision_product_engine_workflow_result::de_notify_provision_product_engine_workflow_result_http_response(status, headers, body)
+            crate::protocol_serde::shape_notify_provision_product_engine_workflow_result::de_notify_provision_product_engine_workflow_result_http_response_with_props(status, headers, body)
         }
     }
 }

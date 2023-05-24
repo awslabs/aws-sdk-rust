@@ -107,7 +107,7 @@ pub fn de_start_recommendation_report_generation_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_start_recommendation_report_generation_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationOutput, crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationError>{
+pub fn de_start_recommendation_report_generation_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationOutput, crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::start_recommendation_report_generation::builders::StartRecommendationReportGenerationOutputBuilder::default();

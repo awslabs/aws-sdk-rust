@@ -190,7 +190,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutProvisionedConcurrenc
         if !success && status != 202 {
             crate::protocol_serde::shape_put_provisioned_concurrency_config::de_put_provisioned_concurrency_config_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_put_provisioned_concurrency_config::de_put_provisioned_concurrency_config_http_response(status, headers, body)
+            crate::protocol_serde::shape_put_provisioned_concurrency_config::de_put_provisioned_concurrency_config_http_response_with_props(status, headers, body)
         }
     }
 }

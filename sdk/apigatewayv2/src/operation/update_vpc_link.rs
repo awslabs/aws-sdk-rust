@@ -170,9 +170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVpcLink {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_vpc_link::de_update_vpc_link_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_update_vpc_link::de_update_vpc_link_http_response_with_props(status, headers, body)
         }
     }
 }

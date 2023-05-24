@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendMessageBatch {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_send_message_batch::de_send_message_batch_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_send_message_batch::de_send_message_batch_http_response_with_props(status, headers, body)
         }
     }
 }

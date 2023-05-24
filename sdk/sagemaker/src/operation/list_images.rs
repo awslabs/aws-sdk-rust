@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListImages {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_images::de_list_images_http_response(
+            crate::protocol_serde::shape_list_images::de_list_images_http_response_with_props(
                 status, headers, body,
             )
         }

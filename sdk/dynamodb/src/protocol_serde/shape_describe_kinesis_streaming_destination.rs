@@ -75,7 +75,7 @@ pub fn de_describe_kinesis_streaming_destination_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_kinesis_streaming_destination_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_kinesis_streaming_destination::DescribeKinesisStreamingDestinationOutput, crate::operation::describe_kinesis_streaming_destination::DescribeKinesisStreamingDestinationError>{
+pub fn de_describe_kinesis_streaming_destination_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_kinesis_streaming_destination::DescribeKinesisStreamingDestinationOutput, crate::operation::describe_kinesis_streaming_destination::DescribeKinesisStreamingDestinationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_kinesis_streaming_destination::builders::DescribeKinesisStreamingDestinationOutputBuilder::default();

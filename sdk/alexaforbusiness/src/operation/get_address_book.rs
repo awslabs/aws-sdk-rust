@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAddressBook {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_address_book::de_get_address_book_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_address_book::de_get_address_book_http_response_with_props(status, headers, body)
         }
     }
 }

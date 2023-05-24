@@ -152,9 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BuildSuggesters {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_build_suggesters::de_build_suggesters_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_build_suggesters::de_build_suggesters_http_response_with_props(status, headers, body)
         }
     }
 }

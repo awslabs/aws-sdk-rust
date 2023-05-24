@@ -160,7 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePatchBaseline {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_patch_baseline::de_create_patch_baseline_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_patch_baseline::de_create_patch_baseline_http_response_with_props(status, headers, body)
         }
     }
 }

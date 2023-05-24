@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInstanceTypesFromInst
         if !success && status != 200 {
             crate::protocol_serde::shape_get_instance_types_from_instance_requirements::de_get_instance_types_from_instance_requirements_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_instance_types_from_instance_requirements::de_get_instance_types_from_instance_requirements_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_instance_types_from_instance_requirements::de_get_instance_types_from_instance_requirements_http_response_with_props(status, headers, body)
         }
     }
 }

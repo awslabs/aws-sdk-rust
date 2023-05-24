@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomRoutingListene
         if !success && status != 200 {
             crate::protocol_serde::shape_list_custom_routing_listeners::de_list_custom_routing_listeners_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_custom_routing_listeners::de_list_custom_routing_listeners_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_custom_routing_listeners::de_list_custom_routing_listeners_http_response_with_props(status, headers, body)
         }
     }
 }

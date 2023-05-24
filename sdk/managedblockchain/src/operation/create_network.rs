@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNetwork {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_network::de_create_network_http_response(
+            crate::protocol_serde::shape_create_network::de_create_network_http_response_with_props(
                 status, headers, body,
             )
         }

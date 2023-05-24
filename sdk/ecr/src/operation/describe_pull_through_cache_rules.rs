@@ -154,7 +154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePullThroughCache
         if !success && status != 200 {
             crate::protocol_serde::shape_describe_pull_through_cache_rules::de_describe_pull_through_cache_rules_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_describe_pull_through_cache_rules::de_describe_pull_through_cache_rules_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_pull_through_cache_rules::de_describe_pull_through_cache_rules_http_response_with_props(status, headers, body)
         }
     }
 }

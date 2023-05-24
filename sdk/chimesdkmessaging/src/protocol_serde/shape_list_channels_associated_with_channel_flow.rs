@@ -113,7 +113,7 @@ pub fn de_list_channels_associated_with_channel_flow_http_error(_response_status
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_channels_associated_with_channel_flow_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowOutput, crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowError>{
+pub fn de_list_channels_associated_with_channel_flow_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowOutput, crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_channels_associated_with_channel_flow::builders::ListChannelsAssociatedWithChannelFlowOutputBuilder::default();

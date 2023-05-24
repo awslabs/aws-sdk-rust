@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLogStreams {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_log_streams::de_describe_log_streams_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_describe_log_streams::de_describe_log_streams_http_response_with_props(status, headers, body)
         }
     }
 }

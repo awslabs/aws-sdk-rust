@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UnshareDirectory {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_unshare_directory::de_unshare_directory_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_unshare_directory::de_unshare_directory_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRecommender {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_recommender::de_delete_recommender_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_delete_recommender::de_delete_recommender_http_response_with_props(status, headers, body)
         }
     }
 }

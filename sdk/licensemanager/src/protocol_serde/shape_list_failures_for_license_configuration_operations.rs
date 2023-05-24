@@ -107,7 +107,7 @@ pub fn de_list_failures_for_license_configuration_operations_http_error(_respons
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_failures_for_license_configuration_operations_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsOutput, crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsError>{
+pub fn de_list_failures_for_license_configuration_operations_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsOutput, crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_failures_for_license_configuration_operations::builders::ListFailuresForLicenseConfigurationOperationsOutputBuilder::default();

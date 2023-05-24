@@ -177,9 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReplicateInstance {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_replicate_instance::de_replicate_instance_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_replicate_instance::de_replicate_instance_http_response_with_props(status, headers, body)
         }
     }
 }

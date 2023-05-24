@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCelebrityInfo {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_celebrity_info::de_get_celebrity_info_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_celebrity_info::de_get_celebrity_info_http_response_with_props(status, headers, body)
         }
     }
 }

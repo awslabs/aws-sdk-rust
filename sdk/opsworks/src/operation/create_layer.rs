@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLayer {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_layer::de_create_layer_http_response(
+            crate::protocol_serde::shape_create_layer::de_create_layer_http_response_with_props(
                 status, headers, body,
             )
         }

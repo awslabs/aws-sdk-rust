@@ -180,9 +180,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEnvironment {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_environment::de_delete_environment_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_delete_environment::de_delete_environment_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -180,7 +180,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRecoveryPoint {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_recovery_point::de_delete_recovery_point_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_recovery_point::de_delete_recovery_point_http_response_with_props(status, headers, body)
         }
     }
 }

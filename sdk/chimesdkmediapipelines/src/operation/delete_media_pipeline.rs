@@ -160,7 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMediaPipeline {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_media_pipeline::de_delete_media_pipeline_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_media_pipeline::de_delete_media_pipeline_http_response_with_props(status, headers, body)
         }
     }
 }

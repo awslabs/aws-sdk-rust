@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTapes {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_tapes::de_create_tapes_http_response(
+            crate::protocol_serde::shape_create_tapes::de_create_tapes_http_response_with_props(
                 status, headers, body,
             )
         }

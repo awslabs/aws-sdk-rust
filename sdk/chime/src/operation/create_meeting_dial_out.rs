@@ -172,7 +172,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMeetingDialOut {
         if !success && status != 201 {
             crate::protocol_serde::shape_create_meeting_dial_out::de_create_meeting_dial_out_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_meeting_dial_out::de_create_meeting_dial_out_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_meeting_dial_out::de_create_meeting_dial_out_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -113,7 +113,7 @@ pub fn de_disassociate_user_from_permission_group_http_error(_response_status: u
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_disassociate_user_from_permission_group_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::disassociate_user_from_permission_group::DisassociateUserFromPermissionGroupOutput, crate::operation::disassociate_user_from_permission_group::DisassociateUserFromPermissionGroupError>{
+pub fn de_disassociate_user_from_permission_group_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::disassociate_user_from_permission_group::DisassociateUserFromPermissionGroupOutput, crate::operation::disassociate_user_from_permission_group::DisassociateUserFromPermissionGroupError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::disassociate_user_from_permission_group::builders::DisassociateUserFromPermissionGroupOutputBuilder::default();

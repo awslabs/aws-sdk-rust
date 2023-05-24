@@ -129,7 +129,7 @@ pub fn de_get_app_instance_streaming_configurations_http_error(_response_status:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_app_instance_streaming_configurations_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_app_instance_streaming_configurations::GetAppInstanceStreamingConfigurationsOutput, crate::operation::get_app_instance_streaming_configurations::GetAppInstanceStreamingConfigurationsError>{
+pub fn de_get_app_instance_streaming_configurations_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_app_instance_streaming_configurations::GetAppInstanceStreamingConfigurationsOutput, crate::operation::get_app_instance_streaming_configurations::GetAppInstanceStreamingConfigurationsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_app_instance_streaming_configurations::builders::GetAppInstanceStreamingConfigurationsOutputBuilder::default();

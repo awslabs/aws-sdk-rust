@@ -198,9 +198,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRouteResponses {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_route_responses::de_get_route_responses_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_route_responses::de_get_route_responses_http_response_with_props(status, headers, body)
         }
     }
 }

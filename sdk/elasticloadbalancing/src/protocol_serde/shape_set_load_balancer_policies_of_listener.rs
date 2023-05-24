@@ -81,7 +81,7 @@ pub fn de_set_load_balancer_policies_of_listener_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_set_load_balancer_policies_of_listener_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerOutput, crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerError>{
+pub fn de_set_load_balancer_policies_of_listener_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerOutput, crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::set_load_balancer_policies_of_listener::builders::SetLoadBalancerPoliciesOfListenerOutputBuilder::default();

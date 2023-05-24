@@ -174,9 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for VerifyOTPMessage {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_verify_otp_message::de_verify_otp_message_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_verify_otp_message::de_verify_otp_message_http_response_with_props(status, headers, body)
         }
     }
 }

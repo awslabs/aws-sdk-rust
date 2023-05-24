@@ -173,9 +173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAlarmModel {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_alarm_model::de_describe_alarm_model_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_describe_alarm_model::de_describe_alarm_model_http_response_with_props(status, headers, body)
         }
     }
 }

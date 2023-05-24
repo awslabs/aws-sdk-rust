@@ -9,7 +9,7 @@ pub fn de_describe_local_gateway_route_table_vpc_associations_http_error(_respon
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_local_gateway_route_table_vpc_associations_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_local_gateway_route_table_vpc_associations::DescribeLocalGatewayRouteTableVpcAssociationsOutput, crate::operation::describe_local_gateway_route_table_vpc_associations::DescribeLocalGatewayRouteTableVpcAssociationsError>{
+pub fn de_describe_local_gateway_route_table_vpc_associations_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_local_gateway_route_table_vpc_associations::DescribeLocalGatewayRouteTableVpcAssociationsOutput, crate::operation::describe_local_gateway_route_table_vpc_associations::DescribeLocalGatewayRouteTableVpcAssociationsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_local_gateway_route_table_vpc_associations::builders::DescribeLocalGatewayRouteTableVpcAssociationsOutputBuilder::default();

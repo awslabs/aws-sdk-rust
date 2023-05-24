@@ -140,7 +140,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateResourceSharePe
         if !success && status != 200 {
             crate::protocol_serde::shape_associate_resource_share_permission::de_associate_resource_share_permission_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_associate_resource_share_permission::de_associate_resource_share_permission_http_response(status, headers, body)
+            crate::protocol_serde::shape_associate_resource_share_permission::de_associate_resource_share_permission_http_response_with_props(status, headers, body)
         }
     }
 }

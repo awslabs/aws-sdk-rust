@@ -91,7 +91,7 @@ pub fn de_batch_associate_assessment_report_evidence_http_error(_response_status
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_batch_associate_assessment_report_evidence_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceOutput, crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceError>{
+pub fn de_batch_associate_assessment_report_evidence_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceOutput, crate::operation::batch_associate_assessment_report_evidence::BatchAssociateAssessmentReportEvidenceError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::batch_associate_assessment_report_evidence::builders::BatchAssociateAssessmentReportEvidenceOutputBuilder::default();

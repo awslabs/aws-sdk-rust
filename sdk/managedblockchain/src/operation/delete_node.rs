@@ -193,7 +193,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNode {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_node::de_delete_node_http_response(
+            crate::protocol_serde::shape_delete_node::de_delete_node_http_response_with_props(
                 status, headers, body,
             )
         }

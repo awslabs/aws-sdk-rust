@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOriginEndpoints {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_origin_endpoints::de_list_origin_endpoints_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_origin_endpoints::de_list_origin_endpoints_http_response_with_props(status, headers, body)
         }
     }
 }

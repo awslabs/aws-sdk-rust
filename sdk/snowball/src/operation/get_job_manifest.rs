@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetJobManifest {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_job_manifest::de_get_job_manifest_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_job_manifest::de_get_job_manifest_http_response_with_props(status, headers, body)
         }
     }
 }

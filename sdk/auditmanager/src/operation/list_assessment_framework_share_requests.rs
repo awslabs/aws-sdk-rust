@@ -146,7 +146,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssessmentFrameworkS
         if !success && status != 200 {
             crate::protocol_serde::shape_list_assessment_framework_share_requests::de_list_assessment_framework_share_requests_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_assessment_framework_share_requests::de_list_assessment_framework_share_requests_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_assessment_framework_share_requests::de_list_assessment_framework_share_requests_http_response_with_props(status, headers, body)
         }
     }
 }

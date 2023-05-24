@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyClientVpnEndpoint 
         if !success && status != 200 {
             crate::protocol_serde::shape_modify_client_vpn_endpoint::de_modify_client_vpn_endpoint_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_modify_client_vpn_endpoint::de_modify_client_vpn_endpoint_http_response(status, headers, body)
+            crate::protocol_serde::shape_modify_client_vpn_endpoint::de_modify_client_vpn_endpoint_http_response_with_props(status, headers, body)
         }
     }
 }

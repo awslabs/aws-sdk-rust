@@ -146,7 +146,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableProactiveEngageme
         if !success && status != 200 {
             crate::protocol_serde::shape_disable_proactive_engagement::de_disable_proactive_engagement_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_disable_proactive_engagement::de_disable_proactive_engagement_http_response(status, headers, body)
+            crate::protocol_serde::shape_disable_proactive_engagement::de_disable_proactive_engagement_http_response_with_props(status, headers, body)
         }
     }
 }

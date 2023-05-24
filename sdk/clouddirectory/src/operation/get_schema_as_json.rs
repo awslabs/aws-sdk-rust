@@ -138,9 +138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSchemaAsJson {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_schema_as_json::de_get_schema_as_json_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_schema_as_json::de_get_schema_as_json_http_response_with_props(status, headers, body)
         }
     }
 }

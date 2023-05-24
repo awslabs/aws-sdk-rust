@@ -151,7 +151,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSchema {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_schema::de_create_schema_http_response(
+            crate::protocol_serde::shape_create_schema::de_create_schema_http_response_with_props(
                 status, headers, body,
             )
         }

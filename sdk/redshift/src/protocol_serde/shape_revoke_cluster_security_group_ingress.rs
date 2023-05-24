@@ -65,7 +65,7 @@ pub fn de_revoke_cluster_security_group_ingress_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_revoke_cluster_security_group_ingress_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressOutput, crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressError>{
+pub fn de_revoke_cluster_security_group_ingress_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressOutput, crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::revoke_cluster_security_group_ingress::builders::RevokeClusterSecurityGroupIngressOutputBuilder::default();

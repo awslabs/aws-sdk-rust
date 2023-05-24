@@ -172,7 +172,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateApprovedOrigin 
         if !success && status != 200 {
             crate::protocol_serde::shape_associate_approved_origin::de_associate_approved_origin_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_associate_approved_origin::de_associate_approved_origin_http_response(status, headers, body)
+            crate::protocol_serde::shape_associate_approved_origin::de_associate_approved_origin_http_response_with_props(status, headers, body)
         }
     }
 }

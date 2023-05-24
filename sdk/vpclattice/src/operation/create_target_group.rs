@@ -153,9 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTargetGroup {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_target_group::de_create_target_group_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_target_group::de_create_target_group_http_response_with_props(status, headers, body)
         }
     }
 }

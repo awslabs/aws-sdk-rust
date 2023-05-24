@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateDomain {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_associate_domain::de_associate_domain_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_associate_domain::de_associate_domain_http_response_with_props(status, headers, body)
         }
     }
 }

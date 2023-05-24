@@ -9,7 +9,7 @@ pub fn de_modify_verified_access_instance_logging_configuration_http_error(_resp
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_modify_verified_access_instance_logging_configuration_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationOutput, crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationError>{
+pub fn de_modify_verified_access_instance_logging_configuration_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationOutput, crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::modify_verified_access_instance_logging_configuration::builders::ModifyVerifiedAccessInstanceLoggingConfigurationOutputBuilder::default();

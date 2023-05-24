@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableTransitGatewayRout
         if !success && status != 200 {
             crate::protocol_serde::shape_enable_transit_gateway_route_table_propagation::de_enable_transit_gateway_route_table_propagation_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_enable_transit_gateway_route_table_propagation::de_enable_transit_gateway_route_table_propagation_http_response(status, headers, body)
+            crate::protocol_serde::shape_enable_transit_gateway_route_table_propagation::de_enable_transit_gateway_route_table_propagation_http_response_with_props(status, headers, body)
         }
     }
 }

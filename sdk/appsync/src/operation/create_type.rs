@@ -170,7 +170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateType {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_type::de_create_type_http_response(
+            crate::protocol_serde::shape_create_type::de_create_type_http_response_with_props(
                 status, headers, body,
             )
         }

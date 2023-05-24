@@ -43,7 +43,7 @@ pub fn de_delete_model_explainability_job_definition_http_error(_response_status
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_model_explainability_job_definition_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_model_explainability_job_definition::DeleteModelExplainabilityJobDefinitionOutput, crate::operation::delete_model_explainability_job_definition::DeleteModelExplainabilityJobDefinitionError>{
+pub fn de_delete_model_explainability_job_definition_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_model_explainability_job_definition::DeleteModelExplainabilityJobDefinitionOutput, crate::operation::delete_model_explainability_job_definition::DeleteModelExplainabilityJobDefinitionError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_model_explainability_job_definition::builders::DeleteModelExplainabilityJobDefinitionOutputBuilder::default();

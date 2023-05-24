@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ActivateType {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_activate_type::de_activate_type_http_response(
+            crate::protocol_serde::shape_activate_type::de_activate_type_http_response_with_props(
                 status, headers, body,
             )
         }

@@ -206,9 +206,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGatewayRoute {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_gateway_route::de_create_gateway_route_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_gateway_route::de_create_gateway_route_http_response_with_props(status, headers, body)
         }
     }
 }

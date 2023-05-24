@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UndeprecateActivityType 
         if !success && status != 200 {
             crate::protocol_serde::shape_undeprecate_activity_type::de_undeprecate_activity_type_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_undeprecate_activity_type::de_undeprecate_activity_type_http_response(status, headers, body)
+            crate::protocol_serde::shape_undeprecate_activity_type::de_undeprecate_activity_type_http_response_with_props(status, headers, body)
         }
     }
 }

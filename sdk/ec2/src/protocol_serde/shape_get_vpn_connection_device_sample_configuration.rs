@@ -9,7 +9,7 @@ pub fn de_get_vpn_connection_device_sample_configuration_http_error(_response_st
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_vpn_connection_device_sample_configuration_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationOutput, crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationError>{
+pub fn de_get_vpn_connection_device_sample_configuration_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationOutput, crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_vpn_connection_device_sample_configuration::builders::GetVpnConnectionDeviceSampleConfigurationOutputBuilder::default();

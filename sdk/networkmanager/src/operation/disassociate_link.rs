@@ -200,9 +200,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateLink {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_disassociate_link::de_disassociate_link_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_disassociate_link::de_disassociate_link_http_response_with_props(status, headers, body)
         }
     }
 }

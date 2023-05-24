@@ -152,9 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSamplingTargets {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_sampling_targets::de_get_sampling_targets_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_sampling_targets::de_get_sampling_targets_http_response_with_props(status, headers, body)
         }
     }
 }

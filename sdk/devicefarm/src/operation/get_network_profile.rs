@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetNetworkProfile {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_network_profile::de_get_network_profile_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_network_profile::de_get_network_profile_http_response_with_props(status, headers, body)
         }
     }
 }

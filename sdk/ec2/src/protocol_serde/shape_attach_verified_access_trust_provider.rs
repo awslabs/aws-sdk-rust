@@ -9,7 +9,7 @@ pub fn de_attach_verified_access_trust_provider_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_attach_verified_access_trust_provider_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::attach_verified_access_trust_provider::AttachVerifiedAccessTrustProviderOutput, crate::operation::attach_verified_access_trust_provider::AttachVerifiedAccessTrustProviderError>{
+pub fn de_attach_verified_access_trust_provider_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::attach_verified_access_trust_provider::AttachVerifiedAccessTrustProviderOutput, crate::operation::attach_verified_access_trust_provider::AttachVerifiedAccessTrustProviderError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::attach_verified_access_trust_provider::builders::AttachVerifiedAccessTrustProviderOutputBuilder::default();

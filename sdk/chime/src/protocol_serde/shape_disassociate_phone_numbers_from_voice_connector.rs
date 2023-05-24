@@ -139,7 +139,7 @@ pub fn de_disassociate_phone_numbers_from_voice_connector_http_error(_response_s
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_disassociate_phone_numbers_from_voice_connector_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::disassociate_phone_numbers_from_voice_connector::DisassociatePhoneNumbersFromVoiceConnectorOutput, crate::operation::disassociate_phone_numbers_from_voice_connector::DisassociatePhoneNumbersFromVoiceConnectorError>{
+pub fn de_disassociate_phone_numbers_from_voice_connector_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::disassociate_phone_numbers_from_voice_connector::DisassociatePhoneNumbersFromVoiceConnectorOutput, crate::operation::disassociate_phone_numbers_from_voice_connector::DisassociatePhoneNumbersFromVoiceConnectorError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::disassociate_phone_numbers_from_voice_connector::builders::DisassociatePhoneNumbersFromVoiceConnectorOutputBuilder::default();

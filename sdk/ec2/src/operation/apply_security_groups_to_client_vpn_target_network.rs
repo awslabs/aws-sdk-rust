@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse
         if !success && status != 200 {
             crate::protocol_serde::shape_apply_security_groups_to_client_vpn_target_network::de_apply_security_groups_to_client_vpn_target_network_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_apply_security_groups_to_client_vpn_target_network::de_apply_security_groups_to_client_vpn_target_network_http_response(status, headers, body)
+            crate::protocol_serde::shape_apply_security_groups_to_client_vpn_target_network::de_apply_security_groups_to_client_vpn_target_network_http_response_with_props(status, headers, body)
         }
     }
 }

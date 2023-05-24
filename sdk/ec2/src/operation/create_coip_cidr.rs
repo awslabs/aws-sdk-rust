@@ -152,9 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCoipCidr {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_coip_cidr::de_create_coip_cidr_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_coip_cidr::de_create_coip_cidr_http_response_with_props(status, headers, body)
         }
     }
 }

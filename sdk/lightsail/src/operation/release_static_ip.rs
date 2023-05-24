@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReleaseStaticIp {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_release_static_ip::de_release_static_ip_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_release_static_ip::de_release_static_ip_http_response_with_props(status, headers, body)
         }
     }
 }

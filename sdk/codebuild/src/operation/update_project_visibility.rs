@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateProjectVisibility 
         if !success && status != 200 {
             crate::protocol_serde::shape_update_project_visibility::de_update_project_visibility_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_update_project_visibility::de_update_project_visibility_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_project_visibility::de_update_project_visibility_http_response_with_props(status, headers, body)
         }
     }
 }

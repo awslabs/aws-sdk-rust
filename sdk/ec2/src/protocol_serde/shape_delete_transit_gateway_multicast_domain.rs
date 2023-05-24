@@ -9,7 +9,7 @@ pub fn de_delete_transit_gateway_multicast_domain_http_error(_response_status: u
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_transit_gateway_multicast_domain_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_transit_gateway_multicast_domain::DeleteTransitGatewayMulticastDomainOutput, crate::operation::delete_transit_gateway_multicast_domain::DeleteTransitGatewayMulticastDomainError>{
+pub fn de_delete_transit_gateway_multicast_domain_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_transit_gateway_multicast_domain::DeleteTransitGatewayMulticastDomainOutput, crate::operation::delete_transit_gateway_multicast_domain::DeleteTransitGatewayMulticastDomainError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_transit_gateway_multicast_domain::builders::DeleteTransitGatewayMulticastDomainOutputBuilder::default();

@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutStoredQuery {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_put_stored_query::de_put_stored_query_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_put_stored_query::de_put_stored_query_http_response_with_props(status, headers, body)
         }
     }
 }

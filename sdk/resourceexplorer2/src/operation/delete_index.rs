@@ -149,7 +149,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteIndex {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_index::de_delete_index_http_response(
+            crate::protocol_serde::shape_delete_index::de_delete_index_http_response_with_props(
                 status, headers, body,
             )
         }

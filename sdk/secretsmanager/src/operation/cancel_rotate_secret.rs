@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelRotateSecret {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_cancel_rotate_secret::de_cancel_rotate_secret_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_cancel_rotate_secret::de_cancel_rotate_secret_http_response_with_props(status, headers, body)
         }
     }
 }

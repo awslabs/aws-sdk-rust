@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminListDevices {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_admin_list_devices::de_admin_list_devices_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_admin_list_devices::de_admin_list_devices_http_response_with_props(status, headers, body)
         }
     }
     fn sensitive(&self) -> bool {

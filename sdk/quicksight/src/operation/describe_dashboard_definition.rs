@@ -199,7 +199,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDashboardDefinit
         if !success && status != 200 {
             crate::protocol_serde::shape_describe_dashboard_definition::de_describe_dashboard_definition_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_describe_dashboard_definition::de_describe_dashboard_definition_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_dashboard_definition::de_describe_dashboard_definition_http_response_with_props(status, headers, body)
         }
     }
     fn sensitive(&self) -> bool {

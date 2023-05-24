@@ -191,7 +191,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketEncryption {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_put_bucket_encryption::de_put_bucket_encryption_http_response(status, headers, body)
+            crate::protocol_serde::shape_put_bucket_encryption::de_put_bucket_encryption_http_response_with_props(status, headers, body)
         }
     }
 }

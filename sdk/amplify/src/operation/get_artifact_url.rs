@@ -156,9 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetArtifactUrl {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_artifact_url::de_get_artifact_url_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_artifact_url::de_get_artifact_url_http_response_with_props(status, headers, body)
         }
     }
 }

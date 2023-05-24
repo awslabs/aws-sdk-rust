@@ -9,7 +9,7 @@ pub fn de_describe_vpc_endpoint_connection_notifications_http_error(_response_st
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_vpc_endpoint_connection_notifications_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsOutput, crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsError>{
+pub fn de_describe_vpc_endpoint_connection_notifications_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsOutput, crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_vpc_endpoint_connection_notifications::builders::DescribeVpcEndpointConnectionNotificationsOutputBuilder::default();

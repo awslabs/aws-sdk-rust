@@ -158,7 +158,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeKey {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_key::de_describe_key_http_response(
+            crate::protocol_serde::shape_describe_key::de_describe_key_http_response_with_props(
                 status, headers, body,
             )
         }

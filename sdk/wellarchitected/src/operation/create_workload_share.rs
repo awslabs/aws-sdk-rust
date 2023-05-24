@@ -179,7 +179,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkloadShare {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_workload_share::de_create_workload_share_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_workload_share::de_create_workload_share_http_response_with_props(status, headers, body)
         }
     }
 }

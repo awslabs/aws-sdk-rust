@@ -158,7 +158,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMediaCapturePipeli
         if !success && status != 204 {
             crate::protocol_serde::shape_delete_media_capture_pipeline::de_delete_media_capture_pipeline_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_media_capture_pipeline::de_delete_media_capture_pipeline_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_media_capture_pipeline::de_delete_media_capture_pipeline_http_response_with_props(status, headers, body)
         }
     }
 }

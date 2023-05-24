@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetSecurityGroups {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_set_security_groups::de_set_security_groups_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_set_security_groups::de_set_security_groups_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -91,7 +91,7 @@ pub fn de_update_automated_discovery_configuration_http_error(_response_status: 
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_automated_discovery_configuration_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_automated_discovery_configuration::UpdateAutomatedDiscoveryConfigurationOutput, crate::operation::update_automated_discovery_configuration::UpdateAutomatedDiscoveryConfigurationError>{
+pub fn de_update_automated_discovery_configuration_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_automated_discovery_configuration::UpdateAutomatedDiscoveryConfigurationOutput, crate::operation::update_automated_discovery_configuration::UpdateAutomatedDiscoveryConfigurationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_automated_discovery_configuration::builders::UpdateAutomatedDiscoveryConfigurationOutputBuilder::default();

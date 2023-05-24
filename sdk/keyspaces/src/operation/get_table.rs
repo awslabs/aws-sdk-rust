@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTable {
         if !success && status != 200 {
             crate::protocol_serde::shape_get_table::de_get_table_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_table::de_get_table_http_response(
+            crate::protocol_serde::shape_get_table::de_get_table_http_response_with_props(
                 status, headers, body,
             )
         }

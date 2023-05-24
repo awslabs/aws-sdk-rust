@@ -187,7 +187,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMedicalVocabularies 
         if !success && status != 200 {
             crate::protocol_serde::shape_list_medical_vocabularies::de_list_medical_vocabularies_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_medical_vocabularies::de_list_medical_vocabularies_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_medical_vocabularies::de_list_medical_vocabularies_http_response_with_props(status, headers, body)
         }
     }
 }

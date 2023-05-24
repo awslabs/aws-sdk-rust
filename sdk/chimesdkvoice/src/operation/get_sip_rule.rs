@@ -156,7 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSipRule {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_sip_rule::de_get_sip_rule_http_response(
+            crate::protocol_serde::shape_get_sip_rule::de_get_sip_rule_http_response_with_props(
                 status, headers, body,
             )
         }

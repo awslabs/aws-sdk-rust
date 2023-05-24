@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartOrganizationService
         if !success && status != 200 {
             crate::protocol_serde::shape_start_organization_service_access_update::de_start_organization_service_access_update_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_start_organization_service_access_update::de_start_organization_service_access_update_http_response(status, headers, body)
+            crate::protocol_serde::shape_start_organization_service_access_update::de_start_organization_service_access_update_http_response_with_props(status, headers, body)
         }
     }
 }

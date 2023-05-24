@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMembers {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_members::de_get_members_http_response(
+            crate::protocol_serde::shape_get_members::de_get_members_http_response_with_props(
                 status, headers, body,
             )
         }

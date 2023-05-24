@@ -91,7 +91,7 @@ pub fn de_get_aggregate_config_rule_compliance_summary_http_error(_response_stat
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_aggregate_config_rule_compliance_summary_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryOutput, crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryError>{
+pub fn de_get_aggregate_config_rule_compliance_summary_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryOutput, crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_aggregate_config_rule_compliance_summary::builders::GetAggregateConfigRuleComplianceSummaryOutputBuilder::default();

@@ -212,7 +212,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PostText {
         if !success && status != 200 {
             crate::protocol_serde::shape_post_text::de_post_text_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_post_text::de_post_text_http_response(
+            crate::protocol_serde::shape_post_text::de_post_text_http_response_with_props(
                 status, headers, body,
             )
         }

@@ -152,9 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReceiveMessage {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_receive_message::de_receive_message_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_receive_message::de_receive_message_http_response_with_props(status, headers, body)
         }
     }
 }

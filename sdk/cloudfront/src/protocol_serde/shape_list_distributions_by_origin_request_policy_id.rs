@@ -65,7 +65,7 @@ pub fn de_list_distributions_by_origin_request_policy_id_http_error(_response_st
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_distributions_by_origin_request_policy_id_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdOutput, crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdError>{
+pub fn de_list_distributions_by_origin_request_policy_id_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdOutput, crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_distributions_by_origin_request_policy_id::builders::ListDistributionsByOriginRequestPolicyIdOutputBuilder::default();

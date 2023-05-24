@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDetectors {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_detectors::de_list_detectors_http_response(
+            crate::protocol_serde::shape_list_detectors::de_list_detectors_http_response_with_props(
                 status, headers, body,
             )
         }

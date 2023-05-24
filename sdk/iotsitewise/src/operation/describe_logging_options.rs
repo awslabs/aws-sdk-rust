@@ -136,7 +136,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLoggingOptions {
         if !success && status != 200 {
             crate::protocol_serde::shape_describe_logging_options::de_describe_logging_options_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_describe_logging_options::de_describe_logging_options_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_logging_options::de_describe_logging_options_http_response_with_props(status, headers, body)
         }
     }
 }

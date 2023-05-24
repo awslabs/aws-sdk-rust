@@ -178,7 +178,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDashboardForJobRun {
         if !success && status != 200 {
             crate::protocol_serde::shape_get_dashboard_for_job_run::de_get_dashboard_for_job_run_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_dashboard_for_job_run::de_get_dashboard_for_job_run_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_dashboard_for_job_run::de_get_dashboard_for_job_run_http_response_with_props(status, headers, body)
         }
     }
 }

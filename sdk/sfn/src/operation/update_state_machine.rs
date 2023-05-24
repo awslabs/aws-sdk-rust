@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateStateMachine {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_state_machine::de_update_state_machine_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_update_state_machine::de_update_state_machine_http_response_with_props(status, headers, body)
         }
     }
 }

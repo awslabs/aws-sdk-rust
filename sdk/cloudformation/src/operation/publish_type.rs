@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PublishType {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_publish_type::de_publish_type_http_response(
+            crate::protocol_serde::shape_publish_type::de_publish_type_http_response_with_props(
                 status, headers, body,
             )
         }

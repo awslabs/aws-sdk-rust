@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutConfigurationSetDeliv
         if !success && status != 200 {
             crate::protocol_serde::shape_put_configuration_set_delivery_options::de_put_configuration_set_delivery_options_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_put_configuration_set_delivery_options::de_put_configuration_set_delivery_options_http_response(status, headers, body)
+            crate::protocol_serde::shape_put_configuration_set_delivery_options::de_put_configuration_set_delivery_options_http_response_with_props(status, headers, body)
         }
     }
 }

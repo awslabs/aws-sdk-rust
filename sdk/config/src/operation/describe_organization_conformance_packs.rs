@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeOrganizationConf
         if !success && status != 200 {
             crate::protocol_serde::shape_describe_organization_conformance_packs::de_describe_organization_conformance_packs_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_describe_organization_conformance_packs::de_describe_organization_conformance_packs_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_organization_conformance_packs::de_describe_organization_conformance_packs_http_response_with_props(status, headers, body)
         }
     }
 }

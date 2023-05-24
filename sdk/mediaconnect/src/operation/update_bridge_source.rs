@@ -196,9 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBridgeSource {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_bridge_source::de_update_bridge_source_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_update_bridge_source::de_update_bridge_source_http_response_with_props(status, headers, body)
         }
     }
 }

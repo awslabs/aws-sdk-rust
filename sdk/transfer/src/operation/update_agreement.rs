@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAgreement {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_agreement::de_update_agreement_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_update_agreement::de_update_agreement_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -154,7 +154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateGatewayFromS
         if !success && status != 200 {
             crate::protocol_serde::shape_disassociate_gateway_from_server::de_disassociate_gateway_from_server_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_disassociate_gateway_from_server::de_disassociate_gateway_from_server_http_response(status, headers, body)
+            crate::protocol_serde::shape_disassociate_gateway_from_server::de_disassociate_gateway_from_server_http_response_with_props(status, headers, body)
         }
     }
 }

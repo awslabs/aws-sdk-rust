@@ -176,9 +176,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCertificate {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_certificate::de_delete_certificate_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_delete_certificate::de_delete_certificate_http_response_with_props(status, headers, body)
         }
     }
 }

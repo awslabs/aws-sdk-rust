@@ -211,9 +211,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRestoreJobs {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_restore_jobs::de_list_restore_jobs_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_restore_jobs::de_list_restore_jobs_http_response_with_props(status, headers, body)
         }
     }
 }

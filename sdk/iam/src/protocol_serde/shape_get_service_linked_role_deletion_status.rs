@@ -65,7 +65,7 @@ pub fn de_get_service_linked_role_deletion_status_http_error(_response_status: u
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_service_linked_role_deletion_status_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusOutput, crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusError>{
+pub fn de_get_service_linked_role_deletion_status_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusOutput, crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_service_linked_role_deletion_status::builders::GetServiceLinkedRoleDeletionStatusOutputBuilder::default();

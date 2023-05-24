@@ -75,7 +75,7 @@ pub fn de_reject_domain_transfer_from_another_aws_account_http_error(_response_s
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_reject_domain_transfer_from_another_aws_account_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountOutput, crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountError>{
+pub fn de_reject_domain_transfer_from_another_aws_account_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountOutput, crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::reject_domain_transfer_from_another_aws_account::builders::RejectDomainTransferFromAnotherAwsAccountOutputBuilder::default();

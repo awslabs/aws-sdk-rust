@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccountAlias {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_account_alias::de_delete_account_alias_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_delete_account_alias::de_delete_account_alias_http_response_with_props(status, headers, body)
         }
     }
 }

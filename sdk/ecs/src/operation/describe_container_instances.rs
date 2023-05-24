@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeContainerInstanc
         if !success && status != 200 {
             crate::protocol_serde::shape_describe_container_instances::de_describe_container_instances_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_describe_container_instances::de_describe_container_instances_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_container_instances::de_describe_container_instances_http_response_with_props(status, headers, body)
         }
     }
 }

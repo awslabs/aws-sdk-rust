@@ -147,7 +147,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetView {
         if !success && status != 200 {
             crate::protocol_serde::shape_get_view::de_get_view_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_view::de_get_view_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_view::de_get_view_http_response_with_props(
+                status, headers, body,
+            )
         }
     }
     fn sensitive(&self) -> bool {

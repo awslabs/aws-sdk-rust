@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocationNfs {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_location_nfs::de_create_location_nfs_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_location_nfs::de_create_location_nfs_http_response_with_props(status, headers, body)
         }
     }
 }

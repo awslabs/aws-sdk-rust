@@ -180,9 +180,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteQuickConnect {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_quick_connect::de_delete_quick_connect_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_delete_quick_connect::de_delete_quick_connect_http_response_with_props(status, headers, body)
         }
     }
 }

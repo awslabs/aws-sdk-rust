@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNatGateway {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_nat_gateway::de_delete_nat_gateway_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_delete_nat_gateway::de_delete_nat_gateway_http_response_with_props(status, headers, body)
         }
     }
 }

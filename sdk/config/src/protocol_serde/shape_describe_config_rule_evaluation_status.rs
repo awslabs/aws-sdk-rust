@@ -75,7 +75,7 @@ pub fn de_describe_config_rule_evaluation_status_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_config_rule_evaluation_status_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusOutput, crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusError>{
+pub fn de_describe_config_rule_evaluation_status_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusOutput, crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_config_rule_evaluation_status::builders::DescribeConfigRuleEvaluationStatusOutputBuilder::default();

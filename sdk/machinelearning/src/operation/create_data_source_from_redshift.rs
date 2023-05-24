@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDataSourceFromReds
         if !success && status != 200 {
             crate::protocol_serde::shape_create_data_source_from_redshift::de_create_data_source_from_redshift_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_data_source_from_redshift::de_create_data_source_from_redshift_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_data_source_from_redshift::de_create_data_source_from_redshift_http_response_with_props(status, headers, body)
         }
     }
 }

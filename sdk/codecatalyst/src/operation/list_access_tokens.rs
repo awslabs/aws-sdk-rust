@@ -137,9 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccessTokens {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_access_tokens::de_list_access_tokens_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_access_tokens::de_list_access_tokens_http_response_with_props(status, headers, body)
         }
     }
 }

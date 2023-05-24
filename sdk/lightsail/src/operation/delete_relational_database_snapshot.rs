@@ -144,7 +144,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRelationalDatabase
         if !success && status != 200 {
             crate::protocol_serde::shape_delete_relational_database_snapshot::de_delete_relational_database_snapshot_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_relational_database_snapshot::de_delete_relational_database_snapshot_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_relational_database_snapshot::de_delete_relational_database_snapshot_http_response_with_props(status, headers, body)
         }
     }
 }

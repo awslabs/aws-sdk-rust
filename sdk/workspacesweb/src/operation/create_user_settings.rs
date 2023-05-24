@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateUserSettings {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_user_settings::de_create_user_settings_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_user_settings::de_create_user_settings_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateReadinessCheck {
         if !success && status != 200 {
             crate::protocol_serde::shape_create_readiness_check::de_create_readiness_check_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_readiness_check::de_create_readiness_check_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_readiness_check::de_create_readiness_check_http_response_with_props(status, headers, body)
         }
     }
 }

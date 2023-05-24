@@ -172,7 +172,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMemberDetectors {
         if !success && status != 200 {
             crate::protocol_serde::shape_update_member_detectors::de_update_member_detectors_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_update_member_detectors::de_update_member_detectors_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_member_detectors::de_update_member_detectors_http_response_with_props(status, headers, body)
         }
     }
 }

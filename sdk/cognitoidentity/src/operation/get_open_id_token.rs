@@ -156,9 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOpenIdToken {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_open_id_token::de_get_open_id_token_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_open_id_token::de_get_open_id_token_http_response_with_props(status, headers, body)
         }
     }
 }

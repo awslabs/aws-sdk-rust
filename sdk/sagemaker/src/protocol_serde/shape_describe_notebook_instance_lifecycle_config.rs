@@ -19,7 +19,7 @@ pub fn de_describe_notebook_instance_lifecycle_config_http_error(_response_statu
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_notebook_instance_lifecycle_config_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_notebook_instance_lifecycle_config::DescribeNotebookInstanceLifecycleConfigOutput, crate::operation::describe_notebook_instance_lifecycle_config::DescribeNotebookInstanceLifecycleConfigError>{
+pub fn de_describe_notebook_instance_lifecycle_config_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_notebook_instance_lifecycle_config::DescribeNotebookInstanceLifecycleConfigOutput, crate::operation::describe_notebook_instance_lifecycle_config::DescribeNotebookInstanceLifecycleConfigError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_notebook_instance_lifecycle_config::builders::DescribeNotebookInstanceLifecycleConfigOutputBuilder::default();

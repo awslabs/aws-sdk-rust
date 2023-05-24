@@ -139,7 +139,7 @@ pub fn de_put_sip_media_application_logging_configuration_http_error(_response_s
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_sip_media_application_logging_configuration_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationOutput, crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationError>{
+pub fn de_put_sip_media_application_logging_configuration_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationOutput, crate::operation::put_sip_media_application_logging_configuration::PutSipMediaApplicationLoggingConfigurationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::put_sip_media_application_logging_configuration::builders::PutSipMediaApplicationLoggingConfigurationOutputBuilder::default();

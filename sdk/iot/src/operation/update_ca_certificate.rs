@@ -197,7 +197,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCACertificate {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_ca_certificate::de_update_ca_certificate_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_ca_certificate::de_update_ca_certificate_http_response_with_props(status, headers, body)
         }
     }
 }

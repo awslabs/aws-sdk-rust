@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableMFADevice {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_enable_mfa_device::de_enable_mfa_device_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_enable_mfa_device::de_enable_mfa_device_http_response_with_props(status, headers, body)
         }
     }
 }

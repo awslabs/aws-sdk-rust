@@ -176,7 +176,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendMessages {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_send_messages::de_send_messages_http_response(
+            crate::protocol_serde::shape_send_messages::de_send_messages_http_response_with_props(
                 status, headers, body,
             )
         }

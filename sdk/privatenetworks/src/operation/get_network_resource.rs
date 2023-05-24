@@ -160,9 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetNetworkResource {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_network_resource::de_get_network_resource_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_network_resource::de_get_network_resource_http_response_with_props(status, headers, body)
         }
     }
     fn sensitive(&self) -> bool {

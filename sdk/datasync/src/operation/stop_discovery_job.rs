@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopDiscoveryJob {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_stop_discovery_job::de_stop_discovery_job_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_stop_discovery_job::de_stop_discovery_job_http_response_with_props(status, headers, body)
         }
     }
 }

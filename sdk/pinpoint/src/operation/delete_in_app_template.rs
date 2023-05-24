@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteInAppTemplate {
         if !success && status != 202 {
             crate::protocol_serde::shape_delete_in_app_template::de_delete_in_app_template_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_in_app_template::de_delete_in_app_template_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_in_app_template::de_delete_in_app_template_http_response_with_props(status, headers, body)
         }
     }
 }

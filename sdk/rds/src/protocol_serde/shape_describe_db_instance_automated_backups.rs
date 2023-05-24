@@ -33,7 +33,7 @@ pub fn de_describe_db_instance_automated_backups_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_db_instance_automated_backups_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_db_instance_automated_backups::DescribeDbInstanceAutomatedBackupsOutput, crate::operation::describe_db_instance_automated_backups::DescribeDBInstanceAutomatedBackupsError>{
+pub fn de_describe_db_instance_automated_backups_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_db_instance_automated_backups::DescribeDbInstanceAutomatedBackupsOutput, crate::operation::describe_db_instance_automated_backups::DescribeDBInstanceAutomatedBackupsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_db_instance_automated_backups::builders::DescribeDbInstanceAutomatedBackupsOutputBuilder::default();

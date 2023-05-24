@@ -283,7 +283,7 @@ pub fn de_update_pull_request_approval_rule_content_http_error(_response_status:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_pull_request_approval_rule_content_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentOutput, crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError>{
+pub fn de_update_pull_request_approval_rule_content_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentOutput, crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_pull_request_approval_rule_content::builders::UpdatePullRequestApprovalRuleContentOutputBuilder::default();

@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AnalyzeDocument {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_analyze_document::de_analyze_document_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_analyze_document::de_analyze_document_http_response_with_props(status, headers, body)
         }
     }
 }

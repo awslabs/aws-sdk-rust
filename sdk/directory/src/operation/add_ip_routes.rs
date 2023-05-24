@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddIpRoutes {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_add_ip_routes::de_add_ip_routes_http_response(
+            crate::protocol_serde::shape_add_ip_routes::de_add_ip_routes_http_response_with_props(
                 status, headers, body,
             )
         }

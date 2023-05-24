@@ -187,9 +187,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTemplateSteps {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_template_steps::de_list_template_steps_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_template_steps::de_list_template_steps_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAccountSetting {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_put_account_setting::de_put_account_setting_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_put_account_setting::de_put_account_setting_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -174,7 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListModelManifestNodes {
         if !success && status != 200 {
             crate::protocol_serde::shape_list_model_manifest_nodes::de_list_model_manifest_nodes_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_model_manifest_nodes::de_list_model_manifest_nodes_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_model_manifest_nodes::de_list_model_manifest_nodes_http_response_with_props(status, headers, body)
         }
     }
 }

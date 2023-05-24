@@ -134,7 +134,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMediaLiveConnector
         if !success && status != 201 {
             crate::protocol_serde::shape_create_media_live_connector_pipeline::de_create_media_live_connector_pipeline_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_media_live_connector_pipeline::de_create_media_live_connector_pipeline_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_media_live_connector_pipeline::de_create_media_live_connector_pipeline_http_response_with_props(status, headers, body)
         }
     }
     fn sensitive(&self) -> bool {

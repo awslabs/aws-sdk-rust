@@ -43,7 +43,7 @@ pub fn de_describe_maintenance_windows_for_target_http_error(_response_status: u
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_maintenance_windows_for_target_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetOutput, crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetError>{
+pub fn de_describe_maintenance_windows_for_target_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetOutput, crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetOutputBuilder::default();

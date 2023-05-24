@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSpace {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_space::de_create_space_http_response(
+            crate::protocol_serde::shape_create_space::de_create_space_http_response_with_props(
                 status, headers, body,
             )
         }

@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGeoMatchSet {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_geo_match_set::de_update_geo_match_set_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_update_geo_match_set::de_update_geo_match_set_http_response_with_props(status, headers, body)
         }
     }
 }

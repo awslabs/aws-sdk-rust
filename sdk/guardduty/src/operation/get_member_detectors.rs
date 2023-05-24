@@ -176,9 +176,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMemberDetectors {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_member_detectors::de_get_member_detectors_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_member_detectors::de_get_member_detectors_http_response_with_props(status, headers, body)
         }
     }
 }

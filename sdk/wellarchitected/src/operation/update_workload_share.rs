@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateWorkloadShare {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_workload_share::de_update_workload_share_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_workload_share::de_update_workload_share_http_response_with_props(status, headers, body)
         }
     }
 }

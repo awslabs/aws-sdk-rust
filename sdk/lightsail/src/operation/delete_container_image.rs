@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteContainerImage {
         if !success && status != 200 {
             crate::protocol_serde::shape_delete_container_image::de_delete_container_image_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_container_image::de_delete_container_image_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_container_image::de_delete_container_image_http_response_with_props(status, headers, body)
         }
     }
 }

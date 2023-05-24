@@ -151,7 +151,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVerifiedAccessEndp
         if !success && status != 200 {
             crate::protocol_serde::shape_create_verified_access_endpoint::de_create_verified_access_endpoint_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_verified_access_endpoint::de_create_verified_access_endpoint_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_verified_access_endpoint::de_create_verified_access_endpoint_http_response_with_props(status, headers, body)
         }
     }
 }

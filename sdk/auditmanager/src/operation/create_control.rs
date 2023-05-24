@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateControl {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_control::de_create_control_http_response(
+            crate::protocol_serde::shape_create_control::de_create_control_http_response_with_props(
                 status, headers, body,
             )
         }

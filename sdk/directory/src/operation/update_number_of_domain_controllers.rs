@@ -144,7 +144,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateNumberOfDomainCont
         if !success && status != 200 {
             crate::protocol_serde::shape_update_number_of_domain_controllers::de_update_number_of_domain_controllers_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_update_number_of_domain_controllers::de_update_number_of_domain_controllers_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_number_of_domain_controllers::de_update_number_of_domain_controllers_http_response_with_props(status, headers, body)
         }
     }
 }

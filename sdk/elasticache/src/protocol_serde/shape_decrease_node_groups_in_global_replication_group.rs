@@ -81,7 +81,7 @@ pub fn de_decrease_node_groups_in_global_replication_group_http_error(_response_
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_decrease_node_groups_in_global_replication_group_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupOutput, crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupError>{
+pub fn de_decrease_node_groups_in_global_replication_group_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupOutput, crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::decrease_node_groups_in_global_replication_group::builders::DecreaseNodeGroupsInGlobalReplicationGroupOutputBuilder::default();

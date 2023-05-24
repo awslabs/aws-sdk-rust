@@ -198,9 +198,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContainerLog {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_container_log::de_get_container_log_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_container_log::de_get_container_log_http_response_with_props(status, headers, body)
         }
     }
 }

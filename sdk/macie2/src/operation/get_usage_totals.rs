@@ -149,9 +149,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUsageTotals {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_usage_totals::de_get_usage_totals_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_usage_totals::de_get_usage_totals_http_response_with_props(status, headers, body)
         }
     }
 }

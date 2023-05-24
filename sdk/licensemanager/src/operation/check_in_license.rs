@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CheckInLicense {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_check_in_license::de_check_in_license_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_check_in_license::de_check_in_license_http_response_with_props(status, headers, body)
         }
     }
 }

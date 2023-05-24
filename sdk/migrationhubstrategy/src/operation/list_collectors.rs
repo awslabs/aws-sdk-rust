@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCollectors {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_collectors::de_list_collectors_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_collectors::de_list_collectors_http_response_with_props(status, headers, body)
         }
     }
 }

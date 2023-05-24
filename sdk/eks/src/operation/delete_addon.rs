@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAddon {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_addon::de_delete_addon_http_response(
+            crate::protocol_serde::shape_delete_addon::de_delete_addon_http_response_with_props(
                 status, headers, body,
             )
         }

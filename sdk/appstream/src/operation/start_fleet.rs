@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartFleet {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_start_fleet::de_start_fleet_http_response(
+            crate::protocol_serde::shape_start_fleet::de_start_fleet_http_response_with_props(
                 status, headers, body,
             )
         }

@@ -178,7 +178,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResetAuthorizersCache {
         if !success && status != 204 {
             crate::protocol_serde::shape_reset_authorizers_cache::de_reset_authorizers_cache_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_reset_authorizers_cache::de_reset_authorizers_cache_http_response(status, headers, body)
+            crate::protocol_serde::shape_reset_authorizers_cache::de_reset_authorizers_cache_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachRolePolicy {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_detach_role_policy::de_detach_role_policy_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_detach_role_policy::de_detach_role_policy_http_response_with_props(status, headers, body)
         }
     }
 }

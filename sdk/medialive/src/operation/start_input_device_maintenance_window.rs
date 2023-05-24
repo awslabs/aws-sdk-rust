@@ -140,7 +140,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartInputDeviceMaintena
         if !success && status != 200 {
             crate::protocol_serde::shape_start_input_device_maintenance_window::de_start_input_device_maintenance_window_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_start_input_device_maintenance_window::de_start_input_device_maintenance_window_http_response(status, headers, body)
+            crate::protocol_serde::shape_start_input_device_maintenance_window::de_start_input_device_maintenance_window_http_response_with_props(status, headers, body)
         }
     }
 }

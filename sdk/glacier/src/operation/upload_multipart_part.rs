@@ -228,7 +228,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UploadMultipartPart {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_upload_multipart_part::de_upload_multipart_part_http_response(status, headers, body)
+            crate::protocol_serde::shape_upload_multipart_part::de_upload_multipart_part_http_response_with_props(status, headers, body)
         }
     }
 }

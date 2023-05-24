@@ -158,7 +158,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSourceLocation {
         if !success && status != 200 {
             crate::protocol_serde::shape_delete_source_location::de_delete_source_location_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_source_location::de_delete_source_location_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_source_location::de_delete_source_location_http_response_with_props(status, headers, body)
         }
     }
 }

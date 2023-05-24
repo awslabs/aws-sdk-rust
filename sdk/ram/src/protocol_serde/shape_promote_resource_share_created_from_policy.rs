@@ -177,7 +177,7 @@ pub fn de_promote_resource_share_created_from_policy_http_error(_response_status
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_promote_resource_share_created_from_policy_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyOutput, crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError>{
+pub fn de_promote_resource_share_created_from_policy_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyOutput, crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::promote_resource_share_created_from_policy::builders::PromoteResourceShareCreatedFromPolicyOutputBuilder::default();

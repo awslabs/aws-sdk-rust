@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Subscribe {
         if !success && status != 200 {
             crate::protocol_serde::shape_subscribe::de_subscribe_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_subscribe::de_subscribe_http_response(
+            crate::protocol_serde::shape_subscribe::de_subscribe_http_response_with_props(
                 status, headers, body,
             )
         }

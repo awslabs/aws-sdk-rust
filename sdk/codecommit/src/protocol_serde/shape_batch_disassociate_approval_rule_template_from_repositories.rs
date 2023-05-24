@@ -187,7 +187,7 @@ pub fn de_batch_disassociate_approval_rule_template_from_repositories_http_error
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_batch_disassociate_approval_rule_template_from_repositories_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput, crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesError>{
+pub fn de_batch_disassociate_approval_rule_template_from_repositories_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput, crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::batch_disassociate_approval_rule_template_from_repositories::builders::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutputBuilder::default();

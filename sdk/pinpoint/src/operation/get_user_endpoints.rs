@@ -180,9 +180,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUserEndpoints {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_user_endpoints::de_get_user_endpoints_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_user_endpoints::de_get_user_endpoints_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -158,9 +158,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFileCache {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_file_cache::de_create_file_cache_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_file_cache::de_create_file_cache_http_response_with_props(status, headers, body)
         }
     }
 }

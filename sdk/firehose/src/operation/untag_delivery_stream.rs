@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagDeliveryStream {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_untag_delivery_stream::de_untag_delivery_stream_http_response(status, headers, body)
+            crate::protocol_serde::shape_untag_delivery_stream::de_untag_delivery_stream_http_response_with_props(status, headers, body)
         }
     }
 }

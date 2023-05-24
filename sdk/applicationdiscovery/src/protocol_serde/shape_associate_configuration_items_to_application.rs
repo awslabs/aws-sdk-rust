@@ -107,7 +107,7 @@ pub fn de_associate_configuration_items_to_application_http_error(_response_stat
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_associate_configuration_items_to_application_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationOutput, crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError>{
+pub fn de_associate_configuration_items_to_application_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationOutput, crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::associate_configuration_items_to_application::builders::AssociateConfigurationItemsToApplicationOutputBuilder::default();

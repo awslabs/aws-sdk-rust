@@ -162,9 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDedicatedIps {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_dedicated_ips::de_get_dedicated_ips_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_dedicated_ips::de_get_dedicated_ips_http_response_with_props(status, headers, body)
         }
     }
 }

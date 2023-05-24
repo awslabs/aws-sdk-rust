@@ -160,7 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAssistant {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_assistant::de_get_assistant_http_response(
+            crate::protocol_serde::shape_get_assistant::de_get_assistant_http_response_with_props(
                 status, headers, body,
             )
         }

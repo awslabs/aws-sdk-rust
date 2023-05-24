@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConnectClientAddIn
         if !success && status != 200 {
             crate::protocol_serde::shape_update_connect_client_add_in::de_update_connect_client_add_in_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_update_connect_client_add_in::de_update_connect_client_add_in_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_connect_client_add_in::de_update_connect_client_add_in_http_response_with_props(status, headers, body)
         }
     }
 }

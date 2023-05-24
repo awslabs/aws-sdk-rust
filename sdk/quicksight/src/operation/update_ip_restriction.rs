@@ -176,7 +176,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateIpRestriction {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_ip_restriction::de_update_ip_restriction_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_ip_restriction::de_update_ip_restriction_http_response_with_props(status, headers, body)
         }
     }
 }

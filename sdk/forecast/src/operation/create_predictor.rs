@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePredictor {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_predictor::de_create_predictor_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_predictor::de_create_predictor_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -178,9 +178,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetApiMappings {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_api_mappings::de_get_api_mappings_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_api_mappings::de_get_api_mappings_http_response_with_props(status, headers, body)
         }
     }
 }

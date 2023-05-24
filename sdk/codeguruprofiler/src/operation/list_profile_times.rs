@@ -222,9 +222,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProfileTimes {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_profile_times::de_list_profile_times_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_profile_times::de_list_profile_times_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -152,7 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveKnowledgeBaseTempl
         if !success && status != 204 {
             crate::protocol_serde::shape_remove_knowledge_base_template_uri::de_remove_knowledge_base_template_uri_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_remove_knowledge_base_template_uri::de_remove_knowledge_base_template_uri_http_response(status, headers, body)
+            crate::protocol_serde::shape_remove_knowledge_base_template_uri::de_remove_knowledge_base_template_uri_http_response_with_props(status, headers, body)
         }
     }
 }

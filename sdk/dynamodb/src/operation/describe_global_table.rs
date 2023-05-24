@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeGlobalTable {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_global_table::de_describe_global_table_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_global_table::de_describe_global_table_http_response_with_props(status, headers, body)
         }
     }
 }

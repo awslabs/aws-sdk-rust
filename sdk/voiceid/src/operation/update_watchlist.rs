@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateWatchlist {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_watchlist::de_update_watchlist_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_update_watchlist::de_update_watchlist_http_response_with_props(status, headers, body)
         }
     }
     fn sensitive(&self) -> bool {

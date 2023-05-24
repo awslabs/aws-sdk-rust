@@ -158,7 +158,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackupVaultNotificati
         if !success && status != 200 {
             crate::protocol_serde::shape_get_backup_vault_notifications::de_get_backup_vault_notifications_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_backup_vault_notifications::de_get_backup_vault_notifications_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_backup_vault_notifications::de_get_backup_vault_notifications_http_response_with_props(status, headers, body)
         }
     }
 }

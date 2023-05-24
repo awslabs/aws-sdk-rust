@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartConfigurationSessio
         if !success && status != 201 {
             crate::protocol_serde::shape_start_configuration_session::de_start_configuration_session_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_start_configuration_session::de_start_configuration_session_http_response(status, headers, body)
+            crate::protocol_serde::shape_start_configuration_session::de_start_configuration_session_http_response_with_props(status, headers, body)
         }
     }
 }

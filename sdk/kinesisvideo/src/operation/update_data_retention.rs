@@ -152,7 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDataRetention {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_data_retention::de_update_data_retention_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_data_retention::de_update_data_retention_http_response_with_props(status, headers, body)
         }
     }
 }

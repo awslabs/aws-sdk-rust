@@ -91,7 +91,7 @@ pub fn de_batch_get_asset_property_value_history_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_batch_get_asset_property_value_history_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryOutput, crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError>{
+pub fn de_batch_get_asset_property_value_history_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryOutput, crate::operation::batch_get_asset_property_value_history::BatchGetAssetPropertyValueHistoryError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::batch_get_asset_property_value_history::builders::BatchGetAssetPropertyValueHistoryOutputBuilder::default();

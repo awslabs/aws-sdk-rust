@@ -49,7 +49,7 @@ pub fn de_put_configuration_set_delivery_options_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_configuration_set_delivery_options_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsOutput, crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsError>{
+pub fn de_put_configuration_set_delivery_options_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsOutput, crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::put_configuration_set_delivery_options::builders::PutConfigurationSetDeliveryOptionsOutputBuilder::default();

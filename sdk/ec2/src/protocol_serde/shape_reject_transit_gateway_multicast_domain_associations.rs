@@ -9,7 +9,7 @@ pub fn de_reject_transit_gateway_multicast_domain_associations_http_error(_respo
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_reject_transit_gateway_multicast_domain_associations_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::reject_transit_gateway_multicast_domain_associations::RejectTransitGatewayMulticastDomainAssociationsOutput, crate::operation::reject_transit_gateway_multicast_domain_associations::RejectTransitGatewayMulticastDomainAssociationsError>{
+pub fn de_reject_transit_gateway_multicast_domain_associations_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::reject_transit_gateway_multicast_domain_associations::RejectTransitGatewayMulticastDomainAssociationsOutput, crate::operation::reject_transit_gateway_multicast_domain_associations::RejectTransitGatewayMulticastDomainAssociationsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::reject_transit_gateway_multicast_domain_associations::builders::RejectTransitGatewayMulticastDomainAssociationsOutputBuilder::default();

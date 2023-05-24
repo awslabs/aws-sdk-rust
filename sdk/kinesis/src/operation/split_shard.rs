@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SplitShard {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_split_shard::de_split_shard_http_response(
+            crate::protocol_serde::shape_split_shard::de_split_shard_http_response_with_props(
                 status, headers, body,
             )
         }

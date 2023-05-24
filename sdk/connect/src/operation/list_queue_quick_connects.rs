@@ -199,7 +199,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListQueueQuickConnects {
         if !success && status != 200 {
             crate::protocol_serde::shape_list_queue_quick_connects::de_list_queue_quick_connects_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_queue_quick_connects::de_list_queue_quick_connects_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_queue_quick_connects::de_list_queue_quick_connects_http_response_with_props(status, headers, body)
         }
     }
 }

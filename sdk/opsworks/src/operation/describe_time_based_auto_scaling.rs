@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTimeBasedAutoSca
         if !success && status != 200 {
             crate::protocol_serde::shape_describe_time_based_auto_scaling::de_describe_time_based_auto_scaling_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_describe_time_based_auto_scaling::de_describe_time_based_auto_scaling_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_time_based_auto_scaling::de_describe_time_based_auto_scaling_http_response_with_props(status, headers, body)
         }
     }
 }

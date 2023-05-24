@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConfiguredTables {
         if !success && status != 200 {
             crate::protocol_serde::shape_list_configured_tables::de_list_configured_tables_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_configured_tables::de_list_configured_tables_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_configured_tables::de_list_configured_tables_http_response_with_props(status, headers, body)
         }
     }
 }

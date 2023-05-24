@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFaces {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_faces::de_delete_faces_http_response(
+            crate::protocol_serde::shape_delete_faces::de_delete_faces_http_response_with_props(
                 status, headers, body,
             )
         }

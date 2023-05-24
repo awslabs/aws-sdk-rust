@@ -123,7 +123,7 @@ pub fn de_get_temporary_glue_partition_credentials_http_error(_response_status: 
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_temporary_glue_partition_credentials_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsOutput, crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsError>{
+pub fn de_get_temporary_glue_partition_credentials_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsOutput, crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_temporary_glue_partition_credentials::builders::GetTemporaryGluePartitionCredentialsOutputBuilder::default();

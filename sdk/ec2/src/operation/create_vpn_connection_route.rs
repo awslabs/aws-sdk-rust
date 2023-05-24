@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVpnConnectionRoute
         if !success && status != 200 {
             crate::protocol_serde::shape_create_vpn_connection_route::de_create_vpn_connection_route_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_vpn_connection_route::de_create_vpn_connection_route_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_vpn_connection_route::de_create_vpn_connection_route_http_response_with_props(status, headers, body)
         }
     }
 }

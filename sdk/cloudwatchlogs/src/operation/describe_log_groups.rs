@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLogGroups {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_log_groups::de_describe_log_groups_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_describe_log_groups::de_describe_log_groups_http_response_with_props(status, headers, body)
         }
     }
 }

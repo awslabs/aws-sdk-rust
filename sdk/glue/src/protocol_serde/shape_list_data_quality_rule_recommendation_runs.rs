@@ -75,7 +75,7 @@ pub fn de_list_data_quality_rule_recommendation_runs_http_error(_response_status
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_data_quality_rule_recommendation_runs_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsOutput, crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsError>{
+pub fn de_list_data_quality_rule_recommendation_runs_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsOutput, crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_data_quality_rule_recommendation_runs::builders::ListDataQualityRuleRecommendationRunsOutputBuilder::default();

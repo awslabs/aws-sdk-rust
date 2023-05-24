@@ -192,7 +192,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchPutFieldOptions {
         if !success && status != 200 {
             crate::protocol_serde::shape_batch_put_field_options::de_batch_put_field_options_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_batch_put_field_options::de_batch_put_field_options_http_response(status, headers, body)
+            crate::protocol_serde::shape_batch_put_field_options::de_batch_put_field_options_http_response_with_props(status, headers, body)
         }
     }
 }

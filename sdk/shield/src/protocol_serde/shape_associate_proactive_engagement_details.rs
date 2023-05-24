@@ -107,7 +107,7 @@ pub fn de_associate_proactive_engagement_details_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_associate_proactive_engagement_details_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::associate_proactive_engagement_details::AssociateProactiveEngagementDetailsOutput, crate::operation::associate_proactive_engagement_details::AssociateProactiveEngagementDetailsError>{
+pub fn de_associate_proactive_engagement_details_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::associate_proactive_engagement_details::AssociateProactiveEngagementDetailsOutput, crate::operation::associate_proactive_engagement_details::AssociateProactiveEngagementDetailsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::associate_proactive_engagement_details::builders::AssociateProactiveEngagementDetailsOutputBuilder::default();

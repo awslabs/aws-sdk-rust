@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetQueueAttributes {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_queue_attributes::de_get_queue_attributes_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_queue_attributes::de_get_queue_attributes_http_response_with_props(status, headers, body)
         }
     }
 }

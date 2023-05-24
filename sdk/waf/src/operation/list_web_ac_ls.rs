@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWebACLs {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_web_ac_ls::de_list_web_ac_ls_http_response(
+            crate::protocol_serde::shape_list_web_ac_ls::de_list_web_ac_ls_http_response_with_props(
                 status, headers, body,
             )
         }

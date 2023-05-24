@@ -154,7 +154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateRecoveryPoin
         if !success && status != 204 {
             crate::protocol_serde::shape_disassociate_recovery_point_from_parent::de_disassociate_recovery_point_from_parent_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_disassociate_recovery_point_from_parent::de_disassociate_recovery_point_from_parent_http_response(status, headers, body)
+            crate::protocol_serde::shape_disassociate_recovery_point_from_parent::de_disassociate_recovery_point_from_parent_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -156,7 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UnclaimDevice {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_unclaim_device::de_unclaim_device_http_response(
+            crate::protocol_serde::shape_unclaim_device::de_unclaim_device_http_response_with_props(
                 status, headers, body,
             )
         }

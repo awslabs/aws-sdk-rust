@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResolverConfig {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_resolver_config::de_get_resolver_config_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_resolver_config::de_get_resolver_config_http_response_with_props(status, headers, body)
         }
     }
 }

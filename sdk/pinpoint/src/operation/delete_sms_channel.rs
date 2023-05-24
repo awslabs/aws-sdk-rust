@@ -160,9 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSmsChannel {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_sms_channel::de_delete_sms_channel_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_delete_sms_channel::de_delete_sms_channel_http_response_with_props(status, headers, body)
         }
     }
 }

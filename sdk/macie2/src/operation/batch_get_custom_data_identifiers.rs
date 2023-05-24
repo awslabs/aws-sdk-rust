@@ -149,7 +149,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetCustomDataIdenti
         if !success && status != 200 {
             crate::protocol_serde::shape_batch_get_custom_data_identifiers::de_batch_get_custom_data_identifiers_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_batch_get_custom_data_identifiers::de_batch_get_custom_data_identifiers_http_response(status, headers, body)
+            crate::protocol_serde::shape_batch_get_custom_data_identifiers::de_batch_get_custom_data_identifiers_http_response_with_props(status, headers, body)
         }
     }
 }

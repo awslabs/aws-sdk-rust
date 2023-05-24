@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUsers {
         if !success && status != 200 {
             crate::protocol_serde::shape_list_users::de_list_users_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_users::de_list_users_http_response(
+            crate::protocol_serde::shape_list_users::de_list_users_http_response_with_props(
                 status, headers, body,
             )
         }

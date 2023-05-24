@@ -91,7 +91,7 @@ pub fn de_start_data_quality_rule_recommendation_run_http_error(_response_status
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_start_data_quality_rule_recommendation_run_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunOutput, crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunError>{
+pub fn de_start_data_quality_rule_recommendation_run_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunOutput, crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::start_data_quality_rule_recommendation_run::builders::StartDataQualityRuleRecommendationRunOutputBuilder::default();

@@ -59,7 +59,7 @@ pub fn de_describe_affected_entities_for_organization_http_error(_response_statu
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_affected_entities_for_organization_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationOutput, crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationError>{
+pub fn de_describe_affected_entities_for_organization_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationOutput, crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_affected_entities_for_organization::builders::DescribeAffectedEntitiesForOrganizationOutputBuilder::default();

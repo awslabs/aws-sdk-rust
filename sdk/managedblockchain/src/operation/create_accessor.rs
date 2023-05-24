@@ -153,9 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAccessor {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_accessor::de_create_accessor_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_accessor::de_create_accessor_http_response_with_props(status, headers, body)
         }
     }
 }

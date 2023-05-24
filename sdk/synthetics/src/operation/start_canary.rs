@@ -156,7 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartCanary {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_start_canary::de_start_canary_http_response(
+            crate::protocol_serde::shape_start_canary::de_start_canary_http_response_with_props(
                 status, headers, body,
             )
         }

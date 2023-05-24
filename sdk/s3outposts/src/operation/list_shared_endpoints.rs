@@ -174,7 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSharedEndpoints {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_shared_endpoints::de_list_shared_endpoints_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_shared_endpoints::de_list_shared_endpoints_http_response_with_props(status, headers, body)
         }
     }
 }

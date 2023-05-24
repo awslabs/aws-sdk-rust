@@ -160,9 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelDeployment {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_cancel_deployment::de_cancel_deployment_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_cancel_deployment::de_cancel_deployment_http_response_with_props(status, headers, body)
         }
     }
 }

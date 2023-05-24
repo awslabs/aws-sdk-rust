@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateEndpointGroup {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_endpoint_group::de_update_endpoint_group_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_endpoint_group::de_update_endpoint_group_http_response_with_props(status, headers, body)
         }
     }
 }

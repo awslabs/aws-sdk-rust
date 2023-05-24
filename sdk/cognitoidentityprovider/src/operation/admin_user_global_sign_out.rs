@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminUserGlobalSignOut {
         if !success && status != 200 {
             crate::protocol_serde::shape_admin_user_global_sign_out::de_admin_user_global_sign_out_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_admin_user_global_sign_out::de_admin_user_global_sign_out_http_response(status, headers, body)
+            crate::protocol_serde::shape_admin_user_global_sign_out::de_admin_user_global_sign_out_http_response_with_props(status, headers, body)
         }
     }
 }

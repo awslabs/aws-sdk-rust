@@ -186,7 +186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVirtualServices {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_virtual_services::de_list_virtual_services_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_virtual_services::de_list_virtual_services_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -91,7 +91,7 @@ pub fn de_describe_effective_patches_for_patch_baseline_http_error(_response_sta
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_effective_patches_for_patch_baseline_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineOutput, crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineError>{
+pub fn de_describe_effective_patches_for_patch_baseline_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineOutput, crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineOutputBuilder::default();

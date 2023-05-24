@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssignIpv6Addresses {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_assign_ipv6_addresses::de_assign_ipv6_addresses_http_response(status, headers, body)
+            crate::protocol_serde::shape_assign_ipv6_addresses::de_assign_ipv6_addresses_http_response_with_props(status, headers, body)
         }
     }
 }

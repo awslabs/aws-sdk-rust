@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateTeamMember {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_associate_team_member::de_associate_team_member_http_response(status, headers, body)
+            crate::protocol_serde::shape_associate_team_member::de_associate_team_member_http_response_with_props(status, headers, body)
         }
     }
 }

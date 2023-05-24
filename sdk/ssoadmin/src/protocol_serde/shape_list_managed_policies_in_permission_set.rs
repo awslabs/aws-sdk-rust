@@ -107,7 +107,7 @@ pub fn de_list_managed_policies_in_permission_set_http_error(_response_status: u
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_managed_policies_in_permission_set_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetOutput, crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetError>{
+pub fn de_list_managed_policies_in_permission_set_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetOutput, crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_managed_policies_in_permission_set::builders::ListManagedPoliciesInPermissionSetOutputBuilder::default();

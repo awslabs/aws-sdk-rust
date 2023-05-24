@@ -121,7 +121,7 @@ pub fn de_associate_user_access_logging_settings_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_associate_user_access_logging_settings_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsOutput, crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsError>{
+pub fn de_associate_user_access_logging_settings_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsOutput, crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::associate_user_access_logging_settings::builders::AssociateUserAccessLoggingSettingsOutputBuilder::default();

@@ -123,7 +123,7 @@ pub fn de_add_draft_app_version_resource_mappings_http_error(_response_status: u
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_add_draft_app_version_resource_mappings_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsOutput, crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsError>{
+pub fn de_add_draft_app_version_resource_mappings_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsOutput, crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::add_draft_app_version_resource_mappings::builders::AddDraftAppVersionResourceMappingsOutputBuilder::default();

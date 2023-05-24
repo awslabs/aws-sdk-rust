@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSuggesters {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_suggesters::de_describe_suggesters_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_describe_suggesters::de_describe_suggesters_http_response_with_props(status, headers, body)
         }
     }
 }

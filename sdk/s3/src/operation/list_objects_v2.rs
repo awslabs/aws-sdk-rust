@@ -205,9 +205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListObjectsV2 {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_objects_v2::de_list_objects_v2_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_objects_v2::de_list_objects_v2_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -160,9 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAssistant {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_assistant::de_delete_assistant_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_delete_assistant::de_delete_assistant_http_response_with_props(status, headers, body)
         }
     }
 }

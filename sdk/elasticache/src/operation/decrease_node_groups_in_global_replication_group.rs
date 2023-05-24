@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DecreaseNodeGroupsInGlob
         if !success && status != 200 {
             crate::protocol_serde::shape_decrease_node_groups_in_global_replication_group::de_decrease_node_groups_in_global_replication_group_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_decrease_node_groups_in_global_replication_group::de_decrease_node_groups_in_global_replication_group_http_response(status, headers, body)
+            crate::protocol_serde::shape_decrease_node_groups_in_global_replication_group::de_decrease_node_groups_in_global_replication_group_http_response_with_props(status, headers, body)
         }
     }
 }

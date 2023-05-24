@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCoipPools {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_coip_pools::de_describe_coip_pools_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_describe_coip_pools::de_describe_coip_pools_http_response_with_props(status, headers, body)
         }
     }
 }

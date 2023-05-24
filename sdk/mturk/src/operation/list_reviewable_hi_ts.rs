@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReviewableHITs {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_reviewable_hi_ts::de_list_reviewable_hi_ts_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_reviewable_hi_ts::de_list_reviewable_hi_ts_http_response_with_props(status, headers, body)
         }
     }
 }

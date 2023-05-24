@@ -191,9 +191,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListContactFlows {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_contact_flows::de_list_contact_flows_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_contact_flows::de_list_contact_flows_http_response_with_props(status, headers, body)
         }
     }
 }

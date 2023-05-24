@@ -131,7 +131,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfigureLogsForPlayback
         if !success && status != 200 {
             crate::protocol_serde::shape_configure_logs_for_playback_configuration::de_configure_logs_for_playback_configuration_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_configure_logs_for_playback_configuration::de_configure_logs_for_playback_configuration_http_response(status, headers, body)
+            crate::protocol_serde::shape_configure_logs_for_playback_configuration::de_configure_logs_for_playback_configuration_http_response_with_props(status, headers, body)
         }
     }
 }

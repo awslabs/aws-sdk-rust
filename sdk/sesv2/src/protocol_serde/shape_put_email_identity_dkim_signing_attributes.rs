@@ -75,7 +75,7 @@ pub fn de_put_email_identity_dkim_signing_attributes_http_error(_response_status
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_email_identity_dkim_signing_attributes_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesOutput, crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesError>{
+pub fn de_put_email_identity_dkim_signing_attributes_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesOutput, crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::put_email_identity_dkim_signing_attributes::builders::PutEmailIdentityDkimSigningAttributesOutputBuilder::default();

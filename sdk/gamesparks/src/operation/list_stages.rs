@@ -177,7 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStages {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_stages::de_list_stages_http_response(
+            crate::protocol_serde::shape_list_stages::de_list_stages_http_response_with_props(
                 status, headers, body,
             )
         }

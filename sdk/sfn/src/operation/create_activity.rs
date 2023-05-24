@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateActivity {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_activity::de_create_activity_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_activity::de_create_activity_http_response_with_props(status, headers, body)
         }
     }
 }

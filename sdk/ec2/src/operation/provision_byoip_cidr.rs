@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ProvisionByoipCidr {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_provision_byoip_cidr::de_provision_byoip_cidr_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_provision_byoip_cidr::de_provision_byoip_cidr_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -174,9 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNamespace {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_namespace::de_create_namespace_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_namespace::de_create_namespace_http_response_with_props(status, headers, body)
         }
     }
 }

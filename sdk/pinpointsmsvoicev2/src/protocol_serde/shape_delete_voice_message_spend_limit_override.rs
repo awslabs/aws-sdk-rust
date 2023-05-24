@@ -87,7 +87,7 @@ pub fn de_delete_voice_message_spend_limit_override_http_error(_response_status:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_voice_message_spend_limit_override_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_voice_message_spend_limit_override::DeleteVoiceMessageSpendLimitOverrideOutput, crate::operation::delete_voice_message_spend_limit_override::DeleteVoiceMessageSpendLimitOverrideError>{
+pub fn de_delete_voice_message_spend_limit_override_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_voice_message_spend_limit_override::DeleteVoiceMessageSpendLimitOverrideOutput, crate::operation::delete_voice_message_spend_limit_override::DeleteVoiceMessageSpendLimitOverrideError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_voice_message_spend_limit_override::builders::DeleteVoiceMessageSpendLimitOverrideOutputBuilder::default();

@@ -123,7 +123,7 @@ pub fn de_remove_draft_app_version_resource_mappings_http_error(_response_status
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_remove_draft_app_version_resource_mappings_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsOutput, crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsError>{
+pub fn de_remove_draft_app_version_resource_mappings_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsOutput, crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::remove_draft_app_version_resource_mappings::builders::RemoveDraftAppVersionResourceMappingsOutputBuilder::default();

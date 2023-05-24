@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateHumanTaskUi {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_human_task_ui::de_create_human_task_ui_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_human_task_ui::de_create_human_task_ui_http_response_with_props(status, headers, body)
         }
     }
 }

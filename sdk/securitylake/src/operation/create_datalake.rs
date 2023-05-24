@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDatalake {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_datalake::de_create_datalake_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_datalake::de_create_datalake_http_response_with_props(status, headers, body)
         }
     }
 }

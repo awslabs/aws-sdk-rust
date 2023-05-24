@@ -153,9 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartChatContact {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_start_chat_contact::de_start_chat_contact_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_start_chat_contact::de_start_chat_contact_http_response_with_props(status, headers, body)
         }
     }
 }

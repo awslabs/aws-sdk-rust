@@ -99,7 +99,7 @@ pub fn de_batch_update_member_ec2_deep_inspection_status_http_error(_response_st
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_batch_update_member_ec2_deep_inspection_status_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusOutput, crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError>{
+pub fn de_batch_update_member_ec2_deep_inspection_status_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusOutput, crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::batch_update_member_ec2_deep_inspection_status::builders::BatchUpdateMemberEc2DeepInspectionStatusOutputBuilder::default();

@@ -156,7 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProvisionedProduct
         if !success && status != 200 {
             crate::protocol_serde::shape_create_provisioned_product_plan::de_create_provisioned_product_plan_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_provisioned_product_plan::de_create_provisioned_product_plan_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_provisioned_product_plan::de_create_provisioned_product_plan_http_response_with_props(status, headers, body)
         }
     }
 }

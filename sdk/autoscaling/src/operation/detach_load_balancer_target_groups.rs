@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachLoadBalancerTarget
         if !success && status != 200 {
             crate::protocol_serde::shape_detach_load_balancer_target_groups::de_detach_load_balancer_target_groups_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_detach_load_balancer_target_groups::de_detach_load_balancer_target_groups_http_response(status, headers, body)
+            crate::protocol_serde::shape_detach_load_balancer_target_groups::de_detach_load_balancer_target_groups_http_response_with_props(status, headers, body)
         }
     }
 }

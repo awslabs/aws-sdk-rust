@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetScalingPlanResourceFo
         if !success && status != 200 {
             crate::protocol_serde::shape_get_scaling_plan_resource_forecast_data::de_get_scaling_plan_resource_forecast_data_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_scaling_plan_resource_forecast_data::de_get_scaling_plan_resource_forecast_data_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_scaling_plan_resource_forecast_data::de_get_scaling_plan_resource_forecast_data_http_response_with_props(status, headers, body)
         }
     }
 }

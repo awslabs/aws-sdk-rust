@@ -156,7 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVpcLink {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_vpc_link::de_get_vpc_link_http_response(
+            crate::protocol_serde::shape_get_vpc_link::de_get_vpc_link_http_response_with_props(
                 status, headers, body,
             )
         }

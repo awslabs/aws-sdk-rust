@@ -159,7 +159,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDNSSEC {
         if !success && status != 200 {
             crate::protocol_serde::shape_get_dnssec::de_get_dnssec_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_dnssec::de_get_dnssec_http_response(
+            crate::protocol_serde::shape_get_dnssec::de_get_dnssec_http_response_with_props(
                 status, headers, body,
             )
         }

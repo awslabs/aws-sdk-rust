@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDBSnapshotAttrib
         if !success && status != 200 {
             crate::protocol_serde::shape_describe_db_snapshot_attributes::de_describe_db_snapshot_attributes_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_describe_db_snapshot_attributes::de_describe_db_snapshot_attributes_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_db_snapshot_attributes::de_describe_db_snapshot_attributes_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -174,9 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateReservation {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_reservation::de_update_reservation_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_update_reservation::de_update_reservation_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -160,7 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGlobalNetwork {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_global_network::de_delete_global_network_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_global_network::de_delete_global_network_http_response_with_props(status, headers, body)
         }
     }
 }

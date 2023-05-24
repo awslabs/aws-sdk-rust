@@ -158,7 +158,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeProtectedResourc
         if !success && status != 200 {
             crate::protocol_serde::shape_describe_protected_resource::de_describe_protected_resource_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_describe_protected_resource::de_describe_protected_resource_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_protected_resource::de_describe_protected_resource_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDataEndpoint {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_data_endpoint::de_get_data_endpoint_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_data_endpoint::de_get_data_endpoint_http_response_with_props(status, headers, body)
         }
     }
 }

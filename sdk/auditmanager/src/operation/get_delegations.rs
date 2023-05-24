@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDelegations {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_delegations::de_get_delegations_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_delegations::de_get_delegations_http_response_with_props(status, headers, body)
         }
     }
 }

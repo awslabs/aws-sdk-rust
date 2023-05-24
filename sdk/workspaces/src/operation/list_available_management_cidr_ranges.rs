@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAvailableManagementC
         if !success && status != 200 {
             crate::protocol_serde::shape_list_available_management_cidr_ranges::de_list_available_management_cidr_ranges_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_available_management_cidr_ranges::de_list_available_management_cidr_ranges_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_available_management_cidr_ranges::de_list_available_management_cidr_ranges_http_response_with_props(status, headers, body)
         }
     }
 }

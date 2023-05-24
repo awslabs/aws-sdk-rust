@@ -107,7 +107,7 @@ pub fn de_update_routing_profile_default_outbound_queue_http_error(_response_sta
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_routing_profile_default_outbound_queue_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_routing_profile_default_outbound_queue::UpdateRoutingProfileDefaultOutboundQueueOutput, crate::operation::update_routing_profile_default_outbound_queue::UpdateRoutingProfileDefaultOutboundQueueError>{
+pub fn de_update_routing_profile_default_outbound_queue_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_routing_profile_default_outbound_queue::UpdateRoutingProfileDefaultOutboundQueueOutput, crate::operation::update_routing_profile_default_outbound_queue::UpdateRoutingProfileDefaultOutboundQueueError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_routing_profile_default_outbound_queue::builders::UpdateRoutingProfileDefaultOutboundQueueOutputBuilder::default();

@@ -152,7 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartRun {
         if !success && status != 201 {
             crate::protocol_serde::shape_start_run::de_start_run_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_start_run::de_start_run_http_response(
+            crate::protocol_serde::shape_start_run::de_start_run_http_response_with_props(
                 status, headers, body,
             )
         }

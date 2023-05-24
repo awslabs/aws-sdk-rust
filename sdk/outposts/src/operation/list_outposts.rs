@@ -187,7 +187,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOutposts {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_outposts::de_list_outposts_http_response(
+            crate::protocol_serde::shape_list_outposts::de_list_outposts_http_response_with_props(
                 status, headers, body,
             )
         }

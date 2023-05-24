@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGameSession {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_game_session::de_update_game_session_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_update_game_session::de_update_game_session_http_response_with_props(status, headers, body)
         }
     }
 }

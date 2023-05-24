@@ -184,9 +184,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateAlias {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_associate_alias::de_associate_alias_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_associate_alias::de_associate_alias_http_response_with_props(status, headers, body)
         }
     }
 }

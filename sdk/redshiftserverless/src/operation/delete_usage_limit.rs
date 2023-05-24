@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteUsageLimit {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_usage_limit::de_delete_usage_limit_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_delete_usage_limit::de_delete_usage_limit_http_response_with_props(status, headers, body)
         }
     }
 }

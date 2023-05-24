@@ -152,9 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMetricData {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_metric_data::de_get_metric_data_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_metric_data::de_get_metric_data_http_response_with_props(status, headers, body)
         }
     }
 }

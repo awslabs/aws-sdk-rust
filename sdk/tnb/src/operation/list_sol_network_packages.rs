@@ -158,7 +158,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSolNetworkPackages {
         if !success && status != 200 {
             crate::protocol_serde::shape_list_sol_network_packages::de_list_sol_network_packages_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_sol_network_packages::de_list_sol_network_packages_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_sol_network_packages::de_list_sol_network_packages_http_response_with_props(status, headers, body)
         }
     }
 }

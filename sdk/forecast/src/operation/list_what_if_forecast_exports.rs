@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWhatIfForecastExport
         if !success && status != 200 {
             crate::protocol_serde::shape_list_what_if_forecast_exports::de_list_what_if_forecast_exports_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_what_if_forecast_exports::de_list_what_if_forecast_exports_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_what_if_forecast_exports::de_list_what_if_forecast_exports_http_response_with_props(status, headers, body)
         }
     }
 }

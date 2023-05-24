@@ -9,7 +9,7 @@ pub fn de_describe_trunk_interface_associations_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_trunk_interface_associations_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsOutput, crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsError>{
+pub fn de_describe_trunk_interface_associations_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsOutput, crate::operation::describe_trunk_interface_associations::DescribeTrunkInterfaceAssociationsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_trunk_interface_associations::builders::DescribeTrunkInterfaceAssociationsOutputBuilder::default();

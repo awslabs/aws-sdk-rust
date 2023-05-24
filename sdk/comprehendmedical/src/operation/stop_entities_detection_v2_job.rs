@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopEntitiesDetectionV2J
         if !success && status != 200 {
             crate::protocol_serde::shape_stop_entities_detection_v2_job::de_stop_entities_detection_v2_job_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_stop_entities_detection_v2_job::de_stop_entities_detection_v2_job_http_response(status, headers, body)
+            crate::protocol_serde::shape_stop_entities_detection_v2_job::de_stop_entities_detection_v2_job_http_response_with_props(status, headers, body)
         }
     }
 }

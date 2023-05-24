@@ -178,7 +178,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePrefetchSchedule {
         if !success && status != 204 {
             crate::protocol_serde::shape_delete_prefetch_schedule::de_delete_prefetch_schedule_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_prefetch_schedule::de_delete_prefetch_schedule_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_prefetch_schedule::de_delete_prefetch_schedule_http_response_with_props(status, headers, body)
         }
     }
 }

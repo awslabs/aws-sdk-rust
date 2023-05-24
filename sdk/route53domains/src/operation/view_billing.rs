@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ViewBilling {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_view_billing::de_view_billing_http_response(
+            crate::protocol_serde::shape_view_billing::de_view_billing_http_response_with_props(
                 status, headers, body,
             )
         }

@@ -107,7 +107,7 @@ pub fn de_describe_account_assignment_creation_status_http_error(_response_statu
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_account_assignment_creation_status_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_account_assignment_creation_status::DescribeAccountAssignmentCreationStatusOutput, crate::operation::describe_account_assignment_creation_status::DescribeAccountAssignmentCreationStatusError>{
+pub fn de_describe_account_assignment_creation_status_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_account_assignment_creation_status::DescribeAccountAssignmentCreationStatusOutput, crate::operation::describe_account_assignment_creation_status::DescribeAccountAssignmentCreationStatusError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_account_assignment_creation_status::builders::DescribeAccountAssignmentCreationStatusOutputBuilder::default();

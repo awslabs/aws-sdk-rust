@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSpotPriceHistory
         if !success && status != 200 {
             crate::protocol_serde::shape_describe_spot_price_history::de_describe_spot_price_history_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_describe_spot_price_history::de_describe_spot_price_history_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_spot_price_history::de_describe_spot_price_history_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -158,7 +158,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDevicesForWirelessDe
         if !success && status != 200 {
             crate::protocol_serde::shape_list_devices_for_wireless_device_import_task::de_list_devices_for_wireless_device_import_task_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_devices_for_wireless_device_import_task::de_list_devices_for_wireless_device_import_task_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_devices_for_wireless_device_import_task::de_list_devices_for_wireless_device_import_task_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReleaseHosts {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_release_hosts::de_release_hosts_http_response(
+            crate::protocol_serde::shape_release_hosts::de_release_hosts_http_response_with_props(
                 status, headers, body,
             )
         }

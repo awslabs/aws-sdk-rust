@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRouteResponse {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_route_response::de_create_route_response_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_route_response::de_create_route_response_http_response_with_props(status, headers, body)
         }
     }
 }

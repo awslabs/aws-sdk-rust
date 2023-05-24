@@ -59,7 +59,7 @@ pub fn de_notify_update_provisioned_product_engine_workflow_result_http_error(_r
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_notify_update_provisioned_product_engine_workflow_result_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::notify_update_provisioned_product_engine_workflow_result::NotifyUpdateProvisionedProductEngineWorkflowResultOutput, crate::operation::notify_update_provisioned_product_engine_workflow_result::NotifyUpdateProvisionedProductEngineWorkflowResultError>{
+pub fn de_notify_update_provisioned_product_engine_workflow_result_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::notify_update_provisioned_product_engine_workflow_result::NotifyUpdateProvisionedProductEngineWorkflowResultOutput, crate::operation::notify_update_provisioned_product_engine_workflow_result::NotifyUpdateProvisionedProductEngineWorkflowResultError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::notify_update_provisioned_product_engine_workflow_result::builders::NotifyUpdateProvisionedProductEngineWorkflowResultOutputBuilder::default();

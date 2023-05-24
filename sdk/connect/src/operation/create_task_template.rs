@@ -179,9 +179,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTaskTemplate {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_task_template::de_create_task_template_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_task_template::de_create_task_template_http_response_with_props(status, headers, body)
         }
     }
 }

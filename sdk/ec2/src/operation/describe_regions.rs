@@ -152,9 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRegions {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_regions::de_describe_regions_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_describe_regions::de_describe_regions_http_response_with_props(status, headers, body)
         }
     }
 }

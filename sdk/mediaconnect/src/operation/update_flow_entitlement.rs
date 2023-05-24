@@ -192,7 +192,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFlowEntitlement {
         if !success && status != 202 {
             crate::protocol_serde::shape_update_flow_entitlement::de_update_flow_entitlement_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_update_flow_entitlement::de_update_flow_entitlement_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_flow_entitlement::de_update_flow_entitlement_http_response_with_props(status, headers, body)
         }
     }
 }

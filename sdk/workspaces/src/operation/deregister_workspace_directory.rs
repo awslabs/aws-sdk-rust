@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterWorkspaceDirec
         if !success && status != 200 {
             crate::protocol_serde::shape_deregister_workspace_directory::de_deregister_workspace_directory_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_deregister_workspace_directory::de_deregister_workspace_directory_http_response(status, headers, body)
+            crate::protocol_serde::shape_deregister_workspace_directory::de_deregister_workspace_directory_http_response_with_props(status, headers, body)
         }
     }
 }

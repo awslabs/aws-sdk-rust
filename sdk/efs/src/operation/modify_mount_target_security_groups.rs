@@ -163,7 +163,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyMountTargetSecurit
         if !success && status != 204 {
             crate::protocol_serde::shape_modify_mount_target_security_groups::de_modify_mount_target_security_groups_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_modify_mount_target_security_groups::de_modify_mount_target_security_groups_http_response(status, headers, body)
+            crate::protocol_serde::shape_modify_mount_target_security_groups::de_modify_mount_target_security_groups_http_response_with_props(status, headers, body)
         }
     }
 }

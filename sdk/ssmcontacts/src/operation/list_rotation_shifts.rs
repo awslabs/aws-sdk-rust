@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRotationShifts {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_rotation_shifts::de_list_rotation_shifts_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_rotation_shifts::de_list_rotation_shifts_http_response_with_props(status, headers, body)
         }
     }
 }

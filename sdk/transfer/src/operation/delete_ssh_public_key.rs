@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSshPublicKey {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_ssh_public_key::de_delete_ssh_public_key_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_ssh_public_key::de_delete_ssh_public_key_http_response_with_props(status, headers, body)
         }
     }
 }

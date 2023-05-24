@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectResourceShareInvit
         if !success && status != 200 {
             crate::protocol_serde::shape_reject_resource_share_invitation::de_reject_resource_share_invitation_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_reject_resource_share_invitation::de_reject_resource_share_invitation_http_response(status, headers, body)
+            crate::protocol_serde::shape_reject_resource_share_invitation::de_reject_resource_share_invitation_http_response_with_props(status, headers, body)
         }
     }
 }

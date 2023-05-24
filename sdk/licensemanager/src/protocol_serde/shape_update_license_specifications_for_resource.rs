@@ -139,7 +139,7 @@ pub fn de_update_license_specifications_for_resource_http_error(_response_status
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_license_specifications_for_resource_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceOutput, crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceError>{
+pub fn de_update_license_specifications_for_resource_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceOutput, crate::operation::update_license_specifications_for_resource::UpdateLicenseSpecificationsForResourceError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_license_specifications_for_resource::builders::UpdateLicenseSpecificationsForResourceOutputBuilder::default();

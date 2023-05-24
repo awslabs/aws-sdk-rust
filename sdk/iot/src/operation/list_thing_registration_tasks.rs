@@ -160,7 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListThingRegistrationTas
         if !success && status != 200 {
             crate::protocol_serde::shape_list_thing_registration_tasks::de_list_thing_registration_tasks_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_thing_registration_tasks::de_list_thing_registration_tasks_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_thing_registration_tasks::de_list_thing_registration_tasks_http_response_with_props(status, headers, body)
         }
     }
 }

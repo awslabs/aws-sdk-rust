@@ -9,7 +9,7 @@ pub fn de_describe_local_gateway_virtual_interface_groups_http_error(_response_s
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_local_gateway_virtual_interface_groups_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_local_gateway_virtual_interface_groups::DescribeLocalGatewayVirtualInterfaceGroupsOutput, crate::operation::describe_local_gateway_virtual_interface_groups::DescribeLocalGatewayVirtualInterfaceGroupsError>{
+pub fn de_describe_local_gateway_virtual_interface_groups_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_local_gateway_virtual_interface_groups::DescribeLocalGatewayVirtualInterfaceGroupsOutput, crate::operation::describe_local_gateway_virtual_interface_groups::DescribeLocalGatewayVirtualInterfaceGroupsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_local_gateway_virtual_interface_groups::builders::DescribeLocalGatewayVirtualInterfaceGroupsOutputBuilder::default();

@@ -145,7 +145,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSiteToSiteVpnAttac
         if !success && status != 200 {
             crate::protocol_serde::shape_create_site_to_site_vpn_attachment::de_create_site_to_site_vpn_attachment_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_site_to_site_vpn_attachment::de_create_site_to_site_vpn_attachment_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_site_to_site_vpn_attachment::de_create_site_to_site_vpn_attachment_http_response_with_props(status, headers, body)
         }
     }
 }

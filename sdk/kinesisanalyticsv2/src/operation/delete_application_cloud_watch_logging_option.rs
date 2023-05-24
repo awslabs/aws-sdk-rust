@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteApplicationCloudWa
         if !success && status != 200 {
             crate::protocol_serde::shape_delete_application_cloud_watch_logging_option::de_delete_application_cloud_watch_logging_option_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_application_cloud_watch_logging_option::de_delete_application_cloud_watch_logging_option_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_application_cloud_watch_logging_option::de_delete_application_cloud_watch_logging_option_http_response_with_props(status, headers, body)
         }
     }
 }

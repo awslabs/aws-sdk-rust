@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListExclusions {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_exclusions::de_list_exclusions_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_exclusions::de_list_exclusions_http_response_with_props(status, headers, body)
         }
     }
 }

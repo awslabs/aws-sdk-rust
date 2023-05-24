@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSubnetCidrReservat
         if !success && status != 200 {
             crate::protocol_serde::shape_delete_subnet_cidr_reservation::de_delete_subnet_cidr_reservation_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_subnet_cidr_reservation::de_delete_subnet_cidr_reservation_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_subnet_cidr_reservation::de_delete_subnet_cidr_reservation_http_response_with_props(status, headers, body)
         }
     }
 }

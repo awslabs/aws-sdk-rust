@@ -152,9 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutComponentPolicy {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_put_component_policy::de_put_component_policy_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_put_component_policy::de_put_component_policy_http_response_with_props(status, headers, body)
         }
     }
 }

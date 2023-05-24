@@ -145,7 +145,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStorageLensConfigu
         if !success && status != 200 {
             crate::protocol_serde::shape_delete_storage_lens_configuration_tagging::de_delete_storage_lens_configuration_tagging_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_storage_lens_configuration_tagging::de_delete_storage_lens_configuration_tagging_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_storage_lens_configuration_tagging::de_delete_storage_lens_configuration_tagging_http_response_with_props(status, headers, body)
         }
     }
 }

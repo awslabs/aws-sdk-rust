@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAutoMLJobs {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_auto_ml_jobs::de_list_auto_ml_jobs_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_auto_ml_jobs::de_list_auto_ml_jobs_http_response_with_props(status, headers, body)
         }
     }
 }

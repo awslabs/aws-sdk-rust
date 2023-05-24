@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccountAssignments {
         if !success && status != 200 {
             crate::protocol_serde::shape_list_account_assignments::de_list_account_assignments_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_account_assignments::de_list_account_assignments_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_account_assignments::de_list_account_assignments_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -9,7 +9,7 @@ pub fn de_modify_vpc_endpoint_service_configuration_http_error(_response_status:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_modify_vpc_endpoint_service_configuration_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::modify_vpc_endpoint_service_configuration::ModifyVpcEndpointServiceConfigurationOutput, crate::operation::modify_vpc_endpoint_service_configuration::ModifyVpcEndpointServiceConfigurationError>{
+pub fn de_modify_vpc_endpoint_service_configuration_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::modify_vpc_endpoint_service_configuration::ModifyVpcEndpointServiceConfigurationOutput, crate::operation::modify_vpc_endpoint_service_configuration::ModifyVpcEndpointServiceConfigurationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::modify_vpc_endpoint_service_configuration::builders::ModifyVpcEndpointServiceConfigurationOutputBuilder::default();

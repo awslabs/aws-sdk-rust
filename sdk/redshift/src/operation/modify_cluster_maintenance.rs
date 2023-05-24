@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyClusterMaintenance
         if !success && status != 200 {
             crate::protocol_serde::shape_modify_cluster_maintenance::de_modify_cluster_maintenance_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_modify_cluster_maintenance::de_modify_cluster_maintenance_http_response(status, headers, body)
+            crate::protocol_serde::shape_modify_cluster_maintenance::de_modify_cluster_maintenance_http_response_with_props(status, headers, body)
         }
     }
 }

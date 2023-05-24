@@ -107,7 +107,7 @@ pub fn de_associate_time_series_to_asset_property_http_error(_response_status: u
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_associate_time_series_to_asset_property_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyOutput, crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyError>{
+pub fn de_associate_time_series_to_asset_property_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyOutput, crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::associate_time_series_to_asset_property::builders::AssociateTimeSeriesToAssetPropertyOutputBuilder::default();

@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDefaultBranch {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_default_branch::de_update_default_branch_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_default_branch::de_update_default_branch_http_response_with_props(status, headers, body)
         }
     }
 }

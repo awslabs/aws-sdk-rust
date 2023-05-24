@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateSubnets {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_disassociate_subnets::de_disassociate_subnets_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_disassociate_subnets::de_disassociate_subnets_http_response_with_props(status, headers, body)
         }
     }
 }

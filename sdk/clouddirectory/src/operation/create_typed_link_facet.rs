@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTypedLinkFacet {
         if !success && status != 200 {
             crate::protocol_serde::shape_create_typed_link_facet::de_create_typed_link_facet_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_typed_link_facet::de_create_typed_link_facet_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_typed_link_facet::de_create_typed_link_facet_http_response_with_props(status, headers, body)
         }
     }
 }

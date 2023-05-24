@@ -181,7 +181,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFolders {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_folders::de_list_folders_http_response(
+            crate::protocol_serde::shape_list_folders::de_list_folders_http_response_with_props(
                 status, headers, body,
             )
         }

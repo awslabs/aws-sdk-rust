@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOpsItem {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_ops_item::de_get_ops_item_http_response(
+            crate::protocol_serde::shape_get_ops_item::de_get_ops_item_http_response_with_props(
                 status, headers, body,
             )
         }

@@ -180,7 +180,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteUserEndpoints {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_user_endpoints::de_delete_user_endpoints_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_user_endpoints::de_delete_user_endpoints_http_response_with_props(status, headers, body)
         }
     }
 }

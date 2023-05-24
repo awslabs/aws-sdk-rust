@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateWorkteam {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_workteam::de_update_workteam_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_update_workteam::de_update_workteam_http_response_with_props(status, headers, body)
         }
     }
 }

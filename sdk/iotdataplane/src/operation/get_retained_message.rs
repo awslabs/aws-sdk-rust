@@ -156,9 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRetainedMessage {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_retained_message::de_get_retained_message_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_retained_message::de_get_retained_message_http_response_with_props(status, headers, body)
         }
     }
 }

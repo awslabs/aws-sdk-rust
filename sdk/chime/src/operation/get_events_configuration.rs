@@ -178,7 +178,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEventsConfiguration {
         if !success && status != 200 {
             crate::protocol_serde::shape_get_events_configuration::de_get_events_configuration_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_events_configuration::de_get_events_configuration_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_events_configuration::de_get_events_configuration_http_response_with_props(status, headers, body)
         }
     }
     fn sensitive(&self) -> bool {

@@ -152,7 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUserTags {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_user_tags::de_list_user_tags_http_response(
+            crate::protocol_serde::shape_list_user_tags::de_list_user_tags_http_response_with_props(
                 status, headers, body,
             )
         }

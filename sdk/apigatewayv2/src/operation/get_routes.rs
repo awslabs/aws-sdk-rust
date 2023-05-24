@@ -172,7 +172,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRoutes {
         if !success && status != 200 {
             crate::protocol_serde::shape_get_routes::de_get_routes_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_routes::de_get_routes_http_response(
+            crate::protocol_serde::shape_get_routes::de_get_routes_http_response_with_props(
                 status, headers, body,
             )
         }

@@ -9,7 +9,7 @@ pub fn de_modify_verified_access_endpoint_policy_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_modify_verified_access_endpoint_policy_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::modify_verified_access_endpoint_policy::ModifyVerifiedAccessEndpointPolicyOutput, crate::operation::modify_verified_access_endpoint_policy::ModifyVerifiedAccessEndpointPolicyError>{
+pub fn de_modify_verified_access_endpoint_policy_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::modify_verified_access_endpoint_policy::ModifyVerifiedAccessEndpointPolicyOutput, crate::operation::modify_verified_access_endpoint_policy::ModifyVerifiedAccessEndpointPolicyError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::modify_verified_access_endpoint_policy::builders::ModifyVerifiedAccessEndpointPolicyOutputBuilder::default();

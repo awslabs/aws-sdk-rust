@@ -147,7 +147,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContainerServiceDeplo
         if !success && status != 200 {
             crate::protocol_serde::shape_get_container_service_deployments::de_get_container_service_deployments_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_container_service_deployments::de_get_container_service_deployments_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_container_service_deployments::de_get_container_service_deployments_http_response_with_props(status, headers, body)
         }
     }
 }

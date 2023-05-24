@@ -159,7 +159,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveStorageSystem {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_remove_storage_system::de_remove_storage_system_http_response(status, headers, body)
+            crate::protocol_serde::shape_remove_storage_system::de_remove_storage_system_http_response_with_props(status, headers, body)
         }
     }
 }

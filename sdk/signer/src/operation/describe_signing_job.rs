@@ -156,9 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSigningJob {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_signing_job::de_describe_signing_job_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_describe_signing_job::de_describe_signing_job_http_response_with_props(status, headers, body)
         }
     }
 }

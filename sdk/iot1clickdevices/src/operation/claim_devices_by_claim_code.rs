@@ -154,7 +154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ClaimDevicesByClaimCode 
         if !success && status != 200 {
             crate::protocol_serde::shape_claim_devices_by_claim_code::de_claim_devices_by_claim_code_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_claim_devices_by_claim_code::de_claim_devices_by_claim_code_http_response(status, headers, body)
+            crate::protocol_serde::shape_claim_devices_by_claim_code::de_claim_devices_by_claim_code_http_response_with_props(status, headers, body)
         }
     }
 }

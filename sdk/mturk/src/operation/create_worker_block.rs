@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkerBlock {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_worker_block::de_create_worker_block_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_worker_block::de_create_worker_block_http_response_with_props(status, headers, body)
         }
     }
 }

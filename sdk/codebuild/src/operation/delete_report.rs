@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReport {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_report::de_delete_report_http_response(
+            crate::protocol_serde::shape_delete_report::de_delete_report_http_response_with_props(
                 status, headers, body,
             )
         }

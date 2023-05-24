@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateImageBuilder {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_image_builder::de_create_image_builder_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_image_builder::de_create_image_builder_http_response_with_props(status, headers, body)
         }
     }
 }

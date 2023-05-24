@@ -185,9 +185,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListQueuedMessages {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_queued_messages::de_list_queued_messages_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_queued_messages::de_list_queued_messages_http_response_with_props(status, headers, body)
         }
     }
 }

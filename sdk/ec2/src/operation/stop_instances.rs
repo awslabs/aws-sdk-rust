@@ -152,7 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopInstances {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_stop_instances::de_stop_instances_http_response(
+            crate::protocol_serde::shape_stop_instances::de_stop_instances_http_response_with_props(
                 status, headers, body,
             )
         }

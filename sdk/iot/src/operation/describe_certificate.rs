@@ -160,9 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCertificate {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_certificate::de_describe_certificate_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_describe_certificate::de_describe_certificate_http_response_with_props(status, headers, body)
         }
     }
 }

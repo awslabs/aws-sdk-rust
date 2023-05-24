@@ -19,7 +19,7 @@ pub fn de_configure_logs_for_playback_configuration_http_error(_response_status:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_configure_logs_for_playback_configuration_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput, crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationError>{
+pub fn de_configure_logs_for_playback_configuration_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput, crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::configure_logs_for_playback_configuration::builders::ConfigureLogsForPlaybackConfigurationOutputBuilder::default();

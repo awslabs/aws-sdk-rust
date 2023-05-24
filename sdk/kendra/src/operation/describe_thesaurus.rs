@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeThesaurus {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_thesaurus::de_describe_thesaurus_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_describe_thesaurus::de_describe_thesaurus_http_response_with_props(status, headers, body)
         }
     }
 }

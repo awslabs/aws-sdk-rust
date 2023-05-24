@@ -151,7 +151,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetApps {
         if !success && status != 200 {
             crate::protocol_serde::shape_get_apps::de_get_apps_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_apps::de_get_apps_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_apps::de_get_apps_http_response_with_props(
+                status, headers, body,
+            )
         }
     }
 }

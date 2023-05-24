@@ -184,7 +184,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopModel {
         if !success && status != 202 {
             crate::protocol_serde::shape_stop_model::de_stop_model_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_stop_model::de_stop_model_http_response(
+            crate::protocol_serde::shape_stop_model::de_stop_model_http_response_with_props(
                 status, headers, body,
             )
         }

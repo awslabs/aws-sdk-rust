@@ -131,7 +131,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFieldLevelEncrypti
         if !success && status != 201 {
             crate::protocol_serde::shape_create_field_level_encryption_profile::de_create_field_level_encryption_profile_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_field_level_encryption_profile::de_create_field_level_encryption_profile_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_field_level_encryption_profile::de_create_field_level_encryption_profile_http_response_with_props(status, headers, body)
         }
     }
 }

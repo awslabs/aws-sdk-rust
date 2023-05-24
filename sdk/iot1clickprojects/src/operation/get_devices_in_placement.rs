@@ -178,7 +178,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDevicesInPlacement {
         if !success && status != 200 {
             crate::protocol_serde::shape_get_devices_in_placement::de_get_devices_in_placement_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_devices_in_placement::de_get_devices_in_placement_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_devices_in_placement::de_get_devices_in_placement_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -144,7 +144,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAutomationStepEx
         if !success && status != 200 {
             crate::protocol_serde::shape_describe_automation_step_executions::de_describe_automation_step_executions_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_describe_automation_step_executions::de_describe_automation_step_executions_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_automation_step_executions::de_describe_automation_step_executions_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListContactChannels {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_contact_channels::de_list_contact_channels_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_contact_channels::de_list_contact_channels_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -159,7 +159,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableHostedZoneDNSSEC 
         if !success && status != 200 {
             crate::protocol_serde::shape_disable_hosted_zone_dnssec::de_disable_hosted_zone_dnssec_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_disable_hosted_zone_dnssec::de_disable_hosted_zone_dnssec_http_response(status, headers, body)
+            crate::protocol_serde::shape_disable_hosted_zone_dnssec::de_disable_hosted_zone_dnssec_http_response_with_props(status, headers, body)
         }
     }
 }

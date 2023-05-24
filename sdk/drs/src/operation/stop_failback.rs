@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopFailback {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_stop_failback::de_stop_failback_http_response(
+            crate::protocol_serde::shape_stop_failback::de_stop_failback_http_response_with_props(
                 status, headers, body,
             )
         }

@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCache {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_cache::de_describe_cache_http_response(
+            crate::protocol_serde::shape_describe_cache::de_describe_cache_http_response_with_props(
                 status, headers, body,
             )
         }

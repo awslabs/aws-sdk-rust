@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportCrl {
         if !success && status != 201 {
             crate::protocol_serde::shape_import_crl::de_import_crl_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_import_crl::de_import_crl_http_response(
+            crate::protocol_serde::shape_import_crl::de_import_crl_http_response_with_props(
                 status, headers, body,
             )
         }

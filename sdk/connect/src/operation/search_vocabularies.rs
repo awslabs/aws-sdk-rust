@@ -174,9 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchVocabularies {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_search_vocabularies::de_search_vocabularies_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_search_vocabularies::de_search_vocabularies_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAppsList {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_apps_list::de_delete_apps_list_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_delete_apps_list::de_delete_apps_list_http_response_with_props(status, headers, body)
         }
     }
 }

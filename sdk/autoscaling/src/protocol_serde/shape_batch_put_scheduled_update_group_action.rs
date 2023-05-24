@@ -65,7 +65,7 @@ pub fn de_batch_put_scheduled_update_group_action_http_error(_response_status: u
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_batch_put_scheduled_update_group_action_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionOutput, crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionError>{
+pub fn de_batch_put_scheduled_update_group_action_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionOutput, crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::batch_put_scheduled_update_group_action::builders::BatchPutScheduledUpdateGroupActionOutputBuilder::default();

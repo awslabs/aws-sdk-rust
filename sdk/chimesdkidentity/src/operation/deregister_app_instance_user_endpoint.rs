@@ -160,7 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterAppInstanceUse
         if !success && status != 204 {
             crate::protocol_serde::shape_deregister_app_instance_user_endpoint::de_deregister_app_instance_user_endpoint_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_deregister_app_instance_user_endpoint::de_deregister_app_instance_user_endpoint_http_response(status, headers, body)
+            crate::protocol_serde::shape_deregister_app_instance_user_endpoint::de_deregister_app_instance_user_endpoint_http_response_with_props(status, headers, body)
         }
     }
 }

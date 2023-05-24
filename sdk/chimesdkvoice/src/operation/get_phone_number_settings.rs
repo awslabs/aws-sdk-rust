@@ -134,7 +134,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPhoneNumberSettings {
         if !success && status != 200 {
             crate::protocol_serde::shape_get_phone_number_settings::de_get_phone_number_settings_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_phone_number_settings::de_get_phone_number_settings_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_phone_number_settings::de_get_phone_number_settings_http_response_with_props(status, headers, body)
         }
     }
     fn sensitive(&self) -> bool {

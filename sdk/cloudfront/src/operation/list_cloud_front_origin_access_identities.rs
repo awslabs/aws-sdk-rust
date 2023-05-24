@@ -138,7 +138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCloudFrontOriginAcce
         if !success && status != 200 {
             crate::protocol_serde::shape_list_cloud_front_origin_access_identities::de_list_cloud_front_origin_access_identities_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_cloud_front_origin_access_identities::de_list_cloud_front_origin_access_identities_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_cloud_front_origin_access_identities::de_list_cloud_front_origin_access_identities_http_response_with_props(status, headers, body)
         }
     }
 }

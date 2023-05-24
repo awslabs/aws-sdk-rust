@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBackups {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_backups::de_list_backups_http_response(
+            crate::protocol_serde::shape_list_backups::de_list_backups_http_response_with_props(
                 status, headers, body,
             )
         }

@@ -161,7 +161,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomLogSource {
         if !success && status != 200 {
             crate::protocol_serde::shape_delete_custom_log_source::de_delete_custom_log_source_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_custom_log_source::de_delete_custom_log_source_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_custom_log_source::de_delete_custom_log_source_http_response_with_props(status, headers, body)
         }
     }
 }

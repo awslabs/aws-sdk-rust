@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartCrawler {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_start_crawler::de_start_crawler_http_response(
+            crate::protocol_serde::shape_start_crawler::de_start_crawler_http_response_with_props(
                 status, headers, body,
             )
         }

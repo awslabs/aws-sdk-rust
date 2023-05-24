@@ -176,7 +176,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateScene {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_scene::de_create_scene_http_response(
+            crate::protocol_serde::shape_create_scene::de_create_scene_http_response_with_props(
                 status, headers, body,
             )
         }

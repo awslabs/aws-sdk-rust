@@ -113,7 +113,7 @@ pub fn de_purchase_reserved_cache_nodes_offering_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_purchase_reserved_cache_nodes_offering_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingOutput, crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingError>{
+pub fn de_purchase_reserved_cache_nodes_offering_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingOutput, crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::purchase_reserved_cache_nodes_offering::builders::PurchaseReservedCacheNodesOfferingOutputBuilder::default();

@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for NotifyResourceDeployment
         if !success && status != 200 {
             crate::protocol_serde::shape_notify_resource_deployment_status_change::de_notify_resource_deployment_status_change_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_notify_resource_deployment_status_change::de_notify_resource_deployment_status_change_http_response(status, headers, body)
+            crate::protocol_serde::shape_notify_resource_deployment_status_change::de_notify_resource_deployment_status_change_http_response_with_props(status, headers, body)
         }
     }
 }

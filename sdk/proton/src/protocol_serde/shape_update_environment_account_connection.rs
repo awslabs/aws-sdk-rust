@@ -123,7 +123,7 @@ pub fn de_update_environment_account_connection_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_environment_account_connection_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_environment_account_connection::UpdateEnvironmentAccountConnectionOutput, crate::operation::update_environment_account_connection::UpdateEnvironmentAccountConnectionError>{
+pub fn de_update_environment_account_connection_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_environment_account_connection::UpdateEnvironmentAccountConnectionOutput, crate::operation::update_environment_account_connection::UpdateEnvironmentAccountConnectionError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_environment_account_connection::builders::UpdateEnvironmentAccountConnectionOutputBuilder::default();

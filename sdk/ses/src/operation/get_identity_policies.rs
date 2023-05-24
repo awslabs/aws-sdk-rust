@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIdentityPolicies {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_identity_policies::de_get_identity_policies_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_identity_policies::de_get_identity_policies_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -75,7 +75,7 @@ pub fn de_describe_certificate_authority_audit_report_http_error(_response_statu
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_certificate_authority_audit_report_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportOutput, crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportError>{
+pub fn de_describe_certificate_authority_audit_report_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportOutput, crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_certificate_authority_audit_report::builders::DescribeCertificateAuthorityAuditReportOutputBuilder::default();

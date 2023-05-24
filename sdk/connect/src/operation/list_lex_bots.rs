@@ -181,7 +181,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLexBots {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_lex_bots::de_list_lex_bots_http_response(
+            crate::protocol_serde::shape_list_lex_bots::de_list_lex_bots_http_response_with_props(
                 status, headers, body,
             )
         }

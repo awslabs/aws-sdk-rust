@@ -49,7 +49,7 @@ pub fn de_get_cloud_front_origin_access_identity_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_cloud_front_origin_access_identity_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityOutput, crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityError>{
+pub fn de_get_cloud_front_origin_access_identity_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityOutput, crate::operation::get_cloud_front_origin_access_identity::GetCloudFrontOriginAccessIdentityError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_cloud_front_origin_access_identity::builders::GetCloudFrontOriginAccessIdentityOutputBuilder::default();

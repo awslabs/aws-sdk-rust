@@ -181,7 +181,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBackendEnvironments 
         if !success && status != 200 {
             crate::protocol_serde::shape_list_backend_environments::de_list_backend_environments_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_backend_environments::de_list_backend_environments_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_backend_environments::de_list_backend_environments_http_response_with_props(status, headers, body)
         }
     }
 }

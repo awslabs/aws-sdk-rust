@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateContactFromA
         if !success && status != 200 {
             crate::protocol_serde::shape_disassociate_contact_from_address_book::de_disassociate_contact_from_address_book_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_disassociate_contact_from_address_book::de_disassociate_contact_from_address_book_http_response(status, headers, body)
+            crate::protocol_serde::shape_disassociate_contact_from_address_book::de_disassociate_contact_from_address_book_http_response_with_props(status, headers, body)
         }
     }
 }

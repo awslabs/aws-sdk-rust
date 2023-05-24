@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportSignalCatalog {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_import_signal_catalog::de_import_signal_catalog_http_response(status, headers, body)
+            crate::protocol_serde::shape_import_signal_catalog::de_import_signal_catalog_http_response_with_props(status, headers, body)
         }
     }
 }

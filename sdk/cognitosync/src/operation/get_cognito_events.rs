@@ -160,9 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCognitoEvents {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_cognito_events::de_get_cognito_events_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_cognito_events::de_get_cognito_events_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRouteTables {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_route_tables::de_describe_route_tables_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_route_tables::de_describe_route_tables_http_response_with_props(status, headers, body)
         }
     }
 }

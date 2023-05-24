@@ -235,7 +235,7 @@ pub fn de_register_organization_delegated_admin_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_register_organization_delegated_admin_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminOutput, crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminError>{
+pub fn de_register_organization_delegated_admin_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminOutput, crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::register_organization_delegated_admin::builders::RegisterOrganizationDelegatedAdminOutputBuilder::default();

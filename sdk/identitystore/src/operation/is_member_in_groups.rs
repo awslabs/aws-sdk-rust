@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for IsMemberInGroups {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_is_member_in_groups::de_is_member_in_groups_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_is_member_in_groups::de_is_member_in_groups_http_response_with_props(status, headers, body)
         }
     }
     fn sensitive(&self) -> bool {

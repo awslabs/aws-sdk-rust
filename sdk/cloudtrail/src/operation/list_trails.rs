@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTrails {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_trails::de_list_trails_http_response(
+            crate::protocol_serde::shape_list_trails::de_list_trails_http_response_with_props(
                 status, headers, body,
             )
         }

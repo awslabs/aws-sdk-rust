@@ -152,7 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResizeCluster {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_resize_cluster::de_resize_cluster_http_response(
+            crate::protocol_serde::shape_resize_cluster::de_resize_cluster_http_response_with_props(
                 status, headers, body,
             )
         }

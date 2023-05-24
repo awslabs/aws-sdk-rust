@@ -148,9 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for LeaveOrganization {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_leave_organization::de_leave_organization_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_leave_organization::de_leave_organization_http_response_with_props(status, headers, body)
         }
     }
 }

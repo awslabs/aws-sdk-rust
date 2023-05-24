@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReplicateSecretToRegions
         if !success && status != 200 {
             crate::protocol_serde::shape_replicate_secret_to_regions::de_replicate_secret_to_regions_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_replicate_secret_to_regions::de_replicate_secret_to_regions_http_response(status, headers, body)
+            crate::protocol_serde::shape_replicate_secret_to_regions::de_replicate_secret_to_regions_http_response_with_props(status, headers, body)
         }
     }
 }

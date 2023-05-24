@@ -178,7 +178,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBackendEnvironment
         if !success && status != 200 {
             crate::protocol_serde::shape_delete_backend_environment::de_delete_backend_environment_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_backend_environment::de_delete_backend_environment_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_backend_environment::de_delete_backend_environment_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetExportSnapshotRecords
         if !success && status != 200 {
             crate::protocol_serde::shape_get_export_snapshot_records::de_get_export_snapshot_records_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_export_snapshot_records::de_get_export_snapshot_records_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_export_snapshot_records::de_get_export_snapshot_records_http_response_with_props(status, headers, body)
         }
     }
 }

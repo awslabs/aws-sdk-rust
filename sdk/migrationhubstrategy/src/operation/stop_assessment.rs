@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopAssessment {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_stop_assessment::de_stop_assessment_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_stop_assessment::de_stop_assessment_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLaunchPaths {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_launch_paths::de_list_launch_paths_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_launch_paths::de_list_launch_paths_http_response_with_props(status, headers, body)
         }
     }
 }

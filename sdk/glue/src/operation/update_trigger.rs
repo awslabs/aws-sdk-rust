@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTrigger {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_trigger::de_update_trigger_http_response(
+            crate::protocol_serde::shape_update_trigger::de_update_trigger_http_response_with_props(
                 status, headers, body,
             )
         }

@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyIpamScope {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_modify_ipam_scope::de_modify_ipam_scope_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_modify_ipam_scope::de_modify_ipam_scope_http_response_with_props(status, headers, body)
         }
     }
 }

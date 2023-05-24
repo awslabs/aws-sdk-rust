@@ -176,7 +176,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBasePathMapping {
         if !success && status != 201 {
             crate::protocol_serde::shape_create_base_path_mapping::de_create_base_path_mapping_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_base_path_mapping::de_create_base_path_mapping_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_base_path_mapping::de_create_base_path_mapping_http_response_with_props(status, headers, body)
         }
     }
 }

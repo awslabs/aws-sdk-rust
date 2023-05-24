@@ -43,7 +43,7 @@ pub fn de_list_training_jobs_for_hyper_parameter_tuning_job_http_error(_response
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_training_jobs_for_hyper_parameter_tuning_job_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobOutput, crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobError>{
+pub fn de_list_training_jobs_for_hyper_parameter_tuning_job_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobOutput, crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::builders::ListTrainingJobsForHyperParameterTuningJobOutputBuilder::default();

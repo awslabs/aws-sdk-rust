@@ -174,9 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetField {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_batch_get_field::de_batch_get_field_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_batch_get_field::de_batch_get_field_http_response_with_props(status, headers, body)
         }
     }
 }

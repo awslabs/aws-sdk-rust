@@ -139,7 +139,7 @@ pub fn de_attach_customer_managed_policy_reference_to_permission_set_http_error(
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_attach_customer_managed_policy_reference_to_permission_set_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetOutput, crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetError>{
+pub fn de_attach_customer_managed_policy_reference_to_permission_set_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetOutput, crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::attach_customer_managed_policy_reference_to_permission_set::builders::AttachCustomerManagedPolicyReferenceToPermissionSetOutputBuilder::default();

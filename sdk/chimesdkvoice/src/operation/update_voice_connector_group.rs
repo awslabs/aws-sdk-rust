@@ -172,7 +172,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVoiceConnectorGrou
         if !success && status != 202 {
             crate::protocol_serde::shape_update_voice_connector_group::de_update_voice_connector_group_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_update_voice_connector_group::de_update_voice_connector_group_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_voice_connector_group::de_update_voice_connector_group_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -212,7 +212,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVirtualRouter {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_virtual_router::de_update_virtual_router_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_virtual_router::de_update_virtual_router_http_response_with_props(status, headers, body)
         }
     }
 }

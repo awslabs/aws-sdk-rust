@@ -97,7 +97,7 @@ pub fn de_get_interpolated_asset_property_values_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_interpolated_asset_property_values_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesOutput, crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesError>{
+pub fn de_get_interpolated_asset_property_values_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesOutput, crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_interpolated_asset_property_values::builders::GetInterpolatedAssetPropertyValuesOutputBuilder::default();

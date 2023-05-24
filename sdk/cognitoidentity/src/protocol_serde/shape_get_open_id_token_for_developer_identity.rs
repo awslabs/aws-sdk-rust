@@ -139,7 +139,7 @@ pub fn de_get_open_id_token_for_developer_identity_http_error(_response_status: 
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_open_id_token_for_developer_identity_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityOutput, crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityError>{
+pub fn de_get_open_id_token_for_developer_identity_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityOutput, crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_open_id_token_for_developer_identity::builders::GetOpenIdTokenForDeveloperIdentityOutputBuilder::default();

@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListNetworkSites {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_network_sites::de_list_network_sites_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_network_sites::de_list_network_sites_http_response_with_props(status, headers, body)
         }
     }
 }

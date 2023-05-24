@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetParticipant {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_participant::de_get_participant_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_participant::de_get_participant_http_response_with_props(status, headers, body)
         }
     }
 }

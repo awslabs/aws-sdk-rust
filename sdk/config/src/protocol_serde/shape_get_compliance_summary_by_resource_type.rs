@@ -43,7 +43,7 @@ pub fn de_get_compliance_summary_by_resource_type_http_error(_response_status: u
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_compliance_summary_by_resource_type_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeOutput, crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeError>{
+pub fn de_get_compliance_summary_by_resource_type_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeOutput, crate::operation::get_compliance_summary_by_resource_type::GetComplianceSummaryByResourceTypeError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_compliance_summary_by_resource_type::builders::GetComplianceSummaryByResourceTypeOutputBuilder::default();

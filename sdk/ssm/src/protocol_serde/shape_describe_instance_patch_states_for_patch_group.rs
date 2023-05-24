@@ -75,7 +75,7 @@ pub fn de_describe_instance_patch_states_for_patch_group_http_error(_response_st
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_instance_patch_states_for_patch_group_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupOutput, crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupError>{
+pub fn de_describe_instance_patch_states_for_patch_group_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupOutput, crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_instance_patch_states_for_patch_group::builders::DescribeInstancePatchStatesForPatchGroupOutputBuilder::default();

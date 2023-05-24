@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddInstanceFleet {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_add_instance_fleet::de_add_instance_fleet_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_add_instance_fleet::de_add_instance_fleet_http_response_with_props(status, headers, body)
         }
     }
 }

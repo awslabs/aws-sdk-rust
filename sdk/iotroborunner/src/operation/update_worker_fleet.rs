@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateWorkerFleet {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_worker_fleet::de_update_worker_fleet_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_update_worker_fleet::de_update_worker_fleet_http_response_with_props(status, headers, body)
         }
     }
 }

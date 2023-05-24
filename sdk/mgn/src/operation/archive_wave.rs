@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ArchiveWave {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_archive_wave::de_archive_wave_http_response(
+            crate::protocol_serde::shape_archive_wave::de_archive_wave_http_response_with_props(
                 status, headers, body,
             )
         }

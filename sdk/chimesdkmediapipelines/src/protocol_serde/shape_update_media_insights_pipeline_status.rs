@@ -155,7 +155,7 @@ pub fn de_update_media_insights_pipeline_status_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_media_insights_pipeline_status_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusOutput, crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusError>{
+pub fn de_update_media_insights_pipeline_status_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusOutput, crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_media_insights_pipeline_status::builders::UpdateMediaInsightsPipelineStatusOutputBuilder::default();

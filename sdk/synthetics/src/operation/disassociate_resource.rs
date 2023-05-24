@@ -176,7 +176,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateResource {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_disassociate_resource::de_disassociate_resource_http_response(status, headers, body)
+            crate::protocol_serde::shape_disassociate_resource::de_disassociate_resource_http_response_with_props(status, headers, body)
         }
     }
 }

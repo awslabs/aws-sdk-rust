@@ -123,7 +123,7 @@ pub fn de_associate_wireless_gateway_with_thing_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_associate_wireless_gateway_with_thing_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::associate_wireless_gateway_with_thing::AssociateWirelessGatewayWithThingOutput, crate::operation::associate_wireless_gateway_with_thing::AssociateWirelessGatewayWithThingError>{
+pub fn de_associate_wireless_gateway_with_thing_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::associate_wireless_gateway_with_thing::AssociateWirelessGatewayWithThingOutput, crate::operation::associate_wireless_gateway_with_thing::AssociateWirelessGatewayWithThingError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::associate_wireless_gateway_with_thing::builders::AssociateWirelessGatewayWithThingOutputBuilder::default();

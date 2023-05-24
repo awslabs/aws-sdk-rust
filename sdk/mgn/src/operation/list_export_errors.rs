@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListExportErrors {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_export_errors::de_list_export_errors_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_export_errors::de_list_export_errors_http_response_with_props(status, headers, body)
         }
     }
 }

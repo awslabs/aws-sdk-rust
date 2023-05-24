@@ -95,7 +95,7 @@ pub fn de_signal_application_instance_node_instances_http_error(_response_status
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_signal_application_instance_node_instances_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesOutput, crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesError>{
+pub fn de_signal_application_instance_node_instances_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesOutput, crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::signal_application_instance_node_instances::builders::SignalApplicationInstanceNodeInstancesOutputBuilder::default();

@@ -172,7 +172,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddFlowVpcInterfaces {
         if !success && status != 201 {
             crate::protocol_serde::shape_add_flow_vpc_interfaces::de_add_flow_vpc_interfaces_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_add_flow_vpc_interfaces::de_add_flow_vpc_interfaces_http_response(status, headers, body)
+            crate::protocol_serde::shape_add_flow_vpc_interfaces::de_add_flow_vpc_interfaces_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSimulationApplicat
         if !success && status != 200 {
             crate::protocol_serde::shape_delete_simulation_application::de_delete_simulation_application_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_simulation_application::de_delete_simulation_application_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_simulation_application::de_delete_simulation_application_http_response_with_props(status, headers, body)
         }
     }
 }

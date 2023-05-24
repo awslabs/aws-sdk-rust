@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetTagsForResource {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_set_tags_for_resource::de_set_tags_for_resource_http_response(status, headers, body)
+            crate::protocol_serde::shape_set_tags_for_resource::de_set_tags_for_resource_http_response_with_props(status, headers, body)
         }
     }
 }

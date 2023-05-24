@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkforces {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_workforces::de_list_workforces_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_workforces::de_list_workforces_http_response_with_props(status, headers, body)
         }
     }
 }

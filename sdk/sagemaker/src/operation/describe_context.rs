@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeContext {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_context::de_describe_context_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_describe_context::de_describe_context_http_response_with_props(status, headers, body)
         }
     }
 }

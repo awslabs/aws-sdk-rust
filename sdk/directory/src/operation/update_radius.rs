@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRadius {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_radius::de_update_radius_http_response(
+            crate::protocol_serde::shape_update_radius::de_update_radius_http_response_with_props(
                 status, headers, body,
             )
         }

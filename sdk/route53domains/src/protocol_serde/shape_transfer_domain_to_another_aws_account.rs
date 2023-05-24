@@ -91,7 +91,7 @@ pub fn de_transfer_domain_to_another_aws_account_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_transfer_domain_to_another_aws_account_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountOutput, crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountError>{
+pub fn de_transfer_domain_to_another_aws_account_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountOutput, crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::transfer_domain_to_another_aws_account::builders::TransferDomainToAnotherAwsAccountOutputBuilder::default();

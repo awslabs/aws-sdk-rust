@@ -33,7 +33,7 @@ pub fn de_list_subscription_definition_versions_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_subscription_definition_versions_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsOutput, crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsError>{
+pub fn de_list_subscription_definition_versions_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsOutput, crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_subscription_definition_versions::builders::ListSubscriptionDefinitionVersionsOutputBuilder::default();

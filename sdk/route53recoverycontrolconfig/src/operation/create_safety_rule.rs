@@ -153,9 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSafetyRule {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_safety_rule::de_create_safety_rule_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_safety_rule::de_create_safety_rule_http_response_with_props(status, headers, body)
         }
     }
 }

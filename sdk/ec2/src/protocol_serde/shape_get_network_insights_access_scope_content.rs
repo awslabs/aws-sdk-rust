@@ -9,7 +9,7 @@ pub fn de_get_network_insights_access_scope_content_http_error(_response_status:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_network_insights_access_scope_content_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_network_insights_access_scope_content::GetNetworkInsightsAccessScopeContentOutput, crate::operation::get_network_insights_access_scope_content::GetNetworkInsightsAccessScopeContentError>{
+pub fn de_get_network_insights_access_scope_content_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_network_insights_access_scope_content::GetNetworkInsightsAccessScopeContentOutput, crate::operation::get_network_insights_access_scope_content::GetNetworkInsightsAccessScopeContentError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_network_insights_access_scope_content::builders::GetNetworkInsightsAccessScopeContentOutputBuilder::default();

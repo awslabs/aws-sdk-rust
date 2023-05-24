@@ -147,7 +147,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendSerialConsoleSSHPubl
         if !success && status != 200 {
             crate::protocol_serde::shape_send_serial_console_ssh_public_key::de_send_serial_console_ssh_public_key_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_send_serial_console_ssh_public_key::de_send_serial_console_ssh_public_key_http_response(status, headers, body)
+            crate::protocol_serde::shape_send_serial_console_ssh_public_key::de_send_serial_console_ssh_public_key_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -65,7 +65,7 @@ pub fn de_set_load_balancer_policies_for_backend_server_http_error(_response_sta
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_set_load_balancer_policies_for_backend_server_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerOutput, crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerError>{
+pub fn de_set_load_balancer_policies_for_backend_server_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerOutput, crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::set_load_balancer_policies_for_backend_server::builders::SetLoadBalancerPoliciesForBackendServerOutputBuilder::default();

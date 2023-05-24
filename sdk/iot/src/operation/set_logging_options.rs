@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetLoggingOptions {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_set_logging_options::de_set_logging_options_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_set_logging_options::de_set_logging_options_http_response_with_props(status, headers, body)
         }
     }
 }

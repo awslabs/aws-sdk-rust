@@ -176,9 +176,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelChangeSet {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_cancel_change_set::de_cancel_change_set_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_cancel_change_set::de_cancel_change_set_http_response_with_props(status, headers, body)
         }
     }
 }

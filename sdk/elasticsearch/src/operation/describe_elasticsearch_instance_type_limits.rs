@@ -173,7 +173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeElasticsearchIns
         if !success && status != 200 {
             crate::protocol_serde::shape_describe_elasticsearch_instance_type_limits::de_describe_elasticsearch_instance_type_limits_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_describe_elasticsearch_instance_type_limits::de_describe_elasticsearch_instance_type_limits_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_elasticsearch_instance_type_limits::de_describe_elasticsearch_instance_type_limits_http_response_with_props(status, headers, body)
         }
     }
 }

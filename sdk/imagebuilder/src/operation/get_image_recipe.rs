@@ -163,9 +163,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetImageRecipe {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_image_recipe::de_get_image_recipe_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_image_recipe::de_get_image_recipe_http_response_with_props(status, headers, body)
         }
     }
 }

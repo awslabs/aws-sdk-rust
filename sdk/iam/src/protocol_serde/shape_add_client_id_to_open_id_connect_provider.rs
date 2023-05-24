@@ -81,7 +81,7 @@ pub fn de_add_client_id_to_open_id_connect_provider_http_error(_response_status:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_add_client_id_to_open_id_connect_provider_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::add_client_id_to_open_id_connect_provider::AddClientIdToOpenIdConnectProviderOutput, crate::operation::add_client_id_to_open_id_connect_provider::AddClientIDToOpenIDConnectProviderError>{
+pub fn de_add_client_id_to_open_id_connect_provider_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::add_client_id_to_open_id_connect_provider::AddClientIdToOpenIdConnectProviderOutput, crate::operation::add_client_id_to_open_id_connect_provider::AddClientIDToOpenIDConnectProviderError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::add_client_id_to_open_id_connect_provider::builders::AddClientIdToOpenIdConnectProviderOutputBuilder::default();

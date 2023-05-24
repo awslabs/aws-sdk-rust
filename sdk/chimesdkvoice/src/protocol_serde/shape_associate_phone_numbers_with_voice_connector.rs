@@ -155,7 +155,7 @@ pub fn de_associate_phone_numbers_with_voice_connector_http_error(_response_stat
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_associate_phone_numbers_with_voice_connector_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::associate_phone_numbers_with_voice_connector::AssociatePhoneNumbersWithVoiceConnectorOutput, crate::operation::associate_phone_numbers_with_voice_connector::AssociatePhoneNumbersWithVoiceConnectorError>{
+pub fn de_associate_phone_numbers_with_voice_connector_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::associate_phone_numbers_with_voice_connector::AssociatePhoneNumbersWithVoiceConnectorOutput, crate::operation::associate_phone_numbers_with_voice_connector::AssociatePhoneNumbersWithVoiceConnectorError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::associate_phone_numbers_with_voice_connector::builders::AssociatePhoneNumbersWithVoiceConnectorOutputBuilder::default();

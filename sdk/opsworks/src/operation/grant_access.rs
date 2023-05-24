@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GrantAccess {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_grant_access::de_grant_access_http_response(
+            crate::protocol_serde::shape_grant_access::de_grant_access_http_response_with_props(
                 status, headers, body,
             )
         }

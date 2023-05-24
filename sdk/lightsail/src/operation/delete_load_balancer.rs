@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLoadBalancer {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_load_balancer::de_delete_load_balancer_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_delete_load_balancer::de_delete_load_balancer_http_response_with_props(status, headers, body)
         }
     }
 }

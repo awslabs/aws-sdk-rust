@@ -175,9 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccountRoles {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_account_roles::de_list_account_roles_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_account_roles::de_list_account_roles_http_response_with_props(status, headers, body)
         }
     }
 }

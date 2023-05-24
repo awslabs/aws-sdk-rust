@@ -149,7 +149,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachLoadBalancerFromSu
         if !success && status != 200 {
             crate::protocol_serde::shape_detach_load_balancer_from_subnets::de_detach_load_balancer_from_subnets_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_detach_load_balancer_from_subnets::de_detach_load_balancer_from_subnets_http_response(status, headers, body)
+            crate::protocol_serde::shape_detach_load_balancer_from_subnets::de_detach_load_balancer_from_subnets_http_response_with_props(status, headers, body)
         }
     }
 }

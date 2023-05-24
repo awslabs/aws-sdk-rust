@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for OpenTunnel {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_open_tunnel::de_open_tunnel_http_response(
+            crate::protocol_serde::shape_open_tunnel::de_open_tunnel_http_response_with_props(
                 status, headers, body,
             )
         }

@@ -182,7 +182,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteComponentType {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_component_type::de_delete_component_type_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_component_type::de_delete_component_type_http_response_with_props(status, headers, body)
         }
     }
 }

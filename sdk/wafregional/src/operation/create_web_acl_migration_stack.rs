@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWebACLMigrationSta
         if !success && status != 200 {
             crate::protocol_serde::shape_create_web_acl_migration_stack::de_create_web_acl_migration_stack_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_web_acl_migration_stack::de_create_web_acl_migration_stack_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_web_acl_migration_stack::de_create_web_acl_migration_stack_http_response_with_props(status, headers, body)
         }
     }
 }

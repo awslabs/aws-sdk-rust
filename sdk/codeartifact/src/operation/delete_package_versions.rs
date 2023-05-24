@@ -225,7 +225,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePackageVersions {
         if !success && status != 200 {
             crate::protocol_serde::shape_delete_package_versions::de_delete_package_versions_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_package_versions::de_delete_package_versions_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_package_versions::de_delete_package_versions_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccountSettings {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_account_settings::de_list_account_settings_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_account_settings::de_list_account_settings_http_response_with_props(status, headers, body)
         }
     }
 }

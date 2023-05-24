@@ -202,9 +202,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDocumentVersion {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_document_version::de_get_document_version_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_document_version::de_get_document_version_http_response_with_props(status, headers, body)
         }
     }
     fn sensitive(&self) -> bool {

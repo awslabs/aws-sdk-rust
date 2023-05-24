@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDistribution {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_distribution::de_create_distribution_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_distribution::de_create_distribution_http_response_with_props(status, headers, body)
         }
     }
 }

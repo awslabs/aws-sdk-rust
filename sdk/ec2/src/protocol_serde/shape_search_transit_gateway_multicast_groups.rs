@@ -9,7 +9,7 @@ pub fn de_search_transit_gateway_multicast_groups_http_error(_response_status: u
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_search_transit_gateway_multicast_groups_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::search_transit_gateway_multicast_groups::SearchTransitGatewayMulticastGroupsOutput, crate::operation::search_transit_gateway_multicast_groups::SearchTransitGatewayMulticastGroupsError>{
+pub fn de_search_transit_gateway_multicast_groups_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::search_transit_gateway_multicast_groups::SearchTransitGatewayMulticastGroupsOutput, crate::operation::search_transit_gateway_multicast_groups::SearchTransitGatewayMulticastGroupsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::search_transit_gateway_multicast_groups::builders::SearchTransitGatewayMulticastGroupsOutputBuilder::default();

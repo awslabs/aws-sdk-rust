@@ -180,7 +180,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptEulas {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_accept_eulas::de_accept_eulas_http_response(
+            crate::protocol_serde::shape_accept_eulas::de_accept_eulas_http_response_with_props(
                 status, headers, body,
             )
         }

@@ -156,7 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetProject {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_project::de_get_project_http_response(
+            crate::protocol_serde::shape_get_project::de_get_project_http_response_with_props(
                 status, headers, body,
             )
         }

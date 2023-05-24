@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendVoiceMessage {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_send_voice_message::de_send_voice_message_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_send_voice_message::de_send_voice_message_http_response_with_props(status, headers, body)
         }
     }
 }

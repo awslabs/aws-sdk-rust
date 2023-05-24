@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAWSDefaultServiceQuo
         if !success && status != 200 {
             crate::protocol_serde::shape_list_aws_default_service_quotas::de_list_aws_default_service_quotas_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_aws_default_service_quotas::de_list_aws_default_service_quotas_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_aws_default_service_quotas::de_list_aws_default_service_quotas_http_response_with_props(status, headers, body)
         }
     }
 }

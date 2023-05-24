@@ -149,7 +149,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreSnapshotFromRecyc
         if !success && status != 200 {
             crate::protocol_serde::shape_restore_snapshot_from_recycle_bin::de_restore_snapshot_from_recycle_bin_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_restore_snapshot_from_recycle_bin::de_restore_snapshot_from_recycle_bin_http_response(status, headers, body)
+            crate::protocol_serde::shape_restore_snapshot_from_recycle_bin::de_restore_snapshot_from_recycle_bin_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -81,7 +81,7 @@ pub fn de_disassociate_aws_account_from_partner_account_http_error(_response_sta
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_disassociate_aws_account_from_partner_account_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountOutput, crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountError>{
+pub fn de_disassociate_aws_account_from_partner_account_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountOutput, crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::disassociate_aws_account_from_partner_account::builders::DisassociateAwsAccountFromPartnerAccountOutputBuilder::default();

@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutLogEvents {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_put_log_events::de_put_log_events_http_response(
+            crate::protocol_serde::shape_put_log_events::de_put_log_events_http_response_with_props(
                 status, headers, body,
             )
         }

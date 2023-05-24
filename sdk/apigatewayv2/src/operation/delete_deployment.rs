@@ -180,9 +180,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDeployment {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_deployment::de_delete_deployment_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_delete_deployment::de_delete_deployment_http_response_with_props(status, headers, body)
         }
     }
 }

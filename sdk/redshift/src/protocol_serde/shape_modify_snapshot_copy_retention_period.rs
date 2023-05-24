@@ -97,7 +97,7 @@ pub fn de_modify_snapshot_copy_retention_period_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_modify_snapshot_copy_retention_period_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput, crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError>{
+pub fn de_modify_snapshot_copy_retention_period_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput, crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::modify_snapshot_copy_retention_period::builders::ModifySnapshotCopyRetentionPeriodOutputBuilder::default();

@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterDomain {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_register_domain::de_register_domain_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_register_domain::de_register_domain_http_response_with_props(status, headers, body)
         }
     }
 }

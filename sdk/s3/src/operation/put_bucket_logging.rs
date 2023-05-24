@@ -191,9 +191,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketLogging {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_put_bucket_logging::de_put_bucket_logging_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_put_bucket_logging::de_put_bucket_logging_http_response_with_props(status, headers, body)
         }
     }
 }

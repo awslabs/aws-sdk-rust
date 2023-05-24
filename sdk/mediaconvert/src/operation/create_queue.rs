@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateQueue {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_queue::de_create_queue_http_response(
+            crate::protocol_serde::shape_create_queue::de_create_queue_http_response_with_props(
                 status, headers, body,
             )
         }

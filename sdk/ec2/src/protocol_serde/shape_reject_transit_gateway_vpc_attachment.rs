@@ -9,7 +9,7 @@ pub fn de_reject_transit_gateway_vpc_attachment_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_reject_transit_gateway_vpc_attachment_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::reject_transit_gateway_vpc_attachment::RejectTransitGatewayVpcAttachmentOutput, crate::operation::reject_transit_gateway_vpc_attachment::RejectTransitGatewayVpcAttachmentError>{
+pub fn de_reject_transit_gateway_vpc_attachment_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::reject_transit_gateway_vpc_attachment::RejectTransitGatewayVpcAttachmentOutput, crate::operation::reject_transit_gateway_vpc_attachment::RejectTransitGatewayVpcAttachmentError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::reject_transit_gateway_vpc_attachment::builders::RejectTransitGatewayVpcAttachmentOutputBuilder::default();

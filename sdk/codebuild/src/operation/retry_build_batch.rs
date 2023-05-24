@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RetryBuildBatch {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_retry_build_batch::de_retry_build_batch_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_retry_build_batch::de_retry_build_batch_http_response_with_props(status, headers, body)
         }
     }
 }

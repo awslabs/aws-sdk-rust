@@ -123,7 +123,7 @@ pub fn de_associate_wireless_device_with_fuota_task_http_error(_response_status:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_associate_wireless_device_with_fuota_task_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::associate_wireless_device_with_fuota_task::AssociateWirelessDeviceWithFuotaTaskOutput, crate::operation::associate_wireless_device_with_fuota_task::AssociateWirelessDeviceWithFuotaTaskError>{
+pub fn de_associate_wireless_device_with_fuota_task_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::associate_wireless_device_with_fuota_task::AssociateWirelessDeviceWithFuotaTaskOutput, crate::operation::associate_wireless_device_with_fuota_task::AssociateWirelessDeviceWithFuotaTaskError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::associate_wireless_device_with_fuota_task::builders::AssociateWirelessDeviceWithFuotaTaskOutputBuilder::default();

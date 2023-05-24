@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStreamKey {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_stream_key::de_create_stream_key_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_stream_key::de_create_stream_key_http_response_with_props(status, headers, body)
         }
     }
     fn sensitive(&self) -> bool {

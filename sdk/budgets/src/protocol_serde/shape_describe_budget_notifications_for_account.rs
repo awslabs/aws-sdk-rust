@@ -139,7 +139,7 @@ pub fn de_describe_budget_notifications_for_account_http_error(_response_status:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_budget_notifications_for_account_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountOutput, crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError>{
+pub fn de_describe_budget_notifications_for_account_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountOutput, crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_budget_notifications_for_account::builders::DescribeBudgetNotificationsForAccountOutputBuilder::default();

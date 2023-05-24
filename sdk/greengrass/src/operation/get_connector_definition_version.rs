@@ -186,7 +186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConnectorDefinitionVe
         if !success && status != 200 {
             crate::protocol_serde::shape_get_connector_definition_version::de_get_connector_definition_version_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_connector_definition_version::de_get_connector_definition_version_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_connector_definition_version::de_get_connector_definition_version_http_response_with_props(status, headers, body)
         }
     }
 }

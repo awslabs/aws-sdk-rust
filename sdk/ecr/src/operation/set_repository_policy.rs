@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetRepositoryPolicy {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_set_repository_policy::de_set_repository_policy_http_response(status, headers, body)
+            crate::protocol_serde::shape_set_repository_policy::de_set_repository_policy_http_response_with_props(status, headers, body)
         }
     }
 }

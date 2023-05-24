@@ -196,9 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EvaluateFeature {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_evaluate_feature::de_evaluate_feature_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_evaluate_feature::de_evaluate_feature_http_response_with_props(status, headers, body)
         }
     }
 }

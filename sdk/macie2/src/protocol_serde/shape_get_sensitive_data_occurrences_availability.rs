@@ -81,7 +81,7 @@ pub fn de_get_sensitive_data_occurrences_availability_http_error(_response_statu
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_sensitive_data_occurrences_availability_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_sensitive_data_occurrences_availability::GetSensitiveDataOccurrencesAvailabilityOutput, crate::operation::get_sensitive_data_occurrences_availability::GetSensitiveDataOccurrencesAvailabilityError>{
+pub fn de_get_sensitive_data_occurrences_availability_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_sensitive_data_occurrences_availability::GetSensitiveDataOccurrencesAvailabilityOutput, crate::operation::get_sensitive_data_occurrences_availability::GetSensitiveDataOccurrencesAvailabilityError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_sensitive_data_occurrences_availability::builders::GetSensitiveDataOccurrencesAvailabilityOutputBuilder::default();

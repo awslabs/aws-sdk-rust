@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminForgetDevice {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_admin_forget_device::de_admin_forget_device_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_admin_forget_device::de_admin_forget_device_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -156,7 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelOrder {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_cancel_order::de_cancel_order_http_response(
+            crate::protocol_serde::shape_cancel_order::de_cancel_order_http_response_with_props(
                 status, headers, body,
             )
         }

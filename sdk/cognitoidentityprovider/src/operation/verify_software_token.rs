@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for VerifySoftwareToken {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_verify_software_token::de_verify_software_token_http_response(status, headers, body)
+            crate::protocol_serde::shape_verify_software_token::de_verify_software_token_http_response_with_props(status, headers, body)
         }
     }
 }

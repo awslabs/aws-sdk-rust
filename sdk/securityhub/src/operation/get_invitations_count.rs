@@ -136,7 +136,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInvitationsCount {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_invitations_count::de_get_invitations_count_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_invitations_count::de_get_invitations_count_http_response_with_props(status, headers, body)
         }
     }
 }

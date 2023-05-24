@@ -152,9 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutInsightRule {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_put_insight_rule::de_put_insight_rule_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_put_insight_rule::de_put_insight_rule_http_response_with_props(status, headers, body)
         }
     }
 }

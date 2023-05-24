@@ -154,7 +154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteFeaturedResul
         if !success && status != 200 {
             crate::protocol_serde::shape_batch_delete_featured_results_set::de_batch_delete_featured_results_set_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_batch_delete_featured_results_set::de_batch_delete_featured_results_set_http_response(status, headers, body)
+            crate::protocol_serde::shape_batch_delete_featured_results_set::de_batch_delete_featured_results_set_http_response_with_props(status, headers, body)
         }
     }
 }

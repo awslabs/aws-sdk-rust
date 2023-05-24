@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminDeleteUser {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_admin_delete_user::de_admin_delete_user_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_admin_delete_user::de_admin_delete_user_http_response_with_props(status, headers, body)
         }
     }
 }

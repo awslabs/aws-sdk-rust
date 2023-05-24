@@ -230,9 +230,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutMethodResponse {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_put_method_response::de_put_method_response_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_put_method_response::de_put_method_response_http_response_with_props(status, headers, body)
         }
     }
 }

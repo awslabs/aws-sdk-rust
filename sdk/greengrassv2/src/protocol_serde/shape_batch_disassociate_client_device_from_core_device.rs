@@ -115,7 +115,7 @@ pub fn de_batch_disassociate_client_device_from_core_device_http_error(_response
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_batch_disassociate_client_device_from_core_device_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_disassociate_client_device_from_core_device::BatchDisassociateClientDeviceFromCoreDeviceOutput, crate::operation::batch_disassociate_client_device_from_core_device::BatchDisassociateClientDeviceFromCoreDeviceError>{
+pub fn de_batch_disassociate_client_device_from_core_device_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_disassociate_client_device_from_core_device::BatchDisassociateClientDeviceFromCoreDeviceOutput, crate::operation::batch_disassociate_client_device_from_core_device::BatchDisassociateClientDeviceFromCoreDeviceError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::batch_disassociate_client_device_from_core_device::builders::BatchDisassociateClientDeviceFromCoreDeviceOutputBuilder::default();

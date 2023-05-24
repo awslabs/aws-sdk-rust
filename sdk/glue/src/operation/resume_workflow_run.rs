@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResumeWorkflowRun {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_resume_workflow_run::de_resume_workflow_run_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_resume_workflow_run::de_resume_workflow_run_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -144,7 +144,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFirewallRuleGroupAsso
         if !success && status != 200 {
             crate::protocol_serde::shape_get_firewall_rule_group_association::de_get_firewall_rule_group_association_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_firewall_rule_group_association::de_get_firewall_rule_group_association_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_firewall_rule_group_association::de_get_firewall_rule_group_association_http_response_with_props(status, headers, body)
         }
     }
 }

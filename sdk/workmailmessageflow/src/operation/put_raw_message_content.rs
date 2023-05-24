@@ -168,7 +168,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRawMessageContent {
         if !success && status != 200 {
             crate::protocol_serde::shape_put_raw_message_content::de_put_raw_message_content_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_put_raw_message_content::de_put_raw_message_content_http_response(status, headers, body)
+            crate::protocol_serde::shape_put_raw_message_content::de_put_raw_message_content_http_response_with_props(status, headers, body)
         }
     }
 }

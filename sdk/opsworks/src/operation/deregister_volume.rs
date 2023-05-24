@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterVolume {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_deregister_volume::de_deregister_volume_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_deregister_volume::de_deregister_volume_http_response_with_props(status, headers, body)
         }
     }
 }

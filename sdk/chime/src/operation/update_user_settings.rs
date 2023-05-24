@@ -196,9 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateUserSettings {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_user_settings::de_update_user_settings_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_update_user_settings::de_update_user_settings_http_response_with_props(status, headers, body)
         }
     }
 }

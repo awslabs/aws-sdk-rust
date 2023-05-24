@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelBundleTask {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_cancel_bundle_task::de_cancel_bundle_task_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_cancel_bundle_task::de_cancel_bundle_task_http_response_with_props(status, headers, body)
         }
     }
 }

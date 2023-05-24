@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorldTemplateBody {
         if !success && status != 200 {
             crate::protocol_serde::shape_get_world_template_body::de_get_world_template_body_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_world_template_body::de_get_world_template_body_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_world_template_body::de_get_world_template_body_http_response_with_props(status, headers, body)
         }
     }
 }

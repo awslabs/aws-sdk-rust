@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUsageTotals {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_usage_totals::de_list_usage_totals_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_usage_totals::de_list_usage_totals_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -156,9 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelAuditTask {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_cancel_audit_task::de_cancel_audit_task_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_cancel_audit_task::de_cancel_audit_task_http_response_with_props(status, headers, body)
         }
     }
 }

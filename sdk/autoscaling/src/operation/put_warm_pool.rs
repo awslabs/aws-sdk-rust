@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutWarmPool {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_put_warm_pool::de_put_warm_pool_http_response(
+            crate::protocol_serde::shape_put_warm_pool::de_put_warm_pool_http_response_with_props(
                 status, headers, body,
             )
         }

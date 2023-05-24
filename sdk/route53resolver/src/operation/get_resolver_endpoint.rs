@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResolverEndpoint {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_resolver_endpoint::de_get_resolver_endpoint_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_resolver_endpoint::de_get_resolver_endpoint_http_response_with_props(status, headers, body)
         }
     }
 }

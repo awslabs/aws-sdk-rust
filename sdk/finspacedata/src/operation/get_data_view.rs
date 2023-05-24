@@ -180,7 +180,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDataView {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_data_view::de_get_data_view_http_response(
+            crate::protocol_serde::shape_get_data_view::de_get_data_view_http_response_with_props(
                 status, headers, body,
             )
         }

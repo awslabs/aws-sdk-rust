@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSubscribers {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_subscribers::de_list_subscribers_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_subscribers::de_list_subscribers_http_response_with_props(status, headers, body)
         }
     }
 }

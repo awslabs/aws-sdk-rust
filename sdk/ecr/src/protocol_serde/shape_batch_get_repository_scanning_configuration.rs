@@ -91,7 +91,7 @@ pub fn de_batch_get_repository_scanning_configuration_http_error(_response_statu
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_batch_get_repository_scanning_configuration_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationOutput, crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationError>{
+pub fn de_batch_get_repository_scanning_configuration_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationOutput, crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfigurationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::batch_get_repository_scanning_configuration::builders::BatchGetRepositoryScanningConfigurationOutputBuilder::default();

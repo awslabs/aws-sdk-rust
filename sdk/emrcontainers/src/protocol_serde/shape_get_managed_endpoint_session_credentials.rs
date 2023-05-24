@@ -91,7 +91,7 @@ pub fn de_get_managed_endpoint_session_credentials_http_error(_response_status: 
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_managed_endpoint_session_credentials_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsOutput, crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsError>{
+pub fn de_get_managed_endpoint_session_credentials_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsOutput, crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_managed_endpoint_session_credentials::builders::GetManagedEndpointSessionCredentialsOutputBuilder::default();

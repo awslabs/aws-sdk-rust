@@ -170,7 +170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePortal {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_portal::de_update_portal_http_response(
+            crate::protocol_serde::shape_update_portal::de_update_portal_http_response_with_props(
                 status, headers, body,
             )
         }

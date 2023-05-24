@@ -123,7 +123,7 @@ pub fn de_create_configured_table_analysis_rule_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_configured_table_analysis_rule_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRuleOutput, crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRuleError>{
+pub fn de_create_configured_table_analysis_rule_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRuleOutput, crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRuleError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_configured_table_analysis_rule::builders::CreateConfiguredTableAnalysisRuleOutputBuilder::default();

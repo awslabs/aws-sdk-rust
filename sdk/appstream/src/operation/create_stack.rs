@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStack {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_stack::de_create_stack_http_response(
+            crate::protocol_serde::shape_create_stack::de_create_stack_http_response_with_props(
                 status, headers, body,
             )
         }

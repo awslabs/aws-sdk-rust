@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAppVersion {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_app_version::de_update_app_version_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_update_app_version::de_update_app_version_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateServiceNetwork {
         if !success && status != 201 {
             crate::protocol_serde::shape_create_service_network::de_create_service_network_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_service_network::de_create_service_network_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_service_network::de_create_service_network_http_response_with_props(status, headers, body)
         }
     }
 }

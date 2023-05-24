@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLicenseConversionT
         if !success && status != 200 {
             crate::protocol_serde::shape_create_license_conversion_task_for_resource::de_create_license_conversion_task_for_resource_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_license_conversion_task_for_resource::de_create_license_conversion_task_for_resource_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_license_conversion_task_for_resource::de_create_license_conversion_task_for_resource_http_response_with_props(status, headers, body)
         }
     }
 }

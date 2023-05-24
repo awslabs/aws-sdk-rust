@@ -158,7 +158,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDedicatedIpPool {
         if !success && status != 200 {
             crate::protocol_serde::shape_delete_dedicated_ip_pool::de_delete_dedicated_ip_pool_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_dedicated_ip_pool::de_delete_dedicated_ip_pool_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_dedicated_ip_pool::de_delete_dedicated_ip_pool_http_response_with_props(status, headers, body)
         }
     }
 }

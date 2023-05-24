@@ -152,7 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagMFADevice {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_tag_mfa_device::de_tag_mfa_device_http_response(
+            crate::protocol_serde::shape_tag_mfa_device::de_tag_mfa_device_http_response_with_props(
                 status, headers, body,
             )
         }

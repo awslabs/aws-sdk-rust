@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTopic {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_topic::de_create_topic_http_response(
+            crate::protocol_serde::shape_create_topic::de_create_topic_http_response_with_props(
                 status, headers, body,
             )
         }

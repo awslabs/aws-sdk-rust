@@ -208,9 +208,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TestDNSAnswer {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_test_dns_answer::de_test_dns_answer_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_test_dns_answer::de_test_dns_answer_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFleetCapacity {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_fleet_capacity::de_update_fleet_capacity_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_fleet_capacity::de_update_fleet_capacity_http_response_with_props(status, headers, body)
         }
     }
 }

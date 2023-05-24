@@ -154,7 +154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHITsForQualification
         if !success && status != 200 {
             crate::protocol_serde::shape_list_hi_ts_for_qualification_type::de_list_hi_ts_for_qualification_type_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_hi_ts_for_qualification_type::de_list_hi_ts_for_qualification_type_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_hi_ts_for_qualification_type::de_list_hi_ts_for_qualification_type_http_response_with_props(status, headers, body)
         }
     }
 }

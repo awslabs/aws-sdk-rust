@@ -169,7 +169,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePipe {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_pipe::de_update_pipe_http_response(
+            crate::protocol_serde::shape_update_pipe::de_update_pipe_http_response_with_props(
                 status, headers, body,
             )
         }

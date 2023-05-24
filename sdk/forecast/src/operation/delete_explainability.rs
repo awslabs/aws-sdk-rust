@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteExplainability {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_explainability::de_delete_explainability_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_explainability::de_delete_explainability_http_response_with_props(status, headers, body)
         }
     }
 }

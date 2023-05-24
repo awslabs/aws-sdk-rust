@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFileShare {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_file_share::de_delete_file_share_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_delete_file_share::de_delete_file_share_http_response_with_props(status, headers, body)
         }
     }
 }

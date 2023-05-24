@@ -179,7 +179,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVersionsByFunction {
         if !success && status != 200 {
             crate::protocol_serde::shape_list_versions_by_function::de_list_versions_by_function_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_versions_by_function::de_list_versions_by_function_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_versions_by_function::de_list_versions_by_function_http_response_with_props(status, headers, body)
         }
     }
     fn sensitive(&self) -> bool {

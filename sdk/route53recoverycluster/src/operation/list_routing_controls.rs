@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRoutingControls {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_routing_controls::de_list_routing_controls_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_routing_controls::de_list_routing_controls_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -143,7 +143,7 @@ pub fn de_create_subscription_notification_configuration_http_error(_response_st
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_subscription_notification_configuration_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_subscription_notification_configuration::CreateSubscriptionNotificationConfigurationOutput, crate::operation::create_subscription_notification_configuration::CreateSubscriptionNotificationConfigurationError>{
+pub fn de_create_subscription_notification_configuration_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_subscription_notification_configuration::CreateSubscriptionNotificationConfigurationOutput, crate::operation::create_subscription_notification_configuration::CreateSubscriptionNotificationConfigurationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_subscription_notification_configuration::builders::CreateSubscriptionNotificationConfigurationOutputBuilder::default();

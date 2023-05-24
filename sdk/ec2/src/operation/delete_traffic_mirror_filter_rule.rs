@@ -149,7 +149,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTrafficMirrorFilte
         if !success && status != 200 {
             crate::protocol_serde::shape_delete_traffic_mirror_filter_rule::de_delete_traffic_mirror_filter_rule_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_traffic_mirror_filter_rule::de_delete_traffic_mirror_filter_rule_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_traffic_mirror_filter_rule::de_delete_traffic_mirror_filter_rule_http_response_with_props(status, headers, body)
         }
     }
 }

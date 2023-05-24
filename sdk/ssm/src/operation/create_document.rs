@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDocument {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_document::de_create_document_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_document::de_create_document_http_response_with_props(status, headers, body)
         }
     }
 }

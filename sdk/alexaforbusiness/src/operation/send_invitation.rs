@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendInvitation {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_send_invitation::de_send_invitation_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_send_invitation::de_send_invitation_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -136,9 +136,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InitializeService {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_initialize_service::de_initialize_service_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_initialize_service::de_initialize_service_http_response_with_props(status, headers, body)
         }
     }
 }

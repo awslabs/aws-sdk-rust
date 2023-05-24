@@ -241,7 +241,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPackageVersions {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_package_versions::de_list_package_versions_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_package_versions::de_list_package_versions_http_response_with_props(status, headers, body)
         }
     }
 }

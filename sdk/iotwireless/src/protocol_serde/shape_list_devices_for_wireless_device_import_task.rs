@@ -113,7 +113,7 @@ pub fn de_list_devices_for_wireless_device_import_task_http_error(_response_stat
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_devices_for_wireless_device_import_task_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskOutput, crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskError>{
+pub fn de_list_devices_for_wireless_device_import_task_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskOutput, crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTaskError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_devices_for_wireless_device_import_task::builders::ListDevicesForWirelessDeviceImportTaskOutputBuilder::default();

@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAnomalies {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_anomalies::de_get_anomalies_http_response(
+            crate::protocol_serde::shape_get_anomalies::de_get_anomalies_http_response_with_props(
                 status, headers, body,
             )
         }

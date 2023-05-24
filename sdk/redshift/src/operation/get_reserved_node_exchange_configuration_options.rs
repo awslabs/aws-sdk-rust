@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse
         if !success && status != 200 {
             crate::protocol_serde::shape_get_reserved_node_exchange_configuration_options::de_get_reserved_node_exchange_configuration_options_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_reserved_node_exchange_configuration_options::de_get_reserved_node_exchange_configuration_options_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_reserved_node_exchange_configuration_options::de_get_reserved_node_exchange_configuration_options_http_response_with_props(status, headers, body)
         }
     }
 }

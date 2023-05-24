@@ -200,9 +200,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSegmentVersion {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_segment_version::de_get_segment_version_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_segment_version::de_get_segment_version_http_response_with_props(status, headers, body)
         }
     }
 }

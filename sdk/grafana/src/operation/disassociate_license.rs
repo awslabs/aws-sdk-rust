@@ -180,9 +180,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateLicense {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_disassociate_license::de_disassociate_license_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_disassociate_license::de_disassociate_license_http_response_with_props(status, headers, body)
         }
     }
     fn sensitive(&self) -> bool {

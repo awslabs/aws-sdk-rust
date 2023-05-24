@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLFTag {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_lf_tag::de_update_lf_tag_http_response(
+            crate::protocol_serde::shape_update_lf_tag::de_update_lf_tag_http_response_with_props(
                 status, headers, body,
             )
         }

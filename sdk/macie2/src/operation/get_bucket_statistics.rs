@@ -152,7 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketStatistics {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_bucket_statistics::de_get_bucket_statistics_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_bucket_statistics::de_get_bucket_statistics_http_response_with_props(status, headers, body)
         }
     }
 }

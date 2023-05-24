@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutActionRevision {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_put_action_revision::de_put_action_revision_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_put_action_revision::de_put_action_revision_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -177,9 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDataView {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_data_view::de_create_data_view_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_data_view::de_create_data_view_http_response_with_props(status, headers, body)
         }
     }
 }

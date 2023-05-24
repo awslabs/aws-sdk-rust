@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSignalingChannels {
         if !success && status != 200 {
             crate::protocol_serde::shape_list_signaling_channels::de_list_signaling_channels_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_signaling_channels::de_list_signaling_channels_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_signaling_channels::de_list_signaling_channels_http_response_with_props(status, headers, body)
         }
     }
 }

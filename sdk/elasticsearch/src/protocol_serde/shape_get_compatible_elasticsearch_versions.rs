@@ -97,7 +97,7 @@ pub fn de_get_compatible_elasticsearch_versions_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_compatible_elasticsearch_versions_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_compatible_elasticsearch_versions::GetCompatibleElasticsearchVersionsOutput, crate::operation::get_compatible_elasticsearch_versions::GetCompatibleElasticsearchVersionsError>{
+pub fn de_get_compatible_elasticsearch_versions_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_compatible_elasticsearch_versions::GetCompatibleElasticsearchVersionsOutput, crate::operation::get_compatible_elasticsearch_versions::GetCompatibleElasticsearchVersionsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_compatible_elasticsearch_versions::builders::GetCompatibleElasticsearchVersionsOutputBuilder::default();

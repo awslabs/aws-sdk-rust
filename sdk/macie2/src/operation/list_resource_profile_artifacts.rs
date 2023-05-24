@@ -163,7 +163,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourceProfileArtif
         if !success && status != 200 {
             crate::protocol_serde::shape_list_resource_profile_artifacts::de_list_resource_profile_artifacts_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_resource_profile_artifacts::de_list_resource_profile_artifacts_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_resource_profile_artifacts::de_list_resource_profile_artifacts_http_response_with_props(status, headers, body)
         }
     }
 }

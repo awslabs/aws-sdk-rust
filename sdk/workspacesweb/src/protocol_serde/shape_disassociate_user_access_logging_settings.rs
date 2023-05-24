@@ -105,7 +105,7 @@ pub fn de_disassociate_user_access_logging_settings_http_error(_response_status:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_disassociate_user_access_logging_settings_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsOutput, crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsError>{
+pub fn de_disassociate_user_access_logging_settings_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsOutput, crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::disassociate_user_access_logging_settings::builders::DisassociateUserAccessLoggingSettingsOutputBuilder::default();

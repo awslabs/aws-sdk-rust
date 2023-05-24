@@ -121,7 +121,7 @@ pub fn de_get_transit_gateway_connect_peer_associations_http_error(_response_sta
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_transit_gateway_connect_peer_associations_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_transit_gateway_connect_peer_associations::GetTransitGatewayConnectPeerAssociationsOutput, crate::operation::get_transit_gateway_connect_peer_associations::GetTransitGatewayConnectPeerAssociationsError>{
+pub fn de_get_transit_gateway_connect_peer_associations_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_transit_gateway_connect_peer_associations::GetTransitGatewayConnectPeerAssociationsOutput, crate::operation::get_transit_gateway_connect_peer_associations::GetTransitGatewayConnectPeerAssociationsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsOutputBuilder::default();

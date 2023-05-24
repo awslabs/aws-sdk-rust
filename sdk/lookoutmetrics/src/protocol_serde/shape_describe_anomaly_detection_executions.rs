@@ -107,7 +107,7 @@ pub fn de_describe_anomaly_detection_executions_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_anomaly_detection_executions_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsOutput, crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsError>{
+pub fn de_describe_anomaly_detection_executions_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsOutput, crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutionsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_anomaly_detection_executions::builders::DescribeAnomalyDetectionExecutionsOutputBuilder::default();

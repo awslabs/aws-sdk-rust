@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReverseReplication {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_reverse_replication::de_reverse_replication_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_reverse_replication::de_reverse_replication_http_response_with_props(status, headers, body)
         }
     }
 }

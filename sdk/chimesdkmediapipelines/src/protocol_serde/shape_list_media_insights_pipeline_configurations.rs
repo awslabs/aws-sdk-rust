@@ -129,7 +129,7 @@ pub fn de_list_media_insights_pipeline_configurations_http_error(_response_statu
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_media_insights_pipeline_configurations_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsOutput, crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsError>{
+pub fn de_list_media_insights_pipeline_configurations_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsOutput, crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_media_insights_pipeline_configurations::builders::ListMediaInsightsPipelineConfigurationsOutputBuilder::default();

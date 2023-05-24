@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for OverridePullRequestAppro
         if !success && status != 200 {
             crate::protocol_serde::shape_override_pull_request_approval_rules::de_override_pull_request_approval_rules_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_override_pull_request_approval_rules::de_override_pull_request_approval_rules_http_response(status, headers, body)
+            crate::protocol_serde::shape_override_pull_request_approval_rules::de_override_pull_request_approval_rules_http_response_with_props(status, headers, body)
         }
     }
 }

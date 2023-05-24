@@ -129,7 +129,7 @@ pub fn de_delete_app_instance_streaming_configurations_http_error(_response_stat
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_app_instance_streaming_configurations_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsOutput, crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsError>{
+pub fn de_delete_app_instance_streaming_configurations_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsOutput, crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_app_instance_streaming_configurations::builders::DeleteAppInstanceStreamingConfigurationsOutputBuilder::default();

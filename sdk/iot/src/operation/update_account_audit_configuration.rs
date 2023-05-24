@@ -142,7 +142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAccountAuditConfig
         if !success && status != 200 {
             crate::protocol_serde::shape_update_account_audit_configuration::de_update_account_audit_configuration_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_update_account_audit_configuration::de_update_account_audit_configuration_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_account_audit_configuration::de_update_account_audit_configuration_http_response_with_props(status, headers, body)
         }
     }
 }

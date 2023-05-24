@@ -214,7 +214,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateIntent {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_intent::de_create_intent_http_response(
+            crate::protocol_serde::shape_create_intent::de_create_intent_http_response_with_props(
                 status, headers, body,
             )
         }

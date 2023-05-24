@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterEventTopic {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_register_event_topic::de_register_event_topic_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_register_event_topic::de_register_event_topic_http_response_with_props(status, headers, body)
         }
     }
 }

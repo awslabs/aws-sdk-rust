@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRegexMatchSets {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_regex_match_sets::de_list_regex_match_sets_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_regex_match_sets::de_list_regex_match_sets_http_response_with_props(status, headers, body)
         }
     }
 }

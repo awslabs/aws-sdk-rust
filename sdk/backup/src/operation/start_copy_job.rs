@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartCopyJob {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_start_copy_job::de_start_copy_job_http_response(
+            crate::protocol_serde::shape_start_copy_job::de_start_copy_job_http_response_with_props(
                 status, headers, body,
             )
         }

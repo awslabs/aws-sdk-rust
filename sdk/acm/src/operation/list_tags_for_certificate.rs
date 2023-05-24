@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForCertificate {
         if !success && status != 200 {
             crate::protocol_serde::shape_list_tags_for_certificate::de_list_tags_for_certificate_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_tags_for_certificate::de_list_tags_for_certificate_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_tags_for_certificate::de_list_tags_for_certificate_http_response_with_props(status, headers, body)
         }
     }
 }

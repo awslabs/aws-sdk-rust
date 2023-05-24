@@ -91,7 +91,7 @@ pub fn de_cancel_elasticsearch_service_software_update_http_error(_response_stat
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_cancel_elasticsearch_service_software_update_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::cancel_elasticsearch_service_software_update::CancelElasticsearchServiceSoftwareUpdateOutput, crate::operation::cancel_elasticsearch_service_software_update::CancelElasticsearchServiceSoftwareUpdateError>{
+pub fn de_cancel_elasticsearch_service_software_update_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::cancel_elasticsearch_service_software_update::CancelElasticsearchServiceSoftwareUpdateOutput, crate::operation::cancel_elasticsearch_service_software_update::CancelElasticsearchServiceSoftwareUpdateError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::cancel_elasticsearch_service_software_update::builders::CancelElasticsearchServiceSoftwareUpdateOutputBuilder::default();

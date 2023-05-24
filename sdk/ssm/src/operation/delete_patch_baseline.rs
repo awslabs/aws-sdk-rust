@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePatchBaseline {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_patch_baseline::de_delete_patch_baseline_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_patch_baseline::de_delete_patch_baseline_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateJobQueue {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_job_queue::de_update_job_queue_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_update_job_queue::de_update_job_queue_http_response_with_props(status, headers, body)
         }
     }
 }

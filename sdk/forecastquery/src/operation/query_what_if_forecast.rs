@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for QueryWhatIfForecast {
         if !success && status != 200 {
             crate::protocol_serde::shape_query_what_if_forecast::de_query_what_if_forecast_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_query_what_if_forecast::de_query_what_if_forecast_http_response(status, headers, body)
+            crate::protocol_serde::shape_query_what_if_forecast::de_query_what_if_forecast_http_response_with_props(status, headers, body)
         }
     }
 }

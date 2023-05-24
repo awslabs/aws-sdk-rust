@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutScheduledAction {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_put_scheduled_action::de_put_scheduled_action_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_put_scheduled_action::de_put_scheduled_action_http_response_with_props(status, headers, body)
         }
     }
 }

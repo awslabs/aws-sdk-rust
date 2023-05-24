@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConfigRules {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_config_rules::de_describe_config_rules_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_config_rules::de_describe_config_rules_http_response_with_props(status, headers, body)
         }
     }
 }

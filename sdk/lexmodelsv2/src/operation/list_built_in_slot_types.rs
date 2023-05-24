@@ -172,7 +172,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBuiltInSlotTypes {
         if !success && status != 200 {
             crate::protocol_serde::shape_list_built_in_slot_types::de_list_built_in_slot_types_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_built_in_slot_types::de_list_built_in_slot_types_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_built_in_slot_types::de_list_built_in_slot_types_http_response_with_props(status, headers, body)
         }
     }
 }

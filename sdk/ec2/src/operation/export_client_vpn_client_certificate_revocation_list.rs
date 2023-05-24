@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse
         if !success && status != 200 {
             crate::protocol_serde::shape_export_client_vpn_client_certificate_revocation_list::de_export_client_vpn_client_certificate_revocation_list_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_export_client_vpn_client_certificate_revocation_list::de_export_client_vpn_client_certificate_revocation_list_http_response(status, headers, body)
+            crate::protocol_serde::shape_export_client_vpn_client_certificate_revocation_list::de_export_client_vpn_client_certificate_revocation_list_http_response_with_props(status, headers, body)
         }
     }
 }

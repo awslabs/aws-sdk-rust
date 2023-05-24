@@ -173,9 +173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccessPreviews {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_access_previews::de_list_access_previews_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_access_previews::de_list_access_previews_http_response_with_props(status, headers, body)
         }
     }
 }

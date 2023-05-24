@@ -147,9 +147,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSubscription {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_subscription::de_get_subscription_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_subscription::de_get_subscription_http_response_with_props(status, headers, body)
         }
     }
 }

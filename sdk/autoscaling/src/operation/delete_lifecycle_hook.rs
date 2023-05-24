@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLifecycleHook {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_lifecycle_hook::de_delete_lifecycle_hook_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_lifecycle_hook::de_delete_lifecycle_hook_http_response_with_props(status, headers, body)
         }
     }
 }

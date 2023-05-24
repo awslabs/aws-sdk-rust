@@ -170,7 +170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMap {
         if !success && status != 200 {
             crate::protocol_serde::shape_update_map::de_update_map_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_update_map::de_update_map_http_response(
+            crate::protocol_serde::shape_update_map::de_update_map_http_response_with_props(
                 status, headers, body,
             )
         }

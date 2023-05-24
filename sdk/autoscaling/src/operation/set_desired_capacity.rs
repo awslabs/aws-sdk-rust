@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetDesiredCapacity {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_set_desired_capacity::de_set_desired_capacity_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_set_desired_capacity::de_set_desired_capacity_http_response_with_props(status, headers, body)
         }
     }
 }

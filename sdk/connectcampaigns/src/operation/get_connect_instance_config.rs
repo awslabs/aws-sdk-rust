@@ -158,7 +158,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConnectInstanceConfig
         if !success && status != 200 {
             crate::protocol_serde::shape_get_connect_instance_config::de_get_connect_instance_config_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_connect_instance_config::de_get_connect_instance_config_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_connect_instance_config::de_get_connect_instance_config_http_response_with_props(status, headers, body)
         }
     }
 }

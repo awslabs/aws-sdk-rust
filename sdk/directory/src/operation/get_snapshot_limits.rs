@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSnapshotLimits {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_snapshot_limits::de_get_snapshot_limits_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_snapshot_limits::de_get_snapshot_limits_http_response_with_props(status, headers, body)
         }
     }
 }

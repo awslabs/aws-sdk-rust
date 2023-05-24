@@ -165,7 +165,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListControls {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_controls::de_list_controls_http_response(
+            crate::protocol_serde::shape_list_controls::de_list_controls_http_response_with_props(
                 status, headers, body,
             )
         }

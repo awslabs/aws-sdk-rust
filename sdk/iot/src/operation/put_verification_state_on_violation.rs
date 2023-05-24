@@ -163,7 +163,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutVerificationStateOnVi
         if !success && status != 200 {
             crate::protocol_serde::shape_put_verification_state_on_violation::de_put_verification_state_on_violation_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_put_verification_state_on_violation::de_put_verification_state_on_violation_http_response(status, headers, body)
+            crate::protocol_serde::shape_put_verification_state_on_violation::de_put_verification_state_on_violation_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -75,7 +75,7 @@ pub fn de_cancel_domain_transfer_to_another_aws_account_http_error(_response_sta
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_cancel_domain_transfer_to_another_aws_account_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::cancel_domain_transfer_to_another_aws_account::CancelDomainTransferToAnotherAwsAccountOutput, crate::operation::cancel_domain_transfer_to_another_aws_account::CancelDomainTransferToAnotherAwsAccountError>{
+pub fn de_cancel_domain_transfer_to_another_aws_account_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::cancel_domain_transfer_to_another_aws_account::CancelDomainTransferToAnotherAwsAccountOutput, crate::operation::cancel_domain_transfer_to_another_aws_account::CancelDomainTransferToAnotherAwsAccountError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::cancel_domain_transfer_to_another_aws_account::builders::CancelDomainTransferToAnotherAwsAccountOutputBuilder::default();

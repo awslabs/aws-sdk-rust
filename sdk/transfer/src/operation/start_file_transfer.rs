@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartFileTransfer {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_start_file_transfer::de_start_file_transfer_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_start_file_transfer::de_start_file_transfer_http_response_with_props(status, headers, body)
         }
     }
 }

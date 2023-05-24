@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPermissionSetProvisi
         if !success && status != 200 {
             crate::protocol_serde::shape_list_permission_set_provisioning_status::de_list_permission_set_provisioning_status_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_permission_set_provisioning_status::de_list_permission_set_provisioning_status_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_permission_set_provisioning_status::de_list_permission_set_provisioning_status_http_response_with_props(status, headers, body)
         }
     }
 }

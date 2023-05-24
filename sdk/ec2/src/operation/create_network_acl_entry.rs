@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNetworkAclEntry {
         if !success && status != 200 {
             crate::protocol_serde::shape_create_network_acl_entry::de_create_network_acl_entry_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_network_acl_entry::de_create_network_acl_entry_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_network_acl_entry::de_create_network_acl_entry_http_response_with_props(status, headers, body)
         }
     }
 }

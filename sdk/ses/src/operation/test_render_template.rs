@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TestRenderTemplate {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_test_render_template::de_test_render_template_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_test_render_template::de_test_render_template_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -170,7 +170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTags {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_tags::de_create_tags_http_response(
+            crate::protocol_serde::shape_create_tags::de_create_tags_http_response_with_props(
                 status, headers, body,
             )
         }

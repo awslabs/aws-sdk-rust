@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateClusterConfig {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_cluster_config::de_update_cluster_config_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_cluster_config::de_update_cluster_config_http_response_with_props(status, headers, body)
         }
     }
 }

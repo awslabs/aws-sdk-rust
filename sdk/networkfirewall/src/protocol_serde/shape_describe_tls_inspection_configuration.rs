@@ -91,7 +91,7 @@ pub fn de_describe_tls_inspection_configuration_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_tls_inspection_configuration_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_tls_inspection_configuration::DescribeTlsInspectionConfigurationOutput, crate::operation::describe_tls_inspection_configuration::DescribeTLSInspectionConfigurationError>{
+pub fn de_describe_tls_inspection_configuration_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_tls_inspection_configuration::DescribeTlsInspectionConfigurationOutput, crate::operation::describe_tls_inspection_configuration::DescribeTLSInspectionConfigurationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_tls_inspection_configuration::builders::DescribeTlsInspectionConfigurationOutputBuilder::default();

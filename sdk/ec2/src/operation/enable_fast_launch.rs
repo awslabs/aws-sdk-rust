@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableFastLaunch {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_enable_fast_launch::de_enable_fast_launch_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_enable_fast_launch::de_enable_fast_launch_http_response_with_props(status, headers, body)
         }
     }
 }

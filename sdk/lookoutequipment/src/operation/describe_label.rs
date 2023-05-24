@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLabel {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_label::de_describe_label_http_response(
+            crate::protocol_serde::shape_describe_label::de_describe_label_http_response_with_props(
                 status, headers, body,
             )
         }

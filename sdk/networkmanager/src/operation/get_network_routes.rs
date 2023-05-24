@@ -174,9 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetNetworkRoutes {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_network_routes::de_get_network_routes_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_network_routes::de_get_network_routes_http_response_with_props(status, headers, body)
         }
     }
 }

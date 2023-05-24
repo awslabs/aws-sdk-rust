@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for JoinDomain {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_join_domain::de_join_domain_http_response(
+            crate::protocol_serde::shape_join_domain::de_join_domain_http_response_with_props(
                 status, headers, body,
             )
         }

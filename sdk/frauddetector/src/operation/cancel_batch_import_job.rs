@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelBatchImportJob {
         if !success && status != 200 {
             crate::protocol_serde::shape_cancel_batch_import_job::de_cancel_batch_import_job_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_cancel_batch_import_job::de_cancel_batch_import_job_http_response(status, headers, body)
+            crate::protocol_serde::shape_cancel_batch_import_job::de_cancel_batch_import_job_http_response_with_props(status, headers, body)
         }
     }
 }

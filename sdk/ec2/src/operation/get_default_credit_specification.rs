@@ -149,7 +149,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDefaultCreditSpecific
         if !success && status != 200 {
             crate::protocol_serde::shape_get_default_credit_specification::de_get_default_credit_specification_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_default_credit_specification::de_get_default_credit_specification_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_default_credit_specification::de_get_default_credit_specification_http_response_with_props(status, headers, body)
         }
     }
 }

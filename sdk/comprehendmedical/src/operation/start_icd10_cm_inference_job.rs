@@ -156,7 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartICD10CMInferenceJob
         if !success && status != 200 {
             crate::protocol_serde::shape_start_icd10_cm_inference_job::de_start_icd10_cm_inference_job_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_start_icd10_cm_inference_job::de_start_icd10_cm_inference_job_http_response(status, headers, body)
+            crate::protocol_serde::shape_start_icd10_cm_inference_job::de_start_icd10_cm_inference_job_http_response_with_props(status, headers, body)
         }
     }
 }

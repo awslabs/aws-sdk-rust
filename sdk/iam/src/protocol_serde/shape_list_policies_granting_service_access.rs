@@ -49,7 +49,7 @@ pub fn de_list_policies_granting_service_access_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_policies_granting_service_access_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessOutput, crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessError>{
+pub fn de_list_policies_granting_service_access_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessOutput, crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_policies_granting_service_access::builders::ListPoliciesGrantingServiceAccessOutputBuilder::default();

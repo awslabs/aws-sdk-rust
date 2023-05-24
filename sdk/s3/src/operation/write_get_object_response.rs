@@ -185,7 +185,7 @@ impl aws_smithy_http::response::ParseStrictResponse for WriteGetObjectResponse {
         if !success && status != 200 {
             crate::protocol_serde::shape_write_get_object_response::de_write_get_object_response_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_write_get_object_response::de_write_get_object_response_http_response(status, headers, body)
+            crate::protocol_serde::shape_write_get_object_response::de_write_get_object_response_http_response_with_props(status, headers, body)
         }
     }
 }

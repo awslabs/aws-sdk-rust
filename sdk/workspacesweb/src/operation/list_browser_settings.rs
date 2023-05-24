@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBrowserSettings {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_browser_settings::de_list_browser_settings_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_browser_settings::de_list_browser_settings_http_response_with_props(status, headers, body)
         }
     }
 }

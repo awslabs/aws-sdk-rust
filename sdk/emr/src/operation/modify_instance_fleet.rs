@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyInstanceFleet {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_modify_instance_fleet::de_modify_instance_fleet_http_response(status, headers, body)
+            crate::protocol_serde::shape_modify_instance_fleet::de_modify_instance_fleet_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -134,7 +134,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResetAllResourceLogLevel
         if !success && status != 204 {
             crate::protocol_serde::shape_reset_all_resource_log_levels::de_reset_all_resource_log_levels_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_reset_all_resource_log_levels::de_reset_all_resource_log_levels_http_response(status, headers, body)
+            crate::protocol_serde::shape_reset_all_resource_log_levels::de_reset_all_resource_log_levels_http_response_with_props(status, headers, body)
         }
     }
 }

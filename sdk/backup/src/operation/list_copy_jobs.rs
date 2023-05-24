@@ -240,7 +240,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCopyJobs {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_copy_jobs::de_list_copy_jobs_http_response(
+            crate::protocol_serde::shape_list_copy_jobs::de_list_copy_jobs_http_response_with_props(
                 status, headers, body,
             )
         }

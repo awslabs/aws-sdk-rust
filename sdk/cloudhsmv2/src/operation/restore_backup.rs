@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreBackup {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_restore_backup::de_restore_backup_http_response(
+            crate::protocol_serde::shape_restore_backup::de_restore_backup_http_response_with_props(
                 status, headers, body,
             )
         }

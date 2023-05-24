@@ -209,7 +209,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UploadArchive {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_upload_archive::de_upload_archive_http_response(
+            crate::protocol_serde::shape_upload_archive::de_upload_archive_http_response_with_props(
                 status, headers, body,
             )
         }

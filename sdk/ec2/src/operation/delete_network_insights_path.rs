@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNetworkInsightsPat
         if !success && status != 200 {
             crate::protocol_serde::shape_delete_network_insights_path::de_delete_network_insights_path_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_network_insights_path::de_delete_network_insights_path_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_network_insights_path::de_delete_network_insights_path_http_response_with_props(status, headers, body)
         }
     }
 }

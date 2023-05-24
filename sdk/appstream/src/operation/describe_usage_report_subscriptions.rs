@@ -144,7 +144,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeUsageReportSubsc
         if !success && status != 200 {
             crate::protocol_serde::shape_describe_usage_report_subscriptions::de_describe_usage_report_subscriptions_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_describe_usage_report_subscriptions::de_describe_usage_report_subscriptions_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_usage_report_subscriptions::de_describe_usage_report_subscriptions_http_response_with_props(status, headers, body)
         }
     }
 }

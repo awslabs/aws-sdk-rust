@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBackup {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_backup::de_describe_backup_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_describe_backup::de_describe_backup_http_response_with_props(status, headers, body)
         }
     }
 }

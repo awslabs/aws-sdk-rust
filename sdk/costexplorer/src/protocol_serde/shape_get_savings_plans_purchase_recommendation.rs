@@ -59,7 +59,7 @@ pub fn de_get_savings_plans_purchase_recommendation_http_error(_response_status:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_savings_plans_purchase_recommendation_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationOutput, crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationError>{
+pub fn de_get_savings_plans_purchase_recommendation_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationOutput, crate::operation::get_savings_plans_purchase_recommendation::GetSavingsPlansPurchaseRecommendationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_savings_plans_purchase_recommendation::builders::GetSavingsPlansPurchaseRecommendationOutputBuilder::default();

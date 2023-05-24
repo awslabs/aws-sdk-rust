@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSourceServerActions 
         if !success && status != 200 {
             crate::protocol_serde::shape_list_source_server_actions::de_list_source_server_actions_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_source_server_actions::de_list_source_server_actions_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_source_server_actions::de_list_source_server_actions_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -174,7 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TestFunction {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_test_function::de_test_function_http_response(
+            crate::protocol_serde::shape_test_function::de_test_function_http_response_with_props(
                 status, headers, body,
             )
         }

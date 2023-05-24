@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TransactGetItems {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_transact_get_items::de_transact_get_items_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_transact_get_items::de_transact_get_items_http_response_with_props(status, headers, body)
         }
     }
 }

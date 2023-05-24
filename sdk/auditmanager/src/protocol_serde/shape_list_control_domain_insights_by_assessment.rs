@@ -81,7 +81,7 @@ pub fn de_list_control_domain_insights_by_assessment_http_error(_response_status
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_control_domain_insights_by_assessment_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentOutput, crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentError>{
+pub fn de_list_control_domain_insights_by_assessment_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentOutput, crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_control_domain_insights_by_assessment::builders::ListControlDomainInsightsByAssessmentOutputBuilder::default();

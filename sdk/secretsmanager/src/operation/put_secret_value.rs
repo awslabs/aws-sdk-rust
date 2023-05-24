@@ -158,9 +158,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutSecretValue {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_put_secret_value::de_put_secret_value_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_put_secret_value::de_put_secret_value_http_response_with_props(status, headers, body)
         }
     }
 }

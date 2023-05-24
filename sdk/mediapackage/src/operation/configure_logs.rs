@@ -170,7 +170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfigureLogs {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_configure_logs::de_configure_logs_http_response(
+            crate::protocol_serde::shape_configure_logs::de_configure_logs_http_response_with_props(
                 status, headers, body,
             )
         }

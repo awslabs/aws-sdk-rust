@@ -152,9 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourceLFTags {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_resource_lf_tags::de_get_resource_lf_tags_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_resource_lf_tags::de_get_resource_lf_tags_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutWebhook {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_put_webhook::de_put_webhook_http_response(
+            crate::protocol_serde::shape_put_webhook::de_put_webhook_http_response_with_props(
                 status, headers, body,
             )
         }

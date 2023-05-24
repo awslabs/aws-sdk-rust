@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketWebsite {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_bucket_website::de_delete_bucket_website_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_bucket_website::de_delete_bucket_website_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -49,7 +49,7 @@ pub fn de_generate_service_last_accessed_details_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_generate_service_last_accessed_details_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetailsOutput, crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetailsError>{
+pub fn de_generate_service_last_accessed_details_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetailsOutput, crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetailsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::generate_service_last_accessed_details::builders::GenerateServiceLastAccessedDetailsOutputBuilder::default();

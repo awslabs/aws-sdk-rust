@@ -171,9 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateWorkflow {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_workflow::de_update_workflow_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_update_workflow::de_update_workflow_http_response_with_props(status, headers, body)
         }
     }
 }

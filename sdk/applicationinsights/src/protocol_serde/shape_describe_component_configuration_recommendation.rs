@@ -75,7 +75,7 @@ pub fn de_describe_component_configuration_recommendation_http_error(_response_s
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_component_configuration_recommendation_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationOutput, crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationError>{
+pub fn de_describe_component_configuration_recommendation_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationOutput, crate::operation::describe_component_configuration_recommendation::DescribeComponentConfigurationRecommendationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_component_configuration_recommendation::builders::DescribeComponentConfigurationRecommendationOutputBuilder::default();

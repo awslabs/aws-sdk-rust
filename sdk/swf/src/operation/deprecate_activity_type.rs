@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeprecateActivityType {
         if !success && status != 200 {
             crate::protocol_serde::shape_deprecate_activity_type::de_deprecate_activity_type_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_deprecate_activity_type::de_deprecate_activity_type_http_response(status, headers, body)
+            crate::protocol_serde::shape_deprecate_activity_type::de_deprecate_activity_type_http_response_with_props(status, headers, body)
         }
     }
 }

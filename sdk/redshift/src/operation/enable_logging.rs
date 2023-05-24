@@ -152,7 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableLogging {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_enable_logging::de_enable_logging_http_response(
+            crate::protocol_serde::shape_enable_logging::de_enable_logging_http_response_with_props(
                 status, headers, body,
             )
         }

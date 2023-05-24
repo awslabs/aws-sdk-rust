@@ -9,7 +9,7 @@ pub fn de_enable_reachability_analyzer_organization_sharing_http_error(_response
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_enable_reachability_analyzer_organization_sharing_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharingOutput, crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharingError>{
+pub fn de_enable_reachability_analyzer_organization_sharing_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharingOutput, crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharingError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::enable_reachability_analyzer_organization_sharing::builders::EnableReachabilityAnalyzerOrganizationSharingOutputBuilder::default();

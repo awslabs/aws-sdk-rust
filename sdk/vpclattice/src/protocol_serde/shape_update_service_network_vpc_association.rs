@@ -131,7 +131,7 @@ pub fn de_update_service_network_vpc_association_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_service_network_vpc_association_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationOutput, crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationError>{
+pub fn de_update_service_network_vpc_association_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationOutput, crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_service_network_vpc_association::builders::UpdateServiceNetworkVpcAssociationOutputBuilder::default();

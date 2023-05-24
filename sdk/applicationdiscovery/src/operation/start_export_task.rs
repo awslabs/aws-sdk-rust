@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartExportTask {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_start_export_task::de_start_export_task_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_start_export_task::de_start_export_task_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDevEndpoint {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_dev_endpoint::de_create_dev_endpoint_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_dev_endpoint::de_create_dev_endpoint_http_response_with_props(status, headers, body)
         }
     }
 }

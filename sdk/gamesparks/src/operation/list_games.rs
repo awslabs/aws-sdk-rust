@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGames {
         if !success && status != 200 {
             crate::protocol_serde::shape_list_games::de_list_games_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_games::de_list_games_http_response(
+            crate::protocol_serde::shape_list_games::de_list_games_http_response_with_props(
                 status, headers, body,
             )
         }

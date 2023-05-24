@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRegistry {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_registry::de_create_registry_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_registry::de_create_registry_http_response_with_props(status, headers, body)
         }
     }
 }

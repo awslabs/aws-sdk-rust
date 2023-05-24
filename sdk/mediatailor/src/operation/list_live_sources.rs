@@ -179,9 +179,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLiveSources {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_live_sources::de_list_live_sources_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_live_sources::de_list_live_sources_http_response_with_props(status, headers, body)
         }
     }
 }

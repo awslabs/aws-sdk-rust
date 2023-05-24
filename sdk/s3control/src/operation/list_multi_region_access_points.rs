@@ -174,7 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMultiRegionAccessPoi
         if !success && status != 200 {
             crate::protocol_serde::shape_list_multi_region_access_points::de_list_multi_region_access_points_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_multi_region_access_points::de_list_multi_region_access_points_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_multi_region_access_points::de_list_multi_region_access_points_http_response_with_props(status, headers, body)
         }
     }
 }

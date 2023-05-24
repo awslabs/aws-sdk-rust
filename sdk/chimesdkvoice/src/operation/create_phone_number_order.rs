@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePhoneNumberOrder {
         if !success && status != 201 {
             crate::protocol_serde::shape_create_phone_number_order::de_create_phone_number_order_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_phone_number_order::de_create_phone_number_order_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_phone_number_order::de_create_phone_number_order_http_response_with_props(status, headers, body)
         }
     }
     fn sensitive(&self) -> bool {

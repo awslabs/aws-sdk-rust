@@ -81,7 +81,7 @@ pub fn de_get_evidence_folders_by_assessment_control_http_error(_response_status
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_evidence_folders_by_assessment_control_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlOutput, crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlError>{
+pub fn de_get_evidence_folders_by_assessment_control_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlOutput, crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_evidence_folders_by_assessment_control::builders::GetEvidenceFoldersByAssessmentControlOutputBuilder::default();

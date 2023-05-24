@@ -160,9 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateParallelData {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_parallel_data::de_create_parallel_data_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_parallel_data::de_create_parallel_data_http_response_with_props(status, headers, body)
         }
     }
 }

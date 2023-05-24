@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateReceiptRule {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_receipt_rule::de_update_receipt_rule_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_update_receipt_rule::de_update_receipt_rule_http_response_with_props(status, headers, body)
         }
     }
 }

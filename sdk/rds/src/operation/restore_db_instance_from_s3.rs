@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreDBInstanceFromS3 
         if !success && status != 200 {
             crate::protocol_serde::shape_restore_db_instance_from_s3::de_restore_db_instance_from_s3_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_restore_db_instance_from_s3::de_restore_db_instance_from_s3_http_response(status, headers, body)
+            crate::protocol_serde::shape_restore_db_instance_from_s3::de_restore_db_instance_from_s3_http_response_with_props(status, headers, body)
         }
     }
 }

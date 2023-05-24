@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchProductsAsAdmin {
         if !success && status != 200 {
             crate::protocol_serde::shape_search_products_as_admin::de_search_products_as_admin_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_search_products_as_admin::de_search_products_as_admin_http_response(status, headers, body)
+            crate::protocol_serde::shape_search_products_as_admin::de_search_products_as_admin_http_response_with_props(status, headers, body)
         }
     }
 }

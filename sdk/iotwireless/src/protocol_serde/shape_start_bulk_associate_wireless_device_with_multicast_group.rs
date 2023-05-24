@@ -107,7 +107,7 @@ pub fn de_start_bulk_associate_wireless_device_with_multicast_group_http_error(_
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_start_bulk_associate_wireless_device_with_multicast_group_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::start_bulk_associate_wireless_device_with_multicast_group::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput, crate::operation::start_bulk_associate_wireless_device_with_multicast_group::StartBulkAssociateWirelessDeviceWithMulticastGroupError>{
+pub fn de_start_bulk_associate_wireless_device_with_multicast_group_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::start_bulk_associate_wireless_device_with_multicast_group::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput, crate::operation::start_bulk_associate_wireless_device_with_multicast_group::StartBulkAssociateWirelessDeviceWithMulticastGroupError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::start_bulk_associate_wireless_device_with_multicast_group::builders::StartBulkAssociateWirelessDeviceWithMulticastGroupOutputBuilder::default();

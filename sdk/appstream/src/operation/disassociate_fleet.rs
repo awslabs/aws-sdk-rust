@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateFleet {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_disassociate_fleet::de_disassociate_fleet_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_disassociate_fleet::de_disassociate_fleet_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeNatGateways {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_nat_gateways::de_describe_nat_gateways_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_nat_gateways::de_describe_nat_gateways_http_response_with_props(status, headers, body)
         }
     }
 }

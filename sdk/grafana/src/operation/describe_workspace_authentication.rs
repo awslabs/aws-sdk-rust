@@ -152,7 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorkspaceAuthent
         if !success && status != 200 {
             crate::protocol_serde::shape_describe_workspace_authentication::de_describe_workspace_authentication_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_describe_workspace_authentication::de_describe_workspace_authentication_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_workspace_authentication::de_describe_workspace_authentication_http_response_with_props(status, headers, body)
         }
     }
 }

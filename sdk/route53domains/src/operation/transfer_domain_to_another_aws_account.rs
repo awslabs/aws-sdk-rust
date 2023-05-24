@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TransferDomainToAnotherA
         if !success && status != 200 {
             crate::protocol_serde::shape_transfer_domain_to_another_aws_account::de_transfer_domain_to_another_aws_account_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_transfer_domain_to_another_aws_account::de_transfer_domain_to_another_aws_account_http_response(status, headers, body)
+            crate::protocol_serde::shape_transfer_domain_to_another_aws_account::de_transfer_domain_to_another_aws_account_http_response_with_props(status, headers, body)
         }
     }
 }

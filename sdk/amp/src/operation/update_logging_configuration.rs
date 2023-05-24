@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLoggingConfigurati
         if !success && status != 202 {
             crate::protocol_serde::shape_update_logging_configuration::de_update_logging_configuration_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_update_logging_configuration::de_update_logging_configuration_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_logging_configuration::de_update_logging_configuration_http_response_with_props(status, headers, body)
         }
     }
 }

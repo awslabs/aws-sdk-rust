@@ -205,7 +205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AbortMultipartUpload {
         if !success && status != 204 {
             crate::protocol_serde::shape_abort_multipart_upload::de_abort_multipart_upload_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_abort_multipart_upload::de_abort_multipart_upload_http_response(status, headers, body)
+            crate::protocol_serde::shape_abort_multipart_upload::de_abort_multipart_upload_http_response_with_props(status, headers, body)
         }
     }
 }

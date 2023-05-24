@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisablePolicyType {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_disable_policy_type::de_disable_policy_type_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_disable_policy_type::de_disable_policy_type_http_response_with_props(status, headers, body)
         }
     }
 }

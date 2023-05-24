@@ -174,9 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateZonalShift {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_zonal_shift::de_update_zonal_shift_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_update_zonal_shift::de_update_zonal_shift_http_response_with_props(status, headers, body)
         }
     }
 }

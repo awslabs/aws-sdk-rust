@@ -209,9 +209,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RedactRoomMessage {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_redact_room_message::de_redact_room_message_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_redact_room_message::de_redact_room_message_http_response_with_props(status, headers, body)
         }
     }
 }

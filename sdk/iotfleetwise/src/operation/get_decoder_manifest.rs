@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDecoderManifest {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_decoder_manifest::de_get_decoder_manifest_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_decoder_manifest::de_get_decoder_manifest_http_response_with_props(status, headers, body)
         }
     }
 }

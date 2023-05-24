@@ -162,7 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreCoreNetworkPolicy
         if !success && status != 200 {
             crate::protocol_serde::shape_restore_core_network_policy_version::de_restore_core_network_policy_version_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_restore_core_network_policy_version::de_restore_core_network_policy_version_http_response(status, headers, body)
+            crate::protocol_serde::shape_restore_core_network_policy_version::de_restore_core_network_policy_version_http_response_with_props(status, headers, body)
         }
     }
 }

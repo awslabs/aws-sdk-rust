@@ -156,7 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPublicKeyConfig {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_public_key_config::de_get_public_key_config_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_public_key_config::de_get_public_key_config_http_response_with_props(status, headers, body)
         }
     }
 }

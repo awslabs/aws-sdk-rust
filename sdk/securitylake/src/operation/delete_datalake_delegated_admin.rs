@@ -154,7 +154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDatalakeDelegatedA
         if !success && status != 200 {
             crate::protocol_serde::shape_delete_datalake_delegated_admin::de_delete_datalake_delegated_admin_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_datalake_delegated_admin::de_delete_datalake_delegated_admin_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_datalake_delegated_admin::de_delete_datalake_delegated_admin_http_response_with_props(status, headers, body)
         }
     }
 }

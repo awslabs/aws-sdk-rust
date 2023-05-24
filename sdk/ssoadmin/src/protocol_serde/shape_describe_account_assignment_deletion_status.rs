@@ -107,7 +107,7 @@ pub fn de_describe_account_assignment_deletion_status_http_error(_response_statu
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_account_assignment_deletion_status_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusOutput, crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusError>{
+pub fn de_describe_account_assignment_deletion_status_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusOutput, crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatusError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_account_assignment_deletion_status::builders::DescribeAccountAssignmentDeletionStatusOutputBuilder::default();

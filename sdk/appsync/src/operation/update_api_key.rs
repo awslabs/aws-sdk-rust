@@ -194,7 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateApiKey {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_api_key::de_update_api_key_http_response(
+            crate::protocol_serde::shape_update_api_key::de_update_api_key_http_response_with_props(
                 status, headers, body,
             )
         }

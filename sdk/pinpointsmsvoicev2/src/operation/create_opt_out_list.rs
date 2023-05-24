@@ -158,9 +158,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateOptOutList {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_opt_out_list::de_create_opt_out_list_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_opt_out_list::de_create_opt_out_list_http_response_with_props(status, headers, body)
         }
     }
 }

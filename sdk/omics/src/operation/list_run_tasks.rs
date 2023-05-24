@@ -186,7 +186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRunTasks {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_run_tasks::de_list_run_tasks_http_response(
+            crate::protocol_serde::shape_list_run_tasks::de_list_run_tasks_http_response_with_props(
                 status, headers, body,
             )
         }

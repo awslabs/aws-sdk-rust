@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHapgs {
         if !success && status != 200 {
             crate::protocol_serde::shape_list_hapgs::de_list_hapgs_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_hapgs::de_list_hapgs_http_response(
+            crate::protocol_serde::shape_list_hapgs::de_list_hapgs_http_response_with_props(
                 status, headers, body,
             )
         }

@@ -264,7 +264,7 @@ pub fn de_restore_db_cluster_to_point_in_time_http_error(
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_restore_db_cluster_to_point_in_time_http_response(
+pub fn de_restore_db_cluster_to_point_in_time_http_response_with_props(
     _response_status: u16,
     _response_headers: &http::header::HeaderMap,
     _response_body: &[u8],

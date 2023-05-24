@@ -156,7 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateAwsAccountFr
         if !success && status != 204 {
             crate::protocol_serde::shape_disassociate_aws_account_from_partner_account::de_disassociate_aws_account_from_partner_account_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_disassociate_aws_account_from_partner_account::de_disassociate_aws_account_from_partner_account_http_response(status, headers, body)
+            crate::protocol_serde::shape_disassociate_aws_account_from_partner_account::de_disassociate_aws_account_from_partner_account_http_response_with_props(status, headers, body)
         }
     }
 }

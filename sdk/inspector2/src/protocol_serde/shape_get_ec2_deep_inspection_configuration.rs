@@ -89,7 +89,7 @@ pub fn de_get_ec2_deep_inspection_configuration_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_ec2_deep_inspection_configuration_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationOutput, crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationError>{
+pub fn de_get_ec2_deep_inspection_configuration_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationOutput, crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_ec2_deep_inspection_configuration::builders::GetEc2DeepInspectionConfigurationOutputBuilder::default();

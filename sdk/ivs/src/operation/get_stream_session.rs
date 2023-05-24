@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStreamSession {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_stream_session::de_get_stream_session_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_stream_session::de_get_stream_session_http_response_with_props(status, headers, body)
         }
     }
 }

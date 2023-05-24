@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCallAnalyticsCateg
         if !success && status != 200 {
             crate::protocol_serde::shape_create_call_analytics_category::de_create_call_analytics_category_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_call_analytics_category::de_create_call_analytics_category_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_call_analytics_category::de_create_call_analytics_category_http_response_with_props(status, headers, body)
         }
     }
 }

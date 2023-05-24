@@ -195,9 +195,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMapSprites {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_map_sprites::de_get_map_sprites_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_map_sprites::de_get_map_sprites_http_response_with_props(status, headers, body)
         }
     }
 }

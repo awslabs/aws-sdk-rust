@@ -143,7 +143,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppVersionResourceMa
         if !success && status != 200 {
             crate::protocol_serde::shape_list_app_version_resource_mappings::de_list_app_version_resource_mappings_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_app_version_resource_mappings::de_list_app_version_resource_mappings_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_app_version_resource_mappings::de_list_app_version_resource_mappings_http_response_with_props(status, headers, body)
         }
     }
 }

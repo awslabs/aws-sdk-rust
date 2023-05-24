@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateComment {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_comment::de_update_comment_http_response(
+            crate::protocol_serde::shape_update_comment::de_update_comment_http_response_with_props(
                 status, headers, body,
             )
         }

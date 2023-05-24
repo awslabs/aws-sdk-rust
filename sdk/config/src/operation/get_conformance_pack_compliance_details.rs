@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConformancePackCompli
         if !success && status != 200 {
             crate::protocol_serde::shape_get_conformance_pack_compliance_details::de_get_conformance_pack_compliance_details_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_conformance_pack_compliance_details::de_get_conformance_pack_compliance_details_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_conformance_pack_compliance_details::de_get_conformance_pack_compliance_details_http_response_with_props(status, headers, body)
         }
     }
 }

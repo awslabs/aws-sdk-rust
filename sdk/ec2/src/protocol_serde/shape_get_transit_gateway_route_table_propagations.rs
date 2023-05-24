@@ -9,7 +9,7 @@ pub fn de_get_transit_gateway_route_table_propagations_http_error(_response_stat
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_transit_gateway_route_table_propagations_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_transit_gateway_route_table_propagations::GetTransitGatewayRouteTablePropagationsOutput, crate::operation::get_transit_gateway_route_table_propagations::GetTransitGatewayRouteTablePropagationsError>{
+pub fn de_get_transit_gateway_route_table_propagations_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_transit_gateway_route_table_propagations::GetTransitGatewayRouteTablePropagationsOutput, crate::operation::get_transit_gateway_route_table_propagations::GetTransitGatewayRouteTablePropagationsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_transit_gateway_route_table_propagations::builders::GetTransitGatewayRouteTablePropagationsOutputBuilder::default();

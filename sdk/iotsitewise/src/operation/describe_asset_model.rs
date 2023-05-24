@@ -178,9 +178,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAssetModel {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_asset_model::de_describe_asset_model_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_describe_asset_model::de_describe_asset_model_http_response_with_props(status, headers, body)
         }
     }
 }

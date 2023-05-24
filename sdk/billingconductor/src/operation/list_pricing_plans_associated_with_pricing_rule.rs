@@ -131,7 +131,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPricingPlansAssociat
         if !success && status != 200 {
             crate::protocol_serde::shape_list_pricing_plans_associated_with_pricing_rule::de_list_pricing_plans_associated_with_pricing_rule_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_pricing_plans_associated_with_pricing_rule::de_list_pricing_plans_associated_with_pricing_rule_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_pricing_plans_associated_with_pricing_rule::de_list_pricing_plans_associated_with_pricing_rule_http_response_with_props(status, headers, body)
         }
     }
 }

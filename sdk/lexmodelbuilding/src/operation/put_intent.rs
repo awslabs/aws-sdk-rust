@@ -168,7 +168,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutIntent {
         if !success && status != 200 {
             crate::protocol_serde::shape_put_intent::de_put_intent_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_put_intent::de_put_intent_http_response(
+            crate::protocol_serde::shape_put_intent::de_put_intent_http_response_with_props(
                 status, headers, body,
             )
         }

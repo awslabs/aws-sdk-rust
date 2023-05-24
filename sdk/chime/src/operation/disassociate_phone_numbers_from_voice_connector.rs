@@ -163,7 +163,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociatePhoneNumbers
         if !success && status != 200 {
             crate::protocol_serde::shape_disassociate_phone_numbers_from_voice_connector::de_disassociate_phone_numbers_from_voice_connector_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_disassociate_phone_numbers_from_voice_connector::de_disassociate_phone_numbers_from_voice_connector_http_response(status, headers, body)
+            crate::protocol_serde::shape_disassociate_phone_numbers_from_voice_connector::de_disassociate_phone_numbers_from_voice_connector_http_response_with_props(status, headers, body)
         }
     }
 }

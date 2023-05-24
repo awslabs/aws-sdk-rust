@@ -107,7 +107,7 @@ pub fn de_list_service_pipeline_provisioned_resources_http_error(_response_statu
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_service_pipeline_provisioned_resources_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_service_pipeline_provisioned_resources::ListServicePipelineProvisionedResourcesOutput, crate::operation::list_service_pipeline_provisioned_resources::ListServicePipelineProvisionedResourcesError>{
+pub fn de_list_service_pipeline_provisioned_resources_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_service_pipeline_provisioned_resources::ListServicePipelineProvisionedResourcesOutput, crate::operation::list_service_pipeline_provisioned_resources::ListServicePipelineProvisionedResourcesError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_service_pipeline_provisioned_resources::builders::ListServicePipelineProvisionedResourcesOutputBuilder::default();

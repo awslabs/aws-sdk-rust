@@ -59,7 +59,7 @@ pub fn de_get_capacity_assignment_configuration_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_capacity_assignment_configuration_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationOutput, crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationError>{
+pub fn de_get_capacity_assignment_configuration_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationOutput, crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_capacity_assignment_configuration::builders::GetCapacityAssignmentConfigurationOutputBuilder::default();

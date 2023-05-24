@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResumeResource {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_resume_resource::de_resume_resource_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_resume_resource::de_resume_resource_http_response_with_props(status, headers, body)
         }
     }
 }

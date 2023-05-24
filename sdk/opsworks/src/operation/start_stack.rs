@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartStack {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_start_stack::de_start_stack_http_response(
+            crate::protocol_serde::shape_start_stack::de_start_stack_http_response_with_props(
                 status, headers, body,
             )
         }

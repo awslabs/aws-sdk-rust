@@ -197,9 +197,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateArchiveRule {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_archive_rule::de_update_archive_rule_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_update_archive_rule::de_update_archive_rule_http_response_with_props(status, headers, body)
         }
     }
 }

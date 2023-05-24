@@ -167,7 +167,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListQueues {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_queues::de_list_queues_http_response(
+            crate::protocol_serde::shape_list_queues::de_list_queues_http_response_with_props(
                 status, headers, body,
             )
         }

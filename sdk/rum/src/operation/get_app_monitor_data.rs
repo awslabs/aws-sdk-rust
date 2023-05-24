@@ -172,9 +172,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAppMonitorData {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_app_monitor_data::de_get_app_monitor_data_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_app_monitor_data::de_get_app_monitor_data_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -170,9 +170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVoices {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_voices::de_describe_voices_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_describe_voices::de_describe_voices_http_response_with_props(status, headers, body)
         }
     }
 }

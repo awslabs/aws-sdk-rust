@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeImageTags {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_image_tags::de_describe_image_tags_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_describe_image_tags::de_describe_image_tags_http_response_with_props(status, headers, body)
         }
     }
 }

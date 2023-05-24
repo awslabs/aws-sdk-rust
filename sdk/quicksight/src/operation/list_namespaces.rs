@@ -181,9 +181,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListNamespaces {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_namespaces::de_list_namespaces_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_namespaces::de_list_namespaces_http_response_with_props(status, headers, body)
         }
     }
 }

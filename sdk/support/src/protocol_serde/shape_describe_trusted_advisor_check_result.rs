@@ -59,7 +59,7 @@ pub fn de_describe_trusted_advisor_check_result_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_trusted_advisor_check_result_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultOutput, crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultError>{
+pub fn de_describe_trusted_advisor_check_result_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultOutput, crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_trusted_advisor_check_result::builders::DescribeTrustedAdvisorCheckResultOutputBuilder::default();

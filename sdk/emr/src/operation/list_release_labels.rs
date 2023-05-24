@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReleaseLabels {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_release_labels::de_list_release_labels_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_release_labels::de_list_release_labels_http_response_with_props(status, headers, body)
         }
     }
 }

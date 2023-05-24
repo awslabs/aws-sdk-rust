@@ -160,9 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCoreDefinition {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_core_definition::de_get_core_definition_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_core_definition::de_get_core_definition_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -160,9 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectAttachment {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_reject_attachment::de_reject_attachment_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_reject_attachment::de_reject_attachment_http_response_with_props(status, headers, body)
         }
     }
 }

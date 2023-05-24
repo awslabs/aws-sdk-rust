@@ -152,7 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCrossAccountAuthor
         if !success && status != 200 {
             crate::protocol_serde::shape_delete_cross_account_authorization::de_delete_cross_account_authorization_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_cross_account_authorization::de_delete_cross_account_authorization_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_cross_account_authorization::de_delete_cross_account_authorization_http_response_with_props(status, headers, body)
         }
     }
 }

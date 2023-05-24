@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterResource {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_deregister_resource::de_deregister_resource_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_deregister_resource::de_deregister_resource_http_response_with_props(status, headers, body)
         }
     }
 }

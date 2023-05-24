@@ -147,7 +147,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopTrainingDocumentClas
         if !success && status != 200 {
             crate::protocol_serde::shape_stop_training_document_classifier::de_stop_training_document_classifier_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_stop_training_document_classifier::de_stop_training_document_classifier_http_response(status, headers, body)
+            crate::protocol_serde::shape_stop_training_document_classifier::de_stop_training_document_classifier_http_response_with_props(status, headers, body)
         }
     }
 }

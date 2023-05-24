@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetVoiceMessageSpendLimi
         if !success && status != 200 {
             crate::protocol_serde::shape_set_voice_message_spend_limit_override::de_set_voice_message_spend_limit_override_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_set_voice_message_spend_limit_override::de_set_voice_message_spend_limit_override_http_response(status, headers, body)
+            crate::protocol_serde::shape_set_voice_message_spend_limit_override::de_set_voice_message_spend_limit_override_http_response_with_props(status, headers, body)
         }
     }
 }

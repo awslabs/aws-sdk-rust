@@ -159,9 +159,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStorageSystems {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_storage_systems::de_list_storage_systems_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_storage_systems::de_list_storage_systems_http_response_with_props(status, headers, body)
         }
     }
 }

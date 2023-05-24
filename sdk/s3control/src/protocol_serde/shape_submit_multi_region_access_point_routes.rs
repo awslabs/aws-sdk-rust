@@ -47,7 +47,7 @@ pub fn de_submit_multi_region_access_point_routes_http_error(_response_status: u
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_submit_multi_region_access_point_routes_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesOutput, crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError>{
+pub fn de_submit_multi_region_access_point_routes_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesOutput, crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::submit_multi_region_access_point_routes::builders::SubmitMultiRegionAccessPointRoutesOutputBuilder::default();

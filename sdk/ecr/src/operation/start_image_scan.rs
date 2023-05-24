@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartImageScan {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_start_image_scan::de_start_image_scan_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_start_image_scan::de_start_image_scan_http_response_with_props(status, headers, body)
         }
     }
 }

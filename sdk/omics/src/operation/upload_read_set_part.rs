@@ -230,9 +230,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UploadReadSetPart {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_upload_read_set_part::de_upload_read_set_part_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_upload_read_set_part::de_upload_read_set_part_http_response_with_props(status, headers, body)
         }
     }
 }

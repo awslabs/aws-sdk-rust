@@ -9,7 +9,7 @@ pub fn de_describe_transit_gateway_multicast_domains_http_error(_response_status
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_transit_gateway_multicast_domains_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_transit_gateway_multicast_domains::DescribeTransitGatewayMulticastDomainsOutput, crate::operation::describe_transit_gateway_multicast_domains::DescribeTransitGatewayMulticastDomainsError>{
+pub fn de_describe_transit_gateway_multicast_domains_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_transit_gateway_multicast_domains::DescribeTransitGatewayMulticastDomainsOutput, crate::operation::describe_transit_gateway_multicast_domains::DescribeTransitGatewayMulticastDomainsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_transit_gateway_multicast_domains::builders::DescribeTransitGatewayMulticastDomainsOutputBuilder::default();

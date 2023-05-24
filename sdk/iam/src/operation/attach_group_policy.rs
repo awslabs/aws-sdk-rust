@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachGroupPolicy {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_attach_group_policy::de_attach_group_policy_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_attach_group_policy::de_attach_group_policy_http_response_with_props(status, headers, body)
         }
     }
 }

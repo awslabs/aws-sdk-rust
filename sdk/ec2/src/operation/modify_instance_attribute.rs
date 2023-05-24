@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyInstanceAttribute 
         if !success && status != 200 {
             crate::protocol_serde::shape_modify_instance_attribute::de_modify_instance_attribute_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_modify_instance_attribute::de_modify_instance_attribute_http_response(status, headers, body)
+            crate::protocol_serde::shape_modify_instance_attribute::de_modify_instance_attribute_http_response_with_props(status, headers, body)
         }
     }
 }

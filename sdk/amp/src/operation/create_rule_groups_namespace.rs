@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRuleGroupsNamespac
         if !success && status != 202 {
             crate::protocol_serde::shape_create_rule_groups_namespace::de_create_rule_groups_namespace_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_rule_groups_namespace::de_create_rule_groups_namespace_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_rule_groups_namespace::de_create_rule_groups_namespace_http_response_with_props(status, headers, body)
         }
     }
 }

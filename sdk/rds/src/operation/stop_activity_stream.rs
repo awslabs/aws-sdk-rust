@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopActivityStream {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_stop_activity_stream::de_stop_activity_stream_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_stop_activity_stream::de_stop_activity_stream_http_response_with_props(status, headers, body)
         }
     }
 }

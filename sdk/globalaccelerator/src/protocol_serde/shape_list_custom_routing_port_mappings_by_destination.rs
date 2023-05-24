@@ -91,7 +91,7 @@ pub fn de_list_custom_routing_port_mappings_by_destination_http_error(_response_
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_custom_routing_port_mappings_by_destination_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationOutput, crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationError>{
+pub fn de_list_custom_routing_port_mappings_by_destination_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationOutput, crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationOutputBuilder::default();

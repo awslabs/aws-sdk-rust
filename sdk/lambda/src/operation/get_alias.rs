@@ -177,7 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAlias {
         if !success && status != 200 {
             crate::protocol_serde::shape_get_alias::de_get_alias_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_alias::de_get_alias_http_response(
+            crate::protocol_serde::shape_get_alias::de_get_alias_http_response_with_props(
                 status, headers, body,
             )
         }

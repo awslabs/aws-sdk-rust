@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCidrCollections {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_cidr_collections::de_list_cidr_collections_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_cidr_collections::de_list_cidr_collections_http_response_with_props(status, headers, body)
         }
     }
 }

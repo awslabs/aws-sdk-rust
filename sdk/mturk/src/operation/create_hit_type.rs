@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateHITType {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_hit_type::de_create_hit_type_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_hit_type::de_create_hit_type_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteScript {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_script::de_delete_script_http_response(
+            crate::protocol_serde::shape_delete_script::de_delete_script_http_response_with_props(
                 status, headers, body,
             )
         }

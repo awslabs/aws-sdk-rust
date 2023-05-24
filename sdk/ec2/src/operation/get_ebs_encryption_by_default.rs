@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEbsEncryptionByDefaul
         if !success && status != 200 {
             crate::protocol_serde::shape_get_ebs_encryption_by_default::de_get_ebs_encryption_by_default_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_ebs_encryption_by_default::de_get_ebs_encryption_by_default_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_ebs_encryption_by_default::de_get_ebs_encryption_by_default_http_response_with_props(status, headers, body)
         }
     }
 }

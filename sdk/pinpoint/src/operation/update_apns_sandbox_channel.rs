@@ -172,7 +172,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateApnsSandboxChannel
         if !success && status != 200 {
             crate::protocol_serde::shape_update_apns_sandbox_channel::de_update_apns_sandbox_channel_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_update_apns_sandbox_channel::de_update_apns_sandbox_channel_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_apns_sandbox_channel::de_update_apns_sandbox_channel_http_response_with_props(status, headers, body)
         }
     }
 }

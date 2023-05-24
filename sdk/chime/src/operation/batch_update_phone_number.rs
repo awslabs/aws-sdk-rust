@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchUpdatePhoneNumber {
         if !success && status != 200 {
             crate::protocol_serde::shape_batch_update_phone_number::de_batch_update_phone_number_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_batch_update_phone_number::de_batch_update_phone_number_http_response(status, headers, body)
+            crate::protocol_serde::shape_batch_update_phone_number::de_batch_update_phone_number_http_response_with_props(status, headers, body)
         }
     }
 }

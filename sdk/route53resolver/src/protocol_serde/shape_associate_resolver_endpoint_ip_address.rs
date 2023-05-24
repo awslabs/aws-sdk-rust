@@ -139,7 +139,7 @@ pub fn de_associate_resolver_endpoint_ip_address_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_associate_resolver_endpoint_ip_address_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressOutput, crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError>{
+pub fn de_associate_resolver_endpoint_ip_address_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressOutput, crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::associate_resolver_endpoint_ip_address::builders::AssociateResolverEndpointIpAddressOutputBuilder::default();

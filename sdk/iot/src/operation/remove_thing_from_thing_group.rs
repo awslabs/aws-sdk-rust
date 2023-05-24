@@ -149,7 +149,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveThingFromThingGrou
         if !success && status != 200 {
             crate::protocol_serde::shape_remove_thing_from_thing_group::de_remove_thing_from_thing_group_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_remove_thing_from_thing_group::de_remove_thing_from_thing_group_http_response(status, headers, body)
+            crate::protocol_serde::shape_remove_thing_from_thing_group::de_remove_thing_from_thing_group_http_response_with_props(status, headers, body)
         }
     }
 }

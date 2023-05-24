@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MigrateWorkspace {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_migrate_workspace::de_migrate_workspace_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_migrate_workspace::de_migrate_workspace_http_response_with_props(status, headers, body)
         }
     }
 }

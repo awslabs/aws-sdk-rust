@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFlywheel {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_flywheel::de_describe_flywheel_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_describe_flywheel::de_describe_flywheel_http_response_with_props(status, headers, body)
         }
     }
 }

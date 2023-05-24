@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportVolume {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_import_volume::de_import_volume_http_response(
+            crate::protocol_serde::shape_import_volume::de_import_volume_http_response_with_props(
                 status, headers, body,
             )
         }

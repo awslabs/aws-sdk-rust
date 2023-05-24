@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTagOption {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_tag_option::de_describe_tag_option_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_describe_tag_option::de_describe_tag_option_http_response_with_props(status, headers, body)
         }
     }
 }

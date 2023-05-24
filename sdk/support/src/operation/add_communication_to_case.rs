@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddCommunicationToCase {
         if !success && status != 200 {
             crate::protocol_serde::shape_add_communication_to_case::de_add_communication_to_case_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_add_communication_to_case::de_add_communication_to_case_http_response(status, headers, body)
+            crate::protocol_serde::shape_add_communication_to_case::de_add_communication_to_case_http_response_with_props(status, headers, body)
         }
     }
 }

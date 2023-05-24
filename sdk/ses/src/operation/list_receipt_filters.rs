@@ -143,9 +143,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReceiptFilters {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_receipt_filters::de_list_receipt_filters_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_receipt_filters::de_list_receipt_filters_http_response_with_props(status, headers, body)
         }
     }
 }

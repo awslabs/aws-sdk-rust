@@ -192,7 +192,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutProfileObjectType {
         if !success && status != 200 {
             crate::protocol_serde::shape_put_profile_object_type::de_put_profile_object_type_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_put_profile_object_type::de_put_profile_object_type_http_response(status, headers, body)
+            crate::protocol_serde::shape_put_profile_object_type::de_put_profile_object_type_http_response_with_props(status, headers, body)
         }
     }
 }

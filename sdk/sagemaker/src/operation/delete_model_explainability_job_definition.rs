@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteModelExplainabilit
         if !success && status != 200 {
             crate::protocol_serde::shape_delete_model_explainability_job_definition::de_delete_model_explainability_job_definition_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_model_explainability_job_definition::de_delete_model_explainability_job_definition_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_model_explainability_job_definition::de_delete_model_explainability_job_definition_http_response_with_props(status, headers, body)
         }
     }
 }

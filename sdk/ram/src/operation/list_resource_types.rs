@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourceTypes {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_resource_types::de_list_resource_types_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_resource_types::de_list_resource_types_http_response_with_props(status, headers, body)
         }
     }
 }

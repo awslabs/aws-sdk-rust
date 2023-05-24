@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectDataShare {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_reject_data_share::de_reject_data_share_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_reject_data_share::de_reject_data_share_http_response_with_props(status, headers, body)
         }
     }
 }

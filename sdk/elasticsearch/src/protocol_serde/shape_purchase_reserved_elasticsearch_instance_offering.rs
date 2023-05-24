@@ -123,7 +123,7 @@ pub fn de_purchase_reserved_elasticsearch_instance_offering_http_error(_response
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_purchase_reserved_elasticsearch_instance_offering_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::purchase_reserved_elasticsearch_instance_offering::PurchaseReservedElasticsearchInstanceOfferingOutput, crate::operation::purchase_reserved_elasticsearch_instance_offering::PurchaseReservedElasticsearchInstanceOfferingError>{
+pub fn de_purchase_reserved_elasticsearch_instance_offering_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::purchase_reserved_elasticsearch_instance_offering::PurchaseReservedElasticsearchInstanceOfferingOutput, crate::operation::purchase_reserved_elasticsearch_instance_offering::PurchaseReservedElasticsearchInstanceOfferingError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::purchase_reserved_elasticsearch_instance_offering::builders::PurchaseReservedElasticsearchInstanceOfferingOutputBuilder::default();

@@ -160,7 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteApiKey {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_api_key::de_delete_api_key_http_response(
+            crate::protocol_serde::shape_delete_api_key::de_delete_api_key_http_response_with_props(
                 status, headers, body,
             )
         }

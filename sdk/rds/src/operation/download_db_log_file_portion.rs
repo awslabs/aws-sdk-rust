@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DownloadDBLogFilePortion
         if !success && status != 200 {
             crate::protocol_serde::shape_download_db_log_file_portion::de_download_db_log_file_portion_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_download_db_log_file_portion::de_download_db_log_file_portion_http_response(status, headers, body)
+            crate::protocol_serde::shape_download_db_log_file_portion::de_download_db_log_file_portion_http_response_with_props(status, headers, body)
         }
     }
 }

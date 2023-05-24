@@ -187,9 +187,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AbortVaultLock {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_abort_vault_lock::de_abort_vault_lock_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_abort_vault_lock::de_abort_vault_lock_http_response_with_props(status, headers, body)
         }
     }
 }

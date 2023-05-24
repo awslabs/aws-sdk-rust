@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectText {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_detect_text::de_detect_text_http_response(
+            crate::protocol_serde::shape_detect_text::de_detect_text_http_response_with_props(
                 status, headers, body,
             )
         }

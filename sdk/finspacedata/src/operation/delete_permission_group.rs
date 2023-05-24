@@ -174,7 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePermissionGroup {
         if !success && status != 200 {
             crate::protocol_serde::shape_delete_permission_group::de_delete_permission_group_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_permission_group::de_delete_permission_group_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_permission_group::de_delete_permission_group_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -179,9 +179,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVodSources {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_vod_sources::de_list_vod_sources_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_vod_sources::de_list_vod_sources_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -160,9 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVpcLink {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_vpc_link::de_delete_vpc_link_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_delete_vpc_link::de_delete_vpc_link_http_response_with_props(status, headers, body)
         }
     }
 }

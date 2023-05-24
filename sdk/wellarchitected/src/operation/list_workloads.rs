@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkloads {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_workloads::de_list_workloads_http_response(
+            crate::protocol_serde::shape_list_workloads::de_list_workloads_http_response_with_props(
                 status, headers, body,
             )
         }

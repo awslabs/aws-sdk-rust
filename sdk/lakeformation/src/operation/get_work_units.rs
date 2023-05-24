@@ -152,7 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorkUnits {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_work_units::de_get_work_units_http_response(
+            crate::protocol_serde::shape_get_work_units::de_get_work_units_http_response_with_props(
                 status, headers, body,
             )
         }

@@ -65,7 +65,7 @@ pub fn de_list_detect_mitigation_actions_executions_http_error(_response_status:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_detect_mitigation_actions_executions_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsOutput, crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsError>{
+pub fn de_list_detect_mitigation_actions_executions_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsOutput, crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsOutputBuilder::default();

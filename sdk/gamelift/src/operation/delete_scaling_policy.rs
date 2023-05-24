@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteScalingPolicy {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_scaling_policy::de_delete_scaling_policy_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_scaling_policy::de_delete_scaling_policy_http_response_with_props(status, headers, body)
         }
     }
 }

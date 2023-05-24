@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetPartition {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_batch_get_partition::de_batch_get_partition_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_batch_get_partition::de_batch_get_partition_http_response_with_props(status, headers, body)
         }
     }
 }

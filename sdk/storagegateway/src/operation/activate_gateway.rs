@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ActivateGateway {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_activate_gateway::de_activate_gateway_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_activate_gateway::de_activate_gateway_http_response_with_props(status, headers, body)
         }
     }
 }

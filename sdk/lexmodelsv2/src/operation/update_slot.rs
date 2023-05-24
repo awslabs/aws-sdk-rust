@@ -245,7 +245,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSlot {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_slot::de_update_slot_http_response(
+            crate::protocol_serde::shape_update_slot::de_update_slot_http_response_with_props(
                 status, headers, body,
             )
         }

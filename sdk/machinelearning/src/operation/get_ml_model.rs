@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMLModel {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_ml_model::de_get_ml_model_http_response(
+            crate::protocol_serde::shape_get_ml_model::de_get_ml_model_http_response_with_props(
                 status, headers, body,
             )
         }

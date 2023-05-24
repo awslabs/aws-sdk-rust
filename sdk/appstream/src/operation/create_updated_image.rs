@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateUpdatedImage {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_updated_image::de_create_updated_image_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_updated_image::de_create_updated_image_http_response_with_props(status, headers, body)
         }
     }
 }

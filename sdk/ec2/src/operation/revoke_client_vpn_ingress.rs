@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RevokeClientVpnIngress {
         if !success && status != 200 {
             crate::protocol_serde::shape_revoke_client_vpn_ingress::de_revoke_client_vpn_ingress_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_revoke_client_vpn_ingress::de_revoke_client_vpn_ingress_http_response(status, headers, body)
+            crate::protocol_serde::shape_revoke_client_vpn_ingress::de_revoke_client_vpn_ingress_http_response_with_props(status, headers, body)
         }
     }
 }

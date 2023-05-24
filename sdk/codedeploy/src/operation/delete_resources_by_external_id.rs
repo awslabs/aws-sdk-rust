@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResourcesByExterna
         if !success && status != 200 {
             crate::protocol_serde::shape_delete_resources_by_external_id::de_delete_resources_by_external_id_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_resources_by_external_id::de_delete_resources_by_external_id_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_resources_by_external_id::de_delete_resources_by_external_id_http_response_with_props(status, headers, body)
         }
     }
 }

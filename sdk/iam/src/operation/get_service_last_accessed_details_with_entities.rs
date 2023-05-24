@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServiceLastAccessedDe
         if !success && status != 200 {
             crate::protocol_serde::shape_get_service_last_accessed_details_with_entities::de_get_service_last_accessed_details_with_entities_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_service_last_accessed_details_with_entities::de_get_service_last_accessed_details_with_entities_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_service_last_accessed_details_with_entities::de_get_service_last_accessed_details_with_entities_http_response_with_props(status, headers, body)
         }
     }
 }

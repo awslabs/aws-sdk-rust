@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchTransitGatewayMult
         if !success && status != 200 {
             crate::protocol_serde::shape_search_transit_gateway_multicast_groups::de_search_transit_gateway_multicast_groups_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_search_transit_gateway_multicast_groups::de_search_transit_gateway_multicast_groups_http_response(status, headers, body)
+            crate::protocol_serde::shape_search_transit_gateway_multicast_groups::de_search_transit_gateway_multicast_groups_http_response_with_props(status, headers, body)
         }
     }
 }

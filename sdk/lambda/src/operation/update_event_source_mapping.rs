@@ -172,7 +172,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateEventSourceMapping
         if !success && status != 202 {
             crate::protocol_serde::shape_update_event_source_mapping::de_update_event_source_mapping_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_update_event_source_mapping::de_update_event_source_mapping_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_event_source_mapping::de_update_event_source_mapping_http_response_with_props(status, headers, body)
         }
     }
 }

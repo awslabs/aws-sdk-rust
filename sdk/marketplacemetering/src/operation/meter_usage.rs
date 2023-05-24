@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MeterUsage {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_meter_usage::de_meter_usage_http_response(
+            crate::protocol_serde::shape_meter_usage::de_meter_usage_http_response_with_props(
                 status, headers, body,
             )
         }

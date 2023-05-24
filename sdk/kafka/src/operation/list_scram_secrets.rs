@@ -181,9 +181,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListScramSecrets {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_scram_secrets::de_list_scram_secrets_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_scram_secrets::de_list_scram_secrets_http_response_with_props(status, headers, body)
         }
     }
 }

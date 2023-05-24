@@ -129,7 +129,7 @@ pub fn de_list_voice_connector_termination_credentials_http_error(_response_stat
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_voice_connector_termination_credentials_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_voice_connector_termination_credentials::ListVoiceConnectorTerminationCredentialsOutput, crate::operation::list_voice_connector_termination_credentials::ListVoiceConnectorTerminationCredentialsError>{
+pub fn de_list_voice_connector_termination_credentials_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_voice_connector_termination_credentials::ListVoiceConnectorTerminationCredentialsOutput, crate::operation::list_voice_connector_termination_credentials::ListVoiceConnectorTerminationCredentialsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_voice_connector_termination_credentials::builders::ListVoiceConnectorTerminationCredentialsOutputBuilder::default();

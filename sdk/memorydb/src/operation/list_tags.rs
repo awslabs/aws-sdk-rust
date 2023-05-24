@@ -152,7 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTags {
         if !success && status != 200 {
             crate::protocol_serde::shape_list_tags::de_list_tags_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_tags::de_list_tags_http_response(
+            crate::protocol_serde::shape_list_tags::de_list_tags_http_response_with_props(
                 status, headers, body,
             )
         }

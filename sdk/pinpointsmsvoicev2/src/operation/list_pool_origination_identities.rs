@@ -154,7 +154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPoolOriginationIdent
         if !success && status != 200 {
             crate::protocol_serde::shape_list_pool_origination_identities::de_list_pool_origination_identities_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_pool_origination_identities::de_list_pool_origination_identities_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_pool_origination_identities::de_list_pool_origination_identities_http_response_with_props(status, headers, body)
         }
     }
 }

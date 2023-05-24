@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAutoMLJobV2 {
         if !success && status != 200 {
             crate::protocol_serde::shape_describe_auto_ml_job_v2::de_describe_auto_ml_job_v2_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_describe_auto_ml_job_v2::de_describe_auto_ml_job_v2_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_auto_ml_job_v2::de_describe_auto_ml_job_v2_http_response_with_props(status, headers, body)
         }
     }
 }

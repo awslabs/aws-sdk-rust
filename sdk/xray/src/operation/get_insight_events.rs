@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInsightEvents {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_insight_events::de_get_insight_events_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_insight_events::de_get_insight_events_http_response_with_props(status, headers, body)
         }
     }
 }

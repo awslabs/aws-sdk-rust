@@ -154,7 +154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopDataCollectionByAgen
         if !success && status != 200 {
             crate::protocol_serde::shape_stop_data_collection_by_agent_ids::de_stop_data_collection_by_agent_ids_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_stop_data_collection_by_agent_ids::de_stop_data_collection_by_agent_ids_http_response(status, headers, body)
+            crate::protocol_serde::shape_stop_data_collection_by_agent_ids::de_stop_data_collection_by_agent_ids_http_response_with_props(status, headers, body)
         }
     }
 }

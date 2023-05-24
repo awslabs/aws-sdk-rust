@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMergeConflicts {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_merge_conflicts::de_get_merge_conflicts_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_merge_conflicts::de_get_merge_conflicts_http_response_with_props(status, headers, body)
         }
     }
 }

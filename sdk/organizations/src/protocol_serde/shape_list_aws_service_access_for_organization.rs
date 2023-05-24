@@ -139,7 +139,7 @@ pub fn de_list_aws_service_access_for_organization_http_error(_response_status: 
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_aws_service_access_for_organization_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_aws_service_access_for_organization::ListAwsServiceAccessForOrganizationOutput, crate::operation::list_aws_service_access_for_organization::ListAWSServiceAccessForOrganizationError>{
+pub fn de_list_aws_service_access_for_organization_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_aws_service_access_for_organization::ListAwsServiceAccessForOrganizationOutput, crate::operation::list_aws_service_access_for_organization::ListAWSServiceAccessForOrganizationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_aws_service_access_for_organization::builders::ListAwsServiceAccessForOrganizationOutputBuilder::default();

@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PromoteReadReplica {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_promote_read_replica::de_promote_read_replica_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_promote_read_replica::de_promote_read_replica_http_response_with_props(status, headers, body)
         }
     }
 }

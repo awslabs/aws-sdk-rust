@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketLocation {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_bucket_location::de_get_bucket_location_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_bucket_location::de_get_bucket_location_http_response_with_props(status, headers, body)
         }
     }
 }

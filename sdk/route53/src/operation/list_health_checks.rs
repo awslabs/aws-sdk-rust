@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHealthChecks {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_health_checks::de_list_health_checks_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_health_checks::de_list_health_checks_http_response_with_props(status, headers, body)
         }
     }
 }

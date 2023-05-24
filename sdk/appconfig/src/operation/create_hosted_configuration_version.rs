@@ -178,7 +178,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateHostedConfiguratio
         if !success && status != 201 {
             crate::protocol_serde::shape_create_hosted_configuration_version::de_create_hosted_configuration_version_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_hosted_configuration_version::de_create_hosted_configuration_version_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_hosted_configuration_version::de_create_hosted_configuration_version_http_response_with_props(status, headers, body)
         }
     }
     fn sensitive(&self) -> bool {

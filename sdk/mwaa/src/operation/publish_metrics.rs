@@ -176,9 +176,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PublishMetrics {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_publish_metrics::de_publish_metrics_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_publish_metrics::de_publish_metrics_http_response_with_props(status, headers, body)
         }
     }
 }

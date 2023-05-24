@@ -43,7 +43,7 @@ pub fn de_batch_disassociate_service_action_from_provisioning_artifact_http_erro
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_batch_disassociate_service_action_from_provisioning_artifact_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactOutput, crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactError>{
+pub fn de_batch_disassociate_service_action_from_provisioning_artifact_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactOutput, crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::batch_disassociate_service_action_from_provisioning_artifact::builders::BatchDisassociateServiceActionFromProvisioningArtifactOutputBuilder::default();

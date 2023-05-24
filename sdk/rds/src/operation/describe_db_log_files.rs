@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDBLogFiles {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_db_log_files::de_describe_db_log_files_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_db_log_files::de_describe_db_log_files_http_response_with_props(status, headers, body)
         }
     }
 }

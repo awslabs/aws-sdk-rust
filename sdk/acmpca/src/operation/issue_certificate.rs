@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for IssueCertificate {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_issue_certificate::de_issue_certificate_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_issue_certificate::de_issue_certificate_http_response_with_props(status, headers, body)
         }
     }
 }

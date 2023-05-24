@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AnalyzeExpense {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_analyze_expense::de_analyze_expense_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_analyze_expense::de_analyze_expense_http_response_with_props(status, headers, body)
         }
     }
 }

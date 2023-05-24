@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateApplicationF
         if !success && status != 200 {
             crate::protocol_serde::shape_disassociate_application_from_entitlement::de_disassociate_application_from_entitlement_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_disassociate_application_from_entitlement::de_disassociate_application_from_entitlement_http_response(status, headers, body)
+            crate::protocol_serde::shape_disassociate_application_from_entitlement::de_disassociate_application_from_entitlement_http_response_with_props(status, headers, body)
         }
     }
 }

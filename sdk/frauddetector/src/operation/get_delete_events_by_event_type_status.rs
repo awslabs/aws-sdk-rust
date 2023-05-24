@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDeleteEventsByEventTy
         if !success && status != 200 {
             crate::protocol_serde::shape_get_delete_events_by_event_type_status::de_get_delete_events_by_event_type_status_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_delete_events_by_event_type_status::de_get_delete_events_by_event_type_status_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_delete_events_by_event_type_status::de_get_delete_events_by_event_type_status_http_response_with_props(status, headers, body)
         }
     }
 }

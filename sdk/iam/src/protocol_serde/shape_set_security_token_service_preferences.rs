@@ -33,7 +33,7 @@ pub fn de_set_security_token_service_preferences_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_set_security_token_service_preferences_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesOutput, crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesError>{
+pub fn de_set_security_token_service_preferences_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesOutput, crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::set_security_token_service_preferences::builders::SetSecurityTokenServicePreferencesOutputBuilder::default();

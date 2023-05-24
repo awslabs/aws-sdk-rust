@@ -156,9 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetImportFileTask {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_import_file_task::de_get_import_file_task_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_import_file_task::de_get_import_file_task_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPageResolutions {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_page_resolutions::de_list_page_resolutions_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_page_resolutions::de_list_page_resolutions_http_response_with_props(status, headers, body)
         }
     }
 }

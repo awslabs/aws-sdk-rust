@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDirectConnectGatew
         if !success && status != 200 {
             crate::protocol_serde::shape_create_direct_connect_gateway_association::de_create_direct_connect_gateway_association_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_direct_connect_gateway_association::de_create_direct_connect_gateway_association_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_direct_connect_gateway_association::de_create_direct_connect_gateway_association_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePendingAggregati
         if !success && status != 200 {
             crate::protocol_serde::shape_describe_pending_aggregation_requests::de_describe_pending_aggregation_requests_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_describe_pending_aggregation_requests::de_describe_pending_aggregation_requests_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_pending_aggregation_requests::de_describe_pending_aggregation_requests_http_response_with_props(status, headers, body)
         }
     }
 }

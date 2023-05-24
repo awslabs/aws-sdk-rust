@@ -154,7 +154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFacet {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_facet::de_update_facet_http_response(
+            crate::protocol_serde::shape_update_facet::de_update_facet_http_response_with_props(
                 status, headers, body,
             )
         }

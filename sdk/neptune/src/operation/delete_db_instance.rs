@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDBInstance {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_db_instance::de_delete_db_instance_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_delete_db_instance::de_delete_db_instance_http_response_with_props(status, headers, body)
         }
     }
 }

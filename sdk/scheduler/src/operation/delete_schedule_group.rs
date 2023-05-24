@@ -172,7 +172,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteScheduleGroup {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_schedule_group::de_delete_schedule_group_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_schedule_group::de_delete_schedule_group_http_response_with_props(status, headers, body)
         }
     }
 }

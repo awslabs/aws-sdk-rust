@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSAMLProvider {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_saml_provider::de_get_saml_provider_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_saml_provider::de_get_saml_provider_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -166,7 +166,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteV2LoggingLevel {
         if !success && status != 200 {
             crate::protocol_serde::shape_delete_v2_logging_level::de_delete_v2_logging_level_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_v2_logging_level::de_delete_v2_logging_level_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_v2_logging_level::de_delete_v2_logging_level_http_response_with_props(status, headers, body)
         }
     }
 }

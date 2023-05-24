@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutKeyword {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_put_keyword::de_put_keyword_http_response(
+            crate::protocol_serde::shape_put_keyword::de_put_keyword_http_response_with_props(
                 status, headers, body,
             )
         }

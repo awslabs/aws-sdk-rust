@@ -185,7 +185,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSites {
         if !success && status != 200 {
             crate::protocol_serde::shape_list_sites::de_list_sites_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_sites::de_list_sites_http_response(
+            crate::protocol_serde::shape_list_sites::de_list_sites_http_response_with_props(
                 status, headers, body,
             )
         }

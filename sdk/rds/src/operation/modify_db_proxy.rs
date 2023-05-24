@@ -152,9 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyDBProxy {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_modify_db_proxy::de_modify_db_proxy_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_modify_db_proxy::de_modify_db_proxy_http_response_with_props(status, headers, body)
         }
     }
 }

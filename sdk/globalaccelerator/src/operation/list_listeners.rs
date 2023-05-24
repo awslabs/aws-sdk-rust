@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListListeners {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_listeners::de_list_listeners_http_response(
+            crate::protocol_serde::shape_list_listeners::de_list_listeners_http_response_with_props(
                 status, headers, body,
             )
         }

@@ -177,7 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAddon {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_addon::de_create_addon_http_response(
+            crate::protocol_serde::shape_create_addon::de_create_addon_http_response_with_props(
                 status, headers, body,
             )
         }

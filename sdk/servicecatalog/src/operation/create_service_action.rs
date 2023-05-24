@@ -160,7 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateServiceAction {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_service_action::de_create_service_action_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_service_action::de_create_service_action_http_response_with_props(status, headers, body)
         }
     }
 }

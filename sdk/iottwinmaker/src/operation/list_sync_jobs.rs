@@ -176,7 +176,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSyncJobs {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_sync_jobs::de_list_sync_jobs_http_response(
+            crate::protocol_serde::shape_list_sync_jobs::de_list_sync_jobs_http_response_with_props(
                 status, headers, body,
             )
         }

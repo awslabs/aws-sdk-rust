@@ -91,7 +91,7 @@ pub fn de_disassociate_assessment_report_evidence_folder_http_error(_response_st
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_disassociate_assessment_report_evidence_folder_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderOutput, crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderError>{
+pub fn de_disassociate_assessment_report_evidence_folder_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderOutput, crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::disassociate_assessment_report_evidence_folder::builders::DisassociateAssessmentReportEvidenceFolderOutputBuilder::default();

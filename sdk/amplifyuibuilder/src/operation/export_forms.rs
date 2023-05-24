@@ -193,7 +193,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportForms {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_export_forms::de_export_forms_http_response(
+            crate::protocol_serde::shape_export_forms::de_export_forms_http_response_with_props(
                 status, headers, body,
             )
         }

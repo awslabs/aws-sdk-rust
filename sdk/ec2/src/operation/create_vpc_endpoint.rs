@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVpcEndpoint {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_vpc_endpoint::de_create_vpc_endpoint_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_vpc_endpoint::de_create_vpc_endpoint_http_response_with_props(status, headers, body)
         }
     }
 }

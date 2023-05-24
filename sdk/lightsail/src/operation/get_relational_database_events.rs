@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRelationalDatabaseEve
         if !success && status != 200 {
             crate::protocol_serde::shape_get_relational_database_events::de_get_relational_database_events_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_relational_database_events::de_get_relational_database_events_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_relational_database_events::de_get_relational_database_events_http_response_with_props(status, headers, body)
         }
     }
 }

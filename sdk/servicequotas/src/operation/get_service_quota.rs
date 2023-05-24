@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServiceQuota {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_service_quota::de_get_service_quota_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_service_quota::de_get_service_quota_http_response_with_props(status, headers, body)
         }
     }
 }

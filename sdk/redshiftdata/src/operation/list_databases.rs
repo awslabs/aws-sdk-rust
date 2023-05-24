@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDatabases {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_databases::de_list_databases_http_response(
+            crate::protocol_serde::shape_list_databases::de_list_databases_http_response_with_props(
                 status, headers, body,
             )
         }

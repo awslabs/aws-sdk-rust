@@ -9,7 +9,7 @@ pub fn de_describe_transit_gateway_route_table_announcements_http_error(_respons
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_transit_gateway_route_table_announcements_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_transit_gateway_route_table_announcements::DescribeTransitGatewayRouteTableAnnouncementsOutput, crate::operation::describe_transit_gateway_route_table_announcements::DescribeTransitGatewayRouteTableAnnouncementsError>{
+pub fn de_describe_transit_gateway_route_table_announcements_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_transit_gateway_route_table_announcements::DescribeTransitGatewayRouteTableAnnouncementsOutput, crate::operation::describe_transit_gateway_route_table_announcements::DescribeTransitGatewayRouteTableAnnouncementsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_transit_gateway_route_table_announcements::builders::DescribeTransitGatewayRouteTableAnnouncementsOutputBuilder::default();

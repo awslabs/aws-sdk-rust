@@ -196,9 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RetryWorkflowStep {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_retry_workflow_step::de_retry_workflow_step_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_retry_workflow_step::de_retry_workflow_step_http_response_with_props(status, headers, body)
         }
     }
 }

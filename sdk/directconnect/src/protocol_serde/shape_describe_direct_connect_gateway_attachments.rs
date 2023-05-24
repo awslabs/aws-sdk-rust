@@ -59,7 +59,7 @@ pub fn de_describe_direct_connect_gateway_attachments_http_error(_response_statu
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_direct_connect_gateway_attachments_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsOutput, crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsError>{
+pub fn de_describe_direct_connect_gateway_attachments_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsOutput, crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_direct_connect_gateway_attachments::builders::DescribeDirectConnectGatewayAttachmentsOutputBuilder::default();

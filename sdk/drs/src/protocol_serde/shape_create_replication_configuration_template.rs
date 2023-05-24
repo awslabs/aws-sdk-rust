@@ -131,7 +131,7 @@ pub fn de_create_replication_configuration_template_http_error(_response_status:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_replication_configuration_template_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateOutput, crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateError>{
+pub fn de_create_replication_configuration_template_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateOutput, crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateOutputBuilder::default();

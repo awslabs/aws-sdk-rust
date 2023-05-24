@@ -204,7 +204,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListContactReferences {
         if !success && status != 200 {
             crate::protocol_serde::shape_list_contact_references::de_list_contact_references_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_contact_references::de_list_contact_references_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_contact_references::de_list_contact_references_http_response_with_props(status, headers, body)
         }
     }
 }

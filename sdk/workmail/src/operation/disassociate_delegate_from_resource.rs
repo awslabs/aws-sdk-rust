@@ -144,7 +144,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateDelegateFrom
         if !success && status != 200 {
             crate::protocol_serde::shape_disassociate_delegate_from_resource::de_disassociate_delegate_from_resource_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_disassociate_delegate_from_resource::de_disassociate_delegate_from_resource_http_response(status, headers, body)
+            crate::protocol_serde::shape_disassociate_delegate_from_resource::de_disassociate_delegate_from_resource_http_response_with_props(status, headers, body)
         }
     }
 }

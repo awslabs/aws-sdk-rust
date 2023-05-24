@@ -152,9 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyIdFormat {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_modify_id_format::de_modify_id_format_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_modify_id_format::de_modify_id_format_http_response_with_props(status, headers, body)
         }
     }
 }

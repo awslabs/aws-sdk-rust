@@ -186,9 +186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListModelManifests {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_model_manifests::de_list_model_manifests_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_model_manifests::de_list_model_manifests_http_response_with_props(status, headers, body)
         }
     }
 }

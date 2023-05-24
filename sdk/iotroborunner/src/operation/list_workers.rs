@@ -178,7 +178,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkers {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_workers::de_list_workers_http_response(
+            crate::protocol_serde::shape_list_workers::de_list_workers_http_response_with_props(
                 status, headers, body,
             )
         }

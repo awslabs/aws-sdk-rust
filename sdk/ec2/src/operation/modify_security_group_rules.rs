@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifySecurityGroupRules
         if !success && status != 200 {
             crate::protocol_serde::shape_modify_security_group_rules::de_modify_security_group_rules_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_modify_security_group_rules::de_modify_security_group_rules_http_response(status, headers, body)
+            crate::protocol_serde::shape_modify_security_group_rules::de_modify_security_group_rules_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -156,7 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetControl {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_control::de_get_control_http_response(
+            crate::protocol_serde::shape_get_control::de_get_control_http_response_with_props(
                 status, headers, body,
             )
         }

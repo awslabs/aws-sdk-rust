@@ -177,9 +177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateApplication {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_application::de_create_application_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_application::de_create_application_http_response_with_props(status, headers, body)
         }
     }
     fn sensitive(&self) -> bool {

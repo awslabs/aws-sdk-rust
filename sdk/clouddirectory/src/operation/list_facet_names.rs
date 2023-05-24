@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFacetNames {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_facet_names::de_list_facet_names_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_facet_names::de_list_facet_names_http_response_with_props(status, headers, body)
         }
     }
 }

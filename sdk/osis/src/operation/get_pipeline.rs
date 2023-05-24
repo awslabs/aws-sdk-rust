@@ -160,7 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPipeline {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_pipeline::de_get_pipeline_http_response(
+            crate::protocol_serde::shape_get_pipeline::de_get_pipeline_http_response_with_props(
                 status, headers, body,
             )
         }

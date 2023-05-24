@@ -43,7 +43,7 @@ pub fn de_describe_model_explainability_job_definition_http_error(_response_stat
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_model_explainability_job_definition_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_model_explainability_job_definition::DescribeModelExplainabilityJobDefinitionOutput, crate::operation::describe_model_explainability_job_definition::DescribeModelExplainabilityJobDefinitionError>{
+pub fn de_describe_model_explainability_job_definition_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_model_explainability_job_definition::DescribeModelExplainabilityJobDefinitionOutput, crate::operation::describe_model_explainability_job_definition::DescribeModelExplainabilityJobDefinitionError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_model_explainability_job_definition::builders::DescribeModelExplainabilityJobDefinitionOutputBuilder::default();

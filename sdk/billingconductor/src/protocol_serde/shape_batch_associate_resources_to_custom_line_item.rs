@@ -147,7 +147,7 @@ pub fn de_batch_associate_resources_to_custom_line_item_http_error(_response_sta
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_batch_associate_resources_to_custom_line_item_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemOutput, crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError>{
+pub fn de_batch_associate_resources_to_custom_line_item_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemOutput, crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::batch_associate_resources_to_custom_line_item::builders::BatchAssociateResourcesToCustomLineItemOutputBuilder::default();

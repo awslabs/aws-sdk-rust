@@ -97,7 +97,7 @@ pub fn de_describe_provisioning_template_version_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_provisioning_template_version_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionOutput, crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionError>{
+pub fn de_describe_provisioning_template_version_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionOutput, crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_provisioning_template_version::builders::DescribeProvisioningTemplateVersionOutputBuilder::default();

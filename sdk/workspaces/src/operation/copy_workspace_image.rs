@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CopyWorkspaceImage {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_copy_workspace_image::de_copy_workspace_image_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_copy_workspace_image::de_copy_workspace_image_http_response_with_props(status, headers, body)
         }
     }
 }

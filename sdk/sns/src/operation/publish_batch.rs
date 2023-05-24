@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PublishBatch {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_publish_batch::de_publish_batch_http_response(
+            crate::protocol_serde::shape_publish_batch::de_publish_batch_http_response_with_props(
                 status, headers, body,
             )
         }

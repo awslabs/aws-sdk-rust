@@ -49,7 +49,7 @@ pub fn de_disable_availability_zones_for_load_balancer_http_error(_response_stat
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_disable_availability_zones_for_load_balancer_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerOutput, crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerError>{
+pub fn de_disable_availability_zones_for_load_balancer_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerOutput, crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::disable_availability_zones_for_load_balancer::builders::DisableAvailabilityZonesForLoadBalancerOutputBuilder::default();

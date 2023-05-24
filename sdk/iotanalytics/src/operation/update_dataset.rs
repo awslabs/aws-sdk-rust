@@ -174,7 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDataset {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_dataset::de_update_dataset_http_response(
+            crate::protocol_serde::shape_update_dataset::de_update_dataset_http_response_with_props(
                 status, headers, body,
             )
         }

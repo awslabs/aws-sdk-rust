@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableSso {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_disable_sso::de_disable_sso_http_response(
+            crate::protocol_serde::shape_disable_sso::de_disable_sso_http_response_with_props(
                 status, headers, body,
             )
         }

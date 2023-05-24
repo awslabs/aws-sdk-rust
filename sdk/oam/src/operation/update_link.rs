@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLink {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_link::de_update_link_http_response(
+            crate::protocol_serde::shape_update_link::de_update_link_http_response_with_props(
                 status, headers, body,
             )
         }

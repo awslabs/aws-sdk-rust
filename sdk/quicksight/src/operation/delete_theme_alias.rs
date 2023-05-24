@@ -200,9 +200,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteThemeAlias {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_theme_alias::de_delete_theme_alias_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_delete_theme_alias::de_delete_theme_alias_http_response_with_props(status, headers, body)
         }
     }
 }

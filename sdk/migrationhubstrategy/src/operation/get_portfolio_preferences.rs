@@ -134,7 +134,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPortfolioPreferences 
         if !success && status != 200 {
             crate::protocol_serde::shape_get_portfolio_preferences::de_get_portfolio_preferences_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_portfolio_preferences::de_get_portfolio_preferences_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_portfolio_preferences::de_get_portfolio_preferences_http_response_with_props(status, headers, body)
         }
     }
 }

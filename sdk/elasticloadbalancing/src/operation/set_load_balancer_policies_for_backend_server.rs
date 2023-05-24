@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetLoadBalancerPoliciesF
         if !success && status != 200 {
             crate::protocol_serde::shape_set_load_balancer_policies_for_backend_server::de_set_load_balancer_policies_for_backend_server_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_set_load_balancer_policies_for_backend_server::de_set_load_balancer_policies_for_backend_server_http_response(status, headers, body)
+            crate::protocol_serde::shape_set_load_balancer_policies_for_backend_server::de_set_load_balancer_policies_for_backend_server_http_response_with_props(status, headers, body)
         }
     }
 }

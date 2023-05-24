@@ -182,7 +182,7 @@ impl aws_smithy_http::response::ParseStrictResponse for FlushStageAuthorizersCac
         if !success && status != 202 {
             crate::protocol_serde::shape_flush_stage_authorizers_cache::de_flush_stage_authorizers_cache_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_flush_stage_authorizers_cache::de_flush_stage_authorizers_cache_http_response(status, headers, body)
+            crate::protocol_serde::shape_flush_stage_authorizers_cache::de_flush_stage_authorizers_cache_http_response_with_props(status, headers, body)
         }
     }
 }

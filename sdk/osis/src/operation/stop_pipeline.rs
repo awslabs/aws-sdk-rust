@@ -160,7 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopPipeline {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_stop_pipeline::de_stop_pipeline_http_response(
+            crate::protocol_serde::shape_stop_pipeline::de_stop_pipeline_http_response_with_props(
                 status, headers, body,
             )
         }

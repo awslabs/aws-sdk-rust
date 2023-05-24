@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDataCatalog {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_data_catalog::de_create_data_catalog_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_data_catalog::de_create_data_catalog_http_response_with_props(status, headers, body)
         }
     }
 }

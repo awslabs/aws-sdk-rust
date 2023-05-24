@@ -199,7 +199,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResolversByFunction 
         if !success && status != 200 {
             crate::protocol_serde::shape_list_resolvers_by_function::de_list_resolvers_by_function_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_resolvers_by_function::de_list_resolvers_by_function_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_resolvers_by_function::de_list_resolvers_by_function_http_response_with_props(status, headers, body)
         }
     }
 }

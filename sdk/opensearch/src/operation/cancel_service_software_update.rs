@@ -152,7 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelServiceSoftwareUpd
         if !success && status != 200 {
             crate::protocol_serde::shape_cancel_service_software_update::de_cancel_service_software_update_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_cancel_service_software_update::de_cancel_service_software_update_http_response(status, headers, body)
+            crate::protocol_serde::shape_cancel_service_software_update::de_cancel_service_software_update_http_response_with_props(status, headers, body)
         }
     }
 }

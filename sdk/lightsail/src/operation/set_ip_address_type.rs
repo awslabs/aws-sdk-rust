@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetIpAddressType {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_set_ip_address_type::de_set_ip_address_type_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_set_ip_address_type::de_set_ip_address_type_http_response_with_props(status, headers, body)
         }
     }
 }

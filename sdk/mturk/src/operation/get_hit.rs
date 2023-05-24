@@ -150,7 +150,9 @@ impl aws_smithy_http::response::ParseStrictResponse for GetHIT {
         if !success && status != 200 {
             crate::protocol_serde::shape_get_hit::de_get_hit_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_hit::de_get_hit_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_hit::de_get_hit_http_response_with_props(
+                status, headers, body,
+            )
         }
     }
 }

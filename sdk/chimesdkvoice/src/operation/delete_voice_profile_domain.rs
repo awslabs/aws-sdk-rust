@@ -158,7 +158,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVoiceProfileDomain
         if !success && status != 204 {
             crate::protocol_serde::shape_delete_voice_profile_domain::de_delete_voice_profile_domain_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_voice_profile_domain::de_delete_voice_profile_domain_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_voice_profile_domain::de_delete_voice_profile_domain_http_response_with_props(status, headers, body)
         }
     }
 }

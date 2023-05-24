@@ -147,7 +147,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterCrossAccountAcce
         if !success && status != 200 {
             crate::protocol_serde::shape_register_cross_account_access_role::de_register_cross_account_access_role_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_register_cross_account_access_role::de_register_cross_account_access_role_http_response(status, headers, body)
+            crate::protocol_serde::shape_register_cross_account_access_role::de_register_cross_account_access_role_http_response_with_props(status, headers, body)
         }
     }
 }

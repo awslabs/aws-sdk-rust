@@ -179,7 +179,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagMeeting {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_untag_meeting::de_untag_meeting_http_response(
+            crate::protocol_serde::shape_untag_meeting::de_untag_meeting_http_response_with_props(
                 status, headers, body,
             )
         }

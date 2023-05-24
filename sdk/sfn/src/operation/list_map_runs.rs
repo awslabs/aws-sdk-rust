@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMapRuns {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_map_runs::de_list_map_runs_http_response(
+            crate::protocol_serde::shape_list_map_runs::de_list_map_runs_http_response_with_props(
                 status, headers, body,
             )
         }

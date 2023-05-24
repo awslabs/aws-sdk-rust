@@ -189,7 +189,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAliases {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_aliases::de_list_aliases_http_response(
+            crate::protocol_serde::shape_list_aliases::de_list_aliases_http_response_with_props(
                 status, headers, body,
             )
         }

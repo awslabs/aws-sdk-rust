@@ -59,7 +59,7 @@ pub fn de_create_additional_assignments_for_hit_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_create_additional_assignments_for_hit_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHitOutput, crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHITError>{
+pub fn de_create_additional_assignments_for_hit_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHitOutput, crate::operation::create_additional_assignments_for_hit::CreateAdditionalAssignmentsForHITError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_additional_assignments_for_hit::builders::CreateAdditionalAssignmentsForHitOutputBuilder::default();

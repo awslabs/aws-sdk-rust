@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPatchBaseline {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_patch_baseline::de_get_patch_baseline_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_patch_baseline::de_get_patch_baseline_http_response_with_props(status, headers, body)
         }
     }
     fn sensitive(&self) -> bool {

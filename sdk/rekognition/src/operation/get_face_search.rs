@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFaceSearch {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_face_search::de_get_face_search_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_face_search::de_get_face_search_http_response_with_props(status, headers, body)
         }
     }
 }

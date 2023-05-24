@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterWorkflowType {
         if !success && status != 200 {
             crate::protocol_serde::shape_register_workflow_type::de_register_workflow_type_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_register_workflow_type::de_register_workflow_type_http_response(status, headers, body)
+            crate::protocol_serde::shape_register_workflow_type::de_register_workflow_type_http_response_with_props(status, headers, body)
         }
     }
 }

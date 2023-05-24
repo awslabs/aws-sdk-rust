@@ -187,7 +187,7 @@ pub fn de_list_associated_approval_rule_templates_for_repository_http_error(_res
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_associated_approval_rule_templates_for_repository_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryOutput, crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError>{
+pub fn de_list_associated_approval_rule_templates_for_repository_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryOutput, crate::operation::list_associated_approval_rule_templates_for_repository::ListAssociatedApprovalRuleTemplatesForRepositoryError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_associated_approval_rule_templates_for_repository::builders::ListAssociatedApprovalRuleTemplatesForRepositoryOutputBuilder::default();

@@ -201,9 +201,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListThemeAliases {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_theme_aliases::de_list_theme_aliases_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_theme_aliases::de_list_theme_aliases_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CloneStack {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_clone_stack::de_clone_stack_http_response(
+            crate::protocol_serde::shape_clone_stack::de_clone_stack_http_response_with_props(
                 status, headers, body,
             )
         }

@@ -114,7 +114,7 @@ pub fn de_stop_data_collection_by_agent_ids_http_error(
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_stop_data_collection_by_agent_ids_http_response(
+pub fn de_stop_data_collection_by_agent_ids_http_response_with_props(
     _response_status: u16,
     _response_headers: &http::header::HeaderMap,
     _response_body: &[u8],

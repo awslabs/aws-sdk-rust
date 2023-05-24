@@ -139,7 +139,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTransitGatewayPoli
         if !success && status != 200 {
             crate::protocol_serde::shape_create_transit_gateway_policy_table::de_create_transit_gateway_policy_table_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_transit_gateway_policy_table::de_create_transit_gateway_policy_table_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_transit_gateway_policy_table::de_create_transit_gateway_policy_table_http_response_with_props(status, headers, body)
         }
     }
 }

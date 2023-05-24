@@ -154,7 +154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateApplicationPresign
         if !success && status != 200 {
             crate::protocol_serde::shape_create_application_presigned_url::de_create_application_presigned_url_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_application_presigned_url::de_create_application_presigned_url_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_application_presigned_url::de_create_application_presigned_url_http_response_with_props(status, headers, body)
         }
     }
 }

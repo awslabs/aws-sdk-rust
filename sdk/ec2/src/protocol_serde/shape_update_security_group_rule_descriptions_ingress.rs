@@ -9,7 +9,7 @@ pub fn de_update_security_group_rule_descriptions_ingress_http_error(_response_s
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_security_group_rule_descriptions_ingress_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressOutput, crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressError>{
+pub fn de_update_security_group_rule_descriptions_ingress_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressOutput, crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_security_group_rule_descriptions_ingress::builders::UpdateSecurityGroupRuleDescriptionsIngressOutputBuilder::default();

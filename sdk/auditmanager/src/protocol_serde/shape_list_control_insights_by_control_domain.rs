@@ -81,7 +81,7 @@ pub fn de_list_control_insights_by_control_domain_http_error(_response_status: u
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_control_insights_by_control_domain_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainOutput, crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainError>{
+pub fn de_list_control_insights_by_control_domain_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainOutput, crate::operation::list_control_insights_by_control_domain::ListControlInsightsByControlDomainError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_control_insights_by_control_domain::builders::ListControlInsightsByControlDomainOutputBuilder::default();

@@ -160,9 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDevicesJobs {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_devices_jobs::de_list_devices_jobs_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_devices_jobs::de_list_devices_jobs_http_response_with_props(status, headers, body)
         }
     }
 }

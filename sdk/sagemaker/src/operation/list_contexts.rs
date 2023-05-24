@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListContexts {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_contexts::de_list_contexts_http_response(
+            crate::protocol_serde::shape_list_contexts::de_list_contexts_http_response_with_props(
                 status, headers, body,
             )
         }

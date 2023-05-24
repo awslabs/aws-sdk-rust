@@ -191,7 +191,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateTimeSeriesFr
         if !success && status != 200 {
             crate::protocol_serde::shape_disassociate_time_series_from_asset_property::de_disassociate_time_series_from_asset_property_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_disassociate_time_series_from_asset_property::de_disassociate_time_series_from_asset_property_http_response(status, headers, body)
+            crate::protocol_serde::shape_disassociate_time_series_from_asset_property::de_disassociate_time_series_from_asset_property_http_response_with_props(status, headers, body)
         }
     }
 }

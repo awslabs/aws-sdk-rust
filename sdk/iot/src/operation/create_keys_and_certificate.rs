@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateKeysAndCertificate
         if !success && status != 200 {
             crate::protocol_serde::shape_create_keys_and_certificate::de_create_keys_and_certificate_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_keys_and_certificate::de_create_keys_and_certificate_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_keys_and_certificate::de_create_keys_and_certificate_http_response_with_props(status, headers, body)
         }
     }
     fn sensitive(&self) -> bool {

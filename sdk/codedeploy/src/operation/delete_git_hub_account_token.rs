@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGitHubAccountToken
         if !success && status != 200 {
             crate::protocol_serde::shape_delete_git_hub_account_token::de_delete_git_hub_account_token_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_git_hub_account_token::de_delete_git_hub_account_token_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_git_hub_account_token::de_delete_git_hub_account_token_http_response_with_props(status, headers, body)
         }
     }
 }

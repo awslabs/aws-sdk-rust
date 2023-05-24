@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDescribeMergeConfli
         if !success && status != 200 {
             crate::protocol_serde::shape_batch_describe_merge_conflicts::de_batch_describe_merge_conflicts_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_batch_describe_merge_conflicts::de_batch_describe_merge_conflicts_http_response(status, headers, body)
+            crate::protocol_serde::shape_batch_describe_merge_conflicts::de_batch_describe_merge_conflicts_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -97,7 +97,7 @@ pub fn de_disassociate_phone_number_contact_flow_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_disassociate_phone_number_contact_flow_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowOutput, crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowError>{
+pub fn de_disassociate_phone_number_contact_flow_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowOutput, crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::disassociate_phone_number_contact_flow::builders::DisassociatePhoneNumberContactFlowOutputBuilder::default();

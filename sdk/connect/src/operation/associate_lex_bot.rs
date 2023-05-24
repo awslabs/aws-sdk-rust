@@ -174,9 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateLexBot {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_associate_lex_bot::de_associate_lex_bot_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_associate_lex_bot::de_associate_lex_bot_http_response_with_props(status, headers, body)
         }
     }
 }

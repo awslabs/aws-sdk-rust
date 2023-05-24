@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAttacks {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_attacks::de_list_attacks_http_response(
+            crate::protocol_serde::shape_list_attacks::de_list_attacks_http_response_with_props(
                 status, headers, body,
             )
         }

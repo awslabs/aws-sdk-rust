@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSink {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_sink::de_delete_sink_http_response(
+            crate::protocol_serde::shape_delete_sink::de_delete_sink_http_response_with_props(
                 status, headers, body,
             )
         }

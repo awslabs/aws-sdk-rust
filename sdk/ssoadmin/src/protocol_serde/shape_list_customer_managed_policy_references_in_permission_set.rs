@@ -107,7 +107,7 @@ pub fn de_list_customer_managed_policy_references_in_permission_set_http_error(_
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_customer_managed_policy_references_in_permission_set_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetOutput, crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetError>{
+pub fn de_list_customer_managed_policy_references_in_permission_set_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetOutput, crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_customer_managed_policy_references_in_permission_set::builders::ListCustomerManagedPolicyReferencesInPermissionSetOutputBuilder::default();

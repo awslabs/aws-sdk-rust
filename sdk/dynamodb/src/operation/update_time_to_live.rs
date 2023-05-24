@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTimeToLive {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_time_to_live::de_update_time_to_live_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_update_time_to_live::de_update_time_to_live_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -132,7 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetAssetPropertyVal
         if !success && status != 200 {
             crate::protocol_serde::shape_batch_get_asset_property_value_history::de_batch_get_asset_property_value_history_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_batch_get_asset_property_value_history::de_batch_get_asset_property_value_history_http_response(status, headers, body)
+            crate::protocol_serde::shape_batch_get_asset_property_value_history::de_batch_get_asset_property_value_history_http_response_with_props(status, headers, body)
         }
     }
 }

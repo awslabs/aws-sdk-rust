@@ -115,7 +115,7 @@ pub fn de_update_failback_replication_configuration_http_error(_response_status:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_failback_replication_configuration_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationOutput, crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationError>{
+pub fn de_update_failback_replication_configuration_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationOutput, crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_failback_replication_configuration::builders::UpdateFailbackReplicationConfigurationOutputBuilder::default();

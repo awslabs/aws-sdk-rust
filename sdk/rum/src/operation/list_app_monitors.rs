@@ -157,9 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppMonitors {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_app_monitors::de_list_app_monitors_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_app_monitors::de_list_app_monitors_http_response_with_props(status, headers, body)
         }
     }
 }

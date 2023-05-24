@@ -160,9 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourceSet {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_resource_set::de_get_resource_set_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_resource_set::de_get_resource_set_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -9,7 +9,7 @@ pub fn de_register_instance_event_notification_attributes_http_error(_response_s
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_register_instance_event_notification_attributes_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesOutput, crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesError>{
+pub fn de_register_instance_event_notification_attributes_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesOutput, crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::register_instance_event_notification_attributes::builders::RegisterInstanceEventNotificationAttributesOutputBuilder::default();

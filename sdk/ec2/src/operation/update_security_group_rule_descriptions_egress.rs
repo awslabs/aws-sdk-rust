@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSecurityGroupRuleD
         if !success && status != 200 {
             crate::protocol_serde::shape_update_security_group_rule_descriptions_egress::de_update_security_group_rule_descriptions_egress_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_update_security_group_rule_descriptions_egress::de_update_security_group_rule_descriptions_egress_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_security_group_rule_descriptions_egress::de_update_security_group_rule_descriptions_egress_http_response_with_props(status, headers, body)
         }
     }
 }

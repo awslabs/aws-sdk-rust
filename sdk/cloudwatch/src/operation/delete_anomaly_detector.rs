@@ -148,7 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAnomalyDetector {
         if !success && status != 200 {
             crate::protocol_serde::shape_delete_anomaly_detector::de_delete_anomaly_detector_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_anomaly_detector::de_delete_anomaly_detector_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_anomaly_detector::de_delete_anomaly_detector_http_response_with_props(status, headers, body)
         }
     }
 }

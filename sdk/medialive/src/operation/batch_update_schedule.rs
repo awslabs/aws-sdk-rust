@@ -176,7 +176,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchUpdateSchedule {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_batch_update_schedule::de_batch_update_schedule_http_response(status, headers, body)
+            crate::protocol_serde::shape_batch_update_schedule::de_batch_update_schedule_http_response_with_props(status, headers, body)
         }
     }
 }

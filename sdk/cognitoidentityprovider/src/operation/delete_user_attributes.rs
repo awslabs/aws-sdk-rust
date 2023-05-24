@@ -156,7 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteUserAttributes {
         if !success && status != 200 {
             crate::protocol_serde::shape_delete_user_attributes::de_delete_user_attributes_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_user_attributes::de_delete_user_attributes_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_user_attributes::de_delete_user_attributes_http_response_with_props(status, headers, body)
         }
     }
 }

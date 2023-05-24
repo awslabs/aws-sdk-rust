@@ -155,7 +155,7 @@ pub fn de_list_license_manager_report_generators_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_list_license_manager_report_generators_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsOutput, crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError>{
+pub fn de_list_license_manager_report_generators_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsOutput, crate::operation::list_license_manager_report_generators::ListLicenseManagerReportGeneratorsError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::list_license_manager_report_generators::builders::ListLicenseManagerReportGeneratorsOutputBuilder::default();

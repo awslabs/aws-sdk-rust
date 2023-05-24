@@ -107,7 +107,7 @@ pub fn de_get_delete_events_by_event_type_status_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_delete_events_by_event_type_status_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusOutput, crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusError>{
+pub fn de_get_delete_events_by_event_type_status_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusOutput, crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_delete_events_by_event_type_status::builders::GetDeleteEventsByEventTypeStatusOutputBuilder::default();

@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTableRestoreStatus {
         if !success && status != 200 {
             crate::protocol_serde::shape_list_table_restore_status::de_list_table_restore_status_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_table_restore_status::de_list_table_restore_status_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_table_restore_status::de_list_table_restore_status_http_response_with_props(status, headers, body)
         }
     }
 }

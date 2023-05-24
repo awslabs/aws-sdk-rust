@@ -184,7 +184,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListContactFlowModules {
         if !success && status != 200 {
             crate::protocol_serde::shape_list_contact_flow_modules::de_list_contact_flow_modules_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_contact_flow_modules::de_list_contact_flow_modules_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_contact_flow_modules::de_list_contact_flow_modules_http_response_with_props(status, headers, body)
         }
     }
 }

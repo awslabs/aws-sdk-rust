@@ -91,7 +91,7 @@ pub fn de_register_target_with_maintenance_window_http_error(_response_status: u
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_register_target_with_maintenance_window_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowOutput, crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowError>{
+pub fn de_register_target_with_maintenance_window_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowOutput, crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::register_target_with_maintenance_window::builders::RegisterTargetWithMaintenanceWindowOutputBuilder::default();

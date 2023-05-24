@@ -169,9 +169,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFunction {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_function::de_describe_function_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_describe_function::de_describe_function_http_response_with_props(status, headers, body)
         }
     }
 }

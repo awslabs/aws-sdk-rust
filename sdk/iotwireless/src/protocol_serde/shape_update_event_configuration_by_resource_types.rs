@@ -91,7 +91,7 @@ pub fn de_update_event_configuration_by_resource_types_http_error(_response_stat
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_update_event_configuration_by_resource_types_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesOutput, crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesError>{
+pub fn de_update_event_configuration_by_resource_types_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesOutput, crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::update_event_configuration_by_resource_types::builders::UpdateEventConfigurationByResourceTypesOutputBuilder::default();

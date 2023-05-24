@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelRun {
         if !success && status != 202 {
             crate::protocol_serde::shape_cancel_run::de_cancel_run_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_cancel_run::de_cancel_run_http_response(
+            crate::protocol_serde::shape_cancel_run::de_cancel_run_http_response_with_props(
                 status, headers, body,
             )
         }

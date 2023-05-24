@@ -75,7 +75,7 @@ pub fn de_describe_custom_routing_endpoint_group_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_custom_routing_endpoint_group_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_custom_routing_endpoint_group::DescribeCustomRoutingEndpointGroupOutput, crate::operation::describe_custom_routing_endpoint_group::DescribeCustomRoutingEndpointGroupError>{
+pub fn de_describe_custom_routing_endpoint_group_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_custom_routing_endpoint_group::DescribeCustomRoutingEndpointGroupOutput, crate::operation::describe_custom_routing_endpoint_group::DescribeCustomRoutingEndpointGroupError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_custom_routing_endpoint_group::builders::DescribeCustomRoutingEndpointGroupOutputBuilder::default();

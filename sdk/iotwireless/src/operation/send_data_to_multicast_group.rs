@@ -168,7 +168,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendDataToMulticastGroup
         if !success && status != 201 {
             crate::protocol_serde::shape_send_data_to_multicast_group::de_send_data_to_multicast_group_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_send_data_to_multicast_group::de_send_data_to_multicast_group_http_response(status, headers, body)
+            crate::protocol_serde::shape_send_data_to_multicast_group::de_send_data_to_multicast_group_http_response_with_props(status, headers, body)
         }
     }
 }

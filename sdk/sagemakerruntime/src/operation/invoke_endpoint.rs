@@ -178,9 +178,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InvokeEndpoint {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_invoke_endpoint::de_invoke_endpoint_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_invoke_endpoint::de_invoke_endpoint_http_response_with_props(status, headers, body)
         }
     }
     fn sensitive(&self) -> bool {

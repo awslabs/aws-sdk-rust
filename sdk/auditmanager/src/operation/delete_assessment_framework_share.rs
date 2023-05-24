@@ -168,7 +168,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAssessmentFramewor
         if !success && status != 200 {
             crate::protocol_serde::shape_delete_assessment_framework_share::de_delete_assessment_framework_share_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_assessment_framework_share::de_delete_assessment_framework_share_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_assessment_framework_share::de_delete_assessment_framework_share_http_response_with_props(status, headers, body)
         }
     }
 }

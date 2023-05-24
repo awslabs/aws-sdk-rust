@@ -173,7 +173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRecoveryPointsByLega
         if !success && status != 200 {
             crate::protocol_serde::shape_list_recovery_points_by_legal_hold::de_list_recovery_points_by_legal_hold_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_list_recovery_points_by_legal_hold::de_list_recovery_points_by_legal_hold_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_recovery_points_by_legal_hold::de_list_recovery_points_by_legal_hold_http_response_with_props(status, headers, body)
         }
     }
 }

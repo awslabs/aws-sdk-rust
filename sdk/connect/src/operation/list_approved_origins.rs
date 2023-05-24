@@ -181,7 +181,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListApprovedOrigins {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_approved_origins::de_list_approved_origins_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_approved_origins::de_list_approved_origins_http_response_with_props(status, headers, body)
         }
     }
 }

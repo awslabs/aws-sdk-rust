@@ -174,9 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutChannelPolicy {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_put_channel_policy::de_put_channel_policy_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_put_channel_policy::de_put_channel_policy_http_response_with_props(status, headers, body)
         }
     }
 }

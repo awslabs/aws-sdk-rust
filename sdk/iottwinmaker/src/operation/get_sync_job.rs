@@ -171,7 +171,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSyncJob {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_sync_job::de_get_sync_job_http_response(
+            crate::protocol_serde::shape_get_sync_job::de_get_sync_job_http_response_with_props(
                 status, headers, body,
             )
         }

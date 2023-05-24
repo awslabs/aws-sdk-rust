@@ -152,9 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListObjectParents {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_object_parents::de_list_object_parents_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_object_parents::de_list_object_parents_http_response_with_props(status, headers, body)
         }
     }
 }

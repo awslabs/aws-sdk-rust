@@ -196,7 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateUserHierarchy {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_user_hierarchy::de_update_user_hierarchy_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_user_hierarchy::de_update_user_hierarchy_http_response_with_props(status, headers, body)
         }
     }
 }

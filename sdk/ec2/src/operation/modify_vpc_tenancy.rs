@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyVpcTenancy {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_modify_vpc_tenancy::de_modify_vpc_tenancy_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_modify_vpc_tenancy::de_modify_vpc_tenancy_http_response_with_props(status, headers, body)
         }
     }
 }

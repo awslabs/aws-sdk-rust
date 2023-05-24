@@ -173,9 +173,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNetworkSite {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_network_site::de_delete_network_site_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_delete_network_site::de_delete_network_site_http_response_with_props(status, headers, body)
         }
     }
 }

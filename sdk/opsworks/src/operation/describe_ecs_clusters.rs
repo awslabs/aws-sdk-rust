@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEcsClusters {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_ecs_clusters::de_describe_ecs_clusters_http_response(status, headers, body)
+            crate::protocol_serde::shape_describe_ecs_clusters::de_describe_ecs_clusters_http_response_with_props(status, headers, body)
         }
     }
 }

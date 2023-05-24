@@ -156,7 +156,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMesh {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_mesh::de_delete_mesh_http_response(
+            crate::protocol_serde::shape_delete_mesh::de_delete_mesh_http_response_with_props(
                 status, headers, body,
             )
         }

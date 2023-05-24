@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEnrollmentStatus {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_enrollment_status::de_get_enrollment_status_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_enrollment_status::de_get_enrollment_status_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -160,9 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddStorageSystem {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_add_storage_system::de_add_storage_system_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_add_storage_system::de_add_storage_system_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -9,7 +9,7 @@ pub fn de_enable_ipam_organization_admin_account_http_error(_response_status: u1
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_enable_ipam_organization_admin_account_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::enable_ipam_organization_admin_account::EnableIpamOrganizationAdminAccountOutput, crate::operation::enable_ipam_organization_admin_account::EnableIpamOrganizationAdminAccountError>{
+pub fn de_enable_ipam_organization_admin_account_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::enable_ipam_organization_admin_account::EnableIpamOrganizationAdminAccountOutput, crate::operation::enable_ipam_organization_admin_account::EnableIpamOrganizationAdminAccountError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::enable_ipam_organization_admin_account::builders::EnableIpamOrganizationAdminAccountOutputBuilder::default();

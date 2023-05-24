@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTableVersions {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_table_versions::de_get_table_versions_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_table_versions::de_get_table_versions_http_response_with_props(status, headers, body)
         }
     }
 }

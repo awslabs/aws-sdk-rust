@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterElasticIp {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_deregister_elastic_ip::de_deregister_elastic_ip_http_response(status, headers, body)
+            crate::protocol_serde::shape_deregister_elastic_ip::de_deregister_elastic_ip_http_response_with_props(status, headers, body)
         }
     }
 }

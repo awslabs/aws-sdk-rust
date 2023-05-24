@@ -148,9 +148,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPoliciesStats {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_policies_stats::de_get_policies_stats_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_policies_stats::de_get_policies_stats_http_response_with_props(status, headers, body)
         }
     }
 }

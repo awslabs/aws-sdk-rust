@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelRetrieval {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_cancel_retrieval::de_cancel_retrieval_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_cancel_retrieval::de_cancel_retrieval_http_response_with_props(status, headers, body)
         }
     }
 }

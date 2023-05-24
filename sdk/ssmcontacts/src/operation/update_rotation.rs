@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRotation {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_update_rotation::de_update_rotation_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_update_rotation::de_update_rotation_http_response_with_props(status, headers, body)
         }
     }
 }

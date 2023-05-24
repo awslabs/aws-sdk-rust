@@ -107,7 +107,7 @@ pub fn de_disassociate_delegation_signer_from_domain_http_error(_response_status
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_disassociate_delegation_signer_from_domain_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainOutput, crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainError>{
+pub fn de_disassociate_delegation_signer_from_domain_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainOutput, crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::disassociate_delegation_signer_from_domain::builders::DisassociateDelegationSignerFromDomainOutputBuilder::default();

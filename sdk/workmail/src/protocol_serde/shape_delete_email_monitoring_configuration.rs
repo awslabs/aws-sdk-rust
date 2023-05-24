@@ -75,7 +75,7 @@ pub fn de_delete_email_monitoring_configuration_http_error(_response_status: u16
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_email_monitoring_configuration_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationOutput, crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationError>{
+pub fn de_delete_email_monitoring_configuration_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationOutput, crate::operation::delete_email_monitoring_configuration::DeleteEmailMonitoringConfigurationError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_email_monitoring_configuration::builders::DeleteEmailMonitoringConfigurationOutputBuilder::default();

@@ -107,7 +107,7 @@ pub fn de_describe_permission_set_provisioning_status_http_error(_response_statu
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_describe_permission_set_provisioning_status_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_permission_set_provisioning_status::DescribePermissionSetProvisioningStatusOutput, crate::operation::describe_permission_set_provisioning_status::DescribePermissionSetProvisioningStatusError>{
+pub fn de_describe_permission_set_provisioning_status_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::describe_permission_set_provisioning_status::DescribePermissionSetProvisioningStatusOutput, crate::operation::describe_permission_set_provisioning_status::DescribePermissionSetProvisioningStatusError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_permission_set_provisioning_status::builders::DescribePermissionSetProvisioningStatusOutputBuilder::default();

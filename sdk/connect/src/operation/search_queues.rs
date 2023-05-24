@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchQueues {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_search_queues::de_search_queues_http_response(
+            crate::protocol_serde::shape_search_queues::de_search_queues_http_response_with_props(
                 status, headers, body,
             )
         }

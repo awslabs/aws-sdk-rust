@@ -135,7 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterPatchBaselineFor
         if !success && status != 200 {
             crate::protocol_serde::shape_register_patch_baseline_for_patch_group::de_register_patch_baseline_for_patch_group_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_register_patch_baseline_for_patch_group::de_register_patch_baseline_for_patch_group_http_response(status, headers, body)
+            crate::protocol_serde::shape_register_patch_baseline_for_patch_group::de_register_patch_baseline_for_patch_group_http_response_with_props(status, headers, body)
         }
     }
 }

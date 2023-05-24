@@ -158,7 +158,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectInputDeviceTransfe
         if !success && status != 200 {
             crate::protocol_serde::shape_reject_input_device_transfer::de_reject_input_device_transfer_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_reject_input_device_transfer::de_reject_input_device_transfer_http_response(status, headers, body)
+            crate::protocol_serde::shape_reject_input_device_transfer::de_reject_input_device_transfer_http_response_with_props(status, headers, body)
         }
     }
 }

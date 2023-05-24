@@ -174,9 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateInvalidation {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_invalidation::de_create_invalidation_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_create_invalidation::de_create_invalidation_http_response_with_props(status, headers, body)
         }
     }
 }

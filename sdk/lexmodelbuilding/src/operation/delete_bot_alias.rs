@@ -180,9 +180,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBotAlias {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_bot_alias::de_delete_bot_alias_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_delete_bot_alias::de_delete_bot_alias_http_response_with_props(status, headers, body)
         }
     }
 }

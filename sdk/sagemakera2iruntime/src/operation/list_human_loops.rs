@@ -203,9 +203,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHumanLoops {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_human_loops::de_list_human_loops_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_human_loops::de_list_human_loops_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -152,7 +152,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDataCellsFilter {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_data_cells_filter::de_get_data_cells_filter_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_data_cells_filter::de_get_data_cells_filter_http_response_with_props(status, headers, body)
         }
     }
 }

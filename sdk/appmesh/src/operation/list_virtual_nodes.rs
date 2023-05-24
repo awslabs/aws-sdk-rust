@@ -186,9 +186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVirtualNodes {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_virtual_nodes::de_list_virtual_nodes_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_virtual_nodes::de_list_virtual_nodes_http_response_with_props(status, headers, body)
         }
     }
 }

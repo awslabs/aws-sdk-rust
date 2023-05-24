@@ -115,7 +115,7 @@ pub fn de_delete_replication_configuration_template_http_error(_response_status:
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_delete_replication_configuration_template_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateOutput, crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateError>{
+pub fn de_delete_replication_configuration_template_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateOutput, crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_replication_configuration_template::builders::DeleteReplicationConfigurationTemplateOutputBuilder::default();

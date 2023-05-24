@@ -123,7 +123,7 @@ pub fn de_associate_wireless_device_with_multicast_group_http_error(_response_st
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_associate_wireless_device_with_multicast_group_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::associate_wireless_device_with_multicast_group::AssociateWirelessDeviceWithMulticastGroupOutput, crate::operation::associate_wireless_device_with_multicast_group::AssociateWirelessDeviceWithMulticastGroupError>{
+pub fn de_associate_wireless_device_with_multicast_group_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::associate_wireless_device_with_multicast_group::AssociateWirelessDeviceWithMulticastGroupOutput, crate::operation::associate_wireless_device_with_multicast_group::AssociateWirelessDeviceWithMulticastGroupError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::associate_wireless_device_with_multicast_group::builders::AssociateWirelessDeviceWithMulticastGroupOutputBuilder::default();

@@ -91,7 +91,7 @@ pub fn de_get_data_quality_ruleset_evaluation_run_http_error(_response_status: u
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_data_quality_ruleset_evaluation_run_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput, crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunError>{
+pub fn de_get_data_quality_ruleset_evaluation_run_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput, crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_data_quality_ruleset_evaluation_run::builders::GetDataQualityRulesetEvaluationRunOutputBuilder::default();

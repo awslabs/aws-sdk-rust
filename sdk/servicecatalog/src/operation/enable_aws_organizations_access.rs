@@ -146,7 +146,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableAWSOrganizationsAc
         if !success && status != 200 {
             crate::protocol_serde::shape_enable_aws_organizations_access::de_enable_aws_organizations_access_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_enable_aws_organizations_access::de_enable_aws_organizations_access_http_response(status, headers, body)
+            crate::protocol_serde::shape_enable_aws_organizations_access::de_enable_aws_organizations_access_http_response_with_props(status, headers, body)
         }
     }
 }

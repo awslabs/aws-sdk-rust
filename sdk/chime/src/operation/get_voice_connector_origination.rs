@@ -158,7 +158,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVoiceConnectorOrigina
         if !success && status != 200 {
             crate::protocol_serde::shape_get_voice_connector_origination::de_get_voice_connector_origination_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_voice_connector_origination::de_get_voice_connector_origination_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_voice_connector_origination::de_get_voice_connector_origination_http_response_with_props(status, headers, body)
         }
     }
 }

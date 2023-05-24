@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SubscribeToEvent {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_subscribe_to_event::de_subscribe_to_event_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_subscribe_to_event::de_subscribe_to_event_http_response_with_props(status, headers, body)
         }
     }
 }

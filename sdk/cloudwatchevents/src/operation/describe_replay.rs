@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReplay {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_describe_replay::de_describe_replay_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_describe_replay::de_describe_replay_http_response_with_props(status, headers, body)
         }
     }
 }

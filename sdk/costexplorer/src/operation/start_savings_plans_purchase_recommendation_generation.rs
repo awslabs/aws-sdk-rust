@@ -130,7 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse
         if !success && status != 200 {
             crate::protocol_serde::shape_start_savings_plans_purchase_recommendation_generation::de_start_savings_plans_purchase_recommendation_generation_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_start_savings_plans_purchase_recommendation_generation::de_start_savings_plans_purchase_recommendation_generation_http_response(status, headers, body)
+            crate::protocol_serde::shape_start_savings_plans_purchase_recommendation_generation::de_start_savings_plans_purchase_recommendation_generation_http_response_with_props(status, headers, body)
         }
     }
 }

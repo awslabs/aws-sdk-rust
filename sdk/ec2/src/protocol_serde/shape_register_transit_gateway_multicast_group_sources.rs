@@ -9,7 +9,7 @@ pub fn de_register_transit_gateway_multicast_group_sources_http_error(_response_
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_register_transit_gateway_multicast_group_sources_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::register_transit_gateway_multicast_group_sources::RegisterTransitGatewayMulticastGroupSourcesOutput, crate::operation::register_transit_gateway_multicast_group_sources::RegisterTransitGatewayMulticastGroupSourcesError>{
+pub fn de_register_transit_gateway_multicast_group_sources_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::register_transit_gateway_multicast_group_sources::RegisterTransitGatewayMulticastGroupSourcesOutput, crate::operation::register_transit_gateway_multicast_group_sources::RegisterTransitGatewayMulticastGroupSourcesError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::register_transit_gateway_multicast_group_sources::builders::RegisterTransitGatewayMulticastGroupSourcesOutputBuilder::default();

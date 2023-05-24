@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteJobQueue {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_delete_job_queue::de_delete_job_queue_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_delete_job_queue::de_delete_job_queue_http_response_with_props(status, headers, body)
         }
     }
 }

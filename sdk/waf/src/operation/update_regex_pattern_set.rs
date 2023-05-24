@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRegexPatternSet {
         if !success && status != 200 {
             crate::protocol_serde::shape_update_regex_pattern_set::de_update_regex_pattern_set_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_update_regex_pattern_set::de_update_regex_pattern_set_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_regex_pattern_set::de_update_regex_pattern_set_http_response_with_props(status, headers, body)
         }
     }
 }

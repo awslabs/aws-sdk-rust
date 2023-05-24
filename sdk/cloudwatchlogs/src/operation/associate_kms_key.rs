@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateKmsKey {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_associate_kms_key::de_associate_kms_key_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_associate_kms_key::de_associate_kms_key_http_response_with_props(status, headers, body)
         }
     }
 }

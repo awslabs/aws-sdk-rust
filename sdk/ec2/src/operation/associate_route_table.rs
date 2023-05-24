@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateRouteTable {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_associate_route_table::de_associate_route_table_http_response(status, headers, body)
+            crate::protocol_serde::shape_associate_route_table::de_associate_route_table_http_response_with_props(status, headers, body)
         }
     }
 }

@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PhoneNumberValidate {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_phone_number_validate::de_phone_number_validate_http_response(status, headers, body)
+            crate::protocol_serde::shape_phone_number_validate::de_phone_number_validate_http_response_with_props(status, headers, body)
         }
     }
 }

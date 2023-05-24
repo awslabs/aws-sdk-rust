@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFleet {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_fleet::de_create_fleet_http_response(
+            crate::protocol_serde::shape_create_fleet::de_create_fleet_http_response_with_props(
                 status, headers, body,
             )
         }

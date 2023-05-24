@@ -161,7 +161,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProject {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_create_project::de_create_project_http_response(
+            crate::protocol_serde::shape_create_project::de_create_project_http_response_with_props(
                 status, headers, body,
             )
         }

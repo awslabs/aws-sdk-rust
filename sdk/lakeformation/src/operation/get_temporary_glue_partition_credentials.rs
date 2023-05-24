@@ -131,7 +131,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTemporaryGluePartitio
         if !success && status != 200 {
             crate::protocol_serde::shape_get_temporary_glue_partition_credentials::de_get_temporary_glue_partition_credentials_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_get_temporary_glue_partition_credentials::de_get_temporary_glue_partition_credentials_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_temporary_glue_partition_credentials::de_get_temporary_glue_partition_credentials_http_response_with_props(status, headers, body)
         }
     }
 }

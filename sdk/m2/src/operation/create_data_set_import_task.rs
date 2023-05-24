@@ -175,7 +175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDataSetImportTask 
         if !success && status != 200 {
             crate::protocol_serde::shape_create_data_set_import_task::de_create_data_set_import_task_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_create_data_set_import_task::de_create_data_set_import_task_http_response(status, headers, body)
+            crate::protocol_serde::shape_create_data_set_import_task::de_create_data_set_import_task_http_response_with_props(status, headers, body)
         }
     }
 }

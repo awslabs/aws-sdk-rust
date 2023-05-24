@@ -157,7 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetNotebookMetadata {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_notebook_metadata::de_get_notebook_metadata_http_response(status, headers, body)
+            crate::protocol_serde::shape_get_notebook_metadata::de_get_notebook_metadata_http_response_with_props(status, headers, body)
         }
     }
 }

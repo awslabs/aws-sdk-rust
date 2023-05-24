@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendTemplatedEmail {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_send_templated_email::de_send_templated_email_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_send_templated_email::de_send_templated_email_http_response_with_props(status, headers, body)
         }
     }
 }

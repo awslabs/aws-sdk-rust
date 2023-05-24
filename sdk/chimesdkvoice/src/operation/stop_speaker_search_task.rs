@@ -181,7 +181,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopSpeakerSearchTask {
         if !success && status != 204 {
             crate::protocol_serde::shape_stop_speaker_search_task::de_stop_speaker_search_task_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_stop_speaker_search_task::de_stop_speaker_search_task_http_response(status, headers, body)
+            crate::protocol_serde::shape_stop_speaker_search_task::de_stop_speaker_search_task_http_response_with_props(status, headers, body)
         }
     }
 }

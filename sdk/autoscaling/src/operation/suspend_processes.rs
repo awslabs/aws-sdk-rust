@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SuspendProcesses {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_suspend_processes::de_suspend_processes_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_suspend_processes::de_suspend_processes_http_response_with_props(status, headers, body)
         }
     }
 }

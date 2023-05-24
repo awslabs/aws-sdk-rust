@@ -172,9 +172,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InvokeDeviceMethod {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_invoke_device_method::de_invoke_device_method_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_invoke_device_method::de_invoke_device_method_http_response_with_props(status, headers, body)
         }
     }
 }

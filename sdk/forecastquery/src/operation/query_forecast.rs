@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for QueryForecast {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_query_forecast::de_query_forecast_http_response(
+            crate::protocol_serde::shape_query_forecast::de_query_forecast_http_response_with_props(
                 status, headers, body,
             )
         }

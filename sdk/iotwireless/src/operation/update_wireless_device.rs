@@ -170,7 +170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateWirelessDevice {
         if !success && status != 204 {
             crate::protocol_serde::shape_update_wireless_device::de_update_wireless_device_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_update_wireless_device::de_update_wireless_device_http_response(status, headers, body)
+            crate::protocol_serde::shape_update_wireless_device::de_update_wireless_device_http_response_with_props(status, headers, body)
         }
     }
 }

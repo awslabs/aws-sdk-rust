@@ -155,7 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResolveCase {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_resolve_case::de_resolve_case_http_response(
+            crate::protocol_serde::shape_resolve_case::de_resolve_case_http_response_with_props(
                 status, headers, body,
             )
         }

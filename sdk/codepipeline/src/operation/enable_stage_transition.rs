@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableStageTransition {
         if !success && status != 200 {
             crate::protocol_serde::shape_enable_stage_transition::de_enable_stage_transition_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_enable_stage_transition::de_enable_stage_transition_http_response(status, headers, body)
+            crate::protocol_serde::shape_enable_stage_transition::de_enable_stage_transition_http_response_with_props(status, headers, body)
         }
     }
 }

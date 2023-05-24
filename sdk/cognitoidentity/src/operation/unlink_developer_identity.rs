@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UnlinkDeveloperIdentity 
         if !success && status != 200 {
             crate::protocol_serde::shape_unlink_developer_identity::de_unlink_developer_identity_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_unlink_developer_identity::de_unlink_developer_identity_http_response(status, headers, body)
+            crate::protocol_serde::shape_unlink_developer_identity::de_unlink_developer_identity_http_response_with_props(status, headers, body)
         }
     }
 }

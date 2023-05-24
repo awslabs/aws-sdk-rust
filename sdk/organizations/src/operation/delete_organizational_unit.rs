@@ -153,7 +153,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteOrganizationalUnit
         if !success && status != 200 {
             crate::protocol_serde::shape_delete_organizational_unit::de_delete_organizational_unit_http_error(status, headers, body)
         } else {
-            crate::protocol_serde::shape_delete_organizational_unit::de_delete_organizational_unit_http_response(status, headers, body)
+            crate::protocol_serde::shape_delete_organizational_unit::de_delete_organizational_unit_http_response_with_props(status, headers, body)
         }
     }
 }

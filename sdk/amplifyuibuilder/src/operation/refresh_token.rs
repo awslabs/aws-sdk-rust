@@ -172,7 +172,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RefreshToken {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_refresh_token::de_refresh_token_http_response(
+            crate::protocol_serde::shape_refresh_token::de_refresh_token_http_response_with_props(
                 status, headers, body,
             )
         }

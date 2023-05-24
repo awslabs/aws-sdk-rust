@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResyncMFADevice {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_resync_mfa_device::de_resync_mfa_device_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_resync_mfa_device::de_resync_mfa_device_http_response_with_props(status, headers, body)
         }
     }
 }

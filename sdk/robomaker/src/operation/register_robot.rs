@@ -150,7 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterRobot {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_register_robot::de_register_robot_http_response(
+            crate::protocol_serde::shape_register_robot::de_register_robot_http_response_with_props(
                 status, headers, body,
             )
         }

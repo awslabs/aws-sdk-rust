@@ -113,7 +113,7 @@ pub fn de_disassociate_wireless_device_from_fuota_task_http_error(_response_stat
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_disassociate_wireless_device_from_fuota_task_http_response(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::disassociate_wireless_device_from_fuota_task::DisassociateWirelessDeviceFromFuotaTaskOutput, crate::operation::disassociate_wireless_device_from_fuota_task::DisassociateWirelessDeviceFromFuotaTaskError>{
+pub fn de_disassociate_wireless_device_from_fuota_task_http_response_with_props(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::disassociate_wireless_device_from_fuota_task::DisassociateWirelessDeviceFromFuotaTaskOutput, crate::operation::disassociate_wireless_device_from_fuota_task::DisassociateWirelessDeviceFromFuotaTaskError>{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::disassociate_wireless_device_from_fuota_task::builders::DisassociateWirelessDeviceFromFuotaTaskOutputBuilder::default();

@@ -193,9 +193,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEvidenceFolder {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_get_evidence_folder::de_get_evidence_folder_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_get_evidence_folder::de_get_evidence_folder_http_response_with_props(status, headers, body)
         }
     }
 }

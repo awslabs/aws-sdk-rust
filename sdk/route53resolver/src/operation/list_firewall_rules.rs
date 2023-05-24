@@ -155,9 +155,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFirewallRules {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_list_firewall_rules::de_list_firewall_rules_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_list_firewall_rules::de_list_firewall_rules_http_response_with_props(status, headers, body)
         }
     }
 }

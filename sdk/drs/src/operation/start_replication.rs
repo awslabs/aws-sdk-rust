@@ -150,9 +150,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartReplication {
                 status, headers, body,
             )
         } else {
-            crate::protocol_serde::shape_start_replication::de_start_replication_http_response(
-                status, headers, body,
-            )
+            crate::protocol_serde::shape_start_replication::de_start_replication_http_response_with_props(status, headers, body)
         }
     }
     fn sensitive(&self) -> bool {
