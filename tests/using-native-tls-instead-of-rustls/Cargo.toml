@@ -8,7 +8,7 @@ edition = "2021"
 path = "../../sdk/aws-config"
 default-features = false
 features = ["native-tls", "rt-tokio"]
-version = "0.55.2"
+version = "0.55.3"
 
 [dev-dependencies.aws-sdk-s3]
 path = "../../sdk/s3"

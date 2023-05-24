@@ -38,7 +38,7 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.55.2"
+//! aws-config = "0.55.3"
 //! aws-sdk-arczonalshift = "0.6.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```

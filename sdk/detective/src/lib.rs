@@ -59,7 +59,7 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.55.2"
+//! aws-config = "0.55.3"
 //! aws-sdk-detective = "0.28.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```

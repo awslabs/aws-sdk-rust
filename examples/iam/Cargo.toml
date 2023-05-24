@@ -23,15 +23,15 @@ http = "0.2.8"
 futures = "0.3.28"
 async_once = "0.2.6"
 lazy_static = "1.4.0"
-aws-config= { version = "0.55.2", path = "../../sdk/aws-config" }
-aws-credential-types= { version = "0.55.2", path = "../../sdk/aws-credential-types", features = ["hardcoded-credentials"] }
-aws-hyper= { version = "0.55.2", path = "../../sdk/aws-hyper" }
+aws-config= { version = "0.55.3", path = "../../sdk/aws-config" }
+aws-credential-types= { version = "0.55.3", path = "../../sdk/aws-credential-types", features = ["hardcoded-credentials"] }
+aws-hyper= { version = "0.55.3", path = "../../sdk/aws-hyper" }
 aws-sdk-iam= { version = "0.28.0", path = "../../sdk/iam" }
 aws-sdk-s3= { version = "0.28.0", path = "../../sdk/s3" }
 aws-sdk-sts= { version = "0.28.0", path = "../../sdk/sts" }
-aws-smithy-client= { version = "0.55.2", path = "../../sdk/aws-smithy-client", features = ["test-util"] }
-aws-smithy-http= { version = "0.55.2", path = "../../sdk/aws-smithy-http" }
-aws-types= { version = "0.55.2", path = "../../sdk/aws-types" }
+aws-smithy-client= { version = "0.55.3", path = "../../sdk/aws-smithy-client", features = ["test-util"] }
+aws-smithy-http= { version = "0.55.3", path = "../../sdk/aws-smithy-http" }
+aws-types= { version = "0.55.3", path = "../../sdk/aws-types" }
 
 [dependencies.sdk-examples-test-utils]
 path = "../test-utils"

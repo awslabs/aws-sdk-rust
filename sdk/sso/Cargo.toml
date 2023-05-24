@@ -9,53 +9,53 @@ license = "Apache-2.0"
 repository = "https://github.com/awslabs/aws-sdk-rust"
 readme = "README.md"
 [package.metadata.smithy]
-codegen-version = "0.55.2-e3c65ffe1be1f319e69b65e4b2cbdc72b00279fa"
+codegen-version = "0.55.3-e3c65ffe1be1f319e69b65e4b2cbdc72b00279fa"
 [package.metadata.docs.rs]
 all-features = true
 targets = ["x86_64-unknown-linux-gnu"]
 [dependencies.aws-credential-types]
 path = "../aws-credential-types"
-version = "0.55.2"
+version = "0.55.3"
 
 [dependencies.aws-endpoint]
 path = "../aws-endpoint"
-version = "0.55.2"
+version = "0.55.3"
 
 [dependencies.aws-http]
 path = "../aws-http"
-version = "0.55.2"
+version = "0.55.3"
 
 [dependencies.aws-sig-auth]
 path = "../aws-sig-auth"
-version = "0.55.2"
+version = "0.55.3"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
-version = "0.55.2"
+version = "0.55.3"
 
 [dependencies.aws-smithy-client]
 path = "../aws-smithy-client"
-version = "0.55.2"
+version = "0.55.3"
 
 [dependencies.aws-smithy-http]
 path = "../aws-smithy-http"
-version = "0.55.2"
+version = "0.55.3"
 
 [dependencies.aws-smithy-http-tower]
 path = "../aws-smithy-http-tower"
-version = "0.55.2"
+version = "0.55.3"
 
 [dependencies.aws-smithy-json]
 path = "../aws-smithy-json"
-version = "0.55.2"
+version = "0.55.3"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-version = "0.55.2"
+version = "0.55.3"
 
 [dependencies.aws-types]
 path = "../aws-types"
-version = "0.55.2"
+version = "0.55.3"
 
 [dependencies.bytes]
 version = "1.0.0"
@@ -77,7 +77,7 @@ version = "0.1"
 [dev-dependencies.aws-credential-types]
 path = "../aws-credential-types"
 features = ["test-util"]
-version = "0.55.2"
+version = "0.55.3"
 
 [dev-dependencies.tokio]
 version = "1.23.1"
