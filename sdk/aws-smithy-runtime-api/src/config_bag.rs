@@ -10,7 +10,7 @@
 //! 1. A new layer of configuration may be applied onto an existing configuration structure without modifying it or taking ownership.
 //! 2. No lifetime shenanigans to deal with
 use aws_smithy_http::property_bag::PropertyBag;
-use std::fmt::Debug;
+use std::fmt::{Debug, Formatter};
 use std::ops::Deref;
 use std::sync::Arc;
 
@@ -18,10 +18,30 @@ use std::sync::Arc;
 ///
 /// [`ConfigBag`] is the "unlocked" form of the bag. Only the top layer of the bag may be unlocked.
 #[must_use]
-#[derive(Debug)]
 pub struct ConfigBag {
     head: Layer,
     tail: Option<FrozenConfigBag>,
+}
+
+impl Debug for ConfigBag {
+    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+        struct Layers<'a>(&'a ConfigBag);
+        impl Debug for Layers<'_> {
+            fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+                let mut list = f.debug_list();
+                list.entry(&self.0.head);
+                let mut us = self.0.tail.as_ref();
+                while let Some(bag) = us {
+                    list.entry(&bag.head);
+                    us = bag.tail.as_ref()
+                }
+                list.finish()
+            }
+        }
+        f.debug_struct("ConfigBag")
+            .field("layers", &Layers(self))
+            .finish()
+    }
 }
 
 /// Layered Configuration Structure
@@ -55,10 +75,24 @@ enum Value<T> {
     ExplicitlyUnset,
 }
 
-#[derive(Debug)]
 struct Layer {
     name: &'static str,
     props: PropertyBag,
+}
+
+impl Debug for Layer {
+    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+        struct Contents<'a>(&'a Layer);
+        impl Debug for Contents<'_> {
+            fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+                f.debug_list().entries(self.0.props.contents()).finish()
+            }
+        }
+        f.debug_struct("Layer")
+            .field("name", &self.name)
+            .field("properties", &Contents(self))
+            .finish()
+    }
 }
 
 fn no_op(_: &mut ConfigBag) {}
@@ -258,6 +292,7 @@ mod test {
         assert!(final_bag.get::<Prop2>().is_some());
         // we unset prop3
         assert!(final_bag.get::<Prop3>().is_none());
+        println!("{:#?}", final_bag);
     }
 
     #[test]

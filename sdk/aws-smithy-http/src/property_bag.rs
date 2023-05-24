@@ -13,12 +13,38 @@
 use std::any::{Any, TypeId};
 use std::collections::HashMap;
 use std::fmt;
-use std::fmt::Debug;
+use std::fmt::{Debug, Formatter};
 use std::hash::{BuildHasherDefault, Hasher};
 use std::ops::{Deref, DerefMut};
 use std::sync::{Arc, Mutex};
 
-type AnyMap = HashMap<TypeId, Box<dyn Any + Send + Sync>, BuildHasherDefault<IdHasher>>;
+type AnyMap = HashMap<TypeId, NamedType, BuildHasherDefault<IdHasher>>;
+
+struct NamedType {
+    name: &'static str,
+    value: Box<dyn Any + Send + Sync>,
+}
+
+impl NamedType {
+    fn as_mut<T: 'static>(&mut self) -> Option<&mut T> {
+        self.value.downcast_mut()
+    }
+
+    fn as_ref<T: 'static>(&self) -> Option<&T> {
+        self.value.downcast_ref()
+    }
+
+    fn assume<T: 'static>(self) -> Option<T> {
+        self.value.downcast().map(|t| *t).ok()
+    }
+
+    fn new<T: Any + Send + Sync>(value: T) -> Self {
+        Self {
+            name: std::any::type_name::<T>(),
+            value: Box::new(value),
+        }
+    }
+}
 
 // With TypeIds as keys, there's no need to hash them. They are already hashes
 // themselves, coming from the compiler. The IdHasher just holds the u64 of
@@ -82,13 +108,8 @@ impl PropertyBag {
     /// ```
     pub fn insert<T: Send + Sync + 'static>(&mut self, val: T) -> Option<T> {
         self.map
-            .insert(TypeId::of::<T>(), Box::new(val))
-            .and_then(|boxed| {
-                (boxed as Box<dyn Any + 'static>)
-                    .downcast()
-                    .ok()
-                    .map(|boxed| *boxed)
-            })
+            .insert(TypeId::of::<T>(), NamedType::new(val))
+            .and_then(|val| val.assume())
     }
 
     /// Get a reference to a type previously inserted on this `PropertyBag`.
@@ -106,7 +127,16 @@ impl PropertyBag {
     pub fn get<T: Send + Sync + 'static>(&self) -> Option<&T> {
         self.map
             .get(&TypeId::of::<T>())
-            .and_then(|boxed| (&**boxed as &(dyn Any + 'static)).downcast_ref())
+            .and_then(|val| val.as_ref())
+    }
+
+    /// Returns an iterator of the types contained in this PropertyBag
+    ///
+    /// # Stability
+    /// This method is unstable and may be removed or changed in a future release. The exact
+    /// format of the returned types may also change.
+    pub fn contents(&self) -> impl Iterator<Item = &'static str> + '_ {
+        self.map.values().map(|tpe| tpe.name)
     }
 
     /// Get a mutable reference to a type previously inserted on this `PropertyBag`.
@@ -124,7 +154,7 @@ impl PropertyBag {
     pub fn get_mut<T: Send + Sync + 'static>(&mut self) -> Option<&mut T> {
         self.map
             .get_mut(&TypeId::of::<T>())
-            .and_then(|boxed| (&mut **boxed as &mut (dyn Any + 'static)).downcast_mut())
+            .map(|val| val.as_mut().expect("type mismatch!"))
     }
 
     /// Remove a type from this `PropertyBag`.
@@ -141,8 +171,8 @@ impl PropertyBag {
     /// assert!(props.get::<i32>().is_none());
     /// ```
     pub fn remove<T: Send + Sync + 'static>(&mut self) -> Option<T> {
-        self.map.remove(&TypeId::of::<T>()).and_then(|boxed| {
-            (boxed as Box<dyn Any + 'static>)
+        self.map.remove(&TypeId::of::<T>()).and_then(|tpe| {
+            (tpe.value as Box<dyn Any + 'static>)
                 .downcast()
                 .ok()
                 .map(|boxed| *boxed)
@@ -168,7 +198,16 @@ impl PropertyBag {
 
 impl fmt::Debug for PropertyBag {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        f.debug_struct("PropertyBag").finish()
+        let mut fmt = f.debug_struct("PropertyBag");
+
+        struct Contents<'a>(&'a PropertyBag);
+        impl<'a> Debug for Contents<'a> {
+            fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
+                f.debug_list().entries(self.0.contents()).finish()
+            }
+        }
+        fmt.field("contents", &Contents(self));
+        fmt.finish()
     }
 }
 
@@ -225,22 +264,30 @@ impl From<PropertyBag> for SharedPropertyBag {
 }
 
 #[cfg(test)]
-#[test]
-fn test_extensions() {
-    #[derive(Debug, PartialEq)]
-    struct MyType(i32);
+mod test {
+    use crate::property_bag::PropertyBag;
 
-    let mut extensions = PropertyBag::new();
+    #[test]
+    fn test_extensions() {
+        #[derive(Debug, PartialEq)]
+        struct MyType(i32);
 
-    extensions.insert(5i32);
-    extensions.insert(MyType(10));
+        let mut property_bag = PropertyBag::new();
 
-    assert_eq!(extensions.get(), Some(&5i32));
-    assert_eq!(extensions.get_mut(), Some(&mut 5i32));
+        property_bag.insert(5i32);
+        property_bag.insert(MyType(10));
 
-    assert_eq!(extensions.remove::<i32>(), Some(5i32));
-    assert!(extensions.get::<i32>().is_none());
+        assert_eq!(property_bag.get(), Some(&5i32));
+        assert_eq!(property_bag.get_mut(), Some(&mut 5i32));
 
-    assert_eq!(extensions.get::<bool>(), None);
-    assert_eq!(extensions.get(), Some(&MyType(10)));
+        assert_eq!(property_bag.remove::<i32>(), Some(5i32));
+        assert!(property_bag.get::<i32>().is_none());
+
+        assert_eq!(property_bag.get::<bool>(), None);
+        assert_eq!(property_bag.get(), Some(&MyType(10)));
+        assert_eq!(
+            format!("{:?}", property_bag),
+            r#"PropertyBag { contents: ["aws_smithy_http::property_bag::test::test_extensions::MyType"] }"#
+        );
+    }
 }
