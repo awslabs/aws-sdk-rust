@@ -5,10 +5,12 @@
 
 use crate::client::interceptors::Interceptors;
 use crate::config_bag::ConfigBag;
+use std::fmt::Debug;
 
-pub type BoxError = Box<dyn std::error::Error + Send + Sync + 'static>;
+pub type BoxError = Box<dyn std::error::Error + Send + Sync>;
+pub type BoxRuntimePlugin = Box<dyn RuntimePlugin + Send + Sync>;
 
-pub trait RuntimePlugin {
+pub trait RuntimePlugin: Debug {
     fn configure(
         &self,
         cfg: &mut ConfigBag,
@@ -16,7 +18,7 @@ pub trait RuntimePlugin {
     ) -> Result<(), BoxError>;
 }
 
-impl RuntimePlugin for Box<dyn RuntimePlugin> {
+impl RuntimePlugin for BoxRuntimePlugin {
     fn configure(
         &self,
         cfg: &mut ConfigBag,
@@ -28,8 +30,8 @@ impl RuntimePlugin for Box<dyn RuntimePlugin> {
 
 #[derive(Default)]
 pub struct RuntimePlugins {
-    client_plugins: Vec<Box<dyn RuntimePlugin>>,
-    operation_plugins: Vec<Box<dyn RuntimePlugin>>,
+    client_plugins: Vec<BoxRuntimePlugin>,
+    operation_plugins: Vec<BoxRuntimePlugin>,
 }
 
 impl RuntimePlugins {
@@ -37,12 +39,18 @@ impl RuntimePlugins {
         Default::default()
     }
 
-    pub fn with_client_plugin(mut self, plugin: impl RuntimePlugin + 'static) -> Self {
+    pub fn with_client_plugin(
+        mut self,
+        plugin: impl RuntimePlugin + Send + Sync + 'static,
+    ) -> Self {
         self.client_plugins.push(Box::new(plugin));
         self
     }
 
-    pub fn with_operation_plugin(mut self, plugin: impl RuntimePlugin + 'static) -> Self {
+    pub fn with_operation_plugin(
+        mut self,
+        plugin: impl RuntimePlugin + Send + Sync + 'static,
+    ) -> Self {
         self.operation_plugins.push(Box::new(plugin));
         self
     }
@@ -78,6 +86,7 @@ mod tests {
     use crate::client::interceptors::Interceptors;
     use crate::config_bag::ConfigBag;
 
+    #[derive(Debug)]
     struct SomeStruct;
 
     impl RuntimePlugin for SomeStruct {

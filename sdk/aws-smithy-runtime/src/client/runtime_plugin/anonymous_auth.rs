@@ -29,7 +29,15 @@ const ANONYMOUS_AUTH_SCHEME_ID: AuthSchemeId = AuthSchemeId::new("anonymous");
 /// **The above components will replace any existing ones!** As such, don't use this plugin unless:
 /// - You only need to make anonymous requests, such as when interacting with [Open Data](https://aws.amazon.com/opendata/).
 /// - You're writing orchestrator tests and don't care about authentication.
+#[non_exhaustive]
+#[derive(Debug, Default)]
 pub struct AnonymousAuthRuntimePlugin;
+
+impl AnonymousAuthRuntimePlugin {
+    pub fn new() -> Self {
+        Self
+    }
+}
 
 impl RuntimePlugin for AnonymousAuthRuntimePlugin {
     fn configure(

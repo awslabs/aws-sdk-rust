@@ -23,7 +23,7 @@ use std::time::SystemTime;
 pub type HttpRequest = http::Request<SdkBody>;
 pub type HttpResponse = http::Response<SdkBody>;
 pub type BoxError = Box<dyn std::error::Error + Send + Sync + 'static>;
-pub type BoxFuture<T> = Pin<Box<dyn StdFuture<Output = Result<T, BoxError>>>>;
+pub type BoxFuture<T> = Pin<Box<dyn StdFuture<Output = Result<T, BoxError>> + Send>>;
 pub type Future<T> = NowOrLater<Result<T, BoxError>, BoxFuture<T>>;
 
 pub trait RequestSerializer: Send + Sync + fmt::Debug {

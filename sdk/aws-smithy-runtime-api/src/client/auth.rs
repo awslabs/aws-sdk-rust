@@ -67,7 +67,7 @@ impl AuthOptionResolver for Box<dyn AuthOptionResolver> {
 struct HttpAuthSchemesInner {
     schemes: Vec<(AuthSchemeId, Box<dyn HttpAuthScheme>)>,
 }
-#[derive(Debug)]
+#[derive(Clone, Debug)]
 pub struct HttpAuthSchemes {
     inner: Arc<HttpAuthSchemesInner>,
 }

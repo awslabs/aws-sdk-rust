@@ -262,6 +262,7 @@ mod tests {
         )
     }
 
+    #[derive(Debug)]
     struct TestOperationRuntimePlugin;
 
     impl RuntimePlugin for TestOperationRuntimePlugin {
@@ -310,6 +311,7 @@ mod tests {
                 }
             }
 
+            #[derive(Debug)]
             struct FailingInterceptorsOperationRuntimePlugin;
 
             impl RuntimePlugin for FailingInterceptorsOperationRuntimePlugin {
