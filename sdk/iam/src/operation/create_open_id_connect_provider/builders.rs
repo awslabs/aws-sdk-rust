@@ -57,6 +57,25 @@ impl CreateOpenIDConnectProviderFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn send_middleware(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_open_id_connect_provider::CreateOpenIdConnectProviderOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_open_id_connect_provider::CreateOpenIDConnectProviderError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Sends the request and returns the response.
     ///
     /// If an error occurs, an `SdkError` will be returned with additional details that
@@ -73,14 +92,7 @@ impl CreateOpenIDConnectProviderFluentBuilder {
             crate::operation::create_open_id_connect_provider::CreateOpenIDConnectProviderError,
         >,
     > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+        self.send_middleware().await
     }
     /// <p>The URL of the identity provider. The URL must begin with <code>https://</code> and should correspond to the <code>iss</code> claim in the provider's OpenID Connect ID tokens. Per the OIDC standard, path components are allowed but query parameters are not. Typically the URL consists of only a hostname, like <code>https://server.example.org</code> or <code>https://example.com</code>. The URL should not contain a port number. </p>
     /// <p>You cannot register the same provider multiple times in a single Amazon Web Services account. If you try to submit a URL that has already been used for an OpenID Connect provider in the Amazon Web Services account, you will get an error.</p>

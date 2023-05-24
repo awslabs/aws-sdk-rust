@@ -53,6 +53,25 @@ impl ModifySubnetAttributeFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn send_middleware(
+        self,
+    ) -> std::result::Result<
+        crate::operation::modify_subnet_attribute::ModifySubnetAttributeOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_subnet_attribute::ModifySubnetAttributeError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Sends the request and returns the response.
     ///
     /// If an error occurs, an `SdkError` will be returned with additional details that
@@ -69,14 +88,7 @@ impl ModifySubnetAttributeFluentBuilder {
             crate::operation::modify_subnet_attribute::ModifySubnetAttributeError,
         >,
     > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+        self.send_middleware().await
     }
     /// <p>Specify <code>true</code> to indicate that network interfaces created in the specified subnet should be assigned an IPv6 address. This includes a network interface that's created when launching an instance into the subnet (the instance therefore receives an IPv6 address). </p>
     /// <p>If you enable the IPv6 addressing feature for your subnet, your network interface or instance only receives an IPv6 address if it's created using version <code>2016-11-15</code> or later of the Amazon EC2 API.</p>

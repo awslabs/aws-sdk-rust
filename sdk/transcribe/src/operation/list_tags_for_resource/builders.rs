@@ -44,6 +44,25 @@ impl ListTagsForResourceFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn send_middleware(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Sends the request and returns the response.
     ///
     /// If an error occurs, an `SdkError` will be returned with additional details that
@@ -60,14 +79,7 @@ impl ListTagsForResourceFluentBuilder {
             crate::operation::list_tags_for_resource::ListTagsForResourceError,
         >,
     > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+        self.send_middleware().await
     }
     /// <p>Returns a list of all tags associated with the specified Amazon Resource Name (ARN). ARNs have the format <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
     /// <p>For example, <code>arn:aws:transcribe:us-west-2:111122223333:transcription-job/transcription-job-name</code>.</p>

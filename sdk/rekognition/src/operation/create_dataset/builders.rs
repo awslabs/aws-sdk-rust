@@ -47,6 +47,23 @@ impl CreateDatasetFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn send_middleware(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_dataset::CreateDatasetOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_dataset::CreateDatasetError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Sends the request and returns the response.
     ///
     /// If an error occurs, an `SdkError` will be returned with additional details that
@@ -61,14 +78,7 @@ impl CreateDatasetFluentBuilder {
         crate::operation::create_dataset::CreateDatasetOutput,
         aws_smithy_http::result::SdkError<crate::operation::create_dataset::CreateDatasetError>,
     > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+        self.send_middleware().await
     }
     /// <p> The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created. To add labeled images to the dataset, You can use the console or call <code>UpdateDatasetEntries</code>. </p>
     pub fn dataset_source(mut self, input: crate::types::DatasetSource) -> Self {

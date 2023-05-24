@@ -45,6 +45,25 @@ impl GetSavingsPlansUtilizationFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn send_middleware(
+        self,
+    ) -> std::result::Result<
+        crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Sends the request and returns the response.
     ///
     /// If an error occurs, an `SdkError` will be returned with additional details that
@@ -61,14 +80,7 @@ impl GetSavingsPlansUtilizationFluentBuilder {
             crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationError,
         >,
     > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+        self.send_middleware().await
     }
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
     pub fn time_period(mut self, input: crate::types::DateInterval) -> Self {

@@ -43,6 +43,25 @@ impl DisableAddressTransferFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn send_middleware(
+        self,
+    ) -> std::result::Result<
+        crate::operation::disable_address_transfer::DisableAddressTransferOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::disable_address_transfer::DisableAddressTransferError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Sends the request and returns the response.
     ///
     /// If an error occurs, an `SdkError` will be returned with additional details that
@@ -59,14 +78,7 @@ impl DisableAddressTransferFluentBuilder {
             crate::operation::disable_address_transfer::DisableAddressTransferError,
         >,
     > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+        self.send_middleware().await
     }
     /// <p>The allocation ID of an Elastic IP address.</p>
     pub fn allocation_id(mut self, input: impl Into<std::string::String>) -> Self {

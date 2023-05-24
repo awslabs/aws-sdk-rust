@@ -40,15 +40,9 @@ impl CreateServiceSpecificCredentialFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_service_specific_credential::CreateServiceSpecificCredentialOutput, aws_smithy_http::result::SdkError<crate::operation::create_service_specific_credential::CreateServiceSpecificCredentialError>>
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::create_service_specific_credential::CreateServiceSpecificCredentialOutput, aws_smithy_http::result::SdkError<crate::operation::create_service_specific_credential::CreateServiceSpecificCredentialError>>
                      {
         let op = self
             .inner
@@ -58,6 +52,18 @@ impl CreateServiceSpecificCredentialFluentBuilder {
             .await
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
+    }
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+                        pub async fn send(self) -> std::result::Result<crate::operation::create_service_specific_credential::CreateServiceSpecificCredentialOutput, aws_smithy_http::result::SdkError<crate::operation::create_service_specific_credential::CreateServiceSpecificCredentialError>>
+                         {
+        self.send_middleware().await
     }
     /// <p>The name of the IAM user that is to be associated with the credentials. The new service-specific credentials have the same permissions as the associated user except that they can be used only to access the specified service.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>

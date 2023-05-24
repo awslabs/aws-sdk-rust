@@ -47,15 +47,9 @@ impl DeleteBucketLifecycleConfigurationFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationError>>
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationError>>
                      {
         let op = self
             .inner
@@ -65,6 +59,18 @@ impl DeleteBucketLifecycleConfigurationFluentBuilder {
             .await
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
+    }
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+                        pub async fn send(self) -> std::result::Result<crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::delete_bucket_lifecycle_configuration::DeleteBucketLifecycleConfigurationError>>
+                         {
+        self.send_middleware().await
     }
     /// <p>The account ID of the lifecycle configuration to delete.</p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {

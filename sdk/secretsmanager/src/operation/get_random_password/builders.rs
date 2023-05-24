@@ -45,6 +45,25 @@ impl GetRandomPasswordFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn send_middleware(
+        self,
+    ) -> std::result::Result<
+        crate::operation::get_random_password::GetRandomPasswordOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_random_password::GetRandomPasswordError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Sends the request and returns the response.
     ///
     /// If an error occurs, an `SdkError` will be returned with additional details that
@@ -61,14 +80,7 @@ impl GetRandomPasswordFluentBuilder {
             crate::operation::get_random_password::GetRandomPasswordError,
         >,
     > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+        self.send_middleware().await
     }
     /// <p>The length of the password. If you don't include this parameter, the default length is 32 characters.</p>
     pub fn password_length(mut self, input: i64) -> Self {

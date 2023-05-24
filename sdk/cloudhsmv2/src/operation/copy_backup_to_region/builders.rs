@@ -43,6 +43,25 @@ impl CopyBackupToRegionFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn send_middleware(
+        self,
+    ) -> std::result::Result<
+        crate::operation::copy_backup_to_region::CopyBackupToRegionOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::copy_backup_to_region::CopyBackupToRegionError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Sends the request and returns the response.
     ///
     /// If an error occurs, an `SdkError` will be returned with additional details that
@@ -59,14 +78,7 @@ impl CopyBackupToRegionFluentBuilder {
             crate::operation::copy_backup_to_region::CopyBackupToRegionError,
         >,
     > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+        self.send_middleware().await
     }
     /// <p>The AWS region that will contain your copied CloudHSM cluster backup.</p>
     pub fn destination_region(mut self, input: impl Into<std::string::String>) -> Self {

@@ -43,6 +43,25 @@ impl UpdateDomainConfigFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn send_middleware(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_domain_config::UpdateDomainConfigOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_domain_config::UpdateDomainConfigError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Sends the request and returns the response.
     ///
     /// If an error occurs, an `SdkError` will be returned with additional details that
@@ -59,14 +78,7 @@ impl UpdateDomainConfigFluentBuilder {
             crate::operation::update_domain_config::UpdateDomainConfigError,
         >,
     > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+        self.send_middleware().await
     }
     /// <p>The name of the domain that you're updating.</p>
     pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {

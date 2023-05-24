@@ -48,6 +48,25 @@ impl DescribeSupportedLanguagesFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn send_middleware(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_supported_languages::DescribeSupportedLanguagesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_supported_languages::DescribeSupportedLanguagesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Sends the request and returns the response.
     ///
     /// If an error occurs, an `SdkError` will be returned with additional details that
@@ -64,14 +83,7 @@ impl DescribeSupportedLanguagesFluentBuilder {
             crate::operation::describe_supported_languages::DescribeSupportedLanguagesError,
         >,
     > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+        self.send_middleware().await
     }
     /// <p>The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>.</p>
     pub fn issue_type(mut self, input: impl Into<std::string::String>) -> Self {

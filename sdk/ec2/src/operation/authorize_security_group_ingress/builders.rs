@@ -49,6 +49,25 @@ impl AuthorizeSecurityGroupIngressFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn send_middleware(
+        self,
+    ) -> std::result::Result<
+        crate::operation::authorize_security_group_ingress::AuthorizeSecurityGroupIngressOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::authorize_security_group_ingress::AuthorizeSecurityGroupIngressError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Sends the request and returns the response.
     ///
     /// If an error occurs, an `SdkError` will be returned with additional details that
@@ -65,14 +84,7 @@ impl AuthorizeSecurityGroupIngressFluentBuilder {
             crate::operation::authorize_security_group_ingress::AuthorizeSecurityGroupIngressError,
         >,
     > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+        self.send_middleware().await
     }
     /// <p>The IPv4 address range, in CIDR format. You can't specify this parameter when specifying a source security group. To specify an IPv6 address range, use a set of IP permissions.</p>
     /// <p>Alternatively, use a set of IP permissions to specify multiple rules and a description for the rule.</p>

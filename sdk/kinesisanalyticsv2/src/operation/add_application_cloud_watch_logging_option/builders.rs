@@ -36,15 +36,9 @@ impl AddApplicationCloudWatchLoggingOptionFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput, aws_smithy_http::result::SdkError<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError>>
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput, aws_smithy_http::result::SdkError<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError>>
                      {
         let op = self
             .inner
@@ -54,6 +48,18 @@ impl AddApplicationCloudWatchLoggingOptionFluentBuilder {
             .await
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
+    }
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+                        pub async fn send(self) -> std::result::Result<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput, aws_smithy_http::result::SdkError<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError>>
+                         {
+        self.send_middleware().await
     }
     /// <p>The Kinesis Data Analytics application name.</p>
     pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {

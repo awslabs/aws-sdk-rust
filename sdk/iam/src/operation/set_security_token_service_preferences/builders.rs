@@ -39,15 +39,9 @@ impl SetSecurityTokenServicePreferencesFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesOutput, aws_smithy_http::result::SdkError<crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesError>>
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesOutput, aws_smithy_http::result::SdkError<crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesError>>
                      {
         let op = self
             .inner
@@ -57,6 +51,18 @@ impl SetSecurityTokenServicePreferencesFluentBuilder {
             .await
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
+    }
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+                        pub async fn send(self) -> std::result::Result<crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesOutput, aws_smithy_http::result::SdkError<crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferencesError>>
+                         {
+        self.send_middleware().await
     }
     /// <p>The version of the global endpoint token. Version 1 tokens are valid only in Amazon Web Services Regions that are available by default. These tokens do not work in manually enabled Regions, such as Asia Pacific (Hong Kong). Version 2 tokens are valid in all Regions. However, version 2 tokens are longer and might affect systems where you temporarily store tokens.</p>
     /// <p>For information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>

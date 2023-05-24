@@ -43,6 +43,25 @@ impl DeleteUserByPrincipalIdFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn send_middleware(
+        self,
+    ) -> std::result::Result<
+        crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Sends the request and returns the response.
     ///
     /// If an error occurs, an `SdkError` will be returned with additional details that
@@ -59,14 +78,7 @@ impl DeleteUserByPrincipalIdFluentBuilder {
             crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError,
         >,
     > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+        self.send_middleware().await
     }
     /// <p>The principal ID of the user.</p>
     pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {

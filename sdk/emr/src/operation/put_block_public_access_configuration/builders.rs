@@ -36,15 +36,9 @@ impl PutBlockPublicAccessConfigurationFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationError>>
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationError>>
                      {
         let op = self
             .inner
@@ -54,6 +48,18 @@ impl PutBlockPublicAccessConfigurationFluentBuilder {
             .await
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
+    }
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+                        pub async fn send(self) -> std::result::Result<crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationError>>
+                         {
+        self.send_middleware().await
     }
     /// <p>A configuration for Amazon EMR block public access. The configuration applies to all clusters created in your account for the current Region. The configuration specifies whether block public access is enabled. If block public access is enabled, security groups associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p> <note>
     /// <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an Amazon EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>

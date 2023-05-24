@@ -43,6 +43,25 @@ impl SetPrincipalTagAttributeMapFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn send_middleware(
+        self,
+    ) -> std::result::Result<
+        crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Sends the request and returns the response.
     ///
     /// If an error occurs, an `SdkError` will be returned with additional details that
@@ -59,14 +78,7 @@ impl SetPrincipalTagAttributeMapFluentBuilder {
             crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapError,
         >,
     > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+        self.send_middleware().await
     }
     /// <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
     pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {

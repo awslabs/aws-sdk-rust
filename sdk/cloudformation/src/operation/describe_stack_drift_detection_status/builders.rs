@@ -37,15 +37,9 @@ impl DescribeStackDriftDetectionStatusFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusOutput, aws_smithy_http::result::SdkError<crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusError>>
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusOutput, aws_smithy_http::result::SdkError<crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusError>>
                      {
         let op = self
             .inner
@@ -55,6 +49,18 @@ impl DescribeStackDriftDetectionStatusFluentBuilder {
             .await
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
+    }
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+                        pub async fn send(self) -> std::result::Result<crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusOutput, aws_smithy_http::result::SdkError<crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatusError>>
+                         {
+        self.send_middleware().await
     }
     /// <p>The ID of the drift detection results of this operation.</p>
     /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is run. However, the number of drift results CloudFormation retains for any given stack, and for how long, may vary.</p>

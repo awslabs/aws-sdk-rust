@@ -48,6 +48,25 @@ impl PutDataProtectionPolicyFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn send_middleware(
+        self,
+    ) -> std::result::Result<
+        crate::operation::put_data_protection_policy::PutDataProtectionPolicyOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_data_protection_policy::PutDataProtectionPolicyError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Sends the request and returns the response.
     ///
     /// If an error occurs, an `SdkError` will be returned with additional details that
@@ -64,14 +83,7 @@ impl PutDataProtectionPolicyFluentBuilder {
             crate::operation::put_data_protection_policy::PutDataProtectionPolicyError,
         >,
     > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+        self.send_middleware().await
     }
     /// <p>Specify either the log group name or log group ARN.</p>
     pub fn log_group_identifier(mut self, input: impl Into<std::string::String>) -> Self {

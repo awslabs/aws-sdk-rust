@@ -40,15 +40,9 @@ impl UpdateMediaStorageConfigurationFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationError>>
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationError>>
                      {
         let op = self
             .inner
@@ -58,6 +52,18 @@ impl UpdateMediaStorageConfigurationFluentBuilder {
             .await
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
+    }
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+                        pub async fn send(self) -> std::result::Result<crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::update_media_storage_configuration::UpdateMediaStorageConfigurationError>>
+                         {
+        self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the channel.</p>
     pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {

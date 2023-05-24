@@ -43,6 +43,25 @@ impl DescribeFHIRImportJobFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn send_middleware(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_fhir_import_job::DescribeFhirImportJobOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_fhir_import_job::DescribeFHIRImportJobError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Sends the request and returns the response.
     ///
     /// If an error occurs, an `SdkError` will be returned with additional details that
@@ -59,14 +78,7 @@ impl DescribeFHIRImportJobFluentBuilder {
             crate::operation::describe_fhir_import_job::DescribeFHIRImportJobError,
         >,
     > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+        self.send_middleware().await
     }
     /// <p>The AWS-generated ID of the Data Store.</p>
     pub fn datastore_id(mut self, input: impl Into<std::string::String>) -> Self {

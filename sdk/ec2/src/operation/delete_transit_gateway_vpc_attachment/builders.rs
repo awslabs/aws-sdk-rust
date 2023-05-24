@@ -36,15 +36,9 @@ impl DeleteTransitGatewayVpcAttachmentFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::delete_transit_gateway_vpc_attachment::DeleteTransitGatewayVpcAttachmentOutput, aws_smithy_http::result::SdkError<crate::operation::delete_transit_gateway_vpc_attachment::DeleteTransitGatewayVpcAttachmentError>>
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::delete_transit_gateway_vpc_attachment::DeleteTransitGatewayVpcAttachmentOutput, aws_smithy_http::result::SdkError<crate::operation::delete_transit_gateway_vpc_attachment::DeleteTransitGatewayVpcAttachmentError>>
                      {
         let op = self
             .inner
@@ -54,6 +48,18 @@ impl DeleteTransitGatewayVpcAttachmentFluentBuilder {
             .await
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
+    }
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+                        pub async fn send(self) -> std::result::Result<crate::operation::delete_transit_gateway_vpc_attachment::DeleteTransitGatewayVpcAttachmentOutput, aws_smithy_http::result::SdkError<crate::operation::delete_transit_gateway_vpc_attachment::DeleteTransitGatewayVpcAttachmentError>>
+                         {
+        self.send_middleware().await
     }
     /// <p>The ID of the attachment.</p>
     pub fn transit_gateway_attachment_id(mut self, input: impl Into<std::string::String>) -> Self {

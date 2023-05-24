@@ -43,6 +43,25 @@ impl DeleteGitHubAccountTokenFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn send_middleware(
+        self,
+    ) -> std::result::Result<
+        crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Sends the request and returns the response.
     ///
     /// If an error occurs, an `SdkError` will be returned with additional details that
@@ -59,14 +78,7 @@ impl DeleteGitHubAccountTokenFluentBuilder {
             crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenError,
         >,
     > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+        self.send_middleware().await
     }
     /// <p>The name of the GitHub account connection to delete.</p>
     pub fn token_name(mut self, input: impl Into<std::string::String>) -> Self {

@@ -60,15 +60,9 @@ impl GenerateOrganizationsAccessReportFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportOutput, aws_smithy_http::result::SdkError<crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportError>>
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportOutput, aws_smithy_http::result::SdkError<crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportError>>
                      {
         let op = self
             .inner
@@ -78,6 +72,18 @@ impl GenerateOrganizationsAccessReportFluentBuilder {
             .await
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
+    }
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+                        pub async fn send(self) -> std::result::Result<crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportOutput, aws_smithy_http::result::SdkError<crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportError>>
+                         {
+        self.send_middleware().await
     }
     /// <p>The path of the Organizations entity (root, OU, or account). You can build an entity path using the known structure of your organization. For example, assume that your account ID is <code>123456789012</code> and its parent OU ID is <code>ou-rge0-awsabcde</code>. The organization root ID is <code>r-f6g7h8i9j0example</code> and your organization ID is <code>o-a1b2c3d4e5</code>. Your entity path is <code>o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-rge0-awsabcde/123456789012</code>.</p>
     pub fn entity_path(mut self, input: impl Into<std::string::String>) -> Self {

@@ -45,6 +45,25 @@ impl ReplicateSecretToRegionsFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn send_middleware(
+        self,
+    ) -> std::result::Result<
+        crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Sends the request and returns the response.
     ///
     /// If an error occurs, an `SdkError` will be returned with additional details that
@@ -61,14 +80,7 @@ impl ReplicateSecretToRegionsFluentBuilder {
             crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsError,
         >,
     > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+        self.send_middleware().await
     }
     /// <p>The ARN or name of the secret to replicate.</p>
     pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {

@@ -38,15 +38,9 @@ impl CreateAccessControlConfigurationFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_access_control_configuration::CreateAccessControlConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::create_access_control_configuration::CreateAccessControlConfigurationError>>
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::create_access_control_configuration::CreateAccessControlConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::create_access_control_configuration::CreateAccessControlConfigurationError>>
                      {
         let op = self
             .inner
@@ -56,6 +50,18 @@ impl CreateAccessControlConfigurationFluentBuilder {
             .await
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
+    }
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+                        pub async fn send(self) -> std::result::Result<crate::operation::create_access_control_configuration::CreateAccessControlConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::create_access_control_configuration::CreateAccessControlConfigurationError>>
+                         {
+        self.send_middleware().await
     }
     /// <p>The identifier of the index to create an access control configuration for your documents.</p>
     pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {

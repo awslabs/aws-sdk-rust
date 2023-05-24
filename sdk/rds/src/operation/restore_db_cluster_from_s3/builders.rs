@@ -49,6 +49,25 @@ impl RestoreDBClusterFromS3FluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn send_middleware(
+        self,
+    ) -> std::result::Result<
+        crate::operation::restore_db_cluster_from_s3::RestoreDbClusterFromS3Output,
+        aws_smithy_http::result::SdkError<
+            crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Sends the request and returns the response.
     ///
     /// If an error occurs, an `SdkError` will be returned with additional details that
@@ -65,14 +84,7 @@ impl RestoreDBClusterFromS3FluentBuilder {
             crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error,
         >,
     > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+        self.send_middleware().await
     }
     /// Appends an item to `AvailabilityZones`.
     ///

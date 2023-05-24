@@ -41,15 +41,9 @@ impl AllocateConnectionOnInterconnectFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectOutput, aws_smithy_http::result::SdkError<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError>>
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectOutput, aws_smithy_http::result::SdkError<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError>>
                      {
         let op = self
             .inner
@@ -59,6 +53,18 @@ impl AllocateConnectionOnInterconnectFluentBuilder {
             .await
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
+    }
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+                        pub async fn send(self) -> std::result::Result<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectOutput, aws_smithy_http::result::SdkError<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError>>
+                         {
+        self.send_middleware().await
     }
     /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.</p>
     pub fn bandwidth(mut self, input: impl Into<std::string::String>) -> Self {

@@ -36,15 +36,9 @@ impl DescribeSecurityGroupReferencesFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_security_group_references::DescribeSecurityGroupReferencesOutput, aws_smithy_http::result::SdkError<crate::operation::describe_security_group_references::DescribeSecurityGroupReferencesError>>
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::describe_security_group_references::DescribeSecurityGroupReferencesOutput, aws_smithy_http::result::SdkError<crate::operation::describe_security_group_references::DescribeSecurityGroupReferencesError>>
                      {
         let op = self
             .inner
@@ -54,6 +48,18 @@ impl DescribeSecurityGroupReferencesFluentBuilder {
             .await
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
+    }
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+                        pub async fn send(self) -> std::result::Result<crate::operation::describe_security_group_references::DescribeSecurityGroupReferencesOutput, aws_smithy_http::result::SdkError<crate::operation::describe_security_group_references::DescribeSecurityGroupReferencesError>>
+                         {
+        self.send_middleware().await
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {

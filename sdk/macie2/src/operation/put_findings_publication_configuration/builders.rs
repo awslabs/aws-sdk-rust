@@ -36,15 +36,9 @@ impl PutFindingsPublicationConfigurationFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationError>>
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationError>>
                      {
         let op = self
             .inner
@@ -54,6 +48,18 @@ impl PutFindingsPublicationConfigurationFluentBuilder {
             .await
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
+    }
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+                        pub async fn send(self) -> std::result::Result<crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationError>>
+                         {
+        self.send_middleware().await
     }
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {

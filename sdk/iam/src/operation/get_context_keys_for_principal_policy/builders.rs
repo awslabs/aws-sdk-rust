@@ -39,15 +39,9 @@ impl GetContextKeysForPrincipalPolicyFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyOutput, aws_smithy_http::result::SdkError<crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyError>>
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyOutput, aws_smithy_http::result::SdkError<crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyError>>
                      {
         let op = self
             .inner
@@ -57,6 +51,18 @@ impl GetContextKeysForPrincipalPolicyFluentBuilder {
             .await
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
+    }
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+                        pub async fn send(self) -> std::result::Result<crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyOutput, aws_smithy_http::result::SdkError<crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyError>>
+                         {
+        self.send_middleware().await
     }
     /// <p>The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies that are attached to the user. The list also includes all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>

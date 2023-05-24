@@ -36,15 +36,9 @@ impl PutEmailIdentityConfigurationSetAttributesFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesOutput, aws_smithy_http::result::SdkError<crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesError>>
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesOutput, aws_smithy_http::result::SdkError<crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesError>>
                      {
         let op = self
             .inner
@@ -54,6 +48,18 @@ impl PutEmailIdentityConfigurationSetAttributesFluentBuilder {
             .await
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
+    }
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+                        pub async fn send(self) -> std::result::Result<crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesOutput, aws_smithy_http::result::SdkError<crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesError>>
+                         {
+        self.send_middleware().await
     }
     /// <p>The email address or domain to associate with a configuration set.</p>
     pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {

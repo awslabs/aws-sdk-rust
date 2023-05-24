@@ -83,15 +83,9 @@ impl ImportCertificateAuthorityCertificateFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateOutput, aws_smithy_http::result::SdkError<crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateError>>
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateOutput, aws_smithy_http::result::SdkError<crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateError>>
                      {
         let op = self
             .inner
@@ -101,6 +95,18 @@ impl ImportCertificateAuthorityCertificateFluentBuilder {
             .await
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
+    }
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+                        pub async fn send(self) -> std::result::Result<crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateOutput, aws_smithy_http::result::SdkError<crate::operation::import_certificate_authority_certificate::ImportCertificateAuthorityCertificateError>>
+                         {
+        self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) that was returned when you called <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>. This must be of the form: </p>
     /// <p> <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code> </p>

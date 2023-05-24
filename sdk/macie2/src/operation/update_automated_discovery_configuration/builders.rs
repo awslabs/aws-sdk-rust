@@ -36,15 +36,9 @@ impl UpdateAutomatedDiscoveryConfigurationFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_automated_discovery_configuration::UpdateAutomatedDiscoveryConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::update_automated_discovery_configuration::UpdateAutomatedDiscoveryConfigurationError>>
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::update_automated_discovery_configuration::UpdateAutomatedDiscoveryConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::update_automated_discovery_configuration::UpdateAutomatedDiscoveryConfigurationError>>
                      {
         let op = self
             .inner
@@ -54,6 +48,18 @@ impl UpdateAutomatedDiscoveryConfigurationFluentBuilder {
             .await
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
+    }
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+                        pub async fn send(self) -> std::result::Result<crate::operation::update_automated_discovery_configuration::UpdateAutomatedDiscoveryConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::update_automated_discovery_configuration::UpdateAutomatedDiscoveryConfigurationError>>
+                         {
+        self.send_middleware().await
     }
     /// <p>The new status of automated sensitive data discovery for the account. Valid values are: ENABLED, start or resume automated sensitive data discovery activities for the account; and, DISABLED, stop performing automated sensitive data discovery activities for the account.</p>
     /// <p>When you enable automated sensitive data discovery for the first time, Amazon Macie uses default configuration settings to determine which data sources to analyze and which managed data identifiers to use. To change these settings, use the UpdateClassificationScope and UpdateSensitivityInspectionTemplate operations, respectively. If you change the settings and subsequently disable the configuration, Amazon Macie retains your changes.</p>

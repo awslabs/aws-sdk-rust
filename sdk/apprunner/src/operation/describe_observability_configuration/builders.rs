@@ -36,15 +36,9 @@ impl DescribeObservabilityConfigurationFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_observability_configuration::DescribeObservabilityConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::describe_observability_configuration::DescribeObservabilityConfigurationError>>
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::describe_observability_configuration::DescribeObservabilityConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::describe_observability_configuration::DescribeObservabilityConfigurationError>>
                      {
         let op = self
             .inner
@@ -54,6 +48,18 @@ impl DescribeObservabilityConfigurationFluentBuilder {
             .await
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
+    }
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+                        pub async fn send(self) -> std::result::Result<crate::operation::describe_observability_configuration::DescribeObservabilityConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::describe_observability_configuration::DescribeObservabilityConfigurationError>>
+                         {
+        self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want a description for.</p>
     /// <p>The ARN can be a full observability configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is described.</p>

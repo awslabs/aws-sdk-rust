@@ -40,15 +40,9 @@ impl AttachCertificateToDistributionFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionOutput, aws_smithy_http::result::SdkError<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError>>
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionOutput, aws_smithy_http::result::SdkError<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError>>
                      {
         let op = self
             .inner
@@ -58,6 +52,18 @@ impl AttachCertificateToDistributionFluentBuilder {
             .await
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
+    }
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+                        pub async fn send(self) -> std::result::Result<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionOutput, aws_smithy_http::result::SdkError<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError>>
+                         {
+        self.send_middleware().await
     }
     /// <p>The name of the distribution that the certificate will be attached to.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>

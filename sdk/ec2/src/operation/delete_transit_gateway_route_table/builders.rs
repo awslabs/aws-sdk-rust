@@ -36,15 +36,9 @@ impl DeleteTransitGatewayRouteTableFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::delete_transit_gateway_route_table::DeleteTransitGatewayRouteTableOutput, aws_smithy_http::result::SdkError<crate::operation::delete_transit_gateway_route_table::DeleteTransitGatewayRouteTableError>>
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::delete_transit_gateway_route_table::DeleteTransitGatewayRouteTableOutput, aws_smithy_http::result::SdkError<crate::operation::delete_transit_gateway_route_table::DeleteTransitGatewayRouteTableError>>
                      {
         let op = self
             .inner
@@ -54,6 +48,18 @@ impl DeleteTransitGatewayRouteTableFluentBuilder {
             .await
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
+    }
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+                        pub async fn send(self) -> std::result::Result<crate::operation::delete_transit_gateway_route_table::DeleteTransitGatewayRouteTableOutput, aws_smithy_http::result::SdkError<crate::operation::delete_transit_gateway_route_table::DeleteTransitGatewayRouteTableError>>
+                         {
+        self.send_middleware().await
     }
     /// <p>The ID of the transit gateway route table.</p>
     pub fn transit_gateway_route_table_id(mut self, input: impl Into<std::string::String>) -> Self {

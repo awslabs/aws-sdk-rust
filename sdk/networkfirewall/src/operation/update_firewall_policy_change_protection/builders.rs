@@ -36,15 +36,9 @@ impl UpdateFirewallPolicyChangeProtectionFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionOutput, aws_smithy_http::result::SdkError<crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionError>>
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionOutput, aws_smithy_http::result::SdkError<crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionError>>
                      {
         let op = self
             .inner
@@ -54,6 +48,18 @@ impl UpdateFirewallPolicyChangeProtectionFluentBuilder {
             .await
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
+    }
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+                        pub async fn send(self) -> std::result::Result<crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionOutput, aws_smithy_http::result::SdkError<crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionError>>
+                         {
+        self.send_middleware().await
     }
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>

@@ -46,6 +46,25 @@ impl ImportStacksToStackSetFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn send_middleware(
+        self,
+    ) -> std::result::Result<
+        crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Sends the request and returns the response.
     ///
     /// If an error occurs, an `SdkError` will be returned with additional details that
@@ -62,14 +81,7 @@ impl ImportStacksToStackSetFluentBuilder {
             crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError,
         >,
     > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
+        self.send_middleware().await
     }
     /// <p>The name of the stack set. The name must be unique in the Region where you create your stack set.</p>
     pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {

@@ -36,15 +36,9 @@ impl GetCompatibleElasticsearchVersionsFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::get_compatible_elasticsearch_versions::GetCompatibleElasticsearchVersionsOutput, aws_smithy_http::result::SdkError<crate::operation::get_compatible_elasticsearch_versions::GetCompatibleElasticsearchVersionsError>>
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::get_compatible_elasticsearch_versions::GetCompatibleElasticsearchVersionsOutput, aws_smithy_http::result::SdkError<crate::operation::get_compatible_elasticsearch_versions::GetCompatibleElasticsearchVersionsError>>
                      {
         let op = self
             .inner
@@ -54,6 +48,18 @@ impl GetCompatibleElasticsearchVersionsFluentBuilder {
             .await
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
+    }
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+                        pub async fn send(self) -> std::result::Result<crate::operation::get_compatible_elasticsearch_versions::GetCompatibleElasticsearchVersionsOutput, aws_smithy_http::result::SdkError<crate::operation::get_compatible_elasticsearch_versions::GetCompatibleElasticsearchVersionsError>>
+                         {
+        self.send_middleware().await
     }
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {

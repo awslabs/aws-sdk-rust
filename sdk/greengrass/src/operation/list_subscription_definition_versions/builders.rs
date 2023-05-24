@@ -36,15 +36,9 @@ impl ListSubscriptionDefinitionVersionsFluentBuilder {
         Ok(crate::client::customize::CustomizableOperation { handle, operation })
     }
 
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsOutput, aws_smithy_http::result::SdkError<crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsError>>
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsOutput, aws_smithy_http::result::SdkError<crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsError>>
                      {
         let op = self
             .inner
@@ -54,6 +48,18 @@ impl ListSubscriptionDefinitionVersionsFluentBuilder {
             .await
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
+    }
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+                        pub async fn send(self) -> std::result::Result<crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsOutput, aws_smithy_http::result::SdkError<crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsError>>
+                         {
+        self.send_middleware().await
     }
     /// The maximum number of results to be returned per request.
     pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
