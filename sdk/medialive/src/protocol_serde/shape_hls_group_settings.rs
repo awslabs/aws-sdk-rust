@@ -86,110 +86,110 @@ pub fn ser_hls_group_settings(
             .key("incompleteSegmentBehavior")
             .string(var_25.as_str());
     }
-    if input.index_n_segments != 0 {
+    if let Some(var_26) = &input.index_n_segments {
         object.key("indexNSegments").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.index_n_segments).into()),
+            aws_smithy_types::Number::NegInt((*var_26).into()),
         );
     }
-    if let Some(var_26) = &input.input_loss_action {
-        object.key("inputLossAction").string(var_26.as_str());
+    if let Some(var_27) = &input.input_loss_action {
+        object.key("inputLossAction").string(var_27.as_str());
     }
-    if let Some(var_27) = &input.iv_in_manifest {
-        object.key("ivInManifest").string(var_27.as_str());
+    if let Some(var_28) = &input.iv_in_manifest {
+        object.key("ivInManifest").string(var_28.as_str());
     }
-    if let Some(var_28) = &input.iv_source {
-        object.key("ivSource").string(var_28.as_str());
+    if let Some(var_29) = &input.iv_source {
+        object.key("ivSource").string(var_29.as_str());
     }
-    if input.keep_segments != 0 {
+    if let Some(var_30) = &input.keep_segments {
         object.key("keepSegments").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.keep_segments).into()),
+            aws_smithy_types::Number::NegInt((*var_30).into()),
         );
     }
-    if let Some(var_29) = &input.key_format {
-        object.key("keyFormat").string(var_29.as_str());
+    if let Some(var_31) = &input.key_format {
+        object.key("keyFormat").string(var_31.as_str());
     }
-    if let Some(var_30) = &input.key_format_versions {
-        object.key("keyFormatVersions").string(var_30.as_str());
+    if let Some(var_32) = &input.key_format_versions {
+        object.key("keyFormatVersions").string(var_32.as_str());
     }
-    if let Some(var_31) = &input.key_provider_settings {
+    if let Some(var_33) = &input.key_provider_settings {
         #[allow(unused_mut)]
-        let mut object_32 = object.key("keyProviderSettings").start_object();
+        let mut object_34 = object.key("keyProviderSettings").start_object();
         crate::protocol_serde::shape_key_provider_settings::ser_key_provider_settings(
-            &mut object_32,
-            var_31,
+            &mut object_34,
+            var_33,
         )?;
-        object_32.finish();
+        object_34.finish();
     }
-    if let Some(var_33) = &input.manifest_compression {
-        object.key("manifestCompression").string(var_33.as_str());
+    if let Some(var_35) = &input.manifest_compression {
+        object.key("manifestCompression").string(var_35.as_str());
     }
-    if let Some(var_34) = &input.manifest_duration_format {
-        object.key("manifestDurationFormat").string(var_34.as_str());
+    if let Some(var_36) = &input.manifest_duration_format {
+        object.key("manifestDurationFormat").string(var_36.as_str());
     }
-    if input.min_segment_length != 0 {
+    if let Some(var_37) = &input.min_segment_length {
         object.key("minSegmentLength").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.min_segment_length).into()),
+            aws_smithy_types::Number::NegInt((*var_37).into()),
         );
     }
-    if let Some(var_35) = &input.mode {
-        object.key("mode").string(var_35.as_str());
+    if let Some(var_38) = &input.mode {
+        object.key("mode").string(var_38.as_str());
     }
-    if let Some(var_36) = &input.output_selection {
-        object.key("outputSelection").string(var_36.as_str());
+    if let Some(var_39) = &input.output_selection {
+        object.key("outputSelection").string(var_39.as_str());
     }
-    if let Some(var_37) = &input.program_date_time {
-        object.key("programDateTime").string(var_37.as_str());
+    if let Some(var_40) = &input.program_date_time {
+        object.key("programDateTime").string(var_40.as_str());
     }
-    if let Some(var_38) = &input.program_date_time_clock {
-        object.key("programDateTimeClock").string(var_38.as_str());
+    if let Some(var_41) = &input.program_date_time_clock {
+        object.key("programDateTimeClock").string(var_41.as_str());
     }
-    if input.program_date_time_period != 0 {
+    if let Some(var_42) = &input.program_date_time_period {
         object.key("programDateTimePeriod").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.program_date_time_period).into()),
+            aws_smithy_types::Number::NegInt((*var_42).into()),
         );
     }
-    if let Some(var_39) = &input.redundant_manifest {
-        object.key("redundantManifest").string(var_39.as_str());
+    if let Some(var_43) = &input.redundant_manifest {
+        object.key("redundantManifest").string(var_43.as_str());
     }
-    if input.segment_length != 0 {
+    if let Some(var_44) = &input.segment_length {
         object.key("segmentLength").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.segment_length).into()),
+            aws_smithy_types::Number::NegInt((*var_44).into()),
         );
     }
-    if let Some(var_40) = &input.segmentation_mode {
-        object.key("segmentationMode").string(var_40.as_str());
+    if let Some(var_45) = &input.segmentation_mode {
+        object.key("segmentationMode").string(var_45.as_str());
     }
-    if input.segments_per_subdirectory != 0 {
+    if let Some(var_46) = &input.segments_per_subdirectory {
         object.key("segmentsPerSubdirectory").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.segments_per_subdirectory).into()),
+            aws_smithy_types::Number::NegInt((*var_46).into()),
         );
     }
-    if let Some(var_41) = &input.stream_inf_resolution {
-        object.key("streamInfResolution").string(var_41.as_str());
+    if let Some(var_47) = &input.stream_inf_resolution {
+        object.key("streamInfResolution").string(var_47.as_str());
     }
-    if let Some(var_42) = &input.timed_metadata_id3_frame {
-        object.key("timedMetadataId3Frame").string(var_42.as_str());
+    if let Some(var_48) = &input.timed_metadata_id3_frame {
+        object.key("timedMetadataId3Frame").string(var_48.as_str());
     }
-    if input.timed_metadata_id3_period != 0 {
+    if let Some(var_49) = &input.timed_metadata_id3_period {
         object.key("timedMetadataId3Period").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.timed_metadata_id3_period).into()),
+            aws_smithy_types::Number::NegInt((*var_49).into()),
         );
     }
-    if input.timestamp_delta_milliseconds != 0 {
+    if let Some(var_50) = &input.timestamp_delta_milliseconds {
         object.key("timestampDeltaMilliseconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.timestamp_delta_milliseconds).into()),
+            aws_smithy_types::Number::NegInt((*var_50).into()),
         );
     }
-    if let Some(var_43) = &input.ts_file_mode {
-        object.key("tsFileMode").string(var_43.as_str());
+    if let Some(var_51) = &input.ts_file_mode {
+        object.key("tsFileMode").string(var_51.as_str());
     }
     Ok(())
 }

@@ -112,6 +112,9 @@ pub mod get_enabled_standards;
 /// Types for the `GetFindingAggregator` operation.
 pub mod get_finding_aggregator;
 
+/// Types for the `GetFindingHistory` operation.
+pub mod get_finding_history;
+
 /// Types for the `GetFindings` operation.
 pub mod get_findings;
 

@@ -12,37 +12,37 @@ pub struct MultiplexProgramPacketIdentifiersMap {
     pub dvb_sub_pids: std::option::Option<std::vec::Vec<i32>>,
     /// Placeholder documentation for __integer
     #[doc(hidden)]
-    pub dvb_teletext_pid: i32,
+    pub dvb_teletext_pid: std::option::Option<i32>,
     /// Placeholder documentation for __integer
     #[doc(hidden)]
-    pub etv_platform_pid: i32,
+    pub etv_platform_pid: std::option::Option<i32>,
     /// Placeholder documentation for __integer
     #[doc(hidden)]
-    pub etv_signal_pid: i32,
+    pub etv_signal_pid: std::option::Option<i32>,
     /// Placeholder documentation for __listOf__integer
     #[doc(hidden)]
     pub klv_data_pids: std::option::Option<std::vec::Vec<i32>>,
     /// Placeholder documentation for __integer
     #[doc(hidden)]
-    pub pcr_pid: i32,
+    pub pcr_pid: std::option::Option<i32>,
     /// Placeholder documentation for __integer
     #[doc(hidden)]
-    pub pmt_pid: i32,
+    pub pmt_pid: std::option::Option<i32>,
     /// Placeholder documentation for __integer
     #[doc(hidden)]
-    pub private_metadata_pid: i32,
+    pub private_metadata_pid: std::option::Option<i32>,
     /// Placeholder documentation for __listOf__integer
     #[doc(hidden)]
     pub scte27_pids: std::option::Option<std::vec::Vec<i32>>,
     /// Placeholder documentation for __integer
     #[doc(hidden)]
-    pub scte35_pid: i32,
+    pub scte35_pid: std::option::Option<i32>,
     /// Placeholder documentation for __integer
     #[doc(hidden)]
-    pub timed_metadata_pid: i32,
+    pub timed_metadata_pid: std::option::Option<i32>,
     /// Placeholder documentation for __integer
     #[doc(hidden)]
-    pub video_pid: i32,
+    pub video_pid: std::option::Option<i32>,
 }
 impl MultiplexProgramPacketIdentifiersMap {
     /// Placeholder documentation for __listOf__integer
@@ -54,15 +54,15 @@ impl MultiplexProgramPacketIdentifiersMap {
         self.dvb_sub_pids.as_deref()
     }
     /// Placeholder documentation for __integer
-    pub fn dvb_teletext_pid(&self) -> i32 {
+    pub fn dvb_teletext_pid(&self) -> std::option::Option<i32> {
         self.dvb_teletext_pid
     }
     /// Placeholder documentation for __integer
-    pub fn etv_platform_pid(&self) -> i32 {
+    pub fn etv_platform_pid(&self) -> std::option::Option<i32> {
         self.etv_platform_pid
     }
     /// Placeholder documentation for __integer
-    pub fn etv_signal_pid(&self) -> i32 {
+    pub fn etv_signal_pid(&self) -> std::option::Option<i32> {
         self.etv_signal_pid
     }
     /// Placeholder documentation for __listOf__integer
@@ -70,15 +70,15 @@ impl MultiplexProgramPacketIdentifiersMap {
         self.klv_data_pids.as_deref()
     }
     /// Placeholder documentation for __integer
-    pub fn pcr_pid(&self) -> i32 {
+    pub fn pcr_pid(&self) -> std::option::Option<i32> {
         self.pcr_pid
     }
     /// Placeholder documentation for __integer
-    pub fn pmt_pid(&self) -> i32 {
+    pub fn pmt_pid(&self) -> std::option::Option<i32> {
         self.pmt_pid
     }
     /// Placeholder documentation for __integer
-    pub fn private_metadata_pid(&self) -> i32 {
+    pub fn private_metadata_pid(&self) -> std::option::Option<i32> {
         self.private_metadata_pid
     }
     /// Placeholder documentation for __listOf__integer
@@ -86,15 +86,15 @@ impl MultiplexProgramPacketIdentifiersMap {
         self.scte27_pids.as_deref()
     }
     /// Placeholder documentation for __integer
-    pub fn scte35_pid(&self) -> i32 {
+    pub fn scte35_pid(&self) -> std::option::Option<i32> {
         self.scte35_pid
     }
     /// Placeholder documentation for __integer
-    pub fn timed_metadata_pid(&self) -> i32 {
+    pub fn timed_metadata_pid(&self) -> std::option::Option<i32> {
         self.timed_metadata_pid
     }
     /// Placeholder documentation for __integer
-    pub fn video_pid(&self) -> i32 {
+    pub fn video_pid(&self) -> std::option::Option<i32> {
         self.video_pid
     }
 }
@@ -283,17 +283,17 @@ impl MultiplexProgramPacketIdentifiersMapBuilder {
         crate::types::MultiplexProgramPacketIdentifiersMap {
             audio_pids: self.audio_pids,
             dvb_sub_pids: self.dvb_sub_pids,
-            dvb_teletext_pid: self.dvb_teletext_pid.unwrap_or_default(),
-            etv_platform_pid: self.etv_platform_pid.unwrap_or_default(),
-            etv_signal_pid: self.etv_signal_pid.unwrap_or_default(),
+            dvb_teletext_pid: self.dvb_teletext_pid,
+            etv_platform_pid: self.etv_platform_pid,
+            etv_signal_pid: self.etv_signal_pid,
             klv_data_pids: self.klv_data_pids,
-            pcr_pid: self.pcr_pid.unwrap_or_default(),
-            pmt_pid: self.pmt_pid.unwrap_or_default(),
-            private_metadata_pid: self.private_metadata_pid.unwrap_or_default(),
+            pcr_pid: self.pcr_pid,
+            pmt_pid: self.pmt_pid,
+            private_metadata_pid: self.private_metadata_pid,
             scte27_pids: self.scte27_pids,
-            scte35_pid: self.scte35_pid.unwrap_or_default(),
-            timed_metadata_pid: self.timed_metadata_pid.unwrap_or_default(),
-            video_pid: self.video_pid.unwrap_or_default(),
+            scte35_pid: self.scte35_pid,
+            timed_metadata_pid: self.timed_metadata_pid,
+            video_pid: self.video_pid,
         }
     }
 }

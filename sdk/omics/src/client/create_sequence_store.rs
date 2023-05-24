@@ -8,6 +8,7 @@ impl super::Client {
     ///   - [`sse_config(SseConfig)`](crate::operation::create_sequence_store::builders::CreateSequenceStoreFluentBuilder::sse_config) / [`set_sse_config(Option<SseConfig>)`](crate::operation::create_sequence_store::builders::CreateSequenceStoreFluentBuilder::set_sse_config): <p>Server-side encryption (SSE) settings for the store.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::operation::create_sequence_store::builders::CreateSequenceStoreFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_sequence_store::builders::CreateSequenceStoreFluentBuilder::set_tags): <p>Tags for the store.</p>
     ///   - [`client_token(impl Into<String>)`](crate::operation::create_sequence_store::builders::CreateSequenceStoreFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::create_sequence_store::builders::CreateSequenceStoreFluentBuilder::set_client_token): <p>To ensure that requests don't run multiple times, specify a unique token for each request.</p>
+    ///   - [`fallback_location(impl Into<String>)`](crate::operation::create_sequence_store::builders::CreateSequenceStoreFluentBuilder::fallback_location) / [`set_fallback_location(Option<String>)`](crate::operation::create_sequence_store::builders::CreateSequenceStoreFluentBuilder::set_fallback_location): <p> An S3 location that is used to store files that have failed a direct upload. </p>
     /// - On success, responds with [`CreateSequenceStoreOutput`](crate::operation::create_sequence_store::CreateSequenceStoreOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::create_sequence_store::CreateSequenceStoreOutput::id): <p>The store's ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::create_sequence_store::CreateSequenceStoreOutput::arn): <p>The store's ARN.</p>
@@ -15,6 +16,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::create_sequence_store::CreateSequenceStoreOutput::description): <p>The store's description.</p>
     ///   - [`sse_config(Option<SseConfig>)`](crate::operation::create_sequence_store::CreateSequenceStoreOutput::sse_config): <p>The store's SSE settings.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::create_sequence_store::CreateSequenceStoreOutput::creation_time): <p>When the store was created.</p>
+    ///   - [`fallback_location(Option<String>)`](crate::operation::create_sequence_store::CreateSequenceStoreOutput::fallback_location): <p> An S3 location that is used to store files that have failed a direct upload. </p>
     /// - On failure, responds with [`SdkError<CreateSequenceStoreError>`](crate::operation::create_sequence_store::CreateSequenceStoreError)
     pub fn create_sequence_store(
         &self,

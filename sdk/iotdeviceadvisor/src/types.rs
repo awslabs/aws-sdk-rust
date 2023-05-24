@@ -27,6 +27,10 @@ pub use crate::types::_test_case_scenario_type::TestCaseScenarioType;
 
 pub use crate::types::_status::Status;
 
+pub use crate::types::_authentication_method::AuthenticationMethod;
+
+mod _authentication_method;
+
 mod _device_under_test;
 
 mod _group_result;

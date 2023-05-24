@@ -6,11 +6,11 @@
 pub struct UpdateBackendAuthIdentityPoolConfig {
     /// <p>A boolean value that can be set to allow or disallow guest-level authorization into your Amplify app.</p>
     #[doc(hidden)]
-    pub unauthenticated_login: bool,
+    pub unauthenticated_login: std::option::Option<bool>,
 }
 impl UpdateBackendAuthIdentityPoolConfig {
     /// <p>A boolean value that can be set to allow or disallow guest-level authorization into your Amplify app.</p>
-    pub fn unauthenticated_login(&self) -> bool {
+    pub fn unauthenticated_login(&self) -> std::option::Option<bool> {
         self.unauthenticated_login
     }
 }
@@ -41,7 +41,7 @@ impl UpdateBackendAuthIdentityPoolConfigBuilder {
     /// Consumes the builder and constructs a [`UpdateBackendAuthIdentityPoolConfig`](crate::types::UpdateBackendAuthIdentityPoolConfig).
     pub fn build(self) -> crate::types::UpdateBackendAuthIdentityPoolConfig {
         crate::types::UpdateBackendAuthIdentityPoolConfig {
-            unauthenticated_login: self.unauthenticated_login.unwrap_or_default(),
+            unauthenticated_login: self.unauthenticated_login,
         }
     }
 }

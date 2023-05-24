@@ -14,7 +14,7 @@ pub struct DescribeConfigurationRevisionOutput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The revision number.</p>
     #[doc(hidden)]
-    pub revision: i64,
+    pub revision: std::option::Option<i64>,
     /// <p>Contents of the <filename>
     /// server.properties
     /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
@@ -38,7 +38,7 @@ impl DescribeConfigurationRevisionOutput {
         self.description.as_deref()
     }
     /// <p>The revision number.</p>
-    pub fn revision(&self) -> i64 {
+    pub fn revision(&self) -> std::option::Option<i64> {
         self.revision
     }
     /// <p>Contents of the <filename>
@@ -156,7 +156,7 @@ impl DescribeConfigurationRevisionOutputBuilder {
             arn: self.arn,
             creation_time: self.creation_time,
             description: self.description,
-            revision: self.revision.unwrap_or_default(),
+            revision: self.revision,
             server_properties: self.server_properties,
             _request_id: self._request_id,
         }

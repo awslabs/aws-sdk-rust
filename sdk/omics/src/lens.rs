@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_annotation_stores_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_list_multipart_read_set_uploads_output_next_token(
+    input: &crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_list_read_set_activation_jobs_output_next_token(
     input: &crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -41,6 +51,16 @@ pub(crate) fn reflens_list_read_set_export_jobs_output_next_token(
 
 pub(crate) fn reflens_list_read_set_import_jobs_output_next_token(
     input: &crate::operation::list_read_set_import_jobs::ListReadSetImportJobsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_list_read_set_upload_parts_output_next_token(
+    input: &crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsOutput,
 ) -> std::option::Option<&std::string::String> {
     let input = match &input.next_token {
         None => return None,
@@ -179,6 +199,16 @@ pub(crate) fn lens_list_annotation_stores_output_annotation_stores(
     Some(input)
 }
 
+pub(crate) fn lens_list_multipart_read_set_uploads_output_uploads(
+    input: crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::MultipartReadSetUploadListItem>> {
+    let input = match input.uploads {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn lens_list_read_set_activation_jobs_output_activation_jobs(
     input: crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::types::ActivateReadSetJobItem>> {
@@ -203,6 +233,16 @@ pub(crate) fn lens_list_read_set_import_jobs_output_import_jobs(
     input: crate::operation::list_read_set_import_jobs::ListReadSetImportJobsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::types::ImportReadSetJobItem>> {
     let input = match input.import_jobs {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_list_read_set_upload_parts_output_parts(
+    input: crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::ReadSetUploadPartListItem>> {
+    let input = match input.parts {
         None => return None,
         Some(t) => t,
     };

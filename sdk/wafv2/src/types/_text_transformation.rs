@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TextTransformation {
-    /// <p>Sets the relative processing order for multiple transformations that are defined for a rule statement. WAF processes all transformations, from lowest priority to highest, before inspecting the transformed content. The priorities don't need to be consecutive, but they must all be different. </p>
+    /// <p>Sets the relative processing order for multiple transformations. WAF processes all transformations, from lowest priority to highest, before inspecting the transformed content. The priorities don't need to be consecutive, but they must all be different. </p>
     #[doc(hidden)]
     pub priority: i32,
     /// <p>You can specify the following transformation types:</p>
@@ -57,7 +57,7 @@ pub struct TextTransformation {
     pub r#type: std::option::Option<crate::types::TextTransformationType>,
 }
 impl TextTransformation {
-    /// <p>Sets the relative processing order for multiple transformations that are defined for a rule statement. WAF processes all transformations, from lowest priority to highest, before inspecting the transformed content. The priorities don't need to be consecutive, but they must all be different. </p>
+    /// <p>Sets the relative processing order for multiple transformations. WAF processes all transformations, from lowest priority to highest, before inspecting the transformed content. The priorities don't need to be consecutive, but they must all be different. </p>
     pub fn priority(&self) -> i32 {
         self.priority
     }
@@ -126,12 +126,12 @@ pub struct TextTransformationBuilder {
     pub(crate) r#type: std::option::Option<crate::types::TextTransformationType>,
 }
 impl TextTransformationBuilder {
-    /// <p>Sets the relative processing order for multiple transformations that are defined for a rule statement. WAF processes all transformations, from lowest priority to highest, before inspecting the transformed content. The priorities don't need to be consecutive, but they must all be different. </p>
+    /// <p>Sets the relative processing order for multiple transformations. WAF processes all transformations, from lowest priority to highest, before inspecting the transformed content. The priorities don't need to be consecutive, but they must all be different. </p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = Some(input);
         self
     }
-    /// <p>Sets the relative processing order for multiple transformations that are defined for a rule statement. WAF processes all transformations, from lowest priority to highest, before inspecting the transformed content. The priorities don't need to be consecutive, but they must all be different. </p>
+    /// <p>Sets the relative processing order for multiple transformations. WAF processes all transformations, from lowest priority to highest, before inspecting the transformed content. The priorities don't need to be consecutive, but they must all be different. </p>
     pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
         self.priority = input;
         self

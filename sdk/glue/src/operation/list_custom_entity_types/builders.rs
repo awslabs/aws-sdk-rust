@@ -99,4 +99,27 @@ impl ListCustomEntityTypesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// Adds a key-value pair to `Tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A list of key-value pair tags.</p>
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.tags(k.into(), v.into());
+        self
+    }
+    /// <p>A list of key-value pair tags.</p>
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.inner = self.inner.set_tags(input);
+        self
+    }
 }

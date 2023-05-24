@@ -167,6 +167,8 @@ pub use crate::types::_capacity_reservation_preference::CapacityReservationPrefe
 
 pub use crate::types::_cpu_options::CpuOptions;
 
+pub use crate::types::_amd_sev_snp_specification::AmdSevSnpSpecification;
+
 pub use crate::types::_virtualization_type::VirtualizationType;
 
 pub use crate::types::_state_reason::StateReason;
@@ -1567,6 +1569,8 @@ pub use crate::types::_v_cpu_info::VCpuInfo;
 
 pub use crate::types::_processor_info::ProcessorInfo;
 
+pub use crate::types::_supported_additional_processor_feature::SupportedAdditionalProcessorFeature;
+
 pub use crate::types::_instance_type_hypervisor::InstanceTypeHypervisor;
 
 pub use crate::types::_root_device_type::RootDeviceType;
@@ -2078,6 +2082,8 @@ mod _allowed_principal;
 mod _allows_multiple_instance_types;
 
 mod _alternate_path_hint;
+
+mod _amd_sev_snp_specification;
 
 mod _analysis_acl_rule;
 
@@ -3656,6 +3662,8 @@ mod _successful_instance_credit_specification_item;
 mod _successful_queued_purchase_deletion;
 
 mod _summary_status;
+
+mod _supported_additional_processor_feature;
 
 mod _tag;
 

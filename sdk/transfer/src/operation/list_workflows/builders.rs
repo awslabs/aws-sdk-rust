@@ -5,7 +5,7 @@ pub use crate::operation::list_workflows::_list_workflows_input::ListWorkflowsIn
 
 /// Fluent builder constructing a request to `ListWorkflows`.
 ///
-/// <p>Lists all of your workflows.</p>
+/// <p>Lists all workflows associated with your Amazon Web Services account for your current region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListWorkflowsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

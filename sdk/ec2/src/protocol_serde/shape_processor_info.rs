@@ -31,6 +31,16 @@ pub fn de_processor_info(
                 builder = builder.set_sustained_clock_speed_in_ghz(var_2);
             }
             ,
+            s if s.matches("supportedFeatures") /* SupportedFeatures com.amazonaws.ec2#ProcessorInfo$SupportedFeatures */ =>  {
+                let var_3 =
+                    Some(
+                        crate::protocol_serde::shape_supported_additional_processor_feature_list::de_supported_additional_processor_feature_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_supported_features(var_3);
+            }
+            ,
             _ => {}
         }
     }

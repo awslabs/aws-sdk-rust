@@ -21,14 +21,14 @@ pub fn ser_file_source_settings(
     if let Some(var_5) = &input.source_file {
         object.key("sourceFile").string(var_5.as_str());
     }
-    if input.time_delta != 0 {
+    if let Some(var_6) = &input.time_delta {
         object.key("timeDelta").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.time_delta).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_6) = &input.time_delta_units {
-        object.key("timeDeltaUnits").string(var_6.as_str());
+    if let Some(var_7) = &input.time_delta_units {
+        object.key("timeDeltaUnits").string(var_7.as_str());
     }
     Ok(())
 }

@@ -17,60 +17,58 @@ pub fn ser_av1_settings(
             .key("framerateConversionAlgorithm")
             .string(var_4.as_str());
     }
-    if input.framerate_denominator != 0 {
+    if let Some(var_5) = &input.framerate_denominator {
         object.key("framerateDenominator").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.framerate_denominator).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if input.framerate_numerator != 0 {
+    if let Some(var_6) = &input.framerate_numerator {
         object.key("framerateNumerator").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.framerate_numerator).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if input.gop_size != 0.0 {
+    if let Some(var_7) = &input.gop_size {
         object.key("gopSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.gop_size).into()),
+            aws_smithy_types::Number::Float((*var_7).into()),
         );
     }
-    if input.max_bitrate != 0 {
+    if let Some(var_8) = &input.max_bitrate {
         object.key("maxBitrate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_bitrate).into()),
+            aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if input.number_b_frames_between_reference_frames != 0 {
+    if let Some(var_9) = &input.number_b_frames_between_reference_frames {
         object.key("numberBFramesBetweenReferenceFrames").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt(
-                (input.number_b_frames_between_reference_frames).into(),
-            ),
+            aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_5) = &input.qvbr_settings {
+    if let Some(var_10) = &input.qvbr_settings {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("qvbrSettings").start_object();
+        let mut object_11 = object.key("qvbrSettings").start_object();
         crate::protocol_serde::shape_av1_qvbr_settings::ser_av1_qvbr_settings(
-            &mut object_6,
-            var_5,
+            &mut object_11,
+            var_10,
         )?;
-        object_6.finish();
+        object_11.finish();
     }
-    if let Some(var_7) = &input.rate_control_mode {
-        object.key("rateControlMode").string(var_7.as_str());
+    if let Some(var_12) = &input.rate_control_mode {
+        object.key("rateControlMode").string(var_12.as_str());
     }
-    if input.slices != 0 {
+    if let Some(var_13) = &input.slices {
         object.key("slices").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.slices).into()),
+            aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
-    if let Some(var_8) = &input.spatial_adaptive_quantization {
+    if let Some(var_14) = &input.spatial_adaptive_quantization {
         object
             .key("spatialAdaptiveQuantization")
-            .string(var_8.as_str());
+            .string(var_14.as_str());
     }
     Ok(())
 }

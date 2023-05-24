@@ -36,6 +36,20 @@ pub fn de_cpu_options(
                 builder = builder.set_threads_per_core(var_2);
             }
             ,
+            s if s.matches("amdSevSnp") /* AmdSevSnp com.amazonaws.ec2#CpuOptions$AmdSevSnp */ =>  {
+                let var_3 =
+                    Some(
+                        Result::<crate::types::AmdSevSnpSpecification, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::AmdSevSnpSpecification::from(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_amd_sev_snp(var_3);
+            }
+            ,
             _ => {}
         }
     }

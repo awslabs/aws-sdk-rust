@@ -6,10 +6,10 @@ pub fn ser_audio_silence_failover_settings(
     if let Some(var_1) = &input.audio_selector_name {
         object.key("audioSelectorName").string(var_1.as_str());
     }
-    if input.audio_silence_threshold_msec != 0 {
+    if let Some(var_2) = &input.audio_silence_threshold_msec {
         object.key("audioSilenceThresholdMsec").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.audio_silence_threshold_msec).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

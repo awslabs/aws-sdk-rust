@@ -3,76 +3,76 @@ pub fn ser_hdr10_metadata(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Hdr10Metadata,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.blue_primary_x != 0 {
+    if let Some(var_1) = &input.blue_primary_x {
         object.key("bluePrimaryX").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.blue_primary_x).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.blue_primary_y != 0 {
+    if let Some(var_2) = &input.blue_primary_y {
         object.key("bluePrimaryY").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.blue_primary_y).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.green_primary_x != 0 {
+    if let Some(var_3) = &input.green_primary_x {
         object.key("greenPrimaryX").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.green_primary_x).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if input.green_primary_y != 0 {
+    if let Some(var_4) = &input.green_primary_y {
         object.key("greenPrimaryY").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.green_primary_y).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if input.max_content_light_level != 0 {
+    if let Some(var_5) = &input.max_content_light_level {
         object.key("maxContentLightLevel").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_content_light_level).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if input.max_frame_average_light_level != 0 {
+    if let Some(var_6) = &input.max_frame_average_light_level {
         object.key("maxFrameAverageLightLevel").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_frame_average_light_level).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if input.max_luminance != 0 {
+    if let Some(var_7) = &input.max_luminance {
         object.key("maxLuminance").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_luminance).into()),
+            aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if input.min_luminance != 0 {
+    if let Some(var_8) = &input.min_luminance {
         object.key("minLuminance").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.min_luminance).into()),
+            aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if input.red_primary_x != 0 {
+    if let Some(var_9) = &input.red_primary_x {
         object.key("redPrimaryX").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.red_primary_x).into()),
+            aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if input.red_primary_y != 0 {
+    if let Some(var_10) = &input.red_primary_y {
         object.key("redPrimaryY").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.red_primary_y).into()),
+            aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if input.white_point_x != 0 {
+    if let Some(var_11) = &input.white_point_x {
         object.key("whitePointX").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.white_point_x).into()),
+            aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if input.white_point_y != 0 {
+    if let Some(var_12) = &input.white_point_y {
         object.key("whitePointY").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.white_point_y).into()),
+            aws_smithy_types::Number::NegInt((*var_12).into()),
         );
     }
     Ok(())

@@ -42,6 +42,9 @@ pub struct GetReadSetMetadataOutput {
     /// <p>The read set's files.</p>
     #[doc(hidden)]
     pub files: std::option::Option<crate::types::ReadSetFiles>,
+    /// <p> The status message for a read set. It provides more detail as to why the read set has a status. </p>
+    #[doc(hidden)]
+    pub status_message: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl GetReadSetMetadataOutput {
@@ -97,6 +100,10 @@ impl GetReadSetMetadataOutput {
     pub fn files(&self) -> std::option::Option<&crate::types::ReadSetFiles> {
         self.files.as_ref()
     }
+    /// <p> The status message for a read set. It provides more detail as to why the read set has a status. </p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
 }
 impl aws_http::request_id::RequestId for GetReadSetMetadataOutput {
     fn request_id(&self) -> Option<&str> {
@@ -129,6 +136,7 @@ pub struct GetReadSetMetadataOutputBuilder {
     pub(crate) sequence_information: std::option::Option<crate::types::SequenceInformation>,
     pub(crate) reference_arn: std::option::Option<std::string::String>,
     pub(crate) files: std::option::Option<crate::types::ReadSetFiles>,
+    pub(crate) status_message: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl GetReadSetMetadataOutputBuilder {
@@ -271,6 +279,16 @@ impl GetReadSetMetadataOutputBuilder {
         self.files = input;
         self
     }
+    /// <p> The status message for a read set. It provides more detail as to why the read set has a status. </p>
+    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
+        self.status_message = Some(input.into());
+        self
+    }
+    /// <p> The status message for a read set. It provides more detail as to why the read set has a status. </p>
+    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.status_message = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -296,6 +314,7 @@ impl GetReadSetMetadataOutputBuilder {
             sequence_information: self.sequence_information,
             reference_arn: self.reference_arn,
             files: self.files,
+            status_message: self.status_message,
             _request_id: self._request_id,
         }
     }

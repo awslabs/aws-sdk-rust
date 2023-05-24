@@ -26,6 +26,23 @@ pub fn de_untag_resource_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "AccessDeniedException" => {
+            crate::operation::untag_resource::UntagResourceError::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output).map_err(crate::operation::untag_resource::UntagResourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "BadRequestException" => {
             crate::operation::untag_resource::UntagResourceError::BadRequestException({
                 #[allow(unused_mut)]

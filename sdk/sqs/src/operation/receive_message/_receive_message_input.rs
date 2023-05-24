@@ -40,15 +40,15 @@ pub struct ReceiveMessageInput {
     pub message_attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of messages to return. Amazon SQS never returns more messages than this value (however, fewer messages might be returned). Valid values: 1 to 10. Default: 1.</p>
     #[doc(hidden)]
-    pub max_number_of_messages: i32,
+    pub max_number_of_messages: std::option::Option<i32>,
     /// <p>The duration (in seconds) that the received messages are hidden from subsequent retrieve requests after being retrieved by a <code>ReceiveMessage</code> request.</p>
     #[doc(hidden)]
-    pub visibility_timeout: i32,
+    pub visibility_timeout: std::option::Option<i32>,
     /// <p>The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list of messages.</p> <important>
     /// <p>To avoid HTTP errors, ensure that the HTTP response timeout for <code>ReceiveMessage</code> requests is longer than the <code>WaitTimeSeconds</code> parameter. For example, with the Java SDK, you can set HTTP transport settings using the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html"> NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html"> ApacheHttpClient</a> for synchronous clients. </p>
     /// </important>
     #[doc(hidden)]
-    pub wait_time_seconds: i32,
+    pub wait_time_seconds: std::option::Option<i32>,
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
     /// <p>The token used for deduplication of <code>ReceiveMessage</code> calls. If a networking issue occurs after a <code>ReceiveMessage</code> action, and instead of a response you receive a generic error, it is possible to retry the same action with an identical <code>ReceiveRequestAttemptId</code> to retrieve the same set of messages, even if their visibility timeout has not yet expired.</p>
     /// <ul>
@@ -107,17 +107,17 @@ impl ReceiveMessageInput {
         self.message_attribute_names.as_deref()
     }
     /// <p>The maximum number of messages to return. Amazon SQS never returns more messages than this value (however, fewer messages might be returned). Valid values: 1 to 10. Default: 1.</p>
-    pub fn max_number_of_messages(&self) -> i32 {
+    pub fn max_number_of_messages(&self) -> std::option::Option<i32> {
         self.max_number_of_messages
     }
     /// <p>The duration (in seconds) that the received messages are hidden from subsequent retrieve requests after being retrieved by a <code>ReceiveMessage</code> request.</p>
-    pub fn visibility_timeout(&self) -> i32 {
+    pub fn visibility_timeout(&self) -> std::option::Option<i32> {
         self.visibility_timeout
     }
     /// <p>The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list of messages.</p> <important>
     /// <p>To avoid HTTP errors, ensure that the HTTP response timeout for <code>ReceiveMessage</code> requests is longer than the <code>WaitTimeSeconds</code> parameter. For example, with the Java SDK, you can set HTTP transport settings using the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html"> NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html"> ApacheHttpClient</a> for synchronous clients. </p>
     /// </important>
-    pub fn wait_time_seconds(&self) -> i32 {
+    pub fn wait_time_seconds(&self) -> std::option::Option<i32> {
         self.wait_time_seconds
     }
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
@@ -347,9 +347,9 @@ impl ReceiveMessageInputBuilder {
             queue_url: self.queue_url,
             attribute_names: self.attribute_names,
             message_attribute_names: self.message_attribute_names,
-            max_number_of_messages: self.max_number_of_messages.unwrap_or_default(),
-            visibility_timeout: self.visibility_timeout.unwrap_or_default(),
-            wait_time_seconds: self.wait_time_seconds.unwrap_or_default(),
+            max_number_of_messages: self.max_number_of_messages,
+            visibility_timeout: self.visibility_timeout,
+            wait_time_seconds: self.wait_time_seconds,
             receive_request_attempt_id: self.receive_request_attempt_id,
         })
     }

@@ -10,6 +10,8 @@ pub enum TransformOperation {
     CreateColumnsOperation(crate::types::CreateColumnsOperation),
     /// <p>An operation that filters rows based on some condition.</p>
     FilterOperation(crate::types::FilterOperation),
+    /// <p>A transform operation that overrides the dataset parameter values that are defined in another dataset.</p>
+    OverrideDatasetParameterOperation(crate::types::OverrideDatasetParameterOperation),
     /// <p>An operation that projects columns. Operations that come after a projection can only refer to projected columns.</p>
     ProjectOperation(crate::types::ProjectOperation),
     /// <p>An operation that renames a column.</p>
@@ -73,6 +75,21 @@ impl TransformOperation {
     /// Returns true if this is a [`FilterOperation`](crate::types::TransformOperation::FilterOperation).
     pub fn is_filter_operation(&self) -> bool {
         self.as_filter_operation().is_ok()
+    }
+    /// Tries to convert the enum instance into [`OverrideDatasetParameterOperation`](crate::types::TransformOperation::OverrideDatasetParameterOperation), extracting the inner [`OverrideDatasetParameterOperation`](crate::types::OverrideDatasetParameterOperation).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_override_dataset_parameter_operation(
+        &self,
+    ) -> std::result::Result<&crate::types::OverrideDatasetParameterOperation, &Self> {
+        if let TransformOperation::OverrideDatasetParameterOperation(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
+    }
+    /// Returns true if this is a [`OverrideDatasetParameterOperation`](crate::types::TransformOperation::OverrideDatasetParameterOperation).
+    pub fn is_override_dataset_parameter_operation(&self) -> bool {
+        self.as_override_dataset_parameter_operation().is_ok()
     }
     /// Tries to convert the enum instance into [`ProjectOperation`](crate::types::TransformOperation::ProjectOperation), extracting the inner [`ProjectOperation`](crate::types::ProjectOperation).
     /// Returns `Err(&Self)` if it can't be converted.

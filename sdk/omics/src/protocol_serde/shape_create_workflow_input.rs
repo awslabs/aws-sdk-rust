@@ -3,60 +3,63 @@ pub fn ser_create_workflow_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_workflow::CreateWorkflowInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.definition_uri {
-        object.key("definitionUri").string(var_1.as_str());
+    if let Some(var_1) = &input.accelerators {
+        object.key("accelerators").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.definition_zip {
+    if let Some(var_2) = &input.definition_uri {
+        object.key("definitionUri").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.definition_zip {
         object
             .key("definitionZip")
-            .string_unchecked(&aws_smithy_types::base64::encode(var_2));
+            .string_unchecked(&aws_smithy_types::base64::encode(var_3));
     }
-    if let Some(var_3) = &input.description {
-        object.key("description").string(var_3.as_str());
+    if let Some(var_4) = &input.description {
+        object.key("description").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.engine {
-        object.key("engine").string(var_4.as_str());
+    if let Some(var_5) = &input.engine {
+        object.key("engine").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.main {
-        object.key("main").string(var_5.as_str());
+    if let Some(var_6) = &input.main {
+        object.key("main").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.name {
-        object.key("name").string(var_6.as_str());
+    if let Some(var_7) = &input.name {
+        object.key("name").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.parameter_template {
+    if let Some(var_8) = &input.parameter_template {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("parameterTemplate").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_9 = object.key("parameterTemplate").start_object();
+        for (key_10, value_11) in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = object_8.key(key_9.as_str()).start_object();
+                let mut object_12 = object_9.key(key_10.as_str()).start_object();
                 crate::protocol_serde::shape_workflow_parameter::ser_workflow_parameter(
-                    &mut object_11,
-                    value_10,
+                    &mut object_12,
+                    value_11,
                 )?;
-                object_11.finish();
+                object_12.finish();
             }
         }
-        object_8.finish();
+        object_9.finish();
     }
-    if let Some(var_12) = &input.request_id {
-        object.key("requestId").string(var_12.as_str());
+    if let Some(var_13) = &input.request_id {
+        object.key("requestId").string(var_13.as_str());
     }
-    if let Some(var_13) = &input.storage_capacity {
+    if let Some(var_14) = &input.storage_capacity {
         object.key("storageCapacity").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((*var_13).into()),
+            aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
-    if let Some(var_14) = &input.tags {
+    if let Some(var_15) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("tags").start_object();
-        for (key_16, value_17) in var_14 {
+        let mut object_16 = object.key("tags").start_object();
+        for (key_17, value_18) in var_15 {
             {
-                object_15.key(key_16.as_str()).string(value_17.as_str());
+                object_16.key(key_17.as_str()).string(value_18.as_str());
             }
         }
-        object_15.finish();
+        object_16.finish();
     }
     Ok(())
 }

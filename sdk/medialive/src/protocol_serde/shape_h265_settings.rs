@@ -14,140 +14,140 @@ pub fn ser_h265_settings(
             .key("alternativeTransferFunction")
             .string(var_3.as_str());
     }
-    if input.bitrate != 0 {
+    if let Some(var_4) = &input.bitrate {
         object.key("bitrate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.bitrate).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if input.buf_size != 0 {
+    if let Some(var_5) = &input.buf_size {
         object.key("bufSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.buf_size).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_4) = &input.color_metadata {
-        object.key("colorMetadata").string(var_4.as_str());
+    if let Some(var_6) = &input.color_metadata {
+        object.key("colorMetadata").string(var_6.as_str());
     }
-    if let Some(var_5) = &input.color_space_settings {
+    if let Some(var_7) = &input.color_space_settings {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("colorSpaceSettings").start_object();
+        let mut object_8 = object.key("colorSpaceSettings").start_object();
         crate::protocol_serde::shape_h265_color_space_settings::ser_h265_color_space_settings(
-            &mut object_6,
-            var_5,
-        )?;
-        object_6.finish();
-    }
-    if let Some(var_7) = &input.filter_settings {
-        #[allow(unused_mut)]
-        let mut object_8 = object.key("filterSettings").start_object();
-        crate::protocol_serde::shape_h265_filter_settings::ser_h265_filter_settings(
             &mut object_8,
             var_7,
         )?;
         object_8.finish();
     }
-    if let Some(var_9) = &input.fixed_afd {
-        object.key("fixedAfd").string(var_9.as_str());
+    if let Some(var_9) = &input.filter_settings {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("filterSettings").start_object();
+        crate::protocol_serde::shape_h265_filter_settings::ser_h265_filter_settings(
+            &mut object_10,
+            var_9,
+        )?;
+        object_10.finish();
     }
-    if let Some(var_10) = &input.flicker_aq {
-        object.key("flickerAq").string(var_10.as_str());
+    if let Some(var_11) = &input.fixed_afd {
+        object.key("fixedAfd").string(var_11.as_str());
     }
-    {
+    if let Some(var_12) = &input.flicker_aq {
+        object.key("flickerAq").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.framerate_denominator {
         object.key("framerateDenominator").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.framerate_denominator).into()),
+            aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
-    {
+    if let Some(var_14) = &input.framerate_numerator {
         object.key("framerateNumerator").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.framerate_numerator).into()),
+            aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
-    if input.gop_closed_cadence != 0 {
+    if let Some(var_15) = &input.gop_closed_cadence {
         object.key("gopClosedCadence").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.gop_closed_cadence).into()),
+            aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
-    if input.gop_size != 0.0 {
+    if let Some(var_16) = &input.gop_size {
         object.key("gopSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.gop_size).into()),
+            aws_smithy_types::Number::Float((*var_16).into()),
         );
     }
-    if let Some(var_11) = &input.gop_size_units {
-        object.key("gopSizeUnits").string(var_11.as_str());
+    if let Some(var_17) = &input.gop_size_units {
+        object.key("gopSizeUnits").string(var_17.as_str());
     }
-    if let Some(var_12) = &input.level {
-        object.key("level").string(var_12.as_str());
+    if let Some(var_18) = &input.level {
+        object.key("level").string(var_18.as_str());
     }
-    if let Some(var_13) = &input.look_ahead_rate_control {
-        object.key("lookAheadRateControl").string(var_13.as_str());
+    if let Some(var_19) = &input.look_ahead_rate_control {
+        object.key("lookAheadRateControl").string(var_19.as_str());
     }
-    if input.max_bitrate != 0 {
+    if let Some(var_20) = &input.max_bitrate {
         object.key("maxBitrate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_bitrate).into()),
+            aws_smithy_types::Number::NegInt((*var_20).into()),
         );
     }
-    if input.min_i_interval != 0 {
+    if let Some(var_21) = &input.min_i_interval {
         object.key("minIInterval").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.min_i_interval).into()),
+            aws_smithy_types::Number::NegInt((*var_21).into()),
         );
     }
-    if input.par_denominator != 0 {
+    if let Some(var_22) = &input.par_denominator {
         object.key("parDenominator").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.par_denominator).into()),
+            aws_smithy_types::Number::NegInt((*var_22).into()),
         );
     }
-    if input.par_numerator != 0 {
+    if let Some(var_23) = &input.par_numerator {
         object.key("parNumerator").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.par_numerator).into()),
+            aws_smithy_types::Number::NegInt((*var_23).into()),
         );
     }
-    if let Some(var_14) = &input.profile {
-        object.key("profile").string(var_14.as_str());
+    if let Some(var_24) = &input.profile {
+        object.key("profile").string(var_24.as_str());
     }
-    if input.qvbr_quality_level != 0 {
+    if let Some(var_25) = &input.qvbr_quality_level {
         object.key("qvbrQualityLevel").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.qvbr_quality_level).into()),
+            aws_smithy_types::Number::NegInt((*var_25).into()),
         );
     }
-    if let Some(var_15) = &input.rate_control_mode {
-        object.key("rateControlMode").string(var_15.as_str());
+    if let Some(var_26) = &input.rate_control_mode {
+        object.key("rateControlMode").string(var_26.as_str());
     }
-    if let Some(var_16) = &input.scan_type {
-        object.key("scanType").string(var_16.as_str());
+    if let Some(var_27) = &input.scan_type {
+        object.key("scanType").string(var_27.as_str());
     }
-    if let Some(var_17) = &input.scene_change_detect {
-        object.key("sceneChangeDetect").string(var_17.as_str());
+    if let Some(var_28) = &input.scene_change_detect {
+        object.key("sceneChangeDetect").string(var_28.as_str());
     }
-    if input.slices != 0 {
+    if let Some(var_29) = &input.slices {
         object.key("slices").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.slices).into()),
+            aws_smithy_types::Number::NegInt((*var_29).into()),
         );
     }
-    if let Some(var_18) = &input.tier {
-        object.key("tier").string(var_18.as_str());
+    if let Some(var_30) = &input.tier {
+        object.key("tier").string(var_30.as_str());
     }
-    if let Some(var_19) = &input.timecode_insertion {
-        object.key("timecodeInsertion").string(var_19.as_str());
+    if let Some(var_31) = &input.timecode_insertion {
+        object.key("timecodeInsertion").string(var_31.as_str());
     }
-    if let Some(var_20) = &input.timecode_burnin_settings {
+    if let Some(var_32) = &input.timecode_burnin_settings {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("timecodeBurninSettings").start_object();
+        let mut object_33 = object.key("timecodeBurninSettings").start_object();
         crate::protocol_serde::shape_timecode_burnin_settings::ser_timecode_burnin_settings(
-            &mut object_21,
-            var_20,
+            &mut object_33,
+            var_32,
         )?;
-        object_21.finish();
+        object_33.finish();
     }
     Ok(())
 }

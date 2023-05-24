@@ -25,9 +25,29 @@ pub use crate::types::_map_comparison::MapComparison;
 
 pub use crate::types::_filter_action::FilterAction;
 
+pub use crate::types::_ec2_deep_inspection_status::Ec2DeepInspectionStatus;
+
 pub use crate::types::_ecr_configuration::EcrConfiguration;
 
 pub use crate::types::_ecr_rescan_duration::EcrRescanDuration;
+
+pub use crate::types::_vulnerability::Vulnerability;
+
+pub use crate::types::_epss::Epss;
+
+pub use crate::types::_exploit_observed::ExploitObserved;
+
+pub use crate::types::_cvss2::Cvss2;
+
+pub use crate::types::_cvss3::Cvss3;
+
+pub use crate::types::_atig_data::AtigData;
+
+pub use crate::types::_vulnerability_source::VulnerabilitySource;
+
+pub use crate::types::_cisa_data::CisaData;
+
+pub use crate::types::_search_vulnerabilities_filter_criteria::SearchVulnerabilitiesFilterCriteria;
 
 pub use crate::types::_usage_total::UsageTotal;
 
@@ -267,6 +287,12 @@ pub use crate::types::_resource_scan_type::ResourceScanType;
 
 pub use crate::types::_report_format::ReportFormat;
 
+pub use crate::types::_failed_member_account_ec2_deep_inspection_status_state::FailedMemberAccountEc2DeepInspectionStatusState;
+
+pub use crate::types::_member_account_ec2_deep_inspection_status_state::MemberAccountEc2DeepInspectionStatusState;
+
+pub use crate::types::_member_account_ec2_deep_inspection_status::MemberAccountEc2DeepInspectionStatus;
+
 pub use crate::types::_free_trial_info_error::FreeTrialInfoError;
 
 pub use crate::types::_free_trial_info_error_code::FreeTrialInfoErrorCode;
@@ -313,6 +339,8 @@ mod _ami_sort_by;
 
 mod _architecture;
 
+mod _atig_data;
+
 mod _auto_enable;
 
 mod _aws_ec2_instance_details;
@@ -326,6 +354,8 @@ mod _aws_ecr_container_image_details;
 mod _aws_ecr_container_sort_by;
 
 mod _aws_lambda_function_details;
+
+mod _cisa_data;
 
 mod _counts;
 
@@ -345,6 +375,10 @@ mod _covered_resource;
 
 mod _currency;
 
+mod _cvss2;
+
+mod _cvss3;
+
 mod _cvss_score;
 
 mod _cvss_score_adjustment;
@@ -360,6 +394,8 @@ mod _delegated_admin_account;
 mod _delegated_admin_status;
 
 mod _destination;
+
+mod _ec2_deep_inspection_status;
 
 mod _ec2_instance_aggregation;
 
@@ -387,15 +423,21 @@ mod _ecr_rescan_duration_status;
 
 mod _ecr_scan_frequency;
 
+mod _epss;
+
 mod _error_code;
 
 mod _exploit_available;
+
+mod _exploit_observed;
 
 mod _exploitability_details;
 
 mod _external_report_status;
 
 mod _failed_account;
+
+mod _failed_member_account_ec2_deep_inspection_status_state;
 
 mod _filter;
 
@@ -460,6 +502,10 @@ mod _map_comparison;
 mod _map_filter;
 
 mod _member;
+
+mod _member_account_ec2_deep_inspection_status;
+
+mod _member_account_ec2_deep_inspection_status_state;
 
 mod _network_path;
 
@@ -531,6 +577,8 @@ mod _scan_status_reason;
 
 mod _scan_type;
 
+mod _search_vulnerabilities_filter_criteria;
+
 mod _service;
 
 mod _severity;
@@ -568,6 +616,10 @@ mod _usage_type;
 mod _validation_exception_field;
 
 mod _validation_exception_reason;
+
+mod _vulnerability;
+
+mod _vulnerability_source;
 
 mod _vulnerable_package;
 

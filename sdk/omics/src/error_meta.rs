@@ -9,6 +9,8 @@ pub enum Error {
     ConflictException(crate::types::error::ConflictException),
     /// <p>An unexpected error occurred. Try the request again.</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p> The operation is not supported by Amazon Omics, or the API does not exist. </p>
+    NotSupportedOperationException(crate::types::error::NotSupportedOperationException),
     /// <p>The ranges specified in the request are not valid.</p>
     RangeNotSatisfiableException(crate::types::error::RangeNotSatisfiableException),
     /// <p>The request timed out.</p>
@@ -30,6 +32,7 @@ impl std::fmt::Display for Error {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
+            Error::NotSupportedOperationException(inner) => inner.fmt(f),
             Error::RangeNotSatisfiableException(inner) => inner.fmt(f),
             Error::RequestTimeoutException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
@@ -37,6 +40,56 @@ impl std::fmt::Display for Error {
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadError>
+    for Error
+{
+    fn from(
+        err: crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadError,
+    ) -> Self {
+        match err {
+            crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadError::NotSupportedOperationException(inner) => Error::NotSupportedOperationException(inner),
+            crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::abort_multipart_read_set_upload::AbortMultipartReadSetUploadError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -230,6 +283,38 @@ impl From<crate::operation::cancel_variant_import_job::CancelVariantImportJobErr
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadError>
+    for Error
+{
+    fn from(
+        err: crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadError,
+    ) -> Self {
+        match err {
+            crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadError::NotSupportedOperationException(inner) => Error::NotSupportedOperationException(inner),
+            crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
@@ -272,6 +357,56 @@ impl From<crate::operation::create_annotation_store::CreateAnnotationStoreError>
             crate::operation::create_annotation_store::CreateAnnotationStoreError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_annotation_store::CreateAnnotationStoreError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_annotation_store::CreateAnnotationStoreError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError,
+    ) -> Self {
+        match err {
+            crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError::NotSupportedOperationException(inner) => Error::NotSupportedOperationException(inner),
+            crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1842,6 +1977,56 @@ impl From<crate::operation::list_annotation_stores::ListAnnotationStoresError> f
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
+            crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError::NotSupportedOperationException(inner) => Error::NotSupportedOperationException(inner),
+            crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
             crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsError,
             R,
         >,
@@ -2026,6 +2211,54 @@ impl From<crate::operation::list_read_sets::ListReadSetsError> for Error {
             crate::operation::list_read_sets::ListReadSetsError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsError> for Error {
+    fn from(
+        err: crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsError::NotSupportedOperationException(inner) => Error::NotSupportedOperationException(inner),
+            crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3192,12 +3425,59 @@ impl From<crate::operation::update_workflow::UpdateWorkflowError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::upload_read_set_part::UploadReadSetPartError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::upload_read_set_part::UploadReadSetPartError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::upload_read_set_part::UploadReadSetPartError> for Error {
+    fn from(err: crate::operation::upload_read_set_part::UploadReadSetPartError) -> Self {
+        match err {
+            crate::operation::upload_read_set_part::UploadReadSetPartError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::upload_read_set_part::UploadReadSetPartError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::upload_read_set_part::UploadReadSetPartError::NotSupportedOperationException(inner) => Error::NotSupportedOperationException(inner),
+            crate::operation::upload_read_set_part::UploadReadSetPartError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::upload_read_set_part::UploadReadSetPartError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::upload_read_set_part::UploadReadSetPartError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::upload_read_set_part::UploadReadSetPartError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::upload_read_set_part::UploadReadSetPartError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::upload_read_set_part::UploadReadSetPartError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
+            Error::NotSupportedOperationException(inner) => inner.source(),
             Error::RangeNotSatisfiableException(inner) => inner.source(),
             Error::RequestTimeoutException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
@@ -3214,6 +3494,7 @@ impl aws_http::request_id::RequestId for Error {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
+            Self::NotSupportedOperationException(e) => e.request_id(),
             Self::RangeNotSatisfiableException(e) => e.request_id(),
             Self::RequestTimeoutException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),

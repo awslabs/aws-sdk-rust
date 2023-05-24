@@ -83,23 +83,23 @@ pub fn ser_mss_package(
         crate::protocol_serde::shape_mss_encryption::ser_mss_encryption(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if input.manifest_window_seconds != 0 {
+    if let Some(var_3) = &input.manifest_window_seconds {
         object.key("manifestWindowSeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.manifest_window_seconds).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if input.segment_duration_seconds != 0 {
+    if let Some(var_4) = &input.segment_duration_seconds {
         object.key("segmentDurationSeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.segment_duration_seconds).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_3) = &input.stream_selection {
+    if let Some(var_5) = &input.stream_selection {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("streamSelection").start_object();
-        crate::protocol_serde::shape_stream_selection::ser_stream_selection(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_6 = object.key("streamSelection").start_object();
+        crate::protocol_serde::shape_stream_selection::ser_stream_selection(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }

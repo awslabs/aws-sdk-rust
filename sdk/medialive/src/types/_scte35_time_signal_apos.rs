@@ -6,7 +6,7 @@
 pub struct Scte35TimeSignalApos {
     /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time. This only applies to embedded SCTE 104/35 messages and does not apply to OOB messages.
     #[doc(hidden)]
-    pub ad_avail_offset: i32,
+    pub ad_avail_offset: std::option::Option<i32>,
     /// When set to ignore, Segment Descriptors with noRegionalBlackoutFlag set to 0 will no longer trigger blackouts or Ad Avail slates
     #[doc(hidden)]
     pub no_regional_blackout_flag:
@@ -18,7 +18,7 @@ pub struct Scte35TimeSignalApos {
 }
 impl Scte35TimeSignalApos {
     /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time. This only applies to embedded SCTE 104/35 messages and does not apply to OOB messages.
-    pub fn ad_avail_offset(&self) -> i32 {
+    pub fn ad_avail_offset(&self) -> std::option::Option<i32> {
         self.ad_avail_offset
     }
     /// When set to ignore, Segment Descriptors with noRegionalBlackoutFlag set to 0 will no longer trigger blackouts or Ad Avail slates
@@ -97,7 +97,7 @@ impl Scte35TimeSignalAposBuilder {
     /// Consumes the builder and constructs a [`Scte35TimeSignalApos`](crate::types::Scte35TimeSignalApos).
     pub fn build(self) -> crate::types::Scte35TimeSignalApos {
         crate::types::Scte35TimeSignalApos {
-            ad_avail_offset: self.ad_avail_offset.unwrap_or_default(),
+            ad_avail_offset: self.ad_avail_offset,
             no_regional_blackout_flag: self.no_regional_blackout_flag,
             web_delivery_allowed_flag: self.web_delivery_allowed_flag,
         }

@@ -6,7 +6,7 @@ pub struct CreateUserOutput {
     /// <p>The identifier of the server that the user is attached to.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>A unique string that identifies a user account associated with a server.</p>
+    /// <p>A unique string that identifies a Transfer Family user.</p>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     _request_id: Option<String>,
@@ -16,7 +16,7 @@ impl CreateUserOutput {
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>A unique string that identifies a user account associated with a server.</p>
+    /// <p>A unique string that identifies a Transfer Family user.</p>
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
@@ -52,12 +52,12 @@ impl CreateUserOutputBuilder {
         self.server_id = input;
         self
     }
-    /// <p>A unique string that identifies a user account associated with a server.</p>
+    /// <p>A unique string that identifies a Transfer Family user.</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.user_name = Some(input.into());
         self
     }
-    /// <p>A unique string that identifies a user account associated with a server.</p>
+    /// <p>A unique string that identifies a Transfer Family user.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.user_name = input;
         self

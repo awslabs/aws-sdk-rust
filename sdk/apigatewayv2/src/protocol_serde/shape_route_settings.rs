@@ -93,29 +93,25 @@ pub fn ser_route_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RouteSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.data_trace_enabled {
-        object
-            .key("dataTraceEnabled")
-            .boolean(input.data_trace_enabled);
+    if let Some(var_1) = &input.data_trace_enabled {
+        object.key("dataTraceEnabled").boolean(*var_1);
     }
-    if input.detailed_metrics_enabled {
-        object
-            .key("detailedMetricsEnabled")
-            .boolean(input.detailed_metrics_enabled);
+    if let Some(var_2) = &input.detailed_metrics_enabled {
+        object.key("detailedMetricsEnabled").boolean(*var_2);
     }
-    if let Some(var_1) = &input.logging_level {
-        object.key("loggingLevel").string(var_1.as_str());
+    if let Some(var_3) = &input.logging_level {
+        object.key("loggingLevel").string(var_3.as_str());
     }
-    if input.throttling_burst_limit != 0 {
+    if let Some(var_4) = &input.throttling_burst_limit {
         object.key("throttlingBurstLimit").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.throttling_burst_limit).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if input.throttling_rate_limit != 0.0 {
+    if let Some(var_5) = &input.throttling_rate_limit {
         object.key("throttlingRateLimit").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.throttling_rate_limit).into()),
+            aws_smithy_types::Number::Float((*var_5).into()),
         );
     }
     Ok(())

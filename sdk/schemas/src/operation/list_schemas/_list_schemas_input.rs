@@ -5,7 +5,7 @@
 pub struct ListSchemasInput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub limit: i32,
+    pub limit: std::option::Option<i32>,
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct ListSchemasInput {
 }
 impl ListSchemasInput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn limit(&self) -> i32 {
+    pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
@@ -102,7 +102,7 @@ impl ListSchemasInputBuilder {
         aws_smithy_http::operation::error::BuildError,
     > {
         Ok(crate::operation::list_schemas::ListSchemasInput {
-            limit: self.limit.unwrap_or_default(),
+            limit: self.limit,
             next_token: self.next_token,
             registry_name: self.registry_name,
             schema_name_prefix: self.schema_name_prefix,

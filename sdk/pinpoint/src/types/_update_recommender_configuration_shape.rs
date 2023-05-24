@@ -43,7 +43,7 @@ pub struct UpdateRecommenderConfigurationShape {
     /// <p>The number of recommended items to retrieve from the model for each endpoint or user, depending on the value for the RecommendationProviderIdType property. This number determines how many recommended items are available for use in message variables. The minimum value is 1. The maximum value is 5. The default value is 5.</p>
     /// <p>To use multiple recommended items and custom attributes with message variables, you have to use an AWS Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation data.</p>
     #[doc(hidden)]
-    pub recommendations_per_message: i32,
+    pub recommendations_per_message: std::option::Option<i32>,
 }
 impl UpdateRecommenderConfigurationShape {
     /// <p>A map of key-value pairs that defines 1-10 custom endpoint or user attributes, depending on the value for the RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item that's retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute can be used as a message variable in a message template.</p>
@@ -94,7 +94,7 @@ impl UpdateRecommenderConfigurationShape {
     }
     /// <p>The number of recommended items to retrieve from the model for each endpoint or user, depending on the value for the RecommendationProviderIdType property. This number determines how many recommended items are available for use in message variables. The minimum value is 1. The maximum value is 5. The default value is 5.</p>
     /// <p>To use multiple recommended items and custom attributes with message variables, you have to use an AWS Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation data.</p>
-    pub fn recommendations_per_message(&self) -> i32 {
+    pub fn recommendations_per_message(&self) -> std::option::Option<i32> {
         self.recommendations_per_message
     }
 }
@@ -282,7 +282,7 @@ impl UpdateRecommenderConfigurationShapeBuilder {
             recommendation_provider_uri: self.recommendation_provider_uri,
             recommendation_transformer_uri: self.recommendation_transformer_uri,
             recommendations_display_name: self.recommendations_display_name,
-            recommendations_per_message: self.recommendations_per_message.unwrap_or_default(),
+            recommendations_per_message: self.recommendations_per_message,
         }
     }
 }

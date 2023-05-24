@@ -8,7 +8,7 @@ pub struct ClaimDevicesByClaimCodeOutput {
     pub claim_code: std::option::Option<std::string::String>,
     /// <p>The total number of devices associated with the claim code that has been processed in the claim request.</p>
     #[doc(hidden)]
-    pub total: i32,
+    pub total: std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl ClaimDevicesByClaimCodeOutput {
@@ -17,7 +17,7 @@ impl ClaimDevicesByClaimCodeOutput {
         self.claim_code.as_deref()
     }
     /// <p>The total number of devices associated with the claim code that has been processed in the claim request.</p>
-    pub fn total(&self) -> i32 {
+    pub fn total(&self) -> std::option::Option<i32> {
         self.total
     }
 }
@@ -79,7 +79,7 @@ impl ClaimDevicesByClaimCodeOutputBuilder {
     ) -> crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeOutput {
         crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeOutput {
             claim_code: self.claim_code,
-            total: self.total.unwrap_or_default(),
+            total: self.total,
             _request_id: self._request_id,
         }
     }

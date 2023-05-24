@@ -9,7 +9,7 @@ pub struct MetricDimension {
     pub comparison_operator: std::option::Option<std::string::String>,
     /// <p>The value to compare.</p>
     #[doc(hidden)]
-    pub value: f64,
+    pub value: std::option::Option<f64>,
 }
 impl MetricDimension {
     /// <p>The operator to use when comparing metric values. Valid values are: GREATER_THAN, LESS_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, and EQUAL.</p>
@@ -17,7 +17,7 @@ impl MetricDimension {
         self.comparison_operator.as_deref()
     }
     /// <p>The value to compare.</p>
-    pub fn value(&self) -> f64 {
+    pub fn value(&self) -> std::option::Option<f64> {
         self.value
     }
 }
@@ -63,7 +63,7 @@ impl MetricDimensionBuilder {
     pub fn build(self) -> crate::types::MetricDimension {
         crate::types::MetricDimension {
             comparison_operator: self.comparison_operator,
-            value: self.value.unwrap_or_default(),
+            value: self.value,
         }
     }
 }

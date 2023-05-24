@@ -6,10 +6,10 @@ pub fn ser_configuration_info(
     if let Some(var_1) = &input.arn {
         object.key("arn").string(var_1.as_str());
     }
-    {
+    if let Some(var_2) = &input.revision {
         object.key("revision").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.revision).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

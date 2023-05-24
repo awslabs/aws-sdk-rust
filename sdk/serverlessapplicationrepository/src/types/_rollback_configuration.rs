@@ -6,14 +6,14 @@
 pub struct RollbackConfiguration {
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
     #[doc(hidden)]
-    pub monitoring_time_in_minutes: i32,
+    pub monitoring_time_in_minutes: std::option::Option<i32>,
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
     #[doc(hidden)]
     pub rollback_triggers: std::option::Option<std::vec::Vec<crate::types::RollbackTrigger>>,
 }
 impl RollbackConfiguration {
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
-    pub fn monitoring_time_in_minutes(&self) -> i32 {
+    pub fn monitoring_time_in_minutes(&self) -> std::option::Option<i32> {
         self.monitoring_time_in_minutes
     }
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
@@ -68,7 +68,7 @@ impl RollbackConfigurationBuilder {
     /// Consumes the builder and constructs a [`RollbackConfiguration`](crate::types::RollbackConfiguration).
     pub fn build(self) -> crate::types::RollbackConfiguration {
         crate::types::RollbackConfiguration {
-            monitoring_time_in_minutes: self.monitoring_time_in_minutes.unwrap_or_default(),
+            monitoring_time_in_minutes: self.monitoring_time_in_minutes,
             rollback_triggers: self.rollback_triggers,
         }
     }

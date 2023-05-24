@@ -34,32 +34,32 @@ pub fn ser_receive_message_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_13 = writer.prefix("MaxNumberOfMessages");
-    if input.max_number_of_messages != 0 {
+    if let Some(var_14) = &input.max_number_of_messages {
         scope_13.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_number_of_messages).into()),
+            aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_14 = writer.prefix("VisibilityTimeout");
-    if input.visibility_timeout != 0 {
-        scope_14.number(
-            #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.visibility_timeout).into()),
-        );
-    }
-    #[allow(unused_mut)]
-    let mut scope_15 = writer.prefix("WaitTimeSeconds");
-    if input.wait_time_seconds != 0 {
+    let mut scope_15 = writer.prefix("VisibilityTimeout");
+    if let Some(var_16) = &input.visibility_timeout {
         scope_15.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.wait_time_seconds).into()),
+            aws_smithy_types::Number::NegInt((*var_16).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_16 = writer.prefix("ReceiveRequestAttemptId");
-    if let Some(var_17) = &input.receive_request_attempt_id {
-        scope_16.string(var_17);
+    let mut scope_17 = writer.prefix("WaitTimeSeconds");
+    if let Some(var_18) = &input.wait_time_seconds {
+        scope_17.number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_18).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_19 = writer.prefix("ReceiveRequestAttemptId");
+    if let Some(var_20) = &input.receive_request_attempt_id {
+        scope_19.string(var_20);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))

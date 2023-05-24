@@ -6,17 +6,17 @@ pub fn ser_nex_guard_file_marker_settings(
     if let Some(var_1) = &input.license {
         object.key("license").string(var_1.as_str());
     }
-    if input.payload != 0 {
+    if let Some(var_2) = &input.payload {
         object.key("payload").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.payload).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.preset {
-        object.key("preset").string(var_2.as_str());
+    if let Some(var_3) = &input.preset {
+        object.key("preset").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.strength {
-        object.key("strength").string(var_3.as_str());
+    if let Some(var_4) = &input.strength {
+        object.key("strength").string(var_4.as_str());
     }
     Ok(())
 }

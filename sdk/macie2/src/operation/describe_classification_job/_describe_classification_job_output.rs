@@ -20,7 +20,7 @@ pub struct DescribeClassificationJobOutput {
     pub description: std::option::Option<std::string::String>,
     /// <p>For a recurring job, specifies whether you configured the job to analyze all existing, eligible objects immediately after the job was created (true). If you configured the job to analyze only those objects that were created or changed after the job was created and before the job's first scheduled run, this value is false. This value is also false for a one-time job.</p>
     #[doc(hidden)]
-    pub initial_run: bool,
+    pub initial_run: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
     #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
@@ -73,7 +73,7 @@ pub struct DescribeClassificationJobOutput {
     pub s3_job_definition: std::option::Option<crate::types::S3JobDefinition>,
     /// <p>The sampling depth, as a percentage, that determines the percentage of eligible objects that the job analyzes.</p>
     #[doc(hidden)]
-    pub sampling_percentage: i32,
+    pub sampling_percentage: std::option::Option<i32>,
     /// <p>The recurrence pattern for running the job. This value is null if the job is configured to run only once.</p>
     #[doc(hidden)]
     pub schedule_frequency: std::option::Option<crate::types::JobScheduleFrequency>,
@@ -111,7 +111,7 @@ impl DescribeClassificationJobOutput {
         self.description.as_deref()
     }
     /// <p>For a recurring job, specifies whether you configured the job to analyze all existing, eligible objects immediately after the job was created (true). If you configured the job to analyze only those objects that were created or changed after the job was created and before the job's first scheduled run, this value is false. This value is also false for a one-time job.</p>
-    pub fn initial_run(&self) -> bool {
+    pub fn initial_run(&self) -> std::option::Option<bool> {
         self.initial_run
     }
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
@@ -176,7 +176,7 @@ impl DescribeClassificationJobOutput {
         self.s3_job_definition.as_ref()
     }
     /// <p>The sampling depth, as a percentage, that determines the percentage of eligible objects that the job analyzes.</p>
-    pub fn sampling_percentage(&self) -> i32 {
+    pub fn sampling_percentage(&self) -> std::option::Option<i32> {
         self.sampling_percentage
     }
     /// <p>The recurrence pattern for running the job. This value is null if the job is configured to run only once.</p>
@@ -574,7 +574,7 @@ impl DescribeClassificationJobOutputBuilder {
             created_at: self.created_at,
             custom_data_identifier_ids: self.custom_data_identifier_ids,
             description: self.description,
-            initial_run: self.initial_run.unwrap_or_default(),
+            initial_run: self.initial_run,
             job_arn: self.job_arn,
             job_id: self.job_id,
             job_status: self.job_status,
@@ -585,7 +585,7 @@ impl DescribeClassificationJobOutputBuilder {
             managed_data_identifier_selector: self.managed_data_identifier_selector,
             name: self.name,
             s3_job_definition: self.s3_job_definition,
-            sampling_percentage: self.sampling_percentage.unwrap_or_default(),
+            sampling_percentage: self.sampling_percentage,
             schedule_frequency: self.schedule_frequency,
             statistics: self.statistics,
             tags: self.tags,

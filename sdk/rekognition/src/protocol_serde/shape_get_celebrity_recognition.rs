@@ -233,6 +233,28 @@ pub(crate) fn de_get_celebrity_recognition(
                             crate::protocol_serde::shape_celebrity_recognitions::de_celebrity_recognitions(tokens)?
                         );
                     }
+                    "JobId" => {
+                        builder = builder.set_job_id(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    "Video" => {
+                        builder = builder
+                            .set_video(crate::protocol_serde::shape_video::de_video(tokens)?);
+                    }
+                    "JobTag" => {
+                        builder = builder.set_job_tag(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

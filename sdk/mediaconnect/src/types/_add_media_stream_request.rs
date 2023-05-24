@@ -9,13 +9,13 @@ pub struct AddMediaStreamRequest {
     pub attributes: std::option::Option<crate::types::MediaStreamAttributesRequest>,
     /// The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
     #[doc(hidden)]
-    pub clock_rate: i32,
+    pub clock_rate: std::option::Option<i32>,
     /// A description that can help you quickly identify what your media stream is used for.
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// A unique identifier for the media stream.
     #[doc(hidden)]
-    pub media_stream_id: i32,
+    pub media_stream_id: std::option::Option<i32>,
     /// A name that helps you distinguish one media stream from another.
     #[doc(hidden)]
     pub media_stream_name: std::option::Option<std::string::String>,
@@ -32,7 +32,7 @@ impl AddMediaStreamRequest {
         self.attributes.as_ref()
     }
     /// The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
-    pub fn clock_rate(&self) -> i32 {
+    pub fn clock_rate(&self) -> std::option::Option<i32> {
         self.clock_rate
     }
     /// A description that can help you quickly identify what your media stream is used for.
@@ -40,7 +40,7 @@ impl AddMediaStreamRequest {
         self.description.as_deref()
     }
     /// A unique identifier for the media stream.
-    pub fn media_stream_id(&self) -> i32 {
+    pub fn media_stream_id(&self) -> std::option::Option<i32> {
         self.media_stream_id
     }
     /// A name that helps you distinguish one media stream from another.
@@ -159,9 +159,9 @@ impl AddMediaStreamRequestBuilder {
     pub fn build(self) -> crate::types::AddMediaStreamRequest {
         crate::types::AddMediaStreamRequest {
             attributes: self.attributes,
-            clock_rate: self.clock_rate.unwrap_or_default(),
+            clock_rate: self.clock_rate,
             description: self.description,
-            media_stream_id: self.media_stream_id.unwrap_or_default(),
+            media_stream_id: self.media_stream_id,
             media_stream_name: self.media_stream_name,
             media_stream_type: self.media_stream_type,
             video_format: self.video_format,

@@ -28,6 +28,9 @@ pub struct TaskListItem {
     /// <p>When the task stopped.</p>
     #[doc(hidden)]
     pub stop_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> The number of Graphics Processing Units (GPU) specified for the task. </p>
+    #[doc(hidden)]
+    pub gpus: std::option::Option<i32>,
 }
 impl TaskListItem {
     /// <p>The task's ID.</p>
@@ -62,6 +65,10 @@ impl TaskListItem {
     pub fn stop_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stop_time.as_ref()
     }
+    /// <p> The number of Graphics Processing Units (GPU) specified for the task. </p>
+    pub fn gpus(&self) -> std::option::Option<i32> {
+        self.gpus
+    }
 }
 impl TaskListItem {
     /// Creates a new builder-style object to manufacture [`TaskListItem`](crate::types::TaskListItem).
@@ -82,6 +89,7 @@ pub struct TaskListItemBuilder {
     pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) stop_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) gpus: std::option::Option<i32>,
 }
 impl TaskListItemBuilder {
     /// <p>The task's ID.</p>
@@ -170,6 +178,16 @@ impl TaskListItemBuilder {
         self.stop_time = input;
         self
     }
+    /// <p> The number of Graphics Processing Units (GPU) specified for the task. </p>
+    pub fn gpus(mut self, input: i32) -> Self {
+        self.gpus = Some(input);
+        self
+    }
+    /// <p> The number of Graphics Processing Units (GPU) specified for the task. </p>
+    pub fn set_gpus(mut self, input: std::option::Option<i32>) -> Self {
+        self.gpus = input;
+        self
+    }
     /// Consumes the builder and constructs a [`TaskListItem`](crate::types::TaskListItem).
     pub fn build(self) -> crate::types::TaskListItem {
         crate::types::TaskListItem {
@@ -181,6 +199,7 @@ impl TaskListItemBuilder {
             creation_time: self.creation_time,
             start_time: self.start_time,
             stop_time: self.stop_time,
+            gpus: self.gpus,
         }
     }
 }

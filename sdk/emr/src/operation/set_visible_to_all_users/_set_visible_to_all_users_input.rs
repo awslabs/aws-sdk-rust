@@ -7,7 +7,7 @@ pub struct SetVisibleToAllUsersInput {
     /// <p>The unique identifier of the job flow (cluster).</p>
     #[doc(hidden)]
     pub job_flow_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
+    /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform Amazon EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform Amazon EMR actions on the cluster.</p>
     #[doc(hidden)]
     pub visible_to_all_users: std::option::Option<bool>,
 }
@@ -16,7 +16,7 @@ impl SetVisibleToAllUsersInput {
     pub fn job_flow_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.job_flow_ids.as_deref()
     }
-    /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
+    /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform Amazon EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform Amazon EMR actions on the cluster.</p>
     pub fn visible_to_all_users(&self) -> std::option::Option<bool> {
         self.visible_to_all_users
     }
@@ -57,12 +57,12 @@ impl SetVisibleToAllUsersInputBuilder {
         self.job_flow_ids = input;
         self
     }
-    /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
+    /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform Amazon EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform Amazon EMR actions on the cluster.</p>
     pub fn visible_to_all_users(mut self, input: bool) -> Self {
         self.visible_to_all_users = Some(input);
         self
     }
-    /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
+    /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform Amazon EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform Amazon EMR actions on the cluster.</p>
     pub fn set_visible_to_all_users(mut self, input: std::option::Option<bool>) -> Self {
         self.visible_to_all_users = input;
         self

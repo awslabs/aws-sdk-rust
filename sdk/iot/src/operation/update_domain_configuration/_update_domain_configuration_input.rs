@@ -15,6 +15,9 @@ pub struct UpdateDomainConfigurationInput {
     /// <p>Removes the authorization configuration from a domain.</p>
     #[doc(hidden)]
     pub remove_authorizer_config: std::option::Option<bool>,
+    /// <p>An object that specifies the TLS configuration for a domain.</p>
+    #[doc(hidden)]
+    pub tls_config: std::option::Option<crate::types::TlsConfig>,
 }
 impl UpdateDomainConfigurationInput {
     /// <p>The name of the domain configuration to be updated.</p>
@@ -35,6 +38,10 @@ impl UpdateDomainConfigurationInput {
     pub fn remove_authorizer_config(&self) -> std::option::Option<bool> {
         self.remove_authorizer_config
     }
+    /// <p>An object that specifies the TLS configuration for a domain.</p>
+    pub fn tls_config(&self) -> std::option::Option<&crate::types::TlsConfig> {
+        self.tls_config.as_ref()
+    }
 }
 impl UpdateDomainConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainConfigurationInput`](crate::operation::update_domain_configuration::UpdateDomainConfigurationInput).
@@ -52,6 +59,7 @@ pub struct UpdateDomainConfigurationInputBuilder {
     pub(crate) domain_configuration_status:
         std::option::Option<crate::types::DomainConfigurationStatus>,
     pub(crate) remove_authorizer_config: std::option::Option<bool>,
+    pub(crate) tls_config: std::option::Option<crate::types::TlsConfig>,
 }
 impl UpdateDomainConfigurationInputBuilder {
     /// <p>The name of the domain configuration to be updated.</p>
@@ -106,6 +114,16 @@ impl UpdateDomainConfigurationInputBuilder {
         self.remove_authorizer_config = input;
         self
     }
+    /// <p>An object that specifies the TLS configuration for a domain.</p>
+    pub fn tls_config(mut self, input: crate::types::TlsConfig) -> Self {
+        self.tls_config = Some(input);
+        self
+    }
+    /// <p>An object that specifies the TLS configuration for a domain.</p>
+    pub fn set_tls_config(mut self, input: std::option::Option<crate::types::TlsConfig>) -> Self {
+        self.tls_config = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateDomainConfigurationInput`](crate::operation::update_domain_configuration::UpdateDomainConfigurationInput).
     pub fn build(
         self,
@@ -119,6 +137,7 @@ impl UpdateDomainConfigurationInputBuilder {
                 authorizer_config: self.authorizer_config,
                 domain_configuration_status: self.domain_configuration_status,
                 remove_authorizer_config: self.remove_authorizer_config,
+                tls_config: self.tls_config,
             },
         )
     }

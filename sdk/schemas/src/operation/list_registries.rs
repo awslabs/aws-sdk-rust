@@ -49,28 +49,30 @@ impl ListRegistriesInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(output);
-                if _input.limit != 0 {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(_input.limit).encode(),
-                    );
-                }
-                if let Some(inner_1) = &_input.next_token {
-                    {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_1));
-                    }
-                }
-                if let Some(inner_2) = &_input.registry_name_prefix {
-                    {
+                if let Some(inner_1) = &_input.limit {
+                    if *inner_1 != 0 {
                         query.push_kv(
-                            "registryNamePrefix",
-                            &aws_smithy_http::query::fmt_string(&inner_2),
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_1).encode(),
                         );
                     }
                 }
-                if let Some(inner_3) = &_input.scope {
+                if let Some(inner_2) = &_input.next_token {
                     {
-                        query.push_kv("scope", &aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_2));
+                    }
+                }
+                if let Some(inner_3) = &_input.registry_name_prefix {
+                    {
+                        query.push_kv(
+                            "registryNamePrefix",
+                            &aws_smithy_http::query::fmt_string(&inner_3),
+                        );
+                    }
+                }
+                if let Some(inner_4) = &_input.scope {
+                    {
+                        query.push_kv("scope", &aws_smithy_http::query::fmt_string(&inner_4));
                     }
                 }
                 Ok(())

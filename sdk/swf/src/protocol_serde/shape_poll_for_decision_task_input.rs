@@ -27,5 +27,8 @@ pub fn ser_poll_for_decision_task_input(
     if let Some(var_7) = &input.reverse_order {
         object.key("reverseOrder").boolean(*var_7);
     }
+    if let Some(var_8) = &input.start_at_previous_started_event {
+        object.key("startAtPreviousStartedEvent").boolean(*var_8);
+    }
     Ok(())
 }

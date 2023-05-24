@@ -24,6 +24,11 @@ pub fn ser_auto_ml_channel(
     if let Some(var_6) = &input.channel_type {
         object.key("ChannelType").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.sample_weight_attribute_name {
+        object
+            .key("SampleWeightAttributeName")
+            .string(var_7.as_str());
+    }
     Ok(())
 }
 
@@ -97,6 +102,15 @@ where
                                             crate::types::AutoMlChannelType::from(u.as_ref())
                                         })
                                     })
+                                    .transpose()?,
+                                );
+                            }
+                            "SampleWeightAttributeName" => {
+                                builder = builder.set_sample_weight_attribute_name(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                                 );
                             }

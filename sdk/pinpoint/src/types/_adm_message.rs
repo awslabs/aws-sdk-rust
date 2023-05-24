@@ -42,7 +42,7 @@ pub struct AdmMessage {
     pub raw_content: std::option::Option<std::string::String>,
     /// <p>Specifies whether the notification is a silent push notification, which is a push notification that doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating an app's configuration or supporting phone home functionality.</p>
     #[doc(hidden)]
-    pub silent_push: bool,
+    pub silent_push: std::option::Option<bool>,
     /// <p>The URL of the small icon image to display in the status bar and the content view of the push notification.</p>
     #[doc(hidden)]
     pub small_image_icon_url: std::option::Option<std::string::String>,
@@ -111,7 +111,7 @@ impl AdmMessage {
         self.raw_content.as_deref()
     }
     /// <p>Specifies whether the notification is a silent push notification, which is a push notification that doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating an app's configuration or supporting phone home functionality.</p>
-    pub fn silent_push(&self) -> bool {
+    pub fn silent_push(&self) -> std::option::Option<bool> {
         self.silent_push
     }
     /// <p>The URL of the small icon image to display in the status bar and the content view of the push notification.</p>
@@ -390,7 +390,7 @@ impl AdmMessageBuilder {
             image_url: self.image_url,
             md5: self.md5,
             raw_content: self.raw_content,
-            silent_push: self.silent_push.unwrap_or_default(),
+            silent_push: self.silent_push,
             small_image_icon_url: self.small_image_icon_url,
             sound: self.sound,
             substitutions: self.substitutions,

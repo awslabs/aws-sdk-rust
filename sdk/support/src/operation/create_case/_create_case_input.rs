@@ -24,7 +24,7 @@ pub struct CreateCaseInput {
     /// <p>A list of email addresses that Amazon Web Services Support copies on case correspondence. Amazon Web Services Support identifies the account that creates the case when you specify your Amazon Web Services credentials in an HTTP POST method or use the <a href="http://aws.amazon.com/tools/">Amazon Web Services SDKs</a>. </p>
     #[doc(hidden)]
     pub cc_email_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     #[doc(hidden)]
     pub language: std::option::Option<std::string::String>,
     /// <p>The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>. If you don't specify a value, the default is <code>technical</code>.</p>
@@ -62,7 +62,7 @@ impl CreateCaseInput {
     pub fn cc_email_addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.cc_email_addresses.as_deref()
     }
-    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn language(&self) -> std::option::Option<&str> {
         self.language.as_deref()
     }
@@ -175,12 +175,12 @@ impl CreateCaseInputBuilder {
         self.cc_email_addresses = input;
         self
     }
-    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
         self.language = Some(input.into());
         self
     }
-    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.language = input;
         self

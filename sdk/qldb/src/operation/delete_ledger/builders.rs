@@ -6,7 +6,7 @@ pub use crate::operation::delete_ledger::_delete_ledger_input::DeleteLedgerInput
 /// Fluent builder constructing a request to `DeleteLedger`.
 ///
 /// <p>Deletes a ledger and all of its contents. This action is irreversible.</p>
-/// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+/// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteLedgerFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

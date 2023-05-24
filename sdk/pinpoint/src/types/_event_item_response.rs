@@ -9,7 +9,7 @@ pub struct EventItemResponse {
     pub message: std::option::Option<std::string::String>,
     /// <p>The status code that's returned in the response as a result of processing the event. Possible values are: 202, for events that were accepted; and, 400, for events that weren't valid.</p>
     #[doc(hidden)]
-    pub status_code: i32,
+    pub status_code: std::option::Option<i32>,
 }
 impl EventItemResponse {
     /// <p>A custom message that's returned in the response as a result of processing the event.</p>
@@ -17,7 +17,7 @@ impl EventItemResponse {
         self.message.as_deref()
     }
     /// <p>The status code that's returned in the response as a result of processing the event. Possible values are: 202, for events that were accepted; and, 400, for events that weren't valid.</p>
-    pub fn status_code(&self) -> i32 {
+    pub fn status_code(&self) -> std::option::Option<i32> {
         self.status_code
     }
 }
@@ -60,7 +60,7 @@ impl EventItemResponseBuilder {
     pub fn build(self) -> crate::types::EventItemResponse {
         crate::types::EventItemResponse {
             message: self.message,
-            status_code: self.status_code.unwrap_or_default(),
+            status_code: self.status_code,
         }
     }
 }

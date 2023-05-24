@@ -6,11 +6,11 @@
 pub struct NoiseReducerFilterSettings {
     /// Relative strength of noise reducing filter. Higher values produce stronger filtering.
     #[doc(hidden)]
-    pub strength: i32,
+    pub strength: std::option::Option<i32>,
 }
 impl NoiseReducerFilterSettings {
     /// Relative strength of noise reducing filter. Higher values produce stronger filtering.
-    pub fn strength(&self) -> i32 {
+    pub fn strength(&self) -> std::option::Option<i32> {
         self.strength
     }
 }
@@ -41,7 +41,7 @@ impl NoiseReducerFilterSettingsBuilder {
     /// Consumes the builder and constructs a [`NoiseReducerFilterSettings`](crate::types::NoiseReducerFilterSettings).
     pub fn build(self) -> crate::types::NoiseReducerFilterSettings {
         crate::types::NoiseReducerFilterSettings {
-            strength: self.strength.unwrap_or_default(),
+            strength: self.strength,
         }
     }
 }

@@ -10,7 +10,7 @@ pub struct InstanceGroupModifyConfig {
     /// <p>Target size for the instance group.</p>
     #[doc(hidden)]
     pub instance_count: std::option::Option<i32>,
-    /// <p>The EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to its original requested size.</p>
+    /// <p>The Amazon EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to its original requested size.</p>
     #[doc(hidden)]
     pub ec2_instance_ids_to_terminate: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Policy for customizing shrink operations.</p>
@@ -32,7 +32,7 @@ impl InstanceGroupModifyConfig {
     pub fn instance_count(&self) -> std::option::Option<i32> {
         self.instance_count
     }
-    /// <p>The EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to its original requested size.</p>
+    /// <p>The Amazon EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to its original requested size.</p>
     pub fn ec2_instance_ids_to_terminate(&self) -> std::option::Option<&[std::string::String]> {
         self.ec2_instance_ids_to_terminate.as_deref()
     }
@@ -96,14 +96,14 @@ impl InstanceGroupModifyConfigBuilder {
     ///
     /// To override the contents of this collection use [`set_ec2_instance_ids_to_terminate`](Self::set_ec2_instance_ids_to_terminate).
     ///
-    /// <p>The EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to its original requested size.</p>
+    /// <p>The Amazon EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to its original requested size.</p>
     pub fn ec2_instance_ids_to_terminate(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ec2_instance_ids_to_terminate.unwrap_or_default();
         v.push(input.into());
         self.ec2_instance_ids_to_terminate = Some(v);
         self
     }
-    /// <p>The EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to its original requested size.</p>
+    /// <p>The Amazon EC2 InstanceIds to terminate. After you terminate the instances, the instance group will not return to its original requested size.</p>
     pub fn set_ec2_instance_ids_to_terminate(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

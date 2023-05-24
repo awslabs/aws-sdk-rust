@@ -8,7 +8,7 @@ pub struct ListUsersOutput {
     pub broker_id: std::option::Option<std::string::String>,
     /// <p>Required. The maximum number of ActiveMQ users that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -23,7 +23,7 @@ impl ListUsersOutput {
         self.broker_id.as_deref()
     }
     /// <p>Required. The maximum number of ActiveMQ users that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
@@ -120,7 +120,7 @@ impl ListUsersOutputBuilder {
     pub fn build(self) -> crate::operation::list_users::ListUsersOutput {
         crate::operation::list_users::ListUsersOutput {
             broker_id: self.broker_id,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
             users: self.users,
             _request_id: self._request_id,

@@ -11,6 +11,8 @@ pub use crate::types::_simulation_app_endpoint_info::SimulationAppEndpointInfo;
 
 pub use crate::types::_simulation_app_port_mapping::SimulationAppPortMapping;
 
+pub use crate::types::_s3_destination::S3Destination;
+
 pub use crate::types::_simulation_metadata::SimulationMetadata;
 
 pub use crate::types::_simulation_target_status::SimulationTargetStatus;
@@ -54,6 +56,8 @@ mod _live_simulation_state;
 mod _log_destination;
 
 mod _logging_configuration;
+
+mod _s3_destination;
 
 mod _s3_location;
 

@@ -15,19 +15,19 @@ pub struct DashPackage {
     pub encryption: std::option::Option<crate::types::DashEncryption>,
     /// When enabled, an I-Frame only stream will be included in the output.
     #[doc(hidden)]
-    pub include_iframe_only_stream: bool,
+    pub include_iframe_only_stream: std::option::Option<bool>,
     /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
     #[doc(hidden)]
     pub manifest_layout: std::option::Option<crate::types::ManifestLayout>,
     /// Time window (in seconds) contained in each manifest.
     #[doc(hidden)]
-    pub manifest_window_seconds: i32,
+    pub manifest_window_seconds: std::option::Option<i32>,
     /// Minimum duration (in seconds) that a player will buffer media before starting the presentation.
     #[doc(hidden)]
-    pub min_buffer_time_seconds: i32,
+    pub min_buffer_time_seconds: std::option::Option<i32>,
     /// Minimum duration (in seconds) between potential changes to the Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD).
     #[doc(hidden)]
-    pub min_update_period_seconds: i32,
+    pub min_update_period_seconds: std::option::Option<i32>,
     /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into more than one period. If the list contains "ADS", new periods will be created where the Channel source contains SCTE-35 ad markers.
     #[doc(hidden)]
     pub period_triggers: std::option::Option<std::vec::Vec<crate::types::PeriodTriggersElement>>,
@@ -36,7 +36,7 @@ pub struct DashPackage {
     pub profile: std::option::Option<crate::types::Profile>,
     /// Duration (in seconds) of each segment. Actual segments will be rounded to the nearest multiple of the source segment duration.
     #[doc(hidden)]
-    pub segment_duration_seconds: i32,
+    pub segment_duration_seconds: std::option::Option<i32>,
     /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
     #[doc(hidden)]
     pub segment_template_format: std::option::Option<crate::types::SegmentTemplateFormat>,
@@ -45,7 +45,7 @@ pub struct DashPackage {
     pub stream_selection: std::option::Option<crate::types::StreamSelection>,
     /// Duration (in seconds) to delay live content before presentation.
     #[doc(hidden)]
-    pub suggested_presentation_delay_seconds: i32,
+    pub suggested_presentation_delay_seconds: std::option::Option<i32>,
     /// Determines the type of UTCTiming included in the Media Presentation Description (MPD)
     #[doc(hidden)]
     pub utc_timing: std::option::Option<crate::types::UtcTiming>,
@@ -69,7 +69,7 @@ impl DashPackage {
         self.encryption.as_ref()
     }
     /// When enabled, an I-Frame only stream will be included in the output.
-    pub fn include_iframe_only_stream(&self) -> bool {
+    pub fn include_iframe_only_stream(&self) -> std::option::Option<bool> {
         self.include_iframe_only_stream
     }
     /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
@@ -77,15 +77,15 @@ impl DashPackage {
         self.manifest_layout.as_ref()
     }
     /// Time window (in seconds) contained in each manifest.
-    pub fn manifest_window_seconds(&self) -> i32 {
+    pub fn manifest_window_seconds(&self) -> std::option::Option<i32> {
         self.manifest_window_seconds
     }
     /// Minimum duration (in seconds) that a player will buffer media before starting the presentation.
-    pub fn min_buffer_time_seconds(&self) -> i32 {
+    pub fn min_buffer_time_seconds(&self) -> std::option::Option<i32> {
         self.min_buffer_time_seconds
     }
     /// Minimum duration (in seconds) between potential changes to the Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD).
-    pub fn min_update_period_seconds(&self) -> i32 {
+    pub fn min_update_period_seconds(&self) -> std::option::Option<i32> {
         self.min_update_period_seconds
     }
     /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into more than one period. If the list contains "ADS", new periods will be created where the Channel source contains SCTE-35 ad markers.
@@ -97,7 +97,7 @@ impl DashPackage {
         self.profile.as_ref()
     }
     /// Duration (in seconds) of each segment. Actual segments will be rounded to the nearest multiple of the source segment duration.
-    pub fn segment_duration_seconds(&self) -> i32 {
+    pub fn segment_duration_seconds(&self) -> std::option::Option<i32> {
         self.segment_duration_seconds
     }
     /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
@@ -111,7 +111,7 @@ impl DashPackage {
         self.stream_selection.as_ref()
     }
     /// Duration (in seconds) to delay live content before presentation.
-    pub fn suggested_presentation_delay_seconds(&self) -> i32 {
+    pub fn suggested_presentation_delay_seconds(&self) -> std::option::Option<i32> {
         self.suggested_presentation_delay_seconds
     }
     /// Determines the type of UTCTiming included in the Media Presentation Description (MPD)
@@ -359,19 +359,17 @@ impl DashPackageBuilder {
             ad_triggers: self.ad_triggers,
             ads_on_delivery_restrictions: self.ads_on_delivery_restrictions,
             encryption: self.encryption,
-            include_iframe_only_stream: self.include_iframe_only_stream.unwrap_or_default(),
+            include_iframe_only_stream: self.include_iframe_only_stream,
             manifest_layout: self.manifest_layout,
-            manifest_window_seconds: self.manifest_window_seconds.unwrap_or_default(),
-            min_buffer_time_seconds: self.min_buffer_time_seconds.unwrap_or_default(),
-            min_update_period_seconds: self.min_update_period_seconds.unwrap_or_default(),
+            manifest_window_seconds: self.manifest_window_seconds,
+            min_buffer_time_seconds: self.min_buffer_time_seconds,
+            min_update_period_seconds: self.min_update_period_seconds,
             period_triggers: self.period_triggers,
             profile: self.profile,
-            segment_duration_seconds: self.segment_duration_seconds.unwrap_or_default(),
+            segment_duration_seconds: self.segment_duration_seconds,
             segment_template_format: self.segment_template_format,
             stream_selection: self.stream_selection,
-            suggested_presentation_delay_seconds: self
-                .suggested_presentation_delay_seconds
-                .unwrap_or_default(),
+            suggested_presentation_delay_seconds: self.suggested_presentation_delay_seconds,
             utc_timing: self.utc_timing,
             utc_timing_uri: self.utc_timing_uri,
         }

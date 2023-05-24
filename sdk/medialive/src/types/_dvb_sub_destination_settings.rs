@@ -12,7 +12,7 @@ pub struct DvbSubDestinationSettings {
     pub background_color: std::option::Option<crate::types::DvbSubDestinationBackgroundColor>,
     /// Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
     #[doc(hidden)]
-    pub background_opacity: i32,
+    pub background_opacity: std::option::Option<i32>,
     /// External font file used for caption burn-in. File extension must be 'ttf' or 'tte'. Although the user can select output fonts for many different types of input captions, embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts. All burn-in and DVB-Sub font settings must match.
     #[doc(hidden)]
     pub font: std::option::Option<crate::types::InputLocation>,
@@ -21,10 +21,10 @@ pub struct DvbSubDestinationSettings {
     pub font_color: std::option::Option<crate::types::DvbSubDestinationFontColor>,
     /// Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent. All burn-in and DVB-Sub font settings must match.
     #[doc(hidden)]
-    pub font_opacity: i32,
+    pub font_opacity: std::option::Option<i32>,
     /// Font resolution in DPI (dots per inch); default is 96 dpi. All burn-in and DVB-Sub font settings must match.
     #[doc(hidden)]
-    pub font_resolution: i32,
+    pub font_resolution: std::option::Option<i32>,
     /// When set to auto fontSize will scale depending on the size of the output. Giving a positive integer will specify the exact font size in points. All burn-in and DVB-Sub font settings must match.
     #[doc(hidden)]
     pub font_size: std::option::Option<std::string::String>,
@@ -33,29 +33,29 @@ pub struct DvbSubDestinationSettings {
     pub outline_color: std::option::Option<crate::types::DvbSubDestinationOutlineColor>,
     /// Specifies font outline size in pixels. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     #[doc(hidden)]
-    pub outline_size: i32,
+    pub outline_size: std::option::Option<i32>,
     /// Specifies the color of the shadow cast by the captions. All burn-in and DVB-Sub font settings must match.
     #[doc(hidden)]
     pub shadow_color: std::option::Option<crate::types::DvbSubDestinationShadowColor>,
     /// Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
     #[doc(hidden)]
-    pub shadow_opacity: i32,
+    pub shadow_opacity: std::option::Option<i32>,
     /// Specifies the horizontal offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left. All burn-in and DVB-Sub font settings must match.
     #[doc(hidden)]
-    pub shadow_x_offset: i32,
+    pub shadow_x_offset: std::option::Option<i32>,
     /// Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text. All burn-in and DVB-Sub font settings must match.
     #[doc(hidden)]
-    pub shadow_y_offset: i32,
+    pub shadow_y_offset: std::option::Option<i32>,
     /// Controls whether a fixed grid size will be used to generate the output subtitles bitmap. Only applicable for Teletext inputs and DVB-Sub/Burn-in outputs.
     #[doc(hidden)]
     pub teletext_grid_control:
         std::option::Option<crate::types::DvbSubDestinationTeletextGridControl>,
     /// Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit xPosition is provided, the horizontal caption position will be determined by the alignment parameter. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     #[doc(hidden)]
-    pub x_position: i32,
+    pub x_position: std::option::Option<i32>,
     /// Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     #[doc(hidden)]
-    pub y_position: i32,
+    pub y_position: std::option::Option<i32>,
 }
 impl DvbSubDestinationSettings {
     /// If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting "smart" justification will left-justify live subtitles and center-justify pre-recorded subtitles. This option is not valid for source captions that are STL or 608/embedded. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
@@ -69,7 +69,7 @@ impl DvbSubDestinationSettings {
         self.background_color.as_ref()
     }
     /// Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
-    pub fn background_opacity(&self) -> i32 {
+    pub fn background_opacity(&self) -> std::option::Option<i32> {
         self.background_opacity
     }
     /// External font file used for caption burn-in. File extension must be 'ttf' or 'tte'. Although the user can select output fonts for many different types of input captions, embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts. All burn-in and DVB-Sub font settings must match.
@@ -81,11 +81,11 @@ impl DvbSubDestinationSettings {
         self.font_color.as_ref()
     }
     /// Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent. All burn-in and DVB-Sub font settings must match.
-    pub fn font_opacity(&self) -> i32 {
+    pub fn font_opacity(&self) -> std::option::Option<i32> {
         self.font_opacity
     }
     /// Font resolution in DPI (dots per inch); default is 96 dpi. All burn-in and DVB-Sub font settings must match.
-    pub fn font_resolution(&self) -> i32 {
+    pub fn font_resolution(&self) -> std::option::Option<i32> {
         self.font_resolution
     }
     /// When set to auto fontSize will scale depending on the size of the output. Giving a positive integer will specify the exact font size in points. All burn-in and DVB-Sub font settings must match.
@@ -99,7 +99,7 @@ impl DvbSubDestinationSettings {
         self.outline_color.as_ref()
     }
     /// Specifies font outline size in pixels. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
-    pub fn outline_size(&self) -> i32 {
+    pub fn outline_size(&self) -> std::option::Option<i32> {
         self.outline_size
     }
     /// Specifies the color of the shadow cast by the captions. All burn-in and DVB-Sub font settings must match.
@@ -107,15 +107,15 @@ impl DvbSubDestinationSettings {
         self.shadow_color.as_ref()
     }
     /// Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
-    pub fn shadow_opacity(&self) -> i32 {
+    pub fn shadow_opacity(&self) -> std::option::Option<i32> {
         self.shadow_opacity
     }
     /// Specifies the horizontal offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left. All burn-in and DVB-Sub font settings must match.
-    pub fn shadow_x_offset(&self) -> i32 {
+    pub fn shadow_x_offset(&self) -> std::option::Option<i32> {
         self.shadow_x_offset
     }
     /// Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text. All burn-in and DVB-Sub font settings must match.
-    pub fn shadow_y_offset(&self) -> i32 {
+    pub fn shadow_y_offset(&self) -> std::option::Option<i32> {
         self.shadow_y_offset
     }
     /// Controls whether a fixed grid size will be used to generate the output subtitles bitmap. Only applicable for Teletext inputs and DVB-Sub/Burn-in outputs.
@@ -125,11 +125,11 @@ impl DvbSubDestinationSettings {
         self.teletext_grid_control.as_ref()
     }
     /// Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit xPosition is provided, the horizontal caption position will be determined by the alignment parameter. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
-    pub fn x_position(&self) -> i32 {
+    pub fn x_position(&self) -> std::option::Option<i32> {
         self.x_position
     }
     /// Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
-    pub fn y_position(&self) -> i32 {
+    pub fn y_position(&self) -> std::option::Option<i32> {
         self.y_position
     }
 }
@@ -364,21 +364,21 @@ impl DvbSubDestinationSettingsBuilder {
         crate::types::DvbSubDestinationSettings {
             alignment: self.alignment,
             background_color: self.background_color,
-            background_opacity: self.background_opacity.unwrap_or_default(),
+            background_opacity: self.background_opacity,
             font: self.font,
             font_color: self.font_color,
-            font_opacity: self.font_opacity.unwrap_or_default(),
-            font_resolution: self.font_resolution.unwrap_or_default(),
+            font_opacity: self.font_opacity,
+            font_resolution: self.font_resolution,
             font_size: self.font_size,
             outline_color: self.outline_color,
-            outline_size: self.outline_size.unwrap_or_default(),
+            outline_size: self.outline_size,
             shadow_color: self.shadow_color,
-            shadow_opacity: self.shadow_opacity.unwrap_or_default(),
-            shadow_x_offset: self.shadow_x_offset.unwrap_or_default(),
-            shadow_y_offset: self.shadow_y_offset.unwrap_or_default(),
+            shadow_opacity: self.shadow_opacity,
+            shadow_x_offset: self.shadow_x_offset,
+            shadow_y_offset: self.shadow_y_offset,
             teletext_grid_control: self.teletext_grid_control,
-            x_position: self.x_position.unwrap_or_default(),
-            y_position: self.y_position.unwrap_or_default(),
+            x_position: self.x_position,
+            y_position: self.y_position,
         }
     }
 }

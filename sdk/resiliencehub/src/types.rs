@@ -13,6 +13,8 @@ pub use crate::types::_data_location_constraint::DataLocationConstraint;
 
 pub use crate::types::_physical_resource::PhysicalResource;
 
+pub use crate::types::_resource_source_type::ResourceSourceType;
+
 pub use crate::types::_app_component::AppComponent;
 
 pub use crate::types::_physical_resource_id::PhysicalResourceId;
@@ -212,6 +214,8 @@ mod _resource_mapping;
 mod _resource_mapping_type;
 
 mod _resource_resolution_status_type;
+
+mod _resource_source_type;
 
 mod _s3_location;
 

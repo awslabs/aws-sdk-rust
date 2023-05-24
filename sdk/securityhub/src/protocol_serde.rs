@@ -84,6 +84,8 @@ pub(crate) mod shape_get_enabled_standards;
 
 pub(crate) mod shape_get_finding_aggregator;
 
+pub(crate) mod shape_get_finding_history;
+
 pub(crate) mod shape_get_findings;
 
 pub(crate) mod shape_get_insight_results;
@@ -188,6 +190,8 @@ pub(crate) mod shape_enable_security_hub_input;
 
 pub(crate) mod shape_get_enabled_standards_input;
 
+pub(crate) mod shape_get_finding_history_input;
+
 pub(crate) mod shape_get_findings_input;
 
 pub(crate) mod shape_get_insights_input;
@@ -243,6 +247,8 @@ pub(crate) mod shape_aws_security_finding_list;
 pub(crate) mod shape_batch_update_findings_unprocessed_findings_list;
 
 pub(crate) mod shape_finding_aggregator_list;
+
+pub(crate) mod shape_finding_history_record_list;
 
 pub(crate) mod shape_import_findings_error_list;
 
@@ -317,6 +323,8 @@ pub(crate) mod shape_compliance;
 pub(crate) mod shape_date_filter;
 
 pub(crate) mod shape_finding_aggregator;
+
+pub(crate) mod shape_finding_history_record;
 
 pub(crate) mod shape_finding_provider_fields;
 
@@ -405,6 +413,10 @@ pub(crate) mod shape_dns_request_action;
 pub(crate) mod shape_field_map;
 
 pub(crate) mod shape_file_paths;
+
+pub(crate) mod shape_finding_history_update_source;
+
+pub(crate) mod shape_finding_history_updates_list;
 
 pub(crate) mod shape_finding_provider_severity;
 
@@ -639,6 +651,8 @@ pub(crate) mod shape_classification_result;
 pub(crate) mod shape_container_details;
 
 pub(crate) mod shape_date_filter_list;
+
+pub(crate) mod shape_finding_history_update;
 
 pub(crate) mod shape_ip_filter_list;
 

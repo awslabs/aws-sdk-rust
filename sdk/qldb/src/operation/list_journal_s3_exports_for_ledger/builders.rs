@@ -5,7 +5,7 @@ pub use crate::operation::list_journal_s3_exports_for_ledger::_list_journal_s3_e
 
 /// Fluent builder constructing a request to `ListJournalS3ExportsForLedger`.
 ///
-/// <p>Returns an array of journal export job descriptions for a specified ledger.</p>
+/// <p>Returns all journal export jobs for a specified ledger.</p>
 /// <p>This action returns a maximum of <code>MaxResults</code> items, and is paginated so that you can retrieve all the items by calling <code>ListJournalS3ExportsForLedger</code> multiple times.</p>
 /// <p>This action does not return any expired export jobs. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]

@@ -94,8 +94,6 @@ impl PutResourcePolicyFluentBuilder {
     /// </ul>
     /// <p>For a firewall policy resource, you can specify the following operations in the Actions section of the statement:</p>
     /// <ul>
-    /// <li> <p>network-firewall:CreateFirewall</p> </li>
-    /// <li> <p>network-firewall:UpdateFirewall</p> </li>
     /// <li> <p>network-firewall:AssociateFirewallPolicy</p> </li>
     /// <li> <p>network-firewall:ListFirewallPolicies</p> </li>
     /// </ul>
@@ -113,8 +111,6 @@ impl PutResourcePolicyFluentBuilder {
     /// </ul>
     /// <p>For a firewall policy resource, you can specify the following operations in the Actions section of the statement:</p>
     /// <ul>
-    /// <li> <p>network-firewall:CreateFirewall</p> </li>
-    /// <li> <p>network-firewall:UpdateFirewall</p> </li>
     /// <li> <p>network-firewall:AssociateFirewallPolicy</p> </li>
     /// <li> <p>network-firewall:ListFirewallPolicies</p> </li>
     /// </ul>

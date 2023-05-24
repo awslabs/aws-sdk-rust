@@ -2,7 +2,7 @@
 
 /// <p>Describes the snapshot created from the imported disk.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnapshotDetail {
     /// <p>A description for the snapshot.</p>
     #[doc(hidden)]
@@ -77,6 +77,22 @@ impl SnapshotDetail {
         self.user_bucket.as_ref()
     }
 }
+impl std::fmt::Debug for SnapshotDetail {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SnapshotDetail");
+        formatter.field("description", &self.description);
+        formatter.field("device_name", &self.device_name);
+        formatter.field("disk_image_size", &self.disk_image_size);
+        formatter.field("format", &self.format);
+        formatter.field("progress", &self.progress);
+        formatter.field("snapshot_id", &self.snapshot_id);
+        formatter.field("status", &self.status);
+        formatter.field("status_message", &self.status_message);
+        formatter.field("url", &"*** Sensitive Data Redacted ***");
+        formatter.field("user_bucket", &self.user_bucket);
+        formatter.finish()
+    }
+}
 impl SnapshotDetail {
     /// Creates a new builder-style object to manufacture [`SnapshotDetail`](crate::types::SnapshotDetail).
     pub fn builder() -> crate::types::builders::SnapshotDetailBuilder {
@@ -86,7 +102,7 @@ impl SnapshotDetail {
 
 /// A builder for [`SnapshotDetail`](crate::types::SnapshotDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct SnapshotDetailBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) device_name: std::option::Option<std::string::String>,
@@ -217,5 +233,21 @@ impl SnapshotDetailBuilder {
             url: self.url,
             user_bucket: self.user_bucket,
         }
+    }
+}
+impl std::fmt::Debug for SnapshotDetailBuilder {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SnapshotDetailBuilder");
+        formatter.field("description", &self.description);
+        formatter.field("device_name", &self.device_name);
+        formatter.field("disk_image_size", &self.disk_image_size);
+        formatter.field("format", &self.format);
+        formatter.field("progress", &self.progress);
+        formatter.field("snapshot_id", &self.snapshot_id);
+        formatter.field("status", &self.status);
+        formatter.field("status_message", &self.status_message);
+        formatter.field("url", &"*** Sensitive Data Redacted ***");
+        formatter.field("user_bucket", &self.user_bucket);
+        formatter.finish()
     }
 }

@@ -9,10 +9,10 @@ pub fn ser_udp_group_settings(
     if let Some(var_2) = &input.timed_metadata_id3_frame {
         object.key("timedMetadataId3Frame").string(var_2.as_str());
     }
-    if input.timed_metadata_id3_period != 0 {
+    if let Some(var_3) = &input.timed_metadata_id3_period {
         object.key("timedMetadataId3Period").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.timed_metadata_id3_period).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())

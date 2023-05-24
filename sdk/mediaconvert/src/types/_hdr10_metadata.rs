@@ -6,88 +6,88 @@
 pub struct Hdr10Metadata {
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
     #[doc(hidden)]
-    pub blue_primary_x: i32,
+    pub blue_primary_x: std::option::Option<i32>,
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
     #[doc(hidden)]
-    pub blue_primary_y: i32,
+    pub blue_primary_y: std::option::Option<i32>,
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
     #[doc(hidden)]
-    pub green_primary_x: i32,
+    pub green_primary_x: std::option::Option<i32>,
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
     #[doc(hidden)]
-    pub green_primary_y: i32,
+    pub green_primary_y: std::option::Option<i32>,
     /// Maximum light level among all samples in the coded video sequence, in units of candelas per square meter. This setting doesn't have a default value; you must specify a value that is suitable for the content.
     #[doc(hidden)]
-    pub max_content_light_level: i32,
+    pub max_content_light_level: std::option::Option<i32>,
     /// Maximum average light level of any frame in the coded video sequence, in units of candelas per square meter. This setting doesn't have a default value; you must specify a value that is suitable for the content.
     #[doc(hidden)]
-    pub max_frame_average_light_level: i32,
+    pub max_frame_average_light_level: std::option::Option<i32>,
     /// Nominal maximum mastering display luminance in units of of 0.0001 candelas per square meter.
     #[doc(hidden)]
-    pub max_luminance: i32,
+    pub max_luminance: std::option::Option<i32>,
     /// Nominal minimum mastering display luminance in units of of 0.0001 candelas per square meter
     #[doc(hidden)]
-    pub min_luminance: i32,
+    pub min_luminance: std::option::Option<i32>,
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
     #[doc(hidden)]
-    pub red_primary_x: i32,
+    pub red_primary_x: std::option::Option<i32>,
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
     #[doc(hidden)]
-    pub red_primary_y: i32,
+    pub red_primary_y: std::option::Option<i32>,
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
     #[doc(hidden)]
-    pub white_point_x: i32,
+    pub white_point_x: std::option::Option<i32>,
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
     #[doc(hidden)]
-    pub white_point_y: i32,
+    pub white_point_y: std::option::Option<i32>,
 }
 impl Hdr10Metadata {
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
-    pub fn blue_primary_x(&self) -> i32 {
+    pub fn blue_primary_x(&self) -> std::option::Option<i32> {
         self.blue_primary_x
     }
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
-    pub fn blue_primary_y(&self) -> i32 {
+    pub fn blue_primary_y(&self) -> std::option::Option<i32> {
         self.blue_primary_y
     }
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
-    pub fn green_primary_x(&self) -> i32 {
+    pub fn green_primary_x(&self) -> std::option::Option<i32> {
         self.green_primary_x
     }
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
-    pub fn green_primary_y(&self) -> i32 {
+    pub fn green_primary_y(&self) -> std::option::Option<i32> {
         self.green_primary_y
     }
     /// Maximum light level among all samples in the coded video sequence, in units of candelas per square meter. This setting doesn't have a default value; you must specify a value that is suitable for the content.
-    pub fn max_content_light_level(&self) -> i32 {
+    pub fn max_content_light_level(&self) -> std::option::Option<i32> {
         self.max_content_light_level
     }
     /// Maximum average light level of any frame in the coded video sequence, in units of candelas per square meter. This setting doesn't have a default value; you must specify a value that is suitable for the content.
-    pub fn max_frame_average_light_level(&self) -> i32 {
+    pub fn max_frame_average_light_level(&self) -> std::option::Option<i32> {
         self.max_frame_average_light_level
     }
     /// Nominal maximum mastering display luminance in units of of 0.0001 candelas per square meter.
-    pub fn max_luminance(&self) -> i32 {
+    pub fn max_luminance(&self) -> std::option::Option<i32> {
         self.max_luminance
     }
     /// Nominal minimum mastering display luminance in units of of 0.0001 candelas per square meter
-    pub fn min_luminance(&self) -> i32 {
+    pub fn min_luminance(&self) -> std::option::Option<i32> {
         self.min_luminance
     }
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
-    pub fn red_primary_x(&self) -> i32 {
+    pub fn red_primary_x(&self) -> std::option::Option<i32> {
         self.red_primary_x
     }
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
-    pub fn red_primary_y(&self) -> i32 {
+    pub fn red_primary_y(&self) -> std::option::Option<i32> {
         self.red_primary_y
     }
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
-    pub fn white_point_x(&self) -> i32 {
+    pub fn white_point_x(&self) -> std::option::Option<i32> {
         self.white_point_x
     }
     /// HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color correction.
-    pub fn white_point_y(&self) -> i32 {
+    pub fn white_point_y(&self) -> std::option::Option<i32> {
         self.white_point_y
     }
 }
@@ -239,18 +239,18 @@ impl Hdr10MetadataBuilder {
     /// Consumes the builder and constructs a [`Hdr10Metadata`](crate::types::Hdr10Metadata).
     pub fn build(self) -> crate::types::Hdr10Metadata {
         crate::types::Hdr10Metadata {
-            blue_primary_x: self.blue_primary_x.unwrap_or_default(),
-            blue_primary_y: self.blue_primary_y.unwrap_or_default(),
-            green_primary_x: self.green_primary_x.unwrap_or_default(),
-            green_primary_y: self.green_primary_y.unwrap_or_default(),
-            max_content_light_level: self.max_content_light_level.unwrap_or_default(),
-            max_frame_average_light_level: self.max_frame_average_light_level.unwrap_or_default(),
-            max_luminance: self.max_luminance.unwrap_or_default(),
-            min_luminance: self.min_luminance.unwrap_or_default(),
-            red_primary_x: self.red_primary_x.unwrap_or_default(),
-            red_primary_y: self.red_primary_y.unwrap_or_default(),
-            white_point_x: self.white_point_x.unwrap_or_default(),
-            white_point_y: self.white_point_y.unwrap_or_default(),
+            blue_primary_x: self.blue_primary_x,
+            blue_primary_y: self.blue_primary_y,
+            green_primary_x: self.green_primary_x,
+            green_primary_y: self.green_primary_y,
+            max_content_light_level: self.max_content_light_level,
+            max_frame_average_light_level: self.max_frame_average_light_level,
+            max_luminance: self.max_luminance,
+            min_luminance: self.min_luminance,
+            red_primary_x: self.red_primary_x,
+            red_primary_y: self.red_primary_y,
+            white_point_x: self.white_point_x,
+            white_point_y: self.white_point_y,
         }
     }
 }

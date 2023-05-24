@@ -3,10 +3,10 @@ pub fn ser_m2ts_scte35_esam(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::M2tsScte35Esam,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.scte35_esam_pid != 0 {
+    if let Some(var_1) = &input.scte35_esam_pid {
         object.key("scte35EsamPid").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.scte35_esam_pid).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())

@@ -5,7 +5,7 @@
 pub struct GetBucketStatisticsOutput {
     /// <p>The total number of buckets.</p>
     #[doc(hidden)]
-    pub bucket_count: i64,
+    pub bucket_count: std::option::Option<i64>,
     /// <p>The total number of buckets that are publicly accessible due to a combination of permissions settings for each bucket.</p>
     #[doc(hidden)]
     pub bucket_count_by_effective_permission:
@@ -28,25 +28,25 @@ pub struct GetBucketStatisticsOutput {
         std::option::Option<crate::types::BucketStatisticsBySensitivity>,
     /// <p>The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     #[doc(hidden)]
-    pub classifiable_object_count: i64,
+    pub classifiable_object_count: std::option::Option<i64>,
     /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
     #[doc(hidden)]
-    pub classifiable_size_in_bytes: i64,
+    pub classifiable_size_in_bytes: std::option::Option<i64>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket or object metadata from Amazon S3 for the buckets.</p>
     #[doc(hidden)]
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The total number of objects in the buckets.</p>
     #[doc(hidden)]
-    pub object_count: i64,
+    pub object_count: std::option::Option<i64>,
     /// <p>The total storage size, in bytes, of the buckets.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each object in the buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
     #[doc(hidden)]
-    pub size_in_bytes: i64,
+    pub size_in_bytes: std::option::Option<i64>,
     /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
     #[doc(hidden)]
-    pub size_in_bytes_compressed: i64,
+    pub size_in_bytes_compressed: std::option::Option<i64>,
     /// <p>The total number of objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
     #[doc(hidden)]
     pub unclassifiable_object_count: std::option::Option<crate::types::ObjectLevelStatistics>,
@@ -58,7 +58,7 @@ pub struct GetBucketStatisticsOutput {
 }
 impl GetBucketStatisticsOutput {
     /// <p>The total number of buckets.</p>
-    pub fn bucket_count(&self) -> i64 {
+    pub fn bucket_count(&self) -> std::option::Option<i64> {
         self.bucket_count
     }
     /// <p>The total number of buckets that are publicly accessible due to a combination of permissions settings for each bucket.</p>
@@ -92,12 +92,12 @@ impl GetBucketStatisticsOutput {
         self.bucket_statistics_by_sensitivity.as_ref()
     }
     /// <p>The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
-    pub fn classifiable_object_count(&self) -> i64 {
+    pub fn classifiable_object_count(&self) -> std::option::Option<i64> {
         self.classifiable_object_count
     }
     /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
-    pub fn classifiable_size_in_bytes(&self) -> i64 {
+    pub fn classifiable_size_in_bytes(&self) -> std::option::Option<i64> {
         self.classifiable_size_in_bytes
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket or object metadata from Amazon S3 for the buckets.</p>
@@ -105,17 +105,17 @@ impl GetBucketStatisticsOutput {
         self.last_updated.as_ref()
     }
     /// <p>The total number of objects in the buckets.</p>
-    pub fn object_count(&self) -> i64 {
+    pub fn object_count(&self) -> std::option::Option<i64> {
         self.object_count
     }
     /// <p>The total storage size, in bytes, of the buckets.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each object in the buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
-    pub fn size_in_bytes(&self) -> i64 {
+    pub fn size_in_bytes(&self) -> std::option::Option<i64> {
         self.size_in_bytes
     }
     /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of the applicable objects in the buckets.</p>
-    pub fn size_in_bytes_compressed(&self) -> i64 {
+    pub fn size_in_bytes_compressed(&self) -> std::option::Option<i64> {
         self.size_in_bytes_compressed
     }
     /// <p>The total number of objects that Amazon Macie can't analyze in the buckets. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
@@ -376,19 +376,19 @@ impl GetBucketStatisticsOutputBuilder {
     /// Consumes the builder and constructs a [`GetBucketStatisticsOutput`](crate::operation::get_bucket_statistics::GetBucketStatisticsOutput).
     pub fn build(self) -> crate::operation::get_bucket_statistics::GetBucketStatisticsOutput {
         crate::operation::get_bucket_statistics::GetBucketStatisticsOutput {
-            bucket_count: self.bucket_count.unwrap_or_default(),
+            bucket_count: self.bucket_count,
             bucket_count_by_effective_permission: self.bucket_count_by_effective_permission,
             bucket_count_by_encryption_type: self.bucket_count_by_encryption_type,
             bucket_count_by_object_encryption_requirement: self
                 .bucket_count_by_object_encryption_requirement,
             bucket_count_by_shared_access_type: self.bucket_count_by_shared_access_type,
             bucket_statistics_by_sensitivity: self.bucket_statistics_by_sensitivity,
-            classifiable_object_count: self.classifiable_object_count.unwrap_or_default(),
-            classifiable_size_in_bytes: self.classifiable_size_in_bytes.unwrap_or_default(),
+            classifiable_object_count: self.classifiable_object_count,
+            classifiable_size_in_bytes: self.classifiable_size_in_bytes,
             last_updated: self.last_updated,
-            object_count: self.object_count.unwrap_or_default(),
-            size_in_bytes: self.size_in_bytes.unwrap_or_default(),
-            size_in_bytes_compressed: self.size_in_bytes_compressed.unwrap_or_default(),
+            object_count: self.object_count,
+            size_in_bytes: self.size_in_bytes,
+            size_in_bytes_compressed: self.size_in_bytes_compressed,
             unclassifiable_object_count: self.unclassifiable_object_count,
             unclassifiable_object_size_in_bytes: self.unclassifiable_object_size_in_bytes,
             _request_id: self._request_id,

@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::description): <p>The store's description.</p>
     ///   - [`sse_config(Option<SseConfig>)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::sse_config): <p>The store's server-side encryption (SSE) settings.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::creation_time): <p>When the store was created.</p>
+    ///   - [`fallback_location(Option<String>)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::fallback_location): <p> An S3 location that is used to store files that have failed a direct upload. </p>
     /// - On failure, responds with [`SdkError<GetSequenceStoreError>`](crate::operation::get_sequence_store::GetSequenceStoreError)
     pub fn get_sequence_store(
         &self,

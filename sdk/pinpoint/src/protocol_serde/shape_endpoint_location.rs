@@ -9,23 +9,23 @@ pub fn ser_endpoint_location(
     if let Some(var_2) = &input.country {
         object.key("Country").string(var_2.as_str());
     }
-    if input.latitude != 0.0 {
+    if let Some(var_3) = &input.latitude {
         object.key("Latitude").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.latitude).into()),
+            aws_smithy_types::Number::Float((*var_3).into()),
         );
     }
-    if input.longitude != 0.0 {
+    if let Some(var_4) = &input.longitude {
         object.key("Longitude").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.longitude).into()),
+            aws_smithy_types::Number::Float((*var_4).into()),
         );
     }
-    if let Some(var_3) = &input.postal_code {
-        object.key("PostalCode").string(var_3.as_str());
+    if let Some(var_5) = &input.postal_code {
+        object.key("PostalCode").string(var_5.as_str());
     }
-    if let Some(var_4) = &input.region {
-        object.key("Region").string(var_4.as_str());
+    if let Some(var_6) = &input.region {
+        object.key("Region").string(var_6.as_str());
     }
     Ok(())
 }

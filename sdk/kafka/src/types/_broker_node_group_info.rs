@@ -23,6 +23,9 @@ pub struct BrokerNodeGroupInfo {
     /// <p>Information about the broker access configuration.</p>
     #[doc(hidden)]
     pub connectivity_info: std::option::Option<crate::types::ConnectivityInfo>,
+    /// <p>The list of zoneIds for the cluster in the virtual private cloud (VPC).</p>
+    #[doc(hidden)]
+    pub zone_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BrokerNodeGroupInfo {
     /// <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
@@ -52,6 +55,10 @@ impl BrokerNodeGroupInfo {
     pub fn connectivity_info(&self) -> std::option::Option<&crate::types::ConnectivityInfo> {
         self.connectivity_info.as_ref()
     }
+    /// <p>The list of zoneIds for the cluster in the virtual private cloud (VPC).</p>
+    pub fn zone_ids(&self) -> std::option::Option<&[std::string::String]> {
+        self.zone_ids.as_deref()
+    }
 }
 impl BrokerNodeGroupInfo {
     /// Creates a new builder-style object to manufacture [`BrokerNodeGroupInfo`](crate::types::BrokerNodeGroupInfo).
@@ -70,6 +77,7 @@ pub struct BrokerNodeGroupInfoBuilder {
     pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) storage_info: std::option::Option<crate::types::StorageInfo>,
     pub(crate) connectivity_info: std::option::Option<crate::types::ConnectivityInfo>,
+    pub(crate) zone_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BrokerNodeGroupInfoBuilder {
     /// <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
@@ -161,6 +169,25 @@ impl BrokerNodeGroupInfoBuilder {
         self.connectivity_info = input;
         self
     }
+    /// Appends an item to `zone_ids`.
+    ///
+    /// To override the contents of this collection use [`set_zone_ids`](Self::set_zone_ids).
+    ///
+    /// <p>The list of zoneIds for the cluster in the virtual private cloud (VPC).</p>
+    pub fn zone_ids(mut self, input: impl Into<std::string::String>) -> Self {
+        let mut v = self.zone_ids.unwrap_or_default();
+        v.push(input.into());
+        self.zone_ids = Some(v);
+        self
+    }
+    /// <p>The list of zoneIds for the cluster in the virtual private cloud (VPC).</p>
+    pub fn set_zone_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.zone_ids = input;
+        self
+    }
     /// Consumes the builder and constructs a [`BrokerNodeGroupInfo`](crate::types::BrokerNodeGroupInfo).
     pub fn build(self) -> crate::types::BrokerNodeGroupInfo {
         crate::types::BrokerNodeGroupInfo {
@@ -170,6 +197,7 @@ impl BrokerNodeGroupInfoBuilder {
             security_groups: self.security_groups,
             storage_info: self.storage_info,
             connectivity_info: self.connectivity_info,
+            zone_ids: self.zone_ids,
         }
     }
 }

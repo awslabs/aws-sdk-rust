@@ -9,7 +9,7 @@ pub struct Esam {
     pub acquisition_point_id: std::option::Option<std::string::String>,
     /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time. This only applies to embedded SCTE 104/35 messages and does not apply to OOB messages.
     #[doc(hidden)]
-    pub ad_avail_offset: i32,
+    pub ad_avail_offset: std::option::Option<i32>,
     /// Documentation update needed
     #[doc(hidden)]
     pub password_param: std::option::Option<std::string::String>,
@@ -29,7 +29,7 @@ impl Esam {
         self.acquisition_point_id.as_deref()
     }
     /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time. This only applies to embedded SCTE 104/35 messages and does not apply to OOB messages.
-    pub fn ad_avail_offset(&self) -> i32 {
+    pub fn ad_avail_offset(&self) -> std::option::Option<i32> {
         self.ad_avail_offset
     }
     /// Documentation update needed
@@ -135,7 +135,7 @@ impl EsamBuilder {
     pub fn build(self) -> crate::types::Esam {
         crate::types::Esam {
             acquisition_point_id: self.acquisition_point_id,
-            ad_avail_offset: self.ad_avail_offset.unwrap_or_default(),
+            ad_avail_offset: self.ad_avail_offset,
             password_param: self.password_param,
             pois_endpoint: self.pois_endpoint,
             username: self.username,

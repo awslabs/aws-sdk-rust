@@ -159,6 +159,8 @@ pub use crate::types::error::_invalid_db_cluster_endpoint_state_fault::InvalidDb
 
 pub use crate::types::error::_db_cluster_endpoint_not_found_fault::DbClusterEndpointNotFoundFaultBuilder;
 
+pub use crate::types::error::_storage_type_not_available_fault::StorageTypeNotAvailableFaultBuilder;
+
 pub use crate::types::error::_invalid_custom_db_engine_version_state_fault::InvalidCustomDbEngineVersionStateFaultBuilder;
 
 pub use crate::types::error::_custom_db_engine_version_not_found_fault::CustomDbEngineVersionNotFoundFaultBuilder;

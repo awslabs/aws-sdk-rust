@@ -30,7 +30,7 @@ pub struct JobTemplate {
     pub name: std::option::Option<std::string::String>,
     /// Relative priority on the job.
     #[doc(hidden)]
-    pub priority: i32,
+    pub priority: std::option::Option<i32>,
     /// Optional. The queue that jobs created from this template are assigned to. If you don't specify this, jobs will go to the default queue.
     #[doc(hidden)]
     pub queue: std::option::Option<std::string::String>,
@@ -80,7 +80,7 @@ impl JobTemplate {
         self.name.as_deref()
     }
     /// Relative priority on the job.
-    pub fn priority(&self) -> i32 {
+    pub fn priority(&self) -> std::option::Option<i32> {
         self.priority
     }
     /// Optional. The queue that jobs created from this template are assigned to. If you don't specify this, jobs will go to the default queue.
@@ -293,7 +293,7 @@ impl JobTemplateBuilder {
             hop_destinations: self.hop_destinations,
             last_updated: self.last_updated,
             name: self.name,
-            priority: self.priority.unwrap_or_default(),
+            priority: self.priority,
             queue: self.queue,
             settings: self.settings,
             status_update_interval: self.status_update_interval,

@@ -12,10 +12,10 @@ pub struct CmafPackage {
     pub hls_manifests: std::option::Option<std::vec::Vec<crate::types::HlsManifest>>,
     /// When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
     #[doc(hidden)]
-    pub include_encoder_configuration_in_segments: bool,
+    pub include_encoder_configuration_in_segments: std::option::Option<bool>,
     /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
     #[doc(hidden)]
-    pub segment_duration_seconds: i32,
+    pub segment_duration_seconds: std::option::Option<i32>,
 }
 impl CmafPackage {
     /// A CMAF encryption configuration.
@@ -27,11 +27,11 @@ impl CmafPackage {
         self.hls_manifests.as_deref()
     }
     /// When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
-    pub fn include_encoder_configuration_in_segments(&self) -> bool {
+    pub fn include_encoder_configuration_in_segments(&self) -> std::option::Option<bool> {
         self.include_encoder_configuration_in_segments
     }
     /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
-    pub fn segment_duration_seconds(&self) -> i32 {
+    pub fn segment_duration_seconds(&self) -> std::option::Option<i32> {
         self.segment_duration_seconds
     }
 }
@@ -113,9 +113,8 @@ impl CmafPackageBuilder {
             encryption: self.encryption,
             hls_manifests: self.hls_manifests,
             include_encoder_configuration_in_segments: self
-                .include_encoder_configuration_in_segments
-                .unwrap_or_default(),
-            segment_duration_seconds: self.segment_duration_seconds.unwrap_or_default(),
+                .include_encoder_configuration_in_segments,
+            segment_duration_seconds: self.segment_duration_seconds,
         }
     }
 }

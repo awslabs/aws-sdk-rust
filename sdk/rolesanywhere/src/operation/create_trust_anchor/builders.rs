@@ -5,7 +5,7 @@ pub use crate::operation::create_trust_anchor::_create_trust_anchor_input::Creat
 
 /// Fluent builder constructing a request to `CreateTrustAnchor`.
 ///
-/// <p>Creates a trust anchor. You establish trust between IAM Roles Anywhere and your certificate authority (CA) by configuring a trust anchor. A Trust Anchor is defined either as a reference to a AWS Certificate Manager Private Certificate Authority (ACM PCA), or by uploading a Certificate Authority (CA) certificate. Your AWS workloads can authenticate with the trust anchor using certificates issued by the trusted Certificate Authority (CA) in exchange for temporary AWS credentials.</p>
+/// <p>Creates a trust anchor to establish trust between IAM Roles Anywhere and your certificate authority (CA). You can define a trust anchor as a reference to an Private Certificate Authority (Private CA) or by uploading a CA certificate. Your Amazon Web Services workloads can authenticate with the trust anchor using certificates issued by the CA in exchange for temporary Amazon Web Services credentials.</p>
 /// <p> <b>Required permissions: </b> <code>rolesanywhere:CreateTrustAnchor</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateTrustAnchorFluentBuilder {
@@ -114,6 +114,23 @@ impl CreateTrustAnchorFluentBuilder {
         input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// Appends an item to `notificationSettings`.
+    ///
+    /// To override the contents of this collection use [`set_notification_settings`](Self::set_notification_settings).
+    ///
+    /// <p>A list of notification settings to be associated to the trust anchor.</p>
+    pub fn notification_settings(mut self, input: crate::types::NotificationSetting) -> Self {
+        self.inner = self.inner.notification_settings(input);
+        self
+    }
+    /// <p>A list of notification settings to be associated to the trust anchor.</p>
+    pub fn set_notification_settings(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::NotificationSetting>>,
+    ) -> Self {
+        self.inner = self.inner.set_notification_settings(input);
         self
     }
 }

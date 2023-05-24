@@ -18,20 +18,20 @@ pub fn ser_schedule(
     if let Some(var_4) = &input.frequency {
         object.key("Frequency").string(var_4.as_str());
     }
-    if input.is_local_time {
-        object.key("IsLocalTime").boolean(input.is_local_time);
+    if let Some(var_5) = &input.is_local_time {
+        object.key("IsLocalTime").boolean(*var_5);
     }
-    if let Some(var_5) = &input.quiet_time {
+    if let Some(var_6) = &input.quiet_time {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("QuietTime").start_object();
-        crate::protocol_serde::shape_quiet_time::ser_quiet_time(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_7 = object.key("QuietTime").start_object();
+        crate::protocol_serde::shape_quiet_time::ser_quiet_time(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_7) = &input.start_time {
-        object.key("StartTime").string(var_7.as_str());
+    if let Some(var_8) = &input.start_time {
+        object.key("StartTime").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.timezone {
-        object.key("Timezone").string(var_8.as_str());
+    if let Some(var_9) = &input.timezone {
+        object.key("Timezone").string(var_9.as_str());
     }
     Ok(())
 }

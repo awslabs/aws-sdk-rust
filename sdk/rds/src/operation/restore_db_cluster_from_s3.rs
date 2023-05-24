@@ -194,6 +194,8 @@ pub enum RestoreDBClusterFromS3Error {
     KmsKeyNotAccessibleFault(crate::types::error::KmsKeyNotAccessibleFault),
     /// <p>The request would result in the user exceeding the allowed amount of storage available across all DB instances.</p>
     StorageQuotaExceededFault(crate::types::error::StorageQuotaExceededFault),
+    /// <p>The specified <code>StorageType</code> can't be associated with the DB instance.</p>
+    StorageTypeNotSupportedFault(crate::types::error::StorageTypeNotSupportedFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -226,6 +228,7 @@ impl std::fmt::Display for RestoreDBClusterFromS3Error {
             Self::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
             Self::KmsKeyNotAccessibleFault(_inner) => _inner.fmt(f),
             Self::StorageQuotaExceededFault(_inner) => _inner.fmt(f),
+            Self::StorageTypeNotSupportedFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -273,6 +276,9 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for RestoreDBCluste
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::StorageQuotaExceededFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::StorageTypeNotSupportedFault(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::Unhandled(_inner) => {
@@ -336,6 +342,7 @@ impl RestoreDBClusterFromS3Error {
             Self::InvalidVpcNetworkStateFault(e) => e.meta(),
             Self::KmsKeyNotAccessibleFault(e) => e.meta(),
             Self::StorageQuotaExceededFault(e) => e.meta(),
+            Self::StorageTypeNotSupportedFault(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
     }
@@ -395,6 +402,10 @@ impl RestoreDBClusterFromS3Error {
     pub fn is_storage_quota_exceeded_fault(&self) -> bool {
         matches!(self, Self::StorageQuotaExceededFault(_))
     }
+    /// Returns `true` if the error kind is `RestoreDBClusterFromS3Error::StorageTypeNotSupportedFault`.
+    pub fn is_storage_type_not_supported_fault(&self) -> bool {
+        matches!(self, Self::StorageTypeNotSupportedFault(_))
+    }
 }
 impl std::error::Error for RestoreDBClusterFromS3Error {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
@@ -413,6 +424,7 @@ impl std::error::Error for RestoreDBClusterFromS3Error {
             Self::InvalidVpcNetworkStateFault(_inner) => Some(_inner),
             Self::KmsKeyNotAccessibleFault(_inner) => Some(_inner),
             Self::StorageQuotaExceededFault(_inner) => Some(_inner),
+            Self::StorageTypeNotSupportedFault(_inner) => Some(_inner),
             Self::Unhandled(_inner) => Some(_inner),
         }
     }

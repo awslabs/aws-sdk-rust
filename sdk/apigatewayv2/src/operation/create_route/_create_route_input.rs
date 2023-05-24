@@ -9,7 +9,7 @@ pub struct CreateRouteInput {
     pub api_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether an API key is required for the route. Supported only for WebSocket APIs.</p>
     #[doc(hidden)]
-    pub api_key_required: bool,
+    pub api_key_required: std::option::Option<bool>,
     /// <p>The authorization scopes supported by this route.</p>
     #[doc(hidden)]
     pub authorization_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -50,7 +50,7 @@ impl CreateRouteInput {
         self.api_id.as_deref()
     }
     /// <p>Specifies whether an API key is required for the route. Supported only for WebSocket APIs.</p>
-    pub fn api_key_required(&self) -> bool {
+    pub fn api_key_required(&self) -> std::option::Option<bool> {
         self.api_key_required
     }
     /// <p>The authorization scopes supported by this route.</p>
@@ -309,7 +309,7 @@ impl CreateRouteInputBuilder {
     > {
         Ok(crate::operation::create_route::CreateRouteInput {
             api_id: self.api_id,
-            api_key_required: self.api_key_required.unwrap_or_default(),
+            api_key_required: self.api_key_required,
             authorization_scopes: self.authorization_scopes,
             authorization_type: self.authorization_type,
             authorizer_id: self.authorizer_id,

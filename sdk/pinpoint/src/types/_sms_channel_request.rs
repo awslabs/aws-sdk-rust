@@ -6,7 +6,7 @@
 pub struct SmsChannelRequest {
     /// <p>Specifies whether to enable the SMS channel for the application.</p>
     #[doc(hidden)]
-    pub enabled: bool,
+    pub enabled: std::option::Option<bool>,
     /// <p>The identity that you want to display on recipients' devices when they receive messages from the SMS channel.</p>
     #[doc(hidden)]
     pub sender_id: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct SmsChannelRequest {
 }
 impl SmsChannelRequest {
     /// <p>Specifies whether to enable the SMS channel for the application.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
     /// <p>The identity that you want to display on recipients' devices when they receive messages from the SMS channel.</p>
@@ -77,7 +77,7 @@ impl SmsChannelRequestBuilder {
     /// Consumes the builder and constructs a [`SmsChannelRequest`](crate::types::SmsChannelRequest).
     pub fn build(self) -> crate::types::SmsChannelRequest {
         crate::types::SmsChannelRequest {
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled,
             sender_id: self.sender_id,
             short_code: self.short_code,
         }

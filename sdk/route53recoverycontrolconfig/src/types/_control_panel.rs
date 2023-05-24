@@ -12,13 +12,13 @@ pub struct ControlPanel {
     pub control_panel_arn: std::option::Option<std::string::String>,
     /// <p>A flag that Amazon Route 53 Application Recovery Controller sets to true to designate the default control panel for a cluster. When you create a cluster, Amazon Route 53 Application Recovery Controller creates a control panel, and sets this flag for that control panel. If you create a control panel yourself, this flag is set to false.</p>
     #[doc(hidden)]
-    pub default_control_panel: bool,
+    pub default_control_panel: std::option::Option<bool>,
     /// <p>The name of the control panel. You can use any non-white space character in the name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The number of routing controls in the control panel.</p>
     #[doc(hidden)]
-    pub routing_control_count: i32,
+    pub routing_control_count: std::option::Option<i32>,
     /// <p>The deployment status of control panel. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::Status>,
@@ -33,7 +33,7 @@ impl ControlPanel {
         self.control_panel_arn.as_deref()
     }
     /// <p>A flag that Amazon Route 53 Application Recovery Controller sets to true to designate the default control panel for a cluster. When you create a cluster, Amazon Route 53 Application Recovery Controller creates a control panel, and sets this flag for that control panel. If you create a control panel yourself, this flag is set to false.</p>
-    pub fn default_control_panel(&self) -> bool {
+    pub fn default_control_panel(&self) -> std::option::Option<bool> {
         self.default_control_panel
     }
     /// <p>The name of the control panel. You can use any non-white space character in the name.</p>
@@ -41,7 +41,7 @@ impl ControlPanel {
         self.name.as_deref()
     }
     /// <p>The number of routing controls in the control panel.</p>
-    pub fn routing_control_count(&self) -> i32 {
+    pub fn routing_control_count(&self) -> std::option::Option<i32> {
         self.routing_control_count
     }
     /// <p>The deployment status of control panel. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.</p>
@@ -136,9 +136,9 @@ impl ControlPanelBuilder {
         crate::types::ControlPanel {
             cluster_arn: self.cluster_arn,
             control_panel_arn: self.control_panel_arn,
-            default_control_panel: self.default_control_panel.unwrap_or_default(),
+            default_control_panel: self.default_control_panel,
             name: self.name,
-            routing_control_count: self.routing_control_count.unwrap_or_default(),
+            routing_control_count: self.routing_control_count,
             status: self.status,
         }
     }

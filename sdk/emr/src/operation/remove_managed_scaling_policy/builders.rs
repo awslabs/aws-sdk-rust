@@ -5,7 +5,7 @@ pub use crate::operation::remove_managed_scaling_policy::_remove_managed_scaling
 
 /// Fluent builder constructing a request to `RemoveManagedScalingPolicy`.
 ///
-/// <p> Removes a managed scaling policy from a specified EMR cluster. </p>
+/// <p> Removes a managed scaling policy from a specified Amazon EMR cluster. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveManagedScalingPolicyFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

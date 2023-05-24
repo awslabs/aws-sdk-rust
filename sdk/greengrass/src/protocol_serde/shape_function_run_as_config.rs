@@ -3,16 +3,16 @@ pub fn ser_function_run_as_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FunctionRunAsConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.gid != 0 {
+    if let Some(var_1) = &input.gid {
         object.key("Gid").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.gid).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.uid != 0 {
+    if let Some(var_2) = &input.uid {
         object.key("Uid").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.uid).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

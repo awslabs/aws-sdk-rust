@@ -12,6 +12,7 @@
 /// ```text
 /// # let mode = unimplemented!();
 /// match mode {
+///     Mode::AfterLiveEdge => { /* ... */ },
 ///     Mode::BehindLiveEdge => { /* ... */ },
 ///     Mode::Off => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -48,6 +49,8 @@
 )]
 pub enum Mode {
     #[allow(missing_docs)] // documentation missing in model
+    AfterLiveEdge,
+    #[allow(missing_docs)] // documentation missing in model
     BehindLiveEdge,
     #[allow(missing_docs)] // documentation missing in model
     Off,
@@ -57,6 +60,7 @@ pub enum Mode {
 impl std::convert::From<&str> for Mode {
     fn from(s: &str) -> Self {
         match s {
+            "AFTER_LIVE_EDGE" => Mode::AfterLiveEdge,
             "BEHIND_LIVE_EDGE" => Mode::BehindLiveEdge,
             "OFF" => Mode::Off,
             other => Mode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
@@ -74,6 +78,7 @@ impl Mode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            Mode::AfterLiveEdge => "AFTER_LIVE_EDGE",
             Mode::BehindLiveEdge => "BEHIND_LIVE_EDGE",
             Mode::Off => "OFF",
             Mode::Unknown(value) => value.as_str(),
@@ -81,7 +86,7 @@ impl Mode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BEHIND_LIVE_EDGE", "OFF"]
+        &["AFTER_LIVE_EDGE", "BEHIND_LIVE_EDGE", "OFF"]
     }
 }
 impl AsRef<str> for Mode {

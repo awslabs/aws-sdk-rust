@@ -27,7 +27,7 @@ pub struct Provisioned {
     pub logging_info: std::option::Option<crate::types::LoggingInfo>,
     /// <p>The number of broker nodes in the cluster.</p>
     #[doc(hidden)]
-    pub number_of_broker_nodes: i32,
+    pub number_of_broker_nodes: std::option::Option<i32>,
     /// <p>The connection string to use to connect to the Apache ZooKeeper cluster.</p>
     #[doc(hidden)]
     pub zookeeper_connect_string: std::option::Option<std::string::String>,
@@ -74,7 +74,7 @@ impl Provisioned {
         self.logging_info.as_ref()
     }
     /// <p>The number of broker nodes in the cluster.</p>
-    pub fn number_of_broker_nodes(&self) -> i32 {
+    pub fn number_of_broker_nodes(&self) -> std::option::Option<i32> {
         self.number_of_broker_nodes
     }
     /// <p>The connection string to use to connect to the Apache ZooKeeper cluster.</p>
@@ -264,7 +264,7 @@ impl ProvisionedBuilder {
             enhanced_monitoring: self.enhanced_monitoring,
             open_monitoring: self.open_monitoring,
             logging_info: self.logging_info,
-            number_of_broker_nodes: self.number_of_broker_nodes.unwrap_or_default(),
+            number_of_broker_nodes: self.number_of_broker_nodes,
             zookeeper_connect_string: self.zookeeper_connect_string,
             zookeeper_connect_string_tls: self.zookeeper_connect_string_tls,
             storage_mode: self.storage_mode,

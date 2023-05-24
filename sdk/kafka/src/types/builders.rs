@@ -39,6 +39,18 @@ pub use crate::types::_jmx_exporter_info::JmxExporterInfoBuilder;
 
 pub use crate::types::_connectivity_info::ConnectivityInfoBuilder;
 
+pub use crate::types::_vpc_connectivity::VpcConnectivityBuilder;
+
+pub use crate::types::_vpc_connectivity_client_authentication::VpcConnectivityClientAuthenticationBuilder;
+
+pub use crate::types::_vpc_connectivity_tls::VpcConnectivityTlsBuilder;
+
+pub use crate::types::_vpc_connectivity_sasl::VpcConnectivitySaslBuilder;
+
+pub use crate::types::_vpc_connectivity_iam::VpcConnectivityIamBuilder;
+
+pub use crate::types::_vpc_connectivity_scram::VpcConnectivityScramBuilder;
+
 pub use crate::types::_public_access::PublicAccessBuilder;
 
 pub use crate::types::_configuration_revision::ConfigurationRevisionBuilder;
@@ -46,6 +58,8 @@ pub use crate::types::_configuration_revision::ConfigurationRevisionBuilder;
 pub use crate::types::_configuration_info::ConfigurationInfoBuilder;
 
 pub use crate::types::_broker_ebs_volume_info::BrokerEbsVolumeInfoBuilder;
+
+pub use crate::types::_vpc_connection::VpcConnectionBuilder;
 
 pub use crate::types::_node_info::NodeInfoBuilder;
 
@@ -91,6 +105,10 @@ pub use crate::types::_jmx_exporter::JmxExporterBuilder;
 
 pub use crate::types::_cluster_operation_info::ClusterOperationInfoBuilder;
 
+pub use crate::types::_vpc_connection_info::VpcConnectionInfoBuilder;
+
+pub use crate::types::_user_identity::UserIdentityBuilder;
+
 pub use crate::types::_mutable_cluster_info::MutableClusterInfoBuilder;
 
 pub use crate::types::_cluster_operation_step::ClusterOperationStepBuilder;
@@ -98,6 +116,8 @@ pub use crate::types::_cluster_operation_step::ClusterOperationStepBuilder;
 pub use crate::types::_cluster_operation_step_info::ClusterOperationStepInfoBuilder;
 
 pub use crate::types::_error_info::ErrorInfoBuilder;
+
+pub use crate::types::_client_vpc_connection::ClientVpcConnectionBuilder;
 
 pub use crate::types::_compatible_kafka_version::CompatibleKafkaVersionBuilder;
 

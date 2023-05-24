@@ -18,7 +18,7 @@ impl super::Client {
     ///   - [`maintenance(Option<MaintenanceStatus>)`](crate::operation::delete_channel::DeleteChannelOutput::maintenance): Maintenance settings for this channel.
     ///   - [`name(Option<String>)`](crate::operation::delete_channel::DeleteChannelOutput::name): The name of the channel. (user-mutable)
     ///   - [`pipeline_details(Option<Vec<PipelineDetail>>)`](crate::operation::delete_channel::DeleteChannelOutput::pipeline_details): Runtime details for the pipelines of a running channel.
-    ///   - [`pipelines_running_count(i32)`](crate::operation::delete_channel::DeleteChannelOutput::pipelines_running_count): The number of currently healthy pipelines.
+    ///   - [`pipelines_running_count(Option<i32>)`](crate::operation::delete_channel::DeleteChannelOutput::pipelines_running_count): The number of currently healthy pipelines.
     ///   - [`role_arn(Option<String>)`](crate::operation::delete_channel::DeleteChannelOutput::role_arn): The Amazon Resource Name (ARN) of the role assumed when running the Channel.
     ///   - [`state(Option<ChannelState>)`](crate::operation::delete_channel::DeleteChannelOutput::state): Placeholder documentation for ChannelState
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::delete_channel::DeleteChannelOutput::tags): A collection of key-value pairs.

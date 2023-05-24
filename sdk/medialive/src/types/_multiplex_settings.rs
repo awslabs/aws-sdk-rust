@@ -6,32 +6,32 @@
 pub struct MultiplexSettings {
     /// Maximum video buffer delay in milliseconds.
     #[doc(hidden)]
-    pub maximum_video_buffer_delay_milliseconds: i32,
+    pub maximum_video_buffer_delay_milliseconds: std::option::Option<i32>,
     /// Transport stream bit rate.
     #[doc(hidden)]
-    pub transport_stream_bitrate: i32,
+    pub transport_stream_bitrate: std::option::Option<i32>,
     /// Transport stream ID.
     #[doc(hidden)]
-    pub transport_stream_id: i32,
+    pub transport_stream_id: std::option::Option<i32>,
     /// Transport stream reserved bit rate.
     #[doc(hidden)]
-    pub transport_stream_reserved_bitrate: i32,
+    pub transport_stream_reserved_bitrate: std::option::Option<i32>,
 }
 impl MultiplexSettings {
     /// Maximum video buffer delay in milliseconds.
-    pub fn maximum_video_buffer_delay_milliseconds(&self) -> i32 {
+    pub fn maximum_video_buffer_delay_milliseconds(&self) -> std::option::Option<i32> {
         self.maximum_video_buffer_delay_milliseconds
     }
     /// Transport stream bit rate.
-    pub fn transport_stream_bitrate(&self) -> i32 {
+    pub fn transport_stream_bitrate(&self) -> std::option::Option<i32> {
         self.transport_stream_bitrate
     }
     /// Transport stream ID.
-    pub fn transport_stream_id(&self) -> i32 {
+    pub fn transport_stream_id(&self) -> std::option::Option<i32> {
         self.transport_stream_id
     }
     /// Transport stream reserved bit rate.
-    pub fn transport_stream_reserved_bitrate(&self) -> i32 {
+    pub fn transport_stream_reserved_bitrate(&self) -> std::option::Option<i32> {
         self.transport_stream_reserved_bitrate
     }
 }
@@ -101,14 +101,10 @@ impl MultiplexSettingsBuilder {
     /// Consumes the builder and constructs a [`MultiplexSettings`](crate::types::MultiplexSettings).
     pub fn build(self) -> crate::types::MultiplexSettings {
         crate::types::MultiplexSettings {
-            maximum_video_buffer_delay_milliseconds: self
-                .maximum_video_buffer_delay_milliseconds
-                .unwrap_or_default(),
-            transport_stream_bitrate: self.transport_stream_bitrate.unwrap_or_default(),
-            transport_stream_id: self.transport_stream_id.unwrap_or_default(),
-            transport_stream_reserved_bitrate: self
-                .transport_stream_reserved_bitrate
-                .unwrap_or_default(),
+            maximum_video_buffer_delay_milliseconds: self.maximum_video_buffer_delay_milliseconds,
+            transport_stream_bitrate: self.transport_stream_bitrate,
+            transport_stream_id: self.transport_stream_id,
+            transport_stream_reserved_bitrate: self.transport_stream_reserved_bitrate,
         }
     }
 }

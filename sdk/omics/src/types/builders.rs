@@ -25,6 +25,10 @@ pub use crate::types::_export_read_set::ExportReadSetBuilder;
 
 pub use crate::types::_start_read_set_activation_job_source_item::StartReadSetActivationJobSourceItemBuilder;
 
+pub use crate::types::_read_set_upload_part_list_item::ReadSetUploadPartListItemBuilder;
+
+pub use crate::types::_read_set_upload_part_list_filter::ReadSetUploadPartListFilterBuilder;
+
 pub use crate::types::_import_read_set_job_item::ImportReadSetJobItemBuilder;
 
 pub use crate::types::_import_read_set_filter::ImportReadSetFilterBuilder;
@@ -37,11 +41,15 @@ pub use crate::types::_activate_read_set_job_item::ActivateReadSetJobItemBuilder
 
 pub use crate::types::_activate_read_set_filter::ActivateReadSetFilterBuilder;
 
+pub use crate::types::_multipart_read_set_upload_list_item::MultipartReadSetUploadListItemBuilder;
+
 pub use crate::types::_import_read_set_source_item::ImportReadSetSourceItemBuilder;
 
 pub use crate::types::_export_read_set_detail::ExportReadSetDetailBuilder;
 
 pub use crate::types::_activate_read_set_source_item::ActivateReadSetSourceItemBuilder;
+
+pub use crate::types::_complete_read_set_upload_part_list_item::CompleteReadSetUploadPartListItemBuilder;
 
 pub use crate::types::_sequence_store_detail::SequenceStoreDetailBuilder;
 

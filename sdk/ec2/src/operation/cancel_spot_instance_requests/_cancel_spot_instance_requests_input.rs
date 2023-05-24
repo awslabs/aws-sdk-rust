@@ -7,7 +7,7 @@ pub struct CancelSpotInstanceRequestsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
-    /// <p>One or more Spot Instance request IDs.</p>
+    /// <p>The IDs of the Spot Instance requests.</p>
     #[doc(hidden)]
     pub spot_instance_request_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -16,7 +16,7 @@ impl CancelSpotInstanceRequestsInput {
     pub fn dry_run(&self) -> std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>One or more Spot Instance request IDs.</p>
+    /// <p>The IDs of the Spot Instance requests.</p>
     pub fn spot_instance_request_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.spot_instance_request_ids.as_deref()
     }
@@ -50,14 +50,14 @@ impl CancelSpotInstanceRequestsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_spot_instance_request_ids`](Self::set_spot_instance_request_ids).
     ///
-    /// <p>One or more Spot Instance request IDs.</p>
+    /// <p>The IDs of the Spot Instance requests.</p>
     pub fn spot_instance_request_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.spot_instance_request_ids.unwrap_or_default();
         v.push(input.into());
         self.spot_instance_request_ids = Some(v);
         self
     }
-    /// <p>One or more Spot Instance request IDs.</p>
+    /// <p>The IDs of the Spot Instance requests.</p>
     pub fn set_spot_instance_request_ids(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

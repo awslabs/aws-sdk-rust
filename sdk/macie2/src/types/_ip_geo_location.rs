@@ -6,18 +6,18 @@
 pub struct IpGeoLocation {
     /// <p>The latitude coordinate of the location, rounded to four decimal places.</p>
     #[doc(hidden)]
-    pub lat: f64,
+    pub lat: std::option::Option<f64>,
     /// <p>The longitude coordinate of the location, rounded to four decimal places.</p>
     #[doc(hidden)]
-    pub lon: f64,
+    pub lon: std::option::Option<f64>,
 }
 impl IpGeoLocation {
     /// <p>The latitude coordinate of the location, rounded to four decimal places.</p>
-    pub fn lat(&self) -> f64 {
+    pub fn lat(&self) -> std::option::Option<f64> {
         self.lat
     }
     /// <p>The longitude coordinate of the location, rounded to four decimal places.</p>
-    pub fn lon(&self) -> f64 {
+    pub fn lon(&self) -> std::option::Option<f64> {
         self.lon
     }
 }
@@ -59,8 +59,8 @@ impl IpGeoLocationBuilder {
     /// Consumes the builder and constructs a [`IpGeoLocation`](crate::types::IpGeoLocation).
     pub fn build(self) -> crate::types::IpGeoLocation {
         crate::types::IpGeoLocation {
-            lat: self.lat.unwrap_or_default(),
-            lon: self.lon.unwrap_or_default(),
+            lat: self.lat,
+            lon: self.lon,
         }
     }
 }

@@ -3,23 +3,23 @@ pub fn ser_frame_capture_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FrameCaptureSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.capture_interval != 0 {
+    if let Some(var_1) = &input.capture_interval {
         object.key("captureInterval").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.capture_interval).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.capture_interval_units {
-        object.key("captureIntervalUnits").string(var_1.as_str());
+    if let Some(var_2) = &input.capture_interval_units {
+        object.key("captureIntervalUnits").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.timecode_burnin_settings {
+    if let Some(var_3) = &input.timecode_burnin_settings {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("timecodeBurninSettings").start_object();
+        let mut object_4 = object.key("timecodeBurninSettings").start_object();
         crate::protocol_serde::shape_timecode_burnin_settings::ser_timecode_burnin_settings(
-            &mut object_3,
-            var_2,
+            &mut object_4,
+            var_3,
         )?;
-        object_3.finish();
+        object_4.finish();
     }
     Ok(())
 }

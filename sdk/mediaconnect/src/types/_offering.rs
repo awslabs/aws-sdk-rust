@@ -9,7 +9,7 @@ pub struct Offering {
     pub currency_code: std::option::Option<std::string::String>,
     /// The length of time that your reservation would be active.
     #[doc(hidden)]
-    pub duration: i32,
+    pub duration: std::option::Option<i32>,
     /// The unit of measurement for the duration of the offering.
     #[doc(hidden)]
     pub duration_units: std::option::Option<crate::types::DurationUnits>,
@@ -35,7 +35,7 @@ impl Offering {
         self.currency_code.as_deref()
     }
     /// The length of time that your reservation would be active.
-    pub fn duration(&self) -> i32 {
+    pub fn duration(&self) -> std::option::Option<i32> {
         self.duration
     }
     /// The unit of measurement for the duration of the offering.
@@ -179,7 +179,7 @@ impl OfferingBuilder {
     pub fn build(self) -> crate::types::Offering {
         crate::types::Offering {
             currency_code: self.currency_code,
-            duration: self.duration.unwrap_or_default(),
+            duration: self.duration,
             duration_units: self.duration_units,
             offering_arn: self.offering_arn,
             offering_description: self.offering_description,

@@ -15,6 +15,7 @@ pub use crate::operation::put_metric_alarm::_put_metric_alarm_input::PutMetricAl
 /// <li> <p>The <code>iam:CreateServiceLinkedRole</code> permissions to create an alarm with Systems Manager OpsItem or response plan actions.</p> </li>
 /// </ul>
 /// <p>The first time you create an alarm in the Amazon Web Services Management Console, the CLI, or by using the PutMetricAlarm API, CloudWatch creates the necessary service-linked role for you. The service-linked roles are called <code>AWSServiceRoleForCloudWatchEvents</code> and <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">Amazon Web Services service-linked role</a>.</p>
+/// <p>Each <code>PutMetricAlarm</code> action has a maximum uncompressed payload of 120 KB.</p>
 /// <p> <b>Cross-account alarms</b> </p>
 /// <p>You can set an alarm on metrics in the current account, or in another account. To create a cross-account alarm that watches a metric in a different account, you must have completed the following pre-requisites:</p>
 /// <ul>
@@ -134,7 +135,7 @@ impl PutMetricAlarmFluentBuilder {
     /// <ul>
     /// <li> <p> <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
-    /// <p> <b>SSN notification action:</b> </p>
+    /// <p> <b>SNS notification action:</b> </p>
     /// <ul>
     /// <li> <p> <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
@@ -163,7 +164,7 @@ impl PutMetricAlarmFluentBuilder {
     /// <ul>
     /// <li> <p> <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
-    /// <p> <b>SSN notification action:</b> </p>
+    /// <p> <b>SNS notification action:</b> </p>
     /// <ul>
     /// <li> <p> <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
@@ -199,7 +200,7 @@ impl PutMetricAlarmFluentBuilder {
     /// <ul>
     /// <li> <p> <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
-    /// <p> <b>SSN notification action:</b> </p>
+    /// <p> <b>SNS notification action:</b> </p>
     /// <ul>
     /// <li> <p> <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
@@ -228,7 +229,7 @@ impl PutMetricAlarmFluentBuilder {
     /// <ul>
     /// <li> <p> <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
-    /// <p> <b>SSN notification action:</b> </p>
+    /// <p> <b>SNS notification action:</b> </p>
     /// <ul>
     /// <li> <p> <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
@@ -264,7 +265,7 @@ impl PutMetricAlarmFluentBuilder {
     /// <ul>
     /// <li> <p> <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
-    /// <p> <b>SSN notification action:</b> </p>
+    /// <p> <b>SNS notification action:</b> </p>
     /// <ul>
     /// <li> <p> <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
@@ -293,7 +294,7 @@ impl PutMetricAlarmFluentBuilder {
     /// <ul>
     /// <li> <p> <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
-    /// <p> <b>SSN notification action:</b> </p>
+    /// <p> <b>SNS notification action:</b> </p>
     /// <ul>
     /// <li> <p> <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>

@@ -12,6 +12,8 @@
 /// ```text
 /// # let executionstatus = unimplemented!();
 /// match executionstatus {
+///     ExecutionStatus::Cancelstarted => { /* ... */ },
+///     ExecutionStatus::Canceled => { /* ... */ },
 ///     ExecutionStatus::Error => { /* ... */ },
 ///     ExecutionStatus::Inprogress => { /* ... */ },
 ///     ExecutionStatus::Successful => { /* ... */ },
@@ -49,6 +51,10 @@
 )]
 pub enum ExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
+    Cancelstarted,
+    #[allow(missing_docs)] // documentation missing in model
+    Canceled,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
     #[allow(missing_docs)] // documentation missing in model
     Inprogress,
@@ -60,6 +66,8 @@ pub enum ExecutionStatus {
 impl std::convert::From<&str> for ExecutionStatus {
     fn from(s: &str) -> Self {
         match s {
+            "CancelStarted" => ExecutionStatus::Cancelstarted,
+            "Canceled" => ExecutionStatus::Canceled,
             "Error" => ExecutionStatus::Error,
             "InProgress" => ExecutionStatus::Inprogress,
             "Successful" => ExecutionStatus::Successful,
@@ -80,6 +88,8 @@ impl ExecutionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ExecutionStatus::Cancelstarted => "CancelStarted",
+            ExecutionStatus::Canceled => "Canceled",
             ExecutionStatus::Error => "Error",
             ExecutionStatus::Inprogress => "InProgress",
             ExecutionStatus::Successful => "Successful",
@@ -88,7 +98,13 @@ impl ExecutionStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Error", "InProgress", "Successful"]
+        &[
+            "CancelStarted",
+            "Canceled",
+            "Error",
+            "InProgress",
+            "Successful",
+        ]
     }
 }
 impl AsRef<str> for ExecutionStatus {

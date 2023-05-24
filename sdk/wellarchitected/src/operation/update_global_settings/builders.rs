@@ -5,7 +5,7 @@ pub use crate::operation::update_global_settings::_update_global_settings_input:
 
 /// Fluent builder constructing a request to `UpdateGlobalSettings`.
 ///
-/// <p>Updates whether the Amazon Web Services account is opted into organization sharing features.</p>
+/// <p>Updates whether the Amazon Web Services account is opted into organization sharing and discovery integration features.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateGlobalSettingsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -82,6 +82,22 @@ impl UpdateGlobalSettingsFluentBuilder {
         input: std::option::Option<crate::types::OrganizationSharingStatus>,
     ) -> Self {
         self.inner = self.inner.set_organization_sharing_status(input);
+        self
+    }
+    /// <p>The status of discovery support settings.</p>
+    pub fn discovery_integration_status(
+        mut self,
+        input: crate::types::DiscoveryIntegrationStatus,
+    ) -> Self {
+        self.inner = self.inner.discovery_integration_status(input);
+        self
+    }
+    /// <p>The status of discovery support settings.</p>
+    pub fn set_discovery_integration_status(
+        mut self,
+        input: std::option::Option<crate::types::DiscoveryIntegrationStatus>,
+    ) -> Self {
+        self.inner = self.inner.set_discovery_integration_status(input);
         self
     }
 }

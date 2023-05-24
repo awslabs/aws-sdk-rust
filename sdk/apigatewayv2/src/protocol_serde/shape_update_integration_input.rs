@@ -78,20 +78,20 @@ pub fn ser_update_integration_input(
             .key("templateSelectionExpression")
             .string(var_27.as_str());
     }
-    if input.timeout_in_millis != 0 {
+    if let Some(var_28) = &input.timeout_in_millis {
         object.key("timeoutInMillis").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.timeout_in_millis).into()),
+            aws_smithy_types::Number::NegInt((*var_28).into()),
         );
     }
-    if let Some(var_28) = &input.tls_config {
+    if let Some(var_29) = &input.tls_config {
         #[allow(unused_mut)]
-        let mut object_29 = object.key("tlsConfig").start_object();
+        let mut object_30 = object.key("tlsConfig").start_object();
         crate::protocol_serde::shape_tls_config_input::ser_tls_config_input(
-            &mut object_29,
-            var_28,
+            &mut object_30,
+            var_29,
         )?;
-        object_29.finish();
+        object_30.finish();
     }
     Ok(())
 }

@@ -8,9 +8,7 @@ pub use crate::operation::request_spot_instances::_request_spot_instances_input:
 /// <p>Creates a Spot Instance request.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot Instance requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <important>
 /// <p>We strongly discourage using the RequestSpotInstances API because it is a legacy API with no planned investment. For options for requesting Spot Instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use">Which is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-/// </important> <note>
-/// <p>We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-/// </note>
+/// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RequestSpotInstancesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

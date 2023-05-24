@@ -9,7 +9,7 @@ pub struct EbsStorageInfo {
     pub provisioned_throughput: std::option::Option<crate::types::ProvisionedThroughput>,
     /// <p>The size in GiB of the EBS volume for the data drive on each broker node.</p>
     #[doc(hidden)]
-    pub volume_size: i32,
+    pub volume_size: std::option::Option<i32>,
 }
 impl EbsStorageInfo {
     /// <p>EBS volume provisioned throughput information.</p>
@@ -19,7 +19,7 @@ impl EbsStorageInfo {
         self.provisioned_throughput.as_ref()
     }
     /// <p>The size in GiB of the EBS volume for the data drive on each broker node.</p>
-    pub fn volume_size(&self) -> i32 {
+    pub fn volume_size(&self) -> std::option::Option<i32> {
         self.volume_size
     }
 }
@@ -65,7 +65,7 @@ impl EbsStorageInfoBuilder {
     pub fn build(self) -> crate::types::EbsStorageInfo {
         crate::types::EbsStorageInfo {
             provisioned_throughput: self.provisioned_throughput,
-            volume_size: self.volume_size.unwrap_or_default(),
+            volume_size: self.volume_size,
         }
     }
 }

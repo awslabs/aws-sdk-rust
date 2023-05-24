@@ -9,7 +9,7 @@ pub struct DescribePackagesInput {
     pub filters: std::option::Option<std::vec::Vec<crate::types::DescribePackagesFilter>>,
     /// <p>Limits results to a maximum number of packages.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -20,7 +20,7 @@ impl DescribePackagesInput {
         self.filters.as_deref()
     }
     /// <p>Limits results to a maximum number of packages.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
@@ -93,7 +93,7 @@ impl DescribePackagesInputBuilder {
     > {
         Ok(crate::operation::describe_packages::DescribePackagesInput {
             filters: self.filters,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

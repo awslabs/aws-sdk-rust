@@ -8,7 +8,7 @@ pub struct DescribeUserOutput {
     pub broker_id: std::option::Option<std::string::String>,
     /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
     #[doc(hidden)]
-    pub console_access: bool,
+    pub console_access: std::option::Option<bool>,
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -26,7 +26,7 @@ impl DescribeUserOutput {
         self.broker_id.as_deref()
     }
     /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
-    pub fn console_access(&self) -> bool {
+    pub fn console_access(&self) -> std::option::Option<bool> {
         self.console_access
     }
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
@@ -141,7 +141,7 @@ impl DescribeUserOutputBuilder {
     pub fn build(self) -> crate::operation::describe_user::DescribeUserOutput {
         crate::operation::describe_user::DescribeUserOutput {
             broker_id: self.broker_id,
-            console_access: self.console_access.unwrap_or_default(),
+            console_access: self.console_access,
             groups: self.groups,
             pending: self.pending,
             username: self.username,

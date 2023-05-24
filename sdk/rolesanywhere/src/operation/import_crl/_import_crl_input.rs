@@ -6,7 +6,7 @@ pub struct ImportCrlInput {
     /// <p>The name of the certificate revocation list (CRL).</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The x509 v3 specified certificate revocation list</p>
+    /// <p>The x509 v3 specified certificate revocation list (CRL).</p>
     #[doc(hidden)]
     pub crl_data: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Specifies whether the certificate revocation list (CRL) is enabled.</p>
@@ -24,7 +24,7 @@ impl ImportCrlInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The x509 v3 specified certificate revocation list</p>
+    /// <p>The x509 v3 specified certificate revocation list (CRL).</p>
     pub fn crl_data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.crl_data.as_ref()
     }
@@ -69,12 +69,12 @@ impl ImportCrlInputBuilder {
         self.name = input;
         self
     }
-    /// <p>The x509 v3 specified certificate revocation list</p>
+    /// <p>The x509 v3 specified certificate revocation list (CRL).</p>
     pub fn crl_data(mut self, input: aws_smithy_types::Blob) -> Self {
         self.crl_data = Some(input);
         self
     }
-    /// <p>The x509 v3 specified certificate revocation list</p>
+    /// <p>The x509 v3 specified certificate revocation list (CRL).</p>
     pub fn set_crl_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
         self.crl_data = input;
         self

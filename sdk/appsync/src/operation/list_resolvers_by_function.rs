@@ -98,11 +98,13 @@ impl ListResolversByFunctionInput {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_3));
                     }
                 }
-                if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                if let Some(inner_4) = &_input.max_results {
+                    if *inner_4 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_4).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }

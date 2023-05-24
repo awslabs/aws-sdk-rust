@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct LiveSimulationState {
-    /// <p>A list of domains for the simulation. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
+    /// <p>A list of domains for the simulation. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
     #[doc(hidden)]
     pub domains: std::option::Option<std::vec::Vec<crate::types::Domain>>,
     /// <p>A list of simulation clocks.</p> <note>
@@ -14,7 +14,7 @@ pub struct LiveSimulationState {
     pub clocks: std::option::Option<std::vec::Vec<crate::types::SimulationClock>>,
 }
 impl LiveSimulationState {
-    /// <p>A list of domains for the simulation. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
+    /// <p>A list of domains for the simulation. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
     pub fn domains(&self) -> std::option::Option<&[crate::types::Domain]> {
         self.domains.as_deref()
     }
@@ -44,14 +44,14 @@ impl LiveSimulationStateBuilder {
     ///
     /// To override the contents of this collection use [`set_domains`](Self::set_domains).
     ///
-    /// <p>A list of domains for the simulation. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
+    /// <p>A list of domains for the simulation. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
     pub fn domains(mut self, input: crate::types::Domain) -> Self {
         let mut v = self.domains.unwrap_or_default();
         v.push(input);
         self.domains = Some(v);
         self
     }
-    /// <p>A list of domains for the simulation. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
+    /// <p>A list of domains for the simulation. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
     pub fn set_domains(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Domain>>,

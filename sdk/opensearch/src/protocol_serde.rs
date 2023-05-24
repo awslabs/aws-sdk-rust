@@ -46,6 +46,10 @@ pub(crate) mod shape_describe_domain_change_progress;
 
 pub(crate) mod shape_describe_domain_config;
 
+pub(crate) mod shape_describe_domain_health;
+
+pub(crate) mod shape_describe_domain_nodes;
+
 pub(crate) mod shape_describe_domains;
 
 pub(crate) mod shape_describe_dry_run_progress;
@@ -142,6 +146,8 @@ pub(crate) mod shape_create_package_input;
 
 pub(crate) mod shape_create_vpc_endpoint_input;
 
+pub(crate) mod shape_dependency_failure_exception;
+
 pub(crate) mod shape_describe_domain_auto_tunes_input;
 
 pub(crate) mod shape_describe_domains_input;
@@ -226,6 +232,8 @@ pub(crate) mod shape_domain_info_list;
 
 pub(crate) mod shape_domain_information_container;
 
+pub(crate) mod shape_domain_nodes_status_list;
+
 pub(crate) mod shape_domain_package_details;
 
 pub(crate) mod shape_domain_package_details_list;
@@ -241,6 +249,8 @@ pub(crate) mod shape_dry_run_results;
 pub(crate) mod shape_ebs_options;
 
 pub(crate) mod shape_encryption_at_rest_options;
+
+pub(crate) mod shape_environment_info_list;
 
 pub(crate) mod shape_filter;
 
@@ -340,11 +350,15 @@ pub(crate) mod shape_domain_endpoint_options_status;
 
 pub(crate) mod shape_domain_info;
 
+pub(crate) mod shape_domain_nodes_status;
+
 pub(crate) mod shape_ebs_options_status;
 
 pub(crate) mod shape_encryption_at_rest_options_status;
 
 pub(crate) mod shape_endpoints_map;
+
+pub(crate) mod shape_environment_info;
 
 pub(crate) mod shape_error_details;
 
@@ -400,6 +414,10 @@ pub(crate) mod shape_auto_tune_details;
 
 pub(crate) mod shape_auto_tune_status;
 
+pub(crate) mod shape_availability_zone_info_list;
+
+pub(crate) mod shape_availability_zone_list;
+
 pub(crate) mod shape_change_progress_stage;
 
 pub(crate) mod shape_duration;
@@ -427,6 +445,8 @@ pub(crate) mod shape_window_start_time;
 pub(crate) mod shape_additional_limit;
 
 pub(crate) mod shape_auto_tune_maintenance_schedule_list;
+
+pub(crate) mod shape_availability_zone_info;
 
 pub(crate) mod shape_instance_count_limits;
 

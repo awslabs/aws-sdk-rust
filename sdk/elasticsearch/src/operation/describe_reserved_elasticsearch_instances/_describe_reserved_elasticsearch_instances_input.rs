@@ -9,7 +9,7 @@ pub struct DescribeReservedElasticsearchInstancesInput {
     pub reserved_elasticsearch_instance_id: std::option::Option<std::string::String>,
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -20,7 +20,7 @@ impl DescribeReservedElasticsearchInstancesInput {
         self.reserved_elasticsearch_instance_id.as_deref()
     }
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</p>
@@ -87,7 +87,6 @@ impl DescribeReservedElasticsearchInstancesInputBuilder {
                 reserved_elasticsearch_instance_id: self.reserved_elasticsearch_instance_id
                 ,
                 max_results: self.max_results
-                    .unwrap_or_default()
                 ,
                 next_token: self.next_token
                 ,

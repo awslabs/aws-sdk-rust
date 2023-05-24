@@ -61,6 +61,9 @@ pub mod create_integration_association;
 /// Types for the `CreateParticipant` operation.
 pub mod create_participant;
 
+/// Types for the `CreatePrompt` operation.
+pub mod create_prompt;
+
 /// Types for the `CreateQueue` operation.
 pub mod create_queue;
 
@@ -117,6 +120,9 @@ pub mod delete_instance;
 
 /// Types for the `DeleteIntegrationAssociation` operation.
 pub mod delete_integration_association;
+
+/// Types for the `DeletePrompt` operation.
+pub mod delete_prompt;
 
 /// Types for the `DeleteQuickConnect` operation.
 pub mod delete_quick_connect;
@@ -177,6 +183,9 @@ pub mod describe_instance_storage_config;
 
 /// Types for the `DescribePhoneNumber` operation.
 pub mod describe_phone_number;
+
+/// Types for the `DescribePrompt` operation.
+pub mod describe_prompt;
 
 /// Types for the `DescribeQueue` operation.
 pub mod describe_queue;
@@ -255,6 +264,9 @@ pub mod get_metric_data;
 
 /// Types for the `GetMetricDataV2` operation.
 pub mod get_metric_data_v2;
+
+/// Types for the `GetPromptFile` operation.
+pub mod get_prompt_file;
 
 /// Types for the `GetTaskTemplate` operation.
 pub mod get_task_template;
@@ -489,6 +501,9 @@ pub mod update_participant_role_config;
 
 /// Types for the `UpdatePhoneNumber` operation.
 pub mod update_phone_number;
+
+/// Types for the `UpdatePrompt` operation.
+pub mod update_prompt;
 
 /// Types for the `UpdateQueueHoursOfOperation` operation.
 pub mod update_queue_hours_of_operation;

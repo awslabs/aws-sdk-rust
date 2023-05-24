@@ -17,6 +17,8 @@
 ///     ReadSetStatus::Archived => { /* ... */ },
 ///     ReadSetStatus::Deleted => { /* ... */ },
 ///     ReadSetStatus::Deleting => { /* ... */ },
+///     ReadSetStatus::ProcessingUpload => { /* ... */ },
+///     ReadSetStatus::UploadFailed => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -60,6 +62,10 @@ pub enum ReadSetStatus {
     Deleted,
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
+    ProcessingUpload,
+    #[allow(missing_docs)] // documentation missing in model
+    UploadFailed,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -71,6 +77,8 @@ impl std::convert::From<&str> for ReadSetStatus {
             "ARCHIVED" => ReadSetStatus::Archived,
             "DELETED" => ReadSetStatus::Deleted,
             "DELETING" => ReadSetStatus::Deleting,
+            "PROCESSING_UPLOAD" => ReadSetStatus::ProcessingUpload,
+            "UPLOAD_FAILED" => ReadSetStatus::UploadFailed,
             other => {
                 ReadSetStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -93,12 +101,22 @@ impl ReadSetStatus {
             ReadSetStatus::Archived => "ARCHIVED",
             ReadSetStatus::Deleted => "DELETED",
             ReadSetStatus::Deleting => "DELETING",
+            ReadSetStatus::ProcessingUpload => "PROCESSING_UPLOAD",
+            ReadSetStatus::UploadFailed => "UPLOAD_FAILED",
             ReadSetStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVATING", "ACTIVE", "ARCHIVED", "DELETED", "DELETING"]
+        &[
+            "ACTIVATING",
+            "ACTIVE",
+            "ARCHIVED",
+            "DELETED",
+            "DELETING",
+            "PROCESSING_UPLOAD",
+            "UPLOAD_FAILED",
+        ]
     }
 }
 impl AsRef<str> for ReadSetStatus {

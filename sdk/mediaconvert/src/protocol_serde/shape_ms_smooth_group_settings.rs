@@ -36,17 +36,17 @@ pub fn ser_ms_smooth_group_settings(
         crate::protocol_serde::shape_ms_smooth_encryption_settings::ser_ms_smooth_encryption_settings(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if input.fragment_length != 0 {
+    if let Some(var_11) = &input.fragment_length {
         object.key("fragmentLength").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.fragment_length).into()),
+            aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_11) = &input.fragment_length_control {
-        object.key("fragmentLengthControl").string(var_11.as_str());
+    if let Some(var_12) = &input.fragment_length_control {
+        object.key("fragmentLengthControl").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.manifest_encoding {
-        object.key("manifestEncoding").string(var_12.as_str());
+    if let Some(var_13) = &input.manifest_encoding {
+        object.key("manifestEncoding").string(var_13.as_str());
     }
     Ok(())
 }

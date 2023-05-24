@@ -14,7 +14,7 @@ pub struct AwsSecurityFindingFilters {
     /// <p>The security findings provider-specific identifier for a finding.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
-    /// <p>The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a plugin, etc.</p>
+    /// <p>The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In various security findings providers' solutions, this generator can be called a rule, a check, a detector, a plugin, etc.</p>
     #[doc(hidden)]
     pub generator_id: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The Region from which the finding was generated.</p>
@@ -23,23 +23,23 @@ pub struct AwsSecurityFindingFilters {
     /// <p>A finding type in the format of <code>namespace/category/classifier</code> that classifies a finding.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
-    /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the potential security issue that a finding captured.</p>
+    /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider first observed the potential security issue that a finding captured.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     #[doc(hidden)]
     pub first_observed_at: std::option::Option<std::vec::Vec<crate::types::DateFilter>>,
-    /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed the potential security issue that a finding captured.</p>
+    /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider most recently observed the potential security issue that a finding captured.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     #[doc(hidden)]
     pub last_observed_at: std::option::Option<std::vec::Vec<crate::types::DateFilter>>,
-    /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider captured the potential security issue that a finding captured.</p>
+    /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider captured the potential security issue that a finding captured.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<std::vec::Vec<crate::types::DateFilter>>,
-    /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding record. </p>
+    /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider last updated the finding record. </p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<std::vec::Vec<crate::types::DateFilter>>,
-    /// <p>The native severity as defined by the security-findings provider's solution that generated the finding.</p>
+    /// <p>The native severity as defined by the security findings provider's solution that generated the finding.</p>
     #[deprecated(
         note = "This filter is deprecated. Instead, use FindingProviderSeverityOriginal."
     )]
@@ -71,10 +71,10 @@ pub struct AwsSecurityFindingFilters {
     /// <p>The recommendation of what to do about the issue described in a finding.</p>
     #[doc(hidden)]
     pub recommendation_text: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
-    /// <p>A URL that links to a page about the current finding in the security-findings provider's solution.</p>
+    /// <p>A URL that links to a page about the current finding in the security findings provider's solution.</p>
     #[doc(hidden)]
     pub source_url: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
-    /// <p>A data type where security-findings providers can include additional solution-specific details that aren't part of the defined <code>AwsSecurityFinding</code> format.</p>
+    /// <p>A data type where security findings providers can include additional solution-specific details that aren't part of the defined <code>AwsSecurityFinding</code> format.</p>
     #[doc(hidden)]
     pub product_fields: std::option::Option<std::vec::Vec<crate::types::MapFilter>>,
     /// <p>The name of the solution (product) that generates findings.</p>
@@ -384,7 +384,7 @@ impl AwsSecurityFindingFilters {
     pub fn id(&self) -> std::option::Option<&[crate::types::StringFilter]> {
         self.id.as_deref()
     }
-    /// <p>The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a plugin, etc.</p>
+    /// <p>The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In various security findings providers' solutions, this generator can be called a rule, a check, a detector, a plugin, etc.</p>
     pub fn generator_id(&self) -> std::option::Option<&[crate::types::StringFilter]> {
         self.generator_id.as_deref()
     }
@@ -396,27 +396,27 @@ impl AwsSecurityFindingFilters {
     pub fn r#type(&self) -> std::option::Option<&[crate::types::StringFilter]> {
         self.r#type.as_deref()
     }
-    /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the potential security issue that a finding captured.</p>
+    /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider first observed the potential security issue that a finding captured.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn first_observed_at(&self) -> std::option::Option<&[crate::types::DateFilter]> {
         self.first_observed_at.as_deref()
     }
-    /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed the potential security issue that a finding captured.</p>
+    /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider most recently observed the potential security issue that a finding captured.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn last_observed_at(&self) -> std::option::Option<&[crate::types::DateFilter]> {
         self.last_observed_at.as_deref()
     }
-    /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider captured the potential security issue that a finding captured.</p>
+    /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider captured the potential security issue that a finding captured.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn created_at(&self) -> std::option::Option<&[crate::types::DateFilter]> {
         self.created_at.as_deref()
     }
-    /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding record. </p>
+    /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider last updated the finding record. </p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn updated_at(&self) -> std::option::Option<&[crate::types::DateFilter]> {
         self.updated_at.as_deref()
     }
-    /// <p>The native severity as defined by the security-findings provider's solution that generated the finding.</p>
+    /// <p>The native severity as defined by the security findings provider's solution that generated the finding.</p>
     #[deprecated(note = "This filter is deprecated. Instead, use FindingProviderSeverityOriginal.")]
     pub fn severity_product(&self) -> std::option::Option<&[crate::types::NumberFilter]> {
         self.severity_product.as_deref()
@@ -454,11 +454,11 @@ impl AwsSecurityFindingFilters {
     pub fn recommendation_text(&self) -> std::option::Option<&[crate::types::StringFilter]> {
         self.recommendation_text.as_deref()
     }
-    /// <p>A URL that links to a page about the current finding in the security-findings provider's solution.</p>
+    /// <p>A URL that links to a page about the current finding in the security findings provider's solution.</p>
     pub fn source_url(&self) -> std::option::Option<&[crate::types::StringFilter]> {
         self.source_url.as_deref()
     }
-    /// <p>A data type where security-findings providers can include additional solution-specific details that aren't part of the defined <code>AwsSecurityFinding</code> format.</p>
+    /// <p>A data type where security findings providers can include additional solution-specific details that aren't part of the defined <code>AwsSecurityFinding</code> format.</p>
     pub fn product_fields(&self) -> std::option::Option<&[crate::types::MapFilter]> {
         self.product_fields.as_deref()
     }
@@ -1084,14 +1084,14 @@ impl AwsSecurityFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_generator_id`](Self::set_generator_id).
     ///
-    /// <p>The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a plugin, etc.</p>
+    /// <p>The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In various security findings providers' solutions, this generator can be called a rule, a check, a detector, a plugin, etc.</p>
     pub fn generator_id(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.generator_id.unwrap_or_default();
         v.push(input);
         self.generator_id = Some(v);
         self
     }
-    /// <p>The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a plugin, etc.</p>
+    /// <p>The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In various security findings providers' solutions, this generator can be called a rule, a check, a detector, a plugin, etc.</p>
     pub fn set_generator_id(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
@@ -1141,7 +1141,7 @@ impl AwsSecurityFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_first_observed_at`](Self::set_first_observed_at).
     ///
-    /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the potential security issue that a finding captured.</p>
+    /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider first observed the potential security issue that a finding captured.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn first_observed_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.first_observed_at.unwrap_or_default();
@@ -1149,7 +1149,7 @@ impl AwsSecurityFindingFiltersBuilder {
         self.first_observed_at = Some(v);
         self
     }
-    /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the potential security issue that a finding captured.</p>
+    /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider first observed the potential security issue that a finding captured.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn set_first_observed_at(
         mut self,
@@ -1162,7 +1162,7 @@ impl AwsSecurityFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_last_observed_at`](Self::set_last_observed_at).
     ///
-    /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed the potential security issue that a finding captured.</p>
+    /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider most recently observed the potential security issue that a finding captured.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn last_observed_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.last_observed_at.unwrap_or_default();
@@ -1170,7 +1170,7 @@ impl AwsSecurityFindingFiltersBuilder {
         self.last_observed_at = Some(v);
         self
     }
-    /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed the potential security issue that a finding captured.</p>
+    /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider most recently observed the potential security issue that a finding captured.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn set_last_observed_at(
         mut self,
@@ -1183,7 +1183,7 @@ impl AwsSecurityFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_created_at`](Self::set_created_at).
     ///
-    /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider captured the potential security issue that a finding captured.</p>
+    /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider captured the potential security issue that a finding captured.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn created_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.created_at.unwrap_or_default();
@@ -1191,7 +1191,7 @@ impl AwsSecurityFindingFiltersBuilder {
         self.created_at = Some(v);
         self
     }
-    /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider captured the potential security issue that a finding captured.</p>
+    /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider captured the potential security issue that a finding captured.</p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn set_created_at(
         mut self,
@@ -1204,7 +1204,7 @@ impl AwsSecurityFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_updated_at`](Self::set_updated_at).
     ///
-    /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding record. </p>
+    /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider last updated the finding record. </p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn updated_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.updated_at.unwrap_or_default();
@@ -1212,7 +1212,7 @@ impl AwsSecurityFindingFiltersBuilder {
         self.updated_at = Some(v);
         self
     }
-    /// <p>An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding record. </p>
+    /// <p>An ISO8601-formatted timestamp that indicates when the security findings provider last updated the finding record. </p>
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn set_updated_at(
         mut self,
@@ -1225,7 +1225,7 @@ impl AwsSecurityFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_severity_product`](Self::set_severity_product).
     ///
-    /// <p>The native severity as defined by the security-findings provider's solution that generated the finding.</p>
+    /// <p>The native severity as defined by the security findings provider's solution that generated the finding.</p>
     #[deprecated(note = "This filter is deprecated. Instead, use FindingProviderSeverityOriginal.")]
     pub fn severity_product(mut self, input: crate::types::NumberFilter) -> Self {
         let mut v = self.severity_product.unwrap_or_default();
@@ -1233,7 +1233,7 @@ impl AwsSecurityFindingFiltersBuilder {
         self.severity_product = Some(v);
         self
     }
-    /// <p>The native severity as defined by the security-findings provider's solution that generated the finding.</p>
+    /// <p>The native severity as defined by the security findings provider's solution that generated the finding.</p>
     #[deprecated(note = "This filter is deprecated. Instead, use FindingProviderSeverityOriginal.")]
     pub fn set_severity_product(
         mut self,
@@ -1389,14 +1389,14 @@ impl AwsSecurityFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_source_url`](Self::set_source_url).
     ///
-    /// <p>A URL that links to a page about the current finding in the security-findings provider's solution.</p>
+    /// <p>A URL that links to a page about the current finding in the security findings provider's solution.</p>
     pub fn source_url(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.source_url.unwrap_or_default();
         v.push(input);
         self.source_url = Some(v);
         self
     }
-    /// <p>A URL that links to a page about the current finding in the security-findings provider's solution.</p>
+    /// <p>A URL that links to a page about the current finding in the security findings provider's solution.</p>
     pub fn set_source_url(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
@@ -1408,14 +1408,14 @@ impl AwsSecurityFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_product_fields`](Self::set_product_fields).
     ///
-    /// <p>A data type where security-findings providers can include additional solution-specific details that aren't part of the defined <code>AwsSecurityFinding</code> format.</p>
+    /// <p>A data type where security findings providers can include additional solution-specific details that aren't part of the defined <code>AwsSecurityFinding</code> format.</p>
     pub fn product_fields(mut self, input: crate::types::MapFilter) -> Self {
         let mut v = self.product_fields.unwrap_or_default();
         v.push(input);
         self.product_fields = Some(v);
         self
     }
-    /// <p>A data type where security-findings providers can include additional solution-specific details that aren't part of the defined <code>AwsSecurityFinding</code> format.</p>
+    /// <p>A data type where security findings providers can include additional solution-specific details that aren't part of the defined <code>AwsSecurityFinding</code> format.</p>
     pub fn set_product_fields(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::MapFilter>>,

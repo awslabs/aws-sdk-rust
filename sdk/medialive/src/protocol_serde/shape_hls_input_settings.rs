@@ -3,32 +3,32 @@ pub fn ser_hls_input_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HlsInputSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.bandwidth != 0 {
+    if let Some(var_1) = &input.bandwidth {
         object.key("bandwidth").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.bandwidth).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.buffer_segments != 0 {
+    if let Some(var_2) = &input.buffer_segments {
         object.key("bufferSegments").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.buffer_segments).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.retries != 0 {
+    if let Some(var_3) = &input.retries {
         object.key("retries").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.retries).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if input.retry_interval != 0 {
+    if let Some(var_4) = &input.retry_interval {
         object.key("retryInterval").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.retry_interval).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_1) = &input.scte35_source {
-        object.key("scte35Source").string(var_1.as_str());
+    if let Some(var_5) = &input.scte35_source {
+        object.key("scte35Source").string(var_5.as_str());
     }
     Ok(())
 }

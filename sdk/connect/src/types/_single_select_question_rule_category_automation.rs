@@ -11,7 +11,7 @@ pub struct SingleSelectQuestionRuleCategoryAutomation {
     #[doc(hidden)]
     pub condition:
         std::option::Option<crate::types::SingleSelectQuestionRuleCategoryAutomationCondition>,
-    /// <p>The identifier of the answer option tha</p>
+    /// <p>The identifier of the answer option.</p>
     #[doc(hidden)]
     pub option_ref_id: std::option::Option<std::string::String>,
 }
@@ -27,7 +27,7 @@ impl SingleSelectQuestionRuleCategoryAutomation {
     {
         self.condition.as_ref()
     }
-    /// <p>The identifier of the answer option tha</p>
+    /// <p>The identifier of the answer option.</p>
     pub fn option_ref_id(&self) -> std::option::Option<&str> {
         self.option_ref_id.as_deref()
     }
@@ -77,12 +77,12 @@ impl SingleSelectQuestionRuleCategoryAutomationBuilder {
         self.condition = input;
         self
     }
-    /// <p>The identifier of the answer option tha</p>
+    /// <p>The identifier of the answer option.</p>
     pub fn option_ref_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.option_ref_id = Some(input.into());
         self
     }
-    /// <p>The identifier of the answer option tha</p>
+    /// <p>The identifier of the answer option.</p>
     pub fn set_option_ref_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.option_ref_id = input;
         self

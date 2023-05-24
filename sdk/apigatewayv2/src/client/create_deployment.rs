@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`description(impl Into<String>)`](crate::operation::create_deployment::builders::CreateDeploymentFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::create_deployment::builders::CreateDeploymentFluentBuilder::set_description): <p>The description for the deployment resource.</p>
     ///   - [`stage_name(impl Into<String>)`](crate::operation::create_deployment::builders::CreateDeploymentFluentBuilder::stage_name) / [`set_stage_name(Option<String>)`](crate::operation::create_deployment::builders::CreateDeploymentFluentBuilder::set_stage_name): <p>The name of the Stage resource for the Deployment resource to create.</p>
     /// - On success, responds with [`CreateDeploymentOutput`](crate::operation::create_deployment::CreateDeploymentOutput) with field(s):
-    ///   - [`auto_deployed(bool)`](crate::operation::create_deployment::CreateDeploymentOutput::auto_deployed): <p>Specifies whether a deployment was automatically released.</p>
+    ///   - [`auto_deployed(Option<bool>)`](crate::operation::create_deployment::CreateDeploymentOutput::auto_deployed): <p>Specifies whether a deployment was automatically released.</p>
     ///   - [`created_date(Option<DateTime>)`](crate::operation::create_deployment::CreateDeploymentOutput::created_date): <p>The date and time when the Deployment resource was created.</p>
     ///   - [`deployment_id(Option<String>)`](crate::operation::create_deployment::CreateDeploymentOutput::deployment_id): <p>The identifier for the deployment.</p>
     ///   - [`deployment_status(Option<DeploymentStatus>)`](crate::operation::create_deployment::CreateDeploymentOutput::deployment_status): <p>The status of the deployment: PENDING, FAILED, or SUCCEEDED.</p>

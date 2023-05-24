@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_graphql_apis::builders::ListGraphqlApisFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_graphql_apis::builders::ListGraphqlApisFluentBuilder::set_next_token): <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
-    ///   - [`max_results(i32)`](crate::operation::list_graphql_apis::builders::ListGraphqlApisFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_graphql_apis::builders::ListGraphqlApisFluentBuilder::set_max_results): <p>The maximum number of results that you want the request to return.</p>
+    ///   - [`max_results(i32)`](crate::operation::list_graphql_apis::builders::ListGraphqlApisFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_graphql_apis::builders::ListGraphqlApisFluentBuilder::set_max_results): <p>The maximum number of results that you want the request to return.</p>
     /// - On success, responds with [`ListGraphqlApisOutput`](crate::operation::list_graphql_apis::ListGraphqlApisOutput) with field(s):
     ///   - [`graphql_apis(Option<Vec<GraphqlApi>>)`](crate::operation::list_graphql_apis::ListGraphqlApisOutput::graphql_apis): <p>The <code>GraphqlApi</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_graphql_apis::ListGraphqlApisOutput::next_token): <p>An identifier to pass in the next request to this operation to return the next set of items in the list.</p>

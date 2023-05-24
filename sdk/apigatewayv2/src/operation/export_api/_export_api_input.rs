@@ -11,7 +11,7 @@ pub struct ExportApiInput {
     pub export_version: std::option::Option<std::string::String>,
     /// <p>Specifies whether to include <a href="https://docs.aws.amazon.com//apigateway/latest/developerguide/api-gateway-swagger-extensions.html">API Gateway extensions</a> in the exported API definition. API Gateway extensions are included by default.</p>
     #[doc(hidden)]
-    pub include_extensions: bool,
+    pub include_extensions: std::option::Option<bool>,
     /// <p>The output type of the exported definition file. Valid values are JSON and YAML.</p>
     #[doc(hidden)]
     pub output_type: std::option::Option<std::string::String>,
@@ -32,7 +32,7 @@ impl ExportApiInput {
         self.export_version.as_deref()
     }
     /// <p>Specifies whether to include <a href="https://docs.aws.amazon.com//apigateway/latest/developerguide/api-gateway-swagger-extensions.html">API Gateway extensions</a> in the exported API definition. API Gateway extensions are included by default.</p>
-    pub fn include_extensions(&self) -> bool {
+    pub fn include_extensions(&self) -> std::option::Option<bool> {
         self.include_extensions
     }
     /// <p>The output type of the exported definition file. Valid values are JSON and YAML.</p>
@@ -137,7 +137,7 @@ impl ExportApiInputBuilder {
         Ok(crate::operation::export_api::ExportApiInput {
             api_id: self.api_id,
             export_version: self.export_version,
-            include_extensions: self.include_extensions.unwrap_or_default(),
+            include_extensions: self.include_extensions,
             output_type: self.output_type,
             specification: self.specification,
             stage_name: self.stage_name,

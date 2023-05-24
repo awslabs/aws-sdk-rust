@@ -5,14 +5,14 @@
 pub struct ListConfigurationsInput {
     /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConfigurationsInput {
     /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
@@ -65,7 +65,7 @@ impl ListConfigurationsInputBuilder {
     > {
         Ok(
             crate::operation::list_configurations::ListConfigurationsInput {
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
                 next_token: self.next_token,
             },
         )

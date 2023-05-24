@@ -15,6 +15,12 @@ pub struct ScatterPlotUnaggregatedFieldWells {
     /// <p>The size field well of a scatter plot.</p>
     #[doc(hidden)]
     pub size: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
+    /// <p>The category field well of a scatter plot.</p>
+    #[doc(hidden)]
+    pub category: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
+    /// <p>The label field well of a scatter plot.</p>
+    #[doc(hidden)]
+    pub label: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
 }
 impl ScatterPlotUnaggregatedFieldWells {
     /// <p>The x-axis field well of a scatter plot.</p>
@@ -31,6 +37,14 @@ impl ScatterPlotUnaggregatedFieldWells {
     pub fn size(&self) -> std::option::Option<&[crate::types::MeasureField]> {
         self.size.as_deref()
     }
+    /// <p>The category field well of a scatter plot.</p>
+    pub fn category(&self) -> std::option::Option<&[crate::types::DimensionField]> {
+        self.category.as_deref()
+    }
+    /// <p>The label field well of a scatter plot.</p>
+    pub fn label(&self) -> std::option::Option<&[crate::types::DimensionField]> {
+        self.label.as_deref()
+    }
 }
 impl ScatterPlotUnaggregatedFieldWells {
     /// Creates a new builder-style object to manufacture [`ScatterPlotUnaggregatedFieldWells`](crate::types::ScatterPlotUnaggregatedFieldWells).
@@ -46,6 +60,8 @@ pub struct ScatterPlotUnaggregatedFieldWellsBuilder {
     pub(crate) x_axis: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
     pub(crate) y_axis: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
     pub(crate) size: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
+    pub(crate) category: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
+    pub(crate) label: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
 }
 impl ScatterPlotUnaggregatedFieldWellsBuilder {
     /// Appends an item to `x_axis`.
@@ -109,12 +125,52 @@ impl ScatterPlotUnaggregatedFieldWellsBuilder {
         self.size = input;
         self
     }
+    /// Appends an item to `category`.
+    ///
+    /// To override the contents of this collection use [`set_category`](Self::set_category).
+    ///
+    /// <p>The category field well of a scatter plot.</p>
+    pub fn category(mut self, input: crate::types::DimensionField) -> Self {
+        let mut v = self.category.unwrap_or_default();
+        v.push(input);
+        self.category = Some(v);
+        self
+    }
+    /// <p>The category field well of a scatter plot.</p>
+    pub fn set_category(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
+    ) -> Self {
+        self.category = input;
+        self
+    }
+    /// Appends an item to `label`.
+    ///
+    /// To override the contents of this collection use [`set_label`](Self::set_label).
+    ///
+    /// <p>The label field well of a scatter plot.</p>
+    pub fn label(mut self, input: crate::types::DimensionField) -> Self {
+        let mut v = self.label.unwrap_or_default();
+        v.push(input);
+        self.label = Some(v);
+        self
+    }
+    /// <p>The label field well of a scatter plot.</p>
+    pub fn set_label(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
+    ) -> Self {
+        self.label = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ScatterPlotUnaggregatedFieldWells`](crate::types::ScatterPlotUnaggregatedFieldWells).
     pub fn build(self) -> crate::types::ScatterPlotUnaggregatedFieldWells {
         crate::types::ScatterPlotUnaggregatedFieldWells {
             x_axis: self.x_axis,
             y_axis: self.y_axis,
             size: self.size,
+            category: self.category,
+            label: self.label,
         }
     }
 }

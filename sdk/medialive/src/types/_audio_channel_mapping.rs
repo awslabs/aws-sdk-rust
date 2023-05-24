@@ -9,7 +9,7 @@ pub struct AudioChannelMapping {
     pub input_channel_levels: std::option::Option<std::vec::Vec<crate::types::InputChannelLevel>>,
     /// The index of the output channel being produced.
     #[doc(hidden)]
-    pub output_channel: i32,
+    pub output_channel: std::option::Option<i32>,
 }
 impl AudioChannelMapping {
     /// Indices and gain values for each input channel that should be remixed into this output channel.
@@ -17,7 +17,7 @@ impl AudioChannelMapping {
         self.input_channel_levels.as_deref()
     }
     /// The index of the output channel being produced.
-    pub fn output_channel(&self) -> i32 {
+    pub fn output_channel(&self) -> std::option::Option<i32> {
         self.output_channel
     }
 }
@@ -70,7 +70,7 @@ impl AudioChannelMappingBuilder {
     pub fn build(self) -> crate::types::AudioChannelMapping {
         crate::types::AudioChannelMapping {
             input_channel_levels: self.input_channel_levels,
-            output_channel: self.output_channel.unwrap_or_default(),
+            output_channel: self.output_channel,
         }
     }
 }

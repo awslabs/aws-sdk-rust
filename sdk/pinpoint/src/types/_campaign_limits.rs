@@ -6,39 +6,39 @@
 pub struct CampaignLimits {
     /// <p>The maximum number of messages that a campaign can send to a single endpoint during a 24-hour period. For an application, this value specifies the default limit for the number of messages that campaigns and journeys can send to a single endpoint during a 24-hour period. The maximum value is 100.</p>
     #[doc(hidden)]
-    pub daily: i32,
+    pub daily: std::option::Option<i32>,
     /// <p>The maximum amount of time, in seconds, that a campaign can attempt to deliver a message after the scheduled start time for the campaign. The minimum value is 60 seconds.</p>
     #[doc(hidden)]
-    pub maximum_duration: i32,
+    pub maximum_duration: std::option::Option<i32>,
     /// <p>The maximum number of messages that a campaign can send each second. For an application, this value specifies the default limit for the number of messages that campaigns can send each second. The minimum value is 50. The maximum value is 20,000.</p>
     #[doc(hidden)]
-    pub messages_per_second: i32,
+    pub messages_per_second: std::option::Option<i32>,
     /// <p>The maximum number of messages that a campaign can send to a single endpoint during the course of the campaign. If a campaign recurs, this setting applies to all runs of the campaign. The maximum value is 100.</p>
     #[doc(hidden)]
-    pub total: i32,
+    pub total: std::option::Option<i32>,
     /// <p>The maximum total number of messages that the campaign can send per user session.</p>
     #[doc(hidden)]
-    pub session: i32,
+    pub session: std::option::Option<i32>,
 }
 impl CampaignLimits {
     /// <p>The maximum number of messages that a campaign can send to a single endpoint during a 24-hour period. For an application, this value specifies the default limit for the number of messages that campaigns and journeys can send to a single endpoint during a 24-hour period. The maximum value is 100.</p>
-    pub fn daily(&self) -> i32 {
+    pub fn daily(&self) -> std::option::Option<i32> {
         self.daily
     }
     /// <p>The maximum amount of time, in seconds, that a campaign can attempt to deliver a message after the scheduled start time for the campaign. The minimum value is 60 seconds.</p>
-    pub fn maximum_duration(&self) -> i32 {
+    pub fn maximum_duration(&self) -> std::option::Option<i32> {
         self.maximum_duration
     }
     /// <p>The maximum number of messages that a campaign can send each second. For an application, this value specifies the default limit for the number of messages that campaigns can send each second. The minimum value is 50. The maximum value is 20,000.</p>
-    pub fn messages_per_second(&self) -> i32 {
+    pub fn messages_per_second(&self) -> std::option::Option<i32> {
         self.messages_per_second
     }
     /// <p>The maximum number of messages that a campaign can send to a single endpoint during the course of the campaign. If a campaign recurs, this setting applies to all runs of the campaign. The maximum value is 100.</p>
-    pub fn total(&self) -> i32 {
+    pub fn total(&self) -> std::option::Option<i32> {
         self.total
     }
     /// <p>The maximum total number of messages that the campaign can send per user session.</p>
-    pub fn session(&self) -> i32 {
+    pub fn session(&self) -> std::option::Option<i32> {
         self.session
     }
 }
@@ -113,11 +113,11 @@ impl CampaignLimitsBuilder {
     /// Consumes the builder and constructs a [`CampaignLimits`](crate::types::CampaignLimits).
     pub fn build(self) -> crate::types::CampaignLimits {
         crate::types::CampaignLimits {
-            daily: self.daily.unwrap_or_default(),
-            maximum_duration: self.maximum_duration.unwrap_or_default(),
-            messages_per_second: self.messages_per_second.unwrap_or_default(),
-            total: self.total.unwrap_or_default(),
-            session: self.session.unwrap_or_default(),
+            daily: self.daily,
+            maximum_duration: self.maximum_duration,
+            messages_per_second: self.messages_per_second,
+            total: self.total,
+            session: self.session,
         }
     }
 }

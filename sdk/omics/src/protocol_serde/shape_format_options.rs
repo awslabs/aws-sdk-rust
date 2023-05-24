@@ -72,19 +72,19 @@ where
 }
 
 pub fn ser_format_options(
-    object_3: &mut aws_smithy_json::serialize::JsonObjectWriter,
+    object_7: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FormatOptions,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::types::FormatOptions::TsvOptions(inner) => {
             #[allow(unused_mut)]
-            let mut object_1 = object_3.key("tsvOptions").start_object();
+            let mut object_1 = object_7.key("tsvOptions").start_object();
             crate::protocol_serde::shape_tsv_options::ser_tsv_options(&mut object_1, inner)?;
             object_1.finish();
         }
         crate::types::FormatOptions::VcfOptions(inner) => {
             #[allow(unused_mut)]
-            let mut object_2 = object_3.key("vcfOptions").start_object();
+            let mut object_2 = object_7.key("vcfOptions").start_object();
             crate::protocol_serde::shape_vcf_options::ser_vcf_options(&mut object_2, inner)?;
             object_2.finish();
         }

@@ -3,17 +3,17 @@ pub fn ser_scte35_time_signal_apos(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Scte35TimeSignalApos,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.ad_avail_offset != 0 {
+    if let Some(var_1) = &input.ad_avail_offset {
         object.key("adAvailOffset").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.ad_avail_offset).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.no_regional_blackout_flag {
-        object.key("noRegionalBlackoutFlag").string(var_1.as_str());
+    if let Some(var_2) = &input.no_regional_blackout_flag {
+        object.key("noRegionalBlackoutFlag").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.web_delivery_allowed_flag {
-        object.key("webDeliveryAllowedFlag").string(var_2.as_str());
+    if let Some(var_3) = &input.web_delivery_allowed_flag {
+        object.key("webDeliveryAllowedFlag").string(var_3.as_str());
     }
     Ok(())
 }

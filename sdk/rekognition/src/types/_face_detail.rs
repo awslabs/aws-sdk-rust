@@ -57,6 +57,12 @@ pub struct FaceDetail {
     /// <p>Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.</p>
     #[doc(hidden)]
     pub confidence: std::option::Option<f32>,
+    /// <p> <code>FaceOccluded</code> should return "true" with a high confidence score if a detected face’s eyes, nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other objects. <code>FaceOccluded</code> should return "false" with a high confidence score if common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and others. </p>
+    #[doc(hidden)]
+    pub face_occluded: std::option::Option<crate::types::FaceOccluded>,
+    /// <p>Indicates the direction the eyes are gazing in, as defined by pitch and yaw.</p>
+    #[doc(hidden)]
+    pub eye_direction: std::option::Option<crate::types::EyeDirection>,
 }
 impl FaceDetail {
     /// <p>Bounding box of the face. Default attribute.</p>
@@ -119,6 +125,14 @@ impl FaceDetail {
     pub fn confidence(&self) -> std::option::Option<f32> {
         self.confidence
     }
+    /// <p> <code>FaceOccluded</code> should return "true" with a high confidence score if a detected face’s eyes, nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other objects. <code>FaceOccluded</code> should return "false" with a high confidence score if common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and others. </p>
+    pub fn face_occluded(&self) -> std::option::Option<&crate::types::FaceOccluded> {
+        self.face_occluded.as_ref()
+    }
+    /// <p>Indicates the direction the eyes are gazing in, as defined by pitch and yaw.</p>
+    pub fn eye_direction(&self) -> std::option::Option<&crate::types::EyeDirection> {
+        self.eye_direction.as_ref()
+    }
 }
 impl FaceDetail {
     /// Creates a new builder-style object to manufacture [`FaceDetail`](crate::types::FaceDetail).
@@ -146,6 +160,8 @@ pub struct FaceDetailBuilder {
     pub(crate) pose: std::option::Option<crate::types::Pose>,
     pub(crate) quality: std::option::Option<crate::types::ImageQuality>,
     pub(crate) confidence: std::option::Option<f32>,
+    pub(crate) face_occluded: std::option::Option<crate::types::FaceOccluded>,
+    pub(crate) eye_direction: std::option::Option<crate::types::EyeDirection>,
 }
 impl FaceDetailBuilder {
     /// <p>Bounding box of the face. Default attribute.</p>
@@ -319,6 +335,32 @@ impl FaceDetailBuilder {
         self.confidence = input;
         self
     }
+    /// <p> <code>FaceOccluded</code> should return "true" with a high confidence score if a detected face’s eyes, nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other objects. <code>FaceOccluded</code> should return "false" with a high confidence score if common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and others. </p>
+    pub fn face_occluded(mut self, input: crate::types::FaceOccluded) -> Self {
+        self.face_occluded = Some(input);
+        self
+    }
+    /// <p> <code>FaceOccluded</code> should return "true" with a high confidence score if a detected face’s eyes, nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other objects. <code>FaceOccluded</code> should return "false" with a high confidence score if common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair, and others. </p>
+    pub fn set_face_occluded(
+        mut self,
+        input: std::option::Option<crate::types::FaceOccluded>,
+    ) -> Self {
+        self.face_occluded = input;
+        self
+    }
+    /// <p>Indicates the direction the eyes are gazing in, as defined by pitch and yaw.</p>
+    pub fn eye_direction(mut self, input: crate::types::EyeDirection) -> Self {
+        self.eye_direction = Some(input);
+        self
+    }
+    /// <p>Indicates the direction the eyes are gazing in, as defined by pitch and yaw.</p>
+    pub fn set_eye_direction(
+        mut self,
+        input: std::option::Option<crate::types::EyeDirection>,
+    ) -> Self {
+        self.eye_direction = input;
+        self
+    }
     /// Consumes the builder and constructs a [`FaceDetail`](crate::types::FaceDetail).
     pub fn build(self) -> crate::types::FaceDetail {
         crate::types::FaceDetail {
@@ -337,6 +379,8 @@ impl FaceDetailBuilder {
             pose: self.pose,
             quality: self.quality,
             confidence: self.confidence,
+            face_occluded: self.face_occluded,
+            eye_direction: self.eye_direction,
         }
     }
 }

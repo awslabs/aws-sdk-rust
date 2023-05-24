@@ -5,7 +5,7 @@ pub use crate::operation::update_crl::_update_crl_input::UpdateCrlInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateCrl`.
 ///
-/// <p>Updates the certificate revocation list (CRL). CRl is a list of certificates that have been revoked by the issuing certificate Authority (CA). IAM Roles Anywhere validates against the crl list before issuing credentials.</p>
+/// <p>Updates the certificate revocation list (CRL). A CRL is a list of certificates that have been revoked by the issuing certificate authority (CA). IAM Roles Anywhere validates against the CRL before issuing credentials.</p>
 /// <p> <b>Required permissions: </b> <code>rolesanywhere:UpdateCrl</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateCrlFluentBuilder {
@@ -85,12 +85,12 @@ impl UpdateCrlFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The x509 v3 specified certificate revocation list</p>
+    /// <p>The x509 v3 specified certificate revocation list (CRL).</p>
     pub fn crl_data(mut self, input: aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.crl_data(input);
         self
     }
-    /// <p>The x509 v3 specified certificate revocation list</p>
+    /// <p>The x509 v3 specified certificate revocation list (CRL).</p>
     pub fn set_crl_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_crl_data(input);
         self

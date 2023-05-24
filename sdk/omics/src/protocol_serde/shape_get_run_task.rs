@@ -223,6 +223,15 @@ pub(crate) fn de_get_run_task(
                             )?,
                         );
                     }
+                    "gpus" => {
+                        builder = builder.set_gpus(
+                            aws_smithy_json::deserialize::token::expect_number_or_null(
+                                tokens.next(),
+                            )?
+                            .map(i32::try_from)
+                            .transpose()?,
+                        );
+                    }
                     "logStream" => {
                         builder = builder.set_log_stream(
                             aws_smithy_json::deserialize::token::expect_string_or_null(

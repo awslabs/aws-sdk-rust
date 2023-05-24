@@ -9,79 +9,79 @@ pub fn ser_dvb_sub_destination_settings(
     if let Some(var_2) = &input.background_color {
         object.key("backgroundColor").string(var_2.as_str());
     }
-    if input.background_opacity != 0 {
+    if let Some(var_3) = &input.background_opacity {
         object.key("backgroundOpacity").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.background_opacity).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.font {
+    if let Some(var_4) = &input.font {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("font").start_object();
-        crate::protocol_serde::shape_input_location::ser_input_location(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("font").start_object();
+        crate::protocol_serde::shape_input_location::ser_input_location(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_5) = &input.font_color {
-        object.key("fontColor").string(var_5.as_str());
+    if let Some(var_6) = &input.font_color {
+        object.key("fontColor").string(var_6.as_str());
     }
-    if input.font_opacity != 0 {
+    if let Some(var_7) = &input.font_opacity {
         object.key("fontOpacity").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.font_opacity).into()),
+            aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if input.font_resolution != 0 {
+    if let Some(var_8) = &input.font_resolution {
         object.key("fontResolution").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.font_resolution).into()),
+            aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_6) = &input.font_size {
-        object.key("fontSize").string(var_6.as_str());
+    if let Some(var_9) = &input.font_size {
+        object.key("fontSize").string(var_9.as_str());
     }
-    if let Some(var_7) = &input.outline_color {
-        object.key("outlineColor").string(var_7.as_str());
+    if let Some(var_10) = &input.outline_color {
+        object.key("outlineColor").string(var_10.as_str());
     }
-    if input.outline_size != 0 {
+    if let Some(var_11) = &input.outline_size {
         object.key("outlineSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.outline_size).into()),
+            aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_8) = &input.shadow_color {
-        object.key("shadowColor").string(var_8.as_str());
+    if let Some(var_12) = &input.shadow_color {
+        object.key("shadowColor").string(var_12.as_str());
     }
-    if input.shadow_opacity != 0 {
+    if let Some(var_13) = &input.shadow_opacity {
         object.key("shadowOpacity").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.shadow_opacity).into()),
+            aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
-    if input.shadow_x_offset != 0 {
+    if let Some(var_14) = &input.shadow_x_offset {
         object.key("shadowXOffset").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.shadow_x_offset).into()),
+            aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
-    if input.shadow_y_offset != 0 {
+    if let Some(var_15) = &input.shadow_y_offset {
         object.key("shadowYOffset").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.shadow_y_offset).into()),
+            aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
-    if let Some(var_9) = &input.teletext_grid_control {
-        object.key("teletextGridControl").string(var_9.as_str());
+    if let Some(var_16) = &input.teletext_grid_control {
+        object.key("teletextGridControl").string(var_16.as_str());
     }
-    if input.x_position != 0 {
+    if let Some(var_17) = &input.x_position {
         object.key("xPosition").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.x_position).into()),
+            aws_smithy_types::Number::NegInt((*var_17).into()),
         );
     }
-    if input.y_position != 0 {
+    if let Some(var_18) = &input.y_position {
         object.key("yPosition").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.y_position).into()),
+            aws_smithy_types::Number::NegInt((*var_18).into()),
         );
     }
     Ok(())

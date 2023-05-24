@@ -9,23 +9,23 @@ pub fn ser_dash_manifest(
     if let Some(var_2) = &input.manifest_name {
         object.key("manifestName").string(var_2.as_str());
     }
-    if input.min_buffer_time_seconds != 0 {
+    if let Some(var_3) = &input.min_buffer_time_seconds {
         object.key("minBufferTimeSeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.min_buffer_time_seconds).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.profile {
-        object.key("profile").string(var_3.as_str());
+    if let Some(var_4) = &input.profile {
+        object.key("profile").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.scte_markers_source {
-        object.key("scteMarkersSource").string(var_4.as_str());
+    if let Some(var_5) = &input.scte_markers_source {
+        object.key("scteMarkersSource").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.stream_selection {
+    if let Some(var_6) = &input.stream_selection {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("streamSelection").start_object();
-        crate::protocol_serde::shape_stream_selection::ser_stream_selection(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_7 = object.key("streamSelection").start_object();
+        crate::protocol_serde::shape_stream_selection::ser_stream_selection(&mut object_7, var_6)?;
+        object_7.finish();
     }
     Ok(())
 }

@@ -6,21 +6,21 @@
 pub struct ReplicationDetails {
     /// <p>Specifies whether the bucket is configured to replicate one or more objects to any destination.</p>
     #[doc(hidden)]
-    pub replicated: bool,
+    pub replicated: std::option::Option<bool>,
     /// <p>Specifies whether the bucket is configured to replicate one or more objects to a bucket for an Amazon Web Services account that isn't part of your Amazon Macie organization. An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of related accounts through Organizations or by Macie invitation.</p>
     #[doc(hidden)]
-    pub replicated_externally: bool,
+    pub replicated_externally: std::option::Option<bool>,
     /// <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services account that owns a bucket that the bucket is configured to replicate one or more objects to.</p>
     #[doc(hidden)]
     pub replication_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ReplicationDetails {
     /// <p>Specifies whether the bucket is configured to replicate one or more objects to any destination.</p>
-    pub fn replicated(&self) -> bool {
+    pub fn replicated(&self) -> std::option::Option<bool> {
         self.replicated
     }
     /// <p>Specifies whether the bucket is configured to replicate one or more objects to a bucket for an Amazon Web Services account that isn't part of your Amazon Macie organization. An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of related accounts through Organizations or by Macie invitation.</p>
-    pub fn replicated_externally(&self) -> bool {
+    pub fn replicated_externally(&self) -> std::option::Option<bool> {
         self.replicated_externally
     }
     /// <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services account that owns a bucket that the bucket is configured to replicate one or more objects to.</p>
@@ -86,8 +86,8 @@ impl ReplicationDetailsBuilder {
     /// Consumes the builder and constructs a [`ReplicationDetails`](crate::types::ReplicationDetails).
     pub fn build(self) -> crate::types::ReplicationDetails {
         crate::types::ReplicationDetails {
-            replicated: self.replicated.unwrap_or_default(),
-            replicated_externally: self.replicated_externally.unwrap_or_default(),
+            replicated: self.replicated,
+            replicated_externally: self.replicated_externally,
             replication_accounts: self.replication_accounts,
         }
     }

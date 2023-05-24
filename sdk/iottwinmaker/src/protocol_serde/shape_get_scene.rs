@@ -193,6 +193,11 @@ pub(crate) fn de_get_scene(
                             .transpose()?,
                         );
                     }
+                    "error" => {
+                        builder = builder.set_error(
+                            crate::protocol_serde::shape_scene_error::de_scene_error(tokens)?,
+                        );
+                    }
                     "generatedSceneMetadata" => {
                         builder = builder.set_generated_scene_metadata(
                             crate::protocol_serde::shape_generated_scene_metadata_map::de_generated_scene_metadata_map(tokens)?

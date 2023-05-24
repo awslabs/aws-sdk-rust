@@ -15,86 +15,86 @@ pub fn ser_set_source_request(
     if let Some(var_4) = &input.entitlement_arn {
         object.key("entitlementArn").string(var_4.as_str());
     }
-    if input.ingest_port != 0 {
+    if let Some(var_5) = &input.ingest_port {
         object.key("ingestPort").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.ingest_port).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if input.max_bitrate != 0 {
+    if let Some(var_6) = &input.max_bitrate {
         object.key("maxBitrate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_bitrate).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if input.max_latency != 0 {
+    if let Some(var_7) = &input.max_latency {
         object.key("maxLatency").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_latency).into()),
+            aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if input.max_sync_buffer != 0 {
+    if let Some(var_8) = &input.max_sync_buffer {
         object.key("maxSyncBuffer").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_sync_buffer).into()),
+            aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_5) = &input.media_stream_source_configurations {
-        let mut array_6 = object.key("mediaStreamSourceConfigurations").start_array();
-        for item_7 in var_5 {
+    if let Some(var_9) = &input.media_stream_source_configurations {
+        let mut array_10 = object.key("mediaStreamSourceConfigurations").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_media_stream_source_configuration_request::ser_media_stream_source_configuration_request(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_media_stream_source_configuration_request::ser_media_stream_source_configuration_request(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_6.finish();
+        array_10.finish();
     }
-    if input.min_latency != 0 {
+    if let Some(var_13) = &input.min_latency {
         object.key("minLatency").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.min_latency).into()),
+            aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
-    if let Some(var_9) = &input.name {
-        object.key("name").string(var_9.as_str());
+    if let Some(var_14) = &input.name {
+        object.key("name").string(var_14.as_str());
     }
-    if let Some(var_10) = &input.protocol {
-        object.key("protocol").string(var_10.as_str());
+    if let Some(var_15) = &input.protocol {
+        object.key("protocol").string(var_15.as_str());
     }
-    if input.sender_control_port != 0 {
+    if let Some(var_16) = &input.sender_control_port {
         object.key("senderControlPort").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.sender_control_port).into()),
+            aws_smithy_types::Number::NegInt((*var_16).into()),
         );
     }
-    if let Some(var_11) = &input.sender_ip_address {
-        object.key("senderIpAddress").string(var_11.as_str());
+    if let Some(var_17) = &input.sender_ip_address {
+        object.key("senderIpAddress").string(var_17.as_str());
     }
-    if let Some(var_12) = &input.source_listener_address {
-        object.key("sourceListenerAddress").string(var_12.as_str());
+    if let Some(var_18) = &input.source_listener_address {
+        object.key("sourceListenerAddress").string(var_18.as_str());
     }
-    if input.source_listener_port != 0 {
+    if let Some(var_19) = &input.source_listener_port {
         object.key("sourceListenerPort").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.source_listener_port).into()),
+            aws_smithy_types::Number::NegInt((*var_19).into()),
         );
     }
-    if let Some(var_13) = &input.stream_id {
-        object.key("streamId").string(var_13.as_str());
+    if let Some(var_20) = &input.stream_id {
+        object.key("streamId").string(var_20.as_str());
     }
-    if let Some(var_14) = &input.vpc_interface_name {
-        object.key("vpcInterfaceName").string(var_14.as_str());
+    if let Some(var_21) = &input.vpc_interface_name {
+        object.key("vpcInterfaceName").string(var_21.as_str());
     }
-    if let Some(var_15) = &input.whitelist_cidr {
-        object.key("whitelistCidr").string(var_15.as_str());
+    if let Some(var_22) = &input.whitelist_cidr {
+        object.key("whitelistCidr").string(var_22.as_str());
     }
-    if let Some(var_16) = &input.gateway_bridge_source {
+    if let Some(var_23) = &input.gateway_bridge_source {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("gatewayBridgeSource").start_object();
-        crate::protocol_serde::shape_set_gateway_bridge_source_request::ser_set_gateway_bridge_source_request(&mut object_17, var_16)?;
-        object_17.finish();
+        let mut object_24 = object.key("gatewayBridgeSource").start_object();
+        crate::protocol_serde::shape_set_gateway_bridge_source_request::ser_set_gateway_bridge_source_request(&mut object_24, var_23)?;
+        object_24.finish();
     }
     Ok(())
 }

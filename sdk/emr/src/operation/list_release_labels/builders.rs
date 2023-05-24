@@ -5,7 +5,7 @@ pub use crate::operation::list_release_labels::_list_release_labels_input::ListR
 
 /// Fluent builder constructing a request to `ListReleaseLabels`.
 ///
-/// <p>Retrieves release labels of EMR services in the region where the API is called.</p>
+/// <p>Retrieves release labels of Amazon EMR services in the Region where the API is called.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListReleaseLabelsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

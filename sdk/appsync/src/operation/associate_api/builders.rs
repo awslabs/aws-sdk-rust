@@ -74,12 +74,12 @@ impl AssociateApiFluentBuilder {
         self.inner = self.inner.set_domain_name(input);
         self
     }
-    /// <p>The API ID.</p>
+    /// <p>The API ID. Private APIs can not be associated with custom domains.</p>
     pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.api_id(input.into());
         self
     }
-    /// <p>The API ID.</p>
+    /// <p>The API ID. Private APIs can not be associated with custom domains.</p>
     pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_api_id(input);
         self

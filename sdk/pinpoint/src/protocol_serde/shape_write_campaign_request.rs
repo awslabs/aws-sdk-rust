@@ -24,83 +24,83 @@ pub fn ser_write_campaign_request(
     if let Some(var_7) = &input.description {
         object.key("Description").string(var_7.as_str());
     }
-    if input.holdout_percent != 0 {
+    if let Some(var_8) = &input.holdout_percent {
         object.key("HoldoutPercent").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.holdout_percent).into()),
+            aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_8) = &input.hook {
+    if let Some(var_9) = &input.hook {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("Hook").start_object();
-        crate::protocol_serde::shape_campaign_hook::ser_campaign_hook(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_10 = object.key("Hook").start_object();
+        crate::protocol_serde::shape_campaign_hook::ser_campaign_hook(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if input.is_paused {
-        object.key("IsPaused").boolean(input.is_paused);
+    if let Some(var_11) = &input.is_paused {
+        object.key("IsPaused").boolean(*var_11);
     }
-    if let Some(var_10) = &input.limits {
+    if let Some(var_12) = &input.limits {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("Limits").start_object();
-        crate::protocol_serde::shape_campaign_limits::ser_campaign_limits(&mut object_11, var_10)?;
-        object_11.finish();
-    }
-    if let Some(var_12) = &input.message_configuration {
-        #[allow(unused_mut)]
-        let mut object_13 = object.key("MessageConfiguration").start_object();
-        crate::protocol_serde::shape_message_configuration::ser_message_configuration(
-            &mut object_13,
-            var_12,
-        )?;
+        let mut object_13 = object.key("Limits").start_object();
+        crate::protocol_serde::shape_campaign_limits::ser_campaign_limits(&mut object_13, var_12)?;
         object_13.finish();
     }
-    if let Some(var_14) = &input.name {
-        object.key("Name").string(var_14.as_str());
-    }
-    if let Some(var_15) = &input.schedule {
+    if let Some(var_14) = &input.message_configuration {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("Schedule").start_object();
-        crate::protocol_serde::shape_schedule::ser_schedule(&mut object_16, var_15)?;
-        object_16.finish();
+        let mut object_15 = object.key("MessageConfiguration").start_object();
+        crate::protocol_serde::shape_message_configuration::ser_message_configuration(
+            &mut object_15,
+            var_14,
+        )?;
+        object_15.finish();
     }
-    if let Some(var_17) = &input.segment_id {
-        object.key("SegmentId").string(var_17.as_str());
+    if let Some(var_16) = &input.name {
+        object.key("Name").string(var_16.as_str());
     }
-    if input.segment_version != 0 {
+    if let Some(var_17) = &input.schedule {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("Schedule").start_object();
+        crate::protocol_serde::shape_schedule::ser_schedule(&mut object_18, var_17)?;
+        object_18.finish();
+    }
+    if let Some(var_19) = &input.segment_id {
+        object.key("SegmentId").string(var_19.as_str());
+    }
+    if let Some(var_20) = &input.segment_version {
         object.key("SegmentVersion").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.segment_version).into()),
+            aws_smithy_types::Number::NegInt((*var_20).into()),
         );
     }
-    if let Some(var_18) = &input.tags {
+    if let Some(var_21) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("tags").start_object();
-        for (key_20, value_21) in var_18 {
+        let mut object_22 = object.key("tags").start_object();
+        for (key_23, value_24) in var_21 {
             {
-                object_19.key(key_20.as_str()).string(value_21.as_str());
+                object_22.key(key_23.as_str()).string(value_24.as_str());
             }
         }
-        object_19.finish();
+        object_22.finish();
     }
-    if let Some(var_22) = &input.template_configuration {
+    if let Some(var_25) = &input.template_configuration {
         #[allow(unused_mut)]
-        let mut object_23 = object.key("TemplateConfiguration").start_object();
+        let mut object_26 = object.key("TemplateConfiguration").start_object();
         crate::protocol_serde::shape_template_configuration::ser_template_configuration(
-            &mut object_23,
-            var_22,
+            &mut object_26,
+            var_25,
         )?;
-        object_23.finish();
+        object_26.finish();
     }
-    if let Some(var_24) = &input.treatment_description {
-        object.key("TreatmentDescription").string(var_24.as_str());
+    if let Some(var_27) = &input.treatment_description {
+        object.key("TreatmentDescription").string(var_27.as_str());
     }
-    if let Some(var_25) = &input.treatment_name {
-        object.key("TreatmentName").string(var_25.as_str());
+    if let Some(var_28) = &input.treatment_name {
+        object.key("TreatmentName").string(var_28.as_str());
     }
-    if input.priority != 0 {
+    if let Some(var_29) = &input.priority {
         object.key("Priority").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.priority).into()),
+            aws_smithy_types::Number::NegInt((*var_29).into()),
         );
     }
     Ok(())

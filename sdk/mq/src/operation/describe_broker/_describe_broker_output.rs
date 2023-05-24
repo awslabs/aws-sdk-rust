@@ -11,7 +11,7 @@ pub struct DescribeBrokerOutput {
     pub authentication_strategy: std::option::Option<crate::types::AuthenticationStrategy>,
     /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
     #[doc(hidden)]
-    pub auto_minor_version_upgrade: bool,
+    pub auto_minor_version_upgrade: std::option::Option<bool>,
     /// <p>The broker's Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub broker_arn: std::option::Option<std::string::String>,
@@ -74,7 +74,7 @@ pub struct DescribeBrokerOutput {
     pub pending_security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Enables connections from applications outside of the VPC that hosts the broker's subnets.</p>
     #[doc(hidden)]
-    pub publicly_accessible: bool,
+    pub publicly_accessible: std::option::Option<bool>,
     /// <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
     #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -105,7 +105,7 @@ impl DescribeBrokerOutput {
         self.authentication_strategy.as_ref()
     }
     /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
-    pub fn auto_minor_version_upgrade(&self) -> bool {
+    pub fn auto_minor_version_upgrade(&self) -> std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
     /// <p>The broker's Amazon Resource Name (ARN).</p>
@@ -197,7 +197,7 @@ impl DescribeBrokerOutput {
         self.pending_security_groups.as_deref()
     }
     /// <p>Enables connections from applications outside of the VPC that hosts the broker's subnets.</p>
-    pub fn publicly_accessible(&self) -> bool {
+    pub fn publicly_accessible(&self) -> std::option::Option<bool> {
         self.publicly_accessible
     }
     /// <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
@@ -693,7 +693,7 @@ impl DescribeBrokerOutputBuilder {
         crate::operation::describe_broker::DescribeBrokerOutput {
             actions_required: self.actions_required,
             authentication_strategy: self.authentication_strategy,
-            auto_minor_version_upgrade: self.auto_minor_version_upgrade.unwrap_or_default(),
+            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
             broker_arn: self.broker_arn,
             broker_id: self.broker_id,
             broker_instances: self.broker_instances,
@@ -714,7 +714,7 @@ impl DescribeBrokerOutputBuilder {
             pending_host_instance_type: self.pending_host_instance_type,
             pending_ldap_server_metadata: self.pending_ldap_server_metadata,
             pending_security_groups: self.pending_security_groups,
-            publicly_accessible: self.publicly_accessible.unwrap_or_default(),
+            publicly_accessible: self.publicly_accessible,
             security_groups: self.security_groups,
             storage_type: self.storage_type,
             subnet_ids: self.subnet_ids,

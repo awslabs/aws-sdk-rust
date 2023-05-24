@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateLagInput {
-    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG.</p>
+    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1G or 10G, or two when the port speed is 100G. </p>
     #[doc(hidden)]
     pub number_of_connections: std::option::Option<i32>,
     /// <p>The location for the LAG.</p>
@@ -34,7 +34,7 @@ pub struct CreateLagInput {
     pub request_mac_sec: std::option::Option<bool>,
 }
 impl CreateLagInput {
-    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG.</p>
+    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1G or 10G, or two when the port speed is 100G. </p>
     pub fn number_of_connections(&self) -> std::option::Option<i32> {
         self.number_of_connections
     }
@@ -95,12 +95,12 @@ pub struct CreateLagInputBuilder {
     pub(crate) request_mac_sec: std::option::Option<bool>,
 }
 impl CreateLagInputBuilder {
-    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG.</p>
+    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1G or 10G, or two when the port speed is 100G. </p>
     pub fn number_of_connections(mut self, input: i32) -> Self {
         self.number_of_connections = Some(input);
         self
     }
-    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG.</p>
+    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1G or 10G, or two when the port speed is 100G. </p>
     pub fn set_number_of_connections(mut self, input: std::option::Option<i32>) -> Self {
         self.number_of_connections = input;
         self

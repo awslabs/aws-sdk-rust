@@ -9,16 +9,16 @@ pub fn ser_remix_settings(
         crate::protocol_serde::shape_channel_mapping::ser_channel_mapping(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if input.channels_in != 0 {
+    if let Some(var_3) = &input.channels_in {
         object.key("channelsIn").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.channels_in).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if input.channels_out != 0 {
+    if let Some(var_4) = &input.channels_out {
         object.key("channelsOut").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.channels_out).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     Ok(())

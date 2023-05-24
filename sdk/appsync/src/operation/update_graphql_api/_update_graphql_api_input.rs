@@ -27,7 +27,7 @@ pub struct UpdateGraphqlApiInput {
         std::option::Option<std::vec::Vec<crate::types::AdditionalAuthenticationProvider>>,
     /// <p>A flag indicating whether to use X-Ray tracing for the <code>GraphqlApi</code>.</p>
     #[doc(hidden)]
-    pub xray_enabled: bool,
+    pub xray_enabled: std::option::Option<bool>,
     /// <p>Configuration for Lambda function authorization.</p>
     #[doc(hidden)]
     pub lambda_authorizer_config: std::option::Option<crate::types::LambdaAuthorizerConfig>,
@@ -66,7 +66,7 @@ impl UpdateGraphqlApiInput {
         self.additional_authentication_providers.as_deref()
     }
     /// <p>A flag indicating whether to use X-Ray tracing for the <code>GraphqlApi</code>.</p>
-    pub fn xray_enabled(&self) -> bool {
+    pub fn xray_enabled(&self) -> std::option::Option<bool> {
         self.xray_enabled
     }
     /// <p>Configuration for Lambda function authorization.</p>
@@ -230,7 +230,7 @@ impl UpdateGraphqlApiInputBuilder {
                 user_pool_config: self.user_pool_config,
                 open_id_connect_config: self.open_id_connect_config,
                 additional_authentication_providers: self.additional_authentication_providers,
-                xray_enabled: self.xray_enabled.unwrap_or_default(),
+                xray_enabled: self.xray_enabled,
                 lambda_authorizer_config: self.lambda_authorizer_config,
             },
         )

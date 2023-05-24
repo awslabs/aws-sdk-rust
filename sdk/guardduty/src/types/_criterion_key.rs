@@ -18,6 +18,7 @@
 ///     CriterionKey::ScanId => { /* ... */ },
 ///     CriterionKey::ScanStartTime => { /* ... */ },
 ///     CriterionKey::ScanStatus => { /* ... */ },
+///     CriterionKey::ScanType => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -63,6 +64,8 @@ pub enum CriterionKey {
     ScanStartTime,
     #[allow(missing_docs)] // documentation missing in model
     ScanStatus,
+    #[allow(missing_docs)] // documentation missing in model
+    ScanType,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -75,6 +78,7 @@ impl std::convert::From<&str> for CriterionKey {
             "SCAN_ID" => CriterionKey::ScanId,
             "SCAN_START_TIME" => CriterionKey::ScanStartTime,
             "SCAN_STATUS" => CriterionKey::ScanStatus,
+            "SCAN_TYPE" => CriterionKey::ScanType,
             other => {
                 CriterionKey::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -98,6 +102,7 @@ impl CriterionKey {
             CriterionKey::ScanId => "SCAN_ID",
             CriterionKey::ScanStartTime => "SCAN_START_TIME",
             CriterionKey::ScanStatus => "SCAN_STATUS",
+            CriterionKey::ScanType => "SCAN_TYPE",
             CriterionKey::Unknown(value) => value.as_str(),
         }
     }
@@ -110,6 +115,7 @@ impl CriterionKey {
             "SCAN_ID",
             "SCAN_START_TIME",
             "SCAN_STATUS",
+            "SCAN_TYPE",
         ]
     }
 }

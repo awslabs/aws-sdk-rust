@@ -36,6 +36,7 @@
 ///     ExportableVolumeField::RecommendationOptionsPerformanceRisk => { /* ... */ },
 ///     ExportableVolumeField::RecommendationOptionsSavingsOpportunityPercentage => { /* ... */ },
 ///     ExportableVolumeField::RootVolume => { /* ... */ },
+///     ExportableVolumeField::Tags => { /* ... */ },
 ///     ExportableVolumeField::UtilizationMetricsVolumeReadBytesPerSecondMaximum => { /* ... */ },
 ///     ExportableVolumeField::UtilizationMetricsVolumeReadOpsPerSecondMaximum => { /* ... */ },
 ///     ExportableVolumeField::UtilizationMetricsVolumeWriteBytesPerSecondMaximum => { /* ... */ },
@@ -123,6 +124,8 @@ pub enum ExportableVolumeField {
     #[allow(missing_docs)] // documentation missing in model
     RootVolume,
     #[allow(missing_docs)] // documentation missing in model
+    Tags,
+    #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsVolumeReadBytesPerSecondMaximum,
     #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsVolumeReadOpsPerSecondMaximum,
@@ -196,6 +199,7 @@ impl std::convert::From<&str> for ExportableVolumeField {
                 ExportableVolumeField::RecommendationOptionsSavingsOpportunityPercentage
             }
             "RootVolume" => ExportableVolumeField::RootVolume,
+            "Tags" => ExportableVolumeField::Tags,
             "UtilizationMetricsVolumeReadBytesPerSecondMaximum" => {
                 ExportableVolumeField::UtilizationMetricsVolumeReadBytesPerSecondMaximum
             }
@@ -284,6 +288,7 @@ impl ExportableVolumeField {
                 "RecommendationOptionsSavingsOpportunityPercentage"
             }
             ExportableVolumeField::RootVolume => "RootVolume",
+            ExportableVolumeField::Tags => "Tags",
             ExportableVolumeField::UtilizationMetricsVolumeReadBytesPerSecondMaximum => {
                 "UtilizationMetricsVolumeReadBytesPerSecondMaximum"
             }
@@ -327,6 +332,7 @@ impl ExportableVolumeField {
             "RecommendationOptionsPerformanceRisk",
             "RecommendationOptionsSavingsOpportunityPercentage",
             "RootVolume",
+            "Tags",
             "UtilizationMetricsVolumeReadBytesPerSecondMaximum",
             "UtilizationMetricsVolumeReadOpsPerSecondMaximum",
             "UtilizationMetricsVolumeWriteBytesPerSecondMaximum",

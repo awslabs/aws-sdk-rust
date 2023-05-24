@@ -5,7 +5,7 @@ pub use crate::operation::create_profile::_create_profile_input::CreateProfileIn
 
 /// Fluent builder constructing a request to `CreateProfile`.
 ///
-/// <p>Creates a profile. A profile is configuration resource to list the roles that RolesAnywhere service is trusted to assume. In addition, by applying a profile you can intersect permissions with IAM managed policies.</p>
+/// <p>Creates a <i>profile</i>, a list of the roles that Roles Anywhere service is trusted to assume. You use profiles to intersect permissions with IAM managed policies.</p>
 /// <p> <b>Required permissions: </b> <code>rolesanywhere:CreateProfile</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateProfileFluentBuilder {
@@ -75,12 +75,12 @@ impl CreateProfileFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>Specifies whether instance properties are required in <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> requests with this profile. </p>
+    /// <p>Specifies whether instance properties are required in temporary credential requests with this profile. </p>
     pub fn require_instance_properties(mut self, input: bool) -> Self {
         self.inner = self.inner.require_instance_properties(input);
         self
     }
-    /// <p>Specifies whether instance properties are required in <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> requests with this profile. </p>
+    /// <p>Specifies whether instance properties are required in temporary credential requests with this profile. </p>
     pub fn set_require_instance_properties(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_require_instance_properties(input);
         self
@@ -99,12 +99,12 @@ impl CreateProfileFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_role_arns`](Self::set_role_arns).
     ///
-    /// <p>A list of IAM roles that this profile can assume in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
+    /// <p>A list of IAM roles that this profile can assume in a temporary credential request.</p>
     pub fn role_arns(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.role_arns(input.into());
         self
     }
-    /// <p>A list of IAM roles that this profile can assume in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
+    /// <p>A list of IAM roles that this profile can assume in a temporary credential request.</p>
     pub fn set_role_arns(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

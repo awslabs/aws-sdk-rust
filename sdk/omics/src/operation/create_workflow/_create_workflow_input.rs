@@ -36,6 +36,9 @@ pub struct CreateWorkflowInput {
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
+    /// <p> The computational accelerator specified to run the workflow. </p>
+    #[doc(hidden)]
+    pub accelerators: std::option::Option<crate::types::Accelerators>,
 }
 impl CreateWorkflowInput {
     /// <p>A name for the workflow.</p>
@@ -85,6 +88,10 @@ impl CreateWorkflowInput {
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
+    /// <p> The computational accelerator specified to run the workflow. </p>
+    pub fn accelerators(&self) -> std::option::Option<&crate::types::Accelerators> {
+        self.accelerators.as_ref()
+    }
 }
 impl CreateWorkflowInput {
     /// Creates a new builder-style object to manufacture [`CreateWorkflowInput`](crate::operation::create_workflow::CreateWorkflowInput).
@@ -110,6 +117,7 @@ pub struct CreateWorkflowInputBuilder {
     pub(crate) tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) request_id: std::option::Option<std::string::String>,
+    pub(crate) accelerators: std::option::Option<crate::types::Accelerators>,
 }
 impl CreateWorkflowInputBuilder {
     /// <p>A name for the workflow.</p>
@@ -245,6 +253,19 @@ impl CreateWorkflowInputBuilder {
         self.request_id = input;
         self
     }
+    /// <p> The computational accelerator specified to run the workflow. </p>
+    pub fn accelerators(mut self, input: crate::types::Accelerators) -> Self {
+        self.accelerators = Some(input);
+        self
+    }
+    /// <p> The computational accelerator specified to run the workflow. </p>
+    pub fn set_accelerators(
+        mut self,
+        input: std::option::Option<crate::types::Accelerators>,
+    ) -> Self {
+        self.accelerators = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateWorkflowInput`](crate::operation::create_workflow::CreateWorkflowInput).
     pub fn build(
         self,
@@ -263,6 +284,7 @@ impl CreateWorkflowInputBuilder {
             storage_capacity: self.storage_capacity,
             tags: self.tags,
             request_id: self.request_id,
+            accelerators: self.accelerators,
         })
     }
 }

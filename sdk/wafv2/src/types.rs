@@ -137,6 +137,24 @@ pub use crate::types::_and_statement::AndStatement;
 
 pub use crate::types::_rate_based_statement::RateBasedStatement;
 
+pub use crate::types::_rate_based_statement_custom_key::RateBasedStatementCustomKey;
+
+pub use crate::types::_rate_limit_label_namespace::RateLimitLabelNamespace;
+
+pub use crate::types::_rate_limit_ip::RateLimitIp;
+
+pub use crate::types::_rate_limit_forwarded_ip::RateLimitForwardedIp;
+
+pub use crate::types::_rate_limit_http_method::RateLimitHttpMethod;
+
+pub use crate::types::_rate_limit_query_string::RateLimitQueryString;
+
+pub use crate::types::_rate_limit_query_argument::RateLimitQueryArgument;
+
+pub use crate::types::_rate_limit_cookie::RateLimitCookie;
+
+pub use crate::types::_rate_limit_header::RateLimitHeader;
+
 pub use crate::types::_forwarded_ip_config::ForwardedIpConfig;
 
 pub use crate::types::_fallback_behavior::FallbackBehavior;
@@ -439,7 +457,25 @@ mod _rate_based_statement;
 
 mod _rate_based_statement_aggregate_key_type;
 
+mod _rate_based_statement_custom_key;
+
 mod _rate_based_statement_managed_keys_ip_set;
+
+mod _rate_limit_cookie;
+
+mod _rate_limit_forwarded_ip;
+
+mod _rate_limit_header;
+
+mod _rate_limit_http_method;
+
+mod _rate_limit_ip;
+
+mod _rate_limit_label_namespace;
+
+mod _rate_limit_query_argument;
+
+mod _rate_limit_query_string;
 
 mod _regex;
 

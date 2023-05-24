@@ -12,7 +12,7 @@ impl super::Client {
     ///   - [`domain(Option<String>)`](crate::operation::describe_app::DescribeAppOutput::domain): <p>The name of the domain of the app.</p>
     ///   - [`status(Option<SimulationAppStatus>)`](crate::operation::describe_app::DescribeAppOutput::status): <p>The current lifecycle state of the custom app.</p>
     ///   - [`target_status(Option<SimulationAppTargetStatus>)`](crate::operation::describe_app::DescribeAppOutput::target_status): <p>The desired lifecycle state of the custom app.</p>
-    ///   - [`launch_overrides(Option<LaunchOverrides>)`](crate::operation::describe_app::DescribeAppOutput::launch_overrides): <p>Options that apply when the app starts. These optiAons override default behavior.</p>
+    ///   - [`launch_overrides(Option<LaunchOverrides>)`](crate::operation::describe_app::DescribeAppOutput::launch_overrides): <p>Options that apply when the app starts. These options override default behavior.</p>
     ///   - [`description(Option<String>)`](crate::operation::describe_app::DescribeAppOutput::description): <p>The description of the app.</p>
     ///   - [`endpoint_info(Option<SimulationAppEndpointInfo>)`](crate::operation::describe_app::DescribeAppOutput::endpoint_info): <p>Information about the network endpoint for the custom app. You can use the endpoint to connect to the custom app.</p>
     /// - On failure, responds with [`SdkError<DescribeAppError>`](crate::operation::describe_app::DescribeAppError)

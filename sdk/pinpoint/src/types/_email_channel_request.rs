@@ -9,7 +9,7 @@ pub struct EmailChannelRequest {
     pub configuration_set: std::option::Option<std::string::String>,
     /// <p>Specifies whether to enable the email channel for the application.</p>
     #[doc(hidden)]
-    pub enabled: bool,
+    pub enabled: std::option::Option<bool>,
     /// <p>The verified email address that you want to send email from when you send email through the channel.</p>
     #[doc(hidden)]
     pub from_address: std::option::Option<std::string::String>,
@@ -26,7 +26,7 @@ impl EmailChannelRequest {
         self.configuration_set.as_deref()
     }
     /// <p>Specifies whether to enable the email channel for the application.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
     /// <p>The verified email address that you want to send email from when you send email through the channel.</p>
@@ -117,7 +117,7 @@ impl EmailChannelRequestBuilder {
     pub fn build(self) -> crate::types::EmailChannelRequest {
         crate::types::EmailChannelRequest {
             configuration_set: self.configuration_set,
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled,
             from_address: self.from_address,
             identity: self.identity,
             role_arn: self.role_arn,

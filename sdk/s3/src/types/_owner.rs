@@ -4,7 +4,17 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct Owner {
-    /// <p>Container for the display name of the owner.</p>
+    /// <p>Container for the display name of the owner. This value is only supported in the following Amazon Web Services Regions:</p>
+    /// <ul>
+    /// <li> <p>US East (N. Virginia)</p> </li>
+    /// <li> <p>US West (N. California)</p> </li>
+    /// <li> <p>US West (Oregon)</p> </li>
+    /// <li> <p>Asia Pacific (Singapore)</p> </li>
+    /// <li> <p>Asia Pacific (Sydney)</p> </li>
+    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
+    /// <li> <p>Europe (Ireland)</p> </li>
+    /// <li> <p>South America (São Paulo)</p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub display_name: std::option::Option<std::string::String>,
     /// <p>Container for the ID of the owner.</p>
@@ -12,7 +22,17 @@ pub struct Owner {
     pub id: std::option::Option<std::string::String>,
 }
 impl Owner {
-    /// <p>Container for the display name of the owner.</p>
+    /// <p>Container for the display name of the owner. This value is only supported in the following Amazon Web Services Regions:</p>
+    /// <ul>
+    /// <li> <p>US East (N. Virginia)</p> </li>
+    /// <li> <p>US West (N. California)</p> </li>
+    /// <li> <p>US West (Oregon)</p> </li>
+    /// <li> <p>Asia Pacific (Singapore)</p> </li>
+    /// <li> <p>Asia Pacific (Sydney)</p> </li>
+    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
+    /// <li> <p>Europe (Ireland)</p> </li>
+    /// <li> <p>South America (São Paulo)</p> </li>
+    /// </ul>
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
@@ -36,12 +56,32 @@ pub struct OwnerBuilder {
     pub(crate) id: std::option::Option<std::string::String>,
 }
 impl OwnerBuilder {
-    /// <p>Container for the display name of the owner.</p>
+    /// <p>Container for the display name of the owner. This value is only supported in the following Amazon Web Services Regions:</p>
+    /// <ul>
+    /// <li> <p>US East (N. Virginia)</p> </li>
+    /// <li> <p>US West (N. California)</p> </li>
+    /// <li> <p>US West (Oregon)</p> </li>
+    /// <li> <p>Asia Pacific (Singapore)</p> </li>
+    /// <li> <p>Asia Pacific (Sydney)</p> </li>
+    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
+    /// <li> <p>Europe (Ireland)</p> </li>
+    /// <li> <p>South America (São Paulo)</p> </li>
+    /// </ul>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.display_name = Some(input.into());
         self
     }
-    /// <p>Container for the display name of the owner.</p>
+    /// <p>Container for the display name of the owner. This value is only supported in the following Amazon Web Services Regions:</p>
+    /// <ul>
+    /// <li> <p>US East (N. Virginia)</p> </li>
+    /// <li> <p>US West (N. California)</p> </li>
+    /// <li> <p>US West (Oregon)</p> </li>
+    /// <li> <p>Asia Pacific (Singapore)</p> </li>
+    /// <li> <p>Asia Pacific (Sydney)</p> </li>
+    /// <li> <p>Asia Pacific (Tokyo)</p> </li>
+    /// <li> <p>Europe (Ireland)</p> </li>
+    /// <li> <p>South America (São Paulo)</p> </li>
+    /// </ul>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.display_name = input;
         self

@@ -64,6 +64,14 @@ pub fn ser_transform_operation(
             )?;
             object_7.finish();
         }
+        crate::types::TransformOperation::OverrideDatasetParameterOperation(inner) => {
+            #[allow(unused_mut)]
+            let mut object_8 = object_5
+                .key("OverrideDatasetParameterOperation")
+                .start_object();
+            crate::protocol_serde::shape_override_dataset_parameter_operation::ser_override_dataset_parameter_operation(&mut object_8, inner)?;
+            object_8.finish();
+        }
         crate::types::TransformOperation::Unknown => {
             return Err(
                 aws_smithy_http::operation::error::SerializationError::unknown_variant(
@@ -144,6 +152,12 @@ where
                                 Some(crate::types::TransformOperation::UntagColumnOperation(
                                     crate::protocol_serde::shape_untag_column_operation::de_untag_column_operation(tokens)?
                                     .ok_or_else(|| aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'UntagColumnOperation' cannot be null"))?
+                                ))
+                            }
+                            "OverrideDatasetParameterOperation" => {
+                                Some(crate::types::TransformOperation::OverrideDatasetParameterOperation(
+                                    crate::protocol_serde::shape_override_dataset_parameter_operation::de_override_dataset_parameter_operation(tokens)?
+                                    .ok_or_else(|| aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'OverrideDatasetParameterOperation' cannot be null"))?
                                 ))
                             }
                             _ => {

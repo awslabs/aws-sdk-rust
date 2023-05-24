@@ -6,20 +6,20 @@ pub fn ser_update_failover_config(
     if let Some(var_1) = &input.failover_mode {
         object.key("failoverMode").string(var_1.as_str());
     }
-    if input.recovery_window != 0 {
+    if let Some(var_2) = &input.recovery_window {
         object.key("recoveryWindow").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.recovery_window).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.source_priority {
+    if let Some(var_3) = &input.source_priority {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("sourcePriority").start_object();
-        crate::protocol_serde::shape_source_priority::ser_source_priority(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_4 = object.key("sourcePriority").start_object();
+        crate::protocol_serde::shape_source_priority::ser_source_priority(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_4) = &input.state {
-        object.key("state").string(var_4.as_str());
+    if let Some(var_5) = &input.state {
+        object.key("state").string(var_5.as_str());
     }
     Ok(())
 }

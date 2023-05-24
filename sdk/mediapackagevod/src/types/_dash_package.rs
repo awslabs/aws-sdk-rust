@@ -12,16 +12,16 @@ pub struct DashPackage {
     pub encryption: std::option::Option<crate::types::DashEncryption>,
     /// When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
     #[doc(hidden)]
-    pub include_encoder_configuration_in_segments: bool,
+    pub include_encoder_configuration_in_segments: std::option::Option<bool>,
     /// When enabled, an I-Frame only stream will be included in the output.
     #[doc(hidden)]
-    pub include_iframe_only_stream: bool,
+    pub include_iframe_only_stream: std::option::Option<bool>,
     /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into more than one period. If the list contains "ADS", new periods will be created where the Asset contains SCTE-35 ad markers.
     #[doc(hidden)]
     pub period_triggers: std::option::Option<std::vec::Vec<crate::types::PeriodTriggersElement>>,
     /// Duration (in seconds) of each segment. Actual segments will be rounded to the nearest multiple of the source segment duration.
     #[doc(hidden)]
-    pub segment_duration_seconds: i32,
+    pub segment_duration_seconds: std::option::Option<i32>,
     /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
     #[doc(hidden)]
     pub segment_template_format: std::option::Option<crate::types::SegmentTemplateFormat>,
@@ -36,11 +36,11 @@ impl DashPackage {
         self.encryption.as_ref()
     }
     /// When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
-    pub fn include_encoder_configuration_in_segments(&self) -> bool {
+    pub fn include_encoder_configuration_in_segments(&self) -> std::option::Option<bool> {
         self.include_encoder_configuration_in_segments
     }
     /// When enabled, an I-Frame only stream will be included in the output.
-    pub fn include_iframe_only_stream(&self) -> bool {
+    pub fn include_iframe_only_stream(&self) -> std::option::Option<bool> {
         self.include_iframe_only_stream
     }
     /// A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into more than one period. If the list contains "ADS", new periods will be created where the Asset contains SCTE-35 ad markers.
@@ -48,7 +48,7 @@ impl DashPackage {
         self.period_triggers.as_deref()
     }
     /// Duration (in seconds) of each segment. Actual segments will be rounded to the nearest multiple of the source segment duration.
-    pub fn segment_duration_seconds(&self) -> i32 {
+    pub fn segment_duration_seconds(&self) -> std::option::Option<i32> {
         self.segment_duration_seconds
     }
     /// Determines the type of SegmentTemplate included in the Media Presentation Description (MPD). When set to NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included in each SegmentTemplate, with $Number$ media URLs.
@@ -182,11 +182,10 @@ impl DashPackageBuilder {
             dash_manifests: self.dash_manifests,
             encryption: self.encryption,
             include_encoder_configuration_in_segments: self
-                .include_encoder_configuration_in_segments
-                .unwrap_or_default(),
-            include_iframe_only_stream: self.include_iframe_only_stream.unwrap_or_default(),
+                .include_encoder_configuration_in_segments,
+            include_iframe_only_stream: self.include_iframe_only_stream,
             period_triggers: self.period_triggers,
-            segment_duration_seconds: self.segment_duration_seconds.unwrap_or_default(),
+            segment_duration_seconds: self.segment_duration_seconds,
             segment_template_format: self.segment_template_format,
         }
     }

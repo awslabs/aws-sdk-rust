@@ -6,11 +6,11 @@
 pub struct Scram {
     /// <p>SASL/SCRAM authentication is enabled or not.</p>
     #[doc(hidden)]
-    pub enabled: bool,
+    pub enabled: std::option::Option<bool>,
 }
 impl Scram {
     /// <p>SASL/SCRAM authentication is enabled or not.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
 }
@@ -41,7 +41,7 @@ impl ScramBuilder {
     /// Consumes the builder and constructs a [`Scram`](crate::types::Scram).
     pub fn build(self) -> crate::types::Scram {
         crate::types::Scram {
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled,
         }
     }
 }

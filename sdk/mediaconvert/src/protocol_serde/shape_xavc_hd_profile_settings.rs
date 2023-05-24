@@ -14,32 +14,32 @@ pub fn ser_xavc_hd_profile_settings(
     if let Some(var_3) = &input.gop_b_reference {
         object.key("gopBReference").string(var_3.as_str());
     }
-    if input.gop_closed_cadence != 0 {
+    if let Some(var_4) = &input.gop_closed_cadence {
         object.key("gopClosedCadence").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.gop_closed_cadence).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if input.hrd_buffer_size != 0 {
+    if let Some(var_5) = &input.hrd_buffer_size {
         object.key("hrdBufferSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.hrd_buffer_size).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_4) = &input.interlace_mode {
-        object.key("interlaceMode").string(var_4.as_str());
+    if let Some(var_6) = &input.interlace_mode {
+        object.key("interlaceMode").string(var_6.as_str());
     }
-    if let Some(var_5) = &input.quality_tuning_level {
-        object.key("qualityTuningLevel").string(var_5.as_str());
+    if let Some(var_7) = &input.quality_tuning_level {
+        object.key("qualityTuningLevel").string(var_7.as_str());
     }
-    if input.slices != 0 {
+    if let Some(var_8) = &input.slices {
         object.key("slices").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.slices).into()),
+            aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_6) = &input.telecine {
-        object.key("telecine").string(var_6.as_str());
+    if let Some(var_9) = &input.telecine {
+        object.key("telecine").string(var_9.as_str());
     }
     Ok(())
 }

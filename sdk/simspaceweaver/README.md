@@ -3,11 +3,11 @@
 **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
-Amazon Web Services SimSpace Weaver (SimSpace Weaver) is a managed service that you can use to build and operate large-scale spatial simulations in the Amazon Web Services Cloud. For example, you can create a digital twin of a city, crowd simulations with millions of people and objects, and massilvely-multiplayer games with hundreds of thousands of connected players. For more information about SimSpace Weaver, see the _ [Amazon Web Services SimSpace Weaver User Guide](https://docs.aws.amazon.com/simspaceweaver/latest/userguide/) _.
+SimSpace Weaver (SimSpace Weaver) is a managed service that you can use to build and operate large-scale spatial simulations in the Amazon Web Services Cloud. For example, you can create a digital twin of a city, crowd simulations with millions of people and objects, and massively multiplayer games with hundreds of thousands of connected players. For more information about SimSpace Weaver, see the _ [SimSpace Weaver User Guide](https://docs.aws.amazon.com/simspaceweaver/latest/userguide/) _.
 
 This API reference describes the API operations and data types that you can use to communicate directly with SimSpace Weaver.
 
-SimSpace Weaver also provides the SimSpace Weaver app SDK, which you use for app development. The SimSpace Weaver app SDK API reference is included in the SimSpace Weaver app SDK documentation, which is part of the SimSpace Weaver app SDK distributable package.
+SimSpace Weaver also provides the SimSpace Weaver app SDK, which you use for app development. The SimSpace Weaver app SDK API reference is included in the SimSpace Weaver app SDK documentation. This documentation is part of the SimSpace Weaver app SDK distributable package.
 
 ## Getting Started
 
@@ -21,7 +21,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.55.2"
-aws-sdk-simspaceweaver = "0.5.0"
+aws-sdk-simspaceweaver = "0.6.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

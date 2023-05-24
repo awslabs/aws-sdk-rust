@@ -12,10 +12,10 @@ pub fn ser_connectivity_info(
     if let Some(var_3) = &input.metadata {
         object.key("Metadata").string(var_3.as_str());
     }
-    if input.port_number != 0 {
+    if let Some(var_4) = &input.port_number {
         object.key("PortNumber").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.port_number).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     Ok(())

@@ -11,7 +11,7 @@ pub struct ListFunctionsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results that you want the request to return.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
 }
 impl ListFunctionsInput {
     /// <p>The GraphQL API ID.</p>
@@ -23,7 +23,7 @@ impl ListFunctionsInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results that you want the request to return.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
 }
@@ -83,7 +83,7 @@ impl ListFunctionsInputBuilder {
         Ok(crate::operation::list_functions::ListFunctionsInput {
             api_id: self.api_id,
             next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
         })
     }
 }

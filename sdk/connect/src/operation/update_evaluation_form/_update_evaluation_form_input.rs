@@ -15,7 +15,7 @@ pub struct UpdateEvaluationFormInput {
     /// <p>A flag indicating whether the operation must create a new version.</p>
     #[doc(hidden)]
     pub create_new_version: std::option::Option<bool>,
-    /// <p>A unique title of the evaluation form.</p>
+    /// <p>A title of the evaluation form.</p>
     #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The description of the evaluation form.</p>
@@ -48,7 +48,7 @@ impl UpdateEvaluationFormInput {
     pub fn create_new_version(&self) -> std::option::Option<bool> {
         self.create_new_version
     }
-    /// <p>A unique title of the evaluation form.</p>
+    /// <p>A title of the evaluation form.</p>
     pub fn title(&self) -> std::option::Option<&str> {
         self.title.as_deref()
     }
@@ -137,12 +137,12 @@ impl UpdateEvaluationFormInputBuilder {
         self.create_new_version = input;
         self
     }
-    /// <p>A unique title of the evaluation form.</p>
+    /// <p>A title of the evaluation form.</p>
     pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
         self.title = Some(input.into());
         self
     }
-    /// <p>A unique title of the evaluation form.</p>
+    /// <p>A title of the evaluation form.</p>
     pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.title = input;
         self

@@ -8,10 +8,10 @@ pub struct GetResourceProfileOutput {
     pub profile_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). By default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in the bucket and the amount of sensitive data that Macie has found in the bucket.</p>
     #[doc(hidden)]
-    pub sensitivity_score: i32,
+    pub sensitivity_score: std::option::Option<i32>,
     /// <p>Specifies whether the bucket's current sensitivity score was set manually. If this value is true, the score was manually changed to 100. If this value is false, the score was calculated automatically by Amazon Macie.</p>
     #[doc(hidden)]
-    pub sensitivity_score_overridden: bool,
+    pub sensitivity_score_overridden: std::option::Option<bool>,
     /// <p>The sensitive data discovery statistics for the bucket. The statistics capture the results of automated sensitive data discovery activities that Amazon Macie has performed for the bucket.</p>
     #[doc(hidden)]
     pub statistics: std::option::Option<crate::types::ResourceStatistics>,
@@ -23,11 +23,11 @@ impl GetResourceProfileOutput {
         self.profile_updated_at.as_ref()
     }
     /// <p>The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). By default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in the bucket and the amount of sensitive data that Macie has found in the bucket.</p>
-    pub fn sensitivity_score(&self) -> i32 {
+    pub fn sensitivity_score(&self) -> std::option::Option<i32> {
         self.sensitivity_score
     }
     /// <p>Specifies whether the bucket's current sensitivity score was set manually. If this value is true, the score was manually changed to 100. If this value is false, the score was calculated automatically by Amazon Macie.</p>
-    pub fn sensitivity_score_overridden(&self) -> bool {
+    pub fn sensitivity_score_overridden(&self) -> std::option::Option<bool> {
         self.sensitivity_score_overridden
     }
     /// <p>The sensitive data discovery statistics for the bucket. The statistics capture the results of automated sensitive data discovery activities that Amazon Macie has performed for the bucket.</p>
@@ -118,8 +118,8 @@ impl GetResourceProfileOutputBuilder {
     pub fn build(self) -> crate::operation::get_resource_profile::GetResourceProfileOutput {
         crate::operation::get_resource_profile::GetResourceProfileOutput {
             profile_updated_at: self.profile_updated_at,
-            sensitivity_score: self.sensitivity_score.unwrap_or_default(),
-            sensitivity_score_overridden: self.sensitivity_score_overridden.unwrap_or_default(),
+            sensitivity_score: self.sensitivity_score,
+            sensitivity_score_overridden: self.sensitivity_score_overridden,
             statistics: self.statistics,
             _request_id: self._request_id,
         }

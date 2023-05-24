@@ -34,7 +34,7 @@ pub struct AssumeRoleWithSamlOutput {
     /// <li> <p>The Amazon Web Services account ID.</p> </li>
     /// <li> <p>The friendly name (the last part of the ARN) of the SAML provider in IAM.</p> </li>
     /// </ul>
-    /// <p>The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a federated user.</p>
+    /// <p>The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a user.</p>
     /// <p>The following pseudocode shows how the hash value is calculated:</p>
     /// <p> <code>BASE64 ( SHA1 ( "https://example.com/saml" + "123456789012" + "/MySAMLIdP" ) )</code> </p>
     #[doc(hidden)]
@@ -84,7 +84,7 @@ impl AssumeRoleWithSamlOutput {
     /// <li> <p>The Amazon Web Services account ID.</p> </li>
     /// <li> <p>The friendly name (the last part of the ARN) of the SAML provider in IAM.</p> </li>
     /// </ul>
-    /// <p>The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a federated user.</p>
+    /// <p>The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a user.</p>
     /// <p>The following pseudocode shows how the hash value is calculated:</p>
     /// <p> <code>BASE64 ( SHA1 ( "https://example.com/saml" + "123456789012" + "/MySAMLIdP" ) )</code> </p>
     pub fn name_qualifier(&self) -> std::option::Option<&str> {
@@ -231,7 +231,7 @@ impl AssumeRoleWithSamlOutputBuilder {
     /// <li> <p>The Amazon Web Services account ID.</p> </li>
     /// <li> <p>The friendly name (the last part of the ARN) of the SAML provider in IAM.</p> </li>
     /// </ul>
-    /// <p>The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a federated user.</p>
+    /// <p>The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a user.</p>
     /// <p>The following pseudocode shows how the hash value is calculated:</p>
     /// <p> <code>BASE64 ( SHA1 ( "https://example.com/saml" + "123456789012" + "/MySAMLIdP" ) )</code> </p>
     pub fn name_qualifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -244,7 +244,7 @@ impl AssumeRoleWithSamlOutputBuilder {
     /// <li> <p>The Amazon Web Services account ID.</p> </li>
     /// <li> <p>The friendly name (the last part of the ARN) of the SAML provider in IAM.</p> </li>
     /// </ul>
-    /// <p>The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a federated user.</p>
+    /// <p>The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a user.</p>
     /// <p>The following pseudocode shows how the hash value is calculated:</p>
     /// <p> <code>BASE64 ( SHA1 ( "https://example.com/saml" + "123456789012" + "/MySAMLIdP" ) )</code> </p>
     pub fn set_name_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {

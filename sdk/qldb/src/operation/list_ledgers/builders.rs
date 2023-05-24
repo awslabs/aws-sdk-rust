@@ -5,8 +5,8 @@ pub use crate::operation::list_ledgers::_list_ledgers_input::ListLedgersInputBui
 
 /// Fluent builder constructing a request to `ListLedgers`.
 ///
-/// <p>Returns an array of ledger summaries that are associated with the current Amazon Web Services account and Region.</p>
-/// <p>This action returns a maximum of 100 items and is paginated so that you can retrieve all the items by calling <code>ListLedgers</code> multiple times.</p>
+/// <p>Returns all ledgers that are associated with the current Amazon Web Services account and Region.</p>
+/// <p>This action returns a maximum of <code>MaxResults</code> items and is paginated so that you can retrieve all the items by calling <code>ListLedgers</code> multiple times.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListLedgersFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

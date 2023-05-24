@@ -7,7 +7,7 @@ pub use crate::operation::update_query_suggestions_config::_update_query_suggest
 ///
 /// <p>Updates the settings of query suggestions for an index.</p>
 /// <p>Amazon Kendra supports partial updates, so you only need to provide the fields you want to update.</p>
-/// <p>If an update is currently processing (i.e. 'happening'), you need to wait for the update to finish before making another update.</p>
+/// <p>If an update is currently processing, you need to wait for the update to finish before making another update.</p>
 /// <p>Updates to query suggestions settings might not take effect right away. The time for your updated settings to take effect depends on the updates made and the number of search queries in your index.</p>
 /// <p>You can still enable/disable query suggestions at any time.</p>
 /// <p> <code>UpdateQuerySuggestionsConfig</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
@@ -161,6 +161,22 @@ impl UpdateQuerySuggestionsConfigFluentBuilder {
     /// <p>How you tune this setting depends on your specific needs.</p>
     pub fn set_minimum_query_count(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_minimum_query_count(input);
+        self
+    }
+    /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
+    pub fn attribute_suggestions_config(
+        mut self,
+        input: crate::types::AttributeSuggestionsUpdateConfig,
+    ) -> Self {
+        self.inner = self.inner.attribute_suggestions_config(input);
+        self
+    }
+    /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
+    pub fn set_attribute_suggestions_config(
+        mut self,
+        input: std::option::Option<crate::types::AttributeSuggestionsUpdateConfig>,
+    ) -> Self {
+        self.inner = self.inner.set_attribute_suggestions_config(input);
         self
     }
 }

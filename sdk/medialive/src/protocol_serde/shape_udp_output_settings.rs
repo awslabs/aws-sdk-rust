@@ -3,38 +3,38 @@ pub fn ser_udp_output_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UdpOutputSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.buffer_msec != 0 {
+    if let Some(var_1) = &input.buffer_msec {
         object.key("bufferMsec").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.buffer_msec).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.container_settings {
+    if let Some(var_2) = &input.container_settings {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("containerSettings").start_object();
+        let mut object_3 = object.key("containerSettings").start_object();
         crate::protocol_serde::shape_udp_container_settings::ser_udp_container_settings(
-            &mut object_2,
-            var_1,
+            &mut object_3,
+            var_2,
         )?;
-        object_2.finish();
+        object_3.finish();
     }
-    if let Some(var_3) = &input.destination {
+    if let Some(var_4) = &input.destination {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("destination").start_object();
+        let mut object_5 = object.key("destination").start_object();
         crate::protocol_serde::shape_output_location_ref::ser_output_location_ref(
-            &mut object_4,
-            var_3,
+            &mut object_5,
+            var_4,
         )?;
-        object_4.finish();
+        object_5.finish();
     }
-    if let Some(var_5) = &input.fec_output_settings {
+    if let Some(var_6) = &input.fec_output_settings {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("fecOutputSettings").start_object();
+        let mut object_7 = object.key("fecOutputSettings").start_object();
         crate::protocol_serde::shape_fec_output_settings::ser_fec_output_settings(
-            &mut object_6,
-            var_5,
+            &mut object_7,
+            var_6,
         )?;
-        object_6.finish();
+        object_7.finish();
     }
     Ok(())
 }

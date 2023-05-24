@@ -27,6 +27,7 @@
 //!   - Lambda function provisioned concurrency
 //!   - Amazon Managed Streaming for Apache Kafka broker storage
 //!   - Amazon Neptune clusters
+//!   - Amazon SageMaker Serverless endpoint provisioned concurrency
 //!   - Amazon SageMaker endpoint variants
 //!   - Spot Fleets (Amazon EC2)
 //!   - Custom resources provided by your own applications or services
@@ -52,7 +53,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.55.2"
-//! aws-sdk-applicationautoscaling = "0.27.0"
+//! aws-sdk-applicationautoscaling = "0.28.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

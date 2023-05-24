@@ -142,6 +142,15 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "tags" => {
+                                builder = builder
+                                    .set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
+                            }
+                            "externalMetricStatus" => {
+                                builder = builder.set_external_metric_status(
+                                    crate::protocol_serde::shape_external_metric_status::de_external_metric_status(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

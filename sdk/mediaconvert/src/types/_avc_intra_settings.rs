@@ -19,10 +19,10 @@ pub struct AvcIntraSettings {
         std::option::Option<crate::types::AvcIntraFramerateConversionAlgorithm>,
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     #[doc(hidden)]
-    pub framerate_denominator: i32,
+    pub framerate_denominator: std::option::Option<i32>,
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     #[doc(hidden)]
-    pub framerate_numerator: i32,
+    pub framerate_numerator: std::option::Option<i32>,
     /// Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
     #[doc(hidden)]
     pub interlace_mode: std::option::Option<crate::types::AvcIntraInterlaceMode>,
@@ -61,11 +61,11 @@ impl AvcIntraSettings {
         self.framerate_conversion_algorithm.as_ref()
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
-    pub fn framerate_denominator(&self) -> i32 {
+    pub fn framerate_denominator(&self) -> std::option::Option<i32> {
         self.framerate_denominator
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
-    pub fn framerate_numerator(&self) -> i32 {
+    pub fn framerate_numerator(&self) -> std::option::Option<i32> {
         self.framerate_numerator
     }
     /// Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
@@ -249,8 +249,8 @@ impl AvcIntraSettingsBuilder {
             avc_intra_uhd_settings: self.avc_intra_uhd_settings,
             framerate_control: self.framerate_control,
             framerate_conversion_algorithm: self.framerate_conversion_algorithm,
-            framerate_denominator: self.framerate_denominator.unwrap_or_default(),
-            framerate_numerator: self.framerate_numerator.unwrap_or_default(),
+            framerate_denominator: self.framerate_denominator,
+            framerate_numerator: self.framerate_numerator,
             interlace_mode: self.interlace_mode,
             scan_type_conversion_mode: self.scan_type_conversion_mode,
             slow_pal: self.slow_pal,

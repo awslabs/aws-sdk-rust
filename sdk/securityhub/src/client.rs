@@ -314,6 +314,8 @@ mod get_enabled_standards;
 
 mod get_finding_aggregator;
 
+mod get_finding_history;
+
 mod get_findings;
 
 mod get_insight_results;

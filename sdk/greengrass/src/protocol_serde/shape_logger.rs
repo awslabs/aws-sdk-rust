@@ -12,14 +12,14 @@ pub fn ser_logger(
     if let Some(var_3) = &input.level {
         object.key("Level").string(var_3.as_str());
     }
-    if input.space != 0 {
+    if let Some(var_4) = &input.space {
         object.key("Space").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.space).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_4) = &input.r#type {
-        object.key("Type").string(var_4.as_str());
+    if let Some(var_5) = &input.r#type {
+        object.key("Type").string(var_5.as_str());
     }
     Ok(())
 }

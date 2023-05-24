@@ -86,20 +86,20 @@ pub fn ser_motion_graphics_activate_schedule_action_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MotionGraphicsActivateScheduleActionSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.duration != 0 {
+    if let Some(var_1) = &input.duration {
         object.key("duration").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.duration).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.password_param {
-        object.key("passwordParam").string(var_1.as_str());
+    if let Some(var_2) = &input.password_param {
+        object.key("passwordParam").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.url {
-        object.key("url").string(var_2.as_str());
+    if let Some(var_3) = &input.url {
+        object.key("url").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.username {
-        object.key("username").string(var_3.as_str());
+    if let Some(var_4) = &input.username {
+        object.key("username").string(var_4.as_str());
     }
     Ok(())
 }

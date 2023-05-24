@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UserDetails {
-    /// <p>A unique string that identifies a user account associated with a server.</p>
+    /// <p>A unique string that identifies a Transfer Family user associated with a server.</p>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The system-assigned unique identifier for a Transfer server instance. </p>
@@ -15,7 +15,7 @@ pub struct UserDetails {
     pub session_id: std::option::Option<std::string::String>,
 }
 impl UserDetails {
-    /// <p>A unique string that identifies a user account associated with a server.</p>
+    /// <p>A unique string that identifies a Transfer Family user associated with a server.</p>
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
@@ -44,12 +44,12 @@ pub struct UserDetailsBuilder {
     pub(crate) session_id: std::option::Option<std::string::String>,
 }
 impl UserDetailsBuilder {
-    /// <p>A unique string that identifies a user account associated with a server.</p>
+    /// <p>A unique string that identifies a Transfer Family user associated with a server.</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.user_name = Some(input.into());
         self
     }
-    /// <p>A unique string that identifies a user account associated with a server.</p>
+    /// <p>A unique string that identifies a Transfer Family user associated with a server.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.user_name = input;
         self

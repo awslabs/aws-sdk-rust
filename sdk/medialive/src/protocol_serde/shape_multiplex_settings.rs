@@ -3,30 +3,28 @@ pub fn ser_multiplex_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MultiplexSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.maximum_video_buffer_delay_milliseconds != 0 {
+    if let Some(var_1) = &input.maximum_video_buffer_delay_milliseconds {
         object.key("maximumVideoBufferDelayMilliseconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt(
-                (input.maximum_video_buffer_delay_milliseconds).into(),
-            ),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    {
+    if let Some(var_2) = &input.transport_stream_bitrate {
         object.key("transportStreamBitrate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.transport_stream_bitrate).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    {
+    if let Some(var_3) = &input.transport_stream_id {
         object.key("transportStreamId").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.transport_stream_id).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if input.transport_stream_reserved_bitrate != 0 {
+    if let Some(var_4) = &input.transport_stream_reserved_bitrate {
         object.key("transportStreamReservedBitrate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.transport_stream_reserved_bitrate).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     Ok(())

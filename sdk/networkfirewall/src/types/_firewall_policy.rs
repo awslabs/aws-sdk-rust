@@ -43,6 +43,9 @@ pub struct FirewallPolicy {
     /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
     #[doc(hidden)]
     pub tls_inspection_configuration_arn: std::option::Option<std::string::String>,
+    /// <p>Contains variables that you can use to override default Suricata settings in your firewall policy.</p>
+    #[doc(hidden)]
+    pub policy_variables: std::option::Option<crate::types::PolicyVariables>,
 }
 impl FirewallPolicy {
     /// <p>References to the stateless rule groups that are used in the policy. These define the matching criteria in stateless rules. </p>
@@ -97,6 +100,10 @@ impl FirewallPolicy {
     pub fn tls_inspection_configuration_arn(&self) -> std::option::Option<&str> {
         self.tls_inspection_configuration_arn.as_deref()
     }
+    /// <p>Contains variables that you can use to override default Suricata settings in your firewall policy.</p>
+    pub fn policy_variables(&self) -> std::option::Option<&crate::types::PolicyVariables> {
+        self.policy_variables.as_ref()
+    }
 }
 impl FirewallPolicy {
     /// Creates a new builder-style object to manufacture [`FirewallPolicy`](crate::types::FirewallPolicy).
@@ -121,6 +128,7 @@ pub struct FirewallPolicyBuilder {
     pub(crate) stateful_default_actions: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) stateful_engine_options: std::option::Option<crate::types::StatefulEngineOptions>,
     pub(crate) tls_inspection_configuration_arn: std::option::Option<std::string::String>,
+    pub(crate) policy_variables: std::option::Option<crate::types::PolicyVariables>,
 }
 impl FirewallPolicyBuilder {
     /// Appends an item to `stateless_rule_group_references`.
@@ -299,6 +307,19 @@ impl FirewallPolicyBuilder {
         self.tls_inspection_configuration_arn = input;
         self
     }
+    /// <p>Contains variables that you can use to override default Suricata settings in your firewall policy.</p>
+    pub fn policy_variables(mut self, input: crate::types::PolicyVariables) -> Self {
+        self.policy_variables = Some(input);
+        self
+    }
+    /// <p>Contains variables that you can use to override default Suricata settings in your firewall policy.</p>
+    pub fn set_policy_variables(
+        mut self,
+        input: std::option::Option<crate::types::PolicyVariables>,
+    ) -> Self {
+        self.policy_variables = input;
+        self
+    }
     /// Consumes the builder and constructs a [`FirewallPolicy`](crate::types::FirewallPolicy).
     pub fn build(self) -> crate::types::FirewallPolicy {
         crate::types::FirewallPolicy {
@@ -310,6 +331,7 @@ impl FirewallPolicyBuilder {
             stateful_default_actions: self.stateful_default_actions,
             stateful_engine_options: self.stateful_engine_options,
             tls_inspection_configuration_arn: self.tls_inspection_configuration_arn,
+            policy_variables: self.policy_variables,
         }
     }
 }

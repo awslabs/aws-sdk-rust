@@ -61,10 +61,10 @@ pub struct HlsGroupSettings {
     pub manifest_duration_format: std::option::Option<crate::types::HlsManifestDurationFormat>,
     /// Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back the end of your video asset. If you know that player devices are hanging on the final segment of your video because the length of your final segment is too short, use this setting to specify a minimum final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify a value for this setting, the encoder will combine any final segment that is shorter than the length that you specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5 seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final segment is 3.5 seconds.
     #[doc(hidden)]
-    pub min_final_segment_length: f64,
+    pub min_final_segment_length: std::option::Option<f64>,
     /// When set, Minimum Segment Size is enforced by looking ahead and back within the specified range for a nearby avail and extending the segment size if needed.
     #[doc(hidden)]
-    pub min_segment_length: i32,
+    pub min_segment_length: std::option::Option<i32>,
     /// Indicates whether the .m3u8 manifest file should be generated for this HLS output group.
     #[doc(hidden)]
     pub output_selection: std::option::Option<crate::types::HlsOutputSelection>,
@@ -73,19 +73,19 @@ pub struct HlsGroupSettings {
     pub program_date_time: std::option::Option<crate::types::HlsProgramDateTime>,
     /// Period of insertion of EXT-X-PROGRAM-DATE-TIME entry, in seconds.
     #[doc(hidden)]
-    pub program_date_time_period: i32,
+    pub program_date_time_period: std::option::Option<i32>,
     /// When set to SINGLE_FILE, emits program as a single media resource (.ts) file, uses #EXT-X-BYTERANGE tags to index segment for playback.
     #[doc(hidden)]
     pub segment_control: std::option::Option<crate::types::HlsSegmentControl>,
     /// Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert defaults to 10. Related settings: Use Segment length control (SegmentLengthControl) to specify whether the encoder enforces this value strictly. Use Segment control (HlsSegmentControl) to specify whether MediaConvert creates separate segment files or one content file that has metadata to mark the segment boundaries.
     #[doc(hidden)]
-    pub segment_length: i32,
+    pub segment_length: std::option::Option<i32>,
     /// Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
     #[doc(hidden)]
     pub segment_length_control: std::option::Option<crate::types::HlsSegmentLengthControl>,
-    /// Number of segments to write to a subdirectory before starting a new one. directoryStructure must be SINGLE_DIRECTORY for this setting to have an effect.
+    /// Specify the number of segments to write to a subdirectory before starting a new one. You must also set Directory structure to Subdirectory per stream for this setting to have an effect.
     #[doc(hidden)]
-    pub segments_per_subdirectory: i32,
+    pub segments_per_subdirectory: std::option::Option<i32>,
     /// Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
     #[doc(hidden)]
     pub stream_inf_resolution: std::option::Option<crate::types::HlsStreamInfResolution>,
@@ -98,10 +98,10 @@ pub struct HlsGroupSettings {
     pub timed_metadata_id3_frame: std::option::Option<crate::types::HlsTimedMetadataId3Frame>,
     /// Specify the interval in seconds to write ID3 timestamps in your output. The first timestamp starts at the output timecode and date, and increases incrementally with each ID3 timestamp. To use the default interval of 10 seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp frame type (timedMetadataId3Frame) to PRIV (PRIV) or TDRL (TDRL), and set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH).
     #[doc(hidden)]
-    pub timed_metadata_id3_period: i32,
+    pub timed_metadata_id3_period: std::option::Option<i32>,
     /// Provides an extra millisecond delta offset to fine tune the timestamps.
     #[doc(hidden)]
-    pub timestamp_delta_milliseconds: i32,
+    pub timestamp_delta_milliseconds: std::option::Option<i32>,
 }
 impl HlsGroupSettings {
     /// Choose one or more ad marker types to decorate your Apple HLS manifest. This setting does not determine whether SCTE-35 markers appear in the outputs themselves.
@@ -189,11 +189,11 @@ impl HlsGroupSettings {
         self.manifest_duration_format.as_ref()
     }
     /// Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back the end of your video asset. If you know that player devices are hanging on the final segment of your video because the length of your final segment is too short, use this setting to specify a minimum final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify a value for this setting, the encoder will combine any final segment that is shorter than the length that you specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5 seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final segment is 3.5 seconds.
-    pub fn min_final_segment_length(&self) -> f64 {
+    pub fn min_final_segment_length(&self) -> std::option::Option<f64> {
         self.min_final_segment_length
     }
     /// When set, Minimum Segment Size is enforced by looking ahead and back within the specified range for a nearby avail and extending the segment size if needed.
-    pub fn min_segment_length(&self) -> i32 {
+    pub fn min_segment_length(&self) -> std::option::Option<i32> {
         self.min_segment_length
     }
     /// Indicates whether the .m3u8 manifest file should be generated for this HLS output group.
@@ -205,7 +205,7 @@ impl HlsGroupSettings {
         self.program_date_time.as_ref()
     }
     /// Period of insertion of EXT-X-PROGRAM-DATE-TIME entry, in seconds.
-    pub fn program_date_time_period(&self) -> i32 {
+    pub fn program_date_time_period(&self) -> std::option::Option<i32> {
         self.program_date_time_period
     }
     /// When set to SINGLE_FILE, emits program as a single media resource (.ts) file, uses #EXT-X-BYTERANGE tags to index segment for playback.
@@ -213,7 +213,7 @@ impl HlsGroupSettings {
         self.segment_control.as_ref()
     }
     /// Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert defaults to 10. Related settings: Use Segment length control (SegmentLengthControl) to specify whether the encoder enforces this value strictly. Use Segment control (HlsSegmentControl) to specify whether MediaConvert creates separate segment files or one content file that has metadata to mark the segment boundaries.
-    pub fn segment_length(&self) -> i32 {
+    pub fn segment_length(&self) -> std::option::Option<i32> {
         self.segment_length
     }
     /// Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
@@ -222,8 +222,8 @@ impl HlsGroupSettings {
     ) -> std::option::Option<&crate::types::HlsSegmentLengthControl> {
         self.segment_length_control.as_ref()
     }
-    /// Number of segments to write to a subdirectory before starting a new one. directoryStructure must be SINGLE_DIRECTORY for this setting to have an effect.
-    pub fn segments_per_subdirectory(&self) -> i32 {
+    /// Specify the number of segments to write to a subdirectory before starting a new one. You must also set Directory structure to Subdirectory per stream for this setting to have an effect.
+    pub fn segments_per_subdirectory(&self) -> std::option::Option<i32> {
         self.segments_per_subdirectory
     }
     /// Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
@@ -245,11 +245,11 @@ impl HlsGroupSettings {
         self.timed_metadata_id3_frame.as_ref()
     }
     /// Specify the interval in seconds to write ID3 timestamps in your output. The first timestamp starts at the output timecode and date, and increases incrementally with each ID3 timestamp. To use the default interval of 10 seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp frame type (timedMetadataId3Frame) to PRIV (PRIV) or TDRL (TDRL), and set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH).
-    pub fn timed_metadata_id3_period(&self) -> i32 {
+    pub fn timed_metadata_id3_period(&self) -> std::option::Option<i32> {
         self.timed_metadata_id3_period
     }
     /// Provides an extra millisecond delta offset to fine tune the timestamps.
-    pub fn timestamp_delta_milliseconds(&self) -> i32 {
+    pub fn timestamp_delta_milliseconds(&self) -> std::option::Option<i32> {
         self.timestamp_delta_milliseconds
     }
 }
@@ -645,12 +645,12 @@ impl HlsGroupSettingsBuilder {
         self.segment_length_control = input;
         self
     }
-    /// Number of segments to write to a subdirectory before starting a new one. directoryStructure must be SINGLE_DIRECTORY for this setting to have an effect.
+    /// Specify the number of segments to write to a subdirectory before starting a new one. You must also set Directory structure to Subdirectory per stream for this setting to have an effect.
     pub fn segments_per_subdirectory(mut self, input: i32) -> Self {
         self.segments_per_subdirectory = Some(input);
         self
     }
-    /// Number of segments to write to a subdirectory before starting a new one. directoryStructure must be SINGLE_DIRECTORY for this setting to have an effect.
+    /// Specify the number of segments to write to a subdirectory before starting a new one. You must also set Directory structure to Subdirectory per stream for this setting to have an effect.
     pub fn set_segments_per_subdirectory(mut self, input: std::option::Option<i32>) -> Self {
         self.segments_per_subdirectory = input;
         self
@@ -740,20 +740,20 @@ impl HlsGroupSettingsBuilder {
             image_based_trick_play_settings: self.image_based_trick_play_settings,
             manifest_compression: self.manifest_compression,
             manifest_duration_format: self.manifest_duration_format,
-            min_final_segment_length: self.min_final_segment_length.unwrap_or_default(),
-            min_segment_length: self.min_segment_length.unwrap_or_default(),
+            min_final_segment_length: self.min_final_segment_length,
+            min_segment_length: self.min_segment_length,
             output_selection: self.output_selection,
             program_date_time: self.program_date_time,
-            program_date_time_period: self.program_date_time_period.unwrap_or_default(),
+            program_date_time_period: self.program_date_time_period,
             segment_control: self.segment_control,
-            segment_length: self.segment_length.unwrap_or_default(),
+            segment_length: self.segment_length,
             segment_length_control: self.segment_length_control,
-            segments_per_subdirectory: self.segments_per_subdirectory.unwrap_or_default(),
+            segments_per_subdirectory: self.segments_per_subdirectory,
             stream_inf_resolution: self.stream_inf_resolution,
             target_duration_compatibility_mode: self.target_duration_compatibility_mode,
             timed_metadata_id3_frame: self.timed_metadata_id3_frame,
-            timed_metadata_id3_period: self.timed_metadata_id3_period.unwrap_or_default(),
-            timestamp_delta_milliseconds: self.timestamp_delta_milliseconds.unwrap_or_default(),
+            timed_metadata_id3_period: self.timed_metadata_id3_period,
+            timestamp_delta_milliseconds: self.timestamp_delta_milliseconds,
         }
     }
 }

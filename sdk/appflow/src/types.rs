@@ -203,6 +203,8 @@ pub use crate::types::_service_now_connector_profile_credentials::ServiceNowConn
 
 pub use crate::types::_salesforce_connector_profile_credentials::SalesforceConnectorProfileCredentials;
 
+pub use crate::types::_o_auth2_grant_type::OAuth2GrantType;
+
 pub use crate::types::_redshift_connector_profile_credentials::RedshiftConnectorProfileCredentials;
 
 pub use crate::types::_marketo_connector_profile_credentials::MarketoConnectorProfileCredentials;
@@ -226,8 +228,6 @@ pub use crate::types::_pardot_connector_profile_properties::PardotConnectorProfi
 pub use crate::types::_custom_connector_profile_properties::CustomConnectorProfileProperties;
 
 pub use crate::types::_o_auth2_properties::OAuth2Properties;
-
-pub use crate::types::_o_auth2_grant_type::OAuth2GrantType;
 
 pub use crate::types::_sapo_data_connector_profile_properties::SapoDataConnectorProfileProperties;
 

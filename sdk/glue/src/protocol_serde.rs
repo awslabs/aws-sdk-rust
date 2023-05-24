@@ -1222,6 +1222,10 @@ pub(crate) mod shape_action_list;
 
 pub(crate) mod shape_aggregate;
 
+pub(crate) mod shape_amazon_redshift_source;
+
+pub(crate) mod shape_amazon_redshift_target;
+
 pub(crate) mod shape_apply_mapping;
 
 pub(crate) mod shape_athena_connector_source;
@@ -1518,6 +1522,8 @@ pub(crate) mod shape_xml_classifier;
 
 pub(crate) mod shape_aggregate_operation;
 
+pub(crate) mod shape_amazon_redshift_node_data;
+
 pub(crate) mod shape_backfill_errors;
 
 pub(crate) mod shape_binary_column_statistics_data;
@@ -1634,6 +1640,8 @@ pub(crate) mod shape_transform_config_parameter;
 
 pub(crate) mod shape_upsert_redshift_target_options;
 
+pub(crate) mod shape_amazon_redshift_advanced_option;
+
 pub(crate) mod shape_backfill_error;
 
 pub(crate) mod shape_column_importance;
@@ -1655,6 +1663,8 @@ pub(crate) mod shape_key_schema_element;
 pub(crate) mod shape_location_map;
 
 pub(crate) mod shape_node;
+
+pub(crate) mod shape_option;
 
 pub(crate) mod shape_other_metadata_value_list_item;
 
@@ -1704,6 +1714,8 @@ pub(crate) mod shape_trigger_node_details;
 
 pub(crate) mod shape_two_inputs;
 
+pub(crate) mod shape_amazon_redshift_advanced_options;
+
 pub(crate) mod shape_crawl_list;
 
 pub(crate) mod shape_enclosed_in_string_properties_min_one;
@@ -1711,6 +1723,8 @@ pub(crate) mod shape_enclosed_in_string_properties_min_one;
 pub(crate) mod shape_jdbc_data_type_mapping;
 
 pub(crate) mod shape_limited_string_list;
+
+pub(crate) mod shape_option_list;
 
 pub(crate) mod shape_crawl;
 

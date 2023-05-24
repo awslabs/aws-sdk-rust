@@ -3,16 +3,16 @@ pub fn ser_update_ingress_gateway_bridge_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateIngressGatewayBridgeRequest,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.max_bitrate != 0 {
+    if let Some(var_1) = &input.max_bitrate {
         object.key("maxBitrate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_bitrate).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.max_outputs != 0 {
+    if let Some(var_2) = &input.max_outputs {
         object.key("maxOutputs").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_outputs).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

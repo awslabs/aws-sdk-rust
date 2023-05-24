@@ -131,4 +131,17 @@ impl CreateSequenceStoreFluentBuilder {
         self.inner = self.inner.set_client_token(input);
         self
     }
+    /// <p> An S3 location that is used to store files that have failed a direct upload. </p>
+    pub fn fallback_location(mut self, input: impl Into<std::string::String>) -> Self {
+        self.inner = self.inner.fallback_location(input.into());
+        self
+    }
+    /// <p> An S3 location that is used to store files that have failed a direct upload. </p>
+    pub fn set_fallback_location(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.set_fallback_location(input);
+        self
+    }
 }

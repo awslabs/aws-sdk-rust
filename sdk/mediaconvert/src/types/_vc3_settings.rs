@@ -13,10 +13,10 @@ pub struct Vc3Settings {
         std::option::Option<crate::types::Vc3FramerateConversionAlgorithm>,
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     #[doc(hidden)]
-    pub framerate_denominator: i32,
+    pub framerate_denominator: std::option::Option<i32>,
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     #[doc(hidden)]
-    pub framerate_numerator: i32,
+    pub framerate_numerator: std::option::Option<i32>,
     /// Optional. Choose the scan line type for this output. If you don't specify a value, MediaConvert will create a progressive output.
     #[doc(hidden)]
     pub interlace_mode: std::option::Option<crate::types::Vc3InterlaceMode>,
@@ -45,11 +45,11 @@ impl Vc3Settings {
         self.framerate_conversion_algorithm.as_ref()
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
-    pub fn framerate_denominator(&self) -> i32 {
+    pub fn framerate_denominator(&self) -> std::option::Option<i32> {
         self.framerate_denominator
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
-    pub fn framerate_numerator(&self) -> i32 {
+    pub fn framerate_numerator(&self) -> std::option::Option<i32> {
         self.framerate_numerator
     }
     /// Optional. Choose the scan line type for this output. If you don't specify a value, MediaConvert will create a progressive output.
@@ -212,8 +212,8 @@ impl Vc3SettingsBuilder {
         crate::types::Vc3Settings {
             framerate_control: self.framerate_control,
             framerate_conversion_algorithm: self.framerate_conversion_algorithm,
-            framerate_denominator: self.framerate_denominator.unwrap_or_default(),
-            framerate_numerator: self.framerate_numerator.unwrap_or_default(),
+            framerate_denominator: self.framerate_denominator,
+            framerate_numerator: self.framerate_numerator,
             interlace_mode: self.interlace_mode,
             scan_type_conversion_mode: self.scan_type_conversion_mode,
             slow_pal: self.slow_pal,

@@ -31,7 +31,7 @@ pub struct CmafGroupSettings {
     pub encryption: std::option::Option<crate::types::CmafEncryptionSettings>,
     /// Specify the length, in whole seconds, of the mp4 fragments. When you don't specify a value, MediaConvert defaults to 2. Related setting: Use Fragment length control (FragmentLengthControl) to specify whether the encoder enforces this value strictly.
     #[doc(hidden)]
-    pub fragment_length: i32,
+    pub fragment_length: std::option::Option<i32>,
     /// Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. When you enable Write HLS manifest (WriteHlsManifest), MediaConvert creates a child manifest for each set of images that you generate and adds corresponding entries to the parent manifest. When you enable Write DASH manifest (WriteDashManifest), MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
     #[doc(hidden)]
     pub image_based_trick_play: std::option::Option<crate::types::CmafImageBasedTrickPlay>,
@@ -47,10 +47,10 @@ pub struct CmafGroupSettings {
     pub manifest_duration_format: std::option::Option<crate::types::CmafManifestDurationFormat>,
     /// Minimum time of initially buffered media that is needed to ensure smooth playout.
     #[doc(hidden)]
-    pub min_buffer_time: i32,
+    pub min_buffer_time: std::option::Option<i32>,
     /// Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back the end of your video asset. If you know that player devices are hanging on the final segment of your video because the length of your final segment is too short, use this setting to specify a minimum final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify a value for this setting, the encoder will combine any final segment that is shorter than the length that you specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5 seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final segment is 3.5 seconds.
     #[doc(hidden)]
-    pub min_final_segment_length: f64,
+    pub min_final_segment_length: std::option::Option<f64>,
     /// Specify how the value for bandwidth is determined for each video Representation in your output MPD manifest. We recommend that you choose a MPD manifest bandwidth type that is compatible with your downstream player configuration. Max: Use the same value that you specify for Max bitrate in the video output, in bits per second. Average: Use the calculated average bitrate of the encoded video output, in bits per second.
     #[doc(hidden)]
     pub mpd_manifest_bandwidth_type:
@@ -67,7 +67,7 @@ pub struct CmafGroupSettings {
     pub segment_control: std::option::Option<crate::types::CmafSegmentControl>,
     /// Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert defaults to 10. Related settings: Use Segment length control (SegmentLengthControl) to specify whether the encoder enforces this value strictly. Use Segment control (CmafSegmentControl) to specify whether MediaConvert creates separate segment files or one content file that has metadata to mark the segment boundaries.
     #[doc(hidden)]
-    pub segment_length: i32,
+    pub segment_length: std::option::Option<i32>,
     /// Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
     #[doc(hidden)]
     pub segment_length_control: std::option::Option<crate::types::CmafSegmentLengthControl>,
@@ -130,7 +130,7 @@ impl CmafGroupSettings {
         self.encryption.as_ref()
     }
     /// Specify the length, in whole seconds, of the mp4 fragments. When you don't specify a value, MediaConvert defaults to 2. Related setting: Use Fragment length control (FragmentLengthControl) to specify whether the encoder enforces this value strictly.
-    pub fn fragment_length(&self) -> i32 {
+    pub fn fragment_length(&self) -> std::option::Option<i32> {
         self.fragment_length
     }
     /// Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. When you enable Write HLS manifest (WriteHlsManifest), MediaConvert creates a child manifest for each set of images that you generate and adds corresponding entries to the parent manifest. When you enable Write DASH manifest (WriteDashManifest), MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
@@ -158,11 +158,11 @@ impl CmafGroupSettings {
         self.manifest_duration_format.as_ref()
     }
     /// Minimum time of initially buffered media that is needed to ensure smooth playout.
-    pub fn min_buffer_time(&self) -> i32 {
+    pub fn min_buffer_time(&self) -> std::option::Option<i32> {
         self.min_buffer_time
     }
     /// Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back the end of your video asset. If you know that player devices are hanging on the final segment of your video because the length of your final segment is too short, use this setting to specify a minimum final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify a value for this setting, the encoder will combine any final segment that is shorter than the length that you specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5 seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final segment is 3.5 seconds.
-    pub fn min_final_segment_length(&self) -> f64 {
+    pub fn min_final_segment_length(&self) -> std::option::Option<f64> {
         self.min_final_segment_length
     }
     /// Specify how the value for bandwidth is determined for each video Representation in your output MPD manifest. We recommend that you choose a MPD manifest bandwidth type that is compatible with your downstream player configuration. Max: Use the same value that you specify for Max bitrate in the video output, in bits per second. Average: Use the calculated average bitrate of the encoded video output, in bits per second.
@@ -186,7 +186,7 @@ impl CmafGroupSettings {
         self.segment_control.as_ref()
     }
     /// Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert defaults to 10. Related settings: Use Segment length control (SegmentLengthControl) to specify whether the encoder enforces this value strictly. Use Segment control (CmafSegmentControl) to specify whether MediaConvert creates separate segment files or one content file that has metadata to mark the segment boundaries.
-    pub fn segment_length(&self) -> i32 {
+    pub fn segment_length(&self) -> std::option::Option<i32> {
         self.segment_length
     }
     /// Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
@@ -647,18 +647,18 @@ impl CmafGroupSettingsBuilder {
             destination: self.destination,
             destination_settings: self.destination_settings,
             encryption: self.encryption,
-            fragment_length: self.fragment_length.unwrap_or_default(),
+            fragment_length: self.fragment_length,
             image_based_trick_play: self.image_based_trick_play,
             image_based_trick_play_settings: self.image_based_trick_play_settings,
             manifest_compression: self.manifest_compression,
             manifest_duration_format: self.manifest_duration_format,
-            min_buffer_time: self.min_buffer_time.unwrap_or_default(),
-            min_final_segment_length: self.min_final_segment_length.unwrap_or_default(),
+            min_buffer_time: self.min_buffer_time,
+            min_final_segment_length: self.min_final_segment_length,
             mpd_manifest_bandwidth_type: self.mpd_manifest_bandwidth_type,
             mpd_profile: self.mpd_profile,
             pts_offset_handling_for_b_frames: self.pts_offset_handling_for_b_frames,
             segment_control: self.segment_control,
-            segment_length: self.segment_length.unwrap_or_default(),
+            segment_length: self.segment_length,
             segment_length_control: self.segment_length_control,
             stream_inf_resolution: self.stream_inf_resolution,
             target_duration_compatibility_mode: self.target_duration_compatibility_mode,

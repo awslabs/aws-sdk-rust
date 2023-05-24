@@ -14,6 +14,7 @@ impl super::Client {
     ///   - [`service_type(Option<ServiceType>)`](crate::operation::describe_domain_configuration::DescribeDomainConfigurationOutput::service_type): <p>The type of service delivered by the endpoint.</p>
     ///   - [`domain_type(Option<DomainType>)`](crate::operation::describe_domain_configuration::DescribeDomainConfigurationOutput::domain_type): <p>The type of the domain.</p>
     ///   - [`last_status_change_date(Option<DateTime>)`](crate::operation::describe_domain_configuration::DescribeDomainConfigurationOutput::last_status_change_date): <p>The date and time the domain configuration's status was last changed.</p>
+    ///   - [`tls_config(Option<TlsConfig>)`](crate::operation::describe_domain_configuration::DescribeDomainConfigurationOutput::tls_config): <p>An object that specifies the TLS configuration for a domain.</p>
     /// - On failure, responds with [`SdkError<DescribeDomainConfigurationError>`](crate::operation::describe_domain_configuration::DescribeDomainConfigurationError)
     pub fn describe_domain_configuration(&self) -> crate::operation::describe_domain_configuration::builders::DescribeDomainConfigurationFluentBuilder{
         crate::operation::describe_domain_configuration::builders::DescribeDomainConfigurationFluentBuilder::new(self.handle.clone())

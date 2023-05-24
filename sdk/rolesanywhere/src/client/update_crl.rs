@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`crl_id(impl Into<String>)`](crate::operation::update_crl::builders::UpdateCrlFluentBuilder::crl_id) / [`set_crl_id(Option<String>)`](crate::operation::update_crl::builders::UpdateCrlFluentBuilder::set_crl_id): <p>The unique identifier of the certificate revocation list (CRL).</p>
     ///   - [`name(impl Into<String>)`](crate::operation::update_crl::builders::UpdateCrlFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_crl::builders::UpdateCrlFluentBuilder::set_name): <p>The name of the Crl.</p>
-    ///   - [`crl_data(Blob)`](crate::operation::update_crl::builders::UpdateCrlFluentBuilder::crl_data) / [`set_crl_data(Option<Blob>)`](crate::operation::update_crl::builders::UpdateCrlFluentBuilder::set_crl_data): <p>The x509 v3 specified certificate revocation list</p>
+    ///   - [`crl_data(Blob)`](crate::operation::update_crl::builders::UpdateCrlFluentBuilder::crl_data) / [`set_crl_data(Option<Blob>)`](crate::operation::update_crl::builders::UpdateCrlFluentBuilder::set_crl_data): <p>The x509 v3 specified certificate revocation list (CRL).</p>
     /// - On success, responds with [`UpdateCrlOutput`](crate::operation::update_crl::UpdateCrlOutput) with field(s):
     ///   - [`crl(Option<CrlDetail>)`](crate::operation::update_crl::UpdateCrlOutput::crl): <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
     /// - On failure, responds with [`SdkError<UpdateCrlError>`](crate::operation::update_crl::UpdateCrlError)

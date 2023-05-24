@@ -5,10 +5,12 @@ pub use crate::operation::get_bucket_acl::_get_bucket_acl_input::GetBucketAclInp
 
 /// Fluent builder constructing a request to `GetBucketAcl`.
 ///
-/// <p>This implementation of the <code>GET</code> action uses the <code>acl</code> subresource to return the access control list (ACL) of a bucket. To use <code>GET</code> to return the ACL of the bucket, you must have <code>READ_ACP</code> access to the bucket. If <code>READ_ACP</code> permission is granted to the anonymous user, you can return the ACL of the bucket without using an authorization header.</p> <note>
+/// <p>This implementation of the <code>GET</code> action uses the <code>acl</code> subresource to return the access control list (ACL) of a bucket. To use <code>GET</code> to return the ACL of the bucket, you must have <code>READ_ACP</code> access to the bucket. If <code>READ_ACP</code> permission is granted to the anonymous user, you can return the ACL of the bucket without using an authorization header.</p>
+/// <p>To use this API operation against an access point, provide the alias of the access point in place of the bucket name.</p>
+/// <p>To use this API operation against an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <code>InvalidAccessPointAliasError</code> is returned. For more information about <code>InvalidAccessPointAliasError</code>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>.</p> <note>
 /// <p>If your bucket uses the bucket owner enforced setting for S3 Object Ownership, requests to read ACLs are still supported and return the <code>bucket-owner-full-control</code> ACL with the owner being the account that created the bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html"> Controlling object ownership and disabling ACLs</a> in the <i>Amazon S3 User Guide</i>.</p>
 /// </note>
-/// <p class="title"> <b>Related Resources</b> </p>
+/// <p>The following operations are related to <code>GetBucketAcl</code>:</p>
 /// <ul>
 /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a> </p> </li>
 /// </ul>
@@ -71,11 +73,15 @@ impl GetBucketAclFluentBuilder {
         self.handle.client.call(op).await
     }
     /// <p>Specifies the S3 bucket whose ACL is being requested.</p>
+    /// <p>To use this API operation against an access point, provide the alias of the access point in place of the bucket name.</p>
+    /// <p>To use this API operation against an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <code>InvalidAccessPointAliasError</code> is returned. For more information about <code>InvalidAccessPointAliasError</code>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>.</p>
     pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.bucket(input.into());
         self
     }
     /// <p>Specifies the S3 bucket whose ACL is being requested.</p>
+    /// <p>To use this API operation against an access point, provide the alias of the access point in place of the bucket name.</p>
+    /// <p>To use this API operation against an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <code>InvalidAccessPointAliasError</code> is returned. For more information about <code>InvalidAccessPointAliasError</code>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_bucket(input);
         self

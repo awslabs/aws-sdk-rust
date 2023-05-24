@@ -6,10 +6,8 @@ pub fn ser_encryption_options(
     if let Some(var_1) = &input.kms_key_id {
         object.key("kmsKeyId").string(var_1.as_str());
     }
-    {
-        object
-            .key("useAwsOwnedKey")
-            .boolean(input.use_aws_owned_key);
+    if let Some(var_2) = &input.use_aws_owned_key {
+        object.key("useAwsOwnedKey").boolean(*var_2);
     }
     Ok(())
 }

@@ -5,18 +5,18 @@
 pub struct UpdateIngressGatewayBridgeRequest {
     /// The maximum expected bitrate (in bps).
     #[doc(hidden)]
-    pub max_bitrate: i32,
+    pub max_bitrate: std::option::Option<i32>,
     /// The maximum number of expected outputs.
     #[doc(hidden)]
-    pub max_outputs: i32,
+    pub max_outputs: std::option::Option<i32>,
 }
 impl UpdateIngressGatewayBridgeRequest {
     /// The maximum expected bitrate (in bps).
-    pub fn max_bitrate(&self) -> i32 {
+    pub fn max_bitrate(&self) -> std::option::Option<i32> {
         self.max_bitrate
     }
     /// The maximum number of expected outputs.
-    pub fn max_outputs(&self) -> i32 {
+    pub fn max_outputs(&self) -> std::option::Option<i32> {
         self.max_outputs
     }
 }
@@ -58,8 +58,8 @@ impl UpdateIngressGatewayBridgeRequestBuilder {
     /// Consumes the builder and constructs a [`UpdateIngressGatewayBridgeRequest`](crate::types::UpdateIngressGatewayBridgeRequest).
     pub fn build(self) -> crate::types::UpdateIngressGatewayBridgeRequest {
         crate::types::UpdateIngressGatewayBridgeRequest {
-            max_bitrate: self.max_bitrate.unwrap_or_default(),
-            max_outputs: self.max_outputs.unwrap_or_default(),
+            max_bitrate: self.max_bitrate,
+            max_outputs: self.max_outputs,
         }
     }
 }

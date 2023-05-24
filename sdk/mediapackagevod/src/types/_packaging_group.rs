@@ -6,7 +6,7 @@
 pub struct PackagingGroup {
     /// The approximate asset count of the PackagingGroup.
     #[doc(hidden)]
-    pub approximate_asset_count: i32,
+    pub approximate_asset_count: std::option::Option<i32>,
     /// The ARN of the PackagingGroup.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -32,7 +32,7 @@ pub struct PackagingGroup {
 }
 impl PackagingGroup {
     /// The approximate asset count of the PackagingGroup.
-    pub fn approximate_asset_count(&self) -> i32 {
+    pub fn approximate_asset_count(&self) -> std::option::Option<i32> {
         self.approximate_asset_count
     }
     /// The ARN of the PackagingGroup.
@@ -193,7 +193,7 @@ impl PackagingGroupBuilder {
     /// Consumes the builder and constructs a [`PackagingGroup`](crate::types::PackagingGroup).
     pub fn build(self) -> crate::types::PackagingGroup {
         crate::types::PackagingGroup {
-            approximate_asset_count: self.approximate_asset_count.unwrap_or_default(),
+            approximate_asset_count: self.approximate_asset_count,
             arn: self.arn,
             authorization: self.authorization,
             created_at: self.created_at,

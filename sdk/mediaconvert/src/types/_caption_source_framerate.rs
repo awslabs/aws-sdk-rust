@@ -6,18 +6,18 @@
 pub struct CaptionSourceFramerate {
     /// Specify the denominator of the fraction that represents the frame rate for the setting Caption source frame rate (CaptionSourceFramerate). Use this setting along with the setting Framerate numerator (framerateNumerator).
     #[doc(hidden)]
-    pub framerate_denominator: i32,
+    pub framerate_denominator: std::option::Option<i32>,
     /// Specify the numerator of the fraction that represents the frame rate for the setting Caption source frame rate (CaptionSourceFramerate). Use this setting along with the setting Framerate denominator (framerateDenominator).
     #[doc(hidden)]
-    pub framerate_numerator: i32,
+    pub framerate_numerator: std::option::Option<i32>,
 }
 impl CaptionSourceFramerate {
     /// Specify the denominator of the fraction that represents the frame rate for the setting Caption source frame rate (CaptionSourceFramerate). Use this setting along with the setting Framerate numerator (framerateNumerator).
-    pub fn framerate_denominator(&self) -> i32 {
+    pub fn framerate_denominator(&self) -> std::option::Option<i32> {
         self.framerate_denominator
     }
     /// Specify the numerator of the fraction that represents the frame rate for the setting Caption source frame rate (CaptionSourceFramerate). Use this setting along with the setting Framerate denominator (framerateDenominator).
-    pub fn framerate_numerator(&self) -> i32 {
+    pub fn framerate_numerator(&self) -> std::option::Option<i32> {
         self.framerate_numerator
     }
 }
@@ -59,8 +59,8 @@ impl CaptionSourceFramerateBuilder {
     /// Consumes the builder and constructs a [`CaptionSourceFramerate`](crate::types::CaptionSourceFramerate).
     pub fn build(self) -> crate::types::CaptionSourceFramerate {
         crate::types::CaptionSourceFramerate {
-            framerate_denominator: self.framerate_denominator.unwrap_or_default(),
-            framerate_numerator: self.framerate_numerator.unwrap_or_default(),
+            framerate_denominator: self.framerate_denominator,
+            framerate_numerator: self.framerate_numerator,
         }
     }
 }

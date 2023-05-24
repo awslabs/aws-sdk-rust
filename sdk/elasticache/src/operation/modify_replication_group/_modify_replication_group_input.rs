@@ -117,7 +117,7 @@ pub struct ModifyReplicationGroupInput {
     #[doc(hidden)]
     pub log_delivery_configurations:
         std::option::Option<std::vec::Vec<crate::types::LogDeliveryConfigurationRequest>>,
-    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     #[doc(hidden)]
     pub ip_discovery: std::option::Option<crate::types::IpDiscovery>,
     /// <p>A flag that enables in-transit encryption when set to true. If you are enabling in-transit encryption for an existing cluster, you must also set <code>TransitEncryptionMode</code> to <code>preferred</code>.</p>
@@ -125,9 +125,12 @@ pub struct ModifyReplicationGroupInput {
     pub transit_encryption_enabled: std::option::Option<bool>,
     /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
     /// <p>You must set <code>TransitEncryptionEnabled</code> to <code>true</code>, for your existing cluster, and set <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request to allow both encrypted and unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted connections you can set the value to <code>required</code> to allow encrypted connections only.</p>
-    /// <p>Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that you can set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
+    /// <p>Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
     #[doc(hidden)]
     pub transit_encryption_mode: std::option::Option<crate::types::TransitEncryptionMode>,
+    /// <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode configuration and set the cluster mode to Enabled.</p>
+    #[doc(hidden)]
+    pub cluster_mode: std::option::Option<crate::types::ClusterMode>,
 }
 impl ModifyReplicationGroupInput {
     /// <p>The identifier of the replication group to modify.</p>
@@ -271,7 +274,7 @@ impl ModifyReplicationGroupInput {
     ) -> std::option::Option<&[crate::types::LogDeliveryConfigurationRequest]> {
         self.log_delivery_configurations.as_deref()
     }
-    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn ip_discovery(&self) -> std::option::Option<&crate::types::IpDiscovery> {
         self.ip_discovery.as_ref()
     }
@@ -281,11 +284,15 @@ impl ModifyReplicationGroupInput {
     }
     /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
     /// <p>You must set <code>TransitEncryptionEnabled</code> to <code>true</code>, for your existing cluster, and set <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request to allow both encrypted and unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted connections you can set the value to <code>required</code> to allow encrypted connections only.</p>
-    /// <p>Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that you can set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
+    /// <p>Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
     pub fn transit_encryption_mode(
         &self,
     ) -> std::option::Option<&crate::types::TransitEncryptionMode> {
         self.transit_encryption_mode.as_ref()
+    }
+    /// <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode configuration and set the cluster mode to Enabled.</p>
+    pub fn cluster_mode(&self) -> std::option::Option<&crate::types::ClusterMode> {
+        self.cluster_mode.as_ref()
     }
 }
 impl ModifyReplicationGroupInput {
@@ -331,6 +338,7 @@ pub struct ModifyReplicationGroupInputBuilder {
     pub(crate) ip_discovery: std::option::Option<crate::types::IpDiscovery>,
     pub(crate) transit_encryption_enabled: std::option::Option<bool>,
     pub(crate) transit_encryption_mode: std::option::Option<crate::types::TransitEncryptionMode>,
+    pub(crate) cluster_mode: std::option::Option<crate::types::ClusterMode>,
 }
 impl ModifyReplicationGroupInputBuilder {
     /// <p>The identifier of the replication group to modify.</p>
@@ -735,12 +743,12 @@ impl ModifyReplicationGroupInputBuilder {
         self.log_delivery_configurations = input;
         self
     }
-    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn ip_discovery(mut self, input: crate::types::IpDiscovery) -> Self {
         self.ip_discovery = Some(input);
         self
     }
-    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn set_ip_discovery(
         mut self,
         input: std::option::Option<crate::types::IpDiscovery>,
@@ -760,19 +768,32 @@ impl ModifyReplicationGroupInputBuilder {
     }
     /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
     /// <p>You must set <code>TransitEncryptionEnabled</code> to <code>true</code>, for your existing cluster, and set <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request to allow both encrypted and unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted connections you can set the value to <code>required</code> to allow encrypted connections only.</p>
-    /// <p>Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that you can set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
+    /// <p>Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
     pub fn transit_encryption_mode(mut self, input: crate::types::TransitEncryptionMode) -> Self {
         self.transit_encryption_mode = Some(input);
         self
     }
     /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
     /// <p>You must set <code>TransitEncryptionEnabled</code> to <code>true</code>, for your existing cluster, and set <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request to allow both encrypted and unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted connections you can set the value to <code>required</code> to allow encrypted connections only.</p>
-    /// <p>Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that you can set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
+    /// <p>Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
     pub fn set_transit_encryption_mode(
         mut self,
         input: std::option::Option<crate::types::TransitEncryptionMode>,
     ) -> Self {
         self.transit_encryption_mode = input;
+        self
+    }
+    /// <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode configuration and set the cluster mode to Enabled.</p>
+    pub fn cluster_mode(mut self, input: crate::types::ClusterMode) -> Self {
+        self.cluster_mode = Some(input);
+        self
+    }
+    /// <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode configuration and set the cluster mode to Enabled.</p>
+    pub fn set_cluster_mode(
+        mut self,
+        input: std::option::Option<crate::types::ClusterMode>,
+    ) -> Self {
+        self.cluster_mode = input;
         self
     }
     /// Consumes the builder and constructs a [`ModifyReplicationGroupInput`](crate::operation::modify_replication_group::ModifyReplicationGroupInput).
@@ -812,6 +833,7 @@ impl ModifyReplicationGroupInputBuilder {
                 ip_discovery: self.ip_discovery,
                 transit_encryption_enabled: self.transit_encryption_enabled,
                 transit_encryption_mode: self.transit_encryption_mode,
+                cluster_mode: self.cluster_mode,
             },
         )
     }

@@ -78,6 +78,11 @@ where
                                     crate::protocol_serde::shape_instance_role_list::de_instance_role_list(tokens)?
                                 );
                             }
+                            "AvailabilityZones" => {
+                                builder = builder.set_availability_zones(
+                                    crate::protocol_serde::shape_availability_zone_list::de_availability_zone_list(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

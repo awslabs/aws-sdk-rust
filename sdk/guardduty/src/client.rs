@@ -346,6 +346,8 @@ mod list_tags_for_resource;
 
 mod list_threat_intel_sets;
 
+mod start_malware_scan;
+
 mod start_monitoring_members;
 
 mod stop_monitoring_members;

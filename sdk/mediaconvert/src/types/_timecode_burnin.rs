@@ -6,7 +6,7 @@
 pub struct TimecodeBurnin {
     /// Use Font Size (FontSize) to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48.
     #[doc(hidden)]
-    pub font_size: i32,
+    pub font_size: std::option::Option<i32>,
     /// Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the burned-in timecode on output video.
     #[doc(hidden)]
     pub position: std::option::Option<crate::types::TimecodeBurninPosition>,
@@ -16,7 +16,7 @@ pub struct TimecodeBurnin {
 }
 impl TimecodeBurnin {
     /// Use Font Size (FontSize) to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48.
-    pub fn font_size(&self) -> i32 {
+    pub fn font_size(&self) -> std::option::Option<i32> {
         self.font_size
     }
     /// Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the burned-in timecode on output video.
@@ -80,7 +80,7 @@ impl TimecodeBurninBuilder {
     /// Consumes the builder and constructs a [`TimecodeBurnin`](crate::types::TimecodeBurnin).
     pub fn build(self) -> crate::types::TimecodeBurnin {
         crate::types::TimecodeBurnin {
-            font_size: self.font_size.unwrap_or_default(),
+            font_size: self.font_size,
             position: self.position,
             prefix: self.prefix,
         }

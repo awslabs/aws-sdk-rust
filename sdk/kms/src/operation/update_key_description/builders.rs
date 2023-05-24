@@ -100,12 +100,16 @@ impl UpdateKeyDescriptionFluentBuilder {
         self.inner = self.inner.set_key_id(input);
         self
     }
-    /// <p>New description for the KMS key.</p>
+    /// <p>New description for the KMS key.</p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>New description for the KMS key.</p>
+    /// <p>New description for the KMS key.</p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self

@@ -12,7 +12,7 @@ pub use crate::operation::generate_data_key_without_plaintext::_generate_data_ke
 /// <p>To request an asymmetric data key pair, use the <code>GenerateDataKeyPair</code> or <code>GenerateDataKeyPairWithoutPlaintext</code> operations.</p>
 /// <p>To generate a data key, you must specify the symmetric encryption KMS key that is used to encrypt the data key. You cannot use an asymmetric KMS key or a key in a custom key store to generate a data key. To get the type of your KMS key, use the <code>DescribeKey</code> operation.</p>
 /// <p>You must also specify the length of the data key. Use either the <code>KeySpec</code> or <code>NumberOfBytes</code> parameters (but not both). For 128-bit and 256-bit data keys, use the <code>KeySpec</code> parameter.</p>
-/// <p>To generate an SM4 data key (China Regions only), specify a <code>KeySpec</code> value of <code>AES_128</code> or <code>NumberOfBytes</code> value of <code>128</code>. The symmetric encryption key used in China Regions to encrypt your data key is an SM4 encryption key.</p>
+/// <p>To generate an SM4 data key (China Regions only), specify a <code>KeySpec</code> value of <code>AES_128</code> or <code>NumberOfBytes</code> value of <code>16</code>. The symmetric encryption key used in China Regions to encrypt your data key is an SM4 encryption key.</p>
 /// <p>If the operation succeeds, you will find the encrypted copy of the data key in the <code>CiphertextBlob</code> field.</p>
 /// <p>You can use an optional encryption context to add additional security to the encryption operation. If you specify an <code>EncryptionContext</code>, you must specify the same encryption context (a case-sensitive exact match) when decrypting the encrypted data key. Otherwise, the request to decrypt fails with an <code>InvalidCiphertextException</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
 /// <p>The KMS key that you use for this operation must be in a compatible key state. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -107,7 +107,9 @@ impl GenerateDataKeyWithoutPlaintextFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_encryption_context`](Self::set_encryption_context).
     ///
-    /// <p>Specifies the encryption context that will be used when encrypting the data key.</p>
+    /// <p>Specifies the encryption context that will be used when encrypting the data key.</p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
     /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is supported only on operations with symmetric encryption KMS keys. On operations with symmetric encryption KMS keys, an encryption context is optional, but it is strongly recommended.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption context</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn encryption_context(
@@ -118,7 +120,9 @@ impl GenerateDataKeyWithoutPlaintextFluentBuilder {
         self.inner = self.inner.encryption_context(k.into(), v.into());
         self
     }
-    /// <p>Specifies the encryption context that will be used when encrypting the data key.</p>
+    /// <p>Specifies the encryption context that will be used when encrypting the data key.</p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
     /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is supported only on operations with symmetric encryption KMS keys. On operations with symmetric encryption KMS keys, an encryption context is optional, but it is strongly recommended.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption context</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn set_encryption_context(

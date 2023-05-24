@@ -6,8 +6,8 @@ pub fn ser_gcm_channel_request(
     if let Some(var_1) = &input.api_key {
         object.key("ApiKey").string(var_1.as_str());
     }
-    if input.enabled {
-        object.key("Enabled").boolean(input.enabled);
+    if let Some(var_2) = &input.enabled {
+        object.key("Enabled").boolean(*var_2);
     }
     Ok(())
 }

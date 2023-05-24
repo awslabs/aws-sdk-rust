@@ -44,70 +44,70 @@ pub fn ser_dash_iso_group_settings(
         crate::protocol_serde::shape_dash_iso_encryption_settings::ser_dash_iso_encryption_settings(&mut object_12, var_11)?;
         object_12.finish();
     }
-    if input.fragment_length != 0 {
+    if let Some(var_13) = &input.fragment_length {
         object.key("fragmentLength").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.fragment_length).into()),
+            aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
-    if let Some(var_13) = &input.hbbtv_compliance {
-        object.key("hbbtvCompliance").string(var_13.as_str());
+    if let Some(var_14) = &input.hbbtv_compliance {
+        object.key("hbbtvCompliance").string(var_14.as_str());
     }
-    if let Some(var_14) = &input.image_based_trick_play {
-        object.key("imageBasedTrickPlay").string(var_14.as_str());
+    if let Some(var_15) = &input.image_based_trick_play {
+        object.key("imageBasedTrickPlay").string(var_15.as_str());
     }
-    if let Some(var_15) = &input.image_based_trick_play_settings {
+    if let Some(var_16) = &input.image_based_trick_play_settings {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("imageBasedTrickPlaySettings").start_object();
-        crate::protocol_serde::shape_dash_iso_image_based_trick_play_settings::ser_dash_iso_image_based_trick_play_settings(&mut object_16, var_15)?;
-        object_16.finish();
+        let mut object_17 = object.key("imageBasedTrickPlaySettings").start_object();
+        crate::protocol_serde::shape_dash_iso_image_based_trick_play_settings::ser_dash_iso_image_based_trick_play_settings(&mut object_17, var_16)?;
+        object_17.finish();
     }
-    if input.min_buffer_time != 0 {
+    if let Some(var_18) = &input.min_buffer_time {
         object.key("minBufferTime").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.min_buffer_time).into()),
+            aws_smithy_types::Number::NegInt((*var_18).into()),
         );
     }
-    if input.min_final_segment_length != 0.0 {
+    if let Some(var_19) = &input.min_final_segment_length {
         object.key("minFinalSegmentLength").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.min_final_segment_length).into()),
+            aws_smithy_types::Number::Float((*var_19).into()),
         );
     }
-    if let Some(var_17) = &input.mpd_manifest_bandwidth_type {
+    if let Some(var_20) = &input.mpd_manifest_bandwidth_type {
         object
             .key("mpdManifestBandwidthType")
-            .string(var_17.as_str());
+            .string(var_20.as_str());
     }
-    if let Some(var_18) = &input.mpd_profile {
-        object.key("mpdProfile").string(var_18.as_str());
+    if let Some(var_21) = &input.mpd_profile {
+        object.key("mpdProfile").string(var_21.as_str());
     }
-    if let Some(var_19) = &input.pts_offset_handling_for_b_frames {
+    if let Some(var_22) = &input.pts_offset_handling_for_b_frames {
         object
             .key("ptsOffsetHandlingForBFrames")
-            .string(var_19.as_str());
-    }
-    if let Some(var_20) = &input.segment_control {
-        object.key("segmentControl").string(var_20.as_str());
-    }
-    if input.segment_length != 0 {
-        object.key("segmentLength").number(
-            #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.segment_length).into()),
-        );
-    }
-    if let Some(var_21) = &input.segment_length_control {
-        object.key("segmentLengthControl").string(var_21.as_str());
-    }
-    if let Some(var_22) = &input.video_composition_offsets {
-        object
-            .key("videoCompositionOffsets")
             .string(var_22.as_str());
     }
-    if let Some(var_23) = &input.write_segment_timeline_in_representation {
+    if let Some(var_23) = &input.segment_control {
+        object.key("segmentControl").string(var_23.as_str());
+    }
+    if let Some(var_24) = &input.segment_length {
+        object.key("segmentLength").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_24).into()),
+        );
+    }
+    if let Some(var_25) = &input.segment_length_control {
+        object.key("segmentLengthControl").string(var_25.as_str());
+    }
+    if let Some(var_26) = &input.video_composition_offsets {
+        object
+            .key("videoCompositionOffsets")
+            .string(var_26.as_str());
+    }
+    if let Some(var_27) = &input.write_segment_timeline_in_representation {
         object
             .key("writeSegmentTimelineInRepresentation")
-            .string(var_23.as_str());
+            .string(var_27.as_str());
     }
     Ok(())
 }

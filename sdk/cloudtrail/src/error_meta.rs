@@ -73,7 +73,7 @@ pub enum Error {
     InactiveQueryException(crate::types::error::InactiveQueryException),
     /// <p>If you run <code>GetInsightSelectors</code> on a trail that does not have Insights events enabled, the operation throws the exception <code>InsightNotEnabledException</code>.</p>
     InsightNotEnabledException(crate::types::error::InsightNotEnabledException),
-    /// <p>This exception is thrown when the IAM user or role that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>
+    /// <p>This exception is thrown when the IAM identity that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>
     InsufficientDependencyServiceAccessPermissionException(
         crate::types::error::InsufficientDependencyServiceAccessPermissionException,
     ),
@@ -335,6 +335,9 @@ where
 impl From<crate::operation::add_tags::AddTagsError> for Error {
     fn from(err: crate::operation::add_tags::AddTagsError) -> Self {
         match err {
+            crate::operation::add_tags::AddTagsError::ChannelArnInvalidException(inner) => {
+                Error::ChannelArnInvalidException(inner)
+            }
             crate::operation::add_tags::AddTagsError::ChannelNotFoundException(inner) => {
                 Error::ChannelNotFoundException(inner)
             }
@@ -343,6 +346,9 @@ impl From<crate::operation::add_tags::AddTagsError> for Error {
             }
             crate::operation::add_tags::AddTagsError::ConflictException(inner) => {
                 Error::ConflictException(inner)
+            }
+            crate::operation::add_tags::AddTagsError::EventDataStoreArnInvalidException(inner) => {
+                Error::EventDataStoreArnInvalidException(inner)
             }
             crate::operation::add_tags::AddTagsError::EventDataStoreNotFoundException(inner) => {
                 Error::EventDataStoreNotFoundException(inner)
@@ -1558,9 +1564,15 @@ where
 impl From<crate::operation::list_tags::ListTagsError> for Error {
     fn from(err: crate::operation::list_tags::ListTagsError) -> Self {
         match err {
+            crate::operation::list_tags::ListTagsError::ChannelArnInvalidException(inner) => {
+                Error::ChannelArnInvalidException(inner)
+            }
             crate::operation::list_tags::ListTagsError::CloudTrailArnInvalidException(inner) => {
                 Error::CloudTrailArnInvalidException(inner)
             }
+            crate::operation::list_tags::ListTagsError::EventDataStoreArnInvalidException(
+                inner,
+            ) => Error::EventDataStoreArnInvalidException(inner),
             crate::operation::list_tags::ListTagsError::EventDataStoreNotFoundException(inner) => {
                 Error::EventDataStoreNotFoundException(inner)
             }
@@ -1706,6 +1718,7 @@ impl From<crate::operation::put_event_selectors::PutEventSelectorsError> for Err
     fn from(err: crate::operation::put_event_selectors::PutEventSelectorsError) -> Self {
         match err {
             crate::operation::put_event_selectors::PutEventSelectorsError::CloudTrailArnInvalidException(inner) => Error::CloudTrailArnInvalidException(inner),
+            crate::operation::put_event_selectors::PutEventSelectorsError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::put_event_selectors::PutEventSelectorsError::InsufficientDependencyServiceAccessPermissionException(inner) => Error::InsufficientDependencyServiceAccessPermissionException(inner),
             crate::operation::put_event_selectors::PutEventSelectorsError::InvalidEventSelectorsException(inner) => Error::InvalidEventSelectorsException(inner),
             crate::operation::put_event_selectors::PutEventSelectorsError::InvalidHomeRegionException(inner) => Error::InvalidHomeRegionException(inner),
@@ -1873,8 +1886,10 @@ where
 impl From<crate::operation::remove_tags::RemoveTagsError> for Error {
     fn from(err: crate::operation::remove_tags::RemoveTagsError) -> Self {
         match err {
+            crate::operation::remove_tags::RemoveTagsError::ChannelArnInvalidException(inner) => Error::ChannelArnInvalidException(inner),
             crate::operation::remove_tags::RemoveTagsError::ChannelNotFoundException(inner) => Error::ChannelNotFoundException(inner),
             crate::operation::remove_tags::RemoveTagsError::CloudTrailArnInvalidException(inner) => Error::CloudTrailArnInvalidException(inner),
+            crate::operation::remove_tags::RemoveTagsError::EventDataStoreArnInvalidException(inner) => Error::EventDataStoreArnInvalidException(inner),
             crate::operation::remove_tags::RemoveTagsError::EventDataStoreNotFoundException(inner) => Error::EventDataStoreNotFoundException(inner),
             crate::operation::remove_tags::RemoveTagsError::InactiveEventDataStoreException(inner) => Error::InactiveEventDataStoreException(inner),
             crate::operation::remove_tags::RemoveTagsError::InvalidTagParameterException(inner) => Error::InvalidTagParameterException(inner),

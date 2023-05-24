@@ -41,6 +41,8 @@ pub use crate::types::_query_execution_context::QueryExecutionContext;
 
 pub use crate::types::_calculation_configuration::CalculationConfiguration;
 
+pub use crate::types::_capacity_assignment::CapacityAssignment;
+
 pub use crate::types::_work_group_summary::WorkGroupSummary;
 
 pub use crate::types::_table_metadata::TableMetadata;
@@ -68,6 +70,14 @@ pub use crate::types::_executor_type::ExecutorType;
 pub use crate::types::_data_catalog_summary::DataCatalogSummary;
 
 pub use crate::types::_database::Database;
+
+pub use crate::types::_capacity_reservation::CapacityReservation;
+
+pub use crate::types::_capacity_allocation::CapacityAllocation;
+
+pub use crate::types::_capacity_allocation_status::CapacityAllocationStatus;
+
+pub use crate::types::_capacity_reservation_status::CapacityReservationStatus;
 
 pub use crate::types::_calculation_summary::CalculationSummary;
 
@@ -125,6 +135,8 @@ pub use crate::types::_named_query::NamedQuery;
 
 pub use crate::types::_data_catalog::DataCatalog;
 
+pub use crate::types::_capacity_assignment_configuration::CapacityAssignmentConfiguration;
+
 pub use crate::types::_calculation_statistics::CalculationStatistics;
 
 pub use crate::types::_calculation_result::CalculationResult;
@@ -152,6 +164,18 @@ mod _calculation_statistics;
 mod _calculation_status;
 
 mod _calculation_summary;
+
+mod _capacity_allocation;
+
+mod _capacity_allocation_status;
+
+mod _capacity_assignment;
+
+mod _capacity_assignment_configuration;
+
+mod _capacity_reservation;
+
+mod _capacity_reservation_status;
 
 mod _column;
 

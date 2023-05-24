@@ -6,7 +6,7 @@ pub struct AssociateApiInput {
     /// <p>The domain name.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>The API ID.</p>
+    /// <p>The API ID. Private APIs can not be associated with custom domains.</p>
     #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
 }
@@ -15,7 +15,7 @@ impl AssociateApiInput {
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>The API ID.</p>
+    /// <p>The API ID. Private APIs can not be associated with custom domains.</p>
     pub fn api_id(&self) -> std::option::Option<&str> {
         self.api_id.as_deref()
     }
@@ -45,12 +45,12 @@ impl AssociateApiInputBuilder {
         self.domain_name = input;
         self
     }
-    /// <p>The API ID.</p>
+    /// <p>The API ID. Private APIs can not be associated with custom domains.</p>
     pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.api_id = Some(input.into());
         self
     }
-    /// <p>The API ID.</p>
+    /// <p>The API ID. Private APIs can not be associated with custom domains.</p>
     pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.api_id = input;
         self

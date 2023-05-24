@@ -31,6 +31,12 @@ pub struct PhysicalResource {
     /// <p>Indicates if a resource is included or excluded from the assessment.</p>
     #[doc(hidden)]
     pub excluded: std::option::Option<bool>,
+    /// <p>The type of input source.</p>
+    #[doc(hidden)]
+    pub source_type: std::option::Option<crate::types::ResourceSourceType>,
+    /// <p>The name of the parent resource.</p>
+    #[doc(hidden)]
+    pub parent_resource_name: std::option::Option<std::string::String>,
 }
 impl PhysicalResource {
     /// <p>The name of the resource.</p>
@@ -69,6 +75,14 @@ impl PhysicalResource {
     pub fn excluded(&self) -> std::option::Option<bool> {
         self.excluded
     }
+    /// <p>The type of input source.</p>
+    pub fn source_type(&self) -> std::option::Option<&crate::types::ResourceSourceType> {
+        self.source_type.as_ref()
+    }
+    /// <p>The name of the parent resource.</p>
+    pub fn parent_resource_name(&self) -> std::option::Option<&str> {
+        self.parent_resource_name.as_deref()
+    }
 }
 impl PhysicalResource {
     /// Creates a new builder-style object to manufacture [`PhysicalResource`](crate::types::PhysicalResource).
@@ -90,6 +104,8 @@ pub struct PhysicalResourceBuilder {
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     pub(crate) excluded: std::option::Option<bool>,
+    pub(crate) source_type: std::option::Option<crate::types::ResourceSourceType>,
+    pub(crate) parent_resource_name: std::option::Option<std::string::String>,
 }
 impl PhysicalResourceBuilder {
     /// <p>The name of the resource.</p>
@@ -200,6 +216,32 @@ impl PhysicalResourceBuilder {
         self.excluded = input;
         self
     }
+    /// <p>The type of input source.</p>
+    pub fn source_type(mut self, input: crate::types::ResourceSourceType) -> Self {
+        self.source_type = Some(input);
+        self
+    }
+    /// <p>The type of input source.</p>
+    pub fn set_source_type(
+        mut self,
+        input: std::option::Option<crate::types::ResourceSourceType>,
+    ) -> Self {
+        self.source_type = input;
+        self
+    }
+    /// <p>The name of the parent resource.</p>
+    pub fn parent_resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+        self.parent_resource_name = Some(input.into());
+        self
+    }
+    /// <p>The name of the parent resource.</p>
+    pub fn set_parent_resource_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.parent_resource_name = input;
+        self
+    }
     /// Consumes the builder and constructs a [`PhysicalResource`](crate::types::PhysicalResource).
     pub fn build(self) -> crate::types::PhysicalResource {
         crate::types::PhysicalResource {
@@ -210,6 +252,8 @@ impl PhysicalResourceBuilder {
             app_components: self.app_components,
             additional_info: self.additional_info,
             excluded: self.excluded,
+            source_type: self.source_type,
+            parent_resource_name: self.parent_resource_name,
         }
     }
 }

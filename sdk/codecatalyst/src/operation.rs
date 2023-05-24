@@ -40,6 +40,9 @@ pub mod get_user_details;
 /// Types for the `ListAccessTokens` operation.
 pub mod list_access_tokens;
 
+/// Types for the `ListDevEnvironmentSessions` operation.
+pub mod list_dev_environment_sessions;
+
 /// Types for the `ListDevEnvironments` operation.
 pub mod list_dev_environments;
 

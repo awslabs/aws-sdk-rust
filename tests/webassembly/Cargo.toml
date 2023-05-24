@@ -30,7 +30,7 @@ version = "0.55.2"
 [dependencies.aws-sdk-s3]
 path = "../../sdk/s3"
 default-features = false
-version = "0.27.0"
+version = "0.28.0"
 
 [dependencies.aws-smithy-client]
 path = "../../sdk/aws-smithy-client"

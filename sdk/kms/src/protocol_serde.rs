@@ -326,6 +326,8 @@ pub(crate) mod shape_key_metadata;
 
 pub(crate) mod shape_policy_name_list;
 
+pub(crate) mod shape_recipient_info;
+
 pub(crate) mod shape_signing_algorithm_spec_list;
 
 pub(crate) mod shape_tag;

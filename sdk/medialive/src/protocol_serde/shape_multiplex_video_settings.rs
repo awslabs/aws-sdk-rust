@@ -3,17 +3,17 @@ pub fn ser_multiplex_video_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MultiplexVideoSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.constant_bitrate != 0 {
+    if let Some(var_1) = &input.constant_bitrate {
         object.key("constantBitrate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.constant_bitrate).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.statmux_settings {
+    if let Some(var_2) = &input.statmux_settings {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("statmuxSettings").start_object();
-        crate::protocol_serde::shape_multiplex_statmux_video_settings::ser_multiplex_statmux_video_settings(&mut object_2, var_1)?;
-        object_2.finish();
+        let mut object_3 = object.key("statmuxSettings").start_object();
+        crate::protocol_serde::shape_multiplex_statmux_video_settings::ser_multiplex_statmux_video_settings(&mut object_3, var_2)?;
+        object_3.finish();
     }
     Ok(())
 }

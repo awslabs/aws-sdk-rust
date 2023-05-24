@@ -14,20 +14,20 @@ pub fn ser_apns_voip_sandbox_channel_request(
             .key("DefaultAuthenticationMethod")
             .string(var_3.as_str());
     }
-    if input.enabled {
-        object.key("Enabled").boolean(input.enabled);
+    if let Some(var_4) = &input.enabled {
+        object.key("Enabled").boolean(*var_4);
     }
-    if let Some(var_4) = &input.private_key {
-        object.key("PrivateKey").string(var_4.as_str());
+    if let Some(var_5) = &input.private_key {
+        object.key("PrivateKey").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.team_id {
-        object.key("TeamId").string(var_5.as_str());
+    if let Some(var_6) = &input.team_id {
+        object.key("TeamId").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.token_key {
-        object.key("TokenKey").string(var_6.as_str());
+    if let Some(var_7) = &input.token_key {
+        object.key("TokenKey").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.token_key_id {
-        object.key("TokenKeyId").string(var_7.as_str());
+    if let Some(var_8) = &input.token_key_id {
+        object.key("TokenKeyId").string(var_8.as_str());
     }
     Ok(())
 }

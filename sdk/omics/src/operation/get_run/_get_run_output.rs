@@ -74,6 +74,9 @@ pub struct GetRunOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p> The computational accelerator used to run the workflow. </p>
+    #[doc(hidden)]
+    pub accelerators: std::option::Option<crate::types::Accelerators>,
     _request_id: Option<String>,
 }
 impl GetRunOutput {
@@ -175,6 +178,10 @@ impl GetRunOutput {
     {
         self.tags.as_ref()
     }
+    /// <p> The computational accelerator used to run the workflow. </p>
+    pub fn accelerators(&self) -> std::option::Option<&crate::types::Accelerators> {
+        self.accelerators.as_ref()
+    }
 }
 impl aws_http::request_id::RequestId for GetRunOutput {
     fn request_id(&self) -> Option<&str> {
@@ -217,6 +224,7 @@ pub struct GetRunOutputBuilder {
     pub(crate) status_message: std::option::Option<std::string::String>,
     pub(crate) tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) accelerators: std::option::Option<crate::types::Accelerators>,
     _request_id: Option<String>,
 }
 impl GetRunOutputBuilder {
@@ -492,6 +500,19 @@ impl GetRunOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p> The computational accelerator used to run the workflow. </p>
+    pub fn accelerators(mut self, input: crate::types::Accelerators) -> Self {
+        self.accelerators = Some(input);
+        self
+    }
+    /// <p> The computational accelerator used to run the workflow. </p>
+    pub fn set_accelerators(
+        mut self,
+        input: std::option::Option<crate::types::Accelerators>,
+    ) -> Self {
+        self.accelerators = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -527,6 +548,7 @@ impl GetRunOutputBuilder {
             stop_time: self.stop_time,
             status_message: self.status_message,
             tags: self.tags,
+            accelerators: self.accelerators,
             _request_id: self._request_id,
         }
     }

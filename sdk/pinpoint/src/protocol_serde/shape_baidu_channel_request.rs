@@ -6,11 +6,11 @@ pub fn ser_baidu_channel_request(
     if let Some(var_1) = &input.api_key {
         object.key("ApiKey").string(var_1.as_str());
     }
-    if input.enabled {
-        object.key("Enabled").boolean(input.enabled);
+    if let Some(var_2) = &input.enabled {
+        object.key("Enabled").boolean(*var_2);
     }
-    if let Some(var_2) = &input.secret_key {
-        object.key("SecretKey").string(var_2.as_str());
+    if let Some(var_3) = &input.secret_key {
+        object.key("SecretKey").string(var_3.as_str());
     }
     Ok(())
 }

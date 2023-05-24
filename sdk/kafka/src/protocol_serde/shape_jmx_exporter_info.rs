@@ -3,10 +3,8 @@ pub fn ser_jmx_exporter_info(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JmxExporterInfo,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    {
-        object
-            .key("enabledInBroker")
-            .boolean(input.enabled_in_broker);
+    if let Some(var_1) = &input.enabled_in_broker {
+        object.key("enabledInBroker").boolean(*var_1);
     }
     Ok(())
 }

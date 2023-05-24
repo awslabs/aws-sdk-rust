@@ -9,10 +9,10 @@ pub struct RemixSettings {
     pub channel_mappings: std::option::Option<std::vec::Vec<crate::types::AudioChannelMapping>>,
     /// Number of input channels to be used.
     #[doc(hidden)]
-    pub channels_in: i32,
+    pub channels_in: std::option::Option<i32>,
     /// Number of output channels to be produced. Valid values: 1, 2, 4, 6, 8
     #[doc(hidden)]
-    pub channels_out: i32,
+    pub channels_out: std::option::Option<i32>,
 }
 impl RemixSettings {
     /// Mapping of input channels to output channels, with appropriate gain adjustments.
@@ -20,11 +20,11 @@ impl RemixSettings {
         self.channel_mappings.as_deref()
     }
     /// Number of input channels to be used.
-    pub fn channels_in(&self) -> i32 {
+    pub fn channels_in(&self) -> std::option::Option<i32> {
         self.channels_in
     }
     /// Number of output channels to be produced. Valid values: 1, 2, 4, 6, 8
-    pub fn channels_out(&self) -> i32 {
+    pub fn channels_out(&self) -> std::option::Option<i32> {
         self.channels_out
     }
 }
@@ -88,8 +88,8 @@ impl RemixSettingsBuilder {
     pub fn build(self) -> crate::types::RemixSettings {
         crate::types::RemixSettings {
             channel_mappings: self.channel_mappings,
-            channels_in: self.channels_in.unwrap_or_default(),
-            channels_out: self.channels_out.unwrap_or_default(),
+            channels_in: self.channels_in,
+            channels_out: self.channels_out,
         }
     }
 }

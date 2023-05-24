@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`id(impl Into<String>)`](crate::operation::describe_packaging_group::builders::DescribePackagingGroupFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_packaging_group::builders::DescribePackagingGroupFluentBuilder::set_id): The ID of a MediaPackage VOD PackagingGroup resource.
     /// - On success, responds with [`DescribePackagingGroupOutput`](crate::operation::describe_packaging_group::DescribePackagingGroupOutput) with field(s):
-    ///   - [`approximate_asset_count(i32)`](crate::operation::describe_packaging_group::DescribePackagingGroupOutput::approximate_asset_count): The approximate asset count of the PackagingGroup.
+    ///   - [`approximate_asset_count(Option<i32>)`](crate::operation::describe_packaging_group::DescribePackagingGroupOutput::approximate_asset_count): The approximate asset count of the PackagingGroup.
     ///   - [`arn(Option<String>)`](crate::operation::describe_packaging_group::DescribePackagingGroupOutput::arn): The ARN of the PackagingGroup.
     ///   - [`authorization(Option<Authorization>)`](crate::operation::describe_packaging_group::DescribePackagingGroupOutput::authorization): CDN Authorization credentials
     ///   - [`created_at(Option<String>)`](crate::operation::describe_packaging_group::DescribePackagingGroupOutput::created_at): The time the PackagingGroup was created.

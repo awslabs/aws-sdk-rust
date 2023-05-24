@@ -664,4 +664,20 @@ impl RestoreDBClusterFromS3FluentBuilder {
         self.inner = self.inner.set_master_user_secret_kms_key_id(input);
         self
     }
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+    /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> </p>
+    /// <p>Default: <code>aurora</code> </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+        self.inner = self.inner.storage_type(input.into());
+        self
+    }
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+    /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> </p>
+    /// <p>Default: <code>aurora</code> </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.inner = self.inner.set_storage_type(input);
+        self
+    }
 }

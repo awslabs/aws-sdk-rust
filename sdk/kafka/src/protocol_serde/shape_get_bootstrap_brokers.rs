@@ -218,6 +218,33 @@ pub(crate) fn de_get_bootstrap_brokers(
                             .transpose()?,
                         );
                     }
+                    "bootstrapBrokerStringVpcConnectivitySaslIam" => {
+                        builder = builder.set_bootstrap_broker_string_vpc_connectivity_sasl_iam(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    "bootstrapBrokerStringVpcConnectivitySaslScram" => {
+                        builder = builder.set_bootstrap_broker_string_vpc_connectivity_sasl_scram(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
+                    "bootstrapBrokerStringVpcConnectivityTls" => {
+                        builder = builder.set_bootstrap_broker_string_vpc_connectivity_tls(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

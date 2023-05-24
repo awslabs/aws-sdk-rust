@@ -6,25 +6,25 @@ pub fn ser_rtmp_output_settings(
     if let Some(var_1) = &input.certificate_mode {
         object.key("certificateMode").string(var_1.as_str());
     }
-    if input.connection_retry_interval != 0 {
+    if let Some(var_2) = &input.connection_retry_interval {
         object.key("connectionRetryInterval").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.connection_retry_interval).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.destination {
+    if let Some(var_3) = &input.destination {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("destination").start_object();
+        let mut object_4 = object.key("destination").start_object();
         crate::protocol_serde::shape_output_location_ref::ser_output_location_ref(
-            &mut object_3,
-            var_2,
+            &mut object_4,
+            var_3,
         )?;
-        object_3.finish();
+        object_4.finish();
     }
-    if input.num_retries != 0 {
+    if let Some(var_5) = &input.num_retries {
         object.key("numRetries").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.num_retries).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
     Ok(())

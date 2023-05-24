@@ -9,7 +9,7 @@ pub struct ExportJobResponse {
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The number of pieces that were processed successfully (completed) by the export job, as of the time of the request.</p>
     #[doc(hidden)]
-    pub completed_pieces: i32,
+    pub completed_pieces: std::option::Option<i32>,
     /// <p>The date, in ISO 8601 format, when the export job was completed.</p>
     #[doc(hidden)]
     pub completion_date: std::option::Option<std::string::String>,
@@ -21,7 +21,7 @@ pub struct ExportJobResponse {
     pub definition: std::option::Option<crate::types::ExportJobResource>,
     /// <p>The number of pieces that weren't processed successfully (failed) by the export job, as of the time of the request.</p>
     #[doc(hidden)]
-    pub failed_pieces: i32,
+    pub failed_pieces: std::option::Option<i32>,
     /// <p>An array of entries, one for each of the first 100 entries that weren't processed successfully (failed) by the export job, if any.</p>
     #[doc(hidden)]
     pub failures: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -33,13 +33,13 @@ pub struct ExportJobResponse {
     pub job_status: std::option::Option<crate::types::JobStatus>,
     /// <p>The total number of endpoint definitions that weren't processed successfully (failed) by the export job, typically because an error, such as a syntax error, occurred.</p>
     #[doc(hidden)]
-    pub total_failures: i32,
+    pub total_failures: std::option::Option<i32>,
     /// <p>The total number of pieces that must be processed to complete the export job. Each piece consists of an approximately equal portion of the endpoint definitions that are part of the export job.</p>
     #[doc(hidden)]
-    pub total_pieces: i32,
+    pub total_pieces: std::option::Option<i32>,
     /// <p>The total number of endpoint definitions that were processed by the export job.</p>
     #[doc(hidden)]
-    pub total_processed: i32,
+    pub total_processed: std::option::Option<i32>,
     /// <p>The job type. This value is EXPORT for export jobs.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -50,7 +50,7 @@ impl ExportJobResponse {
         self.application_id.as_deref()
     }
     /// <p>The number of pieces that were processed successfully (completed) by the export job, as of the time of the request.</p>
-    pub fn completed_pieces(&self) -> i32 {
+    pub fn completed_pieces(&self) -> std::option::Option<i32> {
         self.completed_pieces
     }
     /// <p>The date, in ISO 8601 format, when the export job was completed.</p>
@@ -66,7 +66,7 @@ impl ExportJobResponse {
         self.definition.as_ref()
     }
     /// <p>The number of pieces that weren't processed successfully (failed) by the export job, as of the time of the request.</p>
-    pub fn failed_pieces(&self) -> i32 {
+    pub fn failed_pieces(&self) -> std::option::Option<i32> {
         self.failed_pieces
     }
     /// <p>An array of entries, one for each of the first 100 entries that weren't processed successfully (failed) by the export job, if any.</p>
@@ -82,15 +82,15 @@ impl ExportJobResponse {
         self.job_status.as_ref()
     }
     /// <p>The total number of endpoint definitions that weren't processed successfully (failed) by the export job, typically because an error, such as a syntax error, occurred.</p>
-    pub fn total_failures(&self) -> i32 {
+    pub fn total_failures(&self) -> std::option::Option<i32> {
         self.total_failures
     }
     /// <p>The total number of pieces that must be processed to complete the export job. Each piece consists of an approximately equal portion of the endpoint definitions that are part of the export job.</p>
-    pub fn total_pieces(&self) -> i32 {
+    pub fn total_pieces(&self) -> std::option::Option<i32> {
         self.total_pieces
     }
     /// <p>The total number of endpoint definitions that were processed by the export job.</p>
-    pub fn total_processed(&self) -> i32 {
+    pub fn total_processed(&self) -> std::option::Option<i32> {
         self.total_processed
     }
     /// <p>The job type. This value is EXPORT for export jobs.</p>
@@ -270,17 +270,17 @@ impl ExportJobResponseBuilder {
     pub fn build(self) -> crate::types::ExportJobResponse {
         crate::types::ExportJobResponse {
             application_id: self.application_id,
-            completed_pieces: self.completed_pieces.unwrap_or_default(),
+            completed_pieces: self.completed_pieces,
             completion_date: self.completion_date,
             creation_date: self.creation_date,
             definition: self.definition,
-            failed_pieces: self.failed_pieces.unwrap_or_default(),
+            failed_pieces: self.failed_pieces,
             failures: self.failures,
             id: self.id,
             job_status: self.job_status,
-            total_failures: self.total_failures.unwrap_or_default(),
-            total_pieces: self.total_pieces.unwrap_or_default(),
-            total_processed: self.total_processed.unwrap_or_default(),
+            total_failures: self.total_failures,
+            total_pieces: self.total_pieces,
+            total_processed: self.total_processed,
             r#type: self.r#type,
         }
     }

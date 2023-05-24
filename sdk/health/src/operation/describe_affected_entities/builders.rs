@@ -5,7 +5,7 @@ pub use crate::operation::describe_affected_entities::_describe_affected_entitie
 
 /// Fluent builder constructing a request to `DescribeAffectedEntities`.
 ///
-/// <p>Returns a list of entities that have been affected by the specified events, based on the specified filter criteria. Entities can refer to individual customer resources, groups of customer resources, or any other construct, depending on the Amazon Web Services service. Events that have impact beyond that of the affected entities, or where the extent of impact is unknown, include at least one entity indicating this.</p>
+/// <p>Returns a list of entities that have been affected by the specified events, based on the specified filter criteria. Entities can refer to individual customer resources, groups of customer resources, or any other construct, depending on the Amazon Web Service. Events that have impact beyond that of the affected entities, or where the extent of impact is unknown, include at least one entity indicating this.</p>
 /// <p>At least one event ARN is required.</p> <note>
 /// <ul>
 /// <li> <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the next request to return more results.</p> </li>

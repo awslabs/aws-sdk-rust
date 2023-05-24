@@ -154,6 +154,8 @@ pub type DescribeTrustedAdvisorCheckRefreshStatusesErrorKind =
 pub enum DescribeTrustedAdvisorCheckRefreshStatusesError {
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::types::error::InternalServerError),
+    /// <p> You have exceeded the maximum allowed TPS (Transactions Per Second) for the operations. </p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -175,6 +177,7 @@ impl std::fmt::Display for DescribeTrustedAdvisorCheckRefreshStatusesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Self::InternalServerError(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -185,6 +188,9 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InternalServerError(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ThrottlingException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::Unhandled(_inner) => {
@@ -233,6 +239,7 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesError {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
             Self::InternalServerError(e) => e.meta(),
+            Self::ThrottlingException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
     }
@@ -240,11 +247,16 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesError {
     pub fn is_internal_server_error(&self) -> bool {
         matches!(self, Self::InternalServerError(_))
     }
+    /// Returns `true` if the error kind is `DescribeTrustedAdvisorCheckRefreshStatusesError::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(self, Self::ThrottlingException(_))
+    }
 }
 impl std::error::Error for DescribeTrustedAdvisorCheckRefreshStatusesError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
             Self::InternalServerError(_inner) => Some(_inner),
+            Self::ThrottlingException(_inner) => Some(_inner),
             Self::Unhandled(_inner) => Some(_inner),
         }
     }

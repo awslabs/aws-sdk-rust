@@ -12,31 +12,31 @@ pub fn ser_video_description(
         )?;
         object_2.finish();
     }
-    if input.height != 0 {
+    if let Some(var_3) = &input.height {
         object.key("height").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.height).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.name {
-        object.key("name").string(var_3.as_str());
+    if let Some(var_4) = &input.name {
+        object.key("name").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.respond_to_afd {
-        object.key("respondToAfd").string(var_4.as_str());
+    if let Some(var_5) = &input.respond_to_afd {
+        object.key("respondToAfd").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.scaling_behavior {
-        object.key("scalingBehavior").string(var_5.as_str());
+    if let Some(var_6) = &input.scaling_behavior {
+        object.key("scalingBehavior").string(var_6.as_str());
     }
-    if input.sharpness != 0 {
+    if let Some(var_7) = &input.sharpness {
         object.key("sharpness").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.sharpness).into()),
+            aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if input.width != 0 {
+    if let Some(var_8) = &input.width {
         object.key("width").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.width).into()),
+            aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
     Ok(())

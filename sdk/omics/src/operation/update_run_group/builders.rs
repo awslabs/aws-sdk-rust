@@ -114,4 +114,14 @@ impl UpdateRunGroupFluentBuilder {
         self.inner = self.inner.set_max_duration(input);
         self
     }
+    /// <p> The maximum GPUs that can be used by a run group. </p>
+    pub fn max_gpus(mut self, input: i32) -> Self {
+        self.inner = self.inner.max_gpus(input);
+        self
+    }
+    /// <p> The maximum GPUs that can be used by a run group. </p>
+    pub fn set_max_gpus(mut self, input: std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_max_gpus(input);
+        self
+    }
 }

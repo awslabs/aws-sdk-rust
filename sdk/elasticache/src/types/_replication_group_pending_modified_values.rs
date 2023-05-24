@@ -30,6 +30,9 @@ pub struct ReplicationGroupPendingModifiedValues {
     /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
     #[doc(hidden)]
     pub transit_encryption_mode: std::option::Option<crate::types::TransitEncryptionMode>,
+    /// <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode configuration and set the cluster mode to Enabled.</p>
+    #[doc(hidden)]
+    pub cluster_mode: std::option::Option<crate::types::ClusterMode>,
 }
 impl ReplicationGroupPendingModifiedValues {
     /// <p>The primary cluster ID that is applied immediately (if <code>--apply-immediately</code> was specified), or during the next maintenance window.</p>
@@ -70,6 +73,10 @@ impl ReplicationGroupPendingModifiedValues {
     ) -> std::option::Option<&crate::types::TransitEncryptionMode> {
         self.transit_encryption_mode.as_ref()
     }
+    /// <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode configuration and set the cluster mode to Enabled.</p>
+    pub fn cluster_mode(&self) -> std::option::Option<&crate::types::ClusterMode> {
+        self.cluster_mode.as_ref()
+    }
 }
 impl ReplicationGroupPendingModifiedValues {
     /// Creates a new builder-style object to manufacture [`ReplicationGroupPendingModifiedValues`](crate::types::ReplicationGroupPendingModifiedValues).
@@ -92,6 +99,7 @@ pub struct ReplicationGroupPendingModifiedValuesBuilder {
         std::option::Option<std::vec::Vec<crate::types::PendingLogDeliveryConfiguration>>,
     pub(crate) transit_encryption_enabled: std::option::Option<bool>,
     pub(crate) transit_encryption_mode: std::option::Option<crate::types::TransitEncryptionMode>,
+    pub(crate) cluster_mode: std::option::Option<crate::types::ClusterMode>,
 }
 impl ReplicationGroupPendingModifiedValuesBuilder {
     /// <p>The primary cluster ID that is applied immediately (if <code>--apply-immediately</code> was specified), or during the next maintenance window.</p>
@@ -207,6 +215,19 @@ impl ReplicationGroupPendingModifiedValuesBuilder {
         self.transit_encryption_mode = input;
         self
     }
+    /// <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode configuration and set the cluster mode to Enabled.</p>
+    pub fn cluster_mode(mut self, input: crate::types::ClusterMode) -> Self {
+        self.cluster_mode = Some(input);
+        self
+    }
+    /// <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode configuration and set the cluster mode to Enabled.</p>
+    pub fn set_cluster_mode(
+        mut self,
+        input: std::option::Option<crate::types::ClusterMode>,
+    ) -> Self {
+        self.cluster_mode = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ReplicationGroupPendingModifiedValues`](crate::types::ReplicationGroupPendingModifiedValues).
     pub fn build(self) -> crate::types::ReplicationGroupPendingModifiedValues {
         crate::types::ReplicationGroupPendingModifiedValues {
@@ -218,6 +239,7 @@ impl ReplicationGroupPendingModifiedValuesBuilder {
             log_delivery_configurations: self.log_delivery_configurations,
             transit_encryption_enabled: self.transit_encryption_enabled,
             transit_encryption_mode: self.transit_encryption_mode,
+            cluster_mode: self.cluster_mode,
         }
     }
 }

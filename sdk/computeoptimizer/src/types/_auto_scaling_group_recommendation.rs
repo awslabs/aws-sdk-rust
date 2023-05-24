@@ -54,6 +54,8 @@ pub struct AutoScalingGroupRecommendation {
     /// <li> <p> <code>NGINX</code> - Infers that NGINX might be running on the instances.</p> </li>
     /// <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instances.</p> </li>
     /// <li> <p> <code>Redis</code> - Infers that Redis might be running on the instances.</p> </li>
+    /// <li> <p> <code>Kafka</code> - Infers that Kafka might be running on the instance.</p> </li>
+    /// <li> <p> <code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub inferred_workload_types:
@@ -127,6 +129,8 @@ impl AutoScalingGroupRecommendation {
     /// <li> <p> <code>NGINX</code> - Infers that NGINX might be running on the instances.</p> </li>
     /// <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instances.</p> </li>
     /// <li> <p> <code>Redis</code> - Infers that Redis might be running on the instances.</p> </li>
+    /// <li> <p> <code>Kafka</code> - Infers that Kafka might be running on the instance.</p> </li>
+    /// <li> <p> <code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p> </li>
     /// </ul>
     pub fn inferred_workload_types(
         &self,
@@ -345,6 +349,8 @@ impl AutoScalingGroupRecommendationBuilder {
     /// <li> <p> <code>NGINX</code> - Infers that NGINX might be running on the instances.</p> </li>
     /// <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instances.</p> </li>
     /// <li> <p> <code>Redis</code> - Infers that Redis might be running on the instances.</p> </li>
+    /// <li> <p> <code>Kafka</code> - Infers that Kafka might be running on the instance.</p> </li>
+    /// <li> <p> <code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p> </li>
     /// </ul>
     pub fn inferred_workload_types(mut self, input: crate::types::InferredWorkloadType) -> Self {
         let mut v = self.inferred_workload_types.unwrap_or_default();
@@ -362,6 +368,8 @@ impl AutoScalingGroupRecommendationBuilder {
     /// <li> <p> <code>NGINX</code> - Infers that NGINX might be running on the instances.</p> </li>
     /// <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instances.</p> </li>
     /// <li> <p> <code>Redis</code> - Infers that Redis might be running on the instances.</p> </li>
+    /// <li> <p> <code>Kafka</code> - Infers that Kafka might be running on the instance.</p> </li>
+    /// <li> <p> <code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p> </li>
     /// </ul>
     pub fn set_inferred_workload_types(
         mut self,

@@ -34,6 +34,12 @@ pub struct DecryptInput {
     /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric KMS key. The default value, <code>SYMMETRIC_DEFAULT</code>, represents the only supported algorithm that is valid for symmetric encryption KMS keys.</p>
     #[doc(hidden)]
     pub encryption_algorithm: std::option::Option<crate::types::EncryptionAlgorithmSpec>,
+    /// <p>A signed <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave-how.html#term-attestdoc">attestation document</a> from an Amazon Web Services Nitro enclave and the encryption algorithm to use with the enclave's public key. The only valid encryption algorithm is <code>RSAES_OAEP_SHA_256</code>. </p>
+    /// <p>This parameter only supports attestation documents for Amazon Web Services Nitro Enclaves. To include this parameter, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK.</p>
+    /// <p>When you use this parameter, instead of returning the plaintext data, KMS encrypts the plaintext data with the public key in the attestation document, and returns the resulting ciphertext in the <code>CiphertextForRecipient</code> field in the response. This ciphertext can be decrypted only with the private key in the enclave. The <code>Plaintext</code> field in the response is null or empty.</p>
+    /// <p>For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub recipient: std::option::Option<crate::types::RecipientInfo>,
 }
 impl DecryptInput {
     /// <p>Ciphertext to be decrypted. The blob includes metadata.</p>
@@ -76,6 +82,13 @@ impl DecryptInput {
     ) -> std::option::Option<&crate::types::EncryptionAlgorithmSpec> {
         self.encryption_algorithm.as_ref()
     }
+    /// <p>A signed <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave-how.html#term-attestdoc">attestation document</a> from an Amazon Web Services Nitro enclave and the encryption algorithm to use with the enclave's public key. The only valid encryption algorithm is <code>RSAES_OAEP_SHA_256</code>. </p>
+    /// <p>This parameter only supports attestation documents for Amazon Web Services Nitro Enclaves. To include this parameter, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK.</p>
+    /// <p>When you use this parameter, instead of returning the plaintext data, KMS encrypts the plaintext data with the public key in the attestation document, and returns the resulting ciphertext in the <code>CiphertextForRecipient</code> field in the response. This ciphertext can be decrypted only with the private key in the enclave. The <code>Plaintext</code> field in the response is null or empty.</p>
+    /// <p>For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn recipient(&self) -> std::option::Option<&crate::types::RecipientInfo> {
+        self.recipient.as_ref()
+    }
 }
 impl DecryptInput {
     /// Creates a new builder-style object to manufacture [`DecryptInput`](crate::operation::decrypt::DecryptInput).
@@ -94,6 +107,7 @@ pub struct DecryptInputBuilder {
     pub(crate) grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) key_id: std::option::Option<std::string::String>,
     pub(crate) encryption_algorithm: std::option::Option<crate::types::EncryptionAlgorithmSpec>,
+    pub(crate) recipient: std::option::Option<crate::types::RecipientInfo>,
 }
 impl DecryptInputBuilder {
     /// <p>Ciphertext to be decrypted. The blob includes metadata.</p>
@@ -206,6 +220,25 @@ impl DecryptInputBuilder {
         self.encryption_algorithm = input;
         self
     }
+    /// <p>A signed <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave-how.html#term-attestdoc">attestation document</a> from an Amazon Web Services Nitro enclave and the encryption algorithm to use with the enclave's public key. The only valid encryption algorithm is <code>RSAES_OAEP_SHA_256</code>. </p>
+    /// <p>This parameter only supports attestation documents for Amazon Web Services Nitro Enclaves. To include this parameter, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK.</p>
+    /// <p>When you use this parameter, instead of returning the plaintext data, KMS encrypts the plaintext data with the public key in the attestation document, and returns the resulting ciphertext in the <code>CiphertextForRecipient</code> field in the response. This ciphertext can be decrypted only with the private key in the enclave. The <code>Plaintext</code> field in the response is null or empty.</p>
+    /// <p>For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn recipient(mut self, input: crate::types::RecipientInfo) -> Self {
+        self.recipient = Some(input);
+        self
+    }
+    /// <p>A signed <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave-how.html#term-attestdoc">attestation document</a> from an Amazon Web Services Nitro enclave and the encryption algorithm to use with the enclave's public key. The only valid encryption algorithm is <code>RSAES_OAEP_SHA_256</code>. </p>
+    /// <p>This parameter only supports attestation documents for Amazon Web Services Nitro Enclaves. To include this parameter, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK.</p>
+    /// <p>When you use this parameter, instead of returning the plaintext data, KMS encrypts the plaintext data with the public key in the attestation document, and returns the resulting ciphertext in the <code>CiphertextForRecipient</code> field in the response. This ciphertext can be decrypted only with the private key in the enclave. The <code>Plaintext</code> field in the response is null or empty.</p>
+    /// <p>For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn set_recipient(
+        mut self,
+        input: std::option::Option<crate::types::RecipientInfo>,
+    ) -> Self {
+        self.recipient = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DecryptInput`](crate::operation::decrypt::DecryptInput).
     pub fn build(
         self,
@@ -219,6 +252,7 @@ impl DecryptInputBuilder {
             grant_tokens: self.grant_tokens,
             key_id: self.key_id,
             encryption_algorithm: self.encryption_algorithm,
+            recipient: self.recipient,
         })
     }
 }

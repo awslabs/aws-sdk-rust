@@ -15,6 +15,12 @@ pub fn ser_production_variant_serverless_config(
             aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
+    if let Some(var_3) = &input.provisioned_concurrency {
+        object.key("ProvisionedConcurrency").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_3).into()),
+        );
+    }
     Ok(())
 }
 
@@ -54,6 +60,15 @@ where
                             }
                             "MaxConcurrency" => {
                                 builder = builder.set_max_concurrency(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                                );
+                            }
+                            "ProvisionedConcurrency" => {
+                                builder = builder.set_provisioned_concurrency(
                                     aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?

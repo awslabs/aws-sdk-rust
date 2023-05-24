@@ -214,73 +214,71 @@ pub fn ser_dash_package(
         crate::protocol_serde::shape_dash_encryption::ser_dash_encryption(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if input.include_iframe_only_stream {
-        object
-            .key("includeIframeOnlyStream")
-            .boolean(input.include_iframe_only_stream);
+    if let Some(var_7) = &input.include_iframe_only_stream {
+        object.key("includeIframeOnlyStream").boolean(*var_7);
     }
-    if let Some(var_7) = &input.manifest_layout {
-        object.key("manifestLayout").string(var_7.as_str());
+    if let Some(var_8) = &input.manifest_layout {
+        object.key("manifestLayout").string(var_8.as_str());
     }
-    if input.manifest_window_seconds != 0 {
+    if let Some(var_9) = &input.manifest_window_seconds {
         object.key("manifestWindowSeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.manifest_window_seconds).into()),
+            aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if input.min_buffer_time_seconds != 0 {
+    if let Some(var_10) = &input.min_buffer_time_seconds {
         object.key("minBufferTimeSeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.min_buffer_time_seconds).into()),
+            aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if input.min_update_period_seconds != 0 {
+    if let Some(var_11) = &input.min_update_period_seconds {
         object.key("minUpdatePeriodSeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.min_update_period_seconds).into()),
+            aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_8) = &input.period_triggers {
-        let mut array_9 = object.key("periodTriggers").start_array();
-        for item_10 in var_8 {
+    if let Some(var_12) = &input.period_triggers {
+        let mut array_13 = object.key("periodTriggers").start_array();
+        for item_14 in var_12 {
             {
-                array_9.value().string(item_10.as_str());
+                array_13.value().string(item_14.as_str());
             }
         }
-        array_9.finish();
+        array_13.finish();
     }
-    if let Some(var_11) = &input.profile {
-        object.key("profile").string(var_11.as_str());
+    if let Some(var_15) = &input.profile {
+        object.key("profile").string(var_15.as_str());
     }
-    if input.segment_duration_seconds != 0 {
+    if let Some(var_16) = &input.segment_duration_seconds {
         object.key("segmentDurationSeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.segment_duration_seconds).into()),
+            aws_smithy_types::Number::NegInt((*var_16).into()),
         );
     }
-    if let Some(var_12) = &input.segment_template_format {
-        object.key("segmentTemplateFormat").string(var_12.as_str());
+    if let Some(var_17) = &input.segment_template_format {
+        object.key("segmentTemplateFormat").string(var_17.as_str());
     }
-    if let Some(var_13) = &input.stream_selection {
+    if let Some(var_18) = &input.stream_selection {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("streamSelection").start_object();
+        let mut object_19 = object.key("streamSelection").start_object();
         crate::protocol_serde::shape_stream_selection::ser_stream_selection(
-            &mut object_14,
-            var_13,
+            &mut object_19,
+            var_18,
         )?;
-        object_14.finish();
+        object_19.finish();
     }
-    if input.suggested_presentation_delay_seconds != 0 {
+    if let Some(var_20) = &input.suggested_presentation_delay_seconds {
         object.key("suggestedPresentationDelaySeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.suggested_presentation_delay_seconds).into()),
+            aws_smithy_types::Number::NegInt((*var_20).into()),
         );
     }
-    if let Some(var_15) = &input.utc_timing {
-        object.key("utcTiming").string(var_15.as_str());
+    if let Some(var_21) = &input.utc_timing {
+        object.key("utcTiming").string(var_21.as_str());
     }
-    if let Some(var_16) = &input.utc_timing_uri {
-        object.key("utcTimingUri").string(var_16.as_str());
+    if let Some(var_22) = &input.utc_timing_uri {
+        object.key("utcTimingUri").string(var_22.as_str());
     }
     Ok(())
 }

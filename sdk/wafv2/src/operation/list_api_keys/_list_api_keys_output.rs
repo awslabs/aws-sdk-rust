@@ -10,7 +10,6 @@ pub struct ListApiKeysOutput {
     #[doc(hidden)]
     pub api_key_summaries: std::option::Option<std::vec::Vec<crate::types::ApiKeySummary>>,
     /// <p>The CAPTCHA application integration URL, for use in your JavaScript implementation. </p>
-    /// <p>For information about how to use this in your CAPTCHA JavaScript integration, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
     #[doc(hidden)]
     pub application_integration_url: std::option::Option<std::string::String>,
     _request_id: Option<String>,
@@ -25,7 +24,6 @@ impl ListApiKeysOutput {
         self.api_key_summaries.as_deref()
     }
     /// <p>The CAPTCHA application integration URL, for use in your JavaScript implementation. </p>
-    /// <p>For information about how to use this in your CAPTCHA JavaScript integration, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn application_integration_url(&self) -> std::option::Option<&str> {
         self.application_integration_url.as_deref()
     }
@@ -82,13 +80,11 @@ impl ListApiKeysOutputBuilder {
         self
     }
     /// <p>The CAPTCHA application integration URL, for use in your JavaScript implementation. </p>
-    /// <p>For information about how to use this in your CAPTCHA JavaScript integration, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn application_integration_url(mut self, input: impl Into<std::string::String>) -> Self {
         self.application_integration_url = Some(input.into());
         self
     }
     /// <p>The CAPTCHA application integration URL, for use in your JavaScript implementation. </p>
-    /// <p>For information about how to use this in your CAPTCHA JavaScript integration, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn set_application_integration_url(
         mut self,
         input: std::option::Option<std::string::String>,

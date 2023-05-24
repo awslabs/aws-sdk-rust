@@ -570,23 +570,21 @@ impl CreateCacheClusterFluentBuilder {
         self
     }
     /// <p>A flag that enables in-transit encryption when set to true.</p>
-    /// <p> Only available when creating a cache cluster in an Amazon VPC using Memcached version 1.6.12 or later.</p>
     pub fn transit_encryption_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.transit_encryption_enabled(input);
         self
     }
     /// <p>A flag that enables in-transit encryption when set to true.</p>
-    /// <p> Only available when creating a cache cluster in an Amazon VPC using Memcached version 1.6.12 or later.</p>
     pub fn set_transit_encryption_enabled(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_transit_encryption_enabled(input);
         self
     }
-    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>. </p>
+    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>. </p>
     pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
         self.inner = self.inner.network_type(input);
         self
     }
-    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>. </p>
+    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>. </p>
     pub fn set_network_type(
         mut self,
         input: std::option::Option<crate::types::NetworkType>,
@@ -594,12 +592,12 @@ impl CreateCacheClusterFluentBuilder {
         self.inner = self.inner.set_network_type(input);
         self
     }
-    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn ip_discovery(mut self, input: crate::types::IpDiscovery) -> Self {
         self.inner = self.inner.ip_discovery(input);
         self
     }
-    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn set_ip_discovery(
         mut self,
         input: std::option::Option<crate::types::IpDiscovery>,

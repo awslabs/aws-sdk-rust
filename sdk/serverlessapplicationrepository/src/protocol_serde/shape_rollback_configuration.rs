@@ -3,26 +3,26 @@ pub fn ser_rollback_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RollbackConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.monitoring_time_in_minutes != 0 {
+    if let Some(var_1) = &input.monitoring_time_in_minutes {
         object.key("monitoringTimeInMinutes").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.monitoring_time_in_minutes).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.rollback_triggers {
-        let mut array_2 = object.key("rollbackTriggers").start_array();
-        for item_3 in var_1 {
+    if let Some(var_2) = &input.rollback_triggers {
+        let mut array_3 = object.key("rollbackTriggers").start_array();
+        for item_4 in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
+                let mut object_5 = array_3.value().start_object();
                 crate::protocol_serde::shape_rollback_trigger::ser_rollback_trigger(
-                    &mut object_4,
-                    item_3,
+                    &mut object_5,
+                    item_4,
                 )?;
-                object_4.finish();
+                object_5.finish();
             }
         }
-        array_2.finish();
+        array_3.finish();
     }
     Ok(())
 }

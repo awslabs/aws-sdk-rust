@@ -25,7 +25,7 @@ pub struct ScheduledInstanceAvailability {
     /// <p>The minimum term. The only possible value is 365 days.</p>
     #[doc(hidden)]
     pub min_term_duration_in_days: std::option::Option<i32>,
-    /// <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
+    /// <p>The network platform.</p>
     #[doc(hidden)]
     pub network_platform: std::option::Option<std::string::String>,
     /// <p>The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p>
@@ -73,7 +73,7 @@ impl ScheduledInstanceAvailability {
     pub fn min_term_duration_in_days(&self) -> std::option::Option<i32> {
         self.min_term_duration_in_days
     }
-    /// <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
+    /// <p>The network platform.</p>
     pub fn network_platform(&self) -> std::option::Option<&str> {
         self.network_platform.as_deref()
     }
@@ -200,12 +200,12 @@ impl ScheduledInstanceAvailabilityBuilder {
         self.min_term_duration_in_days = input;
         self
     }
-    /// <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
+    /// <p>The network platform.</p>
     pub fn network_platform(mut self, input: impl Into<std::string::String>) -> Self {
         self.network_platform = Some(input.into());
         self
     }
-    /// <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
+    /// <p>The network platform.</p>
     pub fn set_network_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.network_platform = input;
         self

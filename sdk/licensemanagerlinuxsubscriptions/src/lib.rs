@@ -29,7 +29,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.55.2"
-//! aws-sdk-licensemanagerlinuxsubscriptions = "0.5.0"
+//! aws-sdk-licensemanagerlinuxsubscriptions = "0.6.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

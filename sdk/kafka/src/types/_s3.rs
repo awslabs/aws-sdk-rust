@@ -8,7 +8,7 @@ pub struct S3 {
     pub bucket: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub enabled: bool,
+    pub enabled: std::option::Option<bool>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ impl S3 {
         self.bucket.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -77,7 +77,7 @@ impl S3Builder {
     pub fn build(self) -> crate::types::S3 {
         crate::types::S3 {
             bucket: self.bucket,
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled,
             prefix: self.prefix,
         }
     }

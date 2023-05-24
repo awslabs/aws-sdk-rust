@@ -164,10 +164,10 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     #[doc(hidden)]
     pub db_cluster_instance_class: std::option::Option<std::string::String>,
-    /// <p>Specifies the storage type to be associated with the each DB instance in the Multi-AZ DB cluster.</p>
-    /// <p>Valid values: <code>io1</code> </p>
-    /// <p>When specified, a value for the <code>Iops</code> parameter is required.</p>
-    /// <p>Default: <code>io1</code> </p>
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+    /// <p>When specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is required.</p>
+    /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
+    /// <p>Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     #[doc(hidden)]
     pub storage_type: std::option::Option<std::string::String>,
@@ -397,10 +397,10 @@ impl RestoreDbClusterFromSnapshotInput {
     pub fn db_cluster_instance_class(&self) -> std::option::Option<&str> {
         self.db_cluster_instance_class.as_deref()
     }
-    /// <p>Specifies the storage type to be associated with the each DB instance in the Multi-AZ DB cluster.</p>
-    /// <p>Valid values: <code>io1</code> </p>
-    /// <p>When specified, a value for the <code>Iops</code> parameter is required.</p>
-    /// <p>Default: <code>io1</code> </p>
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+    /// <p>When specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is required.</p>
+    /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
+    /// <p>Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn storage_type(&self) -> std::option::Option<&str> {
         self.storage_type.as_deref()
@@ -971,19 +971,19 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
         self.db_cluster_instance_class = input;
         self
     }
-    /// <p>Specifies the storage type to be associated with the each DB instance in the Multi-AZ DB cluster.</p>
-    /// <p>Valid values: <code>io1</code> </p>
-    /// <p>When specified, a value for the <code>Iops</code> parameter is required.</p>
-    /// <p>Default: <code>io1</code> </p>
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+    /// <p>When specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is required.</p>
+    /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
+    /// <p>Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.storage_type = Some(input.into());
         self
     }
-    /// <p>Specifies the storage type to be associated with the each DB instance in the Multi-AZ DB cluster.</p>
-    /// <p>Valid values: <code>io1</code> </p>
-    /// <p>When specified, a value for the <code>Iops</code> parameter is required.</p>
-    /// <p>Default: <code>io1</code> </p>
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+    /// <p>When specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is required.</p>
+    /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
+    /// <p>Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.storage_type = input;

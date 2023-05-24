@@ -7,7 +7,6 @@ pub use crate::operation::get_object_acl::_get_object_acl_input::GetObjectAclInp
 ///
 /// <p>Returns the access control list (ACL) of an object. To use this operation, you must have <code>s3:GetObjectAcl</code> permissions or <code>READ_ACP</code> access to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#acl-access-policy-permission-mapping">Mapping of ACL permissions and access policy permissions</a> in the <i>Amazon S3 User Guide</i> </p>
 /// <p>This action is not supported by Amazon S3 on Outposts.</p>
-/// <p> <b>Versioning</b> </p>
 /// <p>By default, GET returns ACL information about the current version of an object. To return ACL information about a different version, use the versionId subresource.</p> <note>
 /// <p>If your bucket uses the bucket owner enforced setting for S3 Object Ownership, requests to read ACLs are still supported and return the <code>bucket-owner-full-control</code> ACL with the owner being the account that created the bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html"> Controlling object ownership and disabling ACLs</a> in the <i>Amazon S3 User Guide</i>.</p>
 /// </note>

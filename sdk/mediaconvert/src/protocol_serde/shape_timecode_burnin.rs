@@ -3,17 +3,17 @@ pub fn ser_timecode_burnin(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TimecodeBurnin,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.font_size != 0 {
+    if let Some(var_1) = &input.font_size {
         object.key("fontSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.font_size).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.position {
-        object.key("position").string(var_1.as_str());
+    if let Some(var_2) = &input.position {
+        object.key("position").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.prefix {
-        object.key("prefix").string(var_2.as_str());
+    if let Some(var_3) = &input.prefix {
+        object.key("prefix").string(var_3.as_str());
     }
     Ok(())
 }

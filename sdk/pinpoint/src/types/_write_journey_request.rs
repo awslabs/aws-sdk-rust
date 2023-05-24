@@ -19,7 +19,7 @@ pub struct WriteJourneyRequest {
     pub limits: std::option::Option<crate::types::JourneyLimits>,
     /// <p>Specifies whether the journey's scheduled start and end times use each participant's local time. To base the schedule on each participant's local time, set this value to true.</p>
     #[doc(hidden)]
-    pub local_time: bool,
+    pub local_time: std::option::Option<bool>,
     /// <p>The name of the journey. A journey name can contain a maximum of 150 characters. The characters can be alphanumeric characters or symbols, such as underscores (_) or hyphens (-). A journey name can't contain any spaces.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -55,16 +55,16 @@ pub struct WriteJourneyRequest {
     pub state: std::option::Option<crate::types::State>,
     /// <p>Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.</p>
     #[doc(hidden)]
-    pub wait_for_quiet_time: bool,
+    pub wait_for_quiet_time: std::option::Option<bool>,
     /// <p>Indicates whether the journey participants should be refreshed when a segment is updated.</p>
     #[doc(hidden)]
-    pub refresh_on_segment_update: bool,
+    pub refresh_on_segment_update: std::option::Option<bool>,
     /// <p>The channel-specific configurations for the journey.</p>
     #[doc(hidden)]
     pub journey_channel_settings: std::option::Option<crate::types::JourneyChannelSettings>,
     /// <p>Indicates if journey has Advance Quiet Time enabled. This flag should be set to true in order to allow using OpenHours and ClosedDays.</p>
     #[doc(hidden)]
-    pub sending_schedule: bool,
+    pub sending_schedule: std::option::Option<bool>,
     /// <p>The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
     #[doc(hidden)]
     pub open_hours: std::option::Option<crate::types::OpenHours>,
@@ -93,7 +93,7 @@ impl WriteJourneyRequest {
         self.limits.as_ref()
     }
     /// <p>Specifies whether the journey's scheduled start and end times use each participant's local time. To base the schedule on each participant's local time, set this value to true.</p>
-    pub fn local_time(&self) -> bool {
+    pub fn local_time(&self) -> std::option::Option<bool> {
         self.local_time
     }
     /// <p>The name of the journey. A journey name can contain a maximum of 150 characters. The characters can be alphanumeric characters or symbols, such as underscores (_) or hyphens (-). A journey name can't contain any spaces.</p>
@@ -137,11 +137,11 @@ impl WriteJourneyRequest {
         self.state.as_ref()
     }
     /// <p>Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.</p>
-    pub fn wait_for_quiet_time(&self) -> bool {
+    pub fn wait_for_quiet_time(&self) -> std::option::Option<bool> {
         self.wait_for_quiet_time
     }
     /// <p>Indicates whether the journey participants should be refreshed when a segment is updated.</p>
-    pub fn refresh_on_segment_update(&self) -> bool {
+    pub fn refresh_on_segment_update(&self) -> std::option::Option<bool> {
         self.refresh_on_segment_update
     }
     /// <p>The channel-specific configurations for the journey.</p>
@@ -151,7 +151,7 @@ impl WriteJourneyRequest {
         self.journey_channel_settings.as_ref()
     }
     /// <p>Indicates if journey has Advance Quiet Time enabled. This flag should be set to true in order to allow using OpenHours and ClosedDays.</p>
-    pub fn sending_schedule(&self) -> bool {
+    pub fn sending_schedule(&self) -> std::option::Option<bool> {
         self.sending_schedule
     }
     /// <p>The time when journey allow to send messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
@@ -436,7 +436,7 @@ impl WriteJourneyRequestBuilder {
             creation_date: self.creation_date,
             last_modified_date: self.last_modified_date,
             limits: self.limits,
-            local_time: self.local_time.unwrap_or_default(),
+            local_time: self.local_time,
             name: self.name,
             quiet_time: self.quiet_time,
             refresh_frequency: self.refresh_frequency,
@@ -444,10 +444,10 @@ impl WriteJourneyRequestBuilder {
             start_activity: self.start_activity,
             start_condition: self.start_condition,
             state: self.state,
-            wait_for_quiet_time: self.wait_for_quiet_time.unwrap_or_default(),
-            refresh_on_segment_update: self.refresh_on_segment_update.unwrap_or_default(),
+            wait_for_quiet_time: self.wait_for_quiet_time,
+            refresh_on_segment_update: self.refresh_on_segment_update,
             journey_channel_settings: self.journey_channel_settings,
-            sending_schedule: self.sending_schedule.unwrap_or_default(),
+            sending_schedule: self.sending_schedule,
             open_hours: self.open_hours,
             closed_days: self.closed_days,
         }

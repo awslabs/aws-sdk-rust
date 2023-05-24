@@ -6,25 +6,25 @@
 pub struct BucketCountPolicyAllowsUnencryptedObjectUploads {
     /// <p>The total number of buckets that don't have a bucket policy or have a bucket policy that doesn't require server-side encryption of new objects. If a bucket policy exists, the policy doesn't require PutObject requests to include a valid server-side encryption header: the x-amz-server-side-encryption header with a value of AES256 or aws:kms, or the x-amz-server-side-encryption-customer-algorithm header with a value of AES256.</p>
     #[doc(hidden)]
-    pub allows_unencrypted_object_uploads: i64,
+    pub allows_unencrypted_object_uploads: std::option::Option<i64>,
     /// <p>The total number of buckets whose bucket policies require server-side encryption of new objects. PutObject requests for these buckets must include a valid server-side encryption header: the x-amz-server-side-encryption header with a value of AES256 or aws:kms, or the x-amz-server-side-encryption-customer-algorithm header with a value of AES256.</p>
     #[doc(hidden)]
-    pub denies_unencrypted_object_uploads: i64,
+    pub denies_unencrypted_object_uploads: std::option::Option<i64>,
     /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate server-side encryption requirements for. Macie can't determine whether the bucket policies for these buckets require server-side encryption of new objects.</p>
     #[doc(hidden)]
-    pub unknown: i64,
+    pub unknown: std::option::Option<i64>,
 }
 impl BucketCountPolicyAllowsUnencryptedObjectUploads {
     /// <p>The total number of buckets that don't have a bucket policy or have a bucket policy that doesn't require server-side encryption of new objects. If a bucket policy exists, the policy doesn't require PutObject requests to include a valid server-side encryption header: the x-amz-server-side-encryption header with a value of AES256 or aws:kms, or the x-amz-server-side-encryption-customer-algorithm header with a value of AES256.</p>
-    pub fn allows_unencrypted_object_uploads(&self) -> i64 {
+    pub fn allows_unencrypted_object_uploads(&self) -> std::option::Option<i64> {
         self.allows_unencrypted_object_uploads
     }
     /// <p>The total number of buckets whose bucket policies require server-side encryption of new objects. PutObject requests for these buckets must include a valid server-side encryption header: the x-amz-server-side-encryption header with a value of AES256 or aws:kms, or the x-amz-server-side-encryption-customer-algorithm header with a value of AES256.</p>
-    pub fn denies_unencrypted_object_uploads(&self) -> i64 {
+    pub fn denies_unencrypted_object_uploads(&self) -> std::option::Option<i64> {
         self.denies_unencrypted_object_uploads
     }
     /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate server-side encryption requirements for. Macie can't determine whether the bucket policies for these buckets require server-side encryption of new objects.</p>
-    pub fn unknown(&self) -> i64 {
+    pub fn unknown(&self) -> std::option::Option<i64> {
         self.unknown
     }
 }
@@ -84,13 +84,9 @@ impl BucketCountPolicyAllowsUnencryptedObjectUploadsBuilder {
     /// Consumes the builder and constructs a [`BucketCountPolicyAllowsUnencryptedObjectUploads`](crate::types::BucketCountPolicyAllowsUnencryptedObjectUploads).
     pub fn build(self) -> crate::types::BucketCountPolicyAllowsUnencryptedObjectUploads {
         crate::types::BucketCountPolicyAllowsUnencryptedObjectUploads {
-            allows_unencrypted_object_uploads: self
-                .allows_unencrypted_object_uploads
-                .unwrap_or_default(),
-            denies_unencrypted_object_uploads: self
-                .denies_unencrypted_object_uploads
-                .unwrap_or_default(),
-            unknown: self.unknown.unwrap_or_default(),
+            allows_unencrypted_object_uploads: self.allows_unencrypted_object_uploads,
+            denies_unencrypted_object_uploads: self.denies_unencrypted_object_uploads,
+            unknown: self.unknown,
         }
     }
 }

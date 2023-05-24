@@ -22,7 +22,7 @@ pub struct MsSmoothGroupSettings {
     pub encryption: std::option::Option<crate::types::MsSmoothEncryptionSettings>,
     /// Specify how you want MediaConvert to determine the fragment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Fragment length (FragmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
     #[doc(hidden)]
-    pub fragment_length: i32,
+    pub fragment_length: std::option::Option<i32>,
     /// Specify how you want MediaConvert to determine the fragment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Fragment length (FragmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
     #[doc(hidden)]
     pub fragment_length_control: std::option::Option<crate::types::MsSmoothFragmentLengthControl>,
@@ -56,7 +56,7 @@ impl MsSmoothGroupSettings {
         self.encryption.as_ref()
     }
     /// Specify how you want MediaConvert to determine the fragment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Fragment length (FragmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
-    pub fn fragment_length(&self) -> i32 {
+    pub fn fragment_length(&self) -> std::option::Option<i32> {
         self.fragment_length
     }
     /// Specify how you want MediaConvert to determine the fragment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Fragment length (FragmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
@@ -210,7 +210,7 @@ impl MsSmoothGroupSettingsBuilder {
             destination: self.destination,
             destination_settings: self.destination_settings,
             encryption: self.encryption,
-            fragment_length: self.fragment_length.unwrap_or_default(),
+            fragment_length: self.fragment_length,
             fragment_length_control: self.fragment_length_control,
             manifest_encoding: self.manifest_encoding,
         }

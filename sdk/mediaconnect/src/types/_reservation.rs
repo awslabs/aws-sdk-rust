@@ -9,7 +9,7 @@ pub struct Reservation {
     pub currency_code: std::option::Option<std::string::String>,
     /// The length of time that this reservation is active. MediaConnect defines this value in the offering.
     #[doc(hidden)]
-    pub duration: i32,
+    pub duration: std::option::Option<i32>,
     /// The unit of measurement for the duration of the reservation. MediaConnect defines this value in the offering.
     #[doc(hidden)]
     pub duration_units: std::option::Option<crate::types::DurationUnits>,
@@ -50,7 +50,7 @@ impl Reservation {
         self.currency_code.as_deref()
     }
     /// The length of time that this reservation is active. MediaConnect defines this value in the offering.
-    pub fn duration(&self) -> i32 {
+    pub fn duration(&self) -> std::option::Option<i32> {
         self.duration
     }
     /// The unit of measurement for the duration of the reservation. MediaConnect defines this value in the offering.
@@ -272,7 +272,7 @@ impl ReservationBuilder {
     pub fn build(self) -> crate::types::Reservation {
         crate::types::Reservation {
             currency_code: self.currency_code,
-            duration: self.duration.unwrap_or_default(),
+            duration: self.duration,
             duration_units: self.duration_units,
             end: self.end,
             offering_arn: self.offering_arn,

@@ -84,4 +84,27 @@ impl GetEndpointFluentBuilder {
         self.inner = self.inner.set_certificate_arn(input);
         self
     }
+    /// <p>The device role ARN of the device. This is an optional parameter.</p>
+    pub fn device_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+        self.inner = self.inner.device_role_arn(input.into());
+        self
+    }
+    /// <p>The device role ARN of the device. This is an optional parameter.</p>
+    pub fn set_device_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.inner = self.inner.set_device_role_arn(input);
+        self
+    }
+    /// <p>The authentication method used during the device connection.</p>
+    pub fn authentication_method(mut self, input: crate::types::AuthenticationMethod) -> Self {
+        self.inner = self.inner.authentication_method(input);
+        self
+    }
+    /// <p>The authentication method used during the device connection.</p>
+    pub fn set_authentication_method(
+        mut self,
+        input: std::option::Option<crate::types::AuthenticationMethod>,
+    ) -> Self {
+        self.inner = self.inner.set_authentication_method(input);
+        self
+    }
 }

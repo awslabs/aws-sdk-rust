@@ -12,7 +12,7 @@ pub struct ConfigurationRevision {
     pub description: std::option::Option<std::string::String>,
     /// <p>The revision number.</p>
     #[doc(hidden)]
-    pub revision: i64,
+    pub revision: std::option::Option<i64>,
 }
 impl ConfigurationRevision {
     /// <p>The time when the configuration revision was created.</p>
@@ -24,7 +24,7 @@ impl ConfigurationRevision {
         self.description.as_deref()
     }
     /// <p>The revision number.</p>
-    pub fn revision(&self) -> i64 {
+    pub fn revision(&self) -> std::option::Option<i64> {
         self.revision
     }
 }
@@ -82,7 +82,7 @@ impl ConfigurationRevisionBuilder {
         crate::types::ConfigurationRevision {
             creation_time: self.creation_time,
             description: self.description,
-            revision: self.revision.unwrap_or_default(),
+            revision: self.revision,
         }
     }
 }

@@ -32,6 +32,8 @@ pub(crate) mod shape_describe_managed_endpoint;
 
 pub(crate) mod shape_describe_virtual_cluster;
 
+pub(crate) mod shape_get_managed_endpoint_session_credentials;
+
 pub(crate) mod shape_list_job_runs;
 
 pub(crate) mod shape_list_job_templates;
@@ -62,7 +64,11 @@ pub(crate) mod shape_create_managed_endpoint_input;
 
 pub(crate) mod shape_create_virtual_cluster_input;
 
+pub(crate) mod shape_get_managed_endpoint_session_credentials_input;
+
 pub(crate) mod shape_internal_server_exception;
+
+pub(crate) mod shape_request_throttled_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
 
@@ -75,6 +81,8 @@ pub(crate) mod shape_validation_exception;
 pub(crate) mod shape_configuration_overrides;
 
 pub(crate) mod shape_container_provider;
+
+pub(crate) mod shape_credentials;
 
 pub(crate) mod shape_endpoint;
 

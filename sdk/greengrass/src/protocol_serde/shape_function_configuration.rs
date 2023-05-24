@@ -18,23 +18,23 @@ pub fn ser_function_configuration(
     if let Some(var_5) = &input.executable {
         object.key("Executable").string(var_5.as_str());
     }
-    if input.memory_size != 0 {
+    if let Some(var_6) = &input.memory_size {
         object.key("MemorySize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.memory_size).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if input.pinned {
-        object.key("Pinned").boolean(input.pinned);
+    if let Some(var_7) = &input.pinned {
+        object.key("Pinned").boolean(*var_7);
     }
-    if input.timeout != 0 {
+    if let Some(var_8) = &input.timeout {
         object.key("Timeout").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.timeout).into()),
+            aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_6) = &input.function_runtime_override {
-        object.key("FunctionRuntimeOverride").string(var_6.as_str());
+    if let Some(var_9) = &input.function_runtime_override {
+        object.key("FunctionRuntimeOverride").string(var_9.as_str());
     }
     Ok(())
 }

@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ExistingObjectReplication {
-    /// <p></p>
+    /// <p>Specifies whether Amazon S3 replicates existing source bucket objects. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::ExistingObjectReplicationStatus>,
 }
 impl ExistingObjectReplication {
-    /// <p></p>
+    /// <p>Specifies whether Amazon S3 replicates existing source bucket objects. </p>
     pub fn status(&self) -> std::option::Option<&crate::types::ExistingObjectReplicationStatus> {
         self.status.as_ref()
     }
@@ -28,12 +28,12 @@ pub struct ExistingObjectReplicationBuilder {
     pub(crate) status: std::option::Option<crate::types::ExistingObjectReplicationStatus>,
 }
 impl ExistingObjectReplicationBuilder {
-    /// <p></p>
+    /// <p>Specifies whether Amazon S3 replicates existing source bucket objects. </p>
     pub fn status(mut self, input: crate::types::ExistingObjectReplicationStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p></p>
+    /// <p>Specifies whether Amazon S3 replicates existing source bucket objects. </p>
     pub fn set_status(
         mut self,
         input: std::option::Option<crate::types::ExistingObjectReplicationStatus>,

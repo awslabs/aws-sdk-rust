@@ -19,6 +19,15 @@ pub struct ReadSetFilter {
     /// <p>The filter's end date.</p>
     #[doc(hidden)]
     pub created_before: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> The read set source's sample ID. </p>
+    #[doc(hidden)]
+    pub sample_id: std::option::Option<std::string::String>,
+    /// <p> The read set source's subject ID. </p>
+    #[doc(hidden)]
+    pub subject_id: std::option::Option<std::string::String>,
+    /// <p> Where the source originated. </p>
+    #[doc(hidden)]
+    pub generated_from: std::option::Option<std::string::String>,
 }
 impl ReadSetFilter {
     /// <p>A name to filter on.</p>
@@ -41,6 +50,18 @@ impl ReadSetFilter {
     pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
+    /// <p> The read set source's sample ID. </p>
+    pub fn sample_id(&self) -> std::option::Option<&str> {
+        self.sample_id.as_deref()
+    }
+    /// <p> The read set source's subject ID. </p>
+    pub fn subject_id(&self) -> std::option::Option<&str> {
+        self.subject_id.as_deref()
+    }
+    /// <p> Where the source originated. </p>
+    pub fn generated_from(&self) -> std::option::Option<&str> {
+        self.generated_from.as_deref()
+    }
 }
 impl ReadSetFilter {
     /// Creates a new builder-style object to manufacture [`ReadSetFilter`](crate::types::ReadSetFilter).
@@ -58,6 +79,9 @@ pub struct ReadSetFilterBuilder {
     pub(crate) reference_arn: std::option::Option<std::string::String>,
     pub(crate) created_after: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) created_before: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) sample_id: std::option::Option<std::string::String>,
+    pub(crate) subject_id: std::option::Option<std::string::String>,
+    pub(crate) generated_from: std::option::Option<std::string::String>,
 }
 impl ReadSetFilterBuilder {
     /// <p>A name to filter on.</p>
@@ -116,6 +140,36 @@ impl ReadSetFilterBuilder {
         self.created_before = input;
         self
     }
+    /// <p> The read set source's sample ID. </p>
+    pub fn sample_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.sample_id = Some(input.into());
+        self
+    }
+    /// <p> The read set source's sample ID. </p>
+    pub fn set_sample_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.sample_id = input;
+        self
+    }
+    /// <p> The read set source's subject ID. </p>
+    pub fn subject_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.subject_id = Some(input.into());
+        self
+    }
+    /// <p> The read set source's subject ID. </p>
+    pub fn set_subject_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.subject_id = input;
+        self
+    }
+    /// <p> Where the source originated. </p>
+    pub fn generated_from(mut self, input: impl Into<std::string::String>) -> Self {
+        self.generated_from = Some(input.into());
+        self
+    }
+    /// <p> Where the source originated. </p>
+    pub fn set_generated_from(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.generated_from = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ReadSetFilter`](crate::types::ReadSetFilter).
     pub fn build(self) -> crate::types::ReadSetFilter {
         crate::types::ReadSetFilter {
@@ -124,6 +178,9 @@ impl ReadSetFilterBuilder {
             reference_arn: self.reference_arn,
             created_after: self.created_after,
             created_before: self.created_before,
+            sample_id: self.sample_id,
+            subject_id: self.subject_id,
+            generated_from: self.generated_from,
         }
     }
 }

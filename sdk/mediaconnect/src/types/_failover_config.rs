@@ -9,7 +9,7 @@ pub struct FailoverConfig {
     pub failover_mode: std::option::Option<crate::types::FailoverMode>,
     /// Search window time to look for dash-7 packets
     #[doc(hidden)]
-    pub recovery_window: i32,
+    pub recovery_window: std::option::Option<i32>,
     /// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
     #[doc(hidden)]
     pub source_priority: std::option::Option<crate::types::SourcePriority>,
@@ -23,7 +23,7 @@ impl FailoverConfig {
         self.failover_mode.as_ref()
     }
     /// Search window time to look for dash-7 packets
-    pub fn recovery_window(&self) -> i32 {
+    pub fn recovery_window(&self) -> std::option::Option<i32> {
         self.recovery_window
     }
     /// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
@@ -102,7 +102,7 @@ impl FailoverConfigBuilder {
     pub fn build(self) -> crate::types::FailoverConfig {
         crate::types::FailoverConfig {
             failover_mode: self.failover_mode,
-            recovery_window: self.recovery_window.unwrap_or_default(),
+            recovery_window: self.recovery_window,
             source_priority: self.source_priority,
             state: self.state,
         }

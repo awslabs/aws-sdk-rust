@@ -30,6 +30,7 @@
 //!   - GetSubscription, which returns information about the Amazon Web Services account used for billing purposes and the billing plan for the space.
 //!   - GetUserDetails, which returns information about a user in Amazon CodeCatalyst.
 //!   - ListDevEnvironments, which retrieves a list of Dev Environments in a project.
+//!   - ListDevEnvironmentSessions, which retrieves a list of active Dev Environment sessions in a project.
 //!   - ListProjects, which retrieves a list of projects in a space.
 //!   - ListSourceRepositories, which retrieves a list of source repositories in a project.
 //!   - ListSourceRepositoryBranches, which retrieves a list of branches in a source repository.
@@ -58,7 +59,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.55.2"
-//! aws-sdk-codecatalyst = "0.5.0"
+//! aws-sdk-codecatalyst = "0.6.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

@@ -24,6 +24,16 @@ pub struct GetBootstrapBrokersOutput {
     /// <p>A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.</p>
     #[doc(hidden)]
     pub bootstrap_broker_string_public_sasl_iam: std::option::Option<std::string::String>,
+    /// <p>A string containing one or more DNS names (or IP) and TLS port pairs for VPC connectivity.</p>
+    #[doc(hidden)]
+    pub bootstrap_broker_string_vpc_connectivity_tls: std::option::Option<std::string::String>,
+    /// <p>A string containing one or more DNS names (or IP) and SASL/SCRAM port pairs for VPC connectivity.</p>
+    #[doc(hidden)]
+    pub bootstrap_broker_string_vpc_connectivity_sasl_scram:
+        std::option::Option<std::string::String>,
+    /// <p>A string containing one or more DNS names (or IP) and SASL/IAM port pairs for VPC connectivity.</p>
+    #[doc(hidden)]
+    pub bootstrap_broker_string_vpc_connectivity_sasl_iam: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl GetBootstrapBrokersOutput {
@@ -55,6 +65,20 @@ impl GetBootstrapBrokersOutput {
     pub fn bootstrap_broker_string_public_sasl_iam(&self) -> std::option::Option<&str> {
         self.bootstrap_broker_string_public_sasl_iam.as_deref()
     }
+    /// <p>A string containing one or more DNS names (or IP) and TLS port pairs for VPC connectivity.</p>
+    pub fn bootstrap_broker_string_vpc_connectivity_tls(&self) -> std::option::Option<&str> {
+        self.bootstrap_broker_string_vpc_connectivity_tls.as_deref()
+    }
+    /// <p>A string containing one or more DNS names (or IP) and SASL/SCRAM port pairs for VPC connectivity.</p>
+    pub fn bootstrap_broker_string_vpc_connectivity_sasl_scram(&self) -> std::option::Option<&str> {
+        self.bootstrap_broker_string_vpc_connectivity_sasl_scram
+            .as_deref()
+    }
+    /// <p>A string containing one or more DNS names (or IP) and SASL/IAM port pairs for VPC connectivity.</p>
+    pub fn bootstrap_broker_string_vpc_connectivity_sasl_iam(&self) -> std::option::Option<&str> {
+        self.bootstrap_broker_string_vpc_connectivity_sasl_iam
+            .as_deref()
+    }
 }
 impl aws_http::request_id::RequestId for GetBootstrapBrokersOutput {
     fn request_id(&self) -> Option<&str> {
@@ -81,6 +105,12 @@ pub struct GetBootstrapBrokersOutputBuilder {
     pub(crate) bootstrap_broker_string_public_tls: std::option::Option<std::string::String>,
     pub(crate) bootstrap_broker_string_public_sasl_scram: std::option::Option<std::string::String>,
     pub(crate) bootstrap_broker_string_public_sasl_iam: std::option::Option<std::string::String>,
+    pub(crate) bootstrap_broker_string_vpc_connectivity_tls:
+        std::option::Option<std::string::String>,
+    pub(crate) bootstrap_broker_string_vpc_connectivity_sasl_scram:
+        std::option::Option<std::string::String>,
+    pub(crate) bootstrap_broker_string_vpc_connectivity_sasl_iam:
+        std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl GetBootstrapBrokersOutputBuilder {
@@ -190,6 +220,54 @@ impl GetBootstrapBrokersOutputBuilder {
         self.bootstrap_broker_string_public_sasl_iam = input;
         self
     }
+    /// <p>A string containing one or more DNS names (or IP) and TLS port pairs for VPC connectivity.</p>
+    pub fn bootstrap_broker_string_vpc_connectivity_tls(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
+        self.bootstrap_broker_string_vpc_connectivity_tls = Some(input.into());
+        self
+    }
+    /// <p>A string containing one or more DNS names (or IP) and TLS port pairs for VPC connectivity.</p>
+    pub fn set_bootstrap_broker_string_vpc_connectivity_tls(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.bootstrap_broker_string_vpc_connectivity_tls = input;
+        self
+    }
+    /// <p>A string containing one or more DNS names (or IP) and SASL/SCRAM port pairs for VPC connectivity.</p>
+    pub fn bootstrap_broker_string_vpc_connectivity_sasl_scram(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
+        self.bootstrap_broker_string_vpc_connectivity_sasl_scram = Some(input.into());
+        self
+    }
+    /// <p>A string containing one or more DNS names (or IP) and SASL/SCRAM port pairs for VPC connectivity.</p>
+    pub fn set_bootstrap_broker_string_vpc_connectivity_sasl_scram(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.bootstrap_broker_string_vpc_connectivity_sasl_scram = input;
+        self
+    }
+    /// <p>A string containing one or more DNS names (or IP) and SASL/IAM port pairs for VPC connectivity.</p>
+    pub fn bootstrap_broker_string_vpc_connectivity_sasl_iam(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
+        self.bootstrap_broker_string_vpc_connectivity_sasl_iam = Some(input.into());
+        self
+    }
+    /// <p>A string containing one or more DNS names (or IP) and SASL/IAM port pairs for VPC connectivity.</p>
+    pub fn set_bootstrap_broker_string_vpc_connectivity_sasl_iam(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.bootstrap_broker_string_vpc_connectivity_sasl_iam = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -210,6 +288,12 @@ impl GetBootstrapBrokersOutputBuilder {
             bootstrap_broker_string_public_sasl_scram: self
                 .bootstrap_broker_string_public_sasl_scram,
             bootstrap_broker_string_public_sasl_iam: self.bootstrap_broker_string_public_sasl_iam,
+            bootstrap_broker_string_vpc_connectivity_tls: self
+                .bootstrap_broker_string_vpc_connectivity_tls,
+            bootstrap_broker_string_vpc_connectivity_sasl_scram: self
+                .bootstrap_broker_string_vpc_connectivity_sasl_scram,
+            bootstrap_broker_string_vpc_connectivity_sasl_iam: self
+                .bootstrap_broker_string_vpc_connectivity_sasl_iam,
             _request_id: self._request_id,
         }
     }

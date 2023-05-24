@@ -71,6 +71,8 @@ pub use crate::types::_aggregation_type::AggregationTypeBuilder;
 
 pub use crate::types::_configuration::ConfigurationBuilder;
 
+pub use crate::types::_tls_config::TlsConfigBuilder;
+
 pub use crate::types::_authorizer_config::AuthorizerConfigBuilder;
 
 pub use crate::types::_registration_config::RegistrationConfigBuilder;

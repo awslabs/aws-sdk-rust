@@ -19,7 +19,7 @@ pub struct ScheduledInstance {
     /// <p>The instance type.</p>
     #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
-    /// <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
+    /// <p>The network platform.</p>
     #[doc(hidden)]
     pub network_platform: std::option::Option<std::string::String>,
     /// <p>The time for the next schedule to start.</p>
@@ -71,7 +71,7 @@ impl ScheduledInstance {
     pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
     }
-    /// <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
+    /// <p>The network platform.</p>
     pub fn network_platform(&self) -> std::option::Option<&str> {
         self.network_platform.as_deref()
     }
@@ -196,12 +196,12 @@ impl ScheduledInstanceBuilder {
         self.instance_type = input;
         self
     }
-    /// <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
+    /// <p>The network platform.</p>
     pub fn network_platform(mut self, input: impl Into<std::string::String>) -> Self {
         self.network_platform = Some(input.into());
         self
     }
-    /// <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
+    /// <p>The network platform.</p>
     pub fn set_network_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.network_platform = input;
         self

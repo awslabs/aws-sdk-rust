@@ -28,5 +28,11 @@ pub fn ser_generate_data_key_pair_input(
         }
         array_8.finish();
     }
+    if let Some(var_10) = &input.recipient {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("Recipient").start_object();
+        crate::protocol_serde::shape_recipient_info::ser_recipient_info(&mut object_11, var_10)?;
+        object_11.finish();
+    }
     Ok(())
 }

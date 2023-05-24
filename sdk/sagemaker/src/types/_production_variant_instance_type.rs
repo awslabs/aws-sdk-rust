@@ -84,6 +84,10 @@
 ///     ProductionVariantInstanceType::MlInf12Xlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlInf16Xlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlInf1Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlInf224Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlInf248Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlInf28Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlInf2Xlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlM410Xlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlM416Xlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlM42Xlarge => { /* ... */ },
@@ -153,6 +157,8 @@
 ///     ProductionVariantInstanceType::MlT2Large => { /* ... */ },
 ///     ProductionVariantInstanceType::MlT2Medium => { /* ... */ },
 ///     ProductionVariantInstanceType::MlT2Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlTrn12Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlTrn132Xlarge => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -331,6 +337,14 @@ pub enum ProductionVariantInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlInf1Xlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MlInf224Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlInf248Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlInf28Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlInf2Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     MlM410Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlM416Xlarge,
@@ -468,6 +482,10 @@ pub enum ProductionVariantInstanceType {
     MlT2Medium,
     #[allow(missing_docs)] // documentation missing in model
     MlT2Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlTrn12Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlTrn132Xlarge,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -546,6 +564,10 @@ impl std::convert::From<&str> for ProductionVariantInstanceType {
             "ml.inf1.2xlarge" => ProductionVariantInstanceType::MlInf12Xlarge,
             "ml.inf1.6xlarge" => ProductionVariantInstanceType::MlInf16Xlarge,
             "ml.inf1.xlarge" => ProductionVariantInstanceType::MlInf1Xlarge,
+            "ml.inf2.24xlarge" => ProductionVariantInstanceType::MlInf224Xlarge,
+            "ml.inf2.48xlarge" => ProductionVariantInstanceType::MlInf248Xlarge,
+            "ml.inf2.8xlarge" => ProductionVariantInstanceType::MlInf28Xlarge,
+            "ml.inf2.xlarge" => ProductionVariantInstanceType::MlInf2Xlarge,
             "ml.m4.10xlarge" => ProductionVariantInstanceType::MlM410Xlarge,
             "ml.m4.16xlarge" => ProductionVariantInstanceType::MlM416Xlarge,
             "ml.m4.2xlarge" => ProductionVariantInstanceType::MlM42Xlarge,
@@ -615,6 +637,8 @@ impl std::convert::From<&str> for ProductionVariantInstanceType {
             "ml.t2.large" => ProductionVariantInstanceType::MlT2Large,
             "ml.t2.medium" => ProductionVariantInstanceType::MlT2Medium,
             "ml.t2.xlarge" => ProductionVariantInstanceType::MlT2Xlarge,
+            "ml.trn1.2xlarge" => ProductionVariantInstanceType::MlTrn12Xlarge,
+            "ml.trn1.32xlarge" => ProductionVariantInstanceType::MlTrn132Xlarge,
             other => ProductionVariantInstanceType::Unknown(
                 crate::primitives::UnknownVariantValue(other.to_owned()),
             ),
@@ -704,6 +728,10 @@ impl ProductionVariantInstanceType {
             ProductionVariantInstanceType::MlInf12Xlarge => "ml.inf1.2xlarge",
             ProductionVariantInstanceType::MlInf16Xlarge => "ml.inf1.6xlarge",
             ProductionVariantInstanceType::MlInf1Xlarge => "ml.inf1.xlarge",
+            ProductionVariantInstanceType::MlInf224Xlarge => "ml.inf2.24xlarge",
+            ProductionVariantInstanceType::MlInf248Xlarge => "ml.inf2.48xlarge",
+            ProductionVariantInstanceType::MlInf28Xlarge => "ml.inf2.8xlarge",
+            ProductionVariantInstanceType::MlInf2Xlarge => "ml.inf2.xlarge",
             ProductionVariantInstanceType::MlM410Xlarge => "ml.m4.10xlarge",
             ProductionVariantInstanceType::MlM416Xlarge => "ml.m4.16xlarge",
             ProductionVariantInstanceType::MlM42Xlarge => "ml.m4.2xlarge",
@@ -773,6 +801,8 @@ impl ProductionVariantInstanceType {
             ProductionVariantInstanceType::MlT2Large => "ml.t2.large",
             ProductionVariantInstanceType::MlT2Medium => "ml.t2.medium",
             ProductionVariantInstanceType::MlT2Xlarge => "ml.t2.xlarge",
+            ProductionVariantInstanceType::MlTrn12Xlarge => "ml.trn1.2xlarge",
+            ProductionVariantInstanceType::MlTrn132Xlarge => "ml.trn1.32xlarge",
             ProductionVariantInstanceType::Unknown(value) => value.as_str(),
         }
     }
@@ -851,6 +881,10 @@ impl ProductionVariantInstanceType {
             "ml.inf1.2xlarge",
             "ml.inf1.6xlarge",
             "ml.inf1.xlarge",
+            "ml.inf2.24xlarge",
+            "ml.inf2.48xlarge",
+            "ml.inf2.8xlarge",
+            "ml.inf2.xlarge",
             "ml.m4.10xlarge",
             "ml.m4.16xlarge",
             "ml.m4.2xlarge",
@@ -920,6 +954,8 @@ impl ProductionVariantInstanceType {
             "ml.t2.large",
             "ml.t2.medium",
             "ml.t2.xlarge",
+            "ml.trn1.2xlarge",
+            "ml.trn1.32xlarge",
         ]
     }
 }

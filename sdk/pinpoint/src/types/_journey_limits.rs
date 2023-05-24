@@ -6,28 +6,28 @@
 pub struct JourneyLimits {
     /// <p>The maximum number of messages that the journey can send to a single participant during a 24-hour period. The maximum value is 100.</p>
     #[doc(hidden)]
-    pub daily_cap: i32,
+    pub daily_cap: std::option::Option<i32>,
     /// <p>The maximum number of times that a participant can enter the journey. The maximum value is 100. To allow participants to enter the journey an unlimited number of times, set this value to 0.</p>
     #[doc(hidden)]
-    pub endpoint_reentry_cap: i32,
+    pub endpoint_reentry_cap: std::option::Option<i32>,
     /// <p>The maximum number of messages that the journey can send each second.</p>
     #[doc(hidden)]
-    pub messages_per_second: i32,
+    pub messages_per_second: std::option::Option<i32>,
     /// <p>Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601 format, such as PT1H. </p>
     #[doc(hidden)]
     pub endpoint_reentry_interval: std::option::Option<std::string::String>,
 }
 impl JourneyLimits {
     /// <p>The maximum number of messages that the journey can send to a single participant during a 24-hour period. The maximum value is 100.</p>
-    pub fn daily_cap(&self) -> i32 {
+    pub fn daily_cap(&self) -> std::option::Option<i32> {
         self.daily_cap
     }
     /// <p>The maximum number of times that a participant can enter the journey. The maximum value is 100. To allow participants to enter the journey an unlimited number of times, set this value to 0.</p>
-    pub fn endpoint_reentry_cap(&self) -> i32 {
+    pub fn endpoint_reentry_cap(&self) -> std::option::Option<i32> {
         self.endpoint_reentry_cap
     }
     /// <p>The maximum number of messages that the journey can send each second.</p>
-    pub fn messages_per_second(&self) -> i32 {
+    pub fn messages_per_second(&self) -> std::option::Option<i32> {
         self.messages_per_second
     }
     /// <p>Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601 format, such as PT1H. </p>
@@ -98,9 +98,9 @@ impl JourneyLimitsBuilder {
     /// Consumes the builder and constructs a [`JourneyLimits`](crate::types::JourneyLimits).
     pub fn build(self) -> crate::types::JourneyLimits {
         crate::types::JourneyLimits {
-            daily_cap: self.daily_cap.unwrap_or_default(),
-            endpoint_reentry_cap: self.endpoint_reentry_cap.unwrap_or_default(),
-            messages_per_second: self.messages_per_second.unwrap_or_default(),
+            daily_cap: self.daily_cap,
+            endpoint_reentry_cap: self.endpoint_reentry_cap,
+            messages_per_second: self.messages_per_second,
             endpoint_reentry_interval: self.endpoint_reentry_interval,
         }
     }

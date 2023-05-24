@@ -6,11 +6,11 @@
 pub struct AudioPidSelection {
     /// Selects a specific PID from within a source.
     #[doc(hidden)]
-    pub pid: i32,
+    pub pid: std::option::Option<i32>,
 }
 impl AudioPidSelection {
     /// Selects a specific PID from within a source.
-    pub fn pid(&self) -> i32 {
+    pub fn pid(&self) -> std::option::Option<i32> {
         self.pid
     }
 }
@@ -40,8 +40,6 @@ impl AudioPidSelectionBuilder {
     }
     /// Consumes the builder and constructs a [`AudioPidSelection`](crate::types::AudioPidSelection).
     pub fn build(self) -> crate::types::AudioPidSelection {
-        crate::types::AudioPidSelection {
-            pid: self.pid.unwrap_or_default(),
-        }
+        crate::types::AudioPidSelection { pid: self.pid }
     }
 }

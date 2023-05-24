@@ -13,7 +13,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct StartTimerDecisionAttributes {
     /// <p> The unique ID of the timer.</p>
-    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     #[doc(hidden)]
     pub timer_id: std::option::Option<std::string::String>,
     /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
@@ -26,7 +26,7 @@ pub struct StartTimerDecisionAttributes {
 }
 impl StartTimerDecisionAttributes {
     /// <p> The unique ID of the timer.</p>
-    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     pub fn timer_id(&self) -> std::option::Option<&str> {
         self.timer_id.as_deref()
     }
@@ -57,13 +57,13 @@ pub struct StartTimerDecisionAttributesBuilder {
 }
 impl StartTimerDecisionAttributesBuilder {
     /// <p> The unique ID of the timer.</p>
-    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     pub fn timer_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.timer_id = Some(input.into());
         self
     }
     /// <p> The unique ID of the timer.</p>
-    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     pub fn set_timer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.timer_id = input;
         self

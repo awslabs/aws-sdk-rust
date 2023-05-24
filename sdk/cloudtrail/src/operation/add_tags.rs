@@ -169,6 +169,8 @@ pub type AddTagsErrorKind = AddTagsError;
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddTagsError {
+    /// <p>This exception is thrown when the specified value of <code>ChannelARN</code> is not valid.</p>
+    ChannelArnInvalidException(crate::types::error::ChannelArnInvalidException),
     /// <p>This exception is thrown when CloudTrail cannot find the specified channel.</p>
     ChannelNotFoundException(crate::types::error::ChannelNotFoundException),
     /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
@@ -179,6 +181,8 @@ pub enum AddTagsError {
     CloudTrailArnInvalidException(crate::types::error::CloudTrailArnInvalidException),
     /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource, or because another operation is modifying the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>
     ConflictException(crate::types::error::ConflictException),
+    /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
+    EventDataStoreArnInvalidException(crate::types::error::EventDataStoreArnInvalidException),
     /// <p>The specified event data store was not found.</p>
     EventDataStoreNotFoundException(crate::types::error::EventDataStoreNotFoundException),
     /// <p>The event data store is inactive.</p>
@@ -230,9 +234,11 @@ impl aws_smithy_http::result::CreateUnhandledError for AddTagsError {
 impl std::fmt::Display for AddTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Self::ChannelArnInvalidException(_inner) => _inner.fmt(f),
             Self::ChannelNotFoundException(_inner) => _inner.fmt(f),
             Self::CloudTrailArnInvalidException(_inner) => _inner.fmt(f),
             Self::ConflictException(_inner) => _inner.fmt(f),
+            Self::EventDataStoreArnInvalidException(_inner) => _inner.fmt(f),
             Self::EventDataStoreNotFoundException(_inner) => _inner.fmt(f),
             Self::InactiveEventDataStoreException(_inner) => _inner.fmt(f),
             Self::InvalidTagParameterException(_inner) => _inner.fmt(f),
@@ -251,6 +257,9 @@ impl std::fmt::Display for AddTagsError {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AddTagsError {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ChannelArnInvalidException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::ChannelNotFoundException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
@@ -258,6 +267,9 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AddTagsError {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ConflictException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::EventDataStoreArnInvalidException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::EventDataStoreNotFoundException(_inner) => {
@@ -338,9 +350,11 @@ impl AddTagsError {
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::ChannelArnInvalidException(e) => e.meta(),
             Self::ChannelNotFoundException(e) => e.meta(),
             Self::CloudTrailArnInvalidException(e) => e.meta(),
             Self::ConflictException(e) => e.meta(),
+            Self::EventDataStoreArnInvalidException(e) => e.meta(),
             Self::EventDataStoreNotFoundException(e) => e.meta(),
             Self::InactiveEventDataStoreException(e) => e.meta(),
             Self::InvalidTagParameterException(e) => e.meta(),
@@ -355,6 +369,10 @@ impl AddTagsError {
             Self::Unhandled(e) => e.meta(),
         }
     }
+    /// Returns `true` if the error kind is `AddTagsError::ChannelArnInvalidException`.
+    pub fn is_channel_arn_invalid_exception(&self) -> bool {
+        matches!(self, Self::ChannelArnInvalidException(_))
+    }
     /// Returns `true` if the error kind is `AddTagsError::ChannelNotFoundException`.
     pub fn is_channel_not_found_exception(&self) -> bool {
         matches!(self, Self::ChannelNotFoundException(_))
@@ -366,6 +384,10 @@ impl AddTagsError {
     /// Returns `true` if the error kind is `AddTagsError::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(self, Self::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `AddTagsError::EventDataStoreArnInvalidException`.
+    pub fn is_event_data_store_arn_invalid_exception(&self) -> bool {
+        matches!(self, Self::EventDataStoreArnInvalidException(_))
     }
     /// Returns `true` if the error kind is `AddTagsError::EventDataStoreNotFoundException`.
     pub fn is_event_data_store_not_found_exception(&self) -> bool {
@@ -415,9 +437,11 @@ impl AddTagsError {
 impl std::error::Error for AddTagsError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
+            Self::ChannelArnInvalidException(_inner) => Some(_inner),
             Self::ChannelNotFoundException(_inner) => Some(_inner),
             Self::CloudTrailArnInvalidException(_inner) => Some(_inner),
             Self::ConflictException(_inner) => Some(_inner),
+            Self::EventDataStoreArnInvalidException(_inner) => Some(_inner),
             Self::EventDataStoreNotFoundException(_inner) => Some(_inner),
             Self::InactiveEventDataStoreException(_inner) => Some(_inner),
             Self::InvalidTagParameterException(_inner) => Some(_inner),

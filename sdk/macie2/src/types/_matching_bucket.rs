@@ -13,11 +13,11 @@ pub struct MatchingBucket {
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The total number of objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     #[doc(hidden)]
-    pub classifiable_object_count: i64,
+    pub classifiable_object_count: std::option::Option<i64>,
     /// <p>The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     /// <p>If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
     #[doc(hidden)]
-    pub classifiable_size_in_bytes: i64,
+    pub classifiable_size_in_bytes: std::option::Option<i64>,
     /// <p>The error code for an error that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this value is null, Macie was able to retrieve and process the information.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<crate::types::BucketMetadataErrorCode>,
@@ -32,22 +32,22 @@ pub struct MatchingBucket {
     pub last_automated_discovery_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The total number of objects in the bucket.</p>
     #[doc(hidden)]
-    pub object_count: i64,
+    pub object_count: std::option::Option<i64>,
     /// <p>The total number of objects in the bucket, grouped by server-side encryption type. This includes a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.</p>
     #[doc(hidden)]
     pub object_count_by_encryption_type:
         std::option::Option<crate::types::ObjectCountByEncryptionType>,
     /// <p>The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This value is null if automated sensitive data discovery is currently disabled for your account.</p>
     #[doc(hidden)]
-    pub sensitivity_score: i32,
+    pub sensitivity_score: std::option::Option<i32>,
     /// <p>The total storage size, in bytes, of the bucket.</p>
     /// <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each object in the bucket. This value doesn't reflect the storage size of all versions of each object in the bucket.</p>
     #[doc(hidden)]
-    pub size_in_bytes: i64,
+    pub size_in_bytes: std::option::Option<i64>,
     /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the bucket.</p>
     /// <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
     #[doc(hidden)]
-    pub size_in_bytes_compressed: i64,
+    pub size_in_bytes_compressed: std::option::Option<i64>,
     /// <p>The total number of objects that Amazon Macie can't analyze in the bucket. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
     #[doc(hidden)]
     pub unclassifiable_object_count: std::option::Option<crate::types::ObjectLevelStatistics>,
@@ -66,12 +66,12 @@ impl MatchingBucket {
         self.bucket_name.as_deref()
     }
     /// <p>The total number of objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
-    pub fn classifiable_object_count(&self) -> i64 {
+    pub fn classifiable_object_count(&self) -> std::option::Option<i64> {
         self.classifiable_object_count
     }
     /// <p>The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     /// <p>If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
-    pub fn classifiable_size_in_bytes(&self) -> i64 {
+    pub fn classifiable_size_in_bytes(&self) -> std::option::Option<i64> {
         self.classifiable_size_in_bytes
     }
     /// <p>The error code for an error that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this value is null, Macie was able to retrieve and process the information.</p>
@@ -93,7 +93,7 @@ impl MatchingBucket {
         self.last_automated_discovery_time.as_ref()
     }
     /// <p>The total number of objects in the bucket.</p>
-    pub fn object_count(&self) -> i64 {
+    pub fn object_count(&self) -> std::option::Option<i64> {
         self.object_count
     }
     /// <p>The total number of objects in the bucket, grouped by server-side encryption type. This includes a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.</p>
@@ -103,17 +103,17 @@ impl MatchingBucket {
         self.object_count_by_encryption_type.as_ref()
     }
     /// <p>The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This value is null if automated sensitive data discovery is currently disabled for your account.</p>
-    pub fn sensitivity_score(&self) -> i32 {
+    pub fn sensitivity_score(&self) -> std::option::Option<i32> {
         self.sensitivity_score
     }
     /// <p>The total storage size, in bytes, of the bucket.</p>
     /// <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each object in the bucket. This value doesn't reflect the storage size of all versions of each object in the bucket.</p>
-    pub fn size_in_bytes(&self) -> i64 {
+    pub fn size_in_bytes(&self) -> std::option::Option<i64> {
         self.size_in_bytes
     }
     /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the bucket.</p>
     /// <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
-    pub fn size_in_bytes_compressed(&self) -> i64 {
+    pub fn size_in_bytes_compressed(&self) -> std::option::Option<i64> {
         self.size_in_bytes_compressed
     }
     /// <p>The total number of objects that Amazon Macie can't analyze in the bucket. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
@@ -345,17 +345,17 @@ impl MatchingBucketBuilder {
         crate::types::MatchingBucket {
             account_id: self.account_id,
             bucket_name: self.bucket_name,
-            classifiable_object_count: self.classifiable_object_count.unwrap_or_default(),
-            classifiable_size_in_bytes: self.classifiable_size_in_bytes.unwrap_or_default(),
+            classifiable_object_count: self.classifiable_object_count,
+            classifiable_size_in_bytes: self.classifiable_size_in_bytes,
             error_code: self.error_code,
             error_message: self.error_message,
             job_details: self.job_details,
             last_automated_discovery_time: self.last_automated_discovery_time,
-            object_count: self.object_count.unwrap_or_default(),
+            object_count: self.object_count,
             object_count_by_encryption_type: self.object_count_by_encryption_type,
-            sensitivity_score: self.sensitivity_score.unwrap_or_default(),
-            size_in_bytes: self.size_in_bytes.unwrap_or_default(),
-            size_in_bytes_compressed: self.size_in_bytes_compressed.unwrap_or_default(),
+            sensitivity_score: self.sensitivity_score,
+            size_in_bytes: self.size_in_bytes,
+            size_in_bytes_compressed: self.size_in_bytes_compressed,
             unclassifiable_object_count: self.unclassifiable_object_count,
             unclassifiable_object_size_in_bytes: self.unclassifiable_object_size_in_bytes,
         }

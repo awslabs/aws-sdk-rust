@@ -11,7 +11,7 @@ pub struct CreateApiKeyInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>From the creation time, the time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour. The default value for this parameter is 7 days from creation time. For more information, see .</p>
     #[doc(hidden)]
-    pub expires: i64,
+    pub expires: std::option::Option<i64>,
 }
 impl CreateApiKeyInput {
     /// <p>The ID for your GraphQL API.</p>
@@ -23,7 +23,7 @@ impl CreateApiKeyInput {
         self.description.as_deref()
     }
     /// <p>From the creation time, the time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour. The default value for this parameter is 7 days from creation time. For more information, see .</p>
-    pub fn expires(&self) -> i64 {
+    pub fn expires(&self) -> std::option::Option<i64> {
         self.expires
     }
 }
@@ -83,7 +83,7 @@ impl CreateApiKeyInputBuilder {
         Ok(crate::operation::create_api_key::CreateApiKeyInput {
             api_id: self.api_id,
             description: self.description,
-            expires: self.expires.unwrap_or_default(),
+            expires: self.expires,
         })
     }
 }

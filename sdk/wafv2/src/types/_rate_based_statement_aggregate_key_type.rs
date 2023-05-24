@@ -12,6 +12,8 @@
 /// ```text
 /// # let ratebasedstatementaggregatekeytype = unimplemented!();
 /// match ratebasedstatementaggregatekeytype {
+///     RateBasedStatementAggregateKeyType::Constant => { /* ... */ },
+///     RateBasedStatementAggregateKeyType::CustomKeys => { /* ... */ },
 ///     RateBasedStatementAggregateKeyType::ForwardedIp => { /* ... */ },
 ///     RateBasedStatementAggregateKeyType::Ip => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -48,6 +50,10 @@
 )]
 pub enum RateBasedStatementAggregateKeyType {
     #[allow(missing_docs)] // documentation missing in model
+    Constant,
+    #[allow(missing_docs)] // documentation missing in model
+    CustomKeys,
+    #[allow(missing_docs)] // documentation missing in model
     ForwardedIp,
     #[allow(missing_docs)] // documentation missing in model
     Ip,
@@ -57,6 +63,8 @@ pub enum RateBasedStatementAggregateKeyType {
 impl std::convert::From<&str> for RateBasedStatementAggregateKeyType {
     fn from(s: &str) -> Self {
         match s {
+            "CONSTANT" => RateBasedStatementAggregateKeyType::Constant,
+            "CUSTOM_KEYS" => RateBasedStatementAggregateKeyType::CustomKeys,
             "FORWARDED_IP" => RateBasedStatementAggregateKeyType::ForwardedIp,
             "IP" => RateBasedStatementAggregateKeyType::Ip,
             other => RateBasedStatementAggregateKeyType::Unknown(
@@ -76,6 +84,8 @@ impl RateBasedStatementAggregateKeyType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RateBasedStatementAggregateKeyType::Constant => "CONSTANT",
+            RateBasedStatementAggregateKeyType::CustomKeys => "CUSTOM_KEYS",
             RateBasedStatementAggregateKeyType::ForwardedIp => "FORWARDED_IP",
             RateBasedStatementAggregateKeyType::Ip => "IP",
             RateBasedStatementAggregateKeyType::Unknown(value) => value.as_str(),
@@ -83,7 +93,7 @@ impl RateBasedStatementAggregateKeyType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FORWARDED_IP", "IP"]
+        &["CONSTANT", "CUSTOM_KEYS", "FORWARDED_IP", "IP"]
     }
 }
 impl AsRef<str> for RateBasedStatementAggregateKeyType {

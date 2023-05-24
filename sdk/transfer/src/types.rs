@@ -13,6 +13,8 @@ pub use crate::types::_protocol::Protocol;
 
 pub use crate::types::_identity_provider_details::IdentityProviderDetails;
 
+pub use crate::types::_sftp_authentication_methods::SftpAuthenticationMethods;
+
 pub use crate::types::_endpoint_type::EndpointType;
 
 pub use crate::types::_endpoint_details::EndpointDetails;
@@ -272,6 +274,8 @@ mod _s3_tag;
 mod _service_metadata;
 
 mod _set_stat_option;
+
+mod _sftp_authentication_methods;
 
 mod _signing_alg;
 

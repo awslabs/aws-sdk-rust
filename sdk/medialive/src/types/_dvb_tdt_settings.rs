@@ -6,11 +6,11 @@
 pub struct DvbTdtSettings {
     /// The number of milliseconds between instances of this table in the output transport stream.
     #[doc(hidden)]
-    pub rep_interval: i32,
+    pub rep_interval: std::option::Option<i32>,
 }
 impl DvbTdtSettings {
     /// The number of milliseconds between instances of this table in the output transport stream.
-    pub fn rep_interval(&self) -> i32 {
+    pub fn rep_interval(&self) -> std::option::Option<i32> {
         self.rep_interval
     }
 }
@@ -41,7 +41,7 @@ impl DvbTdtSettingsBuilder {
     /// Consumes the builder and constructs a [`DvbTdtSettings`](crate::types::DvbTdtSettings).
     pub fn build(self) -> crate::types::DvbTdtSettings {
         crate::types::DvbTdtSettings {
-            rep_interval: self.rep_interval.unwrap_or_default(),
+            rep_interval: self.rep_interval,
         }
     }
 }

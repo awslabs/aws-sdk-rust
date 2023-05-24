@@ -5,10 +5,10 @@
 pub struct UpdateRouteOutput {
     /// <p>Specifies whether a route is managed by API Gateway. If you created an API using quick create, the $default route is managed by API Gateway. You can't modify the $default route key.</p>
     #[doc(hidden)]
-    pub api_gateway_managed: bool,
+    pub api_gateway_managed: std::option::Option<bool>,
     /// <p>Specifies whether an API key is required for this route. Supported only for WebSocket APIs.</p>
     #[doc(hidden)]
-    pub api_key_required: bool,
+    pub api_key_required: std::option::Option<bool>,
     /// <p>A list of authorization scopes configured on a route. The scopes are used with a JWT authorizer to authorize the method invocation. The authorization works by matching the route scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any route scope matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the route scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
     #[doc(hidden)]
     pub authorization_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -49,11 +49,11 @@ pub struct UpdateRouteOutput {
 }
 impl UpdateRouteOutput {
     /// <p>Specifies whether a route is managed by API Gateway. If you created an API using quick create, the $default route is managed by API Gateway. You can't modify the $default route key.</p>
-    pub fn api_gateway_managed(&self) -> bool {
+    pub fn api_gateway_managed(&self) -> std::option::Option<bool> {
         self.api_gateway_managed
     }
     /// <p>Specifies whether an API key is required for this route. Supported only for WebSocket APIs.</p>
-    pub fn api_key_required(&self) -> bool {
+    pub fn api_key_required(&self) -> std::option::Option<bool> {
         self.api_key_required
     }
     /// <p>A list of authorization scopes configured on a route. The scopes are used with a JWT authorizer to authorize the method invocation. The authorization works by matching the route scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any route scope matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the route scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
@@ -336,8 +336,8 @@ impl UpdateRouteOutputBuilder {
     /// Consumes the builder and constructs a [`UpdateRouteOutput`](crate::operation::update_route::UpdateRouteOutput).
     pub fn build(self) -> crate::operation::update_route::UpdateRouteOutput {
         crate::operation::update_route::UpdateRouteOutput {
-            api_gateway_managed: self.api_gateway_managed.unwrap_or_default(),
-            api_key_required: self.api_key_required.unwrap_or_default(),
+            api_gateway_managed: self.api_gateway_managed,
+            api_key_required: self.api_key_required,
             authorization_scopes: self.authorization_scopes,
             authorization_type: self.authorization_type,
             authorizer_id: self.authorizer_id,

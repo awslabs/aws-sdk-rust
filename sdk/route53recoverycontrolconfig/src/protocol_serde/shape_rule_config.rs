@@ -75,17 +75,17 @@ pub fn ser_rule_config(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RuleConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("Inverted").boolean(input.inverted);
+    if let Some(var_1) = &input.inverted {
+        object.key("Inverted").boolean(*var_1);
     }
-    {
+    if let Some(var_2) = &input.threshold {
         object.key("Threshold").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.threshold).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_1) = &input.r#type {
-        object.key("Type").string(var_1.as_str());
+    if let Some(var_3) = &input.r#type {
+        object.key("Type").string(var_3.as_str());
     }
     Ok(())
 }

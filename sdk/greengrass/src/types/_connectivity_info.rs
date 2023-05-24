@@ -15,7 +15,7 @@ pub struct ConnectivityInfo {
     pub metadata: std::option::Option<std::string::String>,
     /// The port of the Greengrass core. Usually 8883.
     #[doc(hidden)]
-    pub port_number: i32,
+    pub port_number: std::option::Option<i32>,
 }
 impl ConnectivityInfo {
     /// The endpoint for the Greengrass core. Can be an IP address or DNS.
@@ -31,7 +31,7 @@ impl ConnectivityInfo {
         self.metadata.as_deref()
     }
     /// The port of the Greengrass core. Usually 8883.
-    pub fn port_number(&self) -> i32 {
+    pub fn port_number(&self) -> std::option::Option<i32> {
         self.port_number
     }
 }
@@ -98,7 +98,7 @@ impl ConnectivityInfoBuilder {
             host_address: self.host_address,
             id: self.id,
             metadata: self.metadata,
-            port_number: self.port_number.unwrap_or_default(),
+            port_number: self.port_number,
         }
     }
 }

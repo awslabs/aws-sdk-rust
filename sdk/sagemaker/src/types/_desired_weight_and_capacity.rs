@@ -13,6 +13,10 @@ pub struct DesiredWeightAndCapacity {
     /// <p>The variant's capacity.</p>
     #[doc(hidden)]
     pub desired_instance_count: std::option::Option<i32>,
+    /// <p>Specifies the serverless update concurrency configuration for an endpoint variant.</p>
+    #[doc(hidden)]
+    pub serverless_update_config:
+        std::option::Option<crate::types::ProductionVariantServerlessUpdateConfig>,
 }
 impl DesiredWeightAndCapacity {
     /// <p>The name of the variant to update.</p>
@@ -26,6 +30,12 @@ impl DesiredWeightAndCapacity {
     /// <p>The variant's capacity.</p>
     pub fn desired_instance_count(&self) -> std::option::Option<i32> {
         self.desired_instance_count
+    }
+    /// <p>Specifies the serverless update concurrency configuration for an endpoint variant.</p>
+    pub fn serverless_update_config(
+        &self,
+    ) -> std::option::Option<&crate::types::ProductionVariantServerlessUpdateConfig> {
+        self.serverless_update_config.as_ref()
     }
 }
 impl DesiredWeightAndCapacity {
@@ -42,6 +52,8 @@ pub struct DesiredWeightAndCapacityBuilder {
     pub(crate) variant_name: std::option::Option<std::string::String>,
     pub(crate) desired_weight: std::option::Option<f32>,
     pub(crate) desired_instance_count: std::option::Option<i32>,
+    pub(crate) serverless_update_config:
+        std::option::Option<crate::types::ProductionVariantServerlessUpdateConfig>,
 }
 impl DesiredWeightAndCapacityBuilder {
     /// <p>The name of the variant to update.</p>
@@ -74,12 +86,29 @@ impl DesiredWeightAndCapacityBuilder {
         self.desired_instance_count = input;
         self
     }
+    /// <p>Specifies the serverless update concurrency configuration for an endpoint variant.</p>
+    pub fn serverless_update_config(
+        mut self,
+        input: crate::types::ProductionVariantServerlessUpdateConfig,
+    ) -> Self {
+        self.serverless_update_config = Some(input);
+        self
+    }
+    /// <p>Specifies the serverless update concurrency configuration for an endpoint variant.</p>
+    pub fn set_serverless_update_config(
+        mut self,
+        input: std::option::Option<crate::types::ProductionVariantServerlessUpdateConfig>,
+    ) -> Self {
+        self.serverless_update_config = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DesiredWeightAndCapacity`](crate::types::DesiredWeightAndCapacity).
     pub fn build(self) -> crate::types::DesiredWeightAndCapacity {
         crate::types::DesiredWeightAndCapacity {
             variant_name: self.variant_name,
             desired_weight: self.desired_weight,
             desired_instance_count: self.desired_instance_count,
+            serverless_update_config: self.serverless_update_config,
         }
     }
 }

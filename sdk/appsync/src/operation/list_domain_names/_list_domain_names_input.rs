@@ -8,7 +8,7 @@ pub struct ListDomainNamesInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results that you want the request to return.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
 }
 impl ListDomainNamesInput {
     /// <p>The API token.</p>
@@ -16,7 +16,7 @@ impl ListDomainNamesInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results that you want the request to return.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
 }
@@ -64,7 +64,7 @@ impl ListDomainNamesInputBuilder {
     > {
         Ok(crate::operation::list_domain_names::ListDomainNamesInput {
             next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
         })
     }
 }

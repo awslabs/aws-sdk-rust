@@ -22,13 +22,15 @@ pub struct ExportJournalToS3Input {
     pub s3_export_configuration: std::option::Option<crate::types::S3ExportConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
     /// <ul>
-    /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
+    /// <li> <p>Write objects into your Amazon S3 bucket.</p> </li>
     /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
     /// </ul>
     /// <p>To pass a role to QLDB when requesting a journal export, you must have permissions to perform the <code>iam:PassRole</code> action on the IAM role resource. This is required for all journal export requests.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The output format of your exported journal data. If this parameter is not specified, the exported data defaults to <code>ION_TEXT</code> format.</p>
+    /// <p>The output format of your exported journal data. A journal export job can write the data objects in either the text or binary representation of <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/ion.html">Amazon Ion</a> format, or in <a href="https://jsonlines.org/">JSON Lines</a> text format.</p>
+    /// <p>Default: <code>ION_TEXT</code> </p>
+    /// <p>In JSON Lines format, each journal block in an exported data object is a valid JSON object that is delimited by a newline. You can use this format to directly integrate JSON exports with analytics tools such as Amazon Athena and Glue because these services can parse newline-delimited JSON automatically.</p>
     #[doc(hidden)]
     pub output_format: std::option::Option<crate::types::OutputFormat>,
 }
@@ -58,14 +60,16 @@ impl ExportJournalToS3Input {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
     /// <ul>
-    /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
+    /// <li> <p>Write objects into your Amazon S3 bucket.</p> </li>
     /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
     /// </ul>
     /// <p>To pass a role to QLDB when requesting a journal export, you must have permissions to perform the <code>iam:PassRole</code> action on the IAM role resource. This is required for all journal export requests.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The output format of your exported journal data. If this parameter is not specified, the exported data defaults to <code>ION_TEXT</code> format.</p>
+    /// <p>The output format of your exported journal data. A journal export job can write the data objects in either the text or binary representation of <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/ion.html">Amazon Ion</a> format, or in <a href="https://jsonlines.org/">JSON Lines</a> text format.</p>
+    /// <p>Default: <code>ION_TEXT</code> </p>
+    /// <p>In JSON Lines format, each journal block in an exported data object is a valid JSON object that is delimited by a newline. You can use this format to directly integrate JSON exports with analytics tools such as Amazon Athena and Glue because these services can parse newline-delimited JSON automatically.</p>
     pub fn output_format(&self) -> std::option::Option<&crate::types::OutputFormat> {
         self.output_format.as_ref()
     }
@@ -151,7 +155,7 @@ impl ExportJournalToS3InputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
     /// <ul>
-    /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
+    /// <li> <p>Write objects into your Amazon S3 bucket.</p> </li>
     /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
     /// </ul>
     /// <p>To pass a role to QLDB when requesting a journal export, you must have permissions to perform the <code>iam:PassRole</code> action on the IAM role resource. This is required for all journal export requests.</p>
@@ -161,7 +165,7 @@ impl ExportJournalToS3InputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
     /// <ul>
-    /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
+    /// <li> <p>Write objects into your Amazon S3 bucket.</p> </li>
     /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
     /// </ul>
     /// <p>To pass a role to QLDB when requesting a journal export, you must have permissions to perform the <code>iam:PassRole</code> action on the IAM role resource. This is required for all journal export requests.</p>
@@ -169,12 +173,16 @@ impl ExportJournalToS3InputBuilder {
         self.role_arn = input;
         self
     }
-    /// <p>The output format of your exported journal data. If this parameter is not specified, the exported data defaults to <code>ION_TEXT</code> format.</p>
+    /// <p>The output format of your exported journal data. A journal export job can write the data objects in either the text or binary representation of <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/ion.html">Amazon Ion</a> format, or in <a href="https://jsonlines.org/">JSON Lines</a> text format.</p>
+    /// <p>Default: <code>ION_TEXT</code> </p>
+    /// <p>In JSON Lines format, each journal block in an exported data object is a valid JSON object that is delimited by a newline. You can use this format to directly integrate JSON exports with analytics tools such as Amazon Athena and Glue because these services can parse newline-delimited JSON automatically.</p>
     pub fn output_format(mut self, input: crate::types::OutputFormat) -> Self {
         self.output_format = Some(input);
         self
     }
-    /// <p>The output format of your exported journal data. If this parameter is not specified, the exported data defaults to <code>ION_TEXT</code> format.</p>
+    /// <p>The output format of your exported journal data. A journal export job can write the data objects in either the text or binary representation of <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/ion.html">Amazon Ion</a> format, or in <a href="https://jsonlines.org/">JSON Lines</a> text format.</p>
+    /// <p>Default: <code>ION_TEXT</code> </p>
+    /// <p>In JSON Lines format, each journal block in an exported data object is a valid JSON object that is delimited by a newline. You can use this format to directly integrate JSON exports with analytics tools such as Amazon Athena and Glue because these services can parse newline-delimited JSON automatically.</p>
     pub fn set_output_format(
         mut self,
         input: std::option::Option<crate::types::OutputFormat>,

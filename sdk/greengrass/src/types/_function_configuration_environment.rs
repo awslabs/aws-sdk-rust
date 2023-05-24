@@ -6,7 +6,7 @@
 pub struct FunctionConfigurationEnvironment {
     /// If true, the Lambda function is allowed to access the host's /sys folder. Use this when the Lambda function needs to read device information from /sys. This setting applies only when you run the Lambda function in a Greengrass container.
     #[doc(hidden)]
-    pub access_sysfs: bool,
+    pub access_sysfs: std::option::Option<bool>,
     /// Configuration related to executing the Lambda function
     #[doc(hidden)]
     pub execution: std::option::Option<crate::types::FunctionExecutionConfig>,
@@ -21,7 +21,7 @@ pub struct FunctionConfigurationEnvironment {
 }
 impl FunctionConfigurationEnvironment {
     /// If true, the Lambda function is allowed to access the host's /sys folder. Use this when the Lambda function needs to read device information from /sys. This setting applies only when you run the Lambda function in a Greengrass container.
-    pub fn access_sysfs(&self) -> bool {
+    pub fn access_sysfs(&self) -> std::option::Option<bool> {
         self.access_sysfs
     }
     /// Configuration related to executing the Lambda function
@@ -131,7 +131,7 @@ impl FunctionConfigurationEnvironmentBuilder {
     /// Consumes the builder and constructs a [`FunctionConfigurationEnvironment`](crate::types::FunctionConfigurationEnvironment).
     pub fn build(self) -> crate::types::FunctionConfigurationEnvironment {
         crate::types::FunctionConfigurationEnvironment {
-            access_sysfs: self.access_sysfs.unwrap_or_default(),
+            access_sysfs: self.access_sysfs,
             execution: self.execution,
             resource_access_policies: self.resource_access_policies,
             variables: self.variables,

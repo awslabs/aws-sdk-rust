@@ -11,7 +11,11 @@ pub use crate::operation::create_bucket::_create_bucket_input::CreateBucketInput
 /// <p>By default, the bucket is created in the US East (N. Virginia) Region. You can optionally specify a Region in the request body. You might choose a Region to optimize latency, minimize costs, or address regulatory requirements. For example, if you reside in Europe, you will probably find it advantageous to create buckets in the Europe (Ireland) Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">Accessing a bucket</a>.</p> <note>
 /// <p>If you send your create bucket request to the <code>s3.amazonaws.com</code> endpoint, the request goes to the us-east-1 Region. Accordingly, the signature calculations in Signature Version 4 must use us-east-1 as the Region, even if the location constraint in the request specifies another Region where the bucket is to be created. If you create a bucket in a Region other than US East (N. Virginia), your application must be able to handle 307 redirect. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html">Virtual hosting of buckets</a>.</p>
 /// </note>
-/// <p> <b>Access control lists (ACLs)</b> </p>
+/// <dl>
+/// <dt>
+/// Access control lists (ACLs)
+/// </dt>
+/// <dd>
 /// <p>When creating a bucket using this operation, you can optionally configure the bucket ACL to specify the accounts or groups that should be granted specific permissions on the bucket.</p> <important>
 /// <p>If your CreateBucket request sets bucket owner enforced for S3 Object Ownership and specifies a bucket ACL that provides access to an external Amazon Web Services account, your request fails with a <code>400</code> error and returns the <code>InvalidBucketAclWithObjectOwnership</code> error code. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling object ownership</a> in the <i>Amazon S3 User Guide</i>.</p>
 /// </important>
@@ -40,13 +44,19 @@ pub use crate::operation::create_bucket::_create_bucket_input::CreateBucketInput
 /// </ul> <note>
 /// <p>You can use either a canned ACL or specify access permissions explicitly. You cannot do both.</p>
 /// </note>
-/// <p> <b>Permissions</b> </p>
+/// </dd>
+/// <dt>
+/// Permissions
+/// </dt>
+/// <dd>
 /// <p>In addition to <code>s3:CreateBucket</code>, the following permissions are required when your CreateBucket includes specific headers:</p>
 /// <ul>
 /// <li> <p> <b>ACLs</b> - If your <code>CreateBucket</code> request specifies ACL permissions and the ACL is public-read, public-read-write, authenticated-read, or if you specify access permissions explicitly through any other ACL, both <code>s3:CreateBucket</code> and <code>s3:PutBucketAcl</code> permissions are needed. If the ACL the <code>CreateBucket</code> request is private or doesn't specify any ACLs, only <code>s3:CreateBucket</code> permission is needed. </p> </li>
 /// <li> <p> <b>Object Lock</b> - If <code>ObjectLockEnabledForBucket</code> is set to true in your <code>CreateBucket</code> request, <code>s3:PutBucketObjectLockConfiguration</code> and <code>s3:PutBucketVersioning</code> permissions are required.</p> </li>
-/// <li> <p> <b>S3 Object Ownership</b> - If your CreateBucket request includes the the <code>x-amz-object-ownership</code> header, <code>s3:PutBucketOwnershipControls</code> permission is required.</p> </li>
+/// <li> <p> <b>S3 Object Ownership</b> - If your CreateBucket request includes the <code>x-amz-object-ownership</code> header, <code>s3:PutBucketOwnershipControls</code> permission is required.</p> </li>
 /// </ul>
+/// </dd>
+/// </dl>
 /// <p>The following operations are related to <code>CreateBucket</code>:</p>
 /// <ul>
 /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a> </p> </li>

@@ -36,6 +36,8 @@ pub(crate) mod shape_get_user_details;
 
 pub(crate) mod shape_list_access_tokens;
 
+pub(crate) mod shape_list_dev_environment_sessions;
+
 pub(crate) mod shape_list_dev_environments;
 
 pub(crate) mod shape_list_event_logs;
@@ -82,6 +84,8 @@ pub(crate) mod shape_create_source_repository_branch_input;
 
 pub(crate) mod shape_list_access_tokens_input;
 
+pub(crate) mod shape_list_dev_environment_sessions_input;
+
 pub(crate) mod shape_list_dev_environments_input;
 
 pub(crate) mod shape_list_event_logs_input;
@@ -116,6 +120,8 @@ pub(crate) mod shape_dev_environment_repository_summaries;
 
 pub(crate) mod shape_dev_environment_session_configuration;
 
+pub(crate) mod shape_dev_environment_sessions_summary_list;
+
 pub(crate) mod shape_dev_environment_summary_list;
 
 pub(crate) mod shape_email_address;
@@ -149,6 +155,8 @@ pub(crate) mod shape_space_summaries;
 pub(crate) mod shape_access_token_summary;
 
 pub(crate) mod shape_dev_environment_repository_summary;
+
+pub(crate) mod shape_dev_environment_session_summary;
 
 pub(crate) mod shape_dev_environment_summary;
 

@@ -84,12 +84,12 @@ impl CancelSpotInstanceRequestsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_spot_instance_request_ids`](Self::set_spot_instance_request_ids).
     ///
-    /// <p>One or more Spot Instance request IDs.</p>
+    /// <p>The IDs of the Spot Instance requests.</p>
     pub fn spot_instance_request_ids(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.spot_instance_request_ids(input.into());
         self
     }
-    /// <p>One or more Spot Instance request IDs.</p>
+    /// <p>The IDs of the Spot Instance requests.</p>
     pub fn set_spot_instance_request_ids(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

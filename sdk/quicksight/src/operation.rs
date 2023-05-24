@@ -58,6 +58,15 @@ pub mod create_theme;
 /// Types for the `CreateThemeAlias` operation.
 pub mod create_theme_alias;
 
+/// Types for the `CreateTopic` operation.
+pub mod create_topic;
+
+/// Types for the `CreateTopicRefreshSchedule` operation.
+pub mod create_topic_refresh_schedule;
+
+/// Types for the `CreateVPCConnection` operation.
+pub mod create_vpc_connection;
+
 /// Types for the `DeleteAccountCustomization` operation.
 pub mod delete_account_customization;
 
@@ -112,11 +121,20 @@ pub mod delete_theme;
 /// Types for the `DeleteThemeAlias` operation.
 pub mod delete_theme_alias;
 
+/// Types for the `DeleteTopic` operation.
+pub mod delete_topic;
+
+/// Types for the `DeleteTopicRefreshSchedule` operation.
+pub mod delete_topic_refresh_schedule;
+
 /// Types for the `DeleteUser` operation.
 pub mod delete_user;
 
 /// Types for the `DeleteUserByPrincipalId` operation.
 pub mod delete_user_by_principal_id;
+
+/// Types for the `DeleteVPCConnection` operation.
+pub mod delete_vpc_connection;
 
 /// Types for the `DescribeAccountCustomization` operation.
 pub mod describe_account_customization;
@@ -211,8 +229,23 @@ pub mod describe_theme_alias;
 /// Types for the `DescribeThemePermissions` operation.
 pub mod describe_theme_permissions;
 
+/// Types for the `DescribeTopic` operation.
+pub mod describe_topic;
+
+/// Types for the `DescribeTopicPermissions` operation.
+pub mod describe_topic_permissions;
+
+/// Types for the `DescribeTopicRefresh` operation.
+pub mod describe_topic_refresh;
+
+/// Types for the `DescribeTopicRefreshSchedule` operation.
+pub mod describe_topic_refresh_schedule;
+
 /// Types for the `DescribeUser` operation.
 pub mod describe_user;
+
+/// Types for the `DescribeVPCConnection` operation.
+pub mod describe_vpc_connection;
 
 /// Types for the `GenerateEmbedUrlForAnonymousUser` operation.
 pub mod generate_embed_url_for_anonymous_user;
@@ -289,11 +322,20 @@ pub mod list_theme_versions;
 /// Types for the `ListThemes` operation.
 pub mod list_themes;
 
+/// Types for the `ListTopicRefreshSchedules` operation.
+pub mod list_topic_refresh_schedules;
+
+/// Types for the `ListTopics` operation.
+pub mod list_topics;
+
 /// Types for the `ListUserGroups` operation.
 pub mod list_user_groups;
 
 /// Types for the `ListUsers` operation.
 pub mod list_users;
+
+/// Types for the `ListVPCConnections` operation.
+pub mod list_vpc_connections;
 
 /// Types for the `PutDataSetRefreshProperties` operation.
 pub mod put_data_set_refresh_properties;
@@ -400,5 +442,17 @@ pub mod update_theme_alias;
 /// Types for the `UpdateThemePermissions` operation.
 pub mod update_theme_permissions;
 
+/// Types for the `UpdateTopic` operation.
+pub mod update_topic;
+
+/// Types for the `UpdateTopicPermissions` operation.
+pub mod update_topic_permissions;
+
+/// Types for the `UpdateTopicRefreshSchedule` operation.
+pub mod update_topic_refresh_schedule;
+
 /// Types for the `UpdateUser` operation.
 pub mod update_user;
+
+/// Types for the `UpdateVPCConnection` operation.
+pub mod update_vpc_connection;

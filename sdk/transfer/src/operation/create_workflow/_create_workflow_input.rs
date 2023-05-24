@@ -21,7 +21,7 @@ pub struct CreateWorkflowInput {
     #[doc(hidden)]
     pub steps: std::option::Option<std::vec::Vec<crate::types::WorkflowStep>>,
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p> <note>
-    /// <p>For custom steps, the lambda function needs to send <code>FAILURE</code> to the call back API to kick off the exception steps. Additionally, if the lambda does not send <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
+    /// <p>For custom steps, the Lambda function needs to send <code>FAILURE</code> to the call back API to kick off the exception steps. Additionally, if the Lambda does not send <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
     /// </note>
     #[doc(hidden)]
     pub on_exception_steps: std::option::Option<std::vec::Vec<crate::types::WorkflowStep>>,
@@ -50,7 +50,7 @@ impl CreateWorkflowInput {
         self.steps.as_deref()
     }
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p> <note>
-    /// <p>For custom steps, the lambda function needs to send <code>FAILURE</code> to the call back API to kick off the exception steps. Additionally, if the lambda does not send <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
+    /// <p>For custom steps, the Lambda function needs to send <code>FAILURE</code> to the call back API to kick off the exception steps. Additionally, if the Lambda does not send <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
     /// </note>
     pub fn on_exception_steps(&self) -> std::option::Option<&[crate::types::WorkflowStep]> {
         self.on_exception_steps.as_deref()
@@ -133,7 +133,7 @@ impl CreateWorkflowInputBuilder {
     /// To override the contents of this collection use [`set_on_exception_steps`](Self::set_on_exception_steps).
     ///
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p> <note>
-    /// <p>For custom steps, the lambda function needs to send <code>FAILURE</code> to the call back API to kick off the exception steps. Additionally, if the lambda does not send <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
+    /// <p>For custom steps, the Lambda function needs to send <code>FAILURE</code> to the call back API to kick off the exception steps. Additionally, if the Lambda does not send <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
     /// </note>
     pub fn on_exception_steps(mut self, input: crate::types::WorkflowStep) -> Self {
         let mut v = self.on_exception_steps.unwrap_or_default();
@@ -142,7 +142,7 @@ impl CreateWorkflowInputBuilder {
         self
     }
     /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p> <note>
-    /// <p>For custom steps, the lambda function needs to send <code>FAILURE</code> to the call back API to kick off the exception steps. Additionally, if the lambda does not send <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
+    /// <p>For custom steps, the Lambda function needs to send <code>FAILURE</code> to the call back API to kick off the exception steps. Additionally, if the Lambda does not send <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
     /// </note>
     pub fn set_on_exception_steps(
         mut self,

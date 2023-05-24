@@ -15,7 +15,8 @@ pub struct OrganizationAffectedEntitiesErrorItem {
     /// <p>The name of the error.</p>
     #[doc(hidden)]
     pub error_name: std::option::Option<std::string::String>,
-    /// <p>The unique identifier for the event type. The format is <code>AWS_SERVICE_DESCRIPTION</code>. For example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
+    /// <p>A message that describes the error. Follow the error message and retry your request.</p>
+    /// <p>For example, the <code>InvalidAccountInputError</code> error message appears if you call the <code>DescribeAffectedEntitiesForOrganization</code> operation and specify the <code>AccountSpecific</code> value for the <code>EventScopeCode</code> parameter, but don't specify an Amazon Web Services account.</p>
     #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
 }
@@ -34,7 +35,8 @@ impl OrganizationAffectedEntitiesErrorItem {
     pub fn error_name(&self) -> std::option::Option<&str> {
         self.error_name.as_deref()
     }
-    /// <p>The unique identifier for the event type. The format is <code>AWS_SERVICE_DESCRIPTION</code>. For example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
+    /// <p>A message that describes the error. Follow the error message and retry your request.</p>
+    /// <p>For example, the <code>InvalidAccountInputError</code> error message appears if you call the <code>DescribeAffectedEntitiesForOrganization</code> operation and specify the <code>AccountSpecific</code> value for the <code>EventScopeCode</code> parameter, but don't specify an Amazon Web Services account.</p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
@@ -90,12 +92,14 @@ impl OrganizationAffectedEntitiesErrorItemBuilder {
         self.error_name = input;
         self
     }
-    /// <p>The unique identifier for the event type. The format is <code>AWS_SERVICE_DESCRIPTION</code>. For example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
+    /// <p>A message that describes the error. Follow the error message and retry your request.</p>
+    /// <p>For example, the <code>InvalidAccountInputError</code> error message appears if you call the <code>DescribeAffectedEntitiesForOrganization</code> operation and specify the <code>AccountSpecific</code> value for the <code>EventScopeCode</code> parameter, but don't specify an Amazon Web Services account.</p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
         self.error_message = Some(input.into());
         self
     }
-    /// <p>The unique identifier for the event type. The format is <code>AWS_SERVICE_DESCRIPTION</code>. For example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
+    /// <p>A message that describes the error. Follow the error message and retry your request.</p>
+    /// <p>For example, the <code>InvalidAccountInputError</code> error message appears if you call the <code>DescribeAffectedEntitiesForOrganization</code> operation and specify the <code>AccountSpecific</code> value for the <code>EventScopeCode</code> parameter, but don't specify an Amazon Web Services account.</p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.error_message = input;
         self

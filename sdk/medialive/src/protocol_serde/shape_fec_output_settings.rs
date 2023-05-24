@@ -3,19 +3,19 @@ pub fn ser_fec_output_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FecOutputSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.column_depth != 0 {
+    if let Some(var_1) = &input.column_depth {
         object.key("columnDepth").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.column_depth).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.include_fec {
-        object.key("includeFec").string(var_1.as_str());
+    if let Some(var_2) = &input.include_fec {
+        object.key("includeFec").string(var_2.as_str());
     }
-    if input.row_length != 0 {
+    if let Some(var_3) = &input.row_length {
         object.key("rowLength").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.row_length).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())

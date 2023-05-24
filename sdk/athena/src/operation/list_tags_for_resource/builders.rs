@@ -5,7 +5,7 @@ pub use crate::operation::list_tags_for_resource::_list_tags_for_resource_input:
 
 /// Fluent builder constructing a request to `ListTagsForResource`.
 ///
-/// <p>Lists the tags associated with an Athena workgroup or data catalog resource.</p>
+/// <p>Lists the tags associated with an Athena resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

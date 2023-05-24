@@ -15,7 +15,7 @@ pub struct Logger {
     pub level: std::option::Option<crate::types::LoggerLevel>,
     /// The amount of file space, in KB, to use if the local file system is used for logging purposes.
     #[doc(hidden)]
-    pub space: i32,
+    pub space: std::option::Option<i32>,
     /// The type of log output which will be used.
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::LoggerType>,
@@ -34,7 +34,7 @@ impl Logger {
         self.level.as_ref()
     }
     /// The amount of file space, in KB, to use if the local file system is used for logging purposes.
-    pub fn space(&self) -> i32 {
+    pub fn space(&self) -> std::option::Option<i32> {
         self.space
     }
     /// The type of log output which will be used.
@@ -119,7 +119,7 @@ impl LoggerBuilder {
             component: self.component,
             id: self.id,
             level: self.level,
-            space: self.space.unwrap_or_default(),
+            space: self.space,
             r#type: self.r#type,
         }
     }

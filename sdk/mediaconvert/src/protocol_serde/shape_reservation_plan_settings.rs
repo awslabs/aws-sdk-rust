@@ -9,10 +9,10 @@ pub fn ser_reservation_plan_settings(
     if let Some(var_2) = &input.renewal_type {
         object.key("renewalType").string(var_2.as_str());
     }
-    {
+    if let Some(var_3) = &input.reserved_slots {
         object.key("reservedSlots").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.reserved_slots).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())

@@ -3,16 +3,16 @@ pub fn ser_input_channel_level(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InputChannelLevel,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    {
+    if let Some(var_1) = &input.gain {
         object.key("gain").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.gain).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    {
+    if let Some(var_2) = &input.input_channel {
         object.key("inputChannel").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.input_channel).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

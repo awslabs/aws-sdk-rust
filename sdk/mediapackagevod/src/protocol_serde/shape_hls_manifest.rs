@@ -6,28 +6,26 @@ pub fn ser_hls_manifest(
     if let Some(var_1) = &input.ad_markers {
         object.key("adMarkers").string(var_1.as_str());
     }
-    if input.include_iframe_only_stream {
-        object
-            .key("includeIframeOnlyStream")
-            .boolean(input.include_iframe_only_stream);
+    if let Some(var_2) = &input.include_iframe_only_stream {
+        object.key("includeIframeOnlyStream").boolean(*var_2);
     }
-    if let Some(var_2) = &input.manifest_name {
-        object.key("manifestName").string(var_2.as_str());
+    if let Some(var_3) = &input.manifest_name {
+        object.key("manifestName").string(var_3.as_str());
     }
-    if input.program_date_time_interval_seconds != 0 {
+    if let Some(var_4) = &input.program_date_time_interval_seconds {
         object.key("programDateTimeIntervalSeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.program_date_time_interval_seconds).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if input.repeat_ext_x_key {
-        object.key("repeatExtXKey").boolean(input.repeat_ext_x_key);
+    if let Some(var_5) = &input.repeat_ext_x_key {
+        object.key("repeatExtXKey").boolean(*var_5);
     }
-    if let Some(var_3) = &input.stream_selection {
+    if let Some(var_6) = &input.stream_selection {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("streamSelection").start_object();
-        crate::protocol_serde::shape_stream_selection::ser_stream_selection(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_7 = object.key("streamSelection").start_object();
+        crate::protocol_serde::shape_stream_selection::ser_stream_selection(&mut object_7, var_6)?;
+        object_7.finish();
     }
     Ok(())
 }

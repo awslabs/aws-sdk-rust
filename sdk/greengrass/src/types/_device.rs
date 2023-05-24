@@ -12,7 +12,7 @@ pub struct Device {
     pub id: std::option::Option<std::string::String>,
     /// If true, the device's local shadow will be automatically synced with the cloud.
     #[doc(hidden)]
-    pub sync_shadow: bool,
+    pub sync_shadow: std::option::Option<bool>,
     /// The thing ARN of the device.
     #[doc(hidden)]
     pub thing_arn: std::option::Option<std::string::String>,
@@ -27,7 +27,7 @@ impl Device {
         self.id.as_deref()
     }
     /// If true, the device's local shadow will be automatically synced with the cloud.
-    pub fn sync_shadow(&self) -> bool {
+    pub fn sync_shadow(&self) -> std::option::Option<bool> {
         self.sync_shadow
     }
     /// The thing ARN of the device.
@@ -97,7 +97,7 @@ impl DeviceBuilder {
         crate::types::Device {
             certificate_arn: self.certificate_arn,
             id: self.id,
-            sync_shadow: self.sync_shadow.unwrap_or_default(),
+            sync_shadow: self.sync_shadow,
             thing_arn: self.thing_arn,
         }
     }

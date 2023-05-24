@@ -6,17 +6,17 @@ pub fn ser_email_channel_request(
     if let Some(var_1) = &input.configuration_set {
         object.key("ConfigurationSet").string(var_1.as_str());
     }
-    if input.enabled {
-        object.key("Enabled").boolean(input.enabled);
+    if let Some(var_2) = &input.enabled {
+        object.key("Enabled").boolean(*var_2);
     }
-    if let Some(var_2) = &input.from_address {
-        object.key("FromAddress").string(var_2.as_str());
+    if let Some(var_3) = &input.from_address {
+        object.key("FromAddress").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.identity {
-        object.key("Identity").string(var_3.as_str());
+    if let Some(var_4) = &input.identity {
+        object.key("Identity").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.role_arn {
-        object.key("RoleArn").string(var_4.as_str());
+    if let Some(var_5) = &input.role_arn {
+        object.key("RoleArn").string(var_5.as_str());
     }
     Ok(())
 }

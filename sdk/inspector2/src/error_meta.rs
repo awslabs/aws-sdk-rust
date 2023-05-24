@@ -174,6 +174,54 @@ impl From<crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoErro
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::batch_get_member_ec2_deep_inspection_status::BatchGetMemberEc2DeepInspectionStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::batch_get_member_ec2_deep_inspection_status::BatchGetMemberEc2DeepInspectionStatusError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::batch_get_member_ec2_deep_inspection_status::BatchGetMemberEc2DeepInspectionStatusError> for Error {
+    fn from(err: crate::operation::batch_get_member_ec2_deep_inspection_status::BatchGetMemberEc2DeepInspectionStatusError) -> Self {
+        match err {
+            crate::operation::batch_get_member_ec2_deep_inspection_status::BatchGetMemberEc2DeepInspectionStatusError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_get_member_ec2_deep_inspection_status::BatchGetMemberEc2DeepInspectionStatusError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::batch_get_member_ec2_deep_inspection_status::BatchGetMemberEc2DeepInspectionStatusError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_get_member_ec2_deep_inspection_status::BatchGetMemberEc2DeepInspectionStatusError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_get_member_ec2_deep_inspection_status::BatchGetMemberEc2DeepInspectionStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError> for Error {
+    fn from(err: crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError) -> Self {
+        match err {
+            crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_update_member_ec2_deep_inspection_status::BatchUpdateMemberEc2DeepInspectionStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
@@ -699,6 +747,30 @@ impl From<crate::operation::get_delegated_admin_account::GetDelegatedAdminAccoun
             crate::operation::get_delegated_admin_account::GetDelegatedAdminAccountError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_delegated_admin_account::GetDelegatedAdminAccountError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_delegated_admin_account::GetDelegatedAdminAccountError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationError> for Error {
+    fn from(err: crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationError) -> Self {
+        match err {
+            crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_ec2_deep_inspection_configuration::GetEc2DeepInspectionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1238,6 +1310,48 @@ impl From<crate::operation::list_usage_totals::ListUsageTotalsError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::search_vulnerabilities::SearchVulnerabilitiesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::search_vulnerabilities::SearchVulnerabilitiesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::search_vulnerabilities::SearchVulnerabilitiesError> for Error {
+    fn from(err: crate::operation::search_vulnerabilities::SearchVulnerabilitiesError) -> Self {
+        match err {
+            crate::operation::search_vulnerabilities::SearchVulnerabilitiesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::search_vulnerabilities::SearchVulnerabilitiesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::search_vulnerabilities::SearchVulnerabilitiesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::search_vulnerabilities::SearchVulnerabilitiesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::search_vulnerabilities::SearchVulnerabilitiesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
     for Error
 where
@@ -1375,6 +1489,30 @@ impl From<crate::operation::update_configuration::UpdateConfigurationError> for 
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationError> for Error {
+    fn from(err: crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationError) -> Self {
+        match err {
+            crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<aws_smithy_http::result::SdkError<crate::operation::update_filter::UpdateFilterError, R>>
     for Error
@@ -1451,6 +1589,30 @@ impl From<crate::operation::update_organization_configuration::UpdateOrganizatio
             crate::operation::update_organization_configuration::UpdateOrganizationConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_organization_configuration::UpdateOrganizationConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_organization_configuration::UpdateOrganizationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationError> for Error {
+    fn from(err: crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationError) -> Self {
+        match err {
+            crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_org_ec2_deep_inspection_configuration::UpdateOrgEc2DeepInspectionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -4,7 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RegisterDomainInput {
     /// <p>Name of the domain to register. The name must be unique in the region that the domain is registered in.</p>
-    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A text description of the domain.</p>
@@ -22,7 +22,7 @@ pub struct RegisterDomainInput {
 }
 impl RegisterDomainInput {
     /// <p>Name of the domain to register. The name must be unique in the region that the domain is registered in.</p>
-    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -61,13 +61,13 @@ pub struct RegisterDomainInputBuilder {
 }
 impl RegisterDomainInputBuilder {
     /// <p>Name of the domain to register. The name must be unique in the region that the domain is registered in.</p>
-    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
     /// <p>Name of the domain to register. The name must be unique in the region that the domain is registered in.</p>
-    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.name = input;
         self

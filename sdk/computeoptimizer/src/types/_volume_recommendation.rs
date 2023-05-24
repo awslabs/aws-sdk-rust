@@ -37,6 +37,9 @@ pub struct VolumeRecommendation {
     /// <p>The risk of the current EBS volume not meeting the performance needs of its workloads. The higher the risk, the more likely the current EBS volume doesn't have sufficient capacity.</p>
     #[doc(hidden)]
     pub current_performance_risk: std::option::Option<crate::types::CurrentPerformanceRisk>,
+    /// <p> A list of tags assigned to your Amazon EBS volume recommendations. </p>
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl VolumeRecommendation {
     /// <p>The Amazon Resource Name (ARN) of the current volume.</p>
@@ -86,6 +89,10 @@ impl VolumeRecommendation {
     ) -> std::option::Option<&crate::types::CurrentPerformanceRisk> {
         self.current_performance_risk.as_ref()
     }
+    /// <p> A list of tags assigned to your Amazon EBS volume recommendations. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl VolumeRecommendation {
     /// Creates a new builder-style object to manufacture [`VolumeRecommendation`](crate::types::VolumeRecommendation).
@@ -109,6 +116,7 @@ pub struct VolumeRecommendationBuilder {
         std::option::Option<std::vec::Vec<crate::types::VolumeRecommendationOption>>,
     pub(crate) last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) current_performance_risk: std::option::Option<crate::types::CurrentPerformanceRisk>,
+    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl VolumeRecommendationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the current volume.</p>
@@ -241,6 +249,25 @@ impl VolumeRecommendationBuilder {
         self.current_performance_risk = input;
         self
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p> A list of tags assigned to your Amazon EBS volume recommendations. </p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = Some(v);
+        self
+    }
+    /// <p> A list of tags assigned to your Amazon EBS volume recommendations. </p>
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
+    }
     /// Consumes the builder and constructs a [`VolumeRecommendation`](crate::types::VolumeRecommendation).
     pub fn build(self) -> crate::types::VolumeRecommendation {
         crate::types::VolumeRecommendation {
@@ -253,6 +280,7 @@ impl VolumeRecommendationBuilder {
             volume_recommendation_options: self.volume_recommendation_options,
             last_refresh_timestamp: self.last_refresh_timestamp,
             current_performance_risk: self.current_performance_risk,
+            tags: self.tags,
         }
     }
 }

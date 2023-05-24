@@ -5,6 +5,8 @@ pub use crate::types::_workflow_type::WorkflowType;
 
 pub use crate::types::_workflow_status::WorkflowStatus;
 
+pub use crate::types::_accelerators::Accelerators;
+
 pub use crate::types::_workflow_parameter::WorkflowParameter;
 
 pub use crate::types::_workflow_engine::WorkflowEngine;
@@ -33,6 +35,8 @@ pub use crate::types::_variant_import_item_source::VariantImportItemSource;
 
 pub use crate::types::_variant_import_item_detail::VariantImportItemDetail;
 
+pub use crate::types::_read_set_part_source::ReadSetPartSource;
+
 pub use crate::types::_read_set_import_job_status::ReadSetImportJobStatus;
 
 pub use crate::types::_start_read_set_import_job_source_item::StartReadSetImportJobSourceItem;
@@ -49,6 +53,10 @@ pub use crate::types::_read_set_activation_job_status::ReadSetActivationJobStatu
 
 pub use crate::types::_start_read_set_activation_job_source_item::StartReadSetActivationJobSourceItem;
 
+pub use crate::types::_read_set_upload_part_list_item::ReadSetUploadPartListItem;
+
+pub use crate::types::_read_set_upload_part_list_filter::ReadSetUploadPartListFilter;
+
 pub use crate::types::_import_read_set_job_item::ImportReadSetJobItem;
 
 pub use crate::types::_import_read_set_filter::ImportReadSetFilter;
@@ -61,6 +69,8 @@ pub use crate::types::_activate_read_set_job_item::ActivateReadSetJobItem;
 
 pub use crate::types::_activate_read_set_filter::ActivateReadSetFilter;
 
+pub use crate::types::_multipart_read_set_upload_list_item::MultipartReadSetUploadListItem;
+
 pub use crate::types::_import_read_set_source_item::ImportReadSetSourceItem;
 
 pub use crate::types::_read_set_import_job_item_status::ReadSetImportJobItemStatus;
@@ -72,6 +82,8 @@ pub use crate::types::_read_set_export_job_item_status::ReadSetExportJobItemStat
 pub use crate::types::_activate_read_set_source_item::ActivateReadSetSourceItem;
 
 pub use crate::types::_read_set_activation_job_item_status::ReadSetActivationJobItemStatus;
+
+pub use crate::types::_complete_read_set_upload_part_list_item::CompleteReadSetUploadPartListItem;
 
 pub use crate::types::_sequence_store_detail::SequenceStoreDetail;
 
@@ -165,6 +177,8 @@ pub use crate::types::_annotation_import_item_source::AnnotationImportItemSource
 
 pub use crate::types::_annotation_import_item_detail::AnnotationImportItemDetail;
 
+mod _accelerators;
+
 mod _activate_read_set_filter;
 
 mod _activate_read_set_job_item;
@@ -180,6 +194,8 @@ mod _annotation_import_job_item;
 mod _annotation_store_item;
 
 mod _annotation_type;
+
+mod _complete_read_set_upload_part_list_item;
 
 mod _encryption_type;
 
@@ -221,6 +237,8 @@ mod _list_variant_import_jobs_filter;
 
 mod _list_variant_stores_filter;
 
+mod _multipart_read_set_upload_list_item;
+
 mod _read_options;
 
 mod _read_set_activation_job_item_status;
@@ -245,7 +263,13 @@ mod _read_set_import_job_status;
 
 mod _read_set_list_item;
 
+mod _read_set_part_source;
+
 mod _read_set_status;
+
+mod _read_set_upload_part_list_filter;
+
+mod _read_set_upload_part_list_item;
 
 mod _reference_file;
 

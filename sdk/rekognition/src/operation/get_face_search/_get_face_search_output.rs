@@ -18,6 +18,15 @@ pub struct GetFaceSearchOutput {
     /// <p>An array of persons, <code>PersonMatch</code>, in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also includes time information for when persons are matched in the video. You specify the input collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and person information (<code>Person</code>) for the matched person. </p>
     #[doc(hidden)]
     pub persons: std::option::Option<std::vec::Vec<crate::types::PersonMatch>>,
+    /// <p>Job identifier for the face search operation for which you want to obtain results. The job identifer is returned by an initial call to StartFaceSearch.</p>
+    #[doc(hidden)]
+    pub job_id: std::option::Option<std::string::String>,
+    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    #[doc(hidden)]
+    pub video: std::option::Option<crate::types::Video>,
+    /// <p>A job identifier specified in the call to StartFaceSearch and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
+    #[doc(hidden)]
+    pub job_tag: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl GetFaceSearchOutput {
@@ -41,6 +50,18 @@ impl GetFaceSearchOutput {
     pub fn persons(&self) -> std::option::Option<&[crate::types::PersonMatch]> {
         self.persons.as_deref()
     }
+    /// <p>Job identifier for the face search operation for which you want to obtain results. The job identifer is returned by an initial call to StartFaceSearch.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    pub fn video(&self) -> std::option::Option<&crate::types::Video> {
+        self.video.as_ref()
+    }
+    /// <p>A job identifier specified in the call to StartFaceSearch and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
+    pub fn job_tag(&self) -> std::option::Option<&str> {
+        self.job_tag.as_deref()
+    }
 }
 impl aws_http::request_id::RequestId for GetFaceSearchOutput {
     fn request_id(&self) -> Option<&str> {
@@ -63,6 +84,9 @@ pub struct GetFaceSearchOutputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
     pub(crate) video_metadata: std::option::Option<crate::types::VideoMetadata>,
     pub(crate) persons: std::option::Option<std::vec::Vec<crate::types::PersonMatch>>,
+    pub(crate) job_id: std::option::Option<std::string::String>,
+    pub(crate) video: std::option::Option<crate::types::Video>,
+    pub(crate) job_tag: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl GetFaceSearchOutputBuilder {
@@ -131,6 +155,36 @@ impl GetFaceSearchOutputBuilder {
         self.persons = input;
         self
     }
+    /// <p>Job identifier for the face search operation for which you want to obtain results. The job identifer is returned by an initial call to StartFaceSearch.</p>
+    pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.job_id = Some(input.into());
+        self
+    }
+    /// <p>Job identifier for the face search operation for which you want to obtain results. The job identifer is returned by an initial call to StartFaceSearch.</p>
+    pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.job_id = input;
+        self
+    }
+    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    pub fn video(mut self, input: crate::types::Video) -> Self {
+        self.video = Some(input);
+        self
+    }
+    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    pub fn set_video(mut self, input: std::option::Option<crate::types::Video>) -> Self {
+        self.video = input;
+        self
+    }
+    /// <p>A job identifier specified in the call to StartFaceSearch and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
+    pub fn job_tag(mut self, input: impl Into<std::string::String>) -> Self {
+        self.job_tag = Some(input.into());
+        self
+    }
+    /// <p>A job identifier specified in the call to StartFaceSearch and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
+    pub fn set_job_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.job_tag = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -148,6 +202,9 @@ impl GetFaceSearchOutputBuilder {
             next_token: self.next_token,
             video_metadata: self.video_metadata,
             persons: self.persons,
+            job_id: self.job_id,
+            video: self.video,
+            job_tag: self.job_tag,
             _request_id: self._request_id,
         }
     }

@@ -30,6 +30,9 @@ pub struct ListNotebookExecutionsInput {
     /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call, that indicates the start of the list for this <code>ListNotebookExecutions</code> call.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
+    /// <p>The unique ID of the execution engine.</p>
+    #[doc(hidden)]
+    pub execution_engine_id: std::option::Option<std::string::String>,
 }
 impl ListNotebookExecutionsInput {
     /// <p>The unique ID of the editor associated with the notebook execution.</p>
@@ -64,6 +67,10 @@ impl ListNotebookExecutionsInput {
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
+    /// <p>The unique ID of the execution engine.</p>
+    pub fn execution_engine_id(&self) -> std::option::Option<&str> {
+        self.execution_engine_id.as_deref()
+    }
 }
 impl ListNotebookExecutionsInput {
     /// Creates a new builder-style object to manufacture [`ListNotebookExecutionsInput`](crate::operation::list_notebook_executions::ListNotebookExecutionsInput).
@@ -83,6 +90,7 @@ pub struct ListNotebookExecutionsInputBuilder {
     pub(crate) from: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) to: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) execution_engine_id: std::option::Option<std::string::String>,
 }
 impl ListNotebookExecutionsInputBuilder {
     /// <p>The unique ID of the editor associated with the notebook execution.</p>
@@ -162,6 +170,19 @@ impl ListNotebookExecutionsInputBuilder {
         self.marker = input;
         self
     }
+    /// <p>The unique ID of the execution engine.</p>
+    pub fn execution_engine_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.execution_engine_id = Some(input.into());
+        self
+    }
+    /// <p>The unique ID of the execution engine.</p>
+    pub fn set_execution_engine_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.execution_engine_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ListNotebookExecutionsInput`](crate::operation::list_notebook_executions::ListNotebookExecutionsInput).
     pub fn build(
         self,
@@ -176,6 +197,7 @@ impl ListNotebookExecutionsInputBuilder {
                 from: self.from,
                 to: self.to,
                 marker: self.marker,
+                execution_engine_id: self.execution_engine_id,
             },
         )
     }

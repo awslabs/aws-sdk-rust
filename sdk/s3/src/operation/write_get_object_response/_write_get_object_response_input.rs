@@ -10,8 +10,7 @@ pub struct WriteGetObjectResponseInput {
     pub request_token: std::option::Option<std::string::String>,
     /// <p>The object data.</p>
     pub body: aws_smithy_http::byte_stream::ByteStream,
-    /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code> request.</p>
-    /// <p class="title"> <b>Status Codes</b> </p>
+    /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code> request. The following is a list of status codes.</p>
     /// <ul>
     /// <li> <p> <code>200 - OK</code> </p> </li>
     /// <li> <p> <code>206 - Partial Content</code> </p> </li>
@@ -124,13 +123,13 @@ pub struct WriteGetObjectResponseInput {
     /// <p>Provides information about object restoration operation and expiration time of the restored object copy.</p>
     #[doc(hidden)]
     pub restore: std::option::Option<std::string::String>,
-    /// <p> The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, aws:kms).</p>
+    /// <p> The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
     #[doc(hidden)]
     pub server_side_encryption: std::option::Option<crate::types::ServerSideEncryption>,
     /// <p>Encryption algorithm used if server-side encryption with a customer-provided encryption key was specified for object stored in Amazon S3.</p>
     #[doc(hidden)]
     pub sse_customer_algorithm: std::option::Option<std::string::String>,
-    /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for stored in Amazon S3 object. </p>
+    /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key that was used for stored in Amazon S3 object. </p>
     #[doc(hidden)]
     pub ssekms_key_id: std::option::Option<std::string::String>,
     /// <p> 128-bit MD5 digest of customer-provided encryption key used in Amazon S3 to encrypt data stored in S3. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Protecting data using server-side encryption with customer-provided encryption keys (SSE-C)</a>.</p>
@@ -163,8 +162,7 @@ impl WriteGetObjectResponseInput {
     pub fn body(&self) -> &aws_smithy_http::byte_stream::ByteStream {
         &self.body
     }
-    /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code> request.</p>
-    /// <p class="title"> <b>Status Codes</b> </p>
+    /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code> request. The following is a list of status codes.</p>
     /// <ul>
     /// <li> <p> <code>200 - OK</code> </p> </li>
     /// <li> <p> <code>206 - Partial Content</code> </p> </li>
@@ -312,7 +310,7 @@ impl WriteGetObjectResponseInput {
     pub fn restore(&self) -> std::option::Option<&str> {
         self.restore.as_deref()
     }
-    /// <p> The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, aws:kms).</p>
+    /// <p> The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
     pub fn server_side_encryption(
         &self,
     ) -> std::option::Option<&crate::types::ServerSideEncryption> {
@@ -322,7 +320,7 @@ impl WriteGetObjectResponseInput {
     pub fn sse_customer_algorithm(&self) -> std::option::Option<&str> {
         self.sse_customer_algorithm.as_deref()
     }
-    /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for stored in Amazon S3 object. </p>
+    /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key that was used for stored in Amazon S3 object. </p>
     pub fn ssekms_key_id(&self) -> std::option::Option<&str> {
         self.ssekms_key_id.as_deref()
     }
@@ -490,8 +488,7 @@ impl WriteGetObjectResponseInputBuilder {
         self.body = input;
         self
     }
-    /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code> request.</p>
-    /// <p class="title"> <b>Status Codes</b> </p>
+    /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code> request. The following is a list of status codes.</p>
     /// <ul>
     /// <li> <p> <code>200 - OK</code> </p> </li>
     /// <li> <p> <code>206 - Partial Content</code> </p> </li>
@@ -512,8 +509,7 @@ impl WriteGetObjectResponseInputBuilder {
         self.status_code = Some(input);
         self
     }
-    /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code> request.</p>
-    /// <p class="title"> <b>Status Codes</b> </p>
+    /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code> request. The following is a list of status codes.</p>
     /// <ul>
     /// <li> <p> <code>200 - OK</code> </p> </li>
     /// <li> <p> <code>206 - Partial Content</code> </p> </li>
@@ -871,12 +867,12 @@ impl WriteGetObjectResponseInputBuilder {
         self.restore = input;
         self
     }
-    /// <p> The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, aws:kms).</p>
+    /// <p> The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
     pub fn server_side_encryption(mut self, input: crate::types::ServerSideEncryption) -> Self {
         self.server_side_encryption = Some(input);
         self
     }
-    /// <p> The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, aws:kms).</p>
+    /// <p> The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
     pub fn set_server_side_encryption(
         mut self,
         input: std::option::Option<crate::types::ServerSideEncryption>,
@@ -897,12 +893,12 @@ impl WriteGetObjectResponseInputBuilder {
         self.sse_customer_algorithm = input;
         self
     }
-    /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for stored in Amazon S3 object. </p>
+    /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key that was used for stored in Amazon S3 object. </p>
     pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.ssekms_key_id = Some(input.into());
         self
     }
-    /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for stored in Amazon S3 object. </p>
+    /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key that was used for stored in Amazon S3 object. </p>
     pub fn set_ssekms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.ssekms_key_id = input;
         self

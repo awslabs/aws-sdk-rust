@@ -84,7 +84,7 @@ pub struct CreateIntegrationInput {
     pub template_selection_expression: std::option::Option<std::string::String>,
     /// <p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>
     #[doc(hidden)]
-    pub timeout_in_millis: i32,
+    pub timeout_in_millis: std::option::Option<i32>,
     /// <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
     #[doc(hidden)]
     pub tls_config: std::option::Option<crate::types::TlsConfigInput>,
@@ -193,7 +193,7 @@ impl CreateIntegrationInput {
         self.template_selection_expression.as_deref()
     }
     /// <p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>
-    pub fn timeout_in_millis(&self) -> i32 {
+    pub fn timeout_in_millis(&self) -> std::option::Option<i32> {
         self.timeout_in_millis
     }
     /// <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
@@ -570,7 +570,7 @@ impl CreateIntegrationInputBuilder {
                 request_templates: self.request_templates,
                 response_parameters: self.response_parameters,
                 template_selection_expression: self.template_selection_expression,
-                timeout_in_millis: self.timeout_in_millis.unwrap_or_default(),
+                timeout_in_millis: self.timeout_in_millis,
                 tls_config: self.tls_config,
             },
         )

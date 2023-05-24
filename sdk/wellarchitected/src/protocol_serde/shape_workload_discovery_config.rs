@@ -8,6 +8,15 @@ pub fn ser_workload_discovery_config(
             .key("TrustedAdvisorIntegrationStatus")
             .string(var_1.as_str());
     }
+    if let Some(var_2) = &input.workload_resource_definition {
+        let mut array_3 = object.key("WorkloadResourceDefinition").start_array();
+        for item_4 in var_2 {
+            {
+                array_3.value().string(item_4.as_str());
+            }
+        }
+        array_3.finish();
+    }
     Ok(())
 }
 
@@ -48,6 +57,11 @@ where
                                         })
                                     })
                                     .transpose()?,
+                                );
+                            }
+                            "WorkloadResourceDefinition" => {
+                                builder = builder.set_workload_resource_definition(
+                                    crate::protocol_serde::shape_workload_resource_definition::de_workload_resource_definition(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

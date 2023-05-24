@@ -12,7 +12,7 @@ pub struct ImportApiInput {
     pub body: std::option::Option<std::string::String>,
     /// <p>Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.</p>
     #[doc(hidden)]
-    pub fail_on_warnings: bool,
+    pub fail_on_warnings: std::option::Option<bool>,
 }
 impl ImportApiInput {
     /// <p>Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and split. The default value is ignore. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set the OpenAPI basePath Property</a>. Supported only for HTTP APIs.</p>
@@ -24,7 +24,7 @@ impl ImportApiInput {
         self.body.as_deref()
     }
     /// <p>Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.</p>
-    pub fn fail_on_warnings(&self) -> bool {
+    pub fn fail_on_warnings(&self) -> std::option::Option<bool> {
         self.fail_on_warnings
     }
 }
@@ -84,7 +84,7 @@ impl ImportApiInputBuilder {
         Ok(crate::operation::import_api::ImportApiInput {
             basepath: self.basepath,
             body: self.body,
-            fail_on_warnings: self.fail_on_warnings.unwrap_or_default(),
+            fail_on_warnings: self.fail_on_warnings,
         })
     }
 }

@@ -25,6 +25,10 @@ pub struct WorkflowListItem {
     /// <p>When the workflow was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> Any metadata available for workflow. The information listed may vary depending on the workflow, and there may also be no metadata to return. </p>
+    #[doc(hidden)]
+    pub metadata:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl WorkflowListItem {
     /// <p>The workflow's ARN.</p>
@@ -55,6 +59,13 @@ impl WorkflowListItem {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
+    /// <p> Any metadata available for workflow. The information listed may vary depending on the workflow, and there may also be no metadata to return. </p>
+    pub fn metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.metadata.as_ref()
+    }
 }
 impl WorkflowListItem {
     /// Creates a new builder-style object to manufacture [`WorkflowListItem`](crate::types::WorkflowListItem).
@@ -74,6 +85,8 @@ pub struct WorkflowListItemBuilder {
     pub(crate) r#type: std::option::Option<crate::types::WorkflowType>,
     pub(crate) digest: std::option::Option<std::string::String>,
     pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) metadata:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl WorkflowListItemBuilder {
     /// <p>The workflow's ARN.</p>
@@ -149,6 +162,31 @@ impl WorkflowListItemBuilder {
         self.creation_time = input;
         self
     }
+    /// Adds a key-value pair to `metadata`.
+    ///
+    /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+    ///
+    /// <p> Any metadata available for workflow. The information listed may vary depending on the workflow, and there may also be no metadata to return. </p>
+    pub fn metadata(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.metadata.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.metadata = Some(hash_map);
+        self
+    }
+    /// <p> Any metadata available for workflow. The information listed may vary depending on the workflow, and there may also be no metadata to return. </p>
+    pub fn set_metadata(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.metadata = input;
+        self
+    }
     /// Consumes the builder and constructs a [`WorkflowListItem`](crate::types::WorkflowListItem).
     pub fn build(self) -> crate::types::WorkflowListItem {
         crate::types::WorkflowListItem {
@@ -159,6 +197,7 @@ impl WorkflowListItemBuilder {
             r#type: self.r#type,
             digest: self.digest,
             creation_time: self.creation_time,
+            metadata: self.metadata,
         }
     }
 }

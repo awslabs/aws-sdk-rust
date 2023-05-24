@@ -27,7 +27,7 @@ pub struct ApnsMessage {
     pub action: std::option::Option<crate::types::Action>,
     /// <p>The key that indicates whether and how to modify the badge of your app's icon when the recipient receives the push notification. If this key isn't included in the dictionary, the badge doesn't change. To remove the badge, set this value to 0.</p>
     #[doc(hidden)]
-    pub badge: i32,
+    pub badge: std::option::Option<i32>,
     /// <p>The body of the notification message.</p>
     #[doc(hidden)]
     pub body: std::option::Option<std::string::String>,
@@ -65,7 +65,7 @@ pub struct ApnsMessage {
     /// <p>Apple has indicated that they will throttle "excessive" background notifications based on current traffic volumes. To prevent your notifications being throttled, Apple recommends that you send no more than 3 silent push notifications to each recipient per hour.</p>
     /// </note>
     #[doc(hidden)]
-    pub silent_push: bool,
+    pub silent_push: std::option::Option<bool>,
     /// <p>The key for the sound to play when the recipient receives the push notification. The value for this key is the name of a sound file in your app's main bundle or the Library/Sounds folder in your app's data container. If the sound file can't be found or you specify default for the value, the system plays the default alert sound.</p>
     #[doc(hidden)]
     pub sound: std::option::Option<std::string::String>,
@@ -80,7 +80,7 @@ pub struct ApnsMessage {
     /// <p>The amount of time, in seconds, that APNs should store and attempt to deliver the push notification, if the service is unable to deliver the notification the first time. If this value is 0, APNs treats the notification as if it expires immediately and the service doesn't store or try to deliver the notification again.</p>
     /// <p>Amazon Pinpoint specifies this value in the apns-expiration request header when it sends the notification message to APNs.</p>
     #[doc(hidden)]
-    pub time_to_live: i32,
+    pub time_to_live: std::option::Option<i32>,
     /// <p>The title to display above the notification message on the recipient's device.</p>
     #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
@@ -113,7 +113,7 @@ impl ApnsMessage {
         self.action.as_ref()
     }
     /// <p>The key that indicates whether and how to modify the badge of your app's icon when the recipient receives the push notification. If this key isn't included in the dictionary, the badge doesn't change. To remove the badge, set this value to 0.</p>
-    pub fn badge(&self) -> i32 {
+    pub fn badge(&self) -> std::option::Option<i32> {
         self.badge
     }
     /// <p>The body of the notification message.</p>
@@ -162,7 +162,7 @@ impl ApnsMessage {
     /// <p>If you specify the raw content of an APNs push notification, the message payload has to include the content-available key. For silent (background) notifications, set the value of content-available to 1. Additionally, the message payload for a silent notification can't include the alert, badge, or sound keys. For more information, see <a href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating a Remote Notification</a> and <a href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing Background Updates to Your App</a> on the Apple Developer website.</p>
     /// <p>Apple has indicated that they will throttle "excessive" background notifications based on current traffic volumes. To prevent your notifications being throttled, Apple recommends that you send no more than 3 silent push notifications to each recipient per hour.</p>
     /// </note>
-    pub fn silent_push(&self) -> bool {
+    pub fn silent_push(&self) -> std::option::Option<bool> {
         self.silent_push
     }
     /// <p>The key for the sound to play when the recipient receives the push notification. The value for this key is the name of a sound file in your app's main bundle or the Library/Sounds folder in your app's data container. If the sound file can't be found or you specify default for the value, the system plays the default alert sound.</p>
@@ -183,7 +183,7 @@ impl ApnsMessage {
     }
     /// <p>The amount of time, in seconds, that APNs should store and attempt to deliver the push notification, if the service is unable to deliver the notification the first time. If this value is 0, APNs treats the notification as if it expires immediately and the service doesn't store or try to deliver the notification again.</p>
     /// <p>Amazon Pinpoint specifies this value in the apns-expiration request header when it sends the notification message to APNs.</p>
-    pub fn time_to_live(&self) -> i32 {
+    pub fn time_to_live(&self) -> std::option::Option<i32> {
         self.time_to_live
     }
     /// <p>The title to display above the notification message on the recipient's device.</p>
@@ -502,7 +502,7 @@ impl ApnsMessageBuilder {
         crate::types::ApnsMessage {
             apns_push_type: self.apns_push_type,
             action: self.action,
-            badge: self.badge.unwrap_or_default(),
+            badge: self.badge,
             body: self.body,
             category: self.category,
             collapse_id: self.collapse_id,
@@ -511,11 +511,11 @@ impl ApnsMessageBuilder {
             preferred_authentication_method: self.preferred_authentication_method,
             priority: self.priority,
             raw_content: self.raw_content,
-            silent_push: self.silent_push.unwrap_or_default(),
+            silent_push: self.silent_push,
             sound: self.sound,
             substitutions: self.substitutions,
             thread_id: self.thread_id,
-            time_to_live: self.time_to_live.unwrap_or_default(),
+            time_to_live: self.time_to_live,
             title: self.title,
             url: self.url,
         }

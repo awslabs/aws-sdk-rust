@@ -222,6 +222,8 @@ mod create_cluster_v2;
 
 mod create_configuration;
 
+mod create_vpc_connection;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -252,7 +254,11 @@ pub mod customize;
 
 mod delete_cluster;
 
+mod delete_cluster_policy;
+
 mod delete_configuration;
+
+mod delete_vpc_connection;
 
 mod describe_cluster;
 
@@ -264,9 +270,15 @@ mod describe_configuration;
 
 mod describe_configuration_revision;
 
+mod describe_vpc_connection;
+
 mod get_bootstrap_brokers;
 
+mod get_cluster_policy;
+
 mod get_compatible_kafka_versions;
+
+mod list_client_vpc_connections;
 
 mod list_cluster_operations;
 
@@ -286,7 +298,13 @@ mod list_scram_secrets;
 
 mod list_tags_for_resource;
 
+mod list_vpc_connections;
+
+mod put_cluster_policy;
+
 mod reboot_broker;
+
+mod reject_client_vpc_connection;
 
 mod tag_resource;
 

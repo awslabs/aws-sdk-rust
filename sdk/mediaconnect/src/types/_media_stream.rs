@@ -9,16 +9,16 @@ pub struct MediaStream {
     pub attributes: std::option::Option<crate::types::MediaStreamAttributes>,
     /// The sample rate for the stream. This value is measured in Hz.
     #[doc(hidden)]
-    pub clock_rate: i32,
+    pub clock_rate: std::option::Option<i32>,
     /// A description that can help you quickly identify what your media stream is used for.
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// The format type number (sometimes referred to as RTP payload type) of the media stream. MediaConnect assigns this value to the media stream. For ST 2110 JPEG XS outputs, you need to provide this value to the receiver.
     #[doc(hidden)]
-    pub fmt: i32,
+    pub fmt: std::option::Option<i32>,
     /// A unique identifier for the media stream.
     #[doc(hidden)]
-    pub media_stream_id: i32,
+    pub media_stream_id: std::option::Option<i32>,
     /// A name that helps you distinguish one media stream from another.
     #[doc(hidden)]
     pub media_stream_name: std::option::Option<std::string::String>,
@@ -35,7 +35,7 @@ impl MediaStream {
         self.attributes.as_ref()
     }
     /// The sample rate for the stream. This value is measured in Hz.
-    pub fn clock_rate(&self) -> i32 {
+    pub fn clock_rate(&self) -> std::option::Option<i32> {
         self.clock_rate
     }
     /// A description that can help you quickly identify what your media stream is used for.
@@ -43,11 +43,11 @@ impl MediaStream {
         self.description.as_deref()
     }
     /// The format type number (sometimes referred to as RTP payload type) of the media stream. MediaConnect assigns this value to the media stream. For ST 2110 JPEG XS outputs, you need to provide this value to the receiver.
-    pub fn fmt(&self) -> i32 {
+    pub fn fmt(&self) -> std::option::Option<i32> {
         self.fmt
     }
     /// A unique identifier for the media stream.
-    pub fn media_stream_id(&self) -> i32 {
+    pub fn media_stream_id(&self) -> std::option::Option<i32> {
         self.media_stream_id
     }
     /// A name that helps you distinguish one media stream from another.
@@ -177,10 +177,10 @@ impl MediaStreamBuilder {
     pub fn build(self) -> crate::types::MediaStream {
         crate::types::MediaStream {
             attributes: self.attributes,
-            clock_rate: self.clock_rate.unwrap_or_default(),
+            clock_rate: self.clock_rate,
             description: self.description,
-            fmt: self.fmt.unwrap_or_default(),
-            media_stream_id: self.media_stream_id.unwrap_or_default(),
+            fmt: self.fmt,
+            media_stream_id: self.media_stream_id,
             media_stream_name: self.media_stream_name,
             media_stream_type: self.media_stream_type,
             video_format: self.video_format,

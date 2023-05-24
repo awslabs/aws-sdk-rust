@@ -199,7 +199,7 @@ pub enum RestoreDBInstanceFromDBSnapshotError {
     ProvisionedIopsNotAvailableInAzFault(crate::types::error::ProvisionedIopsNotAvailableInAzFault),
     /// <p>The request would result in the user exceeding the allowed amount of storage available across all DB instances.</p>
     StorageQuotaExceededFault(crate::types::error::StorageQuotaExceededFault),
-    /// <p>Storage of the <code>StorageType</code> specified can't be associated with the DB instance.</p>
+    /// <p>The specified <code>StorageType</code> can't be associated with the DB instance.</p>
     StorageTypeNotSupportedFault(crate::types::error::StorageTypeNotSupportedFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),

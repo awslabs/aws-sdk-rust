@@ -7,6 +7,9 @@ pub struct EcsServiceRecommendationFilter {
     /// <p> The name of the filter. </p>
     /// <p> Specify <code>Finding</code> to return recommendations with a specific finding classification. </p>
     /// <p> Specify <code>FindingReasonCode</code> to return recommendations with a specific finding reason code. </p>
+    /// <p>You can filter your Amazon ECS service recommendations by <code>tag:key</code> and <code>tag-key</code> tags.</p>
+    /// <p>A <code>tag:key</code> is a key and value combination of a tag assigned to your Amazon ECS service recommendations. Use the tag key in the filter name and the tag value as the filter value. For example, to find all Amazon ECS service recommendations that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
+    /// <p>A <code>tag-key</code> is the key of a tag assigned to your Amazon ECS service recommendations. Use this filter to find all of your Amazon ECS service recommendations that have a tag with a specific key. This doesn’t consider the tag value. For example, you can find your Amazon ECS service recommendations with a tag key value of <code>Owner</code> or without any tag keys assigned.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::EcsServiceRecommendationFilterName>,
     /// <p> The value of the filter. </p>
@@ -22,6 +25,9 @@ impl EcsServiceRecommendationFilter {
     /// <p> The name of the filter. </p>
     /// <p> Specify <code>Finding</code> to return recommendations with a specific finding classification. </p>
     /// <p> Specify <code>FindingReasonCode</code> to return recommendations with a specific finding reason code. </p>
+    /// <p>You can filter your Amazon ECS service recommendations by <code>tag:key</code> and <code>tag-key</code> tags.</p>
+    /// <p>A <code>tag:key</code> is a key and value combination of a tag assigned to your Amazon ECS service recommendations. Use the tag key in the filter name and the tag value as the filter value. For example, to find all Amazon ECS service recommendations that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
+    /// <p>A <code>tag-key</code> is the key of a tag assigned to your Amazon ECS service recommendations. Use this filter to find all of your Amazon ECS service recommendations that have a tag with a specific key. This doesn’t consider the tag value. For example, you can find your Amazon ECS service recommendations with a tag key value of <code>Owner</code> or without any tag keys assigned.</p>
     pub fn name(&self) -> std::option::Option<&crate::types::EcsServiceRecommendationFilterName> {
         self.name.as_ref()
     }
@@ -53,6 +59,9 @@ impl EcsServiceRecommendationFilterBuilder {
     /// <p> The name of the filter. </p>
     /// <p> Specify <code>Finding</code> to return recommendations with a specific finding classification. </p>
     /// <p> Specify <code>FindingReasonCode</code> to return recommendations with a specific finding reason code. </p>
+    /// <p>You can filter your Amazon ECS service recommendations by <code>tag:key</code> and <code>tag-key</code> tags.</p>
+    /// <p>A <code>tag:key</code> is a key and value combination of a tag assigned to your Amazon ECS service recommendations. Use the tag key in the filter name and the tag value as the filter value. For example, to find all Amazon ECS service recommendations that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
+    /// <p>A <code>tag-key</code> is the key of a tag assigned to your Amazon ECS service recommendations. Use this filter to find all of your Amazon ECS service recommendations that have a tag with a specific key. This doesn’t consider the tag value. For example, you can find your Amazon ECS service recommendations with a tag key value of <code>Owner</code> or without any tag keys assigned.</p>
     pub fn name(mut self, input: crate::types::EcsServiceRecommendationFilterName) -> Self {
         self.name = Some(input);
         self
@@ -60,6 +69,9 @@ impl EcsServiceRecommendationFilterBuilder {
     /// <p> The name of the filter. </p>
     /// <p> Specify <code>Finding</code> to return recommendations with a specific finding classification. </p>
     /// <p> Specify <code>FindingReasonCode</code> to return recommendations with a specific finding reason code. </p>
+    /// <p>You can filter your Amazon ECS service recommendations by <code>tag:key</code> and <code>tag-key</code> tags.</p>
+    /// <p>A <code>tag:key</code> is a key and value combination of a tag assigned to your Amazon ECS service recommendations. Use the tag key in the filter name and the tag value as the filter value. For example, to find all Amazon ECS service recommendations that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
+    /// <p>A <code>tag-key</code> is the key of a tag assigned to your Amazon ECS service recommendations. Use this filter to find all of your Amazon ECS service recommendations that have a tag with a specific key. This doesn’t consider the tag value. For example, you can find your Amazon ECS service recommendations with a tag key value of <code>Owner</code> or without any tag keys assigned.</p>
     pub fn set_name(
         mut self,
         input: std::option::Option<crate::types::EcsServiceRecommendationFilterName>,

@@ -78,12 +78,12 @@ impl CreateIAMPolicyAssignmentFluentBuilder {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
-    /// <p>The name of the assignment, also called a rule. It must be unique within an Amazon Web Services account.</p>
+    /// <p>The name of the assignment, also called a rule. The name must be unique within the Amazon Web Services account.</p>
     pub fn assignment_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.assignment_name(input.into());
         self
     }
-    /// <p>The name of the assignment, also called a rule. It must be unique within an Amazon Web Services account.</p>
+    /// <p>The name of the assignment, also called a rule. The name must be unique within the Amazon Web Services account.</p>
     pub fn set_assignment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_assignment_name(input);
         self

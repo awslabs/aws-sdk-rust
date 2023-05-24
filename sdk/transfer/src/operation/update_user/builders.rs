@@ -160,12 +160,12 @@ impl UpdateUserFluentBuilder {
         self.inner = self.inner.set_role(input);
         self
     }
-    /// <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
+    /// <p>A system-assigned unique identifier for a Transfer Family server instance that the user is assigned to.</p>
     pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.server_id(input.into());
         self
     }
-    /// <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
+    /// <p>A system-assigned unique identifier for a Transfer Family server instance that the user is assigned to.</p>
     pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_server_id(input);
         self

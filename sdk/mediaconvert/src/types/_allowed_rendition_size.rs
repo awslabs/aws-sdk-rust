@@ -6,17 +6,17 @@
 pub struct AllowedRenditionSize {
     /// Use Height to define the video resolution height, in pixels, for this rule.
     #[doc(hidden)]
-    pub height: i32,
+    pub height: std::option::Option<i32>,
     /// Set to ENABLED to force a rendition to be included.
     #[doc(hidden)]
     pub required: std::option::Option<crate::types::RequiredFlag>,
     /// Use Width to define the video resolution width, in pixels, for this rule.
     #[doc(hidden)]
-    pub width: i32,
+    pub width: std::option::Option<i32>,
 }
 impl AllowedRenditionSize {
     /// Use Height to define the video resolution height, in pixels, for this rule.
-    pub fn height(&self) -> i32 {
+    pub fn height(&self) -> std::option::Option<i32> {
         self.height
     }
     /// Set to ENABLED to force a rendition to be included.
@@ -24,7 +24,7 @@ impl AllowedRenditionSize {
         self.required.as_ref()
     }
     /// Use Width to define the video resolution width, in pixels, for this rule.
-    pub fn width(&self) -> i32 {
+    pub fn width(&self) -> std::option::Option<i32> {
         self.width
     }
 }
@@ -77,9 +77,9 @@ impl AllowedRenditionSizeBuilder {
     /// Consumes the builder and constructs a [`AllowedRenditionSize`](crate::types::AllowedRenditionSize).
     pub fn build(self) -> crate::types::AllowedRenditionSize {
         crate::types::AllowedRenditionSize {
-            height: self.height.unwrap_or_default(),
+            height: self.height,
             required: self.required,
-            width: self.width.unwrap_or_default(),
+            width: self.width,
         }
     }
 }

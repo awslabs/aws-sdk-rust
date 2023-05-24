@@ -19,7 +19,7 @@ pub struct SchemaSummary {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The number of versions available for the schema.</p>
     #[doc(hidden)]
-    pub version_count: i64,
+    pub version_count: std::option::Option<i64>,
 }
 impl SchemaSummary {
     /// <p>The date and time that schema was modified.</p>
@@ -42,7 +42,7 @@ impl SchemaSummary {
         self.tags.as_ref()
     }
     /// <p>The number of versions available for the schema.</p>
-    pub fn version_count(&self) -> i64 {
+    pub fn version_count(&self) -> std::option::Option<i64> {
         self.version_count
     }
 }
@@ -140,7 +140,7 @@ impl SchemaSummaryBuilder {
             schema_arn: self.schema_arn,
             schema_name: self.schema_name,
             tags: self.tags,
-            version_count: self.version_count.unwrap_or_default(),
+            version_count: self.version_count,
         }
     }
 }

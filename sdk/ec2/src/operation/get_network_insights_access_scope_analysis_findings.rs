@@ -247,3 +247,6 @@ mod _get_network_insights_access_scope_analysis_findings_output;
 
 /// Builders
 pub mod builders;
+
+/// Paginator for this operation
+pub mod paginator;

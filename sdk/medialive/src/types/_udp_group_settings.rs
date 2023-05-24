@@ -12,7 +12,7 @@ pub struct UdpGroupSettings {
     pub timed_metadata_id3_frame: std::option::Option<crate::types::UdpTimedMetadataId3Frame>,
     /// Timed Metadata interval in seconds.
     #[doc(hidden)]
-    pub timed_metadata_id3_period: i32,
+    pub timed_metadata_id3_period: std::option::Option<i32>,
 }
 impl UdpGroupSettings {
     /// Specifies behavior of last resort when input video is lost, and no more backup inputs are available. When dropTs is selected the entire transport stream will stop being emitted. When dropProgram is selected the program can be dropped from the transport stream (and replaced with null packets to meet the TS bitrate requirement). Or, when emitProgram is chosen the transport stream will continue to be produced normally with repeat frames, black frames, or slate frames substituted for the absent input video.
@@ -28,7 +28,7 @@ impl UdpGroupSettings {
         self.timed_metadata_id3_frame.as_ref()
     }
     /// Timed Metadata interval in seconds.
-    pub fn timed_metadata_id3_period(&self) -> i32 {
+    pub fn timed_metadata_id3_period(&self) -> std::option::Option<i32> {
         self.timed_metadata_id3_period
     }
 }
@@ -93,7 +93,7 @@ impl UdpGroupSettingsBuilder {
         crate::types::UdpGroupSettings {
             input_loss_action: self.input_loss_action,
             timed_metadata_id3_frame: self.timed_metadata_id3_frame,
-            timed_metadata_id3_period: self.timed_metadata_id3_period.unwrap_or_default(),
+            timed_metadata_id3_period: self.timed_metadata_id3_period,
         }
     }
 }

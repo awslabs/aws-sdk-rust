@@ -70,16 +70,16 @@ pub fn ser_static_image_deactivate_schedule_action_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StaticImageDeactivateScheduleActionSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.fade_out != 0 {
+    if let Some(var_1) = &input.fade_out {
         object.key("fadeOut").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.fade_out).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.layer != 0 {
+    if let Some(var_2) = &input.layer {
         object.key("layer").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.layer).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

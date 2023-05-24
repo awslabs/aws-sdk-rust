@@ -15,13 +15,13 @@ pub struct EmailChannelResponse {
     pub creation_date: std::option::Option<std::string::String>,
     /// <p>Specifies whether the email channel is enabled for the application.</p>
     #[doc(hidden)]
-    pub enabled: bool,
+    pub enabled: std::option::Option<bool>,
     /// <p>The verified email address that email is sent from when you send email through the channel.</p>
     #[doc(hidden)]
     pub from_address: std::option::Option<std::string::String>,
     /// <p>(Not used) This property is retained only for backward compatibility.</p>
     #[doc(hidden)]
-    pub has_credential: bool,
+    pub has_credential: std::option::Option<bool>,
     /// <p>(Deprecated) An identifier for the email channel. This property is retained only for backward compatibility.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -30,7 +30,7 @@ pub struct EmailChannelResponse {
     pub identity: std::option::Option<std::string::String>,
     /// <p>Specifies whether the email channel is archived.</p>
     #[doc(hidden)]
-    pub is_archived: bool,
+    pub is_archived: std::option::Option<bool>,
     /// <p>The user who last modified the email channel.</p>
     #[doc(hidden)]
     pub last_modified_by: std::option::Option<std::string::String>,
@@ -39,7 +39,7 @@ pub struct EmailChannelResponse {
     pub last_modified_date: std::option::Option<std::string::String>,
     /// <p>The maximum number of emails that can be sent through the channel each second.</p>
     #[doc(hidden)]
-    pub messages_per_second: i32,
+    pub messages_per_second: std::option::Option<i32>,
     /// <p>The type of messaging or notification platform for the channel. For the email channel, this value is EMAIL.</p>
     #[doc(hidden)]
     pub platform: std::option::Option<std::string::String>,
@@ -48,7 +48,7 @@ pub struct EmailChannelResponse {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The current version of the email channel.</p>
     #[doc(hidden)]
-    pub version: i32,
+    pub version: std::option::Option<i32>,
 }
 impl EmailChannelResponse {
     /// <p>The unique identifier for the application that the email channel applies to.</p>
@@ -64,7 +64,7 @@ impl EmailChannelResponse {
         self.creation_date.as_deref()
     }
     /// <p>Specifies whether the email channel is enabled for the application.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
     /// <p>The verified email address that email is sent from when you send email through the channel.</p>
@@ -72,7 +72,7 @@ impl EmailChannelResponse {
         self.from_address.as_deref()
     }
     /// <p>(Not used) This property is retained only for backward compatibility.</p>
-    pub fn has_credential(&self) -> bool {
+    pub fn has_credential(&self) -> std::option::Option<bool> {
         self.has_credential
     }
     /// <p>(Deprecated) An identifier for the email channel. This property is retained only for backward compatibility.</p>
@@ -84,7 +84,7 @@ impl EmailChannelResponse {
         self.identity.as_deref()
     }
     /// <p>Specifies whether the email channel is archived.</p>
-    pub fn is_archived(&self) -> bool {
+    pub fn is_archived(&self) -> std::option::Option<bool> {
         self.is_archived
     }
     /// <p>The user who last modified the email channel.</p>
@@ -96,7 +96,7 @@ impl EmailChannelResponse {
         self.last_modified_date.as_deref()
     }
     /// <p>The maximum number of emails that can be sent through the channel each second.</p>
-    pub fn messages_per_second(&self) -> i32 {
+    pub fn messages_per_second(&self) -> std::option::Option<i32> {
         self.messages_per_second
     }
     /// <p>The type of messaging or notification platform for the channel. For the email channel, this value is EMAIL.</p>
@@ -108,7 +108,7 @@ impl EmailChannelResponse {
         self.role_arn.as_deref()
     }
     /// <p>The current version of the email channel.</p>
-    pub fn version(&self) -> i32 {
+    pub fn version(&self) -> std::option::Option<i32> {
         self.version
     }
 }
@@ -302,18 +302,18 @@ impl EmailChannelResponseBuilder {
             application_id: self.application_id,
             configuration_set: self.configuration_set,
             creation_date: self.creation_date,
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled,
             from_address: self.from_address,
-            has_credential: self.has_credential.unwrap_or_default(),
+            has_credential: self.has_credential,
             id: self.id,
             identity: self.identity,
-            is_archived: self.is_archived.unwrap_or_default(),
+            is_archived: self.is_archived,
             last_modified_by: self.last_modified_by,
             last_modified_date: self.last_modified_date,
-            messages_per_second: self.messages_per_second.unwrap_or_default(),
+            messages_per_second: self.messages_per_second,
             platform: self.platform,
             role_arn: self.role_arn,
-            version: self.version.unwrap_or_default(),
+            version: self.version,
         }
     }
 }

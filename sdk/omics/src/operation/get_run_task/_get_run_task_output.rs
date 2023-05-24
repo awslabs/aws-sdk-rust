@@ -33,6 +33,9 @@ pub struct GetRunTaskOutput {
     /// <p>The task's log stream.</p>
     #[doc(hidden)]
     pub log_stream: std::option::Option<std::string::String>,
+    /// <p> The number of Graphics Processing Units (GPU) specified in the task. </p>
+    #[doc(hidden)]
+    pub gpus: std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl GetRunTaskOutput {
@@ -76,6 +79,10 @@ impl GetRunTaskOutput {
     pub fn log_stream(&self) -> std::option::Option<&str> {
         self.log_stream.as_deref()
     }
+    /// <p> The number of Graphics Processing Units (GPU) specified in the task. </p>
+    pub fn gpus(&self) -> std::option::Option<i32> {
+        self.gpus
+    }
 }
 impl aws_http::request_id::RequestId for GetRunTaskOutput {
     fn request_id(&self) -> Option<&str> {
@@ -103,6 +110,7 @@ pub struct GetRunTaskOutputBuilder {
     pub(crate) stop_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) status_message: std::option::Option<std::string::String>,
     pub(crate) log_stream: std::option::Option<std::string::String>,
+    pub(crate) gpus: std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl GetRunTaskOutputBuilder {
@@ -212,6 +220,16 @@ impl GetRunTaskOutputBuilder {
         self.log_stream = input;
         self
     }
+    /// <p> The number of Graphics Processing Units (GPU) specified in the task. </p>
+    pub fn gpus(mut self, input: i32) -> Self {
+        self.gpus = Some(input);
+        self
+    }
+    /// <p> The number of Graphics Processing Units (GPU) specified in the task. </p>
+    pub fn set_gpus(mut self, input: std::option::Option<i32>) -> Self {
+        self.gpus = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -234,6 +252,7 @@ impl GetRunTaskOutputBuilder {
             stop_time: self.stop_time,
             status_message: self.status_message,
             log_stream: self.log_stream,
+            gpus: self.gpus,
             _request_id: self._request_id,
         }
     }

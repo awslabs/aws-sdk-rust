@@ -25,6 +25,9 @@ pub struct RunGroupListItem {
     /// <p>When the group was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> The maximum GPUs that can be used by a run group. </p>
+    #[doc(hidden)]
+    pub max_gpus: std::option::Option<i32>,
 }
 impl RunGroupListItem {
     /// <p>The group's ARN.</p>
@@ -55,6 +58,10 @@ impl RunGroupListItem {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
+    /// <p> The maximum GPUs that can be used by a run group. </p>
+    pub fn max_gpus(&self) -> std::option::Option<i32> {
+        self.max_gpus
+    }
 }
 impl RunGroupListItem {
     /// Creates a new builder-style object to manufacture [`RunGroupListItem`](crate::types::RunGroupListItem).
@@ -74,6 +81,7 @@ pub struct RunGroupListItemBuilder {
     pub(crate) max_runs: std::option::Option<i32>,
     pub(crate) max_duration: std::option::Option<i32>,
     pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) max_gpus: std::option::Option<i32>,
 }
 impl RunGroupListItemBuilder {
     /// <p>The group's ARN.</p>
@@ -149,6 +157,16 @@ impl RunGroupListItemBuilder {
         self.creation_time = input;
         self
     }
+    /// <p> The maximum GPUs that can be used by a run group. </p>
+    pub fn max_gpus(mut self, input: i32) -> Self {
+        self.max_gpus = Some(input);
+        self
+    }
+    /// <p> The maximum GPUs that can be used by a run group. </p>
+    pub fn set_max_gpus(mut self, input: std::option::Option<i32>) -> Self {
+        self.max_gpus = input;
+        self
+    }
     /// Consumes the builder and constructs a [`RunGroupListItem`](crate::types::RunGroupListItem).
     pub fn build(self) -> crate::types::RunGroupListItem {
         crate::types::RunGroupListItem {
@@ -159,6 +177,7 @@ impl RunGroupListItemBuilder {
             max_runs: self.max_runs,
             max_duration: self.max_duration,
             creation_time: self.creation_time,
+            max_gpus: self.max_gpus,
         }
     }
 }

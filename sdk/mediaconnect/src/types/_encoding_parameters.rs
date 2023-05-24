@@ -6,14 +6,14 @@
 pub struct EncodingParameters {
     /// A value that is used to calculate compression for an output. The bitrate of the output is calculated as follows: Output bitrate = (1 / compressionFactor) * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol. Valid values are floating point numbers in the range of 3.0 to 10.0, inclusive.
     #[doc(hidden)]
-    pub compression_factor: f64,
+    pub compression_factor: std::option::Option<f64>,
     /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol.
     #[doc(hidden)]
     pub encoder_profile: std::option::Option<crate::types::EncoderProfile>,
 }
 impl EncodingParameters {
     /// A value that is used to calculate compression for an output. The bitrate of the output is calculated as follows: Output bitrate = (1 / compressionFactor) * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol. Valid values are floating point numbers in the range of 3.0 to 10.0, inclusive.
-    pub fn compression_factor(&self) -> f64 {
+    pub fn compression_factor(&self) -> std::option::Option<f64> {
         self.compression_factor
     }
     /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol.
@@ -62,7 +62,7 @@ impl EncodingParametersBuilder {
     /// Consumes the builder and constructs a [`EncodingParameters`](crate::types::EncodingParameters).
     pub fn build(self) -> crate::types::EncodingParameters {
         crate::types::EncodingParameters {
-            compression_factor: self.compression_factor.unwrap_or_default(),
+            compression_factor: self.compression_factor,
             encoder_profile: self.encoder_profile,
         }
     }

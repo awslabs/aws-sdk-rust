@@ -6,7 +6,7 @@
 pub struct User {
     /// <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user. Does not apply to RabbitMQ brokers.</p>
     #[doc(hidden)]
-    pub console_access: bool,
+    pub console_access: std::option::Option<bool>,
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long. Does not apply to RabbitMQ brokers.</p>
     #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -24,7 +24,7 @@ pub struct User {
 }
 impl User {
     /// <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user. Does not apply to RabbitMQ brokers.</p>
-    pub fn console_access(&self) -> bool {
+    pub fn console_access(&self) -> std::option::Option<bool> {
         self.console_access
     }
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long. Does not apply to RabbitMQ brokers.</p>
@@ -124,7 +124,7 @@ impl UserBuilder {
     /// Consumes the builder and constructs a [`User`](crate::types::User).
     pub fn build(self) -> crate::types::User {
         crate::types::User {
-            console_access: self.console_access.unwrap_or_default(),
+            console_access: self.console_access,
             groups: self.groups,
             password: self.password,
             username: self.username,

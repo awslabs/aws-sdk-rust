@@ -42,62 +42,6 @@ pub(super) fn resolve_endpoint(
         if let Some(partition_result) =
             partition_resolver.resolve_partition(region, _diagnostic_collector)
         {
-            if (partition_result.name()) == ("aws") {
-                if (*use_fips) == (false) {
-                    if (*use_dual_stack) == (false) {
-                        return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                            .url("https://global.health.amazonaws.com".to_string())
-                            .property(
-                                "authSchemes",
-                                vec![aws_smithy_types::Document::from({
-                                    let mut out = std::collections::HashMap::<
-                                        String,
-                                        aws_smithy_types::Document,
-                                    >::new();
-                                    out.insert("name".to_string(), "sigv4".to_string().into());
-                                    out.insert(
-                                        "signingName".to_string(),
-                                        "health".to_string().into(),
-                                    );
-                                    out.insert(
-                                        "signingRegion".to_string(),
-                                        "us-east-1".to_string().into(),
-                                    );
-                                    out
-                                })],
-                            )
-                            .build());
-                    }
-                }
-            }
-            if (partition_result.name()) == ("aws-cn") {
-                if (*use_fips) == (false) {
-                    if (*use_dual_stack) == (false) {
-                        return Ok(aws_smithy_types::endpoint::Endpoint::builder()
-                            .url("https://global.health.amazonaws.com.cn".to_string())
-                            .property(
-                                "authSchemes",
-                                vec![aws_smithy_types::Document::from({
-                                    let mut out = std::collections::HashMap::<
-                                        String,
-                                        aws_smithy_types::Document,
-                                    >::new();
-                                    out.insert("name".to_string(), "sigv4".to_string().into());
-                                    out.insert(
-                                        "signingName".to_string(),
-                                        "health".to_string().into(),
-                                    );
-                                    out.insert(
-                                        "signingRegion".to_string(),
-                                        "cn-northwest-1".to_string().into(),
-                                    );
-                                    out
-                                })],
-                            )
-                            .build());
-                    }
-                }
-            }
             if (*use_fips) == (true) {
                 if (*use_dual_stack) == (true) {
                     if (true) == (partition_result.supports_fips()) {
@@ -158,6 +102,45 @@ pub(super) fn resolve_endpoint(
                     "DualStack is enabled but this partition does not support DualStack"
                         .to_string(),
                 ));
+            }
+            if (region) == ("aws-global") {
+                return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                    .url("https://global.health.amazonaws.com".to_string())
+                    .property(
+                        "authSchemes",
+                        vec![aws_smithy_types::Document::from({
+                            let mut out = std::collections::HashMap::<
+                                String,
+                                aws_smithy_types::Document,
+                            >::new();
+                            out.insert("name".to_string(), "sigv4".to_string().into());
+                            out.insert("signingName".to_string(), "health".to_string().into());
+                            out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
+                            out
+                        })],
+                    )
+                    .build());
+            }
+            if (region) == ("aws-cn-global") {
+                return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                    .url("https://global.health.amazonaws.com.cn".to_string())
+                    .property(
+                        "authSchemes",
+                        vec![aws_smithy_types::Document::from({
+                            let mut out = std::collections::HashMap::<
+                                String,
+                                aws_smithy_types::Document,
+                            >::new();
+                            out.insert("name".to_string(), "sigv4".to_string().into());
+                            out.insert("signingName".to_string(), "health".to_string().into());
+                            out.insert(
+                                "signingRegion".to_string(),
+                                "cn-northwest-1".to_string().into(),
+                            );
+                            out
+                        })],
+                    )
+                    .build());
             }
             return Ok(aws_smithy_types::endpoint::Endpoint::builder()
                 .url({

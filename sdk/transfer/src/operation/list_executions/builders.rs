@@ -5,7 +5,9 @@ pub use crate::operation::list_executions::_list_executions_input::ListExecution
 
 /// Fluent builder constructing a request to `ListExecutions`.
 ///
-/// <p>Lists all executions for the specified workflow.</p>
+/// <p>Lists all in-progress executions for the specified workflow.</p> <note>
+/// <p>If the specified workflow ID cannot be found, <code>ListExecutions</code> returns a <code>ResourceNotFound</code> exception.</p>
+/// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListExecutionsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

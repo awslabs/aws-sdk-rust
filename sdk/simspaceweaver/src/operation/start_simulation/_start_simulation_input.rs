@@ -16,15 +16,22 @@ pub struct StartSimulationInput {
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The location of the simulation schema in Amazon Simple Storage Service (Amazon S3). For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+    /// <p>Provide a <code>SchemaS3Location</code> to start your simulation from a schema.</p>
+    /// <p>If you provide a <code>SchemaS3Location</code> then you can't provide a <code>SnapshotS3Location</code>.</p>
     #[doc(hidden)]
     pub schema_s3_location: std::option::Option<crate::types::S3Location>,
-    /// <p>The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit.</p>
+    /// <p>The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
     #[doc(hidden)]
     pub maximum_duration: std::option::Option<std::string::String>,
     /// <p>A list of tags for the simulation. For more information about tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The location of the snapshot .zip file in Amazon Simple Storage Service (Amazon S3). For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+    /// <p>Provide a <code>SnapshotS3Location</code> to start your simulation from a snapshot.</p>
+    /// <p>If you provide a <code>SnapshotS3Location</code> then you can't provide a <code>SchemaS3Location</code>.</p>
+    #[doc(hidden)]
+    pub snapshot_s3_location: std::option::Option<crate::types::S3Location>,
 }
 impl StartSimulationInput {
     /// <p>A value that you provide to ensure that repeated calls to this API operation using the same parameters complete only once. A <code>ClientToken</code> is also known as an <i>idempotency token</i>. A <code>ClientToken</code> expires after 24 hours.</p>
@@ -44,10 +51,12 @@ impl StartSimulationInput {
         self.role_arn.as_deref()
     }
     /// <p>The location of the simulation schema in Amazon Simple Storage Service (Amazon S3). For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+    /// <p>Provide a <code>SchemaS3Location</code> to start your simulation from a schema.</p>
+    /// <p>If you provide a <code>SchemaS3Location</code> then you can't provide a <code>SnapshotS3Location</code>.</p>
     pub fn schema_s3_location(&self) -> std::option::Option<&crate::types::S3Location> {
         self.schema_s3_location.as_ref()
     }
-    /// <p>The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit.</p>
+    /// <p>The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
     pub fn maximum_duration(&self) -> std::option::Option<&str> {
         self.maximum_duration.as_deref()
     }
@@ -57,6 +66,12 @@ impl StartSimulationInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+    /// <p>The location of the snapshot .zip file in Amazon Simple Storage Service (Amazon S3). For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+    /// <p>Provide a <code>SnapshotS3Location</code> to start your simulation from a snapshot.</p>
+    /// <p>If you provide a <code>SnapshotS3Location</code> then you can't provide a <code>SchemaS3Location</code>.</p>
+    pub fn snapshot_s3_location(&self) -> std::option::Option<&crate::types::S3Location> {
+        self.snapshot_s3_location.as_ref()
     }
 }
 impl std::fmt::Debug for StartSimulationInput {
@@ -69,6 +84,7 @@ impl std::fmt::Debug for StartSimulationInput {
         formatter.field("schema_s3_location", &self.schema_s3_location);
         formatter.field("maximum_duration", &self.maximum_duration);
         formatter.field("tags", &self.tags);
+        formatter.field("snapshot_s3_location", &self.snapshot_s3_location);
         formatter.finish()
     }
 }
@@ -91,6 +107,7 @@ pub struct StartSimulationInputBuilder {
     pub(crate) maximum_duration: std::option::Option<std::string::String>,
     pub(crate) tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) snapshot_s3_location: std::option::Option<crate::types::S3Location>,
 }
 impl StartSimulationInputBuilder {
     /// <p>A value that you provide to ensure that repeated calls to this API operation using the same parameters complete only once. A <code>ClientToken</code> is also known as an <i>idempotency token</i>. A <code>ClientToken</code> expires after 24 hours.</p>
@@ -134,11 +151,15 @@ impl StartSimulationInputBuilder {
         self
     }
     /// <p>The location of the simulation schema in Amazon Simple Storage Service (Amazon S3). For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+    /// <p>Provide a <code>SchemaS3Location</code> to start your simulation from a schema.</p>
+    /// <p>If you provide a <code>SchemaS3Location</code> then you can't provide a <code>SnapshotS3Location</code>.</p>
     pub fn schema_s3_location(mut self, input: crate::types::S3Location) -> Self {
         self.schema_s3_location = Some(input);
         self
     }
     /// <p>The location of the simulation schema in Amazon Simple Storage Service (Amazon S3). For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+    /// <p>Provide a <code>SchemaS3Location</code> to start your simulation from a schema.</p>
+    /// <p>If you provide a <code>SchemaS3Location</code> then you can't provide a <code>SnapshotS3Location</code>.</p>
     pub fn set_schema_s3_location(
         mut self,
         input: std::option::Option<crate::types::S3Location>,
@@ -146,12 +167,12 @@ impl StartSimulationInputBuilder {
         self.schema_s3_location = input;
         self
     }
-    /// <p>The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit.</p>
+    /// <p>The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
     pub fn maximum_duration(mut self, input: impl Into<std::string::String>) -> Self {
         self.maximum_duration = Some(input.into());
         self
     }
-    /// <p>The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit.</p>
+    /// <p>The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
     pub fn set_maximum_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.maximum_duration = input;
         self
@@ -181,6 +202,23 @@ impl StartSimulationInputBuilder {
         self.tags = input;
         self
     }
+    /// <p>The location of the snapshot .zip file in Amazon Simple Storage Service (Amazon S3). For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+    /// <p>Provide a <code>SnapshotS3Location</code> to start your simulation from a snapshot.</p>
+    /// <p>If you provide a <code>SnapshotS3Location</code> then you can't provide a <code>SchemaS3Location</code>.</p>
+    pub fn snapshot_s3_location(mut self, input: crate::types::S3Location) -> Self {
+        self.snapshot_s3_location = Some(input);
+        self
+    }
+    /// <p>The location of the snapshot .zip file in Amazon Simple Storage Service (Amazon S3). For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+    /// <p>Provide a <code>SnapshotS3Location</code> to start your simulation from a snapshot.</p>
+    /// <p>If you provide a <code>SnapshotS3Location</code> then you can't provide a <code>SchemaS3Location</code>.</p>
+    pub fn set_snapshot_s3_location(
+        mut self,
+        input: std::option::Option<crate::types::S3Location>,
+    ) -> Self {
+        self.snapshot_s3_location = input;
+        self
+    }
     /// Consumes the builder and constructs a [`StartSimulationInput`](crate::operation::start_simulation::StartSimulationInput).
     pub fn build(
         self,
@@ -196,6 +234,7 @@ impl StartSimulationInputBuilder {
             schema_s3_location: self.schema_s3_location,
             maximum_duration: self.maximum_duration,
             tags: self.tags,
+            snapshot_s3_location: self.snapshot_s3_location,
         })
     }
 }
@@ -209,6 +248,7 @@ impl std::fmt::Debug for StartSimulationInputBuilder {
         formatter.field("schema_s3_location", &self.schema_s3_location);
         formatter.field("maximum_duration", &self.maximum_duration);
         formatter.field("tags", &self.tags);
+        formatter.field("snapshot_s3_location", &self.snapshot_s3_location);
         formatter.finish()
     }
 }

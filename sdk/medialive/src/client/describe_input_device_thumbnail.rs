@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`DescribeInputDeviceThumbnailOutput`](crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailOutput) with field(s):
     ///   - [`body(ByteStream)`](crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailOutput::body): The binary data for the thumbnail that the Link device has most recently sent to MediaLive.
     ///   - [`content_type(Option<ContentType>)`](crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailOutput::content_type): Specifies the media type of the thumbnail.
-    ///   - [`content_length(i64)`](crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailOutput::content_length): The length of the content.
+    ///   - [`content_length(Option<i64>)`](crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailOutput::content_length): The length of the content.
     ///   - [`e_tag(Option<String>)`](crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailOutput::e_tag): The unique, cacheable version of this thumbnail.
     ///   - [`last_modified(Option<DateTime>)`](crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailOutput::last_modified): The date and time the thumbnail was last updated at the device.
     /// - On failure, responds with [`SdkError<DescribeInputDeviceThumbnailError>`](crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailError)

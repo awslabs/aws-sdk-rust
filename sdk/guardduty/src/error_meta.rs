@@ -3,8 +3,12 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
+    /// <p>An access denied exception object.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>A bad request exception object.</p>
     BadRequestException(crate::types::error::BadRequestException),
+    /// <p>A request conflict exception object.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>An internal server error exception object.</p>
     InternalServerErrorException(crate::types::error::InternalServerErrorException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -13,7 +17,9 @@ pub enum Error {
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::BadRequestException(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerErrorException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
@@ -2068,6 +2074,7 @@ where
 impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
     fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2111,6 +2118,47 @@ impl From<crate::operation::list_threat_intel_sets::ListThreatIntelSetsError> fo
             crate::operation::list_threat_intel_sets::ListThreatIntelSetsError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::list_threat_intel_sets::ListThreatIntelSetsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::list_threat_intel_sets::ListThreatIntelSetsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_malware_scan::StartMalwareScanError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_malware_scan::StartMalwareScanError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::start_malware_scan::StartMalwareScanError> for Error {
+    fn from(err: crate::operation::start_malware_scan::StartMalwareScanError) -> Self {
+        match err {
+            crate::operation::start_malware_scan::StartMalwareScanError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::start_malware_scan::StartMalwareScanError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_malware_scan::StartMalwareScanError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::start_malware_scan::StartMalwareScanError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2220,6 +2268,9 @@ where
 impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
+            crate::operation::tag_resource::TagResourceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::tag_resource::TagResourceError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
@@ -2302,6 +2353,9 @@ where
 impl From<crate::operation::untag_resource::UntagResourceError> for Error {
     fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
+            crate::operation::untag_resource::UntagResourceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::untag_resource::UntagResourceError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
@@ -2675,7 +2729,9 @@ impl From<crate::operation::update_threat_intel_set::UpdateThreatIntelSetError> 
 impl std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
+            Error::AccessDeniedException(inner) => inner.source(),
             Error::BadRequestException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
             Error::InternalServerErrorException(inner) => inner.source(),
             Error::Unhandled(inner) => inner.source(),
         }
@@ -2684,7 +2740,9 @@ impl std::error::Error for Error {
 impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
+            Self::AccessDeniedException(e) => e.request_id(),
             Self::BadRequestException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
             Self::InternalServerErrorException(e) => e.request_id(),
             Self::Unhandled(e) => e.request_id(),
         }

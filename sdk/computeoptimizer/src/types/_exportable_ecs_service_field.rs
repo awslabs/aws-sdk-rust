@@ -33,6 +33,7 @@
 ///     ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => { /* ... */ },
 ///     ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityPercentage => { /* ... */ },
 ///     ExportableEcsServiceField::ServiceArn => { /* ... */ },
+///     ExportableEcsServiceField::Tags => { /* ... */ },
 ///     ExportableEcsServiceField::UtilizationMetricsCpuMaximum => { /* ... */ },
 ///     ExportableEcsServiceField::UtilizationMetricsMemoryMaximum => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -111,6 +112,8 @@ pub enum ExportableEcsServiceField {
     #[allow(missing_docs)] // documentation missing in model
     ServiceArn,
     #[allow(missing_docs)] // documentation missing in model
+    Tags,
+    #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsCpuMaximum,
     #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsMemoryMaximum,
@@ -141,6 +144,7 @@ impl std::convert::From<&str> for ExportableEcsServiceField {
 "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum" => ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
 "RecommendationOptionsSavingsOpportunityPercentage" => ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityPercentage,
 "ServiceArn" => ExportableEcsServiceField::ServiceArn,
+"Tags" => ExportableEcsServiceField::Tags,
 "UtilizationMetricsCpuMaximum" => ExportableEcsServiceField::UtilizationMetricsCpuMaximum,
 "UtilizationMetricsMemoryMaximum" => ExportableEcsServiceField::UtilizationMetricsMemoryMaximum,
 other => ExportableEcsServiceField::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
@@ -179,6 +183,7 @@ impl ExportableEcsServiceField {
     ExportableEcsServiceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum => "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum",
     ExportableEcsServiceField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
     ExportableEcsServiceField::ServiceArn => "ServiceArn",
+    ExportableEcsServiceField::Tags => "Tags",
     ExportableEcsServiceField::UtilizationMetricsCpuMaximum => "UtilizationMetricsCpuMaximum",
     ExportableEcsServiceField::UtilizationMetricsMemoryMaximum => "UtilizationMetricsMemoryMaximum",
     ExportableEcsServiceField::Unknown(value) => value.as_str()
@@ -208,6 +213,7 @@ impl ExportableEcsServiceField {
             "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum",
             "RecommendationOptionsSavingsOpportunityPercentage",
             "ServiceArn",
+            "Tags",
             "UtilizationMetricsCpuMaximum",
             "UtilizationMetricsMemoryMaximum",
         ]

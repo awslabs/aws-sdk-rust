@@ -6,20 +6,20 @@ pub fn ser_embedded_source_settings(
     if let Some(var_1) = &input.convert608_to708 {
         object.key("convert608To708").string(var_1.as_str());
     }
-    if input.source608_channel_number != 0 {
+    if let Some(var_2) = &input.source608_channel_number {
         object.key("source608ChannelNumber").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.source608_channel_number).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.source608_track_number != 0 {
+    if let Some(var_3) = &input.source608_track_number {
         object.key("source608TrackNumber").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.source608_track_number).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_2) = &input.terminate_captions {
-        object.key("terminateCaptions").string(var_2.as_str());
+    if let Some(var_4) = &input.terminate_captions {
+        object.key("terminateCaptions").string(var_4.as_str());
     }
     Ok(())
 }

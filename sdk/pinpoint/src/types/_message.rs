@@ -35,11 +35,11 @@ pub struct Message {
     pub raw_content: std::option::Option<std::string::String>,
     /// <p>Specifies whether the notification is a silent push notification, which is a push notification that doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating an app's configuration, displaying messages in an in-app message center, or supporting phone home functionality.</p>
     #[doc(hidden)]
-    pub silent_push: bool,
+    pub silent_push: std::option::Option<bool>,
     /// <p>The number of seconds that the push-notification service should keep the message, if the service is unable to deliver the notification the first time. This value is converted to an expiration value when it's sent to a push-notification service. If this value is 0, the service treats the notification as if it expires immediately and the service doesn't store or try to deliver the notification again.</p>
     /// <p>This value doesn't apply to messages that are sent through the Amazon Device Messaging (ADM) service.</p>
     #[doc(hidden)]
-    pub time_to_live: i32,
+    pub time_to_live: std::option::Option<i32>,
     /// <p>The title to display above the notification message on a recipient's device.</p>
     #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
@@ -86,12 +86,12 @@ impl Message {
         self.raw_content.as_deref()
     }
     /// <p>Specifies whether the notification is a silent push notification, which is a push notification that doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating an app's configuration, displaying messages in an in-app message center, or supporting phone home functionality.</p>
-    pub fn silent_push(&self) -> bool {
+    pub fn silent_push(&self) -> std::option::Option<bool> {
         self.silent_push
     }
     /// <p>The number of seconds that the push-notification service should keep the message, if the service is unable to deliver the notification the first time. This value is converted to an expiration value when it's sent to a push-notification service. If this value is 0, the service treats the notification as if it expires immediately and the service doesn't store or try to deliver the notification again.</p>
     /// <p>This value doesn't apply to messages that are sent through the Amazon Device Messaging (ADM) service.</p>
-    pub fn time_to_live(&self) -> i32 {
+    pub fn time_to_live(&self) -> std::option::Option<i32> {
         self.time_to_live
     }
     /// <p>The title to display above the notification message on a recipient's device.</p>
@@ -274,8 +274,8 @@ impl MessageBuilder {
             json_body: self.json_body,
             media_url: self.media_url,
             raw_content: self.raw_content,
-            silent_push: self.silent_push.unwrap_or_default(),
-            time_to_live: self.time_to_live.unwrap_or_default(),
+            silent_push: self.silent_push,
+            time_to_live: self.time_to_live,
             title: self.title,
             url: self.url,
         }

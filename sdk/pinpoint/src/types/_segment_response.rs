@@ -44,7 +44,7 @@ pub struct SegmentResponse {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The version number of the segment.</p>
     #[doc(hidden)]
-    pub version: i32,
+    pub version: std::option::Option<i32>,
 }
 impl SegmentResponse {
     /// <p>The unique identifier for the application that the segment is associated with.</p>
@@ -99,7 +99,7 @@ impl SegmentResponse {
         self.tags.as_ref()
     }
     /// <p>The version number of the segment.</p>
-    pub fn version(&self) -> i32 {
+    pub fn version(&self) -> std::option::Option<i32> {
         self.version
     }
 }
@@ -301,7 +301,7 @@ impl SegmentResponseBuilder {
             segment_groups: self.segment_groups,
             segment_type: self.segment_type,
             tags: self.tags,
-            version: self.version.unwrap_or_default(),
+            version: self.version,
         }
     }
 }

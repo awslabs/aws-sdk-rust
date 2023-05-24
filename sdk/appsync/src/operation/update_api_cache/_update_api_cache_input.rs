@@ -10,7 +10,7 @@ pub struct UpdateApiCacheInput {
     /// <p>TTL in seconds for cache entries.</p>
     /// <p>Valid values are 1–3,600 seconds.</p>
     #[doc(hidden)]
-    pub ttl: i64,
+    pub ttl: std::option::Option<i64>,
     /// <p>Caching behavior.</p>
     /// <ul>
     /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
@@ -50,7 +50,7 @@ impl UpdateApiCacheInput {
     }
     /// <p>TTL in seconds for cache entries.</p>
     /// <p>Valid values are 1–3,600 seconds.</p>
-    pub fn ttl(&self) -> i64 {
+    pub fn ttl(&self) -> std::option::Option<i64> {
         self.ttl
     }
     /// <p>Caching behavior.</p>
@@ -208,7 +208,7 @@ impl UpdateApiCacheInputBuilder {
     > {
         Ok(crate::operation::update_api_cache::UpdateApiCacheInput {
             api_id: self.api_id,
-            ttl: self.ttl.unwrap_or_default(),
+            ttl: self.ttl,
             api_caching_behavior: self.api_caching_behavior,
             r#type: self.r#type,
         })

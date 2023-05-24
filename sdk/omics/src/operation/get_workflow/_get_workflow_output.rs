@@ -51,6 +51,13 @@ pub struct GetWorkflowOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p> Gets metadata for workflow. </p>
+    #[doc(hidden)]
+    pub metadata:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p> The computational accelerator specified to run the workflow. </p>
+    #[doc(hidden)]
+    pub accelerators: std::option::Option<crate::types::Accelerators>,
     _request_id: Option<String>,
 }
 impl GetWorkflowOutput {
@@ -121,6 +128,17 @@ impl GetWorkflowOutput {
     {
         self.tags.as_ref()
     }
+    /// <p> Gets metadata for workflow. </p>
+    pub fn metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.metadata.as_ref()
+    }
+    /// <p> The computational accelerator specified to run the workflow. </p>
+    pub fn accelerators(&self) -> std::option::Option<&crate::types::Accelerators> {
+        self.accelerators.as_ref()
+    }
 }
 impl aws_http::request_id::RequestId for GetWorkflowOutput {
     fn request_id(&self) -> Option<&str> {
@@ -156,6 +174,9 @@ pub struct GetWorkflowOutputBuilder {
     pub(crate) status_message: std::option::Option<std::string::String>,
     pub(crate) tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) metadata:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) accelerators: std::option::Option<crate::types::Accelerators>,
     _request_id: Option<String>,
 }
 impl GetWorkflowOutputBuilder {
@@ -342,6 +363,44 @@ impl GetWorkflowOutputBuilder {
         self.tags = input;
         self
     }
+    /// Adds a key-value pair to `metadata`.
+    ///
+    /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+    ///
+    /// <p> Gets metadata for workflow. </p>
+    pub fn metadata(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.metadata.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.metadata = Some(hash_map);
+        self
+    }
+    /// <p> Gets metadata for workflow. </p>
+    pub fn set_metadata(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.metadata = input;
+        self
+    }
+    /// <p> The computational accelerator specified to run the workflow. </p>
+    pub fn accelerators(mut self, input: crate::types::Accelerators) -> Self {
+        self.accelerators = Some(input);
+        self
+    }
+    /// <p> The computational accelerator specified to run the workflow. </p>
+    pub fn set_accelerators(
+        mut self,
+        input: std::option::Option<crate::types::Accelerators>,
+    ) -> Self {
+        self.accelerators = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -369,6 +428,8 @@ impl GetWorkflowOutputBuilder {
             creation_time: self.creation_time,
             status_message: self.status_message,
             tags: self.tags,
+            metadata: self.metadata,
+            accelerators: self.accelerators,
             _request_id: self._request_id,
         }
     }

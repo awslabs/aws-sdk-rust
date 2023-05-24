@@ -10,6 +10,9 @@ pub struct ProductionVariantServerlessConfig {
     /// <p>The maximum number of concurrent invocations your serverless endpoint can process.</p>
     #[doc(hidden)]
     pub max_concurrency: std::option::Option<i32>,
+    /// <p>The amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
+    #[doc(hidden)]
+    pub provisioned_concurrency: std::option::Option<i32>,
 }
 impl ProductionVariantServerlessConfig {
     /// <p>The memory size of your serverless endpoint. Valid values are in 1 GB increments: 1024 MB, 2048 MB, 3072 MB, 4096 MB, 5120 MB, or 6144 MB.</p>
@@ -19,6 +22,10 @@ impl ProductionVariantServerlessConfig {
     /// <p>The maximum number of concurrent invocations your serverless endpoint can process.</p>
     pub fn max_concurrency(&self) -> std::option::Option<i32> {
         self.max_concurrency
+    }
+    /// <p>The amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
+    pub fn provisioned_concurrency(&self) -> std::option::Option<i32> {
+        self.provisioned_concurrency
     }
 }
 impl ProductionVariantServerlessConfig {
@@ -34,6 +41,7 @@ impl ProductionVariantServerlessConfig {
 pub struct ProductionVariantServerlessConfigBuilder {
     pub(crate) memory_size_in_mb: std::option::Option<i32>,
     pub(crate) max_concurrency: std::option::Option<i32>,
+    pub(crate) provisioned_concurrency: std::option::Option<i32>,
 }
 impl ProductionVariantServerlessConfigBuilder {
     /// <p>The memory size of your serverless endpoint. Valid values are in 1 GB increments: 1024 MB, 2048 MB, 3072 MB, 4096 MB, 5120 MB, or 6144 MB.</p>
@@ -56,11 +64,22 @@ impl ProductionVariantServerlessConfigBuilder {
         self.max_concurrency = input;
         self
     }
+    /// <p>The amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
+    pub fn provisioned_concurrency(mut self, input: i32) -> Self {
+        self.provisioned_concurrency = Some(input);
+        self
+    }
+    /// <p>The amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
+    pub fn set_provisioned_concurrency(mut self, input: std::option::Option<i32>) -> Self {
+        self.provisioned_concurrency = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ProductionVariantServerlessConfig`](crate::types::ProductionVariantServerlessConfig).
     pub fn build(self) -> crate::types::ProductionVariantServerlessConfig {
         crate::types::ProductionVariantServerlessConfig {
             memory_size_in_mb: self.memory_size_in_mb,
             max_concurrency: self.max_concurrency,
+            provisioned_concurrency: self.provisioned_concurrency,
         }
     }
 }

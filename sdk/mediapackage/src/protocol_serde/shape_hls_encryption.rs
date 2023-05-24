@@ -101,23 +101,23 @@ pub fn ser_hls_encryption(
     if let Some(var_2) = &input.encryption_method {
         object.key("encryptionMethod").string(var_2.as_str());
     }
-    if input.key_rotation_interval_seconds != 0 {
+    if let Some(var_3) = &input.key_rotation_interval_seconds {
         object.key("keyRotationIntervalSeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.key_rotation_interval_seconds).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if input.repeat_ext_x_key {
-        object.key("repeatExtXKey").boolean(input.repeat_ext_x_key);
+    if let Some(var_4) = &input.repeat_ext_x_key {
+        object.key("repeatExtXKey").boolean(*var_4);
     }
-    if let Some(var_3) = &input.speke_key_provider {
+    if let Some(var_5) = &input.speke_key_provider {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("spekeKeyProvider").start_object();
+        let mut object_6 = object.key("spekeKeyProvider").start_object();
         crate::protocol_serde::shape_speke_key_provider::ser_speke_key_provider(
-            &mut object_4,
-            var_3,
+            &mut object_6,
+            var_5,
         )?;
-        object_4.finish();
+        object_6.finish();
     }
     Ok(())
 }

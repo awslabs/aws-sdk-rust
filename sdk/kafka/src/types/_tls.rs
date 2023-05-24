@@ -9,7 +9,7 @@ pub struct Tls {
     pub certificate_authority_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies whether you want to turn on or turn off TLS authentication.</p>
     #[doc(hidden)]
-    pub enabled: bool,
+    pub enabled: std::option::Option<bool>,
 }
 impl Tls {
     /// <p>List of ACM Certificate Authority ARNs.</p>
@@ -17,7 +17,7 @@ impl Tls {
         self.certificate_authority_arn_list.as_deref()
     }
     /// <p>Specifies whether you want to turn on or turn off TLS authentication.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
 }
@@ -70,7 +70,7 @@ impl TlsBuilder {
     pub fn build(self) -> crate::types::Tls {
         crate::types::Tls {
             certificate_authority_arn_list: self.certificate_authority_arn_list,
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled,
         }
     }
 }

@@ -78,12 +78,12 @@ impl DisconnectParticipantFluentBuilder {
         self.inner = self.inner.set_stage_arn(input);
         self
     }
-    /// <p>Identifier of the participant to be disconnected. This is returned by <code>CreateParticipantToken</code>.</p>
+    /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
     pub fn participant_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.participant_id(input.into());
         self
     }
-    /// <p>Identifier of the participant to be disconnected. This is returned by <code>CreateParticipantToken</code>.</p>
+    /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
     pub fn set_participant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_participant_id(input);
         self

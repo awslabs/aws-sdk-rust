@@ -157,6 +157,11 @@ pub(crate) fn de_get_annotation_import_job(
             Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
+                    "annotationFields" => {
+                        builder = builder.set_annotation_fields(
+                            crate::protocol_serde::shape_annotation_field_map::de_annotation_field_map(tokens)?
+                        );
+                    }
                     "completionTime" => {
                         builder = builder.set_completion_time(
                             aws_smithy_json::deserialize::token::expect_timestamp_or_null(

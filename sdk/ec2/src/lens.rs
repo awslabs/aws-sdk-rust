@@ -1219,6 +1219,16 @@ pub(crate) fn reflens_get_managed_prefix_list_entries_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_get_network_insights_access_scope_analysis_findings_output_next_token(
+    input: &crate::operation::get_network_insights_access_scope_analysis_findings::GetNetworkInsightsAccessScopeAnalysisFindingsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_get_spot_placement_scores_output_next_token(
     input: &crate::operation::get_spot_placement_scores::GetSpotPlacementScoresOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -2555,6 +2565,16 @@ pub(crate) fn lens_get_managed_prefix_list_entries_output_entries(
     input: crate::operation::get_managed_prefix_list_entries::GetManagedPrefixListEntriesOutput,
 ) -> std::option::Option<std::vec::Vec<crate::types::PrefixListEntry>> {
     let input = match input.entries {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_get_network_insights_access_scope_analysis_findings_output_analysis_findings(
+    input: crate::operation::get_network_insights_access_scope_analysis_findings::GetNetworkInsightsAccessScopeAnalysisFindingsOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::AccessScopeAnalysisFinding>> {
+    let input = match input.analysis_findings {
         None => return None,
         Some(t) => t,
     };

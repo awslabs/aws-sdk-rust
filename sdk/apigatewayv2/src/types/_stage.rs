@@ -9,10 +9,10 @@ pub struct Stage {
     pub access_log_settings: std::option::Option<crate::types::AccessLogSettings>,
     /// <p>Specifies whether a stage is managed by API Gateway. If you created an API using quick create, the $default stage is managed by API Gateway. You can't modify the $default stage.</p>
     #[doc(hidden)]
-    pub api_gateway_managed: bool,
+    pub api_gateway_managed: std::option::Option<bool>,
     /// <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
     #[doc(hidden)]
-    pub auto_deploy: bool,
+    pub auto_deploy: std::option::Option<bool>,
     /// <p>The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.</p>
     #[doc(hidden)]
     pub client_certificate_id: std::option::Option<std::string::String>,
@@ -57,11 +57,11 @@ impl Stage {
         self.access_log_settings.as_ref()
     }
     /// <p>Specifies whether a stage is managed by API Gateway. If you created an API using quick create, the $default stage is managed by API Gateway. You can't modify the $default stage.</p>
-    pub fn api_gateway_managed(&self) -> bool {
+    pub fn api_gateway_managed(&self) -> std::option::Option<bool> {
         self.api_gateway_managed
     }
     /// <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
-    pub fn auto_deploy(&self) -> bool {
+    pub fn auto_deploy(&self) -> std::option::Option<bool> {
         self.auto_deploy
     }
     /// <p>The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.</p>
@@ -357,8 +357,8 @@ impl StageBuilder {
     pub fn build(self) -> crate::types::Stage {
         crate::types::Stage {
             access_log_settings: self.access_log_settings,
-            api_gateway_managed: self.api_gateway_managed.unwrap_or_default(),
-            auto_deploy: self.auto_deploy.unwrap_or_default(),
+            api_gateway_managed: self.api_gateway_managed,
+            auto_deploy: self.auto_deploy,
             client_certificate_id: self.client_certificate_id,
             created_date: self.created_date,
             default_route_settings: self.default_route_settings,

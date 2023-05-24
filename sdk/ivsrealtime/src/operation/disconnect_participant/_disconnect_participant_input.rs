@@ -6,7 +6,7 @@ pub struct DisconnectParticipantInput {
     /// <p>ARN of the stage to which the participant is attached.</p>
     #[doc(hidden)]
     pub stage_arn: std::option::Option<std::string::String>,
-    /// <p>Identifier of the participant to be disconnected. This is returned by <code>CreateParticipantToken</code>.</p>
+    /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
     #[doc(hidden)]
     pub participant_id: std::option::Option<std::string::String>,
     /// <p>Description of why this participant is being disconnected.</p>
@@ -18,7 +18,7 @@ impl DisconnectParticipantInput {
     pub fn stage_arn(&self) -> std::option::Option<&str> {
         self.stage_arn.as_deref()
     }
-    /// <p>Identifier of the participant to be disconnected. This is returned by <code>CreateParticipantToken</code>.</p>
+    /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
     pub fn participant_id(&self) -> std::option::Option<&str> {
         self.participant_id.as_deref()
     }
@@ -54,12 +54,12 @@ impl DisconnectParticipantInputBuilder {
         self.stage_arn = input;
         self
     }
-    /// <p>Identifier of the participant to be disconnected. This is returned by <code>CreateParticipantToken</code>.</p>
+    /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
     pub fn participant_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.participant_id = Some(input.into());
         self
     }
-    /// <p>Identifier of the participant to be disconnected. This is returned by <code>CreateParticipantToken</code>.</p>
+    /// <p>Identifier of the participant to be disconnected. This is assigned by IVS and returned by <code>CreateParticipantToken</code>.</p>
     pub fn set_participant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.participant_id = input;
         self

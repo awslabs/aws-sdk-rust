@@ -14,7 +14,7 @@ pub struct NewTransitVirtualInterface {
     /// <p>The valid values are 1-2147483647.</p>
     #[doc(hidden)]
     pub asn: i32,
-    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500.</p>
     #[doc(hidden)]
     pub mtu: std::option::Option<i32>,
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
@@ -53,7 +53,7 @@ impl NewTransitVirtualInterface {
     pub fn asn(&self) -> i32 {
         self.asn
     }
-    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500.</p>
     pub fn mtu(&self) -> std::option::Option<i32> {
         self.mtu
     }
@@ -145,12 +145,12 @@ impl NewTransitVirtualInterfaceBuilder {
         self.asn = input;
         self
     }
-    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500.</p>
     pub fn mtu(mut self, input: i32) -> Self {
         self.mtu = Some(input);
         self
     }
-    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500.</p>
     pub fn set_mtu(mut self, input: std::option::Option<i32>) -> Self {
         self.mtu = input;
         self

@@ -93,6 +93,11 @@ where
                                     )?,
                                 );
                             }
+                            "annotationFields" => {
+                                builder = builder.set_annotation_fields(
+                                    crate::protocol_serde::shape_annotation_field_map::de_annotation_field_map(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

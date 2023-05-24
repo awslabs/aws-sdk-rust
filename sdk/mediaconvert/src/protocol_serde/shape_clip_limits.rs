@@ -3,28 +3,28 @@ pub fn ser_clip_limits(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ClipLimits,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.maximum_rgb_tolerance != 0 {
+    if let Some(var_1) = &input.maximum_rgb_tolerance {
         object.key("maximumRGBTolerance").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.maximum_rgb_tolerance).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.maximum_yuv != 0 {
+    if let Some(var_2) = &input.maximum_yuv {
         object.key("maximumYUV").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.maximum_yuv).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.minimum_rgb_tolerance != 0 {
+    if let Some(var_3) = &input.minimum_rgb_tolerance {
         object.key("minimumRGBTolerance").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.minimum_rgb_tolerance).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if input.minimum_yuv != 0 {
+    if let Some(var_4) = &input.minimum_yuv {
         object.key("minimumYUV").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.minimum_yuv).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     Ok(())

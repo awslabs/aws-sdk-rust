@@ -64,15 +64,11 @@ pub fn ser_security_hub_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SecurityHubConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    {
-        object
-            .key("publishClassificationFindings")
-            .boolean(input.publish_classification_findings);
+    if let Some(var_1) = &input.publish_classification_findings {
+        object.key("publishClassificationFindings").boolean(*var_1);
     }
-    {
-        object
-            .key("publishPolicyFindings")
-            .boolean(input.publish_policy_findings);
+    if let Some(var_2) = &input.publish_policy_findings {
+        object.key("publishPolicyFindings").boolean(*var_2);
     }
     Ok(())
 }

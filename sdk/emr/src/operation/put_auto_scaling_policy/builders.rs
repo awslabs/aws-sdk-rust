@@ -5,7 +5,7 @@ pub use crate::operation::put_auto_scaling_policy::_put_auto_scaling_policy_inpu
 
 /// Fluent builder constructing a request to `PutAutoScalingPolicy`.
 ///
-/// <p>Creates or updates an automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric.</p>
+/// <p>Creates or updates an automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in response to the value of a CloudWatch metric.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutAutoScalingPolicyFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

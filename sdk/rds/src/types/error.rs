@@ -159,6 +159,8 @@ pub use crate::types::error::_invalid_db_cluster_endpoint_state_fault::InvalidDb
 
 pub use crate::types::error::_db_cluster_endpoint_not_found_fault::DbClusterEndpointNotFoundFault;
 
+pub use crate::types::error::_storage_type_not_available_fault::StorageTypeNotAvailableFault;
+
 pub use crate::types::error::_invalid_custom_db_engine_version_state_fault::InvalidCustomDbEngineVersionStateFault;
 
 pub use crate::types::error::_custom_db_engine_version_not_found_fault::CustomDbEngineVersionNotFoundFault;
@@ -488,6 +490,8 @@ mod _source_database_not_supported_fault;
 mod _source_not_found_fault;
 
 mod _storage_quota_exceeded_fault;
+
+mod _storage_type_not_available_fault;
 
 mod _storage_type_not_supported_fault;
 

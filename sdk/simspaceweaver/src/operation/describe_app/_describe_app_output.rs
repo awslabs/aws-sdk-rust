@@ -18,7 +18,7 @@ pub struct DescribeAppOutput {
     /// <p>The desired lifecycle state of the custom app.</p>
     #[doc(hidden)]
     pub target_status: std::option::Option<crate::types::SimulationAppTargetStatus>,
-    /// <p>Options that apply when the app starts. These optiAons override default behavior.</p>
+    /// <p>Options that apply when the app starts. These options override default behavior.</p>
     #[doc(hidden)]
     pub launch_overrides: std::option::Option<crate::types::LaunchOverrides>,
     /// <p>The description of the app.</p>
@@ -50,7 +50,7 @@ impl DescribeAppOutput {
     pub fn target_status(&self) -> std::option::Option<&crate::types::SimulationAppTargetStatus> {
         self.target_status.as_ref()
     }
-    /// <p>Options that apply when the app starts. These optiAons override default behavior.</p>
+    /// <p>Options that apply when the app starts. These options override default behavior.</p>
     pub fn launch_overrides(&self) -> std::option::Option<&crate::types::LaunchOverrides> {
         self.launch_overrides.as_ref()
     }
@@ -146,12 +146,12 @@ impl DescribeAppOutputBuilder {
         self.target_status = input;
         self
     }
-    /// <p>Options that apply when the app starts. These optiAons override default behavior.</p>
+    /// <p>Options that apply when the app starts. These options override default behavior.</p>
     pub fn launch_overrides(mut self, input: crate::types::LaunchOverrides) -> Self {
         self.launch_overrides = Some(input);
         self
     }
-    /// <p>Options that apply when the app starts. These optiAons override default behavior.</p>
+    /// <p>Options that apply when the app starts. These options override default behavior.</p>
     pub fn set_launch_overrides(
         mut self,
         input: std::option::Option<crate::types::LaunchOverrides>,

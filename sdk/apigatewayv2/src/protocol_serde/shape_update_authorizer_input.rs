@@ -13,48 +13,46 @@ pub fn ser_update_authorizer_input(
             .key("authorizerPayloadFormatVersion")
             .string(var_2.as_str());
     }
-    if input.authorizer_result_ttl_in_seconds != 0 {
+    if let Some(var_3) = &input.authorizer_result_ttl_in_seconds {
         object.key("authorizerResultTtlInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.authorizer_result_ttl_in_seconds).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.authorizer_type {
-        object.key("authorizerType").string(var_3.as_str());
+    if let Some(var_4) = &input.authorizer_type {
+        object.key("authorizerType").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.authorizer_uri {
-        object.key("authorizerUri").string(var_4.as_str());
+    if let Some(var_5) = &input.authorizer_uri {
+        object.key("authorizerUri").string(var_5.as_str());
     }
-    if input.enable_simple_responses {
-        object
-            .key("enableSimpleResponses")
-            .boolean(input.enable_simple_responses);
+    if let Some(var_6) = &input.enable_simple_responses {
+        object.key("enableSimpleResponses").boolean(*var_6);
     }
-    if let Some(var_5) = &input.identity_source {
-        let mut array_6 = object.key("identitySource").start_array();
-        for item_7 in var_5 {
+    if let Some(var_7) = &input.identity_source {
+        let mut array_8 = object.key("identitySource").start_array();
+        for item_9 in var_7 {
             {
-                array_6.value().string(item_7.as_str());
+                array_8.value().string(item_9.as_str());
             }
         }
-        array_6.finish();
+        array_8.finish();
     }
-    if let Some(var_8) = &input.identity_validation_expression {
+    if let Some(var_10) = &input.identity_validation_expression {
         object
             .key("identityValidationExpression")
-            .string(var_8.as_str());
+            .string(var_10.as_str());
     }
-    if let Some(var_9) = &input.jwt_configuration {
+    if let Some(var_11) = &input.jwt_configuration {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("jwtConfiguration").start_object();
+        let mut object_12 = object.key("jwtConfiguration").start_object();
         crate::protocol_serde::shape_jwt_configuration::ser_jwt_configuration(
-            &mut object_10,
-            var_9,
+            &mut object_12,
+            var_11,
         )?;
-        object_10.finish();
+        object_12.finish();
     }
-    if let Some(var_11) = &input.name {
-        object.key("name").string(var_11.as_str());
+    if let Some(var_13) = &input.name {
+        object.key("name").string(var_13.as_str());
     }
     Ok(())
 }

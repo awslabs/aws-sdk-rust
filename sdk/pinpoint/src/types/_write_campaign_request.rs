@@ -17,13 +17,13 @@ pub struct WriteCampaignRequest {
     pub description: std::option::Option<std::string::String>,
     /// <p>The allocated percentage of users (segment members) who shouldn't receive messages from the campaign.</p>
     #[doc(hidden)]
-    pub holdout_percent: i32,
+    pub holdout_percent: std::option::Option<i32>,
     /// <p>The settings for the AWS Lambda function to invoke as a code hook for the campaign. You can use this hook to customize the segment that's used by the campaign.</p>
     #[doc(hidden)]
     pub hook: std::option::Option<crate::types::CampaignHook>,
     /// <p>Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by changing this value to false.</p>
     #[doc(hidden)]
-    pub is_paused: bool,
+    pub is_paused: std::option::Option<bool>,
     /// <p>The messaging limits for the campaign.</p>
     #[doc(hidden)]
     pub limits: std::option::Option<crate::types::CampaignLimits>,
@@ -41,7 +41,7 @@ pub struct WriteCampaignRequest {
     pub segment_id: std::option::Option<std::string::String>,
     /// <p>The version of the segment to associate with the campaign.</p>
     #[doc(hidden)]
-    pub segment_version: i32,
+    pub segment_version: std::option::Option<i32>,
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the campaign. Each tag consists of a required tag key and an associated tag value.</p>
     #[doc(hidden)]
     pub tags:
@@ -57,7 +57,7 @@ pub struct WriteCampaignRequest {
     pub treatment_name: std::option::Option<std::string::String>,
     /// <p>Defines the priority of the campaign, used to decide the order of messages displayed to user if there are multiple messages scheduled to be displayed at the same moment.</p>
     #[doc(hidden)]
-    pub priority: i32,
+    pub priority: std::option::Option<i32>,
 }
 impl WriteCampaignRequest {
     /// <p>An array of requests that defines additional treatments for the campaign, in addition to the default treatment for the campaign.</p>
@@ -77,7 +77,7 @@ impl WriteCampaignRequest {
         self.description.as_deref()
     }
     /// <p>The allocated percentage of users (segment members) who shouldn't receive messages from the campaign.</p>
-    pub fn holdout_percent(&self) -> i32 {
+    pub fn holdout_percent(&self) -> std::option::Option<i32> {
         self.holdout_percent
     }
     /// <p>The settings for the AWS Lambda function to invoke as a code hook for the campaign. You can use this hook to customize the segment that's used by the campaign.</p>
@@ -85,7 +85,7 @@ impl WriteCampaignRequest {
         self.hook.as_ref()
     }
     /// <p>Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by changing this value to false.</p>
-    pub fn is_paused(&self) -> bool {
+    pub fn is_paused(&self) -> std::option::Option<bool> {
         self.is_paused
     }
     /// <p>The messaging limits for the campaign.</p>
@@ -111,7 +111,7 @@ impl WriteCampaignRequest {
         self.segment_id.as_deref()
     }
     /// <p>The version of the segment to associate with the campaign.</p>
-    pub fn segment_version(&self) -> i32 {
+    pub fn segment_version(&self) -> std::option::Option<i32> {
         self.segment_version
     }
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the campaign. Each tag consists of a required tag key and an associated tag value.</p>
@@ -136,7 +136,7 @@ impl WriteCampaignRequest {
         self.treatment_name.as_deref()
     }
     /// <p>Defines the priority of the campaign, used to decide the order of messages displayed to user if there are multiple messages scheduled to be displayed at the same moment.</p>
-    pub fn priority(&self) -> i32 {
+    pub fn priority(&self) -> std::option::Option<i32> {
         self.priority
     }
 }
@@ -388,20 +388,20 @@ impl WriteCampaignRequestBuilder {
             additional_treatments: self.additional_treatments,
             custom_delivery_configuration: self.custom_delivery_configuration,
             description: self.description,
-            holdout_percent: self.holdout_percent.unwrap_or_default(),
+            holdout_percent: self.holdout_percent,
             hook: self.hook,
-            is_paused: self.is_paused.unwrap_or_default(),
+            is_paused: self.is_paused,
             limits: self.limits,
             message_configuration: self.message_configuration,
             name: self.name,
             schedule: self.schedule,
             segment_id: self.segment_id,
-            segment_version: self.segment_version.unwrap_or_default(),
+            segment_version: self.segment_version,
             tags: self.tags,
             template_configuration: self.template_configuration,
             treatment_description: self.treatment_description,
             treatment_name: self.treatment_name,
-            priority: self.priority.unwrap_or_default(),
+            priority: self.priority,
         }
     }
 }

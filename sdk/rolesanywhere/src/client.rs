@@ -282,6 +282,10 @@ mod list_tags_for_resource;
 
 mod list_trust_anchors;
 
+mod put_notification_settings;
+
+mod reset_notification_settings;
+
 mod tag_resource;
 
 mod untag_resource;

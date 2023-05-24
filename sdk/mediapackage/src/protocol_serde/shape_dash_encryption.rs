@@ -64,20 +64,20 @@ pub fn ser_dash_encryption(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DashEncryption,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.key_rotation_interval_seconds != 0 {
+    if let Some(var_1) = &input.key_rotation_interval_seconds {
         object.key("keyRotationIntervalSeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.key_rotation_interval_seconds).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.speke_key_provider {
+    if let Some(var_2) = &input.speke_key_provider {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("spekeKeyProvider").start_object();
+        let mut object_3 = object.key("spekeKeyProvider").start_object();
         crate::protocol_serde::shape_speke_key_provider::ser_speke_key_provider(
-            &mut object_2,
-            var_1,
+            &mut object_3,
+            var_2,
         )?;
-        object_2.finish();
+        object_3.finish();
     }
     Ok(())
 }

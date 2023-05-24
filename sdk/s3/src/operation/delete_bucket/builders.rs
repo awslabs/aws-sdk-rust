@@ -6,7 +6,7 @@ pub use crate::operation::delete_bucket::_delete_bucket_input::DeleteBucketInput
 /// Fluent builder constructing a request to `DeleteBucket`.
 ///
 /// <p>Deletes the S3 bucket. All objects (including all object versions and delete markers) in the bucket must be deleted before the bucket itself can be deleted.</p>
-/// <p class="title"> <b>Related Resources</b> </p>
+/// <p>The following operations are related to <code>DeleteBucket</code>:</p>
 /// <ul>
 /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a> </p> </li>
 /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a> </p> </li>

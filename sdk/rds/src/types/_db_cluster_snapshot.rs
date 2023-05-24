@@ -80,6 +80,10 @@ pub struct DbClusterSnapshot {
     /// <p>Reserved for future use.</p>
     #[doc(hidden)]
     pub db_system_id: std::option::Option<std::string::String>,
+    /// <p>The storage type associated with the DB cluster snapshot.</p>
+    /// <p>This setting is only for Aurora DB clusters.</p>
+    #[doc(hidden)]
+    pub storage_type: std::option::Option<std::string::String>,
 }
 impl DbClusterSnapshot {
     /// <p>Provides the list of Availability Zones (AZs) where instances in the DB cluster snapshot can be restored.</p>
@@ -180,6 +184,11 @@ impl DbClusterSnapshot {
     pub fn db_system_id(&self) -> std::option::Option<&str> {
         self.db_system_id.as_deref()
     }
+    /// <p>The storage type associated with the DB cluster snapshot.</p>
+    /// <p>This setting is only for Aurora DB clusters.</p>
+    pub fn storage_type(&self) -> std::option::Option<&str> {
+        self.storage_type.as_deref()
+    }
 }
 impl DbClusterSnapshot {
     /// Creates a new builder-style object to manufacture [`DbClusterSnapshot`](crate::types::DbClusterSnapshot).
@@ -215,6 +224,7 @@ pub struct DbClusterSnapshotBuilder {
     pub(crate) iam_database_authentication_enabled: std::option::Option<bool>,
     pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     pub(crate) db_system_id: std::option::Option<std::string::String>,
+    pub(crate) storage_type: std::option::Option<std::string::String>,
 }
 impl DbClusterSnapshotBuilder {
     /// Appends an item to `availability_zones`.
@@ -498,6 +508,18 @@ impl DbClusterSnapshotBuilder {
         self.db_system_id = input;
         self
     }
+    /// <p>The storage type associated with the DB cluster snapshot.</p>
+    /// <p>This setting is only for Aurora DB clusters.</p>
+    pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+        self.storage_type = Some(input.into());
+        self
+    }
+    /// <p>The storage type associated with the DB cluster snapshot.</p>
+    /// <p>This setting is only for Aurora DB clusters.</p>
+    pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.storage_type = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DbClusterSnapshot`](crate::types::DbClusterSnapshot).
     pub fn build(self) -> crate::types::DbClusterSnapshot {
         crate::types::DbClusterSnapshot {
@@ -526,6 +548,7 @@ impl DbClusterSnapshotBuilder {
                 .unwrap_or_default(),
             tag_list: self.tag_list,
             db_system_id: self.db_system_id,
+            storage_type: self.storage_type,
         }
     }
 }

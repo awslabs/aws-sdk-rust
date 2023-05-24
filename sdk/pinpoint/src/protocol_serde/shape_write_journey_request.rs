@@ -28,77 +28,71 @@ pub fn ser_write_journey_request(
         crate::protocol_serde::shape_journey_limits::ser_journey_limits(&mut object_9, var_8)?;
         object_9.finish();
     }
-    if input.local_time {
-        object.key("LocalTime").boolean(input.local_time);
+    if let Some(var_10) = &input.local_time {
+        object.key("LocalTime").boolean(*var_10);
     }
-    if let Some(var_10) = &input.name {
-        object.key("Name").string(var_10.as_str());
+    if let Some(var_11) = &input.name {
+        object.key("Name").string(var_11.as_str());
     }
-    if let Some(var_11) = &input.quiet_time {
+    if let Some(var_12) = &input.quiet_time {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("QuietTime").start_object();
-        crate::protocol_serde::shape_quiet_time::ser_quiet_time(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_13 = object.key("QuietTime").start_object();
+        crate::protocol_serde::shape_quiet_time::ser_quiet_time(&mut object_13, var_12)?;
+        object_13.finish();
     }
-    if let Some(var_13) = &input.refresh_frequency {
-        object.key("RefreshFrequency").string(var_13.as_str());
+    if let Some(var_14) = &input.refresh_frequency {
+        object.key("RefreshFrequency").string(var_14.as_str());
     }
-    if let Some(var_14) = &input.schedule {
+    if let Some(var_15) = &input.schedule {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("Schedule").start_object();
+        let mut object_16 = object.key("Schedule").start_object();
         crate::protocol_serde::shape_journey_schedule::ser_journey_schedule(
-            &mut object_15,
-            var_14,
+            &mut object_16,
+            var_15,
         )?;
-        object_15.finish();
+        object_16.finish();
     }
-    if let Some(var_16) = &input.start_activity {
-        object.key("StartActivity").string(var_16.as_str());
+    if let Some(var_17) = &input.start_activity {
+        object.key("StartActivity").string(var_17.as_str());
     }
-    if let Some(var_17) = &input.start_condition {
+    if let Some(var_18) = &input.start_condition {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("StartCondition").start_object();
-        crate::protocol_serde::shape_start_condition::ser_start_condition(&mut object_18, var_17)?;
-        object_18.finish();
+        let mut object_19 = object.key("StartCondition").start_object();
+        crate::protocol_serde::shape_start_condition::ser_start_condition(&mut object_19, var_18)?;
+        object_19.finish();
     }
-    if let Some(var_19) = &input.state {
-        object.key("State").string(var_19.as_str());
+    if let Some(var_20) = &input.state {
+        object.key("State").string(var_20.as_str());
     }
-    if input.wait_for_quiet_time {
-        object
-            .key("WaitForQuietTime")
-            .boolean(input.wait_for_quiet_time);
+    if let Some(var_21) = &input.wait_for_quiet_time {
+        object.key("WaitForQuietTime").boolean(*var_21);
     }
-    if input.refresh_on_segment_update {
-        object
-            .key("RefreshOnSegmentUpdate")
-            .boolean(input.refresh_on_segment_update);
+    if let Some(var_22) = &input.refresh_on_segment_update {
+        object.key("RefreshOnSegmentUpdate").boolean(*var_22);
     }
-    if let Some(var_20) = &input.journey_channel_settings {
+    if let Some(var_23) = &input.journey_channel_settings {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("JourneyChannelSettings").start_object();
+        let mut object_24 = object.key("JourneyChannelSettings").start_object();
         crate::protocol_serde::shape_journey_channel_settings::ser_journey_channel_settings(
-            &mut object_21,
-            var_20,
+            &mut object_24,
+            var_23,
         )?;
-        object_21.finish();
+        object_24.finish();
     }
-    if input.sending_schedule {
-        object
-            .key("SendingSchedule")
-            .boolean(input.sending_schedule);
+    if let Some(var_25) = &input.sending_schedule {
+        object.key("SendingSchedule").boolean(*var_25);
     }
-    if let Some(var_22) = &input.open_hours {
+    if let Some(var_26) = &input.open_hours {
         #[allow(unused_mut)]
-        let mut object_23 = object.key("OpenHours").start_object();
-        crate::protocol_serde::shape_open_hours::ser_open_hours(&mut object_23, var_22)?;
-        object_23.finish();
+        let mut object_27 = object.key("OpenHours").start_object();
+        crate::protocol_serde::shape_open_hours::ser_open_hours(&mut object_27, var_26)?;
+        object_27.finish();
     }
-    if let Some(var_24) = &input.closed_days {
+    if let Some(var_28) = &input.closed_days {
         #[allow(unused_mut)]
-        let mut object_25 = object.key("ClosedDays").start_object();
-        crate::protocol_serde::shape_closed_days::ser_closed_days(&mut object_25, var_24)?;
-        object_25.finish();
+        let mut object_29 = object.key("ClosedDays").start_object();
+        crate::protocol_serde::shape_closed_days::ser_closed_days(&mut object_29, var_28)?;
+        object_29.finish();
     }
     Ok(())
 }

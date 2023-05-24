@@ -34,6 +34,11 @@ where
                                     crate::protocol_serde::shape_suggestion_value::de_suggestion_value(tokens)?
                                 );
                             }
+                            "SourceDocuments" => {
+                                builder = builder.set_source_documents(
+                                    crate::protocol_serde::shape_source_documents::de_source_documents(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

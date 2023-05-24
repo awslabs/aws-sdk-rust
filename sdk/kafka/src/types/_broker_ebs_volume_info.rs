@@ -12,7 +12,7 @@ pub struct BrokerEbsVolumeInfo {
     pub provisioned_throughput: std::option::Option<crate::types::ProvisionedThroughput>,
     /// <p>Size of the EBS volume to update.</p>
     #[doc(hidden)]
-    pub volume_size_gb: i32,
+    pub volume_size_gb: std::option::Option<i32>,
 }
 impl BrokerEbsVolumeInfo {
     /// <p>The ID of the broker to update.</p>
@@ -26,7 +26,7 @@ impl BrokerEbsVolumeInfo {
         self.provisioned_throughput.as_ref()
     }
     /// <p>Size of the EBS volume to update.</p>
-    pub fn volume_size_gb(&self) -> i32 {
+    pub fn volume_size_gb(&self) -> std::option::Option<i32> {
         self.volume_size_gb
     }
 }
@@ -87,7 +87,7 @@ impl BrokerEbsVolumeInfoBuilder {
         crate::types::BrokerEbsVolumeInfo {
             kafka_broker_node_id: self.kafka_broker_node_id,
             provisioned_throughput: self.provisioned_throughput,
-            volume_size_gb: self.volume_size_gb.unwrap_or_default(),
+            volume_size_gb: self.volume_size_gb,
         }
     }
 }

@@ -11,7 +11,7 @@ pub struct CreateDiscovererInput {
     pub source_arn: std::option::Option<std::string::String>,
     /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true).</p>
     #[doc(hidden)]
-    pub cross_account: bool,
+    pub cross_account: std::option::Option<bool>,
     /// <p>Tags associated with the resource.</p>
     #[doc(hidden)]
     pub tags:
@@ -27,7 +27,7 @@ impl CreateDiscovererInput {
         self.source_arn.as_deref()
     }
     /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true).</p>
-    pub fn cross_account(&self) -> bool {
+    pub fn cross_account(&self) -> std::option::Option<bool> {
         self.cross_account
     }
     /// <p>Tags associated with the resource.</p>
@@ -122,7 +122,7 @@ impl CreateDiscovererInputBuilder {
         Ok(crate::operation::create_discoverer::CreateDiscovererInput {
             description: self.description,
             source_arn: self.source_arn,
-            cross_account: self.cross_account.unwrap_or_default(),
+            cross_account: self.cross_account,
             tags: self.tags,
         })
     }

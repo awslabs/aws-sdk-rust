@@ -6,11 +6,11 @@
 pub struct VoiceChannelRequest {
     /// <p>Specifies whether to enable the voice channel for the application.</p>
     #[doc(hidden)]
-    pub enabled: bool,
+    pub enabled: std::option::Option<bool>,
 }
 impl VoiceChannelRequest {
     /// <p>Specifies whether to enable the voice channel for the application.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
 }
@@ -41,7 +41,7 @@ impl VoiceChannelRequestBuilder {
     /// Consumes the builder and constructs a [`VoiceChannelRequest`](crate::types::VoiceChannelRequest).
     pub fn build(self) -> crate::types::VoiceChannelRequest {
         crate::types::VoiceChannelRequest {
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled,
         }
     }
 }

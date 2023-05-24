@@ -12,7 +12,7 @@ pub struct CmafEncryption {
     pub encryption_method: std::option::Option<crate::types::CmafEncryptionMethod>,
     /// Time (in seconds) between each encryption key rotation.
     #[doc(hidden)]
-    pub key_rotation_interval_seconds: i32,
+    pub key_rotation_interval_seconds: std::option::Option<i32>,
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     #[doc(hidden)]
     pub speke_key_provider: std::option::Option<crate::types::SpekeKeyProvider>,
@@ -27,7 +27,7 @@ impl CmafEncryption {
         self.encryption_method.as_ref()
     }
     /// Time (in seconds) between each encryption key rotation.
-    pub fn key_rotation_interval_seconds(&self) -> i32 {
+    pub fn key_rotation_interval_seconds(&self) -> std::option::Option<i32> {
         self.key_rotation_interval_seconds
     }
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
@@ -106,7 +106,7 @@ impl CmafEncryptionBuilder {
         crate::types::CmafEncryption {
             constant_initialization_vector: self.constant_initialization_vector,
             encryption_method: self.encryption_method,
-            key_rotation_interval_seconds: self.key_rotation_interval_seconds.unwrap_or_default(),
+            key_rotation_interval_seconds: self.key_rotation_interval_seconds,
             speke_key_provider: self.speke_key_provider,
         }
     }

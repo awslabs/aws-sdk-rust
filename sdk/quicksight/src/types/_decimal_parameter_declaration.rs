@@ -16,6 +16,10 @@ pub struct DecimalParameterDeclaration {
     /// <p>The configuration that defines the default value of a <code>Decimal</code> parameter when a value has not been set.</p>
     #[doc(hidden)]
     pub value_when_unset: std::option::Option<crate::types::DecimalValueWhenUnsetConfiguration>,
+    /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
+    #[doc(hidden)]
+    pub mapped_data_set_parameters:
+        std::option::Option<std::vec::Vec<crate::types::MappedDataSetParameter>>,
 }
 impl DecimalParameterDeclaration {
     /// <p>The value type determines whether the parameter is a single-value or multi-value parameter.</p>
@@ -36,6 +40,12 @@ impl DecimalParameterDeclaration {
     ) -> std::option::Option<&crate::types::DecimalValueWhenUnsetConfiguration> {
         self.value_when_unset.as_ref()
     }
+    /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
+    pub fn mapped_data_set_parameters(
+        &self,
+    ) -> std::option::Option<&[crate::types::MappedDataSetParameter]> {
+        self.mapped_data_set_parameters.as_deref()
+    }
 }
 impl DecimalParameterDeclaration {
     /// Creates a new builder-style object to manufacture [`DecimalParameterDeclaration`](crate::types::DecimalParameterDeclaration).
@@ -53,6 +63,8 @@ pub struct DecimalParameterDeclarationBuilder {
     pub(crate) default_values: std::option::Option<crate::types::DecimalDefaultValues>,
     pub(crate) value_when_unset:
         std::option::Option<crate::types::DecimalValueWhenUnsetConfiguration>,
+    pub(crate) mapped_data_set_parameters:
+        std::option::Option<std::vec::Vec<crate::types::MappedDataSetParameter>>,
 }
 impl DecimalParameterDeclarationBuilder {
     /// <p>The value type determines whether the parameter is a single-value or multi-value parameter.</p>
@@ -107,6 +119,28 @@ impl DecimalParameterDeclarationBuilder {
         self.value_when_unset = input;
         self
     }
+    /// Appends an item to `mapped_data_set_parameters`.
+    ///
+    /// To override the contents of this collection use [`set_mapped_data_set_parameters`](Self::set_mapped_data_set_parameters).
+    ///
+    /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
+    pub fn mapped_data_set_parameters(
+        mut self,
+        input: crate::types::MappedDataSetParameter,
+    ) -> Self {
+        let mut v = self.mapped_data_set_parameters.unwrap_or_default();
+        v.push(input);
+        self.mapped_data_set_parameters = Some(v);
+        self
+    }
+    /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
+    pub fn set_mapped_data_set_parameters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MappedDataSetParameter>>,
+    ) -> Self {
+        self.mapped_data_set_parameters = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DecimalParameterDeclaration`](crate::types::DecimalParameterDeclaration).
     pub fn build(self) -> crate::types::DecimalParameterDeclaration {
         crate::types::DecimalParameterDeclaration {
@@ -114,6 +148,7 @@ impl DecimalParameterDeclarationBuilder {
             name: self.name,
             default_values: self.default_values,
             value_when_unset: self.value_when_unset,
+            mapped_data_set_parameters: self.mapped_data_set_parameters,
         }
     }
 }

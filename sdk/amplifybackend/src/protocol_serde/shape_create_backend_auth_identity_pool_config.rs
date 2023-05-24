@@ -6,10 +6,8 @@ pub fn ser_create_backend_auth_identity_pool_config(
     if let Some(var_1) = &input.identity_pool_name {
         object.key("identityPoolName").string(var_1.as_str());
     }
-    {
-        object
-            .key("unauthenticatedLogin")
-            .boolean(input.unauthenticated_login);
+    if let Some(var_2) = &input.unauthenticated_login {
+        object.key("unauthenticatedLogin").boolean(*var_2);
     }
     Ok(())
 }

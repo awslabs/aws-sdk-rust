@@ -5,7 +5,7 @@ pub use crate::operation::update_profile::_update_profile_input::UpdateProfileIn
 
 /// Fluent builder constructing a request to `UpdateProfile`.
 ///
-/// <p>Updates the profile. A profile is configuration resource to list the roles that RolesAnywhere service is trusted to assume. In addition, by applying a profile you can scope-down permissions with IAM managed policies.</p>
+/// <p>Updates a <i>profile</i>, a list of the roles that IAM Roles Anywhere service is trusted to assume. You use profiles to intersect permissions with IAM managed policies.</p>
 /// <p> <b>Required permissions: </b> <code>rolesanywhere:UpdateProfile</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateProfileFluentBuilder {
@@ -99,12 +99,12 @@ impl UpdateProfileFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_role_arns`](Self::set_role_arns).
     ///
-    /// <p>A list of IAM roles that this profile can assume in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
+    /// <p>A list of IAM roles that this profile can assume in a temporary credential request.</p>
     pub fn role_arns(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.role_arns(input.into());
         self
     }
-    /// <p>A list of IAM roles that this profile can assume in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
+    /// <p>A list of IAM roles that this profile can assume in a temporary credential request.</p>
     pub fn set_role_arns(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

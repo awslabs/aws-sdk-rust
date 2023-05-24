@@ -34,6 +34,7 @@
 ///     ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound => { /* ... */ },
 ///     ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound => { /* ... */ },
 ///     ExportableLambdaFunctionField::RecommendationOptionsSavingsOpportunityPercentage => { /* ... */ },
+///     ExportableLambdaFunctionField::Tags => { /* ... */ },
 ///     ExportableLambdaFunctionField::UtilizationMetricsDurationAverage => { /* ... */ },
 ///     ExportableLambdaFunctionField::UtilizationMetricsDurationMaximum => { /* ... */ },
 ///     ExportableLambdaFunctionField::UtilizationMetricsMemoryAverage => { /* ... */ },
@@ -116,6 +117,8 @@ pub enum ExportableLambdaFunctionField {
     #[allow(missing_docs)] // documentation missing in model
     RecommendationOptionsSavingsOpportunityPercentage,
     #[allow(missing_docs)] // documentation missing in model
+    Tags,
+    #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsDurationAverage,
     #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsDurationMaximum,
@@ -151,6 +154,7 @@ impl std::convert::From<&str> for ExportableLambdaFunctionField {
 "RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound" => ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound,
 "RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound" => ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound,
 "RecommendationOptionsSavingsOpportunityPercentage" => ExportableLambdaFunctionField::RecommendationOptionsSavingsOpportunityPercentage,
+"Tags" => ExportableLambdaFunctionField::Tags,
 "UtilizationMetricsDurationAverage" => ExportableLambdaFunctionField::UtilizationMetricsDurationAverage,
 "UtilizationMetricsDurationMaximum" => ExportableLambdaFunctionField::UtilizationMetricsDurationMaximum,
 "UtilizationMetricsMemoryAverage" => ExportableLambdaFunctionField::UtilizationMetricsMemoryAverage,
@@ -192,6 +196,7 @@ impl ExportableLambdaFunctionField {
     ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound => "RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound",
     ExportableLambdaFunctionField::RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound => "RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound",
     ExportableLambdaFunctionField::RecommendationOptionsSavingsOpportunityPercentage => "RecommendationOptionsSavingsOpportunityPercentage",
+    ExportableLambdaFunctionField::Tags => "Tags",
     ExportableLambdaFunctionField::UtilizationMetricsDurationAverage => "UtilizationMetricsDurationAverage",
     ExportableLambdaFunctionField::UtilizationMetricsDurationMaximum => "UtilizationMetricsDurationMaximum",
     ExportableLambdaFunctionField::UtilizationMetricsMemoryAverage => "UtilizationMetricsMemoryAverage",
@@ -224,6 +229,7 @@ impl ExportableLambdaFunctionField {
             "RecommendationOptionsProjectedUtilizationMetricsDurationLowerBound",
             "RecommendationOptionsProjectedUtilizationMetricsDurationUpperBound",
             "RecommendationOptionsSavingsOpportunityPercentage",
+            "Tags",
             "UtilizationMetricsDurationAverage",
             "UtilizationMetricsDurationMaximum",
             "UtilizationMetricsMemoryAverage",

@@ -7,7 +7,7 @@ pub struct EventTypeFilter {
     /// <p>A list of event type codes.</p>
     #[doc(hidden)]
     pub event_type_codes: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Amazon Web Services services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    /// <p>The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     #[doc(hidden)]
     pub services: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
@@ -19,7 +19,7 @@ impl EventTypeFilter {
     pub fn event_type_codes(&self) -> std::option::Option<&[std::string::String]> {
         self.event_type_codes.as_deref()
     }
-    /// <p>The Amazon Web Services services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    /// <p>The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     pub fn services(&self) -> std::option::Option<&[std::string::String]> {
         self.services.as_deref()
     }
@@ -68,14 +68,14 @@ impl EventTypeFilterBuilder {
     ///
     /// To override the contents of this collection use [`set_services`](Self::set_services).
     ///
-    /// <p>The Amazon Web Services services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    /// <p>The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     pub fn services(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.services.unwrap_or_default();
         v.push(input.into());
         self.services = Some(v);
         self
     }
-    /// <p>The Amazon Web Services services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    /// <p>The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     pub fn set_services(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

@@ -6,18 +6,18 @@
 pub struct FunctionRunAsConfig {
     /// The group ID whose permissions are used to run a Lambda function.
     #[doc(hidden)]
-    pub gid: i32,
+    pub gid: std::option::Option<i32>,
     /// The user ID whose permissions are used to run a Lambda function.
     #[doc(hidden)]
-    pub uid: i32,
+    pub uid: std::option::Option<i32>,
 }
 impl FunctionRunAsConfig {
     /// The group ID whose permissions are used to run a Lambda function.
-    pub fn gid(&self) -> i32 {
+    pub fn gid(&self) -> std::option::Option<i32> {
         self.gid
     }
     /// The user ID whose permissions are used to run a Lambda function.
-    pub fn uid(&self) -> i32 {
+    pub fn uid(&self) -> std::option::Option<i32> {
         self.uid
     }
 }
@@ -59,8 +59,8 @@ impl FunctionRunAsConfigBuilder {
     /// Consumes the builder and constructs a [`FunctionRunAsConfig`](crate::types::FunctionRunAsConfig).
     pub fn build(self) -> crate::types::FunctionRunAsConfig {
         crate::types::FunctionRunAsConfig {
-            gid: self.gid.unwrap_or_default(),
-            uid: self.uid.unwrap_or_default(),
+            gid: self.gid,
+            uid: self.uid,
         }
     }
 }

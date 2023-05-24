@@ -252,6 +252,8 @@ mod create_integration_association;
 
 mod create_participant;
 
+mod create_prompt;
+
 mod create_queue;
 
 mod create_quick_connect;
@@ -318,6 +320,8 @@ mod delete_instance;
 
 mod delete_integration_association;
 
+mod delete_prompt;
+
 mod delete_quick_connect;
 
 mod delete_rule;
@@ -357,6 +361,8 @@ mod describe_instance_attribute;
 mod describe_instance_storage_config;
 
 mod describe_phone_number;
+
+mod describe_prompt;
 
 mod describe_queue;
 
@@ -409,6 +415,8 @@ mod get_federation_token;
 mod get_metric_data;
 
 mod get_metric_data_v2;
+
+mod get_prompt_file;
 
 mod get_task_template;
 
@@ -565,6 +573,8 @@ mod update_instance_storage_config;
 mod update_participant_role_config;
 
 mod update_phone_number;
+
+mod update_prompt;
 
 mod update_queue_hours_of_operation;
 

@@ -45,6 +45,18 @@ pub use crate::types::_enhanced_monitoring::EnhancedMonitoring;
 
 pub use crate::types::_connectivity_info::ConnectivityInfo;
 
+pub use crate::types::_vpc_connectivity::VpcConnectivity;
+
+pub use crate::types::_vpc_connectivity_client_authentication::VpcConnectivityClientAuthentication;
+
+pub use crate::types::_vpc_connectivity_tls::VpcConnectivityTls;
+
+pub use crate::types::_vpc_connectivity_sasl::VpcConnectivitySasl;
+
+pub use crate::types::_vpc_connectivity_iam::VpcConnectivityIam;
+
+pub use crate::types::_vpc_connectivity_scram::VpcConnectivityScram;
+
 pub use crate::types::_public_access::PublicAccess;
 
 pub use crate::types::_configuration_revision::ConfigurationRevision;
@@ -52,6 +64,10 @@ pub use crate::types::_configuration_revision::ConfigurationRevision;
 pub use crate::types::_configuration_info::ConfigurationInfo;
 
 pub use crate::types::_broker_ebs_volume_info::BrokerEbsVolumeInfo;
+
+pub use crate::types::_vpc_connection::VpcConnection;
+
+pub use crate::types::_vpc_connection_state::VpcConnectionState;
 
 pub use crate::types::_node_info::NodeInfo;
 
@@ -109,6 +125,12 @@ pub use crate::types::_jmx_exporter::JmxExporter;
 
 pub use crate::types::_cluster_operation_info::ClusterOperationInfo;
 
+pub use crate::types::_vpc_connection_info::VpcConnectionInfo;
+
+pub use crate::types::_user_identity::UserIdentity;
+
+pub use crate::types::_user_identity_type::UserIdentityType;
+
 pub use crate::types::_mutable_cluster_info::MutableClusterInfo;
 
 pub use crate::types::_cluster_operation_step::ClusterOperationStep;
@@ -116,6 +138,8 @@ pub use crate::types::_cluster_operation_step::ClusterOperationStep;
 pub use crate::types::_cluster_operation_step_info::ClusterOperationStepInfo;
 
 pub use crate::types::_error_info::ErrorInfo;
+
+pub use crate::types::_client_vpc_connection::ClientVpcConnection;
 
 pub use crate::types::_compatible_kafka_version::CompatibleKafkaVersion;
 
@@ -140,6 +164,8 @@ mod _broker_software_info;
 mod _client_authentication;
 
 mod _client_broker;
+
+mod _client_vpc_connection;
 
 mod _cloud_watch_logs;
 
@@ -247,7 +273,29 @@ mod _unauthenticated;
 
 mod _unprocessed_scram_secret;
 
+mod _user_identity;
+
+mod _user_identity_type;
+
 mod _vpc_config;
+
+mod _vpc_connection;
+
+mod _vpc_connection_info;
+
+mod _vpc_connection_state;
+
+mod _vpc_connectivity;
+
+mod _vpc_connectivity_client_authentication;
+
+mod _vpc_connectivity_iam;
+
+mod _vpc_connectivity_sasl;
+
+mod _vpc_connectivity_scram;
+
+mod _vpc_connectivity_tls;
 
 mod _zookeeper_node_info;
 

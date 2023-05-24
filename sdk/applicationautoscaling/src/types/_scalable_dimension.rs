@@ -32,6 +32,7 @@
 ///     ScalableDimension::NeptuneClusterReadReplicaCount => { /* ... */ },
 ///     ScalableDimension::RdsClusterReadReplicaCount => { /* ... */ },
 ///     ScalableDimension::SageMakerVariantDesiredInstanceCount => { /* ... */ },
+///     ScalableDimension::SageMakerVariantDesiredProvisionedConcurrency => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -105,6 +106,8 @@ pub enum ScalableDimension {
     RdsClusterReadReplicaCount,
     #[allow(missing_docs)] // documentation missing in model
     SageMakerVariantDesiredInstanceCount,
+    #[allow(missing_docs)] // documentation missing in model
+    SageMakerVariantDesiredProvisionedConcurrency,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -156,6 +159,9 @@ impl std::convert::From<&str> for ScalableDimension {
             "rds:cluster:ReadReplicaCount" => ScalableDimension::RdsClusterReadReplicaCount,
             "sagemaker:variant:DesiredInstanceCount" => {
                 ScalableDimension::SageMakerVariantDesiredInstanceCount
+            }
+            "sagemaker:variant:DesiredProvisionedConcurrency" => {
+                ScalableDimension::SageMakerVariantDesiredProvisionedConcurrency
             }
             other => {
                 ScalableDimension::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
@@ -220,6 +226,9 @@ impl ScalableDimension {
             ScalableDimension::SageMakerVariantDesiredInstanceCount => {
                 "sagemaker:variant:DesiredInstanceCount"
             }
+            ScalableDimension::SageMakerVariantDesiredProvisionedConcurrency => {
+                "sagemaker:variant:DesiredProvisionedConcurrency"
+            }
             ScalableDimension::Unknown(value) => value.as_str(),
         }
     }
@@ -246,6 +255,7 @@ impl ScalableDimension {
             "neptune:cluster:ReadReplicaCount",
             "rds:cluster:ReadReplicaCount",
             "sagemaker:variant:DesiredInstanceCount",
+            "sagemaker:variant:DesiredProvisionedConcurrency",
         ]
     }
 }

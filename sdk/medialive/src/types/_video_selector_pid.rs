@@ -6,11 +6,11 @@
 pub struct VideoSelectorPid {
     /// Selects a specific PID from within a video source.
     #[doc(hidden)]
-    pub pid: i32,
+    pub pid: std::option::Option<i32>,
 }
 impl VideoSelectorPid {
     /// Selects a specific PID from within a video source.
-    pub fn pid(&self) -> i32 {
+    pub fn pid(&self) -> std::option::Option<i32> {
         self.pid
     }
 }
@@ -40,8 +40,6 @@ impl VideoSelectorPidBuilder {
     }
     /// Consumes the builder and constructs a [`VideoSelectorPid`](crate::types::VideoSelectorPid).
     pub fn build(self) -> crate::types::VideoSelectorPid {
-        crate::types::VideoSelectorPid {
-            pid: self.pid.unwrap_or_default(),
-        }
+        crate::types::VideoSelectorPid { pid: self.pid }
     }
 }

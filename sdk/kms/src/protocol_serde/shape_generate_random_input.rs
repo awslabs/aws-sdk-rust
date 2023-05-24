@@ -12,5 +12,11 @@ pub fn ser_generate_random_input(
     if let Some(var_2) = &input.custom_key_store_id {
         object.key("CustomKeyStoreId").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.recipient {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("Recipient").start_object();
+        crate::protocol_serde::shape_recipient_info::ser_recipient_info(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

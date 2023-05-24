@@ -6,17 +6,17 @@
 pub struct HopDestination {
     /// Optional. When you set up a job to use queue hopping, you can specify a different relative priority for the job in the destination queue. If you don't specify, the relative priority will remain the same as in the previous queue.
     #[doc(hidden)]
-    pub priority: i32,
+    pub priority: std::option::Option<i32>,
     /// Optional unless the job is submitted on the default queue. When you set up a job to use queue hopping, you can specify a destination queue. This queue cannot be the original queue to which the job is submitted. If the original queue isn't the default queue and you don't specify the destination queue, the job will move to the default queue.
     #[doc(hidden)]
     pub queue: std::option::Option<std::string::String>,
     /// Required for setting up a job to use queue hopping. Minimum wait time in minutes until the job can hop to the destination queue. Valid range is 1 to 4320 minutes, inclusive.
     #[doc(hidden)]
-    pub wait_minutes: i32,
+    pub wait_minutes: std::option::Option<i32>,
 }
 impl HopDestination {
     /// Optional. When you set up a job to use queue hopping, you can specify a different relative priority for the job in the destination queue. If you don't specify, the relative priority will remain the same as in the previous queue.
-    pub fn priority(&self) -> i32 {
+    pub fn priority(&self) -> std::option::Option<i32> {
         self.priority
     }
     /// Optional unless the job is submitted on the default queue. When you set up a job to use queue hopping, you can specify a destination queue. This queue cannot be the original queue to which the job is submitted. If the original queue isn't the default queue and you don't specify the destination queue, the job will move to the default queue.
@@ -24,7 +24,7 @@ impl HopDestination {
         self.queue.as_deref()
     }
     /// Required for setting up a job to use queue hopping. Minimum wait time in minutes until the job can hop to the destination queue. Valid range is 1 to 4320 minutes, inclusive.
-    pub fn wait_minutes(&self) -> i32 {
+    pub fn wait_minutes(&self) -> std::option::Option<i32> {
         self.wait_minutes
     }
 }
@@ -77,9 +77,9 @@ impl HopDestinationBuilder {
     /// Consumes the builder and constructs a [`HopDestination`](crate::types::HopDestination).
     pub fn build(self) -> crate::types::HopDestination {
         crate::types::HopDestination {
-            priority: self.priority.unwrap_or_default(),
+            priority: self.priority,
             queue: self.queue,
-            wait_minutes: self.wait_minutes.unwrap_or_default(),
+            wait_minutes: self.wait_minutes,
         }
     }
 }

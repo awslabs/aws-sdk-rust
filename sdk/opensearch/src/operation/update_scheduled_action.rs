@@ -196,7 +196,7 @@ pub enum UpdateScheduledActionError {
     InternalException(crate::types::error::InternalException),
     /// <p>An exception for trying to create more than the allowed number of resources or sub-resources.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p>An exception for accessing or deleting a resource that does not exist..</p>
+    /// <p>An exception for accessing or deleting a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>An exception for attempting to schedule a domain action during an unavailable time slot.</p>
     SlotNotAvailableException(crate::types::error::SlotNotAvailableException),

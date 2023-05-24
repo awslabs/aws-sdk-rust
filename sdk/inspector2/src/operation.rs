@@ -10,6 +10,12 @@ pub mod batch_get_account_status;
 /// Types for the `BatchGetFreeTrialInfo` operation.
 pub mod batch_get_free_trial_info;
 
+/// Types for the `BatchGetMemberEc2DeepInspectionStatus` operation.
+pub mod batch_get_member_ec2_deep_inspection_status;
+
+/// Types for the `BatchUpdateMemberEc2DeepInspectionStatus` operation.
+pub mod batch_update_member_ec2_deep_inspection_status;
+
 /// Types for the `CancelFindingsReport` operation.
 pub mod cancel_findings_report;
 
@@ -45,6 +51,9 @@ pub mod get_configuration;
 
 /// Types for the `GetDelegatedAdminAccount` operation.
 pub mod get_delegated_admin_account;
+
+/// Types for the `GetEc2DeepInspectionConfiguration` operation.
+pub mod get_ec2_deep_inspection_configuration;
 
 /// Types for the `GetFindingsReportStatus` operation.
 pub mod get_findings_report_status;
@@ -82,6 +91,9 @@ pub mod list_tags_for_resource;
 /// Types for the `ListUsageTotals` operation.
 pub mod list_usage_totals;
 
+/// Types for the `SearchVulnerabilities` operation.
+pub mod search_vulnerabilities;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 
@@ -91,8 +103,14 @@ pub mod untag_resource;
 /// Types for the `UpdateConfiguration` operation.
 pub mod update_configuration;
 
+/// Types for the `UpdateEc2DeepInspectionConfiguration` operation.
+pub mod update_ec2_deep_inspection_configuration;
+
 /// Types for the `UpdateFilter` operation.
 pub mod update_filter;
+
+/// Types for the `UpdateOrgEc2DeepInspectionConfiguration` operation.
+pub mod update_org_ec2_deep_inspection_configuration;
 
 /// Types for the `UpdateOrganizationConfiguration` operation.
 pub mod update_organization_configuration;

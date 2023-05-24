@@ -39,7 +39,7 @@ pub struct NumberValidateResponse {
     pub phone_type: std::option::Option<std::string::String>,
     /// <p>The phone type, represented by an integer. Valid values are: 0 (mobile), 1 (landline), 2 (VoIP), 3 (invalid), 4 (other), and 5 (prepaid).</p>
     #[doc(hidden)]
-    pub phone_type_code: i32,
+    pub phone_type_code: std::option::Option<i32>,
     /// <p>The time zone for the location where the phone number was originally registered.</p>
     #[doc(hidden)]
     pub timezone: std::option::Option<std::string::String>,
@@ -93,7 +93,7 @@ impl NumberValidateResponse {
         self.phone_type.as_deref()
     }
     /// <p>The phone type, represented by an integer. Valid values are: 0 (mobile), 1 (landline), 2 (VoIP), 3 (invalid), 4 (other), and 5 (prepaid).</p>
-    pub fn phone_type_code(&self) -> i32 {
+    pub fn phone_type_code(&self) -> std::option::Option<i32> {
         self.phone_type_code
     }
     /// <p>The time zone for the location where the phone number was originally registered.</p>
@@ -304,7 +304,7 @@ impl NumberValidateResponseBuilder {
             original_country_code_iso2: self.original_country_code_iso2,
             original_phone_number: self.original_phone_number,
             phone_type: self.phone_type,
-            phone_type_code: self.phone_type_code.unwrap_or_default(),
+            phone_type_code: self.phone_type_code,
             timezone: self.timezone,
             zip_code: self.zip_code,
         }

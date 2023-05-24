@@ -6,18 +6,18 @@
 pub struct MotionImageInsertionFramerate {
     /// The bottom of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps, set this value to 1.
     #[doc(hidden)]
-    pub framerate_denominator: i32,
+    pub framerate_denominator: std::option::Option<i32>,
     /// The top of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps, set this value to 24.
     #[doc(hidden)]
-    pub framerate_numerator: i32,
+    pub framerate_numerator: std::option::Option<i32>,
 }
 impl MotionImageInsertionFramerate {
     /// The bottom of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps, set this value to 1.
-    pub fn framerate_denominator(&self) -> i32 {
+    pub fn framerate_denominator(&self) -> std::option::Option<i32> {
         self.framerate_denominator
     }
     /// The top of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps, set this value to 24.
-    pub fn framerate_numerator(&self) -> i32 {
+    pub fn framerate_numerator(&self) -> std::option::Option<i32> {
         self.framerate_numerator
     }
 }
@@ -59,8 +59,8 @@ impl MotionImageInsertionFramerateBuilder {
     /// Consumes the builder and constructs a [`MotionImageInsertionFramerate`](crate::types::MotionImageInsertionFramerate).
     pub fn build(self) -> crate::types::MotionImageInsertionFramerate {
         crate::types::MotionImageInsertionFramerate {
-            framerate_denominator: self.framerate_denominator.unwrap_or_default(),
-            framerate_numerator: self.framerate_numerator.unwrap_or_default(),
+            framerate_denominator: self.framerate_denominator,
+            framerate_numerator: self.framerate_numerator,
         }
     }
 }

@@ -191,6 +191,12 @@ pub struct RestoreDbClusterFromS3Input {
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub master_user_secret_kms_key_id: std::option::Option<std::string::String>,
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+    /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> </p>
+    /// <p>Default: <code>aurora</code> </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    #[doc(hidden)]
+    pub storage_type: std::option::Option<std::string::String>,
 }
 impl RestoreDbClusterFromS3Input {
     /// <p>A list of Availability Zones (AZs) where instances in the restored DB cluster can be created.</p>
@@ -417,6 +423,13 @@ impl RestoreDbClusterFromS3Input {
     pub fn master_user_secret_kms_key_id(&self) -> std::option::Option<&str> {
         self.master_user_secret_kms_key_id.as_deref()
     }
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+    /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> </p>
+    /// <p>Default: <code>aurora</code> </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn storage_type(&self) -> std::option::Option<&str> {
+        self.storage_type.as_deref()
+    }
 }
 impl RestoreDbClusterFromS3Input {
     /// Creates a new builder-style object to manufacture [`RestoreDbClusterFromS3Input`](crate::operation::restore_db_cluster_from_s3::RestoreDbClusterFromS3Input).
@@ -468,6 +481,7 @@ pub struct RestoreDbClusterFromS3InputBuilder {
     pub(crate) network_type: std::option::Option<std::string::String>,
     pub(crate) manage_master_user_password: std::option::Option<bool>,
     pub(crate) master_user_secret_kms_key_id: std::option::Option<std::string::String>,
+    pub(crate) storage_type: std::option::Option<std::string::String>,
 }
 impl RestoreDbClusterFromS3InputBuilder {
     /// Appends an item to `availability_zones`.
@@ -1068,6 +1082,22 @@ impl RestoreDbClusterFromS3InputBuilder {
         self.master_user_secret_kms_key_id = input;
         self
     }
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+    /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> </p>
+    /// <p>Default: <code>aurora</code> </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+        self.storage_type = Some(input.into());
+        self
+    }
+    /// <p>Specifies the storage type to be associated with the DB cluster.</p>
+    /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> </p>
+    /// <p>Default: <code>aurora</code> </p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.storage_type = input;
+        self
+    }
     /// Consumes the builder and constructs a [`RestoreDbClusterFromS3Input`](crate::operation::restore_db_cluster_from_s3::RestoreDbClusterFromS3Input).
     pub fn build(
         self,
@@ -1112,6 +1142,7 @@ impl RestoreDbClusterFromS3InputBuilder {
                 network_type: self.network_type,
                 manage_master_user_password: self.manage_master_user_password,
                 master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
+                storage_type: self.storage_type,
             },
         )
     }

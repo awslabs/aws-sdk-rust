@@ -9,7 +9,7 @@ pub mod test_connection;
 pub mod adapter {
     use aws_smithy_client::erase::DynConnector;
     use aws_smithy_runtime_api::client::orchestrator::{
-        BoxFallibleFut, Connection, HttpRequest, HttpResponse,
+        BoxFuture, Connection, HttpRequest, HttpResponse,
     };
     use std::sync::{Arc, Mutex};
 
@@ -28,7 +28,7 @@ pub mod adapter {
     }
 
     impl Connection for DynConnectorAdapter {
-        fn call(&self, request: HttpRequest) -> BoxFallibleFut<HttpResponse> {
+        fn call(&self, request: HttpRequest) -> BoxFuture<HttpResponse> {
             let future = self.dyn_connector.lock().unwrap().call_lite(request);
             future
         }

@@ -79,12 +79,12 @@ impl CreateParticipantTokenFluentBuilder {
         self.inner = self.inner.set_stage_arn(input);
         self
     }
-    /// <p>Duration (in minutes), after which the token expires. Default: 60 (1 hour).</p>
+    /// <p>Duration (in minutes), after which the token expires. Default: 720 (12 hours).</p>
     pub fn duration(mut self, input: i32) -> Self {
         self.inner = self.inner.duration(input);
         self
     }
-    /// <p>Duration (in minutes), after which the token expires. Default: 60 (1 hour).</p>
+    /// <p>Duration (in minutes), after which the token expires. Default: 720 (12 hours).</p>
     pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_duration(input);
         self

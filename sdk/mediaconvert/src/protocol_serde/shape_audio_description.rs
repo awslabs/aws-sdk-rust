@@ -18,41 +18,41 @@ pub fn ser_audio_description(
     if let Some(var_5) = &input.audio_source_name {
         object.key("audioSourceName").string(var_5.as_str());
     }
-    if input.audio_type != 0 {
+    if let Some(var_6) = &input.audio_type {
         object.key("audioType").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.audio_type).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_6) = &input.audio_type_control {
-        object.key("audioTypeControl").string(var_6.as_str());
+    if let Some(var_7) = &input.audio_type_control {
+        object.key("audioTypeControl").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.codec_settings {
+    if let Some(var_8) = &input.codec_settings {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("codecSettings").start_object();
+        let mut object_9 = object.key("codecSettings").start_object();
         crate::protocol_serde::shape_audio_codec_settings::ser_audio_codec_settings(
-            &mut object_8,
-            var_7,
+            &mut object_9,
+            var_8,
         )?;
-        object_8.finish();
+        object_9.finish();
     }
-    if let Some(var_9) = &input.custom_language_code {
-        object.key("customLanguageCode").string(var_9.as_str());
+    if let Some(var_10) = &input.custom_language_code {
+        object.key("customLanguageCode").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.language_code {
-        object.key("languageCode").string(var_10.as_str());
+    if let Some(var_11) = &input.language_code {
+        object.key("languageCode").string(var_11.as_str());
     }
-    if let Some(var_11) = &input.language_code_control {
-        object.key("languageCodeControl").string(var_11.as_str());
+    if let Some(var_12) = &input.language_code_control {
+        object.key("languageCodeControl").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.remix_settings {
+    if let Some(var_13) = &input.remix_settings {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("remixSettings").start_object();
-        crate::protocol_serde::shape_remix_settings::ser_remix_settings(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_14 = object.key("remixSettings").start_object();
+        crate::protocol_serde::shape_remix_settings::ser_remix_settings(&mut object_14, var_13)?;
+        object_14.finish();
     }
-    if let Some(var_14) = &input.stream_name {
-        object.key("streamName").string(var_14.as_str());
+    if let Some(var_15) = &input.stream_name {
+        object.key("streamName").string(var_15.as_str());
     }
     Ok(())
 }

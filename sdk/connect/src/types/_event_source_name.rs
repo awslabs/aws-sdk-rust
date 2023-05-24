@@ -12,6 +12,7 @@
 /// ```text
 /// # let eventsourcename = unimplemented!();
 /// match eventsourcename {
+///     EventSourceName::OnContactEvaluationSubmit => { /* ... */ },
 ///     EventSourceName::OnPostCallAnalysisAvailable => { /* ... */ },
 ///     EventSourceName::OnPostChatAnalysisAvailable => { /* ... */ },
 ///     EventSourceName::OnRealTimeCallAnalysisAvailable => { /* ... */ },
@@ -52,6 +53,8 @@
 )]
 pub enum EventSourceName {
     #[allow(missing_docs)] // documentation missing in model
+    OnContactEvaluationSubmit,
+    #[allow(missing_docs)] // documentation missing in model
     OnPostCallAnalysisAvailable,
     #[allow(missing_docs)] // documentation missing in model
     OnPostChatAnalysisAvailable,
@@ -69,6 +72,7 @@ pub enum EventSourceName {
 impl std::convert::From<&str> for EventSourceName {
     fn from(s: &str) -> Self {
         match s {
+            "OnContactEvaluationSubmit" => EventSourceName::OnContactEvaluationSubmit,
             "OnPostCallAnalysisAvailable" => EventSourceName::OnPostCallAnalysisAvailable,
             "OnPostChatAnalysisAvailable" => EventSourceName::OnPostChatAnalysisAvailable,
             "OnRealTimeCallAnalysisAvailable" => EventSourceName::OnRealTimeCallAnalysisAvailable,
@@ -92,6 +96,7 @@ impl EventSourceName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            EventSourceName::OnContactEvaluationSubmit => "OnContactEvaluationSubmit",
             EventSourceName::OnPostCallAnalysisAvailable => "OnPostCallAnalysisAvailable",
             EventSourceName::OnPostChatAnalysisAvailable => "OnPostChatAnalysisAvailable",
             EventSourceName::OnRealTimeCallAnalysisAvailable => "OnRealTimeCallAnalysisAvailable",
@@ -104,6 +109,7 @@ impl EventSourceName {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "OnContactEvaluationSubmit",
             "OnPostCallAnalysisAvailable",
             "OnPostChatAnalysisAvailable",
             "OnRealTimeCallAnalysisAvailable",

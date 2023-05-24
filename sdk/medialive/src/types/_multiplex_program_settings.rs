@@ -9,7 +9,7 @@ pub struct MultiplexProgramSettings {
     pub preferred_channel_pipeline: std::option::Option<crate::types::PreferredChannelPipeline>,
     /// Unique program number.
     #[doc(hidden)]
-    pub program_number: i32,
+    pub program_number: std::option::Option<i32>,
     /// Transport stream service descriptor configuration for the Multiplex program.
     #[doc(hidden)]
     pub service_descriptor: std::option::Option<crate::types::MultiplexProgramServiceDescriptor>,
@@ -25,7 +25,7 @@ impl MultiplexProgramSettings {
         self.preferred_channel_pipeline.as_ref()
     }
     /// Unique program number.
-    pub fn program_number(&self) -> i32 {
+    pub fn program_number(&self) -> std::option::Option<i32> {
         self.program_number
     }
     /// Transport stream service descriptor configuration for the Multiplex program.
@@ -117,7 +117,7 @@ impl MultiplexProgramSettingsBuilder {
     pub fn build(self) -> crate::types::MultiplexProgramSettings {
         crate::types::MultiplexProgramSettings {
             preferred_channel_pipeline: self.preferred_channel_pipeline,
-            program_number: self.program_number.unwrap_or_default(),
+            program_number: self.program_number,
             service_descriptor: self.service_descriptor,
             video_settings: self.video_settings,
         }

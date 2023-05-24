@@ -14,6 +14,7 @@
 /// match filtername {
 ///     FilterName::Finding => { /* ... */ },
 ///     FilterName::FindingReasonCodes => { /* ... */ },
+///     FilterName::InferredWorkloadTypes => { /* ... */ },
 ///     FilterName::RecommendationSourceType => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -53,6 +54,8 @@ pub enum FilterName {
     #[allow(missing_docs)] // documentation missing in model
     FindingReasonCodes,
     #[allow(missing_docs)] // documentation missing in model
+    InferredWorkloadTypes,
+    #[allow(missing_docs)] // documentation missing in model
     RecommendationSourceType,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -62,6 +65,7 @@ impl std::convert::From<&str> for FilterName {
         match s {
             "Finding" => FilterName::Finding,
             "FindingReasonCodes" => FilterName::FindingReasonCodes,
+            "InferredWorkloadTypes" => FilterName::InferredWorkloadTypes,
             "RecommendationSourceType" => FilterName::RecommendationSourceType,
             other => FilterName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -80,13 +84,19 @@ impl FilterName {
         match self {
             FilterName::Finding => "Finding",
             FilterName::FindingReasonCodes => "FindingReasonCodes",
+            FilterName::InferredWorkloadTypes => "InferredWorkloadTypes",
             FilterName::RecommendationSourceType => "RecommendationSourceType",
             FilterName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Finding", "FindingReasonCodes", "RecommendationSourceType"]
+        &[
+            "Finding",
+            "FindingReasonCodes",
+            "InferredWorkloadTypes",
+            "RecommendationSourceType",
+        ]
     }
 }
 impl AsRef<str> for FilterName {

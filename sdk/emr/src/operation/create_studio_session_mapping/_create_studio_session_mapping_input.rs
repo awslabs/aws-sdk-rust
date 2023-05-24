@@ -15,7 +15,7 @@ pub struct CreateStudioSessionMappingInput {
     /// <p>Specifies whether the identity to map to the Amazon EMR Studio is a user or a group.</p>
     #[doc(hidden)]
     pub identity_type: std::option::Option<crate::types::IdentityType>,
-    /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR Studio User Role with Session Policies</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an Amazon EMR Studio User Role with Session Policies</a>.</p>
     #[doc(hidden)]
     pub session_policy_arn: std::option::Option<std::string::String>,
 }
@@ -36,7 +36,7 @@ impl CreateStudioSessionMappingInput {
     pub fn identity_type(&self) -> std::option::Option<&crate::types::IdentityType> {
         self.identity_type.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR Studio User Role with Session Policies</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an Amazon EMR Studio User Role with Session Policies</a>.</p>
     pub fn session_policy_arn(&self) -> std::option::Option<&str> {
         self.session_policy_arn.as_deref()
     }
@@ -102,12 +102,12 @@ impl CreateStudioSessionMappingInputBuilder {
         self.identity_type = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR Studio User Role with Session Policies</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an Amazon EMR Studio User Role with Session Policies</a>.</p>
     pub fn session_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.session_policy_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR Studio User Role with Session Policies</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an Amazon EMR Studio User Role with Session Policies</a>.</p>
     pub fn set_session_policy_arn(
         mut self,
         input: std::option::Option<std::string::String>,

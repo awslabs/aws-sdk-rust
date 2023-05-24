@@ -15,6 +15,8 @@
 ///     WorkerType::G025X => { /* ... */ },
 ///     WorkerType::G1X => { /* ... */ },
 ///     WorkerType::G2X => { /* ... */ },
+///     WorkerType::G4X => { /* ... */ },
+///     WorkerType::G8X => { /* ... */ },
 ///     WorkerType::Standard => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -56,6 +58,10 @@ pub enum WorkerType {
     #[allow(missing_docs)] // documentation missing in model
     G2X,
     #[allow(missing_docs)] // documentation missing in model
+    G4X,
+    #[allow(missing_docs)] // documentation missing in model
+    G8X,
+    #[allow(missing_docs)] // documentation missing in model
     Standard,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
@@ -66,6 +72,8 @@ impl std::convert::From<&str> for WorkerType {
             "G.025X" => WorkerType::G025X,
             "G.1X" => WorkerType::G1X,
             "G.2X" => WorkerType::G2X,
+            "G.4X" => WorkerType::G4X,
+            "G.8X" => WorkerType::G8X,
             "Standard" => WorkerType::Standard,
             other => WorkerType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -85,13 +93,15 @@ impl WorkerType {
             WorkerType::G025X => "G.025X",
             WorkerType::G1X => "G.1X",
             WorkerType::G2X => "G.2X",
+            WorkerType::G4X => "G.4X",
+            WorkerType::G8X => "G.8X",
             WorkerType::Standard => "Standard",
             WorkerType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["G.025X", "G.1X", "G.2X", "Standard"]
+        &["G.025X", "G.1X", "G.2X", "G.4X", "G.8X", "Standard"]
     }
 }
 impl AsRef<str> for WorkerType {

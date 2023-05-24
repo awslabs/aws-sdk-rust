@@ -4,14 +4,14 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CancelSpotInstanceRequestsOutput {
-    /// <p>One or more Spot Instance requests.</p>
+    /// <p>The Spot Instance requests.</p>
     #[doc(hidden)]
     pub cancelled_spot_instance_requests:
         std::option::Option<std::vec::Vec<crate::types::CancelledSpotInstanceRequest>>,
     _request_id: Option<String>,
 }
 impl CancelSpotInstanceRequestsOutput {
-    /// <p>One or more Spot Instance requests.</p>
+    /// <p>The Spot Instance requests.</p>
     pub fn cancelled_spot_instance_requests(
         &self,
     ) -> std::option::Option<&[crate::types::CancelledSpotInstanceRequest]> {
@@ -43,7 +43,7 @@ impl CancelSpotInstanceRequestsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_cancelled_spot_instance_requests`](Self::set_cancelled_spot_instance_requests).
     ///
-    /// <p>One or more Spot Instance requests.</p>
+    /// <p>The Spot Instance requests.</p>
     pub fn cancelled_spot_instance_requests(
         mut self,
         input: crate::types::CancelledSpotInstanceRequest,
@@ -53,7 +53,7 @@ impl CancelSpotInstanceRequestsOutputBuilder {
         self.cancelled_spot_instance_requests = Some(v);
         self
     }
-    /// <p>One or more Spot Instance requests.</p>
+    /// <p>The Spot Instance requests.</p>
     pub fn set_cancelled_spot_instance_requests(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::CancelledSpotInstanceRequest>>,

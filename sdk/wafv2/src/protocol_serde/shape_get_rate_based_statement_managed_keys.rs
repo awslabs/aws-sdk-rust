@@ -93,6 +93,22 @@ pub fn de_get_rate_based_statement_managed_keys_http_error(
                                                     }
             tmp
         }),
+        "WAFUnsupportedAggregateKeyTypeException" => crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysError::WafUnsupportedAggregateKeyTypeException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::WafUnsupportedAggregateKeyTypeExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_waf_unsupported_aggregate_key_type_exception::de_waf_unsupported_aggregate_key_type_exception_json_err(_response_body, output).map_err(crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
         _ => crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysError::generic(generic)
     })
 }

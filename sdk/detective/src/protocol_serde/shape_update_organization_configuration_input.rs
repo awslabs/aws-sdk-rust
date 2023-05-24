@@ -3,11 +3,11 @@ pub fn ser_update_organization_configuration_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.auto_enable {
-        object.key("AutoEnable").boolean(input.auto_enable);
+    if let Some(var_1) = &input.auto_enable {
+        object.key("AutoEnable").boolean(*var_1);
     }
-    if let Some(var_1) = &input.graph_arn {
-        object.key("GraphArn").string(var_1.as_str());
+    if let Some(var_2) = &input.graph_arn {
+        object.key("GraphArn").string(var_2.as_str());
     }
     Ok(())
 }

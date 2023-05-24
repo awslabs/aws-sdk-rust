@@ -37,6 +37,33 @@ where
                                     crate::protocol_serde::shape_moderation_label::de_moderation_label(tokens)?
                                 );
                             }
+                            "StartTimestampMillis" => {
+                                builder = builder.set_start_timestamp_millis(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                                );
+                            }
+                            "EndTimestampMillis" => {
+                                builder = builder.set_end_timestamp_millis(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                                );
+                            }
+                            "DurationMillis" => {
+                                builder = builder.set_duration_millis(
+                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

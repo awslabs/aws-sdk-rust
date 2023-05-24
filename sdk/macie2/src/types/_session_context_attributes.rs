@@ -9,7 +9,7 @@ pub struct SessionContextAttributes {
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether the credentials were authenticated with a multi-factor authentication (MFA) device.</p>
     #[doc(hidden)]
-    pub mfa_authenticated: bool,
+    pub mfa_authenticated: std::option::Option<bool>,
 }
 impl SessionContextAttributes {
     /// <p>The date and time, in UTC and ISO 8601 format, when the credentials were issued.</p>
@@ -17,7 +17,7 @@ impl SessionContextAttributes {
         self.creation_date.as_ref()
     }
     /// <p>Specifies whether the credentials were authenticated with a multi-factor authentication (MFA) device.</p>
-    pub fn mfa_authenticated(&self) -> bool {
+    pub fn mfa_authenticated(&self) -> std::option::Option<bool> {
         self.mfa_authenticated
     }
 }
@@ -63,7 +63,7 @@ impl SessionContextAttributesBuilder {
     pub fn build(self) -> crate::types::SessionContextAttributes {
         crate::types::SessionContextAttributes {
             creation_date: self.creation_date,
-            mfa_authenticated: self.mfa_authenticated.unwrap_or_default(),
+            mfa_authenticated: self.mfa_authenticated,
         }
     }
 }

@@ -42,6 +42,15 @@ pub fn ser_broker_node_group_info(
         )?;
         object_12.finish();
     }
+    if let Some(var_13) = &input.zone_ids {
+        let mut array_14 = object.key("zoneIds").start_array();
+        for item_15 in var_13 {
+            {
+                array_14.value().string(item_15.as_str());
+            }
+        }
+        array_14.finish();
+    }
     Ok(())
 }
 
@@ -111,6 +120,11 @@ where
                             "connectivityInfo" => {
                                 builder = builder.set_connectivity_info(
                                     crate::protocol_serde::shape_connectivity_info::de_connectivity_info(tokens)?
+                                );
+                            }
+                            "zoneIds" => {
+                                builder = builder.set_zone_ids(
+                                    crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

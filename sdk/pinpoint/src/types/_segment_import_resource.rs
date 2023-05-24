@@ -21,7 +21,7 @@ pub struct SegmentImportResource {
     pub s3_url: std::option::Option<std::string::String>,
     /// <p>The number of endpoint definitions that were imported successfully to create the segment.</p>
     #[doc(hidden)]
-    pub size: i32,
+    pub size: std::option::Option<i32>,
 }
 impl SegmentImportResource {
     /// <p>The number of channel types in the endpoint definitions that were imported to create the segment.</p>
@@ -47,7 +47,7 @@ impl SegmentImportResource {
         self.s3_url.as_deref()
     }
     /// <p>The number of endpoint definitions that were imported successfully to create the segment.</p>
-    pub fn size(&self) -> i32 {
+    pub fn size(&self) -> std::option::Option<i32> {
         self.size
     }
 }
@@ -148,7 +148,7 @@ impl SegmentImportResourceBuilder {
             format: self.format,
             role_arn: self.role_arn,
             s3_url: self.s3_url,
-            size: self.size.unwrap_or_default(),
+            size: self.size,
         }
     }
 }

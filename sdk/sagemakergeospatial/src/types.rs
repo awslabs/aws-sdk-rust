@@ -147,12 +147,6 @@ pub use crate::types::_raster_data_collection_query_output::RasterDataCollection
 
 pub use crate::types::_time_range_filter_output::TimeRangeFilterOutput;
 
-pub use crate::types::_eoj_data_source_config_input::EojDataSourceConfigInput;
-
-pub use crate::types::_s3_data_input::S3DataInput;
-
-pub use crate::types::_metadata_provider::MetadataProvider;
-
 pub use crate::types::_input_config_input::InputConfigInput;
 
 pub use crate::types::_raster_data_collection_query_input::RasterDataCollectionQueryInput;
@@ -203,8 +197,6 @@ mod _earth_observation_job_status;
 
 mod _eo_cloud_cover_input;
 
-mod _eoj_data_source_config_input;
-
 mod _export_error_details;
 
 mod _export_error_details_output;
@@ -242,8 +234,6 @@ mod _list_vector_enrichment_job_output_config;
 mod _logical_operator;
 
 mod _map_matching_config;
-
-mod _metadata_provider;
 
 mod _multi_polygon_geometry_input;
 
@@ -284,8 +274,6 @@ mod _raster_data_collection_query_with_band_filter_input;
 mod _resampling_config_input;
 
 mod _reverse_geocoding_config;
-
-mod _s3_data_input;
 
 mod _sort_order;
 

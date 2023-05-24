@@ -3,22 +3,22 @@ pub fn ser_noise_reducer_spatial_filter_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NoiseReducerSpatialFilterSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.post_filter_sharpen_strength != 0 {
+    if let Some(var_1) = &input.post_filter_sharpen_strength {
         object.key("postFilterSharpenStrength").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.post_filter_sharpen_strength).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.speed != 0 {
+    if let Some(var_2) = &input.speed {
         object.key("speed").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.speed).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.strength != 0 {
+    if let Some(var_3) = &input.strength {
         object.key("strength").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.strength).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())

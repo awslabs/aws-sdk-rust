@@ -6,18 +6,18 @@
 pub struct Logs {
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.</p>
     #[doc(hidden)]
-    pub audit: bool,
+    pub audit: std::option::Option<bool>,
     /// <p>Enables general logging.</p>
     #[doc(hidden)]
-    pub general: bool,
+    pub general: std::option::Option<bool>,
 }
 impl Logs {
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.</p>
-    pub fn audit(&self) -> bool {
+    pub fn audit(&self) -> std::option::Option<bool> {
         self.audit
     }
     /// <p>Enables general logging.</p>
-    pub fn general(&self) -> bool {
+    pub fn general(&self) -> std::option::Option<bool> {
         self.general
     }
 }
@@ -59,8 +59,8 @@ impl LogsBuilder {
     /// Consumes the builder and constructs a [`Logs`](crate::types::Logs).
     pub fn build(self) -> crate::types::Logs {
         crate::types::Logs {
-            audit: self.audit.unwrap_or_default(),
-            general: self.general.unwrap_or_default(),
+            audit: self.audit,
+            general: self.general,
         }
     }
 }

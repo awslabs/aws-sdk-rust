@@ -15,7 +15,7 @@ pub struct ReimportApiInput {
     pub body: std::option::Option<std::string::String>,
     /// <p>Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.</p>
     #[doc(hidden)]
-    pub fail_on_warnings: bool,
+    pub fail_on_warnings: std::option::Option<bool>,
 }
 impl ReimportApiInput {
     /// <p>The API identifier.</p>
@@ -31,7 +31,7 @@ impl ReimportApiInput {
         self.body.as_deref()
     }
     /// <p>Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.</p>
-    pub fn fail_on_warnings(&self) -> bool {
+    pub fn fail_on_warnings(&self) -> std::option::Option<bool> {
         self.fail_on_warnings
     }
 }
@@ -103,7 +103,7 @@ impl ReimportApiInputBuilder {
             api_id: self.api_id,
             basepath: self.basepath,
             body: self.body,
-            fail_on_warnings: self.fail_on_warnings.unwrap_or_default(),
+            fail_on_warnings: self.fail_on_warnings,
         })
     }
 }

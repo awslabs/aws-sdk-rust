@@ -14,77 +14,77 @@ pub fn ser_ms_smooth_group_settings(
     if let Some(var_3) = &input.certificate_mode {
         object.key("certificateMode").string(var_3.as_str());
     }
-    if input.connection_retry_interval != 0 {
+    if let Some(var_4) = &input.connection_retry_interval {
         object.key("connectionRetryInterval").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.connection_retry_interval).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_4) = &input.destination {
+    if let Some(var_5) = &input.destination {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("destination").start_object();
+        let mut object_6 = object.key("destination").start_object();
         crate::protocol_serde::shape_output_location_ref::ser_output_location_ref(
-            &mut object_5,
-            var_4,
+            &mut object_6,
+            var_5,
         )?;
-        object_5.finish();
+        object_6.finish();
     }
-    if let Some(var_6) = &input.event_id {
-        object.key("eventId").string(var_6.as_str());
+    if let Some(var_7) = &input.event_id {
+        object.key("eventId").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.event_id_mode {
-        object.key("eventIdMode").string(var_7.as_str());
+    if let Some(var_8) = &input.event_id_mode {
+        object.key("eventIdMode").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.event_stop_behavior {
-        object.key("eventStopBehavior").string(var_8.as_str());
+    if let Some(var_9) = &input.event_stop_behavior {
+        object.key("eventStopBehavior").string(var_9.as_str());
     }
-    if input.filecache_duration != 0 {
+    if let Some(var_10) = &input.filecache_duration {
         object.key("filecacheDuration").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.filecache_duration).into()),
+            aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if input.fragment_length != 0 {
+    if let Some(var_11) = &input.fragment_length {
         object.key("fragmentLength").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.fragment_length).into()),
+            aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_9) = &input.input_loss_action {
-        object.key("inputLossAction").string(var_9.as_str());
+    if let Some(var_12) = &input.input_loss_action {
+        object.key("inputLossAction").string(var_12.as_str());
     }
-    if input.num_retries != 0 {
+    if let Some(var_13) = &input.num_retries {
         object.key("numRetries").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.num_retries).into()),
+            aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
-    if input.restart_delay != 0 {
+    if let Some(var_14) = &input.restart_delay {
         object.key("restartDelay").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.restart_delay).into()),
+            aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
-    if let Some(var_10) = &input.segmentation_mode {
-        object.key("segmentationMode").string(var_10.as_str());
+    if let Some(var_15) = &input.segmentation_mode {
+        object.key("segmentationMode").string(var_15.as_str());
     }
-    if input.send_delay_ms != 0 {
+    if let Some(var_16) = &input.send_delay_ms {
         object.key("sendDelayMs").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.send_delay_ms).into()),
+            aws_smithy_types::Number::NegInt((*var_16).into()),
         );
     }
-    if let Some(var_11) = &input.sparse_track_type {
-        object.key("sparseTrackType").string(var_11.as_str());
+    if let Some(var_17) = &input.sparse_track_type {
+        object.key("sparseTrackType").string(var_17.as_str());
     }
-    if let Some(var_12) = &input.stream_manifest_behavior {
-        object.key("streamManifestBehavior").string(var_12.as_str());
+    if let Some(var_18) = &input.stream_manifest_behavior {
+        object.key("streamManifestBehavior").string(var_18.as_str());
     }
-    if let Some(var_13) = &input.timestamp_offset {
-        object.key("timestampOffset").string(var_13.as_str());
+    if let Some(var_19) = &input.timestamp_offset {
+        object.key("timestampOffset").string(var_19.as_str());
     }
-    if let Some(var_14) = &input.timestamp_offset_mode {
-        object.key("timestampOffsetMode").string(var_14.as_str());
+    if let Some(var_20) = &input.timestamp_offset_mode {
+        object.key("timestampOffsetMode").string(var_20.as_str());
     }
     Ok(())
 }

@@ -15,13 +15,13 @@ pub struct BridgeNetworkOutput {
     pub network_name: std::option::Option<std::string::String>,
     /// The network output port.
     #[doc(hidden)]
-    pub port: i32,
+    pub port: std::option::Option<i32>,
     /// The network output protocol.
     #[doc(hidden)]
     pub protocol: std::option::Option<crate::types::Protocol>,
     /// The network output TTL.
     #[doc(hidden)]
-    pub ttl: i32,
+    pub ttl: std::option::Option<i32>,
 }
 impl BridgeNetworkOutput {
     /// The network output IP Address.
@@ -37,7 +37,7 @@ impl BridgeNetworkOutput {
         self.network_name.as_deref()
     }
     /// The network output port.
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> std::option::Option<i32> {
         self.port
     }
     /// The network output protocol.
@@ -45,7 +45,7 @@ impl BridgeNetworkOutput {
         self.protocol.as_ref()
     }
     /// The network output TTL.
-    pub fn ttl(&self) -> i32 {
+    pub fn ttl(&self) -> std::option::Option<i32> {
         self.ttl
     }
 }
@@ -134,9 +134,9 @@ impl BridgeNetworkOutputBuilder {
             ip_address: self.ip_address,
             name: self.name,
             network_name: self.network_name,
-            port: self.port.unwrap_or_default(),
+            port: self.port,
             protocol: self.protocol,
-            ttl: self.ttl.unwrap_or_default(),
+            ttl: self.ttl,
         }
     }
 }

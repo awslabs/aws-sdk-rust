@@ -16,10 +16,10 @@ pub struct XavcHdProfileSettings {
     pub gop_b_reference: std::option::Option<crate::types::XavcGopBReference>,
     /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
     #[doc(hidden)]
-    pub gop_closed_cadence: i32,
+    pub gop_closed_cadence: std::option::Option<i32>,
     /// Specify the size of the buffer that MediaConvert uses in the HRD buffer model for this output. Specify this value in bits; for example, enter five megabits as 5000000. When you don't set this value, or you set it to zero, MediaConvert calculates the default by doubling the bitrate of this output point.
     #[doc(hidden)]
-    pub hrd_buffer_size: i32,
+    pub hrd_buffer_size: std::option::Option<i32>,
     /// Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
     #[doc(hidden)]
     pub interlace_mode: std::option::Option<crate::types::XavcInterlaceMode>,
@@ -28,7 +28,7 @@ pub struct XavcHdProfileSettings {
     pub quality_tuning_level: std::option::Option<crate::types::XavcHdProfileQualityTuningLevel>,
     /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
     #[doc(hidden)]
-    pub slices: i32,
+    pub slices: std::option::Option<i32>,
     /// Ignore this setting unless you set Frame rate (framerateNumerator divided by framerateDenominator) to 29.970. If your input framerate is 23.976, choose Hard (HARD). Otherwise, keep the default value None (NONE). For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-telecine-and-inverse-telecine.html.
     #[doc(hidden)]
     pub telecine: std::option::Option<crate::types::XavcHdProfileTelecine>,
@@ -49,11 +49,11 @@ impl XavcHdProfileSettings {
         self.gop_b_reference.as_ref()
     }
     /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
-    pub fn gop_closed_cadence(&self) -> i32 {
+    pub fn gop_closed_cadence(&self) -> std::option::Option<i32> {
         self.gop_closed_cadence
     }
     /// Specify the size of the buffer that MediaConvert uses in the HRD buffer model for this output. Specify this value in bits; for example, enter five megabits as 5000000. When you don't set this value, or you set it to zero, MediaConvert calculates the default by doubling the bitrate of this output point.
-    pub fn hrd_buffer_size(&self) -> i32 {
+    pub fn hrd_buffer_size(&self) -> std::option::Option<i32> {
         self.hrd_buffer_size
     }
     /// Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
@@ -67,7 +67,7 @@ impl XavcHdProfileSettings {
         self.quality_tuning_level.as_ref()
     }
     /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
-    pub fn slices(&self) -> i32 {
+    pub fn slices(&self) -> std::option::Option<i32> {
         self.slices
     }
     /// Ignore this setting unless you set Frame rate (framerateNumerator divided by framerateDenominator) to 29.970. If your input framerate is 23.976, choose Hard (HARD). Otherwise, keep the default value None (NONE). For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-telecine-and-inverse-telecine.html.
@@ -219,11 +219,11 @@ impl XavcHdProfileSettingsBuilder {
             bitrate_class: self.bitrate_class,
             flicker_adaptive_quantization: self.flicker_adaptive_quantization,
             gop_b_reference: self.gop_b_reference,
-            gop_closed_cadence: self.gop_closed_cadence.unwrap_or_default(),
-            hrd_buffer_size: self.hrd_buffer_size.unwrap_or_default(),
+            gop_closed_cadence: self.gop_closed_cadence,
+            hrd_buffer_size: self.hrd_buffer_size,
             interlace_mode: self.interlace_mode,
             quality_tuning_level: self.quality_tuning_level,
-            slices: self.slices.unwrap_or_default(),
+            slices: self.slices,
             telecine: self.telecine,
         }
     }

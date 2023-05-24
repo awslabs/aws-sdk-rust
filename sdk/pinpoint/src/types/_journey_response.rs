@@ -25,7 +25,7 @@ pub struct JourneyResponse {
     pub limits: std::option::Option<crate::types::JourneyLimits>,
     /// <p>Specifies whether the journey's scheduled start and end times use each participant's local time. If this value is true, the schedule uses each participant's local time.</p>
     #[doc(hidden)]
-    pub local_time: bool,
+    pub local_time: std::option::Option<bool>,
     /// <p>The name of the journey.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -66,16 +66,16 @@ pub struct JourneyResponse {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Indicates whether endpoints in quiet hours should enter a wait activity until quiet hours have elapsed.</p>
     #[doc(hidden)]
-    pub wait_for_quiet_time: bool,
+    pub wait_for_quiet_time: std::option::Option<bool>,
     /// <p>Indicates whether the journey participants should be refreshed when a segment is updated.</p>
     #[doc(hidden)]
-    pub refresh_on_segment_update: bool,
+    pub refresh_on_segment_update: std::option::Option<bool>,
     /// <p>The channel-specific configurations for the journey.</p>
     #[doc(hidden)]
     pub journey_channel_settings: std::option::Option<crate::types::JourneyChannelSettings>,
     /// <p>Indicates if journey has Advance Quiet Time enabled. This flag should be set to true in order to allow using OpenHours and ClosedDays.</p>
     #[doc(hidden)]
-    pub sending_schedule: bool,
+    pub sending_schedule: std::option::Option<bool>,
     /// <p>The time when a journey can send messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
     #[doc(hidden)]
     pub open_hours: std::option::Option<crate::types::OpenHours>,
@@ -112,7 +112,7 @@ impl JourneyResponse {
         self.limits.as_ref()
     }
     /// <p>Specifies whether the journey's scheduled start and end times use each participant's local time. If this value is true, the schedule uses each participant's local time.</p>
-    pub fn local_time(&self) -> bool {
+    pub fn local_time(&self) -> std::option::Option<bool> {
         self.local_time
     }
     /// <p>The name of the journey.</p>
@@ -164,11 +164,11 @@ impl JourneyResponse {
         self.tags.as_ref()
     }
     /// <p>Indicates whether endpoints in quiet hours should enter a wait activity until quiet hours have elapsed.</p>
-    pub fn wait_for_quiet_time(&self) -> bool {
+    pub fn wait_for_quiet_time(&self) -> std::option::Option<bool> {
         self.wait_for_quiet_time
     }
     /// <p>Indicates whether the journey participants should be refreshed when a segment is updated.</p>
-    pub fn refresh_on_segment_update(&self) -> bool {
+    pub fn refresh_on_segment_update(&self) -> std::option::Option<bool> {
         self.refresh_on_segment_update
     }
     /// <p>The channel-specific configurations for the journey.</p>
@@ -178,7 +178,7 @@ impl JourneyResponse {
         self.journey_channel_settings.as_ref()
     }
     /// <p>Indicates if journey has Advance Quiet Time enabled. This flag should be set to true in order to allow using OpenHours and ClosedDays.</p>
-    pub fn sending_schedule(&self) -> bool {
+    pub fn sending_schedule(&self) -> std::option::Option<bool> {
         self.sending_schedule
     }
     /// <p>The time when a journey can send messages. QuietTime should be configured first and SendingSchedule should be set to true.</p>
@@ -516,7 +516,7 @@ impl JourneyResponseBuilder {
             id: self.id,
             last_modified_date: self.last_modified_date,
             limits: self.limits,
-            local_time: self.local_time.unwrap_or_default(),
+            local_time: self.local_time,
             name: self.name,
             quiet_time: self.quiet_time,
             refresh_frequency: self.refresh_frequency,
@@ -525,10 +525,10 @@ impl JourneyResponseBuilder {
             start_condition: self.start_condition,
             state: self.state,
             tags: self.tags,
-            wait_for_quiet_time: self.wait_for_quiet_time.unwrap_or_default(),
-            refresh_on_segment_update: self.refresh_on_segment_update.unwrap_or_default(),
+            wait_for_quiet_time: self.wait_for_quiet_time,
+            refresh_on_segment_update: self.refresh_on_segment_update,
             journey_channel_settings: self.journey_channel_settings,
-            sending_schedule: self.sending_schedule.unwrap_or_default(),
+            sending_schedule: self.sending_schedule,
             open_hours: self.open_hours,
             closed_days: self.closed_days,
         }

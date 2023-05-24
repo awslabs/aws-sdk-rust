@@ -993,6 +993,158 @@ impl From<crate::operation::create_theme_alias::CreateThemeAliasError> for Error
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_topic::CreateTopicError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::create_topic::CreateTopicError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_topic::CreateTopicError> for Error {
+    fn from(err: crate::operation::create_topic::CreateTopicError) -> Self {
+        match err {
+            crate::operation::create_topic::CreateTopicError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_topic::CreateTopicError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_topic::CreateTopicError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::create_topic::CreateTopicError::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::operation::create_topic::CreateTopicError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_topic::CreateTopicError::ResourceExistsException(inner) => {
+                Error::ResourceExistsException(inner)
+            }
+            crate::operation::create_topic::CreateTopicError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_topic::CreateTopicError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_topic::CreateTopicError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleError>
+    for Error
+{
+    fn from(
+        err: crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleError,
+    ) -> Self {
+        match err {
+            crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleError::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
+            crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_vpc_connection::CreateVPCConnectionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_vpc_connection::CreateVPCConnectionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_vpc_connection::CreateVPCConnectionError> for Error {
+    fn from(err: crate::operation::create_vpc_connection::CreateVPCConnectionError) -> Self {
+        match err {
+            crate::operation::create_vpc_connection::CreateVPCConnectionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_vpc_connection::CreateVPCConnectionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_vpc_connection::CreateVPCConnectionError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::create_vpc_connection::CreateVPCConnectionError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::create_vpc_connection::CreateVPCConnectionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_vpc_connection::CreateVPCConnectionError::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
+            crate::operation::create_vpc_connection::CreateVPCConnectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_vpc_connection::CreateVPCConnectionError::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
+            crate::operation::create_vpc_connection::CreateVPCConnectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
@@ -1816,6 +1968,106 @@ impl From<crate::operation::delete_theme_alias::DeleteThemeAliasError> for Error
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_topic::DeleteTopicError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::delete_topic::DeleteTopicError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_topic::DeleteTopicError> for Error {
+    fn from(err: crate::operation::delete_topic::DeleteTopicError) -> Self {
+        match err {
+            crate::operation::delete_topic::DeleteTopicError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_topic::DeleteTopicError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_topic::DeleteTopicError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::delete_topic::DeleteTopicError::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_topic::DeleteTopicError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_topic::DeleteTopicError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_topic::DeleteTopicError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleError,
+    ) -> Self {
+        match err {
+            crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleError::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
+            crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_user::DeleteUserError, R>>
     for Error
 where
@@ -1913,6 +2165,51 @@ impl From<crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalId
             crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::ResourceUnavailableException(inner) => Error::ResourceUnavailableException(inner),
             crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_vpc_connection::DeleteVPCConnectionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_vpc_connection::DeleteVPCConnectionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_vpc_connection::DeleteVPCConnectionError> for Error {
+    fn from(err: crate::operation::delete_vpc_connection::DeleteVPCConnectionError) -> Self {
+        match err {
+            crate::operation::delete_vpc_connection::DeleteVPCConnectionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_vpc_connection::DeleteVPCConnectionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_vpc_connection::DeleteVPCConnectionError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::delete_vpc_connection::DeleteVPCConnectionError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_vpc_connection::DeleteVPCConnectionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_vpc_connection::DeleteVPCConnectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_vpc_connection::DeleteVPCConnectionError::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
+            crate::operation::delete_vpc_connection::DeleteVPCConnectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3294,6 +3591,183 @@ impl From<crate::operation::describe_theme_permissions::DescribeThemePermissions
     }
 }
 impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::describe_topic::DescribeTopicError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_topic::DescribeTopicError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_topic::DescribeTopicError> for Error {
+    fn from(err: crate::operation::describe_topic::DescribeTopicError) -> Self {
+        match err {
+            crate::operation::describe_topic::DescribeTopicError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_topic::DescribeTopicError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::describe_topic::DescribeTopicError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_topic::DescribeTopicError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_topic::DescribeTopicError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_topic::DescribeTopicError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_topic_permissions::DescribeTopicPermissionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_topic_permissions::DescribeTopicPermissionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_topic_permissions::DescribeTopicPermissionsError> for Error {
+    fn from(
+        err: crate::operation::describe_topic_permissions::DescribeTopicPermissionsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_topic_permissions::DescribeTopicPermissionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_topic_permissions::DescribeTopicPermissionsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::describe_topic_permissions::DescribeTopicPermissionsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_topic_permissions::DescribeTopicPermissionsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_topic_permissions::DescribeTopicPermissionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_topic_permissions::DescribeTopicPermissionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_topic_refresh::DescribeTopicRefreshError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_topic_refresh::DescribeTopicRefreshError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_topic_refresh::DescribeTopicRefreshError> for Error {
+    fn from(err: crate::operation::describe_topic_refresh::DescribeTopicRefreshError) -> Self {
+        match err {
+            crate::operation::describe_topic_refresh::DescribeTopicRefreshError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_topic_refresh::DescribeTopicRefreshError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::describe_topic_refresh::DescribeTopicRefreshError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_topic_refresh::DescribeTopicRefreshError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_topic_refresh::DescribeTopicRefreshError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_topic_refresh::DescribeTopicRefreshError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
+            crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<aws_smithy_http::result::SdkError<crate::operation::describe_user::DescribeUserError, R>>
     for Error
 where
@@ -3347,6 +3821,50 @@ impl From<crate::operation::describe_user::DescribeUserError> for Error {
             crate::operation::describe_user::DescribeUserError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_vpc_connection::DescribeVPCConnectionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_vpc_connection::DescribeVPCConnectionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_vpc_connection::DescribeVPCConnectionError> for Error {
+    fn from(err: crate::operation::describe_vpc_connection::DescribeVPCConnectionError) -> Self {
+        match err {
+            crate::operation::describe_vpc_connection::DescribeVPCConnectionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_vpc_connection::DescribeVPCConnectionError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::describe_vpc_connection::DescribeVPCConnectionError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::describe_vpc_connection::DescribeVPCConnectionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_vpc_connection::DescribeVPCConnectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_vpc_connection::DescribeVPCConnectionError::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
+            crate::operation::describe_vpc_connection::DescribeVPCConnectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4456,6 +4974,103 @@ impl From<crate::operation::list_theme_versions::ListThemeVersionsError> for Err
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
+            crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesError,
+    ) -> Self {
+        match err {
+            crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesError::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
+            crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_topic_refresh_schedules::ListTopicRefreshSchedulesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_topics::ListTopicsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::list_topics::ListTopicsError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_topics::ListTopicsError> for Error {
+    fn from(err: crate::operation::list_topics::ListTopicsError) -> Self {
+        match err {
+            crate::operation::list_topics::ListTopicsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_topics::ListTopicsError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::list_topics::ListTopicsError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::operation::list_topics::ListTopicsError::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_topics::ListTopicsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_topics::ListTopicsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
             crate::operation::list_user_groups::ListUserGroupsError,
             R,
         >,
@@ -4551,6 +5166,50 @@ impl From<crate::operation::list_users::ListUsersError> for Error {
             crate::operation::list_users::ListUsersError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_vpc_connections::ListVPCConnectionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_vpc_connections::ListVPCConnectionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_vpc_connections::ListVPCConnectionsError> for Error {
+    fn from(err: crate::operation::list_vpc_connections::ListVPCConnectionsError) -> Self {
+        match err {
+            crate::operation::list_vpc_connections::ListVPCConnectionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_vpc_connections::ListVPCConnectionsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::list_vpc_connections::ListVPCConnectionsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_vpc_connections::ListVPCConnectionsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_vpc_connections::ListVPCConnectionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_vpc_connections::ListVPCConnectionsError::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
+            crate::operation::list_vpc_connections::ListVPCConnectionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -6197,6 +6856,158 @@ impl From<crate::operation::update_theme_permissions::UpdateThemePermissionsErro
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_topic::UpdateTopicError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::update_topic::UpdateTopicError, R>,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_topic::UpdateTopicError> for Error {
+    fn from(err: crate::operation::update_topic::UpdateTopicError) -> Self {
+        match err {
+            crate::operation::update_topic::UpdateTopicError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_topic::UpdateTopicError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_topic::UpdateTopicError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::update_topic::UpdateTopicError::InvalidParameterValueException(
+                inner,
+            ) => Error::InvalidParameterValueException(inner),
+            crate::operation::update_topic::UpdateTopicError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::update_topic::UpdateTopicError::ResourceExistsException(inner) => {
+                Error::ResourceExistsException(inner)
+            }
+            crate::operation::update_topic::UpdateTopicError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_topic::UpdateTopicError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_topic::UpdateTopicError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_topic_permissions::UpdateTopicPermissionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_topic_permissions::UpdateTopicPermissionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_topic_permissions::UpdateTopicPermissionsError> for Error {
+    fn from(err: crate::operation::update_topic_permissions::UpdateTopicPermissionsError) -> Self {
+        match err {
+            crate::operation::update_topic_permissions::UpdateTopicPermissionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_topic_permissions::UpdateTopicPermissionsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_topic_permissions::UpdateTopicPermissionsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::update_topic_permissions::UpdateTopicPermissionsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::update_topic_permissions::UpdateTopicPermissionsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_topic_permissions::UpdateTopicPermissionsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_topic_permissions::UpdateTopicPermissionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_topic_permissions::UpdateTopicPermissionsError::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
+            crate::operation::update_topic_permissions::UpdateTopicPermissionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleError>
+    for Error
+{
+    fn from(
+        err: crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleError,
+    ) -> Self {
+        match err {
+            crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleError::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
+            crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_user::UpdateUserError, R>>
     for Error
 where
@@ -6247,6 +7058,52 @@ impl From<crate::operation::update_user::UpdateUserError> for Error {
             crate::operation::update_user::UpdateUserError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_vpc_connection::UpdateVPCConnectionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_vpc_connection::UpdateVPCConnectionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_vpc_connection::UpdateVPCConnectionError> for Error {
+    fn from(err: crate::operation::update_vpc_connection::UpdateVPCConnectionError) -> Self {
+        match err {
+            crate::operation::update_vpc_connection::UpdateVPCConnectionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_vpc_connection::UpdateVPCConnectionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_vpc_connection::UpdateVPCConnectionError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::update_vpc_connection::UpdateVPCConnectionError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::update_vpc_connection::UpdateVPCConnectionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_vpc_connection::UpdateVPCConnectionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_vpc_connection::UpdateVPCConnectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_vpc_connection::UpdateVPCConnectionError::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
+            crate::operation::update_vpc_connection::UpdateVPCConnectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

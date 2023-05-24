@@ -25,7 +25,7 @@ pub struct DomainPackageDetails {
     /// <p>The current version of the package.</p>
     #[doc(hidden)]
     pub package_version: std::option::Option<std::string::String>,
-    /// <p>Denotes the location of the package on the OpenSearch Service cluster nodes. It's the same as <code>synonym_path</code> for dictionary files.</p>
+    /// <p>The relative path of the package on the OpenSearch Service cluster nodes. This is <code>synonym_path</code> when the package is for synonym files.</p>
     #[doc(hidden)]
     pub reference_path: std::option::Option<std::string::String>,
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
@@ -61,7 +61,7 @@ impl DomainPackageDetails {
     pub fn package_version(&self) -> std::option::Option<&str> {
         self.package_version.as_deref()
     }
-    /// <p>Denotes the location of the package on the OpenSearch Service cluster nodes. It's the same as <code>synonym_path</code> for dictionary files.</p>
+    /// <p>The relative path of the package on the OpenSearch Service cluster nodes. This is <code>synonym_path</code> when the package is for synonym files.</p>
     pub fn reference_path(&self) -> std::option::Option<&str> {
         self.reference_path.as_deref()
     }
@@ -171,12 +171,12 @@ impl DomainPackageDetailsBuilder {
         self.package_version = input;
         self
     }
-    /// <p>Denotes the location of the package on the OpenSearch Service cluster nodes. It's the same as <code>synonym_path</code> for dictionary files.</p>
+    /// <p>The relative path of the package on the OpenSearch Service cluster nodes. This is <code>synonym_path</code> when the package is for synonym files.</p>
     pub fn reference_path(mut self, input: impl Into<std::string::String>) -> Self {
         self.reference_path = Some(input.into());
         self
     }
-    /// <p>Denotes the location of the package on the OpenSearch Service cluster nodes. It's the same as <code>synonym_path</code> for dictionary files.</p>
+    /// <p>The relative path of the package on the OpenSearch Service cluster nodes. This is <code>synonym_path</code> when the package is for synonym files.</p>
     pub fn set_reference_path(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.reference_path = input;
         self

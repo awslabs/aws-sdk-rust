@@ -22,9 +22,13 @@ pub(crate) mod shape_describe_cases;
 
 pub(crate) mod shape_describe_communications;
 
+pub(crate) mod shape_describe_create_case_options;
+
 pub(crate) mod shape_describe_services;
 
 pub(crate) mod shape_describe_severity_levels;
+
+pub(crate) mod shape_describe_supported_languages;
 
 pub(crate) mod shape_describe_trusted_advisor_check_refresh_statuses;
 
@@ -74,9 +78,13 @@ pub(crate) mod shape_describe_cases_input;
 
 pub(crate) mod shape_describe_communications_input;
 
+pub(crate) mod shape_describe_create_case_options_input;
+
 pub(crate) mod shape_describe_services_input;
 
 pub(crate) mod shape_describe_severity_levels_input;
+
+pub(crate) mod shape_describe_supported_languages_input;
 
 pub(crate) mod shape_describe_trusted_advisor_check_refresh_statuses_input;
 
@@ -92,15 +100,21 @@ pub(crate) mod shape_refresh_trusted_advisor_check_input;
 
 pub(crate) mod shape_resolve_case_input;
 
+pub(crate) mod shape_throttling_exception;
+
 pub(crate) mod shape_attachment;
 
 pub(crate) mod shape_case_list;
 
 pub(crate) mod shape_communication_list;
 
+pub(crate) mod shape_communication_type_options_list;
+
 pub(crate) mod shape_service_list;
 
 pub(crate) mod shape_severity_levels_list;
+
+pub(crate) mod shape_supported_languages_list;
 
 pub(crate) mod shape_trusted_advisor_check_list;
 
@@ -116,9 +130,13 @@ pub(crate) mod shape_case_details;
 
 pub(crate) mod shape_communication;
 
+pub(crate) mod shape_communication_type_options;
+
 pub(crate) mod shape_service;
 
 pub(crate) mod shape_severity_level;
+
+pub(crate) mod shape_supported_language;
 
 pub(crate) mod shape_trusted_advisor_category_specific_summary;
 
@@ -136,9 +154,13 @@ pub(crate) mod shape_category_list;
 
 pub(crate) mod shape_cc_email_address_list;
 
+pub(crate) mod shape_dates_without_support_list;
+
 pub(crate) mod shape_recent_case_communications;
 
 pub(crate) mod shape_string_list;
+
+pub(crate) mod shape_supported_hours_list;
 
 pub(crate) mod shape_trusted_advisor_cost_optimizing_summary;
 
@@ -147,3 +169,7 @@ pub(crate) mod shape_trusted_advisor_resource_detail;
 pub(crate) mod shape_attachment_details;
 
 pub(crate) mod shape_category;
+
+pub(crate) mod shape_date_interval;
+
+pub(crate) mod shape_supported_hour;

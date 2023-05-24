@@ -3,20 +3,20 @@ pub fn ser_stream_selection(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StreamSelection,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.max_video_bits_per_second != 0 {
+    if let Some(var_1) = &input.max_video_bits_per_second {
         object.key("maxVideoBitsPerSecond").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_video_bits_per_second).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.min_video_bits_per_second != 0 {
+    if let Some(var_2) = &input.min_video_bits_per_second {
         object.key("minVideoBitsPerSecond").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.min_video_bits_per_second).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_1) = &input.stream_order {
-        object.key("streamOrder").string(var_1.as_str());
+    if let Some(var_3) = &input.stream_order {
+        object.key("streamOrder").string(var_3.as_str());
     }
     Ok(())
 }

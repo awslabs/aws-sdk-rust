@@ -4,19 +4,19 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InstanceProperty {
-    /// <p>The ISO-8601 time stamp of when the certificate was last used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
+    /// <p>The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.</p>
     #[doc(hidden)]
     pub seen_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of instanceProperty objects. </p>
     #[doc(hidden)]
     pub properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Indicates whether the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation was successful. </p>
+    /// <p>Indicates whether the temporary credential request was successful. </p>
     #[doc(hidden)]
     pub failed: std::option::Option<bool>,
 }
 impl InstanceProperty {
-    /// <p>The ISO-8601 time stamp of when the certificate was last used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
+    /// <p>The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.</p>
     pub fn seen_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.seen_at.as_ref()
     }
@@ -27,7 +27,7 @@ impl InstanceProperty {
     {
         self.properties.as_ref()
     }
-    /// <p>Indicates whether the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation was successful. </p>
+    /// <p>Indicates whether the temporary credential request was successful. </p>
     pub fn failed(&self) -> std::option::Option<bool> {
         self.failed
     }
@@ -49,12 +49,12 @@ pub struct InstancePropertyBuilder {
     pub(crate) failed: std::option::Option<bool>,
 }
 impl InstancePropertyBuilder {
-    /// <p>The ISO-8601 time stamp of when the certificate was last used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
+    /// <p>The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.</p>
     pub fn seen_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.seen_at = Some(input);
         self
     }
-    /// <p>The ISO-8601 time stamp of when the certificate was last used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
+    /// <p>The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.</p>
     pub fn set_seen_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.seen_at = input;
         self
@@ -84,12 +84,12 @@ impl InstancePropertyBuilder {
         self.properties = input;
         self
     }
-    /// <p>Indicates whether the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation was successful. </p>
+    /// <p>Indicates whether the temporary credential request was successful. </p>
     pub fn failed(mut self, input: bool) -> Self {
         self.failed = Some(input);
         self
     }
-    /// <p>Indicates whether the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation was successful. </p>
+    /// <p>Indicates whether the temporary credential request was successful. </p>
     pub fn set_failed(mut self, input: std::option::Option<bool>) -> Self {
         self.failed = input;
         self

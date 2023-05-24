@@ -81,7 +81,7 @@ impl ListIamPolicyAssignmentsInput {
                 }
                 write!(
                     output,
-                    "/accounts/{AwsAccountId}/namespaces/{Namespace}/iam-policy-assignments",
+                    "/accounts/{AwsAccountId}/namespaces/{Namespace}/v2/iam-policy-assignments",
                     AwsAccountId = aws_account_id,
                     Namespace = namespace
                 )
@@ -93,16 +93,24 @@ impl ListIamPolicyAssignmentsInput {
                 mut output: &mut String,
             ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(output);
-                if let Some(inner_3) = &_input.next_token {
+                if let Some(inner_3) = &_input.assignment_status {
                     {
-                        query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv(
+                            "assignment-status",
+                            &aws_smithy_http::query::fmt_string(&inner_3),
+                        );
                     }
                 }
-                if let Some(inner_4) = &_input.max_results {
-                    if *inner_4 != 0 {
+                if let Some(inner_4) = &_input.next_token {
+                    {
+                        query.push_kv("next-token", &aws_smithy_http::query::fmt_string(&inner_4));
+                    }
+                }
+                if let Some(inner_5) = &_input.max_results {
+                    if *inner_5 != 0 {
                         query.push_kv(
                             "max-results",
-                            aws_smithy_types::primitive::Encoder::from(*inner_4).encode(),
+                            aws_smithy_types::primitive::Encoder::from(*inner_5).encode(),
                         );
                     }
                 }
@@ -122,25 +130,11 @@ impl ListIamPolicyAssignmentsInput {
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            crate::protocol_serde::shape_list_iam_policy_assignments::ser_list_iam_policy_assignments_input(&self)?
-        );
-        if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);

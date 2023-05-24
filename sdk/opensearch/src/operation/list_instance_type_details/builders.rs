@@ -78,22 +78,22 @@ impl ListInstanceTypeDetailsFluentBuilder {
     {
         crate::operation::list_instance_type_details::paginator::ListInstanceTypeDetailsPaginator::new(self.handle, self.inner)
     }
-    /// <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
+    /// <p>The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
     pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
-    /// <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
+    /// <p>The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
     pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
-    /// <p>Name of the domain to list instance type details for.</p>
+    /// <p>The name of the domain.</p>
     pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
         self
     }
-    /// <p>Name of the domain to list instance type details for.</p>
+    /// <p>The name of the domain.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
@@ -116,6 +116,26 @@ impl ListInstanceTypeDetailsFluentBuilder {
     /// <p>If your initial <code>ListInstanceTypeDetails</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListInstanceTypeDetails</code> operations, which returns results in the next page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
+        self
+    }
+    /// <p>An optional parameter that specifies the Availability Zones for the domain.</p>
+    pub fn retrieve_a_zs(mut self, input: bool) -> Self {
+        self.inner = self.inner.retrieve_a_zs(input);
+        self
+    }
+    /// <p>An optional parameter that specifies the Availability Zones for the domain.</p>
+    pub fn set_retrieve_a_zs(mut self, input: std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_retrieve_a_zs(input);
+        self
+    }
+    /// <p>An optional parameter that lists information for a given instance type.</p>
+    pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
+        self.inner = self.inner.instance_type(input.into());
+        self
+    }
+    /// <p>An optional parameter that lists information for a given instance type.</p>
+    pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.inner = self.inner.set_instance_type(input);
         self
     }
 }

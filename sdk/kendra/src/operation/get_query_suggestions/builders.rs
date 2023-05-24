@@ -103,4 +103,41 @@ impl GetQuerySuggestionsFluentBuilder {
         self.inner = self.inner.set_max_suggestions_count(input);
         self
     }
+    /// Appends an item to `SuggestionTypes`.
+    ///
+    /// To override the contents of this collection use [`set_suggestion_types`](Self::set_suggestion_types).
+    ///
+    /// <p>The suggestions type to base query suggestions on. The suggestion types are query history or document fields/attributes. You can set one type or the other.</p>
+    /// <p>If you set query history as your suggestions type, Amazon Kendra suggests queries relevant to your users based on popular queries in the query history.</p>
+    /// <p>If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to your users based on the contents of document fields.</p>
+    pub fn suggestion_types(mut self, input: crate::types::SuggestionType) -> Self {
+        self.inner = self.inner.suggestion_types(input);
+        self
+    }
+    /// <p>The suggestions type to base query suggestions on. The suggestion types are query history or document fields/attributes. You can set one type or the other.</p>
+    /// <p>If you set query history as your suggestions type, Amazon Kendra suggests queries relevant to your users based on popular queries in the query history.</p>
+    /// <p>If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to your users based on the contents of document fields.</p>
+    pub fn set_suggestion_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SuggestionType>>,
+    ) -> Self {
+        self.inner = self.inner.set_suggestion_types(input);
+        self
+    }
+    /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
+    pub fn attribute_suggestions_config(
+        mut self,
+        input: crate::types::AttributeSuggestionsGetConfig,
+    ) -> Self {
+        self.inner = self.inner.attribute_suggestions_config(input);
+        self
+    }
+    /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
+    pub fn set_attribute_suggestions_config(
+        mut self,
+        input: std::option::Option<crate::types::AttributeSuggestionsGetConfig>,
+    ) -> Self {
+        self.inner = self.inner.set_attribute_suggestions_config(input);
+        self
+    }
 }

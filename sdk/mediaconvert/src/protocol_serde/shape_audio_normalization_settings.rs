@@ -9,28 +9,28 @@ pub fn ser_audio_normalization_settings(
     if let Some(var_2) = &input.algorithm_control {
         object.key("algorithmControl").string(var_2.as_str());
     }
-    if input.correction_gate_level != 0 {
+    if let Some(var_3) = &input.correction_gate_level {
         object.key("correctionGateLevel").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.correction_gate_level).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.loudness_logging {
-        object.key("loudnessLogging").string(var_3.as_str());
+    if let Some(var_4) = &input.loudness_logging {
+        object.key("loudnessLogging").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.peak_calculation {
-        object.key("peakCalculation").string(var_4.as_str());
+    if let Some(var_5) = &input.peak_calculation {
+        object.key("peakCalculation").string(var_5.as_str());
     }
-    if input.target_lkfs != 0.0 {
+    if let Some(var_6) = &input.target_lkfs {
         object.key("targetLkfs").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.target_lkfs).into()),
+            aws_smithy_types::Number::Float((*var_6).into()),
         );
     }
-    if input.true_peak_limiter_threshold != 0.0 {
+    if let Some(var_7) = &input.true_peak_limiter_threshold {
         object.key("truePeakLimiterThreshold").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.true_peak_limiter_threshold).into()),
+            aws_smithy_types::Number::Float((*var_7).into()),
         );
     }
     Ok(())

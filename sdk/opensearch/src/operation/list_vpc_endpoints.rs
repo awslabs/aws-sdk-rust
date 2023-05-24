@@ -170,7 +170,7 @@ pub type ListVpcEndpointsErrorKind = ListVpcEndpointsError;
 pub enum ListVpcEndpointsError {
     /// <p>An error occurred while processing the request.</p>
     BaseException(crate::types::error::BaseException),
-    /// <p>An error occured because the client wanted to access a not supported operation.</p>
+    /// <p>An error occured because the client wanted to access an unsupported operation.</p>
     DisabledOperationException(crate::types::error::DisabledOperationException),
     /// <p>Request processing failed because of an unknown error, exception, or internal failure.</p>
     InternalException(crate::types::error::InternalException),

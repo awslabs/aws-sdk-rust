@@ -3,6 +3,8 @@ pub use crate::types::error::_internal_server_error::InternalServerError;
 
 pub use crate::types::error::_case_id_not_found::CaseIdNotFound;
 
+pub use crate::types::error::_throttling_exception::ThrottlingException;
+
 pub use crate::types::error::_describe_attachment_limit_exceeded::DescribeAttachmentLimitExceeded;
 
 pub use crate::types::error::_attachment_id_not_found::AttachmentIdNotFound;
@@ -34,6 +36,8 @@ mod _case_id_not_found;
 mod _describe_attachment_limit_exceeded;
 
 mod _internal_server_error;
+
+mod _throttling_exception;
 
 /// Builders
 pub mod builders;

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJournalS3ExportsOutput {
-    /// <p>The array of journal export job descriptions for all ledgers that are associated with the current Amazon Web Services account and Region.</p>
+    /// <p>The journal export jobs for all ledgers that are associated with the current Amazon Web Services account and Region.</p>
     #[doc(hidden)]
     pub journal_s3_exports:
         std::option::Option<std::vec::Vec<crate::types::JournalS3ExportDescription>>,
@@ -16,7 +16,7 @@ pub struct ListJournalS3ExportsOutput {
     _request_id: Option<String>,
 }
 impl ListJournalS3ExportsOutput {
-    /// <p>The array of journal export job descriptions for all ledgers that are associated with the current Amazon Web Services account and Region.</p>
+    /// <p>The journal export jobs for all ledgers that are associated with the current Amazon Web Services account and Region.</p>
     pub fn journal_s3_exports(
         &self,
     ) -> std::option::Option<&[crate::types::JournalS3ExportDescription]> {
@@ -58,14 +58,14 @@ impl ListJournalS3ExportsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_journal_s3_exports`](Self::set_journal_s3_exports).
     ///
-    /// <p>The array of journal export job descriptions for all ledgers that are associated with the current Amazon Web Services account and Region.</p>
+    /// <p>The journal export jobs for all ledgers that are associated with the current Amazon Web Services account and Region.</p>
     pub fn journal_s3_exports(mut self, input: crate::types::JournalS3ExportDescription) -> Self {
         let mut v = self.journal_s3_exports.unwrap_or_default();
         v.push(input);
         self.journal_s3_exports = Some(v);
         self
     }
-    /// <p>The array of journal export job descriptions for all ledgers that are associated with the current Amazon Web Services account and Region.</p>
+    /// <p>The journal export jobs for all ledgers that are associated with the current Amazon Web Services account and Region.</p>
     pub fn set_journal_s3_exports(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::JournalS3ExportDescription>>,

@@ -22,6 +22,9 @@ pub struct CreateRunGroupInput {
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
+    /// <p> The maximum GPUs that can be used by a run group. </p>
+    #[doc(hidden)]
+    pub max_gpus: std::option::Option<i32>,
 }
 impl CreateRunGroupInput {
     /// <p>A name for the group.</p>
@@ -51,6 +54,10 @@ impl CreateRunGroupInput {
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
+    /// <p> The maximum GPUs that can be used by a run group. </p>
+    pub fn max_gpus(&self) -> std::option::Option<i32> {
+        self.max_gpus
+    }
 }
 impl CreateRunGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateRunGroupInput`](crate::operation::create_run_group::CreateRunGroupInput).
@@ -70,6 +77,7 @@ pub struct CreateRunGroupInputBuilder {
     pub(crate) tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) request_id: std::option::Option<std::string::String>,
+    pub(crate) max_gpus: std::option::Option<i32>,
 }
 impl CreateRunGroupInputBuilder {
     /// <p>A name for the group.</p>
@@ -147,6 +155,16 @@ impl CreateRunGroupInputBuilder {
         self.request_id = input;
         self
     }
+    /// <p> The maximum GPUs that can be used by a run group. </p>
+    pub fn max_gpus(mut self, input: i32) -> Self {
+        self.max_gpus = Some(input);
+        self
+    }
+    /// <p> The maximum GPUs that can be used by a run group. </p>
+    pub fn set_max_gpus(mut self, input: std::option::Option<i32>) -> Self {
+        self.max_gpus = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateRunGroupInput`](crate::operation::create_run_group::CreateRunGroupInput).
     pub fn build(
         self,
@@ -161,6 +179,7 @@ impl CreateRunGroupInputBuilder {
             max_duration: self.max_duration,
             tags: self.tags,
             request_id: self.request_id,
+            max_gpus: self.max_gpus,
         })
     }
 }

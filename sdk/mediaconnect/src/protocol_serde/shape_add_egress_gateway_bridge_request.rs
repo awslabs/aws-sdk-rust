@@ -3,10 +3,10 @@ pub fn ser_add_egress_gateway_bridge_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AddEgressGatewayBridgeRequest,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    {
+    if let Some(var_1) = &input.max_bitrate {
         object.key("maxBitrate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_bitrate).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())

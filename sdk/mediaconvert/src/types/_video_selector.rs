@@ -24,10 +24,10 @@ pub struct VideoSelector {
     pub pad_video: std::option::Option<crate::types::PadVideo>,
     /// Use PID (Pid) to select specific video data from an input file. Specify this value as an integer; the system automatically converts it to the hexidecimal value. For example, 257 selects PID 0x101. A PID, or packet identifier, is an identifier for a set of data in an MPEG-2 transport stream container.
     #[doc(hidden)]
-    pub pid: i32,
+    pub pid: std::option::Option<i32>,
     /// Selects a specific program from within a multi-program transport stream. Note that Quad 4K is not currently supported.
     #[doc(hidden)]
-    pub program_number: i32,
+    pub program_number: std::option::Option<i32>,
     /// Use Rotate (InputRotate) to specify how the service rotates your video. You can choose automatic rotation or specify a rotation. You can specify a clockwise rotation of 0, 90, 180, or 270 degrees. If your input video container is .mov or .mp4 and your input has rotation metadata, you can choose Automatic to have the service rotate your video according to the rotation specified in the metadata. The rotation must be within one degree of 90, 180, or 270 degrees. If the rotation metadata specifies any other rotation, the service will default to no rotation. By default, the service does no rotation, even if your input video has rotation metadata. The service doesn't pass through rotation metadata.
     #[doc(hidden)]
     pub rotate: std::option::Option<crate::types::InputRotate>,
@@ -63,11 +63,11 @@ impl VideoSelector {
         self.pad_video.as_ref()
     }
     /// Use PID (Pid) to select specific video data from an input file. Specify this value as an integer; the system automatically converts it to the hexidecimal value. For example, 257 selects PID 0x101. A PID, or packet identifier, is an identifier for a set of data in an MPEG-2 transport stream container.
-    pub fn pid(&self) -> i32 {
+    pub fn pid(&self) -> std::option::Option<i32> {
         self.pid
     }
     /// Selects a specific program from within a multi-program transport stream. Note that Quad 4K is not currently supported.
-    pub fn program_number(&self) -> i32 {
+    pub fn program_number(&self) -> std::option::Option<i32> {
         self.program_number
     }
     /// Use Rotate (InputRotate) to specify how the service rotates your video. You can choose automatic rotation or specify a rotation. You can specify a clockwise rotation of 0, 90, 180, or 270 degrees. If your input video container is .mov or .mp4 and your input has rotation metadata, you can choose Automatic to have the service rotate your video according to the rotation specified in the metadata. The rotation must be within one degree of 90, 180, or 270 degrees. If the rotation metadata specifies any other rotation, the service will default to no rotation. By default, the service does no rotation, even if your input video has rotation metadata. The service doesn't pass through rotation metadata.
@@ -230,8 +230,8 @@ impl VideoSelectorBuilder {
             embedded_timecode_override: self.embedded_timecode_override,
             hdr10_metadata: self.hdr10_metadata,
             pad_video: self.pad_video,
-            pid: self.pid.unwrap_or_default(),
-            program_number: self.program_number.unwrap_or_default(),
+            pid: self.pid,
+            program_number: self.program_number,
             rotate: self.rotate,
             sample_range: self.sample_range,
         }

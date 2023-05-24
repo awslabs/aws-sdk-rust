@@ -94,13 +94,13 @@ impl RegisterActivityTypeFluentBuilder {
         self
     }
     /// <p>The name of the activity type within the domain.</p>
-    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the activity type within the domain.</p>
-    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
@@ -108,7 +108,7 @@ impl RegisterActivityTypeFluentBuilder {
     /// <p>The version of the activity type.</p> <note>
     /// <p>The activity type consists of the name and version, the combination of which must be unique within the domain.</p>
     /// </note>
-    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.version(input.into());
         self
@@ -116,7 +116,7 @@ impl RegisterActivityTypeFluentBuilder {
     /// <p>The version of the activity type.</p> <note>
     /// <p>The activity type consists of the name and version, the combination of which must be unique within the domain.</p>
     /// </note>
-    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_version(input);
         self

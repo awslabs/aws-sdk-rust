@@ -5,7 +5,7 @@ pub use crate::operation::delete_host_key::_delete_host_key_input::DeleteHostKey
 
 /// Fluent builder constructing a request to `DeleteHostKey`.
 ///
-/// <p>Deletes the host key that's specified in the <code>HoskKeyId</code> parameter.</p>
+/// <p>Deletes the host key that's specified in the <code>HostKeyId</code> parameter.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteHostKeyFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

@@ -12,7 +12,9 @@ pub struct DescribeEventTypesInput {
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p> <note>
+    /// <p>If you don't specify the <code>maxResults</code> parameter, this operation returns a maximum of 30 items by default.</p>
+    /// </note>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
@@ -29,7 +31,9 @@ impl DescribeEventTypesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p> <note>
+    /// <p>If you don't specify the <code>maxResults</code> parameter, this operation returns a maximum of 30 items by default.</p>
+    /// </note>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -82,12 +86,16 @@ impl DescribeEventTypesInputBuilder {
         self.next_token = input;
         self
     }
-    /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p> <note>
+    /// <p>If you don't specify the <code>maxResults</code> parameter, this operation returns a maximum of 30 items by default.</p>
+    /// </note>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p> <note>
+    /// <p>If you don't specify the <code>maxResults</code> parameter, this operation returns a maximum of 30 items by default.</p>
+    /// </note>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
         self.max_results = input;
         self

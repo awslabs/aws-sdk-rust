@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetStageOutput {
-    /// <p></p>
+    /// <p>The stage that is returned.</p>
     #[doc(hidden)]
     pub stage: std::option::Option<crate::types::Stage>,
     _request_id: Option<String>,
 }
 impl GetStageOutput {
-    /// <p></p>
+    /// <p>The stage that is returned.</p>
     pub fn stage(&self) -> std::option::Option<&crate::types::Stage> {
         self.stage.as_ref()
     }
@@ -34,12 +34,12 @@ pub struct GetStageOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetStageOutputBuilder {
-    /// <p></p>
+    /// <p>The stage that is returned.</p>
     pub fn stage(mut self, input: crate::types::Stage) -> Self {
         self.stage = Some(input);
         self
     }
-    /// <p></p>
+    /// <p>The stage that is returned.</p>
     pub fn set_stage(mut self, input: std::option::Option<crate::types::Stage>) -> Self {
         self.stage = input;
         self

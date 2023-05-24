@@ -8,6 +8,11 @@ pub struct WorkloadDiscoveryConfig {
     #[doc(hidden)]
     pub trusted_advisor_integration_status:
         std::option::Option<crate::types::TrustedAdvisorIntegrationStatus>,
+    /// <p>The mode to use for identifying resources associated with the workload.</p>
+    /// <p>You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or both.</p>
+    #[doc(hidden)]
+    pub workload_resource_definition:
+        std::option::Option<std::vec::Vec<crate::types::DefinitionType>>,
 }
 impl WorkloadDiscoveryConfig {
     /// <p>Discovery integration status in respect to Trusted Advisor for the workload.</p>
@@ -15,6 +20,13 @@ impl WorkloadDiscoveryConfig {
         &self,
     ) -> std::option::Option<&crate::types::TrustedAdvisorIntegrationStatus> {
         self.trusted_advisor_integration_status.as_ref()
+    }
+    /// <p>The mode to use for identifying resources associated with the workload.</p>
+    /// <p>You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or both.</p>
+    pub fn workload_resource_definition(
+        &self,
+    ) -> std::option::Option<&[crate::types::DefinitionType]> {
+        self.workload_resource_definition.as_deref()
     }
 }
 impl WorkloadDiscoveryConfig {
@@ -30,6 +42,8 @@ impl WorkloadDiscoveryConfig {
 pub struct WorkloadDiscoveryConfigBuilder {
     pub(crate) trusted_advisor_integration_status:
         std::option::Option<crate::types::TrustedAdvisorIntegrationStatus>,
+    pub(crate) workload_resource_definition:
+        std::option::Option<std::vec::Vec<crate::types::DefinitionType>>,
 }
 impl WorkloadDiscoveryConfigBuilder {
     /// <p>Discovery integration status in respect to Trusted Advisor for the workload.</p>
@@ -48,10 +62,32 @@ impl WorkloadDiscoveryConfigBuilder {
         self.trusted_advisor_integration_status = input;
         self
     }
+    /// Appends an item to `workload_resource_definition`.
+    ///
+    /// To override the contents of this collection use [`set_workload_resource_definition`](Self::set_workload_resource_definition).
+    ///
+    /// <p>The mode to use for identifying resources associated with the workload.</p>
+    /// <p>You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or both.</p>
+    pub fn workload_resource_definition(mut self, input: crate::types::DefinitionType) -> Self {
+        let mut v = self.workload_resource_definition.unwrap_or_default();
+        v.push(input);
+        self.workload_resource_definition = Some(v);
+        self
+    }
+    /// <p>The mode to use for identifying resources associated with the workload.</p>
+    /// <p>You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or both.</p>
+    pub fn set_workload_resource_definition(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DefinitionType>>,
+    ) -> Self {
+        self.workload_resource_definition = input;
+        self
+    }
     /// Consumes the builder and constructs a [`WorkloadDiscoveryConfig`](crate::types::WorkloadDiscoveryConfig).
     pub fn build(self) -> crate::types::WorkloadDiscoveryConfig {
         crate::types::WorkloadDiscoveryConfig {
             trusted_advisor_integration_status: self.trusted_advisor_integration_status,
+            workload_resource_definition: self.workload_resource_definition,
         }
     }
 }

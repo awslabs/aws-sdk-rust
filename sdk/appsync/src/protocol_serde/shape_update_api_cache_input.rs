@@ -6,14 +6,14 @@ pub fn ser_update_api_cache_input(
     if let Some(var_1) = &input.api_caching_behavior {
         object.key("apiCachingBehavior").string(var_1.as_str());
     }
-    {
+    if let Some(var_2) = &input.ttl {
         object.key("ttl").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.ttl).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.r#type {
-        object.key("type").string(var_2.as_str());
+    if let Some(var_3) = &input.r#type {
+        object.key("type").string(var_3.as_str());
     }
     Ok(())
 }

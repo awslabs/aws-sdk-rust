@@ -3,10 +3,10 @@ pub fn ser_input_video_generator(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InputVideoGenerator,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.duration != 0 {
+    if let Some(var_1) = &input.duration {
         object.key("duration").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.duration).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())

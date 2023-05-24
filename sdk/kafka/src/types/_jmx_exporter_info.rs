@@ -6,11 +6,11 @@
 pub struct JmxExporterInfo {
     /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
     #[doc(hidden)]
-    pub enabled_in_broker: bool,
+    pub enabled_in_broker: std::option::Option<bool>,
 }
 impl JmxExporterInfo {
     /// <p>Indicates whether you want to turn on or turn off the JMX Exporter.</p>
-    pub fn enabled_in_broker(&self) -> bool {
+    pub fn enabled_in_broker(&self) -> std::option::Option<bool> {
         self.enabled_in_broker
     }
 }
@@ -41,7 +41,7 @@ impl JmxExporterInfoBuilder {
     /// Consumes the builder and constructs a [`JmxExporterInfo`](crate::types::JmxExporterInfo).
     pub fn build(self) -> crate::types::JmxExporterInfo {
         crate::types::JmxExporterInfo {
-            enabled_in_broker: self.enabled_in_broker.unwrap_or_default(),
+            enabled_in_broker: self.enabled_in_broker,
         }
     }
 }

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`TagResource`](crate::operation::tag_resource::builders::TagResourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_resource_arn): <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to which tags are to be added.</p>
-    ///   - [`tags(Vec<Tag>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_tags): <p>A collection of one or more tags, separated by commas, to be added to an Athena workgroup or data catalog resource.</p>
+    ///   - [`resource_arn(impl Into<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_resource_arn): <p>Specifies the ARN of the Athena resource to which tags are to be added.</p>
+    ///   - [`tags(Vec<Tag>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_tags): <p>A collection of one or more tags, separated by commas, to be added to an Athena resource.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::operation::tag_resource::TagResourceOutput)
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::operation::tag_resource::TagResourceError)
     pub fn tag_resource(

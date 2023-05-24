@@ -75,6 +75,10 @@ pub use crate::types::_unindexed_face::UnindexedFaceBuilder;
 
 pub use crate::types::_face_detail::FaceDetailBuilder;
 
+pub use crate::types::_eye_direction::EyeDirectionBuilder;
+
+pub use crate::types::_face_occluded::FaceOccludedBuilder;
+
 pub use crate::types::_mouth_open::MouthOpenBuilder;
 
 pub use crate::types::_eye_open::EyeOpenBuilder;
@@ -115,6 +119,8 @@ pub use crate::types::_person_detection::PersonDetectionBuilder;
 
 pub use crate::types::_person_detail::PersonDetailBuilder;
 
+pub use crate::types::_get_label_detection_request_metadata::GetLabelDetectionRequestMetadataBuilder;
+
 pub use crate::types::_label_detection::LabelDetectionBuilder;
 
 pub use crate::types::_label::LabelBuilder;
@@ -134,6 +140,8 @@ pub use crate::types::_person_match::PersonMatchBuilder;
 pub use crate::types::_audit_image::AuditImageBuilder;
 
 pub use crate::types::_face_detection::FaceDetectionBuilder;
+
+pub use crate::types::_get_content_moderation_request_metadata::GetContentModerationRequestMetadataBuilder;
 
 pub use crate::types::_content_moderation_detection::ContentModerationDetectionBuilder;
 

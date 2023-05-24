@@ -15,32 +15,32 @@ pub fn ser_update_function_input(
     if let Some(var_4) = &input.function_version {
         object.key("functionVersion").string(var_4.as_str());
     }
-    if input.max_batch_size != 0 {
+    if let Some(var_5) = &input.max_batch_size {
         object.key("maxBatchSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_batch_size).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_5) = &input.name {
-        object.key("name").string(var_5.as_str());
+    if let Some(var_6) = &input.name {
+        object.key("name").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.request_mapping_template {
-        object.key("requestMappingTemplate").string(var_6.as_str());
+    if let Some(var_7) = &input.request_mapping_template {
+        object.key("requestMappingTemplate").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.response_mapping_template {
-        object.key("responseMappingTemplate").string(var_7.as_str());
+    if let Some(var_8) = &input.response_mapping_template {
+        object.key("responseMappingTemplate").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.runtime {
+    if let Some(var_9) = &input.runtime {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("runtime").start_object();
-        crate::protocol_serde::shape_app_sync_runtime::ser_app_sync_runtime(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_10 = object.key("runtime").start_object();
+        crate::protocol_serde::shape_app_sync_runtime::ser_app_sync_runtime(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_10) = &input.sync_config {
+    if let Some(var_11) = &input.sync_config {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("syncConfig").start_object();
-        crate::protocol_serde::shape_sync_config::ser_sync_config(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_12 = object.key("syncConfig").start_object();
+        crate::protocol_serde::shape_sync_config::ser_sync_config(&mut object_12, var_11)?;
+        object_12.finish();
     }
     Ok(())
 }

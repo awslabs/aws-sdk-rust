@@ -16,6 +16,10 @@ pub(crate) mod shape_batch_get_account_status;
 
 pub(crate) mod shape_batch_get_free_trial_info;
 
+pub(crate) mod shape_batch_get_member_ec2_deep_inspection_status;
+
+pub(crate) mod shape_batch_update_member_ec2_deep_inspection_status;
+
 pub(crate) mod shape_cancel_findings_report;
 
 pub(crate) mod shape_create_filter;
@@ -39,6 +43,8 @@ pub(crate) mod shape_enable_delegated_admin_account;
 pub(crate) mod shape_get_configuration;
 
 pub(crate) mod shape_get_delegated_admin_account;
+
+pub(crate) mod shape_get_ec2_deep_inspection_configuration;
 
 pub(crate) mod shape_get_findings_report_status;
 
@@ -64,13 +70,19 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_usage_totals;
 
+pub(crate) mod shape_search_vulnerabilities;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_configuration;
 
+pub(crate) mod shape_update_ec2_deep_inspection_configuration;
+
 pub(crate) mod shape_update_filter;
+
+pub(crate) mod shape_update_org_ec2_deep_inspection_configuration;
 
 pub(crate) mod shape_update_organization_configuration;
 
@@ -91,6 +103,10 @@ pub(crate) mod shape_bad_request_exception;
 pub(crate) mod shape_batch_get_account_status_input;
 
 pub(crate) mod shape_batch_get_free_trial_info_input;
+
+pub(crate) mod shape_batch_get_member_ec2_deep_inspection_status_input;
+
+pub(crate) mod shape_batch_update_member_ec2_deep_inspection_status_input;
 
 pub(crate) mod shape_cancel_findings_report_input;
 
@@ -138,6 +154,8 @@ pub(crate) mod shape_list_usage_totals_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
+pub(crate) mod shape_search_vulnerabilities_input;
+
 pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_tag_resource_input;
@@ -146,7 +164,11 @@ pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_update_configuration_input;
 
+pub(crate) mod shape_update_ec2_deep_inspection_configuration_input;
+
 pub(crate) mod shape_update_filter_input;
+
+pub(crate) mod shape_update_org_ec2_deep_inspection_configuration_input;
 
 pub(crate) mod shape_update_organization_configuration_input;
 
@@ -180,6 +202,8 @@ pub(crate) mod shape_ecr_configuration_state;
 
 pub(crate) mod shape_failed_account_list;
 
+pub(crate) mod shape_failed_member_account_ec2_deep_inspection_status_state_list;
+
 pub(crate) mod shape_filter_criteria;
 
 pub(crate) mod shape_filter_list;
@@ -192,9 +216,17 @@ pub(crate) mod shape_free_trial_info_error_list;
 
 pub(crate) mod shape_member;
 
+pub(crate) mod shape_member_account_ec2_deep_inspection_status;
+
+pub(crate) mod shape_member_account_ec2_deep_inspection_status_state_list;
+
 pub(crate) mod shape_member_list;
 
+pub(crate) mod shape_path_list;
+
 pub(crate) mod shape_permissions;
+
+pub(crate) mod shape_search_vulnerabilities_filter_criteria;
 
 pub(crate) mod shape_sort_criteria;
 
@@ -205,6 +237,8 @@ pub(crate) mod shape_tag_map;
 pub(crate) mod shape_usage_total_list;
 
 pub(crate) mod shape_validation_exception_fields;
+
+pub(crate) mod shape_vulnerabilities;
 
 pub(crate) mod shape_account;
 
@@ -238,6 +272,8 @@ pub(crate) mod shape_ecr_rescan_duration_state;
 
 pub(crate) mod shape_failed_account;
 
+pub(crate) mod shape_failed_member_account_ec2_deep_inspection_status_state;
+
 pub(crate) mod shape_filter;
 
 pub(crate) mod shape_finding;
@@ -257,6 +293,8 @@ pub(crate) mod shape_lambda_layer_aggregation;
 pub(crate) mod shape_map_filter;
 
 pub(crate) mod shape_map_filter_list;
+
+pub(crate) mod shape_member_account_ec2_deep_inspection_status_state;
 
 pub(crate) mod shape_number_filter;
 
@@ -284,13 +322,31 @@ pub(crate) mod shape_usage_total;
 
 pub(crate) mod shape_validation_exception_field;
 
+pub(crate) mod shape_vulnerability;
+
 pub(crate) mod shape_account_aggregation_response;
 
 pub(crate) mod shape_ami_aggregation_response;
 
+pub(crate) mod shape_atig_data;
+
 pub(crate) mod shape_aws_ecr_container_aggregation_response;
 
+pub(crate) mod shape_cisa_data;
+
+pub(crate) mod shape_cvss2;
+
+pub(crate) mod shape_cvss3;
+
+pub(crate) mod shape_cwes;
+
+pub(crate) mod shape_detection_platforms;
+
 pub(crate) mod shape_ec2_instance_aggregation_response;
+
+pub(crate) mod shape_epss;
+
+pub(crate) mod shape_exploit_observed;
 
 pub(crate) mod shape_exploitability_details;
 
@@ -312,6 +368,8 @@ pub(crate) mod shape_package_aggregation_response;
 
 pub(crate) mod shape_package_vulnerability_details;
 
+pub(crate) mod shape_related_vulnerabilities;
+
 pub(crate) mod shape_remediation;
 
 pub(crate) mod shape_repository_aggregation_response;
@@ -331,6 +389,8 @@ pub(crate) mod shape_state;
 pub(crate) mod shape_title_aggregation_response;
 
 pub(crate) mod shape_usage_list;
+
+pub(crate) mod shape_vulnerability_reference_urls;
 
 pub(crate) mod shape_cvss_score_details;
 
@@ -359,6 +419,10 @@ pub(crate) mod shape_resource;
 pub(crate) mod shape_severity_counts;
 
 pub(crate) mod shape_string_list;
+
+pub(crate) mod shape_targets;
+
+pub(crate) mod shape_ttps;
 
 pub(crate) mod shape_usage;
 

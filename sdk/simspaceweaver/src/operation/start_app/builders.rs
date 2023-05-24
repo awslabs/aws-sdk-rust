@@ -114,12 +114,12 @@ impl StartAppFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>Options that apply when the app starts. These optiAons override default behavior.</p>
+    /// <p>Options that apply when the app starts. These options override default behavior.</p>
     pub fn launch_overrides(mut self, input: crate::types::LaunchOverrides) -> Self {
         self.inner = self.inner.launch_overrides(input);
         self
     }
-    /// <p>Options that apply when the app starts. These optiAons override default behavior.</p>
+    /// <p>Options that apply when the app starts. These options override default behavior.</p>
     pub fn set_launch_overrides(
         mut self,
         input: std::option::Option<crate::types::LaunchOverrides>,

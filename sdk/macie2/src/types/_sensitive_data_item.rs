@@ -12,7 +12,7 @@ pub struct SensitiveDataItem {
     pub detections: std::option::Option<std::vec::Vec<crate::types::DefaultDetection>>,
     /// <p>The total number of occurrences of the sensitive data that was detected.</p>
     #[doc(hidden)]
-    pub total_count: i64,
+    pub total_count: std::option::Option<i64>,
 }
 impl SensitiveDataItem {
     /// <p>The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret access keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
@@ -24,7 +24,7 @@ impl SensitiveDataItem {
         self.detections.as_deref()
     }
     /// <p>The total number of occurrences of the sensitive data that was detected.</p>
-    pub fn total_count(&self) -> i64 {
+    pub fn total_count(&self) -> std::option::Option<i64> {
         self.total_count
     }
 }
@@ -91,7 +91,7 @@ impl SensitiveDataItemBuilder {
         crate::types::SensitiveDataItem {
             category: self.category,
             detections: self.detections,
-            total_count: self.total_count.unwrap_or_default(),
+            total_count: self.total_count,
         }
     }
 }

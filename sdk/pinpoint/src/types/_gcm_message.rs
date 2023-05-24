@@ -46,7 +46,7 @@ pub struct GcmMessage {
     pub restricted_package_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether the notification is a silent push notification, which is a push notification that doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating an app's configuration or supporting phone home functionality.</p>
     #[doc(hidden)]
-    pub silent_push: bool,
+    pub silent_push: std::option::Option<bool>,
     /// <p>The URL of the small icon image to display in the status bar and the content view of the push notification.</p>
     #[doc(hidden)]
     pub small_image_icon_url: std::option::Option<std::string::String>,
@@ -61,7 +61,7 @@ pub struct GcmMessage {
     /// <p>The amount of time, in seconds, that FCM should store and attempt to deliver the push notification, if the service is unable to deliver the notification the first time. If you don't specify this value, FCM defaults to the maximum value, which is 2,419,200 seconds (28 days).</p>
     /// <p>Amazon Pinpoint specifies this value in the FCM time_to_live parameter when it sends the notification message to FCM.</p>
     #[doc(hidden)]
-    pub time_to_live: i32,
+    pub time_to_live: std::option::Option<i32>,
     /// <p>The title to display above the notification message on the recipient's device.</p>
     #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
@@ -123,7 +123,7 @@ impl GcmMessage {
         self.restricted_package_name.as_deref()
     }
     /// <p>Specifies whether the notification is a silent push notification, which is a push notification that doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating an app's configuration or supporting phone home functionality.</p>
-    pub fn silent_push(&self) -> bool {
+    pub fn silent_push(&self) -> std::option::Option<bool> {
         self.silent_push
     }
     /// <p>The URL of the small icon image to display in the status bar and the content view of the push notification.</p>
@@ -144,7 +144,7 @@ impl GcmMessage {
     }
     /// <p>The amount of time, in seconds, that FCM should store and attempt to deliver the push notification, if the service is unable to deliver the notification the first time. If you don't specify this value, FCM defaults to the maximum value, which is 2,419,200 seconds (28 days).</p>
     /// <p>Amazon Pinpoint specifies this value in the FCM time_to_live parameter when it sends the notification message to FCM.</p>
-    pub fn time_to_live(&self) -> i32 {
+    pub fn time_to_live(&self) -> std::option::Option<i32> {
         self.time_to_live
     }
     /// <p>The title to display above the notification message on the recipient's device.</p>
@@ -428,11 +428,11 @@ impl GcmMessageBuilder {
             priority: self.priority,
             raw_content: self.raw_content,
             restricted_package_name: self.restricted_package_name,
-            silent_push: self.silent_push.unwrap_or_default(),
+            silent_push: self.silent_push,
             small_image_icon_url: self.small_image_icon_url,
             sound: self.sound,
             substitutions: self.substitutions,
-            time_to_live: self.time_to_live.unwrap_or_default(),
+            time_to_live: self.time_to_live,
             title: self.title,
             url: self.url,
         }

@@ -3,11 +3,11 @@ pub fn ser_logs(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Logs,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.audit {
-        object.key("audit").boolean(input.audit);
+    if let Some(var_1) = &input.audit {
+        object.key("audit").boolean(*var_1);
     }
-    if input.general {
-        object.key("general").boolean(input.general);
+    if let Some(var_2) = &input.general {
+        object.key("general").boolean(*var_2);
     }
     Ok(())
 }

@@ -3,10 +3,10 @@ pub fn ser_video_selector_program_id(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VideoSelectorProgramId,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.program_id != 0 {
+    if let Some(var_1) = &input.program_id {
         object.key("programId").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.program_id).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())

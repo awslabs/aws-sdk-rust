@@ -6,7 +6,7 @@ pub use crate::operation::get_caller_identity::_get_caller_identity_input::GetCa
 /// Fluent builder constructing a request to `GetCallerIdentity`.
 ///
 /// <p>Returns details about the IAM user or role whose credentials are used to call the operation.</p> <note>
-/// <p>No permissions are required to perform this operation. If an administrator adds a policy to your IAM user or role that explicitly denies access to the <code>sts:GetCallerIdentity</code> action, you can still perform this operation. Permissions are not required because the same information is returned when an IAM user or role is denied access. To view an example response, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_access-denied-delete-mfa">I Am Not Authorized to Perform: iam:DeleteVirtualMFADevice</a> in the <i>IAM User Guide</i>.</p>
+/// <p>No permissions are required to perform this operation. If an administrator attaches a policy to your identity that explicitly denies access to the <code>sts:GetCallerIdentity</code> action, you can still perform this operation. Permissions are not required because the same information is returned when access is denied. To view an example response, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_access-denied-delete-mfa">I Am Not Authorized to Perform: iam:DeleteVirtualMFADevice</a> in the <i>IAM User Guide</i>.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetCallerIdentityFluentBuilder {

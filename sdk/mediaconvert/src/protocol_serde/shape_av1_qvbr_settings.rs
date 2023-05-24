@@ -3,16 +3,16 @@ pub fn ser_av1_qvbr_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Av1QvbrSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.qvbr_quality_level != 0 {
+    if let Some(var_1) = &input.qvbr_quality_level {
         object.key("qvbrQualityLevel").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.qvbr_quality_level).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.qvbr_quality_level_fine_tune != 0.0 {
+    if let Some(var_2) = &input.qvbr_quality_level_fine_tune {
         object.key("qvbrQualityLevelFineTune").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.qvbr_quality_level_fine_tune).into()),
+            aws_smithy_types::Number::Float((*var_2).into()),
         );
     }
     Ok(())

@@ -11,32 +11,32 @@ pub fn ser_vc3_settings(
             .key("framerateConversionAlgorithm")
             .string(var_2.as_str());
     }
-    if input.framerate_denominator != 0 {
+    if let Some(var_3) = &input.framerate_denominator {
         object.key("framerateDenominator").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.framerate_denominator).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if input.framerate_numerator != 0 {
+    if let Some(var_4) = &input.framerate_numerator {
         object.key("framerateNumerator").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.framerate_numerator).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_3) = &input.interlace_mode {
-        object.key("interlaceMode").string(var_3.as_str());
+    if let Some(var_5) = &input.interlace_mode {
+        object.key("interlaceMode").string(var_5.as_str());
     }
-    if let Some(var_4) = &input.scan_type_conversion_mode {
-        object.key("scanTypeConversionMode").string(var_4.as_str());
+    if let Some(var_6) = &input.scan_type_conversion_mode {
+        object.key("scanTypeConversionMode").string(var_6.as_str());
     }
-    if let Some(var_5) = &input.slow_pal {
-        object.key("slowPal").string(var_5.as_str());
+    if let Some(var_7) = &input.slow_pal {
+        object.key("slowPal").string(var_7.as_str());
     }
-    if let Some(var_6) = &input.telecine {
-        object.key("telecine").string(var_6.as_str());
+    if let Some(var_8) = &input.telecine {
+        object.key("telecine").string(var_8.as_str());
     }
-    if let Some(var_7) = &input.vc3_class {
-        object.key("vc3Class").string(var_7.as_str());
+    if let Some(var_9) = &input.vc3_class {
+        object.key("vc3Class").string(var_9.as_str());
     }
     Ok(())
 }

@@ -10,7 +10,7 @@ pub struct ImportSshPublicKeyInput {
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
     #[doc(hidden)]
     pub ssh_public_key_body: std::option::Option<std::string::String>,
-    /// <p>The name of the user account that is assigned to one or more servers.</p>
+    /// <p>The name of the Transfer Family user that is assigned to one or more servers.</p>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
 }
@@ -24,7 +24,7 @@ impl ImportSshPublicKeyInput {
     pub fn ssh_public_key_body(&self) -> std::option::Option<&str> {
         self.ssh_public_key_body.as_deref()
     }
-    /// <p>The name of the user account that is assigned to one or more servers.</p>
+    /// <p>The name of the Transfer Family user that is assigned to one or more servers.</p>
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
@@ -71,12 +71,12 @@ impl ImportSshPublicKeyInputBuilder {
         self.ssh_public_key_body = input;
         self
     }
-    /// <p>The name of the user account that is assigned to one or more servers.</p>
+    /// <p>The name of the Transfer Family user that is assigned to one or more servers.</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.user_name = Some(input.into());
         self
     }
-    /// <p>The name of the user account that is assigned to one or more servers.</p>
+    /// <p>The name of the Transfer Family user that is assigned to one or more servers.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.user_name = input;
         self

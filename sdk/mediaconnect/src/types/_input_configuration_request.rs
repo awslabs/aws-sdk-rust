@@ -6,14 +6,14 @@
 pub struct InputConfigurationRequest {
     /// The port that you want the flow to listen on for an incoming media stream.
     #[doc(hidden)]
-    pub input_port: i32,
+    pub input_port: std::option::Option<i32>,
     /// The VPC interface that you want to use for the incoming media stream.
     #[doc(hidden)]
     pub interface: std::option::Option<crate::types::InterfaceRequest>,
 }
 impl InputConfigurationRequest {
     /// The port that you want the flow to listen on for an incoming media stream.
-    pub fn input_port(&self) -> i32 {
+    pub fn input_port(&self) -> std::option::Option<i32> {
         self.input_port
     }
     /// The VPC interface that you want to use for the incoming media stream.
@@ -62,7 +62,7 @@ impl InputConfigurationRequestBuilder {
     /// Consumes the builder and constructs a [`InputConfigurationRequest`](crate::types::InputConfigurationRequest).
     pub fn build(self) -> crate::types::InputConfigurationRequest {
         crate::types::InputConfigurationRequest {
-            input_port: self.input_port.unwrap_or_default(),
+            input_port: self.input_port,
             interface: self.interface,
         }
     }

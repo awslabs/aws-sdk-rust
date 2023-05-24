@@ -16,7 +16,8 @@ pub struct ScheduleLambdaFunctionDecisionAttributes {
     /// <p>The optional input data to be supplied to the Lambda function.</p>
     #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
-    /// <p>The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started. This can be any integer from 1-300 (1s-5m). If no value is supplied, than a default value of 300s is assumed.</p>
+    /// <p>The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started. This can be any integer from 1-900 (1s-15m).</p>
+    /// <p>If no value is supplied, then a default value of 900s is assumed.</p>
     #[doc(hidden)]
     pub start_to_close_timeout: std::option::Option<std::string::String>,
 }
@@ -37,7 +38,8 @@ impl ScheduleLambdaFunctionDecisionAttributes {
     pub fn input(&self) -> std::option::Option<&str> {
         self.input.as_deref()
     }
-    /// <p>The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started. This can be any integer from 1-300 (1s-5m). If no value is supplied, than a default value of 300s is assumed.</p>
+    /// <p>The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started. This can be any integer from 1-900 (1s-15m).</p>
+    /// <p>If no value is supplied, then a default value of 900s is assumed.</p>
     pub fn start_to_close_timeout(&self) -> std::option::Option<&str> {
         self.start_to_close_timeout.as_deref()
     }
@@ -100,12 +102,14 @@ impl ScheduleLambdaFunctionDecisionAttributesBuilder {
         self.input = input;
         self
     }
-    /// <p>The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started. This can be any integer from 1-300 (1s-5m). If no value is supplied, than a default value of 300s is assumed.</p>
+    /// <p>The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started. This can be any integer from 1-900 (1s-15m).</p>
+    /// <p>If no value is supplied, then a default value of 900s is assumed.</p>
     pub fn start_to_close_timeout(mut self, input: impl Into<std::string::String>) -> Self {
         self.start_to_close_timeout = Some(input.into());
         self
     }
-    /// <p>The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started. This can be any integer from 1-300 (1s-5m). If no value is supplied, than a default value of 300s is assumed.</p>
+    /// <p>The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started. This can be any integer from 1-900 (1s-15m).</p>
+    /// <p>If no value is supplied, then a default value of 900s is assumed.</p>
     pub fn set_start_to_close_timeout(
         mut self,
         input: std::option::Option<std::string::String>,

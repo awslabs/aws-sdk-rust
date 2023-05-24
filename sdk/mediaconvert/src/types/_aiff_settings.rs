@@ -6,25 +6,25 @@
 pub struct AiffSettings {
     /// Specify Bit depth (BitDepth), in bits per sample, to choose the encoding quality for this audio track.
     #[doc(hidden)]
-    pub bit_depth: i32,
+    pub bit_depth: std::option::Option<i32>,
     /// Specify the number of channels in this output audio track. Valid values are 1 and even numbers up to 64. For example, 1, 2, 4, 6, and so on, up to 64.
     #[doc(hidden)]
-    pub channels: i32,
+    pub channels: std::option::Option<i32>,
     /// Sample rate in hz.
     #[doc(hidden)]
-    pub sample_rate: i32,
+    pub sample_rate: std::option::Option<i32>,
 }
 impl AiffSettings {
     /// Specify Bit depth (BitDepth), in bits per sample, to choose the encoding quality for this audio track.
-    pub fn bit_depth(&self) -> i32 {
+    pub fn bit_depth(&self) -> std::option::Option<i32> {
         self.bit_depth
     }
     /// Specify the number of channels in this output audio track. Valid values are 1 and even numbers up to 64. For example, 1, 2, 4, 6, and so on, up to 64.
-    pub fn channels(&self) -> i32 {
+    pub fn channels(&self) -> std::option::Option<i32> {
         self.channels
     }
     /// Sample rate in hz.
-    pub fn sample_rate(&self) -> i32 {
+    pub fn sample_rate(&self) -> std::option::Option<i32> {
         self.sample_rate
     }
 }
@@ -77,9 +77,9 @@ impl AiffSettingsBuilder {
     /// Consumes the builder and constructs a [`AiffSettings`](crate::types::AiffSettings).
     pub fn build(self) -> crate::types::AiffSettings {
         crate::types::AiffSettings {
-            bit_depth: self.bit_depth.unwrap_or_default(),
-            channels: self.channels.unwrap_or_default(),
-            sample_rate: self.sample_rate.unwrap_or_default(),
+            bit_depth: self.bit_depth,
+            channels: self.channels,
+            sample_rate: self.sample_rate,
         }
     }
 }

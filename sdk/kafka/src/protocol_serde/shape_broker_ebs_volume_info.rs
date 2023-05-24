@@ -15,10 +15,10 @@ pub fn ser_broker_ebs_volume_info(
         )?;
         object_3.finish();
     }
-    if input.volume_size_gb != 0 {
+    if let Some(var_4) = &input.volume_size_gb {
         object.key("volumeSizeGB").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.volume_size_gb).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     Ok(())

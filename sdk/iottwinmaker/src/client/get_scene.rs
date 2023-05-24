@@ -16,6 +16,7 @@ impl super::Client {
     ///   - [`capabilities(Option<Vec<String>>)`](crate::operation::get_scene::GetSceneOutput::capabilities): <p>A list of capabilities that the scene uses to render.</p>
     ///   - [`scene_metadata(Option<HashMap<String, String>>)`](crate::operation::get_scene::GetSceneOutput::scene_metadata): <p>The response metadata.</p>
     ///   - [`generated_scene_metadata(Option<HashMap<String, String>>)`](crate::operation::get_scene::GetSceneOutput::generated_scene_metadata): <p>The generated scene metadata.</p>
+    ///   - [`error(Option<SceneError>)`](crate::operation::get_scene::GetSceneOutput::error): <p>The SceneResponse error.</p>
     /// - On failure, responds with [`SdkError<GetSceneError>`](crate::operation::get_scene::GetSceneError)
     pub fn get_scene(&self) -> crate::operation::get_scene::builders::GetSceneFluentBuilder {
         crate::operation::get_scene::builders::GetSceneFluentBuilder::new(self.handle.clone())

@@ -15,7 +15,7 @@ pub struct Schedule {
     pub frequency: std::option::Option<crate::types::Frequency>,
     /// <p>Specifies whether the start and end times for the campaign schedule use each recipient's local time. To base the schedule on each recipient's local time, set this value to true.</p>
     #[doc(hidden)]
-    pub is_local_time: bool,
+    pub is_local_time: std::option::Option<bool>,
     /// <p>The default quiet time for the campaign. Quiet time is a specific time range when a campaign doesn't send messages to endpoints, if all the following conditions are met:</p>
     /// <ul>
     /// <li><p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li>
@@ -46,7 +46,7 @@ impl Schedule {
         self.frequency.as_ref()
     }
     /// <p>Specifies whether the start and end times for the campaign schedule use each recipient's local time. To base the schedule on each recipient's local time, set this value to true.</p>
-    pub fn is_local_time(&self) -> bool {
+    pub fn is_local_time(&self) -> std::option::Option<bool> {
         self.is_local_time
     }
     /// <p>The default quiet time for the campaign. Quiet time is a specific time range when a campaign doesn't send messages to endpoints, if all the following conditions are met:</p>
@@ -179,7 +179,7 @@ impl ScheduleBuilder {
             end_time: self.end_time,
             event_filter: self.event_filter,
             frequency: self.frequency,
-            is_local_time: self.is_local_time.unwrap_or_default(),
+            is_local_time: self.is_local_time,
             quiet_time: self.quiet_time,
             start_time: self.start_time,
             timezone: self.timezone,

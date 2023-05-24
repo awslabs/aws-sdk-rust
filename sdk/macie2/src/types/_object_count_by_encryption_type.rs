@@ -6,39 +6,39 @@
 pub struct ObjectCountByEncryptionType {
     /// <p>The total number of objects that are encrypted with a customer-provided key. The objects use customer-provided server-side encryption (SSE-C).</p>
     #[doc(hidden)]
-    pub customer_managed: i64,
+    pub customer_managed: std::option::Option<i64>,
     /// <p>The total number of objects that are encrypted with an KMS key, either an Amazon Web Services managed key or a customer managed key. The objects use KMS encryption (SSE-KMS).</p>
     #[doc(hidden)]
-    pub kms_managed: i64,
+    pub kms_managed: std::option::Option<i64>,
     /// <p>The total number of objects that are encrypted with an Amazon S3 managed key. The objects use Amazon S3 managed encryption (SSE-S3).</p>
     #[doc(hidden)]
-    pub s3_managed: i64,
+    pub s3_managed: std::option::Option<i64>,
     /// <p>The total number of objects that use client-side encryption or aren't encrypted.</p>
     #[doc(hidden)]
-    pub unencrypted: i64,
+    pub unencrypted: std::option::Option<i64>,
     /// <p>The total number of objects that Amazon Macie doesn't have current encryption metadata for. Macie can't provide current data about the encryption settings for these objects.</p>
     #[doc(hidden)]
-    pub unknown: i64,
+    pub unknown: std::option::Option<i64>,
 }
 impl ObjectCountByEncryptionType {
     /// <p>The total number of objects that are encrypted with a customer-provided key. The objects use customer-provided server-side encryption (SSE-C).</p>
-    pub fn customer_managed(&self) -> i64 {
+    pub fn customer_managed(&self) -> std::option::Option<i64> {
         self.customer_managed
     }
     /// <p>The total number of objects that are encrypted with an KMS key, either an Amazon Web Services managed key or a customer managed key. The objects use KMS encryption (SSE-KMS).</p>
-    pub fn kms_managed(&self) -> i64 {
+    pub fn kms_managed(&self) -> std::option::Option<i64> {
         self.kms_managed
     }
     /// <p>The total number of objects that are encrypted with an Amazon S3 managed key. The objects use Amazon S3 managed encryption (SSE-S3).</p>
-    pub fn s3_managed(&self) -> i64 {
+    pub fn s3_managed(&self) -> std::option::Option<i64> {
         self.s3_managed
     }
     /// <p>The total number of objects that use client-side encryption or aren't encrypted.</p>
-    pub fn unencrypted(&self) -> i64 {
+    pub fn unencrypted(&self) -> std::option::Option<i64> {
         self.unencrypted
     }
     /// <p>The total number of objects that Amazon Macie doesn't have current encryption metadata for. Macie can't provide current data about the encryption settings for these objects.</p>
-    pub fn unknown(&self) -> i64 {
+    pub fn unknown(&self) -> std::option::Option<i64> {
         self.unknown
     }
 }
@@ -113,11 +113,11 @@ impl ObjectCountByEncryptionTypeBuilder {
     /// Consumes the builder and constructs a [`ObjectCountByEncryptionType`](crate::types::ObjectCountByEncryptionType).
     pub fn build(self) -> crate::types::ObjectCountByEncryptionType {
         crate::types::ObjectCountByEncryptionType {
-            customer_managed: self.customer_managed.unwrap_or_default(),
-            kms_managed: self.kms_managed.unwrap_or_default(),
-            s3_managed: self.s3_managed.unwrap_or_default(),
-            unencrypted: self.unencrypted.unwrap_or_default(),
-            unknown: self.unknown.unwrap_or_default(),
+            customer_managed: self.customer_managed,
+            kms_managed: self.kms_managed,
+            s3_managed: self.s3_managed,
+            unencrypted: self.unencrypted,
+            unknown: self.unknown,
         }
     }
 }

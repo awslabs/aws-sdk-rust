@@ -9,7 +9,7 @@ pub struct DefaultButtonConfiguration {
     pub background_color: std::option::Option<std::string::String>,
     /// <p>The border radius of the button.</p>
     #[doc(hidden)]
-    pub border_radius: i32,
+    pub border_radius: std::option::Option<i32>,
     /// <p>Action triggered by the button.</p>
     #[doc(hidden)]
     pub button_action: std::option::Option<crate::types::ButtonAction>,
@@ -29,7 +29,7 @@ impl DefaultButtonConfiguration {
         self.background_color.as_deref()
     }
     /// <p>The border radius of the button.</p>
-    pub fn border_radius(&self) -> i32 {
+    pub fn border_radius(&self) -> std::option::Option<i32> {
         self.border_radius
     }
     /// <p>Action triggered by the button.</p>
@@ -135,7 +135,7 @@ impl DefaultButtonConfigurationBuilder {
     pub fn build(self) -> crate::types::DefaultButtonConfiguration {
         crate::types::DefaultButtonConfiguration {
             background_color: self.background_color,
-            border_radius: self.border_radius.unwrap_or_default(),
+            border_radius: self.border_radius,
             button_action: self.button_action,
             link: self.link,
             text: self.text,

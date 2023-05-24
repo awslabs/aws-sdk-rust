@@ -6,7 +6,7 @@ pub use crate::operation::modify_instance_fleet::_modify_instance_fleet_input::M
 /// Fluent builder constructing a request to `ModifyInstanceFleet`.
 ///
 /// <p>Modifies the target On-Demand and target Spot capacities for the instance fleet with the specified InstanceFleetID within the cluster specified using ClusterID. The call either succeeds or fails atomically.</p> <note>
-/// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
+/// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyInstanceFleetFluentBuilder {

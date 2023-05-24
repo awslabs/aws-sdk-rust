@@ -9,7 +9,7 @@ pub struct DescribeDomainAutoTunesInput {
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -20,7 +20,7 @@ impl DescribeDomainAutoTunesInput {
         self.domain_name.as_deref()
     }
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
@@ -86,7 +86,7 @@ impl DescribeDomainAutoTunesInputBuilder {
         Ok(
             crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesInput {
                 domain_name: self.domain_name,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
                 next_token: self.next_token,
             },
         )

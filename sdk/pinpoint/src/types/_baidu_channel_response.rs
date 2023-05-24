@@ -15,16 +15,16 @@ pub struct BaiduChannelResponse {
     pub credential: std::option::Option<std::string::String>,
     /// <p>Specifies whether the Baidu channel is enabled for the application.</p>
     #[doc(hidden)]
-    pub enabled: bool,
+    pub enabled: std::option::Option<bool>,
     /// <p>(Not used) This property is retained only for backward compatibility.</p>
     #[doc(hidden)]
-    pub has_credential: bool,
+    pub has_credential: std::option::Option<bool>,
     /// <p>(Deprecated) An identifier for the Baidu channel. This property is retained only for backward compatibility.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the Baidu channel is archived.</p>
     #[doc(hidden)]
-    pub is_archived: bool,
+    pub is_archived: std::option::Option<bool>,
     /// <p>The user who last modified the Baidu channel.</p>
     #[doc(hidden)]
     pub last_modified_by: std::option::Option<std::string::String>,
@@ -36,7 +36,7 @@ pub struct BaiduChannelResponse {
     pub platform: std::option::Option<std::string::String>,
     /// <p>The current version of the Baidu channel.</p>
     #[doc(hidden)]
-    pub version: i32,
+    pub version: std::option::Option<i32>,
 }
 impl BaiduChannelResponse {
     /// <p>The unique identifier for the application that the Baidu channel applies to.</p>
@@ -52,11 +52,11 @@ impl BaiduChannelResponse {
         self.credential.as_deref()
     }
     /// <p>Specifies whether the Baidu channel is enabled for the application.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
     /// <p>(Not used) This property is retained only for backward compatibility.</p>
-    pub fn has_credential(&self) -> bool {
+    pub fn has_credential(&self) -> std::option::Option<bool> {
         self.has_credential
     }
     /// <p>(Deprecated) An identifier for the Baidu channel. This property is retained only for backward compatibility.</p>
@@ -64,7 +64,7 @@ impl BaiduChannelResponse {
         self.id.as_deref()
     }
     /// <p>Specifies whether the Baidu channel is archived.</p>
-    pub fn is_archived(&self) -> bool {
+    pub fn is_archived(&self) -> std::option::Option<bool> {
         self.is_archived
     }
     /// <p>The user who last modified the Baidu channel.</p>
@@ -80,7 +80,7 @@ impl BaiduChannelResponse {
         self.platform.as_deref()
     }
     /// <p>The current version of the Baidu channel.</p>
-    pub fn version(&self) -> i32 {
+    pub fn version(&self) -> std::option::Option<i32> {
         self.version
     }
 }
@@ -227,14 +227,14 @@ impl BaiduChannelResponseBuilder {
             application_id: self.application_id,
             creation_date: self.creation_date,
             credential: self.credential,
-            enabled: self.enabled.unwrap_or_default(),
-            has_credential: self.has_credential.unwrap_or_default(),
+            enabled: self.enabled,
+            has_credential: self.has_credential,
             id: self.id,
-            is_archived: self.is_archived.unwrap_or_default(),
+            is_archived: self.is_archived,
             last_modified_by: self.last_modified_by,
             last_modified_date: self.last_modified_date,
             platform: self.platform,
-            version: self.version.unwrap_or_default(),
+            version: self.version,
         }
     }
 }

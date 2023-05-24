@@ -32,5 +32,11 @@ pub fn ser_update_query_suggestions_config_input(
             aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
+    if let Some(var_7) = &input.attribute_suggestions_config {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("AttributeSuggestionsConfig").start_object();
+        crate::protocol_serde::shape_attribute_suggestions_update_config::ser_attribute_suggestions_update_config(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }

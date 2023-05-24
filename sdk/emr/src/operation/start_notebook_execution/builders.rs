@@ -68,22 +68,22 @@ impl StartNotebookExecutionFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The unique identifier of the EMR Notebook to use for notebook execution.</p>
+    /// <p>The unique identifier of the Amazon EMR Notebook to use for notebook execution.</p>
     pub fn editor_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.editor_id(input.into());
         self
     }
-    /// <p>The unique identifier of the EMR Notebook to use for notebook execution.</p>
+    /// <p>The unique identifier of the Amazon EMR Notebook to use for notebook execution.</p>
     pub fn set_editor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_editor_id(input);
         self
     }
-    /// <p>The path and file name of the notebook file for this execution, relative to the path specified for the EMR Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you create an EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of this request), and you specify a <code>RelativePath</code> of <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file for the notebook execution is <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>.</p>
+    /// <p>The path and file name of the notebook file for this execution, relative to the path specified for the Amazon EMR Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you create an Amazon EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of this request), and you specify a <code>RelativePath</code> of <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file for the notebook execution is <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>.</p>
     pub fn relative_path(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.relative_path(input.into());
         self
     }
-    /// <p>The path and file name of the notebook file for this execution, relative to the path specified for the EMR Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you create an EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of this request), and you specify a <code>RelativePath</code> of <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file for the notebook execution is <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>.</p>
+    /// <p>The path and file name of the notebook file for this execution, relative to the path specified for the Amazon EMR Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you create an Amazon EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of this request), and you specify a <code>RelativePath</code> of <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file for the notebook execution is <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>.</p>
     pub fn set_relative_path(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_relative_path(input);
         self
@@ -101,12 +101,12 @@ impl StartNotebookExecutionFluentBuilder {
         self.inner = self.inner.set_notebook_execution_name(input);
         self
     }
-    /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for execution.</p>
+    /// <p>Input parameters in JSON format passed to the Amazon EMR Notebook at runtime for execution.</p>
     pub fn notebook_params(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.notebook_params(input.into());
         self
     }
-    /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for execution.</p>
+    /// <p>Input parameters in JSON format passed to the Amazon EMR Notebook at runtime for execution.</p>
     pub fn set_notebook_params(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_notebook_params(input);
         self
@@ -124,17 +124,17 @@ impl StartNotebookExecutionFluentBuilder {
         self.inner = self.inner.set_execution_engine(input);
         self
     }
-    /// <p>The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR role) for the notebook execution.</p>
+    /// <p>The name or ARN of the IAM role that is used as the service role for Amazon EMR (the Amazon EMR role) for the notebook execution.</p>
     pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.service_role(input.into());
         self
     }
-    /// <p>The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR role) for the notebook execution.</p>
+    /// <p>The name or ARN of the IAM role that is used as the service role for Amazon EMR (the Amazon EMR role) for the notebook execution.</p>
     pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_service_role(input);
         self
     }
-    /// <p>The unique identifier of the Amazon EC2 security group to associate with the EMR Notebook for this notebook execution.</p>
+    /// <p>The unique identifier of the Amazon EC2 security group to associate with the Amazon EMR Notebook for this notebook execution.</p>
     pub fn notebook_instance_security_group_id(
         mut self,
         input: impl Into<std::string::String>,
@@ -142,7 +142,7 @@ impl StartNotebookExecutionFluentBuilder {
         self.inner = self.inner.notebook_instance_security_group_id(input.into());
         self
     }
-    /// <p>The unique identifier of the Amazon EC2 security group to associate with the EMR Notebook for this notebook execution.</p>
+    /// <p>The unique identifier of the Amazon EC2 security group to associate with the Amazon EMR Notebook for this notebook execution.</p>
     pub fn set_notebook_instance_security_group_id(
         mut self,
         input: std::option::Option<std::string::String>,
@@ -165,6 +165,74 @@ impl StartNotebookExecutionFluentBuilder {
         input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// <p>The Amazon S3 location for the notebook execution input.</p>
+    pub fn notebook_s3_location(
+        mut self,
+        input: crate::types::NotebookS3LocationFromInput,
+    ) -> Self {
+        self.inner = self.inner.notebook_s3_location(input);
+        self
+    }
+    /// <p>The Amazon S3 location for the notebook execution input.</p>
+    pub fn set_notebook_s3_location(
+        mut self,
+        input: std::option::Option<crate::types::NotebookS3LocationFromInput>,
+    ) -> Self {
+        self.inner = self.inner.set_notebook_s3_location(input);
+        self
+    }
+    /// <p>The Amazon S3 location for the notebook execution output.</p>
+    pub fn output_notebook_s3_location(
+        mut self,
+        input: crate::types::OutputNotebookS3LocationFromInput,
+    ) -> Self {
+        self.inner = self.inner.output_notebook_s3_location(input);
+        self
+    }
+    /// <p>The Amazon S3 location for the notebook execution output.</p>
+    pub fn set_output_notebook_s3_location(
+        mut self,
+        input: std::option::Option<crate::types::OutputNotebookS3LocationFromInput>,
+    ) -> Self {
+        self.inner = self.inner.set_output_notebook_s3_location(input);
+        self
+    }
+    /// <p>The output format for the notebook execution.</p>
+    pub fn output_notebook_format(mut self, input: crate::types::OutputNotebookFormat) -> Self {
+        self.inner = self.inner.output_notebook_format(input);
+        self
+    }
+    /// <p>The output format for the notebook execution.</p>
+    pub fn set_output_notebook_format(
+        mut self,
+        input: std::option::Option<crate::types::OutputNotebookFormat>,
+    ) -> Self {
+        self.inner = self.inner.set_output_notebook_format(input);
+        self
+    }
+    /// Adds a key-value pair to `EnvironmentVariables`.
+    ///
+    /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
+    ///
+    /// <p>The environment variables associated with the notebook execution.</p>
+    pub fn environment_variables(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.environment_variables(k.into(), v.into());
+        self
+    }
+    /// <p>The environment variables associated with the notebook execution.</p>
+    pub fn set_environment_variables(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.inner = self.inner.set_environment_variables(input);
         self
     }
 }

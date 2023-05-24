@@ -18,5 +18,11 @@ pub fn ser_desired_weight_and_capacity(
             aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
+    if let Some(var_4) = &input.serverless_update_config {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("ServerlessUpdateConfig").start_object();
+        crate::protocol_serde::shape_production_variant_serverless_update_config::ser_production_variant_serverless_update_config(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }

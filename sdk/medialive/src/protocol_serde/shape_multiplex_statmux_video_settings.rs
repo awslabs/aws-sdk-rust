@@ -3,22 +3,22 @@ pub fn ser_multiplex_statmux_video_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MultiplexStatmuxVideoSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.maximum_bitrate != 0 {
+    if let Some(var_1) = &input.maximum_bitrate {
         object.key("maximumBitrate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.maximum_bitrate).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.minimum_bitrate != 0 {
+    if let Some(var_2) = &input.minimum_bitrate {
         object.key("minimumBitrate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.minimum_bitrate).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.priority != 0 {
+    if let Some(var_3) = &input.priority {
         object.key("priority").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.priority).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())

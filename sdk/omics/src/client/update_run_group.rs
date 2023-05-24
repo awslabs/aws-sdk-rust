@@ -8,6 +8,7 @@ impl super::Client {
     ///   - [`max_cpus(i32)`](crate::operation::update_run_group::builders::UpdateRunGroupFluentBuilder::max_cpus) / [`set_max_cpus(Option<i32>)`](crate::operation::update_run_group::builders::UpdateRunGroupFluentBuilder::set_max_cpus): <p>The maximum number of CPUs to use.</p>
     ///   - [`max_runs(i32)`](crate::operation::update_run_group::builders::UpdateRunGroupFluentBuilder::max_runs) / [`set_max_runs(Option<i32>)`](crate::operation::update_run_group::builders::UpdateRunGroupFluentBuilder::set_max_runs): <p>The maximum number of concurrent runs for the group.</p>
     ///   - [`max_duration(i32)`](crate::operation::update_run_group::builders::UpdateRunGroupFluentBuilder::max_duration) / [`set_max_duration(Option<i32>)`](crate::operation::update_run_group::builders::UpdateRunGroupFluentBuilder::set_max_duration): <p>A maximum run time for the group in minutes.</p>
+    ///   - [`max_gpus(i32)`](crate::operation::update_run_group::builders::UpdateRunGroupFluentBuilder::max_gpus) / [`set_max_gpus(Option<i32>)`](crate::operation::update_run_group::builders::UpdateRunGroupFluentBuilder::set_max_gpus): <p> The maximum GPUs that can be used by a run group. </p>
     /// - On success, responds with [`UpdateRunGroupOutput`](crate::operation::update_run_group::UpdateRunGroupOutput)
     /// - On failure, responds with [`SdkError<UpdateRunGroupError>`](crate::operation::update_run_group::UpdateRunGroupError)
     pub fn update_run_group(

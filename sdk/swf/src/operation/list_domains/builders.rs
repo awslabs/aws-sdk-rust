@@ -83,13 +83,13 @@ impl ListDomainsFluentBuilder {
             self.inner,
         )
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
     pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_page_token(input.into());
         self
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
     pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_next_page_token(input);

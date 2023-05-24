@@ -9,13 +9,13 @@ pub struct Cell {
     pub cell_reference: std::option::Option<std::string::String>,
     /// <p>The column number of the column that contains the sensitive data. For a Microsoft Excel workbook, this value correlates to the alphabetical character(s) for a column identifier, for example: 1 for column A, 2 for column B, and so on.</p>
     #[doc(hidden)]
-    pub column: i64,
+    pub column: std::option::Option<i64>,
     /// <p>The name of the column that contains the sensitive data, if available.</p>
     #[doc(hidden)]
     pub column_name: std::option::Option<std::string::String>,
     /// <p>The row number of the row that contains the sensitive data.</p>
     #[doc(hidden)]
-    pub row: i64,
+    pub row: std::option::Option<i64>,
 }
 impl Cell {
     /// <p>The location of the cell, as an absolute cell reference, that contains the sensitive data, for example Sheet2!C5 for cell C5 on Sheet2 in a Microsoft Excel workbook. This value is null for CSV and TSV files.</p>
@@ -23,7 +23,7 @@ impl Cell {
         self.cell_reference.as_deref()
     }
     /// <p>The column number of the column that contains the sensitive data. For a Microsoft Excel workbook, this value correlates to the alphabetical character(s) for a column identifier, for example: 1 for column A, 2 for column B, and so on.</p>
-    pub fn column(&self) -> i64 {
+    pub fn column(&self) -> std::option::Option<i64> {
         self.column
     }
     /// <p>The name of the column that contains the sensitive data, if available.</p>
@@ -31,7 +31,7 @@ impl Cell {
         self.column_name.as_deref()
     }
     /// <p>The row number of the row that contains the sensitive data.</p>
-    pub fn row(&self) -> i64 {
+    pub fn row(&self) -> std::option::Option<i64> {
         self.row
     }
 }
@@ -96,9 +96,9 @@ impl CellBuilder {
     pub fn build(self) -> crate::types::Cell {
         crate::types::Cell {
             cell_reference: self.cell_reference,
-            column: self.column.unwrap_or_default(),
+            column: self.column,
             column_name: self.column_name,
-            row: self.row.unwrap_or_default(),
+            row: self.row,
         }
     }
 }

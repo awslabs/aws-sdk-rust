@@ -3,10 +3,10 @@ pub fn ser_noise_reducer_filter_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NoiseReducerFilterSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.strength != 0 {
+    if let Some(var_1) = &input.strength {
         object.key("strength").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.strength).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())

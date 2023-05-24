@@ -25,6 +25,10 @@ pub struct TrustAnchorDetail {
     /// <p>The ISO-8601 timestamp when the trust anchor was last updated. </p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>A list of notification settings to be associated to the trust anchor.</p>
+    #[doc(hidden)]
+    pub notification_settings:
+        std::option::Option<std::vec::Vec<crate::types::NotificationSettingDetail>>,
 }
 impl TrustAnchorDetail {
     /// <p>The unique identifier of the trust anchor.</p>
@@ -55,6 +59,12 @@ impl TrustAnchorDetail {
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
+    /// <p>A list of notification settings to be associated to the trust anchor.</p>
+    pub fn notification_settings(
+        &self,
+    ) -> std::option::Option<&[crate::types::NotificationSettingDetail]> {
+        self.notification_settings.as_deref()
+    }
 }
 impl TrustAnchorDetail {
     /// Creates a new builder-style object to manufacture [`TrustAnchorDetail`](crate::types::TrustAnchorDetail).
@@ -74,6 +84,8 @@ pub struct TrustAnchorDetailBuilder {
     pub(crate) enabled: std::option::Option<bool>,
     pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) notification_settings:
+        std::option::Option<std::vec::Vec<crate::types::NotificationSettingDetail>>,
 }
 impl TrustAnchorDetailBuilder {
     /// <p>The unique identifier of the trust anchor.</p>
@@ -152,6 +164,25 @@ impl TrustAnchorDetailBuilder {
         self.updated_at = input;
         self
     }
+    /// Appends an item to `notification_settings`.
+    ///
+    /// To override the contents of this collection use [`set_notification_settings`](Self::set_notification_settings).
+    ///
+    /// <p>A list of notification settings to be associated to the trust anchor.</p>
+    pub fn notification_settings(mut self, input: crate::types::NotificationSettingDetail) -> Self {
+        let mut v = self.notification_settings.unwrap_or_default();
+        v.push(input);
+        self.notification_settings = Some(v);
+        self
+    }
+    /// <p>A list of notification settings to be associated to the trust anchor.</p>
+    pub fn set_notification_settings(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::NotificationSettingDetail>>,
+    ) -> Self {
+        self.notification_settings = input;
+        self
+    }
     /// Consumes the builder and constructs a [`TrustAnchorDetail`](crate::types::TrustAnchorDetail).
     pub fn build(self) -> crate::types::TrustAnchorDetail {
         crate::types::TrustAnchorDetail {
@@ -162,6 +193,7 @@ impl TrustAnchorDetailBuilder {
             enabled: self.enabled,
             created_at: self.created_at,
             updated_at: self.updated_at,
+            notification_settings: self.notification_settings,
         }
     }
 }

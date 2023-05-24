@@ -9,7 +9,7 @@ pub struct DestinationConfiguration {
     pub destination_ip: std::option::Option<std::string::String>,
     /// The port to use when the content of the media stream is distributed to the output.
     #[doc(hidden)]
-    pub destination_port: i32,
+    pub destination_port: std::option::Option<i32>,
     /// The VPC interface that is used for the media stream associated with the output.
     #[doc(hidden)]
     pub interface: std::option::Option<crate::types::Interface>,
@@ -23,7 +23,7 @@ impl DestinationConfiguration {
         self.destination_ip.as_deref()
     }
     /// The port to use when the content of the media stream is distributed to the output.
-    pub fn destination_port(&self) -> i32 {
+    pub fn destination_port(&self) -> std::option::Option<i32> {
         self.destination_port
     }
     /// The VPC interface that is used for the media stream associated with the output.
@@ -96,7 +96,7 @@ impl DestinationConfigurationBuilder {
     pub fn build(self) -> crate::types::DestinationConfiguration {
         crate::types::DestinationConfiguration {
             destination_ip: self.destination_ip,
-            destination_port: self.destination_port.unwrap_or_default(),
+            destination_port: self.destination_port,
             interface: self.interface,
             outbound_ip: self.outbound_ip,
         }

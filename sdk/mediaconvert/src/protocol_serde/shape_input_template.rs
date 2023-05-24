@@ -78,62 +78,62 @@ pub fn ser_input_template(
     if let Some(var_24) = &input.filter_enable {
         object.key("filterEnable").string(var_24.as_str());
     }
-    if input.filter_strength != 0 {
+    if let Some(var_25) = &input.filter_strength {
         object.key("filterStrength").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.filter_strength).into()),
+            aws_smithy_types::Number::NegInt((*var_25).into()),
         );
     }
-    if let Some(var_25) = &input.image_inserter {
+    if let Some(var_26) = &input.image_inserter {
         #[allow(unused_mut)]
-        let mut object_26 = object.key("imageInserter").start_object();
-        crate::protocol_serde::shape_image_inserter::ser_image_inserter(&mut object_26, var_25)?;
-        object_26.finish();
+        let mut object_27 = object.key("imageInserter").start_object();
+        crate::protocol_serde::shape_image_inserter::ser_image_inserter(&mut object_27, var_26)?;
+        object_27.finish();
     }
-    if let Some(var_27) = &input.input_clippings {
-        let mut array_28 = object.key("inputClippings").start_array();
-        for item_29 in var_27 {
+    if let Some(var_28) = &input.input_clippings {
+        let mut array_29 = object.key("inputClippings").start_array();
+        for item_30 in var_28 {
             {
                 #[allow(unused_mut)]
-                let mut object_30 = array_28.value().start_object();
+                let mut object_31 = array_29.value().start_object();
                 crate::protocol_serde::shape_input_clipping::ser_input_clipping(
-                    &mut object_30,
-                    item_29,
+                    &mut object_31,
+                    item_30,
                 )?;
-                object_30.finish();
+                object_31.finish();
             }
         }
-        array_28.finish();
+        array_29.finish();
     }
-    if let Some(var_31) = &input.input_scan_type {
-        object.key("inputScanType").string(var_31.as_str());
+    if let Some(var_32) = &input.input_scan_type {
+        object.key("inputScanType").string(var_32.as_str());
     }
-    if let Some(var_32) = &input.position {
+    if let Some(var_33) = &input.position {
         #[allow(unused_mut)]
-        let mut object_33 = object.key("position").start_object();
-        crate::protocol_serde::shape_rectangle::ser_rectangle(&mut object_33, var_32)?;
-        object_33.finish();
+        let mut object_34 = object.key("position").start_object();
+        crate::protocol_serde::shape_rectangle::ser_rectangle(&mut object_34, var_33)?;
+        object_34.finish();
     }
-    if input.program_number != 0 {
+    if let Some(var_35) = &input.program_number {
         object.key("programNumber").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.program_number).into()),
+            aws_smithy_types::Number::NegInt((*var_35).into()),
         );
     }
-    if let Some(var_34) = &input.psi_control {
-        object.key("psiControl").string(var_34.as_str());
+    if let Some(var_36) = &input.psi_control {
+        object.key("psiControl").string(var_36.as_str());
     }
-    if let Some(var_35) = &input.timecode_source {
-        object.key("timecodeSource").string(var_35.as_str());
+    if let Some(var_37) = &input.timecode_source {
+        object.key("timecodeSource").string(var_37.as_str());
     }
-    if let Some(var_36) = &input.timecode_start {
-        object.key("timecodeStart").string(var_36.as_str());
+    if let Some(var_38) = &input.timecode_start {
+        object.key("timecodeStart").string(var_38.as_str());
     }
-    if let Some(var_37) = &input.video_selector {
+    if let Some(var_39) = &input.video_selector {
         #[allow(unused_mut)]
-        let mut object_38 = object.key("videoSelector").start_object();
-        crate::protocol_serde::shape_video_selector::ser_video_selector(&mut object_38, var_37)?;
-        object_38.finish();
+        let mut object_40 = object.key("videoSelector").start_object();
+        crate::protocol_serde::shape_video_selector::ser_video_selector(&mut object_40, var_39)?;
+        object_40.finish();
     }
     Ok(())
 }

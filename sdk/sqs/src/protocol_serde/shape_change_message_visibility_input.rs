@@ -18,10 +18,10 @@ pub fn ser_change_message_visibility_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("VisibilityTimeout");
-    {
+    if let Some(var_6) = &input.visibility_timeout {
         scope_5.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.visibility_timeout).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
     writer.finish();

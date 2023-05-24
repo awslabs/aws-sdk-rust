@@ -76,12 +76,12 @@ impl ListSubjectsFluentBuilder {
             self.inner,
         )
     }
-    /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
+    /// <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
+    /// <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self

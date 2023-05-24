@@ -44,5 +44,30 @@ pub fn ser_start_notebook_execution_input(
         }
         array_10.finish();
     }
+    if let Some(var_13) = &input.notebook_s3_location {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("NotebookS3Location").start_object();
+        crate::protocol_serde::shape_notebook_s3_location_from_input::ser_notebook_s3_location_from_input(&mut object_14, var_13)?;
+        object_14.finish();
+    }
+    if let Some(var_15) = &input.output_notebook_s3_location {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("OutputNotebookS3Location").start_object();
+        crate::protocol_serde::shape_output_notebook_s3_location_from_input::ser_output_notebook_s3_location_from_input(&mut object_16, var_15)?;
+        object_16.finish();
+    }
+    if let Some(var_17) = &input.output_notebook_format {
+        object.key("OutputNotebookFormat").string(var_17.as_str());
+    }
+    if let Some(var_18) = &input.environment_variables {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("EnvironmentVariables").start_object();
+        for (key_20, value_21) in var_18 {
+            {
+                object_19.key(key_20.as_str()).string(value_21.as_str());
+            }
+        }
+        object_19.finish();
+    }
     Ok(())
 }

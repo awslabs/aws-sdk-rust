@@ -3,30 +3,30 @@ pub fn ser_noise_reducer_temporal_filter_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NoiseReducerTemporalFilterSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.aggressive_mode != 0 {
+    if let Some(var_1) = &input.aggressive_mode {
         object.key("aggressiveMode").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.aggressive_mode).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.post_temporal_sharpening {
-        object.key("postTemporalSharpening").string(var_1.as_str());
+    if let Some(var_2) = &input.post_temporal_sharpening {
+        object.key("postTemporalSharpening").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.post_temporal_sharpening_strength {
+    if let Some(var_3) = &input.post_temporal_sharpening_strength {
         object
             .key("postTemporalSharpeningStrength")
-            .string(var_2.as_str());
+            .string(var_3.as_str());
     }
-    if input.speed != 0 {
+    if let Some(var_4) = &input.speed {
         object.key("speed").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.speed).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if input.strength != 0 {
+    if let Some(var_5) = &input.strength {
         object.key("strength").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.strength).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
     Ok(())

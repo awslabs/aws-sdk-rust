@@ -12,10 +12,10 @@ pub struct EmbeddedSourceSettings {
     pub scte20_detection: std::option::Option<crate::types::EmbeddedScte20Detection>,
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
     #[doc(hidden)]
-    pub source608_channel_number: i32,
+    pub source608_channel_number: std::option::Option<i32>,
     /// This field is unused and deprecated.
     #[doc(hidden)]
-    pub source608_track_number: i32,
+    pub source608_track_number: std::option::Option<i32>,
 }
 impl EmbeddedSourceSettings {
     /// If upconvert, 608 data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
@@ -27,11 +27,11 @@ impl EmbeddedSourceSettings {
         self.scte20_detection.as_ref()
     }
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
-    pub fn source608_channel_number(&self) -> i32 {
+    pub fn source608_channel_number(&self) -> std::option::Option<i32> {
         self.source608_channel_number
     }
     /// This field is unused and deprecated.
-    pub fn source608_track_number(&self) -> i32 {
+    pub fn source608_track_number(&self) -> std::option::Option<i32> {
         self.source608_track_number
     }
 }
@@ -103,8 +103,8 @@ impl EmbeddedSourceSettingsBuilder {
         crate::types::EmbeddedSourceSettings {
             convert608_to708: self.convert608_to708,
             scte20_detection: self.scte20_detection,
-            source608_channel_number: self.source608_channel_number.unwrap_or_default(),
-            source608_track_number: self.source608_track_number.unwrap_or_default(),
+            source608_channel_number: self.source608_channel_number,
+            source608_track_number: self.source608_track_number,
         }
     }
 }

@@ -19,11 +19,17 @@ pub mod describe_cases;
 /// Types for the `DescribeCommunications` operation.
 pub mod describe_communications;
 
+/// Types for the `DescribeCreateCaseOptions` operation.
+pub mod describe_create_case_options;
+
 /// Types for the `DescribeServices` operation.
 pub mod describe_services;
 
 /// Types for the `DescribeSeverityLevels` operation.
 pub mod describe_severity_levels;
+
+/// Types for the `DescribeSupportedLanguages` operation.
+pub mod describe_supported_languages;
 
 /// Types for the `DescribeTrustedAdvisorCheckRefreshStatuses` operation.
 pub mod describe_trusted_advisor_check_refresh_statuses;

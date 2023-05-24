@@ -23,7 +23,7 @@ pub struct GetFindingsFilterOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
     #[doc(hidden)]
-    pub position: i32,
+    pub position: std::option::Option<i32>,
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.</p>
     #[doc(hidden)]
     pub tags:
@@ -56,7 +56,7 @@ impl GetFindingsFilterOutput {
         self.name.as_deref()
     }
     /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
-    pub fn position(&self) -> i32 {
+    pub fn position(&self) -> std::option::Option<i32> {
         self.position
     }
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the filter.</p>
@@ -215,7 +215,7 @@ impl GetFindingsFilterOutputBuilder {
             finding_criteria: self.finding_criteria,
             id: self.id,
             name: self.name,
-            position: self.position.unwrap_or_default(),
+            position: self.position,
             tags: self.tags,
             _request_id: self._request_id,
         }

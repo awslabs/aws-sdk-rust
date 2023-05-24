@@ -6,20 +6,20 @@ pub fn ser_destination_configuration_request(
     if let Some(var_1) = &input.destination_ip {
         object.key("destinationIp").string(var_1.as_str());
     }
-    {
+    if let Some(var_2) = &input.destination_port {
         object.key("destinationPort").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.destination_port).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.interface {
+    if let Some(var_3) = &input.interface {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("interface").start_object();
+        let mut object_4 = object.key("interface").start_object();
         crate::protocol_serde::shape_interface_request::ser_interface_request(
-            &mut object_3,
-            var_2,
+            &mut object_4,
+            var_3,
         )?;
-        object_3.finish();
+        object_4.finish();
     }
     Ok(())
 }

@@ -15,23 +15,23 @@ pub struct SetSourceRequest {
     pub entitlement_arn: std::option::Option<std::string::String>,
     /// The port that the flow will be listening on for incoming content.
     #[doc(hidden)]
-    pub ingest_port: i32,
+    pub ingest_port: std::option::Option<i32>,
     /// The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
     #[doc(hidden)]
-    pub max_bitrate: i32,
+    pub max_bitrate: std::option::Option<i32>,
     /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
     #[doc(hidden)]
-    pub max_latency: i32,
+    pub max_latency: std::option::Option<i32>,
     /// The size of the buffer (in milliseconds) to use to sync incoming source data.
     #[doc(hidden)]
-    pub max_sync_buffer: i32,
+    pub max_sync_buffer: std::option::Option<i32>,
     /// The media streams that are associated with the source, and the parameters for those associations.
     #[doc(hidden)]
     pub media_stream_source_configurations:
         std::option::Option<std::vec::Vec<crate::types::MediaStreamSourceConfigurationRequest>>,
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
     #[doc(hidden)]
-    pub min_latency: i32,
+    pub min_latency: std::option::Option<i32>,
     /// The name of the source.
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -40,7 +40,7 @@ pub struct SetSourceRequest {
     pub protocol: std::option::Option<crate::types::Protocol>,
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
     #[doc(hidden)]
-    pub sender_control_port: i32,
+    pub sender_control_port: std::option::Option<i32>,
     /// The IP address that the flow communicates with to initiate connection with the sender.
     #[doc(hidden)]
     pub sender_ip_address: std::option::Option<std::string::String>,
@@ -49,7 +49,7 @@ pub struct SetSourceRequest {
     pub source_listener_address: std::option::Option<std::string::String>,
     /// Source port for SRT-caller protocol.
     #[doc(hidden)]
-    pub source_listener_port: i32,
+    pub source_listener_port: std::option::Option<i32>,
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.
     #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
@@ -77,19 +77,19 @@ impl SetSourceRequest {
         self.entitlement_arn.as_deref()
     }
     /// The port that the flow will be listening on for incoming content.
-    pub fn ingest_port(&self) -> i32 {
+    pub fn ingest_port(&self) -> std::option::Option<i32> {
         self.ingest_port
     }
     /// The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
-    pub fn max_bitrate(&self) -> i32 {
+    pub fn max_bitrate(&self) -> std::option::Option<i32> {
         self.max_bitrate
     }
     /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
-    pub fn max_latency(&self) -> i32 {
+    pub fn max_latency(&self) -> std::option::Option<i32> {
         self.max_latency
     }
     /// The size of the buffer (in milliseconds) to use to sync incoming source data.
-    pub fn max_sync_buffer(&self) -> i32 {
+    pub fn max_sync_buffer(&self) -> std::option::Option<i32> {
         self.max_sync_buffer
     }
     /// The media streams that are associated with the source, and the parameters for those associations.
@@ -99,7 +99,7 @@ impl SetSourceRequest {
         self.media_stream_source_configurations.as_deref()
     }
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
-    pub fn min_latency(&self) -> i32 {
+    pub fn min_latency(&self) -> std::option::Option<i32> {
         self.min_latency
     }
     /// The name of the source.
@@ -111,7 +111,7 @@ impl SetSourceRequest {
         self.protocol.as_ref()
     }
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
-    pub fn sender_control_port(&self) -> i32 {
+    pub fn sender_control_port(&self) -> std::option::Option<i32> {
         self.sender_control_port
     }
     /// The IP address that the flow communicates with to initiate connection with the sender.
@@ -123,7 +123,7 @@ impl SetSourceRequest {
         self.source_listener_address.as_deref()
     }
     /// Source port for SRT-caller protocol.
-    pub fn source_listener_port(&self) -> i32 {
+    pub fn source_listener_port(&self) -> std::option::Option<i32> {
         self.source_listener_port
     }
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.
@@ -404,18 +404,18 @@ impl SetSourceRequestBuilder {
             decryption: self.decryption,
             description: self.description,
             entitlement_arn: self.entitlement_arn,
-            ingest_port: self.ingest_port.unwrap_or_default(),
-            max_bitrate: self.max_bitrate.unwrap_or_default(),
-            max_latency: self.max_latency.unwrap_or_default(),
-            max_sync_buffer: self.max_sync_buffer.unwrap_or_default(),
+            ingest_port: self.ingest_port,
+            max_bitrate: self.max_bitrate,
+            max_latency: self.max_latency,
+            max_sync_buffer: self.max_sync_buffer,
             media_stream_source_configurations: self.media_stream_source_configurations,
-            min_latency: self.min_latency.unwrap_or_default(),
+            min_latency: self.min_latency,
             name: self.name,
             protocol: self.protocol,
-            sender_control_port: self.sender_control_port.unwrap_or_default(),
+            sender_control_port: self.sender_control_port,
             sender_ip_address: self.sender_ip_address,
             source_listener_address: self.source_listener_address,
-            source_listener_port: self.source_listener_port.unwrap_or_default(),
+            source_listener_port: self.source_listener_port,
             stream_id: self.stream_id,
             vpc_interface_name: self.vpc_interface_name,
             whitelist_cidr: self.whitelist_cidr,

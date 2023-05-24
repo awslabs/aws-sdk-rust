@@ -9,7 +9,7 @@ pub struct Eac3Settings {
     pub attenuation_control: std::option::Option<crate::types::Eac3AttenuationControl>,
     /// Specify the average bitrate in bits per second. The bitrate that you specify must be a multiple of 8000 within the allowed minimum and maximum values. Leave blank to use the default bitrate for the coding mode you select according ETSI TS 102 366. Valid bitrates for coding mode 1/0: Default: 96000. Minimum: 32000. Maximum: 3024000. Valid bitrates for coding mode 2/0: Default: 192000. Minimum: 96000. Maximum: 3024000. Valid bitrates for coding mode 3/2: Default: 384000. Minimum: 192000. Maximum: 3024000.
     #[doc(hidden)]
-    pub bitrate: i32,
+    pub bitrate: std::option::Option<i32>,
     /// Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E).
     #[doc(hidden)]
     pub bitstream_mode: std::option::Option<crate::types::Eac3BitstreamMode>,
@@ -21,7 +21,7 @@ pub struct Eac3Settings {
     pub dc_filter: std::option::Option<crate::types::Eac3DcFilter>,
     /// Sets the dialnorm for the output. If blank and input audio is Dolby Digital Plus, dialnorm will be passed through.
     #[doc(hidden)]
-    pub dialnorm: i32,
+    pub dialnorm: std::option::Option<i32>,
     /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
     #[doc(hidden)]
     pub dynamic_range_compression_line:
@@ -38,16 +38,16 @@ pub struct Eac3Settings {
     pub lfe_filter: std::option::Option<crate::types::Eac3LfeFilter>,
     /// Specify a value for the following Dolby Digital Plus setting: Left only/Right only center mix (Lo/Ro center). MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode, the service ignores Left only/Right only center (loRoCenterMixLevel).
     #[doc(hidden)]
-    pub lo_ro_center_mix_level: f64,
+    pub lo_ro_center_mix_level: std::option::Option<f64>,
     /// Specify a value for the following Dolby Digital Plus setting: Left only/Right only (Lo/Ro surround). MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo downmix (Eac3StereoDownmix). Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode, the service ignores Left only/Right only surround (loRoSurroundMixLevel).
     #[doc(hidden)]
-    pub lo_ro_surround_mix_level: f64,
+    pub lo_ro_surround_mix_level: std::option::Option<f64>,
     /// Specify a value for the following Dolby Digital Plus setting: Left total/Right total center mix (Lt/Rt center). MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode, the service ignores Left total/Right total center (ltRtCenterMixLevel).
     #[doc(hidden)]
-    pub lt_rt_center_mix_level: f64,
+    pub lt_rt_center_mix_level: std::option::Option<f64>,
     /// Specify a value for the following Dolby Digital Plus setting: Left total/Right total surround mix (Lt/Rt surround). MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo downmix (Eac3StereoDownmix). Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode, the service ignores Left total/Right total surround (ltRtSurroundMixLevel).
     #[doc(hidden)]
-    pub lt_rt_surround_mix_level: f64,
+    pub lt_rt_surround_mix_level: std::option::Option<f64>,
     /// When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
     #[doc(hidden)]
     pub metadata_control: std::option::Option<crate::types::Eac3MetadataControl>,
@@ -59,7 +59,7 @@ pub struct Eac3Settings {
     pub phase_control: std::option::Option<crate::types::Eac3PhaseControl>,
     /// This value is always 48000. It represents the sample rate in Hz.
     #[doc(hidden)]
-    pub sample_rate: i32,
+    pub sample_rate: std::option::Option<i32>,
     /// Choose how the service does stereo downmixing. This setting only applies if you keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode, the service ignores Stereo downmix (Eac3StereoDownmix).
     #[doc(hidden)]
     pub stereo_downmix: std::option::Option<crate::types::Eac3StereoDownmix>,
@@ -78,7 +78,7 @@ impl Eac3Settings {
         self.attenuation_control.as_ref()
     }
     /// Specify the average bitrate in bits per second. The bitrate that you specify must be a multiple of 8000 within the allowed minimum and maximum values. Leave blank to use the default bitrate for the coding mode you select according ETSI TS 102 366. Valid bitrates for coding mode 1/0: Default: 96000. Minimum: 32000. Maximum: 3024000. Valid bitrates for coding mode 2/0: Default: 192000. Minimum: 96000. Maximum: 3024000. Valid bitrates for coding mode 3/2: Default: 384000. Minimum: 192000. Maximum: 3024000.
-    pub fn bitrate(&self) -> i32 {
+    pub fn bitrate(&self) -> std::option::Option<i32> {
         self.bitrate
     }
     /// Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E).
@@ -94,7 +94,7 @@ impl Eac3Settings {
         self.dc_filter.as_ref()
     }
     /// Sets the dialnorm for the output. If blank and input audio is Dolby Digital Plus, dialnorm will be passed through.
-    pub fn dialnorm(&self) -> i32 {
+    pub fn dialnorm(&self) -> std::option::Option<i32> {
         self.dialnorm
     }
     /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
@@ -118,19 +118,19 @@ impl Eac3Settings {
         self.lfe_filter.as_ref()
     }
     /// Specify a value for the following Dolby Digital Plus setting: Left only/Right only center mix (Lo/Ro center). MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode, the service ignores Left only/Right only center (loRoCenterMixLevel).
-    pub fn lo_ro_center_mix_level(&self) -> f64 {
+    pub fn lo_ro_center_mix_level(&self) -> std::option::Option<f64> {
         self.lo_ro_center_mix_level
     }
     /// Specify a value for the following Dolby Digital Plus setting: Left only/Right only (Lo/Ro surround). MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo downmix (Eac3StereoDownmix). Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode, the service ignores Left only/Right only surround (loRoSurroundMixLevel).
-    pub fn lo_ro_surround_mix_level(&self) -> f64 {
+    pub fn lo_ro_surround_mix_level(&self) -> std::option::Option<f64> {
         self.lo_ro_surround_mix_level
     }
     /// Specify a value for the following Dolby Digital Plus setting: Left total/Right total center mix (Lt/Rt center). MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode, the service ignores Left total/Right total center (ltRtCenterMixLevel).
-    pub fn lt_rt_center_mix_level(&self) -> f64 {
+    pub fn lt_rt_center_mix_level(&self) -> std::option::Option<f64> {
         self.lt_rt_center_mix_level
     }
     /// Specify a value for the following Dolby Digital Plus setting: Left total/Right total surround mix (Lt/Rt surround). MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo downmix (Eac3StereoDownmix). Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode, the service ignores Left total/Right total surround (ltRtSurroundMixLevel).
-    pub fn lt_rt_surround_mix_level(&self) -> f64 {
+    pub fn lt_rt_surround_mix_level(&self) -> std::option::Option<f64> {
         self.lt_rt_surround_mix_level
     }
     /// When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
@@ -148,7 +148,7 @@ impl Eac3Settings {
         self.phase_control.as_ref()
     }
     /// This value is always 48000. It represents the sample rate in Hz.
-    pub fn sample_rate(&self) -> i32 {
+    pub fn sample_rate(&self) -> std::option::Option<i32> {
         self.sample_rate
     }
     /// Choose how the service does stereo downmixing. This setting only applies if you keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode, the service ignores Stereo downmix (Eac3StereoDownmix).
@@ -459,23 +459,23 @@ impl Eac3SettingsBuilder {
     pub fn build(self) -> crate::types::Eac3Settings {
         crate::types::Eac3Settings {
             attenuation_control: self.attenuation_control,
-            bitrate: self.bitrate.unwrap_or_default(),
+            bitrate: self.bitrate,
             bitstream_mode: self.bitstream_mode,
             coding_mode: self.coding_mode,
             dc_filter: self.dc_filter,
-            dialnorm: self.dialnorm.unwrap_or_default(),
+            dialnorm: self.dialnorm,
             dynamic_range_compression_line: self.dynamic_range_compression_line,
             dynamic_range_compression_rf: self.dynamic_range_compression_rf,
             lfe_control: self.lfe_control,
             lfe_filter: self.lfe_filter,
-            lo_ro_center_mix_level: self.lo_ro_center_mix_level.unwrap_or_default(),
-            lo_ro_surround_mix_level: self.lo_ro_surround_mix_level.unwrap_or_default(),
-            lt_rt_center_mix_level: self.lt_rt_center_mix_level.unwrap_or_default(),
-            lt_rt_surround_mix_level: self.lt_rt_surround_mix_level.unwrap_or_default(),
+            lo_ro_center_mix_level: self.lo_ro_center_mix_level,
+            lo_ro_surround_mix_level: self.lo_ro_surround_mix_level,
+            lt_rt_center_mix_level: self.lt_rt_center_mix_level,
+            lt_rt_surround_mix_level: self.lt_rt_surround_mix_level,
             metadata_control: self.metadata_control,
             passthrough_control: self.passthrough_control,
             phase_control: self.phase_control,
-            sample_rate: self.sample_rate.unwrap_or_default(),
+            sample_rate: self.sample_rate,
             stereo_downmix: self.stereo_downmix,
             surround_ex_mode: self.surround_ex_mode,
             surround_mode: self.surround_mode,

@@ -247,6 +247,15 @@ pub(crate) fn de_get_run_group(
                             .transpose()?,
                         );
                     }
+                    "maxGpus" => {
+                        builder = builder.set_max_gpus(
+                            aws_smithy_json::deserialize::token::expect_number_or_null(
+                                tokens.next(),
+                            )?
+                            .map(i32::try_from)
+                            .transpose()?,
+                        );
+                    }
                     "maxRuns" => {
                         builder = builder.set_max_runs(
                             aws_smithy_json::deserialize::token::expect_number_or_null(

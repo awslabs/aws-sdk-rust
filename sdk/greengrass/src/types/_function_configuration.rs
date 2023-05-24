@@ -18,13 +18,13 @@ pub struct FunctionConfiguration {
     pub executable: std::option::Option<std::string::String>,
     /// The memory size, in KB, which the function requires. This setting is not applicable and should be cleared when you run the Lambda function without containerization.
     #[doc(hidden)]
-    pub memory_size: i32,
+    pub memory_size: std::option::Option<i32>,
     /// True if the function is pinned. Pinned means the function is long-lived and starts when the core starts.
     #[doc(hidden)]
-    pub pinned: bool,
+    pub pinned: std::option::Option<bool>,
     /// The allowed function execution time, after which Lambda should terminate the function. This timeout still applies to pinned Lambda functions for each request.
     #[doc(hidden)]
-    pub timeout: i32,
+    pub timeout: std::option::Option<i32>,
     /// The Lambda runtime supported by Greengrass which is to be used instead of the one specified in the Lambda function.
     #[doc(hidden)]
     pub function_runtime_override: std::option::Option<std::string::String>,
@@ -49,15 +49,15 @@ impl FunctionConfiguration {
         self.executable.as_deref()
     }
     /// The memory size, in KB, which the function requires. This setting is not applicable and should be cleared when you run the Lambda function without containerization.
-    pub fn memory_size(&self) -> i32 {
+    pub fn memory_size(&self) -> std::option::Option<i32> {
         self.memory_size
     }
     /// True if the function is pinned. Pinned means the function is long-lived and starts when the core starts.
-    pub fn pinned(&self) -> bool {
+    pub fn pinned(&self) -> std::option::Option<bool> {
         self.pinned
     }
     /// The allowed function execution time, after which Lambda should terminate the function. This timeout still applies to pinned Lambda functions for each request.
-    pub fn timeout(&self) -> i32 {
+    pub fn timeout(&self) -> std::option::Option<i32> {
         self.timeout
     }
     /// The Lambda runtime supported by Greengrass which is to be used instead of the one specified in the Lambda function.
@@ -182,9 +182,9 @@ impl FunctionConfigurationBuilder {
             environment: self.environment,
             exec_args: self.exec_args,
             executable: self.executable,
-            memory_size: self.memory_size.unwrap_or_default(),
-            pinned: self.pinned.unwrap_or_default(),
-            timeout: self.timeout.unwrap_or_default(),
+            memory_size: self.memory_size,
+            pinned: self.pinned,
+            timeout: self.timeout,
             function_runtime_override: self.function_runtime_override,
         }
     }

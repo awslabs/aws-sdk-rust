@@ -3,32 +3,32 @@ pub fn ser_ac3_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Ac3Settings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.bitrate != 0.0 {
+    if let Some(var_1) = &input.bitrate {
         object.key("bitrate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.bitrate).into()),
+            aws_smithy_types::Number::Float((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.bitstream_mode {
-        object.key("bitstreamMode").string(var_1.as_str());
+    if let Some(var_2) = &input.bitstream_mode {
+        object.key("bitstreamMode").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.coding_mode {
-        object.key("codingMode").string(var_2.as_str());
+    if let Some(var_3) = &input.coding_mode {
+        object.key("codingMode").string(var_3.as_str());
     }
-    if input.dialnorm != 0 {
+    if let Some(var_4) = &input.dialnorm {
         object.key("dialnorm").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.dialnorm).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_3) = &input.drc_profile {
-        object.key("drcProfile").string(var_3.as_str());
+    if let Some(var_5) = &input.drc_profile {
+        object.key("drcProfile").string(var_5.as_str());
     }
-    if let Some(var_4) = &input.lfe_filter {
-        object.key("lfeFilter").string(var_4.as_str());
+    if let Some(var_6) = &input.lfe_filter {
+        object.key("lfeFilter").string(var_6.as_str());
     }
-    if let Some(var_5) = &input.metadata_control {
-        object.key("metadataControl").string(var_5.as_str());
+    if let Some(var_7) = &input.metadata_control {
+        object.key("metadataControl").string(var_7.as_str());
     }
     Ok(())
 }

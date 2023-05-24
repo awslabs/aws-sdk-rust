@@ -61,6 +61,9 @@ pub struct LambdaFunctionRecommendation {
     /// <p>The risk of the current Lambda function not meeting the performance needs of its workloads. The higher the risk, the more likely the current Lambda function requires more memory.</p>
     #[doc(hidden)]
     pub current_performance_risk: std::option::Option<crate::types::CurrentPerformanceRisk>,
+    /// <p> A list of tags assigned to your Lambda function recommendations. </p>
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl LambdaFunctionRecommendation {
     /// <p>The Amazon Resource Name (ARN) of the current function.</p>
@@ -138,6 +141,10 @@ impl LambdaFunctionRecommendation {
     ) -> std::option::Option<&crate::types::CurrentPerformanceRisk> {
         self.current_performance_risk.as_ref()
     }
+    /// <p> A list of tags assigned to your Lambda function recommendations. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl LambdaFunctionRecommendation {
     /// Creates a new builder-style object to manufacture [`LambdaFunctionRecommendation`](crate::types::LambdaFunctionRecommendation).
@@ -166,6 +173,7 @@ pub struct LambdaFunctionRecommendationBuilder {
     pub(crate) memory_size_recommendation_options:
         std::option::Option<std::vec::Vec<crate::types::LambdaFunctionMemoryRecommendationOption>>,
     pub(crate) current_performance_risk: std::option::Option<crate::types::CurrentPerformanceRisk>,
+    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl LambdaFunctionRecommendationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the current function.</p>
@@ -371,6 +379,25 @@ impl LambdaFunctionRecommendationBuilder {
         self.current_performance_risk = input;
         self
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p> A list of tags assigned to your Lambda function recommendations. </p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = Some(v);
+        self
+    }
+    /// <p> A list of tags assigned to your Lambda function recommendations. </p>
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
+    }
     /// Consumes the builder and constructs a [`LambdaFunctionRecommendation`](crate::types::LambdaFunctionRecommendation).
     pub fn build(self) -> crate::types::LambdaFunctionRecommendation {
         crate::types::LambdaFunctionRecommendation {
@@ -386,6 +413,7 @@ impl LambdaFunctionRecommendationBuilder {
             finding_reason_codes: self.finding_reason_codes,
             memory_size_recommendation_options: self.memory_size_recommendation_options,
             current_performance_risk: self.current_performance_risk,
+            tags: self.tags,
         }
     }
 }

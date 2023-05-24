@@ -3,7 +3,9 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCustomKeyStoreInput {
-    /// <p>Specifies a friendly name for the custom key store. The name must be unique in your Amazon Web Services account and Region. This parameter is required for all custom key stores.</p>
+    /// <p>Specifies a friendly name for the custom key store. The name must be unique in your Amazon Web Services account and Region. This parameter is required for all custom key stores.</p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
     #[doc(hidden)]
     pub custom_key_store_name: std::option::Option<std::string::String>,
     /// <p>Identifies the CloudHSM cluster for an CloudHSM key store. This parameter is required for custom key stores with <code>CustomKeyStoreType</code> of <code>AWS_CLOUDHSM</code>.</p>
@@ -67,7 +69,9 @@ pub struct CreateCustomKeyStoreInput {
     pub xks_proxy_connectivity: std::option::Option<crate::types::XksProxyConnectivityType>,
 }
 impl CreateCustomKeyStoreInput {
-    /// <p>Specifies a friendly name for the custom key store. The name must be unique in your Amazon Web Services account and Region. This parameter is required for all custom key stores.</p>
+    /// <p>Specifies a friendly name for the custom key store. The name must be unique in your Amazon Web Services account and Region. This parameter is required for all custom key stores.</p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
     pub fn custom_key_store_name(&self) -> std::option::Option<&str> {
         self.custom_key_store_name.as_deref()
     }
@@ -190,12 +194,16 @@ pub struct CreateCustomKeyStoreInputBuilder {
     pub(crate) xks_proxy_connectivity: std::option::Option<crate::types::XksProxyConnectivityType>,
 }
 impl CreateCustomKeyStoreInputBuilder {
-    /// <p>Specifies a friendly name for the custom key store. The name must be unique in your Amazon Web Services account and Region. This parameter is required for all custom key stores.</p>
+    /// <p>Specifies a friendly name for the custom key store. The name must be unique in your Amazon Web Services account and Region. This parameter is required for all custom key stores.</p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
     pub fn custom_key_store_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.custom_key_store_name = Some(input.into());
         self
     }
-    /// <p>Specifies a friendly name for the custom key store. The name must be unique in your Amazon Web Services account and Region. This parameter is required for all custom key stores.</p>
+    /// <p>Specifies a friendly name for the custom key store. The name must be unique in your Amazon Web Services account and Region. This parameter is required for all custom key stores.</p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
     pub fn set_custom_key_store_name(
         mut self,
         input: std::option::Option<std::string::String>,

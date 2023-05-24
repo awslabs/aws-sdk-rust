@@ -13,7 +13,7 @@ pub struct CmafPackageCreateOrUpdateParameters {
         std::option::Option<std::vec::Vec<crate::types::HlsManifestCreateOrUpdateParameters>>,
     /// Duration (in seconds) of each segment. Actual segments will be rounded to the nearest multiple of the source segment duration.
     #[doc(hidden)]
-    pub segment_duration_seconds: i32,
+    pub segment_duration_seconds: std::option::Option<i32>,
     /// An optional custom string that is prepended to the name of each segment. If not specified, it defaults to the ChannelId.
     #[doc(hidden)]
     pub segment_prefix: std::option::Option<std::string::String>,
@@ -33,7 +33,7 @@ impl CmafPackageCreateOrUpdateParameters {
         self.hls_manifests.as_deref()
     }
     /// Duration (in seconds) of each segment. Actual segments will be rounded to the nearest multiple of the source segment duration.
-    pub fn segment_duration_seconds(&self) -> i32 {
+    pub fn segment_duration_seconds(&self) -> std::option::Option<i32> {
         self.segment_duration_seconds
     }
     /// An optional custom string that is prepended to the name of each segment. If not specified, it defaults to the ChannelId.
@@ -139,7 +139,7 @@ impl CmafPackageCreateOrUpdateParametersBuilder {
         crate::types::CmafPackageCreateOrUpdateParameters {
             encryption: self.encryption,
             hls_manifests: self.hls_manifests,
-            segment_duration_seconds: self.segment_duration_seconds.unwrap_or_default(),
+            segment_duration_seconds: self.segment_duration_seconds,
             segment_prefix: self.segment_prefix,
             stream_selection: self.stream_selection,
         }

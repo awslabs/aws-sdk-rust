@@ -6,11 +6,11 @@
 pub struct ParameterConstraints {
     /// <p>Whether or not the parameter is required.</p>
     #[doc(hidden)]
-    pub required: bool,
+    pub required: std::option::Option<bool>,
 }
 impl ParameterConstraints {
     /// <p>Whether or not the parameter is required.</p>
-    pub fn required(&self) -> bool {
+    pub fn required(&self) -> std::option::Option<bool> {
         self.required
     }
 }
@@ -41,7 +41,7 @@ impl ParameterConstraintsBuilder {
     /// Consumes the builder and constructs a [`ParameterConstraints`](crate::types::ParameterConstraints).
     pub fn build(self) -> crate::types::ParameterConstraints {
         crate::types::ParameterConstraints {
-            required: self.required.unwrap_or_default(),
+            required: self.required,
         }
     }
 }

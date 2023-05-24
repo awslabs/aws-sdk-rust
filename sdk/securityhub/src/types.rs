@@ -1125,6 +1125,16 @@ pub use crate::types::_sort_criterion::SortCriterion;
 
 pub use crate::types::_sort_order::SortOrder;
 
+pub use crate::types::_finding_history_record::FindingHistoryRecord;
+
+pub use crate::types::_finding_history_update::FindingHistoryUpdate;
+
+pub use crate::types::_finding_history_update_source::FindingHistoryUpdateSource;
+
+pub use crate::types::_finding_history_update_source_type::FindingHistoryUpdateSourceType;
+
+pub use crate::types::_aws_security_finding_identifier::AwsSecurityFindingIdentifier;
+
 pub use crate::types::_standards_subscription::StandardsSubscription;
 
 pub use crate::types::_standards_status_reason::StandardsStatusReason;
@@ -1154,8 +1164,6 @@ pub use crate::types::_unprocessed_error_code::UnprocessedErrorCode;
 pub use crate::types::_standards_control_association_update::StandardsControlAssociationUpdate;
 
 pub use crate::types::_batch_update_findings_unprocessed_finding::BatchUpdateFindingsUnprocessedFinding;
-
-pub use crate::types::_aws_security_finding_identifier::AwsSecurityFindingIdentifier;
 
 pub use crate::types::_workflow_update::WorkflowUpdate;
 
@@ -2096,6 +2104,14 @@ mod _dns_request_action;
 mod _file_paths;
 
 mod _finding_aggregator;
+
+mod _finding_history_record;
+
+mod _finding_history_update;
+
+mod _finding_history_update_source;
+
+mod _finding_history_update_source_type;
 
 mod _finding_provider_fields;
 

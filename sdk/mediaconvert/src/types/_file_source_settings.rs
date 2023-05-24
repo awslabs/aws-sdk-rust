@@ -18,7 +18,7 @@ pub struct FileSourceSettings {
     pub source_file: std::option::Option<std::string::String>,
     /// Optional. Use this setting when you need to adjust the sync between your sidecar captions and your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/time-delta-use-cases.html. Enter a positive or negative number to modify the times in the captions file. For example, type 15 to add 15 seconds to all the times in the captions file. Type -5 to subtract 5 seconds from the times in the captions file. You can optionally specify your time delta in milliseconds instead of seconds. When you do so, set the related setting, Time delta units (TimeDeltaUnits) to Milliseconds (MILLISECONDS). Note that, when you specify a time delta for timecode-based caption sources, such as SCC and STL, and your time delta isn't a multiple of the input frame rate, MediaConvert snaps the captions to the nearest frame. For example, when your input video frame rate is 25 fps and you specify 1010ms for time delta, MediaConvert delays your captions by 1000 ms.
     #[doc(hidden)]
-    pub time_delta: i32,
+    pub time_delta: std::option::Option<i32>,
     /// When you use the setting Time delta (TimeDelta) to adjust the sync between your sidecar captions and your video, use this setting to specify the units for the delta that you specify. When you don't specify a value for Time delta units (TimeDeltaUnits), MediaConvert uses seconds by default.
     #[doc(hidden)]
     pub time_delta_units: std::option::Option<crate::types::FileSourceTimeDeltaUnits>,
@@ -45,7 +45,7 @@ impl FileSourceSettings {
         self.source_file.as_deref()
     }
     /// Optional. Use this setting when you need to adjust the sync between your sidecar captions and your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/time-delta-use-cases.html. Enter a positive or negative number to modify the times in the captions file. For example, type 15 to add 15 seconds to all the times in the captions file. Type -5 to subtract 5 seconds from the times in the captions file. You can optionally specify your time delta in milliseconds instead of seconds. When you do so, set the related setting, Time delta units (TimeDeltaUnits) to Milliseconds (MILLISECONDS). Note that, when you specify a time delta for timecode-based caption sources, such as SCC and STL, and your time delta isn't a multiple of the input frame rate, MediaConvert snaps the captions to the nearest frame. For example, when your input video frame rate is 25 fps and you specify 1010ms for time delta, MediaConvert delays your captions by 1000 ms.
-    pub fn time_delta(&self) -> i32 {
+    pub fn time_delta(&self) -> std::option::Option<i32> {
         self.time_delta
     }
     /// When you use the setting Time delta (TimeDelta) to adjust the sync between your sidecar captions and your video, use this setting to specify the units for the delta that you specify. When you don't specify a value for Time delta units (TimeDeltaUnits), MediaConvert uses seconds by default.
@@ -155,7 +155,7 @@ impl FileSourceSettingsBuilder {
             convert_paint_to_pop: self.convert_paint_to_pop,
             framerate: self.framerate,
             source_file: self.source_file,
-            time_delta: self.time_delta.unwrap_or_default(),
+            time_delta: self.time_delta,
             time_delta_units: self.time_delta_units,
         }
     }

@@ -7,7 +7,7 @@ pub struct PackageDetails {
     /// <p>The unique identifier of the package.</p>
     #[doc(hidden)]
     pub package_id: std::option::Option<std::string::String>,
-    /// <p>User-specified name of the package.</p>
+    /// <p>The user-specified name of the package.</p>
     #[doc(hidden)]
     pub package_name: std::option::Option<std::string::String>,
     /// <p>The type of package.</p>
@@ -16,7 +16,7 @@ pub struct PackageDetails {
     /// <p>User-specified description of the package.</p>
     #[doc(hidden)]
     pub package_description: std::option::Option<std::string::String>,
-    /// <p>Current status of the package.</p>
+    /// <p>The current status of the package. The available options are <code>AVAILABLE</code>, <code>COPYING</code>, <code>COPY_FAILED</code>, <code>VALIDATNG</code>, <code>VALIDATION_FAILED</code>, <code>DELETING</code>, and <code>DELETE_FAILED</code>.</p>
     #[doc(hidden)]
     pub package_status: std::option::Option<crate::types::PackageStatus>,
     /// <p>The timestamp when the package was created.</p>
@@ -37,7 +37,7 @@ impl PackageDetails {
     pub fn package_id(&self) -> std::option::Option<&str> {
         self.package_id.as_deref()
     }
-    /// <p>User-specified name of the package.</p>
+    /// <p>The user-specified name of the package.</p>
     pub fn package_name(&self) -> std::option::Option<&str> {
         self.package_name.as_deref()
     }
@@ -49,7 +49,7 @@ impl PackageDetails {
     pub fn package_description(&self) -> std::option::Option<&str> {
         self.package_description.as_deref()
     }
-    /// <p>Current status of the package.</p>
+    /// <p>The current status of the package. The available options are <code>AVAILABLE</code>, <code>COPYING</code>, <code>COPY_FAILED</code>, <code>VALIDATNG</code>, <code>VALIDATION_FAILED</code>, <code>DELETING</code>, and <code>DELETE_FAILED</code>.</p>
     pub fn package_status(&self) -> std::option::Option<&crate::types::PackageStatus> {
         self.package_status.as_ref()
     }
@@ -102,12 +102,12 @@ impl PackageDetailsBuilder {
         self.package_id = input;
         self
     }
-    /// <p>User-specified name of the package.</p>
+    /// <p>The user-specified name of the package.</p>
     pub fn package_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.package_name = Some(input.into());
         self
     }
-    /// <p>User-specified name of the package.</p>
+    /// <p>The user-specified name of the package.</p>
     pub fn set_package_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.package_name = input;
         self
@@ -138,12 +138,12 @@ impl PackageDetailsBuilder {
         self.package_description = input;
         self
     }
-    /// <p>Current status of the package.</p>
+    /// <p>The current status of the package. The available options are <code>AVAILABLE</code>, <code>COPYING</code>, <code>COPY_FAILED</code>, <code>VALIDATNG</code>, <code>VALIDATION_FAILED</code>, <code>DELETING</code>, and <code>DELETE_FAILED</code>.</p>
     pub fn package_status(mut self, input: crate::types::PackageStatus) -> Self {
         self.package_status = Some(input);
         self
     }
-    /// <p>Current status of the package.</p>
+    /// <p>The current status of the package. The available options are <code>AVAILABLE</code>, <code>COPYING</code>, <code>COPY_FAILED</code>, <code>VALIDATNG</code>, <code>VALIDATION_FAILED</code>, <code>DELETING</code>, and <code>DELETE_FAILED</code>.</p>
     pub fn set_package_status(
         mut self,
         input: std::option::Option<crate::types::PackageStatus>,

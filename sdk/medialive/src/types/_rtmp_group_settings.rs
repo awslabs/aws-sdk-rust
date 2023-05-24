@@ -15,7 +15,7 @@ pub struct RtmpGroupSettings {
     pub cache_full_behavior: std::option::Option<crate::types::RtmpCacheFullBehavior>,
     /// Cache length, in seconds, is used to calculate buffer size.
     #[doc(hidden)]
-    pub cache_length: i32,
+    pub cache_length: std::option::Option<i32>,
     /// Controls the types of data that passes to onCaptionInfo outputs. If set to 'all' then 608 and 708 carried DTVCC data will be passed. If set to 'field1AndField2608' then DTVCC data will be stripped out, but 608 data from both fields will be passed. If set to 'field1608' then only the data carried in 608 from field 1 video will be passed.
     #[doc(hidden)]
     pub caption_data: std::option::Option<crate::types::RtmpCaptionData>,
@@ -24,7 +24,7 @@ pub struct RtmpGroupSettings {
     pub input_loss_action: std::option::Option<crate::types::InputLossActionForRtmpOut>,
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
     #[doc(hidden)]
-    pub restart_delay: i32,
+    pub restart_delay: std::option::Option<i32>,
 }
 impl RtmpGroupSettings {
     /// Choose the ad marker type for this output group. MediaLive will create a message based on the content of each SCTE-35 message, format it for that marker type, and insert it in the datastream.
@@ -42,7 +42,7 @@ impl RtmpGroupSettings {
         self.cache_full_behavior.as_ref()
     }
     /// Cache length, in seconds, is used to calculate buffer size.
-    pub fn cache_length(&self) -> i32 {
+    pub fn cache_length(&self) -> std::option::Option<i32> {
         self.cache_length
     }
     /// Controls the types of data that passes to onCaptionInfo outputs. If set to 'all' then 608 and 708 carried DTVCC data will be passed. If set to 'field1AndField2608' then DTVCC data will be stripped out, but 608 data from both fields will be passed. If set to 'field1608' then only the data carried in 608 from field 1 video will be passed.
@@ -56,7 +56,7 @@ impl RtmpGroupSettings {
         self.input_loss_action.as_ref()
     }
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
-    pub fn restart_delay(&self) -> i32 {
+    pub fn restart_delay(&self) -> std::option::Option<i32> {
         self.restart_delay
     }
 }
@@ -177,10 +177,10 @@ impl RtmpGroupSettingsBuilder {
             ad_markers: self.ad_markers,
             authentication_scheme: self.authentication_scheme,
             cache_full_behavior: self.cache_full_behavior,
-            cache_length: self.cache_length.unwrap_or_default(),
+            cache_length: self.cache_length,
             caption_data: self.caption_data,
             input_loss_action: self.input_loss_action,
-            restart_delay: self.restart_delay.unwrap_or_default(),
+            restart_delay: self.restart_delay,
         }
     }
 }

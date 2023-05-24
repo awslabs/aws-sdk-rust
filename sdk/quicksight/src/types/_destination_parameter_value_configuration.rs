@@ -17,6 +17,9 @@ pub struct DestinationParameterValueConfiguration {
     /// <p>The source field ID of the destination parameter.</p>
     #[doc(hidden)]
     pub source_field: std::option::Option<std::string::String>,
+    /// <p>A column of a data set.</p>
+    #[doc(hidden)]
+    pub source_column: std::option::Option<crate::types::ColumnIdentifier>,
 }
 impl DestinationParameterValueConfiguration {
     /// <p>The configuration of custom values for destination parameter in <code>DestinationParameterValueConfiguration</code>.</p>
@@ -39,6 +42,10 @@ impl DestinationParameterValueConfiguration {
     pub fn source_field(&self) -> std::option::Option<&str> {
         self.source_field.as_deref()
     }
+    /// <p>A column of a data set.</p>
+    pub fn source_column(&self) -> std::option::Option<&crate::types::ColumnIdentifier> {
+        self.source_column.as_ref()
+    }
 }
 impl DestinationParameterValueConfiguration {
     /// Creates a new builder-style object to manufacture [`DestinationParameterValueConfiguration`](crate::types::DestinationParameterValueConfiguration).
@@ -56,6 +63,7 @@ pub struct DestinationParameterValueConfigurationBuilder {
     pub(crate) select_all_value_options: std::option::Option<crate::types::SelectAllValueOptions>,
     pub(crate) source_parameter_name: std::option::Option<std::string::String>,
     pub(crate) source_field: std::option::Option<std::string::String>,
+    pub(crate) source_column: std::option::Option<crate::types::ColumnIdentifier>,
 }
 impl DestinationParameterValueConfigurationBuilder {
     /// <p>The configuration of custom values for destination parameter in <code>DestinationParameterValueConfiguration</code>.</p>
@@ -110,6 +118,19 @@ impl DestinationParameterValueConfigurationBuilder {
         self.source_field = input;
         self
     }
+    /// <p>A column of a data set.</p>
+    pub fn source_column(mut self, input: crate::types::ColumnIdentifier) -> Self {
+        self.source_column = Some(input);
+        self
+    }
+    /// <p>A column of a data set.</p>
+    pub fn set_source_column(
+        mut self,
+        input: std::option::Option<crate::types::ColumnIdentifier>,
+    ) -> Self {
+        self.source_column = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DestinationParameterValueConfiguration`](crate::types::DestinationParameterValueConfiguration).
     pub fn build(self) -> crate::types::DestinationParameterValueConfiguration {
         crate::types::DestinationParameterValueConfiguration {
@@ -117,6 +138,7 @@ impl DestinationParameterValueConfigurationBuilder {
             select_all_value_options: self.select_all_value_options,
             source_parameter_name: self.source_parameter_name,
             source_field: self.source_field,
+            source_column: self.source_column,
         }
     }
 }

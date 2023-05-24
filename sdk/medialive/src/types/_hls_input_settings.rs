@@ -6,35 +6,35 @@
 pub struct HlsInputSettings {
     /// When specified the HLS stream with the m3u8 BANDWIDTH that most closely matches this value will be chosen, otherwise the highest bandwidth stream in the m3u8 will be chosen. The bitrate is specified in bits per second, as in an HLS manifest.
     #[doc(hidden)]
-    pub bandwidth: i32,
+    pub bandwidth: std::option::Option<i32>,
     /// When specified, reading of the HLS input will begin this many buffer segments from the end (most recently written segment). When not specified, the HLS input will begin with the first segment specified in the m3u8.
     #[doc(hidden)]
-    pub buffer_segments: i32,
+    pub buffer_segments: std::option::Option<i32>,
     /// The number of consecutive times that attempts to read a manifest or segment must fail before the input is considered unavailable.
     #[doc(hidden)]
-    pub retries: i32,
+    pub retries: std::option::Option<i32>,
     /// The number of seconds between retries when an attempt to read a manifest or segment fails.
     #[doc(hidden)]
-    pub retry_interval: i32,
+    pub retry_interval: std::option::Option<i32>,
     /// Identifies the source for the SCTE-35 messages that MediaLive will ingest. Messages can be ingested from the content segments (in the stream) or from tags in the playlist (the HLS manifest). MediaLive ignores SCTE-35 information in the source that is not selected.
     #[doc(hidden)]
     pub scte35_source: std::option::Option<crate::types::HlsScte35SourceType>,
 }
 impl HlsInputSettings {
     /// When specified the HLS stream with the m3u8 BANDWIDTH that most closely matches this value will be chosen, otherwise the highest bandwidth stream in the m3u8 will be chosen. The bitrate is specified in bits per second, as in an HLS manifest.
-    pub fn bandwidth(&self) -> i32 {
+    pub fn bandwidth(&self) -> std::option::Option<i32> {
         self.bandwidth
     }
     /// When specified, reading of the HLS input will begin this many buffer segments from the end (most recently written segment). When not specified, the HLS input will begin with the first segment specified in the m3u8.
-    pub fn buffer_segments(&self) -> i32 {
+    pub fn buffer_segments(&self) -> std::option::Option<i32> {
         self.buffer_segments
     }
     /// The number of consecutive times that attempts to read a manifest or segment must fail before the input is considered unavailable.
-    pub fn retries(&self) -> i32 {
+    pub fn retries(&self) -> std::option::Option<i32> {
         self.retries
     }
     /// The number of seconds between retries when an attempt to read a manifest or segment fails.
-    pub fn retry_interval(&self) -> i32 {
+    pub fn retry_interval(&self) -> std::option::Option<i32> {
         self.retry_interval
     }
     /// Identifies the source for the SCTE-35 messages that MediaLive will ingest. Messages can be ingested from the content segments (in the stream) or from tags in the playlist (the HLS manifest). MediaLive ignores SCTE-35 information in the source that is not selected.
@@ -116,10 +116,10 @@ impl HlsInputSettingsBuilder {
     /// Consumes the builder and constructs a [`HlsInputSettings`](crate::types::HlsInputSettings).
     pub fn build(self) -> crate::types::HlsInputSettings {
         crate::types::HlsInputSettings {
-            bandwidth: self.bandwidth.unwrap_or_default(),
-            buffer_segments: self.buffer_segments.unwrap_or_default(),
-            retries: self.retries.unwrap_or_default(),
-            retry_interval: self.retry_interval.unwrap_or_default(),
+            bandwidth: self.bandwidth,
+            buffer_segments: self.buffer_segments,
+            retries: self.retries,
+            retry_interval: self.retry_interval,
             scte35_source: self.scte35_source,
         }
     }

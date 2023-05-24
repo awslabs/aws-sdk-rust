@@ -14,8 +14,9 @@ pub struct CreateKeyInput {
     /// <p>For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
-    /// <p>A description of the KMS key.</p>
-    /// <p>Use a description that helps you decide whether the KMS key is appropriate for a task. The default value is an empty string (no description).</p>
+    /// <p>A description of the KMS key. Use a description that helps you decide whether the KMS key is appropriate for a task. The default value is an empty string (no description).</p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
     /// <p>To set or change the description after the key is created, use <code>UpdateKeyDescription</code>.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -93,7 +94,9 @@ pub struct CreateKeyInput {
     /// <p>Use this parameter only when you intend to prevent the principal that is making the request from making a subsequent <code>PutKeyPolicy</code> request on the KMS key.</p>
     #[doc(hidden)]
     pub bypass_policy_lockout_safety_check: std::option::Option<bool>,
-    /// <p>Assigns one or more tags to the KMS key. Use this parameter to tag the KMS key when it is created. To tag an existing KMS key, use the <code>TagResource</code> operation.</p> <note>
+    /// <p>Assigns one or more tags to the KMS key. Use this parameter to tag the KMS key when it is created. To tag an existing KMS key, use the <code>TagResource</code> operation.</p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important> <note>
     /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </note>
     /// <p>To use this parameter, you must have <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a> permission in an IAM policy.</p>
@@ -128,8 +131,9 @@ impl CreateKeyInput {
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
-    /// <p>A description of the KMS key.</p>
-    /// <p>Use a description that helps you decide whether the KMS key is appropriate for a task. The default value is an empty string (no description).</p>
+    /// <p>A description of the KMS key. Use a description that helps you decide whether the KMS key is appropriate for a task. The default value is an empty string (no description).</p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
     /// <p>To set or change the description after the key is created, use <code>UpdateKeyDescription</code>.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
@@ -216,7 +220,9 @@ impl CreateKeyInput {
     pub fn bypass_policy_lockout_safety_check(&self) -> std::option::Option<bool> {
         self.bypass_policy_lockout_safety_check
     }
-    /// <p>Assigns one or more tags to the KMS key. Use this parameter to tag the KMS key when it is created. To tag an existing KMS key, use the <code>TagResource</code> operation.</p> <note>
+    /// <p>Assigns one or more tags to the KMS key. Use this parameter to tag the KMS key when it is created. To tag an existing KMS key, use the <code>TagResource</code> operation.</p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important> <note>
     /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </note>
     /// <p>To use this parameter, you must have <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a> permission in an IAM policy.</p>
@@ -291,15 +297,17 @@ impl CreateKeyInputBuilder {
         self.policy = input;
         self
     }
-    /// <p>A description of the KMS key.</p>
-    /// <p>Use a description that helps you decide whether the KMS key is appropriate for a task. The default value is an empty string (no description).</p>
+    /// <p>A description of the KMS key. Use a description that helps you decide whether the KMS key is appropriate for a task. The default value is an empty string (no description).</p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
     /// <p>To set or change the description after the key is created, use <code>UpdateKeyDescription</code>.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.description = Some(input.into());
         self
     }
-    /// <p>A description of the KMS key.</p>
-    /// <p>Use a description that helps you decide whether the KMS key is appropriate for a task. The default value is an empty string (no description).</p>
+    /// <p>A description of the KMS key. Use a description that helps you decide whether the KMS key is appropriate for a task. The default value is an empty string (no description).</p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
     /// <p>To set or change the description after the key is created, use <code>UpdateKeyDescription</code>.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.description = input;
@@ -490,7 +498,9 @@ impl CreateKeyInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Assigns one or more tags to the KMS key. Use this parameter to tag the KMS key when it is created. To tag an existing KMS key, use the <code>TagResource</code> operation.</p> <note>
+    /// <p>Assigns one or more tags to the KMS key. Use this parameter to tag the KMS key when it is created. To tag an existing KMS key, use the <code>TagResource</code> operation.</p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important> <note>
     /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </note>
     /// <p>To use this parameter, you must have <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a> permission in an IAM policy.</p>
@@ -502,7 +512,9 @@ impl CreateKeyInputBuilder {
         self.tags = Some(v);
         self
     }
-    /// <p>Assigns one or more tags to the KMS key. Use this parameter to tag the KMS key when it is created. To tag an existing KMS key, use the <code>TagResource</code> operation.</p> <note>
+    /// <p>Assigns one or more tags to the KMS key. Use this parameter to tag the KMS key when it is created. To tag an existing KMS key, use the <code>TagResource</code> operation.</p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important> <note>
     /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </note>
     /// <p>To use this parameter, you must have <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a> permission in an IAM policy.</p>

@@ -9,7 +9,7 @@ pub struct Eac3Settings {
     pub attenuation_control: std::option::Option<crate::types::Eac3AttenuationControl>,
     /// Average bitrate in bits/second. Valid bitrates depend on the coding mode.
     #[doc(hidden)]
-    pub bitrate: f64,
+    pub bitrate: std::option::Option<f64>,
     /// Specifies the bitstream mode (bsmod) for the emitted E-AC-3 stream. See ATSC A/52-2012 (Annex E) for background on these values.
     #[doc(hidden)]
     pub bitstream_mode: std::option::Option<crate::types::Eac3BitstreamMode>,
@@ -21,7 +21,7 @@ pub struct Eac3Settings {
     pub dc_filter: std::option::Option<crate::types::Eac3DcFilter>,
     /// Sets the dialnorm for the output. If blank and input audio is Dolby Digital Plus, dialnorm will be passed through.
     #[doc(hidden)]
-    pub dialnorm: i32,
+    pub dialnorm: std::option::Option<i32>,
     /// Sets the Dolby dynamic range compression profile.
     #[doc(hidden)]
     pub drc_line: std::option::Option<crate::types::Eac3DrcLine>,
@@ -36,16 +36,16 @@ pub struct Eac3Settings {
     pub lfe_filter: std::option::Option<crate::types::Eac3LfeFilter>,
     /// Left only/Right only center mix level. Only used for 3/2 coding mode.
     #[doc(hidden)]
-    pub lo_ro_center_mix_level: f64,
+    pub lo_ro_center_mix_level: std::option::Option<f64>,
     /// Left only/Right only surround mix level. Only used for 3/2 coding mode.
     #[doc(hidden)]
-    pub lo_ro_surround_mix_level: f64,
+    pub lo_ro_surround_mix_level: std::option::Option<f64>,
     /// Left total/Right total center mix level. Only used for 3/2 coding mode.
     #[doc(hidden)]
-    pub lt_rt_center_mix_level: f64,
+    pub lt_rt_center_mix_level: std::option::Option<f64>,
     /// Left total/Right total surround mix level. Only used for 3/2 coding mode.
     #[doc(hidden)]
-    pub lt_rt_surround_mix_level: f64,
+    pub lt_rt_surround_mix_level: std::option::Option<f64>,
     /// When set to followInput, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
     #[doc(hidden)]
     pub metadata_control: std::option::Option<crate::types::Eac3MetadataControl>,
@@ -73,7 +73,7 @@ impl Eac3Settings {
         self.attenuation_control.as_ref()
     }
     /// Average bitrate in bits/second. Valid bitrates depend on the coding mode.
-    pub fn bitrate(&self) -> f64 {
+    pub fn bitrate(&self) -> std::option::Option<f64> {
         self.bitrate
     }
     /// Specifies the bitstream mode (bsmod) for the emitted E-AC-3 stream. See ATSC A/52-2012 (Annex E) for background on these values.
@@ -89,7 +89,7 @@ impl Eac3Settings {
         self.dc_filter.as_ref()
     }
     /// Sets the dialnorm for the output. If blank and input audio is Dolby Digital Plus, dialnorm will be passed through.
-    pub fn dialnorm(&self) -> i32 {
+    pub fn dialnorm(&self) -> std::option::Option<i32> {
         self.dialnorm
     }
     /// Sets the Dolby dynamic range compression profile.
@@ -109,19 +109,19 @@ impl Eac3Settings {
         self.lfe_filter.as_ref()
     }
     /// Left only/Right only center mix level. Only used for 3/2 coding mode.
-    pub fn lo_ro_center_mix_level(&self) -> f64 {
+    pub fn lo_ro_center_mix_level(&self) -> std::option::Option<f64> {
         self.lo_ro_center_mix_level
     }
     /// Left only/Right only surround mix level. Only used for 3/2 coding mode.
-    pub fn lo_ro_surround_mix_level(&self) -> f64 {
+    pub fn lo_ro_surround_mix_level(&self) -> std::option::Option<f64> {
         self.lo_ro_surround_mix_level
     }
     /// Left total/Right total center mix level. Only used for 3/2 coding mode.
-    pub fn lt_rt_center_mix_level(&self) -> f64 {
+    pub fn lt_rt_center_mix_level(&self) -> std::option::Option<f64> {
         self.lt_rt_center_mix_level
     }
     /// Left total/Right total surround mix level. Only used for 3/2 coding mode.
-    pub fn lt_rt_surround_mix_level(&self) -> f64 {
+    pub fn lt_rt_surround_mix_level(&self) -> std::option::Option<f64> {
         self.lt_rt_surround_mix_level
     }
     /// When set to followInput, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
@@ -421,19 +421,19 @@ impl Eac3SettingsBuilder {
     pub fn build(self) -> crate::types::Eac3Settings {
         crate::types::Eac3Settings {
             attenuation_control: self.attenuation_control,
-            bitrate: self.bitrate.unwrap_or_default(),
+            bitrate: self.bitrate,
             bitstream_mode: self.bitstream_mode,
             coding_mode: self.coding_mode,
             dc_filter: self.dc_filter,
-            dialnorm: self.dialnorm.unwrap_or_default(),
+            dialnorm: self.dialnorm,
             drc_line: self.drc_line,
             drc_rf: self.drc_rf,
             lfe_control: self.lfe_control,
             lfe_filter: self.lfe_filter,
-            lo_ro_center_mix_level: self.lo_ro_center_mix_level.unwrap_or_default(),
-            lo_ro_surround_mix_level: self.lo_ro_surround_mix_level.unwrap_or_default(),
-            lt_rt_center_mix_level: self.lt_rt_center_mix_level.unwrap_or_default(),
-            lt_rt_surround_mix_level: self.lt_rt_surround_mix_level.unwrap_or_default(),
+            lo_ro_center_mix_level: self.lo_ro_center_mix_level,
+            lo_ro_surround_mix_level: self.lo_ro_surround_mix_level,
+            lt_rt_center_mix_level: self.lt_rt_center_mix_level,
+            lt_rt_surround_mix_level: self.lt_rt_surround_mix_level,
             metadata_control: self.metadata_control,
             passthrough_control: self.passthrough_control,
             phase_control: self.phase_control,

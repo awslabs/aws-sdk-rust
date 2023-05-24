@@ -37,7 +37,7 @@ pub struct SecretListEntry {
     /// <p>The date and time the deletion of the secret occurred. Not present on active secrets. The secret can be recovered until the number of days in the recovery window has passed, as specified in the <code>RecoveryWindowInDays</code> parameter of the <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_DeleteSecret.html"> <code>DeleteSecret</code> </a> operation.</p>
     #[doc(hidden)]
     pub deleted_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The next date and time that Secrets Manager will attempt to rotate the secret, rounded to the nearest hour. This value is null if the secret is not set up for rotation.</p>
+    /// <p>The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
     #[doc(hidden)]
     pub next_rotation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The list of user-defined tags associated with the secret. To add tags to a secret, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_TagResource.html"> <code>TagResource</code> </a>. To remove tags, use <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_UntagResource.html"> <code>UntagResource</code> </a>.</p>
@@ -105,7 +105,7 @@ impl SecretListEntry {
     pub fn deleted_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deleted_date.as_ref()
     }
-    /// <p>The next date and time that Secrets Manager will attempt to rotate the secret, rounded to the nearest hour. This value is null if the secret is not set up for rotation.</p>
+    /// <p>The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
     pub fn next_rotation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.next_rotation_date.as_ref()
     }
@@ -296,12 +296,12 @@ impl SecretListEntryBuilder {
         self.deleted_date = input;
         self
     }
-    /// <p>The next date and time that Secrets Manager will attempt to rotate the secret, rounded to the nearest hour. This value is null if the secret is not set up for rotation.</p>
+    /// <p>The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
     pub fn next_rotation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.next_rotation_date = Some(input);
         self
     }
-    /// <p>The next date and time that Secrets Manager will attempt to rotate the secret, rounded to the nearest hour. This value is null if the secret is not set up for rotation.</p>
+    /// <p>The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
     pub fn set_next_rotation_date(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,

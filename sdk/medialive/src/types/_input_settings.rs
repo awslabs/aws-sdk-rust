@@ -18,7 +18,7 @@ pub struct InputSettings {
     pub denoise_filter: std::option::Option<crate::types::InputDenoiseFilter>,
     /// Adjusts the magnitude of filtering from 1 (minimal) to 5 (strongest).
     #[doc(hidden)]
-    pub filter_strength: i32,
+    pub filter_strength: std::option::Option<i32>,
     /// Turns on the filter for this input. MPEG-2 inputs have the deblocking filter enabled by default. 1) auto - filtering will be applied depending on input type/quality 2) disabled - no filtering will be applied to the input 3) forced - filtering will be applied regardless of input type
     #[doc(hidden)]
     pub input_filter: std::option::Option<crate::types::InputFilter>,
@@ -27,7 +27,7 @@ pub struct InputSettings {
     pub network_input_settings: std::option::Option<crate::types::NetworkInputSettings>,
     /// PID from which to read SCTE-35 messages. If left undefined, EML will select the first SCTE-35 PID found in the input.
     #[doc(hidden)]
-    pub scte35_pid: i32,
+    pub scte35_pid: std::option::Option<i32>,
     /// Specifies whether to extract applicable ancillary data from a SMPTE-2038 source in this input. Applicable data types are captions, timecode, AFD, and SCTE-104 messages. - PREFER: Extract from SMPTE-2038 if present in this input, otherwise extract from another source (if any). - IGNORE: Never extract any ancillary data from SMPTE-2038.
     #[doc(hidden)]
     pub smpte2038_data_preference: std::option::Option<crate::types::Smpte2038DataPreference>,
@@ -56,7 +56,7 @@ impl InputSettings {
         self.denoise_filter.as_ref()
     }
     /// Adjusts the magnitude of filtering from 1 (minimal) to 5 (strongest).
-    pub fn filter_strength(&self) -> i32 {
+    pub fn filter_strength(&self) -> std::option::Option<i32> {
         self.filter_strength
     }
     /// Turns on the filter for this input. MPEG-2 inputs have the deblocking filter enabled by default. 1) auto - filtering will be applied depending on input type/quality 2) disabled - no filtering will be applied to the input 3) forced - filtering will be applied regardless of input type
@@ -70,7 +70,7 @@ impl InputSettings {
         self.network_input_settings.as_ref()
     }
     /// PID from which to read SCTE-35 messages. If left undefined, EML will select the first SCTE-35 PID found in the input.
-    pub fn scte35_pid(&self) -> i32 {
+    pub fn scte35_pid(&self) -> std::option::Option<i32> {
         self.scte35_pid
     }
     /// Specifies whether to extract applicable ancillary data from a SMPTE-2038 source in this input. Applicable data types are captions, timecode, AFD, and SCTE-104 messages. - PREFER: Extract from SMPTE-2038 if present in this input, otherwise extract from another source (if any). - IGNORE: Never extract any ancillary data from SMPTE-2038.
@@ -274,10 +274,10 @@ impl InputSettingsBuilder {
             caption_selectors: self.caption_selectors,
             deblock_filter: self.deblock_filter,
             denoise_filter: self.denoise_filter,
-            filter_strength: self.filter_strength.unwrap_or_default(),
+            filter_strength: self.filter_strength,
             input_filter: self.input_filter,
             network_input_settings: self.network_input_settings,
-            scte35_pid: self.scte35_pid.unwrap_or_default(),
+            scte35_pid: self.scte35_pid,
             smpte2038_data_preference: self.smpte2038_data_preference,
             source_end_behavior: self.source_end_behavior,
             video_selector: self.video_selector,

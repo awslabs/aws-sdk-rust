@@ -5,7 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct OffPeakWindowOptions {
     /// <p>Whether to enable an off-peak window.</p>
-    /// <p>This option is only available when modifying a domain created prior to February 13, 2023, not when creating a new domain. All domains created after this date have the off-peak window enabled by default. You can't disable the off-peak window after it's enabled for a domain.</p>
+    /// <p>This option is only available when modifying a domain created prior to February 16, 2023, not when creating a new domain. All domains created after this date have the off-peak window enabled by default. You can't disable the off-peak window after it's enabled for a domain.</p>
     #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
     /// <p>Off-peak window settings for the domain.</p>
@@ -14,7 +14,7 @@ pub struct OffPeakWindowOptions {
 }
 impl OffPeakWindowOptions {
     /// <p>Whether to enable an off-peak window.</p>
-    /// <p>This option is only available when modifying a domain created prior to February 13, 2023, not when creating a new domain. All domains created after this date have the off-peak window enabled by default. You can't disable the off-peak window after it's enabled for a domain.</p>
+    /// <p>This option is only available when modifying a domain created prior to February 16, 2023, not when creating a new domain. All domains created after this date have the off-peak window enabled by default. You can't disable the off-peak window after it's enabled for a domain.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
@@ -39,13 +39,13 @@ pub struct OffPeakWindowOptionsBuilder {
 }
 impl OffPeakWindowOptionsBuilder {
     /// <p>Whether to enable an off-peak window.</p>
-    /// <p>This option is only available when modifying a domain created prior to February 13, 2023, not when creating a new domain. All domains created after this date have the off-peak window enabled by default. You can't disable the off-peak window after it's enabled for a domain.</p>
+    /// <p>This option is only available when modifying a domain created prior to February 16, 2023, not when creating a new domain. All domains created after this date have the off-peak window enabled by default. You can't disable the off-peak window after it's enabled for a domain.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = Some(input);
         self
     }
     /// <p>Whether to enable an off-peak window.</p>
-    /// <p>This option is only available when modifying a domain created prior to February 13, 2023, not when creating a new domain. All domains created after this date have the off-peak window enabled by default. You can't disable the off-peak window after it's enabled for a domain.</p>
+    /// <p>This option is only available when modifying a domain created prior to February 16, 2023, not when creating a new domain. All domains created after this date have the off-peak window enabled by default. You can't disable the off-peak window after it's enabled for a domain.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
         self.enabled = input;
         self

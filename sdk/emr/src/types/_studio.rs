@@ -16,7 +16,7 @@ pub struct Studio {
     /// <p>The detailed description of the Amazon EMR Studio.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or IAM Identity Center.</p>
+    /// <p>Specifies whether the Amazon EMR Studio authenticates users with IAM or IAM Identity Center.</p>
     #[doc(hidden)]
     pub auth_mode: std::option::Option<crate::types::AuthMode>,
     /// <p>The ID of the VPC associated with the Amazon EMR Studio.</p>
@@ -73,7 +73,7 @@ impl Studio {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or IAM Identity Center.</p>
+    /// <p>Specifies whether the Amazon EMR Studio authenticates users with IAM or IAM Identity Center.</p>
     pub fn auth_mode(&self) -> std::option::Option<&crate::types::AuthMode> {
         self.auth_mode.as_ref()
     }
@@ -196,12 +196,12 @@ impl StudioBuilder {
         self.description = input;
         self
     }
-    /// <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or IAM Identity Center.</p>
+    /// <p>Specifies whether the Amazon EMR Studio authenticates users with IAM or IAM Identity Center.</p>
     pub fn auth_mode(mut self, input: crate::types::AuthMode) -> Self {
         self.auth_mode = Some(input);
         self
     }
-    /// <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or IAM Identity Center.</p>
+    /// <p>Specifies whether the Amazon EMR Studio authenticates users with IAM or IAM Identity Center.</p>
     pub fn set_auth_mode(mut self, input: std::option::Option<crate::types::AuthMode>) -> Self {
         self.auth_mode = input;
         self

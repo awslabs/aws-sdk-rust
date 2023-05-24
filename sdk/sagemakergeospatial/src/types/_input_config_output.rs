@@ -7,9 +7,6 @@ pub struct InputConfigOutput {
     /// <p>The Amazon Resource Name (ARN) of the previous Earth Observation job.</p>
     #[doc(hidden)]
     pub previous_earth_observation_job_arn: std::option::Option<std::string::String>,
-    /// <p>The location of the input data.</p>
-    #[doc(hidden)]
-    pub data_source_config: std::option::Option<crate::types::EojDataSourceConfigInput>,
     /// <p>The structure representing the RasterDataCollection Query consisting of the Area of Interest, RasterDataCollectionArn, RasterDataCollectionName, TimeRange, and Property Filters.</p>
     #[doc(hidden)]
     pub raster_data_collection_query:
@@ -19,12 +16,6 @@ impl InputConfigOutput {
     /// <p>The Amazon Resource Name (ARN) of the previous Earth Observation job.</p>
     pub fn previous_earth_observation_job_arn(&self) -> std::option::Option<&str> {
         self.previous_earth_observation_job_arn.as_deref()
-    }
-    /// <p>The location of the input data.</p>
-    pub fn data_source_config(
-        &self,
-    ) -> std::option::Option<&crate::types::EojDataSourceConfigInput> {
-        self.data_source_config.as_ref()
     }
     /// <p>The structure representing the RasterDataCollection Query consisting of the Area of Interest, RasterDataCollectionArn, RasterDataCollectionName, TimeRange, and Property Filters.</p>
     pub fn raster_data_collection_query(
@@ -45,7 +36,6 @@ impl InputConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct InputConfigOutputBuilder {
     pub(crate) previous_earth_observation_job_arn: std::option::Option<std::string::String>,
-    pub(crate) data_source_config: std::option::Option<crate::types::EojDataSourceConfigInput>,
     pub(crate) raster_data_collection_query:
         std::option::Option<crate::types::RasterDataCollectionQueryOutput>,
 }
@@ -64,19 +54,6 @@ impl InputConfigOutputBuilder {
         input: std::option::Option<std::string::String>,
     ) -> Self {
         self.previous_earth_observation_job_arn = input;
-        self
-    }
-    /// <p>The location of the input data.</p>
-    pub fn data_source_config(mut self, input: crate::types::EojDataSourceConfigInput) -> Self {
-        self.data_source_config = Some(input);
-        self
-    }
-    /// <p>The location of the input data.</p>
-    pub fn set_data_source_config(
-        mut self,
-        input: std::option::Option<crate::types::EojDataSourceConfigInput>,
-    ) -> Self {
-        self.data_source_config = input;
         self
     }
     /// <p>The structure representing the RasterDataCollection Query consisting of the Area of Interest, RasterDataCollectionArn, RasterDataCollectionName, TimeRange, and Property Filters.</p>
@@ -99,7 +76,6 @@ impl InputConfigOutputBuilder {
     pub fn build(self) -> crate::types::InputConfigOutput {
         crate::types::InputConfigOutput {
             previous_earth_observation_job_arn: self.previous_earth_observation_job_arn,
-            data_source_config: self.data_source_config,
             raster_data_collection_query: self.raster_data_collection_query,
         }
     }

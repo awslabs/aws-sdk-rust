@@ -231,6 +231,24 @@ pub use crate::types::_domain_status::DomainStatus;
 
 pub use crate::types::_auto_tune_options_output::AutoTuneOptionsOutput;
 
+pub use crate::types::_domain_nodes_status::DomainNodesStatus;
+
+pub use crate::types::_node_status::NodeStatus;
+
+pub use crate::types::_node_type::NodeType;
+
+pub use crate::types::_environment_info::EnvironmentInfo;
+
+pub use crate::types::_availability_zone_info::AvailabilityZoneInfo;
+
+pub use crate::types::_zone_status::ZoneStatus;
+
+pub use crate::types::_domain_health::DomainHealth;
+
+pub use crate::types::_master_node_status::MasterNodeStatus;
+
+pub use crate::types::_domain_state::DomainState;
+
 pub use crate::types::_change_progress_status_details::ChangeProgressStatusDetails;
 
 pub use crate::types::_change_progress_stage::ChangeProgressStage;
@@ -293,6 +311,8 @@ mod _auto_tune_status;
 
 mod _auto_tune_type;
 
+mod _availability_zone_info;
+
 mod _aws_domain_information;
 
 mod _change_progress_details;
@@ -329,13 +349,19 @@ mod _domain_endpoint_options;
 
 mod _domain_endpoint_options_status;
 
+mod _domain_health;
+
 mod _domain_info;
 
 mod _domain_information_container;
 
+mod _domain_nodes_status;
+
 mod _domain_package_details;
 
 mod _domain_package_status;
+
+mod _domain_state;
 
 mod _domain_status;
 
@@ -356,6 +382,8 @@ mod _encryption_at_rest_options;
 mod _encryption_at_rest_options_status;
 
 mod _engine_type;
+
+mod _environment_info;
 
 mod _error_details;
 
@@ -381,11 +409,17 @@ mod _log_publishing_options_status;
 
 mod _log_type;
 
+mod _master_node_status;
+
 mod _master_user_options;
+
+mod _node_status;
 
 mod _node_to_node_encryption_options;
 
 mod _node_to_node_encryption_options_status;
+
+mod _node_type;
 
 mod _off_peak_window;
 
@@ -502,6 +536,8 @@ mod _vpc_options;
 mod _window_start_time;
 
 mod _zone_awareness_config;
+
+mod _zone_status;
 
 /// Builders
 pub mod builders;

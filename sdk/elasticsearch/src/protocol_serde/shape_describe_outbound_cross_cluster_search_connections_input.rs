@@ -15,14 +15,14 @@ pub fn ser_describe_outbound_cross_cluster_search_connections_input(
         }
         array_2.finish();
     }
-    if input.max_results != 0 {
+    if let Some(var_5) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_results).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_5) = &input.next_token {
-        object.key("NextToken").string(var_5.as_str());
+    if let Some(var_6) = &input.next_token {
+        object.key("NextToken").string(var_6.as_str());
     }
     Ok(())
 }

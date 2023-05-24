@@ -51,6 +51,10 @@ pub use crate::types::_wrapping_key_spec::WrappingKeySpec;
 
 pub use crate::types::_algorithm_spec::AlgorithmSpec;
 
+pub use crate::types::_recipient_info::RecipientInfo;
+
+pub use crate::types::_key_encryption_mechanism::KeyEncryptionMechanism;
+
 pub use crate::types::_data_key_spec::DataKeySpec;
 
 pub use crate::types::_data_key_pair_spec::DataKeyPairSpec;
@@ -93,6 +97,8 @@ mod _grant_list_entry;
 
 mod _grant_operation;
 
+mod _key_encryption_mechanism;
+
 mod _key_list_entry;
 
 mod _key_manager_type;
@@ -116,6 +122,8 @@ mod _multi_region_key;
 mod _multi_region_key_type;
 
 mod _origin_type;
+
+mod _recipient_info;
 
 mod _signing_algorithm_spec;
 

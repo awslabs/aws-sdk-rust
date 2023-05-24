@@ -21,5 +21,11 @@ pub fn ser_salesforce_connector_profile_credentials(
     if let Some(var_5) = &input.client_credentials_arn {
         object.key("clientCredentialsArn").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.o_auth2_grant_type {
+        object.key("oAuth2GrantType").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.jwt_token {
+        object.key("jwtToken").string(var_7.as_str());
+    }
     Ok(())
 }

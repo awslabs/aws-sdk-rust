@@ -9,35 +9,35 @@ pub struct Scte35SegmentationDescriptor {
     pub delivery_restrictions: std::option::Option<crate::types::Scte35DeliveryRestrictions>,
     /// Corresponds to SCTE-35 segment_num. A value that is valid for the specified segmentation_type_id.
     #[doc(hidden)]
-    pub segment_num: i32,
+    pub segment_num: std::option::Option<i32>,
     /// Corresponds to SCTE-35 segmentation_event_cancel_indicator.
     #[doc(hidden)]
     pub segmentation_cancel_indicator:
         std::option::Option<crate::types::Scte35SegmentationCancelIndicator>,
     /// Corresponds to SCTE-35 segmentation_duration. Optional. The duration for the time_signal, in 90 KHz ticks. To convert seconds to ticks, multiple the seconds by 90,000. Enter time in 90 KHz clock ticks. If you do not enter a duration, the time_signal will continue until you insert a cancellation message.
     #[doc(hidden)]
-    pub segmentation_duration: i64,
+    pub segmentation_duration: std::option::Option<i64>,
     /// Corresponds to SCTE-35 segmentation_event_id.
     #[doc(hidden)]
-    pub segmentation_event_id: i64,
+    pub segmentation_event_id: std::option::Option<i64>,
     /// Corresponds to SCTE-35 segmentation_type_id. One of the segmentation_type_id values listed in the SCTE-35 specification. On the console, enter the ID in decimal (for example, "52"). In the CLI, API, or an SDK, enter the ID in hex (for example, "0x34") or decimal (for example, "52").
     #[doc(hidden)]
-    pub segmentation_type_id: i32,
+    pub segmentation_type_id: std::option::Option<i32>,
     /// Corresponds to SCTE-35 segmentation_upid. Enter a string containing the hexadecimal representation of the characters that make up the SCTE-35 segmentation_upid value. Must contain an even number of hex characters. Do not include spaces between each hex pair. For example, the ASCII "ADS Information" becomes hex "41445320496e666f726d6174696f6e.
     #[doc(hidden)]
     pub segmentation_upid: std::option::Option<std::string::String>,
     /// Corresponds to SCTE-35 segmentation_upid_type. On the console, enter one of the types listed in the SCTE-35 specification, converted to a decimal. For example, "0x0C" hex from the specification is "12" in decimal. In the CLI, API, or an SDK, enter one of the types listed in the SCTE-35 specification, in either hex (for example, "0x0C" ) or in decimal (for example, "12").
     #[doc(hidden)]
-    pub segmentation_upid_type: i32,
+    pub segmentation_upid_type: std::option::Option<i32>,
     /// Corresponds to SCTE-35 segments_expected. A value that is valid for the specified segmentation_type_id.
     #[doc(hidden)]
-    pub segments_expected: i32,
+    pub segments_expected: std::option::Option<i32>,
     /// Corresponds to SCTE-35 sub_segment_num. A value that is valid for the specified segmentation_type_id.
     #[doc(hidden)]
-    pub sub_segment_num: i32,
+    pub sub_segment_num: std::option::Option<i32>,
     /// Corresponds to SCTE-35 sub_segments_expected. A value that is valid for the specified segmentation_type_id.
     #[doc(hidden)]
-    pub sub_segments_expected: i32,
+    pub sub_segments_expected: std::option::Option<i32>,
 }
 impl Scte35SegmentationDescriptor {
     /// Holds the four SCTE-35 delivery restriction parameters.
@@ -47,7 +47,7 @@ impl Scte35SegmentationDescriptor {
         self.delivery_restrictions.as_ref()
     }
     /// Corresponds to SCTE-35 segment_num. A value that is valid for the specified segmentation_type_id.
-    pub fn segment_num(&self) -> i32 {
+    pub fn segment_num(&self) -> std::option::Option<i32> {
         self.segment_num
     }
     /// Corresponds to SCTE-35 segmentation_event_cancel_indicator.
@@ -57,15 +57,15 @@ impl Scte35SegmentationDescriptor {
         self.segmentation_cancel_indicator.as_ref()
     }
     /// Corresponds to SCTE-35 segmentation_duration. Optional. The duration for the time_signal, in 90 KHz ticks. To convert seconds to ticks, multiple the seconds by 90,000. Enter time in 90 KHz clock ticks. If you do not enter a duration, the time_signal will continue until you insert a cancellation message.
-    pub fn segmentation_duration(&self) -> i64 {
+    pub fn segmentation_duration(&self) -> std::option::Option<i64> {
         self.segmentation_duration
     }
     /// Corresponds to SCTE-35 segmentation_event_id.
-    pub fn segmentation_event_id(&self) -> i64 {
+    pub fn segmentation_event_id(&self) -> std::option::Option<i64> {
         self.segmentation_event_id
     }
     /// Corresponds to SCTE-35 segmentation_type_id. One of the segmentation_type_id values listed in the SCTE-35 specification. On the console, enter the ID in decimal (for example, "52"). In the CLI, API, or an SDK, enter the ID in hex (for example, "0x34") or decimal (for example, "52").
-    pub fn segmentation_type_id(&self) -> i32 {
+    pub fn segmentation_type_id(&self) -> std::option::Option<i32> {
         self.segmentation_type_id
     }
     /// Corresponds to SCTE-35 segmentation_upid. Enter a string containing the hexadecimal representation of the characters that make up the SCTE-35 segmentation_upid value. Must contain an even number of hex characters. Do not include spaces between each hex pair. For example, the ASCII "ADS Information" becomes hex "41445320496e666f726d6174696f6e.
@@ -73,19 +73,19 @@ impl Scte35SegmentationDescriptor {
         self.segmentation_upid.as_deref()
     }
     /// Corresponds to SCTE-35 segmentation_upid_type. On the console, enter one of the types listed in the SCTE-35 specification, converted to a decimal. For example, "0x0C" hex from the specification is "12" in decimal. In the CLI, API, or an SDK, enter one of the types listed in the SCTE-35 specification, in either hex (for example, "0x0C" ) or in decimal (for example, "12").
-    pub fn segmentation_upid_type(&self) -> i32 {
+    pub fn segmentation_upid_type(&self) -> std::option::Option<i32> {
         self.segmentation_upid_type
     }
     /// Corresponds to SCTE-35 segments_expected. A value that is valid for the specified segmentation_type_id.
-    pub fn segments_expected(&self) -> i32 {
+    pub fn segments_expected(&self) -> std::option::Option<i32> {
         self.segments_expected
     }
     /// Corresponds to SCTE-35 sub_segment_num. A value that is valid for the specified segmentation_type_id.
-    pub fn sub_segment_num(&self) -> i32 {
+    pub fn sub_segment_num(&self) -> std::option::Option<i32> {
         self.sub_segment_num
     }
     /// Corresponds to SCTE-35 sub_segments_expected. A value that is valid for the specified segmentation_type_id.
-    pub fn sub_segments_expected(&self) -> i32 {
+    pub fn sub_segments_expected(&self) -> std::option::Option<i32> {
         self.sub_segments_expected
     }
 }
@@ -243,16 +243,16 @@ impl Scte35SegmentationDescriptorBuilder {
     pub fn build(self) -> crate::types::Scte35SegmentationDescriptor {
         crate::types::Scte35SegmentationDescriptor {
             delivery_restrictions: self.delivery_restrictions,
-            segment_num: self.segment_num.unwrap_or_default(),
+            segment_num: self.segment_num,
             segmentation_cancel_indicator: self.segmentation_cancel_indicator,
-            segmentation_duration: self.segmentation_duration.unwrap_or_default(),
-            segmentation_event_id: self.segmentation_event_id.unwrap_or_default(),
-            segmentation_type_id: self.segmentation_type_id.unwrap_or_default(),
+            segmentation_duration: self.segmentation_duration,
+            segmentation_event_id: self.segmentation_event_id,
+            segmentation_type_id: self.segmentation_type_id,
             segmentation_upid: self.segmentation_upid,
-            segmentation_upid_type: self.segmentation_upid_type.unwrap_or_default(),
-            segments_expected: self.segments_expected.unwrap_or_default(),
-            sub_segment_num: self.sub_segment_num.unwrap_or_default(),
-            sub_segments_expected: self.sub_segments_expected.unwrap_or_default(),
+            segmentation_upid_type: self.segmentation_upid_type,
+            segments_expected: self.segments_expected,
+            sub_segment_num: self.sub_segment_num,
+            sub_segments_expected: self.sub_segments_expected,
         }
     }
 }

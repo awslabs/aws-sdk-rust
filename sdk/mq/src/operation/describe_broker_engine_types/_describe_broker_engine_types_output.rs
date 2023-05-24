@@ -8,7 +8,7 @@ pub struct DescribeBrokerEngineTypesOutput {
     pub broker_engine_types: std::option::Option<std::vec::Vec<crate::types::BrokerEngineType>>,
     /// <p>Required. The maximum number of engine types that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -20,7 +20,7 @@ impl DescribeBrokerEngineTypesOutput {
         self.broker_engine_types.as_deref()
     }
     /// <p>Required. The maximum number of engine types that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
@@ -105,7 +105,7 @@ impl DescribeBrokerEngineTypesOutputBuilder {
     ) -> crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesOutput {
         crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesOutput {
             broker_engine_types: self.broker_engine_types,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
             _request_id: self._request_id,
         }

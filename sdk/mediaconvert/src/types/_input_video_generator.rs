@@ -6,11 +6,11 @@
 pub struct InputVideoGenerator {
     /// Specify an integer value for Black video duration from 50 to 86400000 to generate a black video input for that many milliseconds. Required when you include Video generator.
     #[doc(hidden)]
-    pub duration: i32,
+    pub duration: std::option::Option<i32>,
 }
 impl InputVideoGenerator {
     /// Specify an integer value for Black video duration from 50 to 86400000 to generate a black video input for that many milliseconds. Required when you include Video generator.
-    pub fn duration(&self) -> i32 {
+    pub fn duration(&self) -> std::option::Option<i32> {
         self.duration
     }
 }
@@ -41,7 +41,7 @@ impl InputVideoGeneratorBuilder {
     /// Consumes the builder and constructs a [`InputVideoGenerator`](crate::types::InputVideoGenerator).
     pub fn build(self) -> crate::types::InputVideoGenerator {
         crate::types::InputVideoGenerator {
-            duration: self.duration.unwrap_or_default(),
+            duration: self.duration,
         }
     }
 }

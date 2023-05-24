@@ -19,7 +19,7 @@ pub struct InstanceGroup {
     /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
     #[doc(hidden)]
     pub bid_price: std::option::Option<std::string::String>,
-    /// <p>The EC2 instance type for all instances in the instance group.</p>
+    /// <p>The Amazon EC2 instance type for all instances in the instance group.</p>
     #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The target number of instances for the instance group.</p>
@@ -56,7 +56,7 @@ pub struct InstanceGroup {
     /// <p>Policy for customizing shrink operations.</p>
     #[doc(hidden)]
     pub shrink_policy: std::option::Option<crate::types::ShrinkPolicy>,
-    /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See PutAutoScalingPolicy.</p>
+    /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in response to the value of a CloudWatch metric. See PutAutoScalingPolicy.</p>
     #[doc(hidden)]
     pub auto_scaling_policy: std::option::Option<crate::types::AutoScalingPolicyDescription>,
     /// <p>The custom AMI ID to use for the provisioned instance group.</p>
@@ -84,7 +84,7 @@ impl InstanceGroup {
     pub fn bid_price(&self) -> std::option::Option<&str> {
         self.bid_price.as_deref()
     }
-    /// <p>The EC2 instance type for all instances in the instance group.</p>
+    /// <p>The Amazon EC2 instance type for all instances in the instance group.</p>
     pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
     }
@@ -133,7 +133,7 @@ impl InstanceGroup {
     pub fn shrink_policy(&self) -> std::option::Option<&crate::types::ShrinkPolicy> {
         self.shrink_policy.as_ref()
     }
-    /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See PutAutoScalingPolicy.</p>
+    /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in response to the value of a CloudWatch metric. See PutAutoScalingPolicy.</p>
     pub fn auto_scaling_policy(
         &self,
     ) -> std::option::Option<&crate::types::AutoScalingPolicyDescription> {
@@ -229,12 +229,12 @@ impl InstanceGroupBuilder {
         self.bid_price = input;
         self
     }
-    /// <p>The EC2 instance type for all instances in the instance group.</p>
+    /// <p>The Amazon EC2 instance type for all instances in the instance group.</p>
     pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.instance_type = Some(input.into());
         self
     }
-    /// <p>The EC2 instance type for all instances in the instance group.</p>
+    /// <p>The Amazon EC2 instance type for all instances in the instance group.</p>
     pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.instance_type = input;
         self
@@ -386,7 +386,7 @@ impl InstanceGroupBuilder {
         self.shrink_policy = input;
         self
     }
-    /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See PutAutoScalingPolicy.</p>
+    /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in response to the value of a CloudWatch metric. See PutAutoScalingPolicy.</p>
     pub fn auto_scaling_policy(
         mut self,
         input: crate::types::AutoScalingPolicyDescription,
@@ -394,7 +394,7 @@ impl InstanceGroupBuilder {
         self.auto_scaling_policy = Some(input);
         self
     }
-    /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See PutAutoScalingPolicy.</p>
+    /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in response to the value of a CloudWatch metric. See PutAutoScalingPolicy.</p>
     pub fn set_auto_scaling_policy(
         mut self,
         input: std::option::Option<crate::types::AutoScalingPolicyDescription>,

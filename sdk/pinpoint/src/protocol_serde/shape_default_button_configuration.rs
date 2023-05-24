@@ -6,23 +6,23 @@ pub fn ser_default_button_configuration(
     if let Some(var_1) = &input.background_color {
         object.key("BackgroundColor").string(var_1.as_str());
     }
-    if input.border_radius != 0 {
+    if let Some(var_2) = &input.border_radius {
         object.key("BorderRadius").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.border_radius).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.button_action {
-        object.key("ButtonAction").string(var_2.as_str());
+    if let Some(var_3) = &input.button_action {
+        object.key("ButtonAction").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.link {
-        object.key("Link").string(var_3.as_str());
+    if let Some(var_4) = &input.link {
+        object.key("Link").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.text {
-        object.key("Text").string(var_4.as_str());
+    if let Some(var_5) = &input.text {
+        object.key("Text").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.text_color {
-        object.key("TextColor").string(var_5.as_str());
+    if let Some(var_6) = &input.text_color {
+        object.key("TextColor").string(var_6.as_str());
     }
     Ok(())
 }

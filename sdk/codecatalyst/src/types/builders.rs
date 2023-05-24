@@ -17,6 +17,8 @@ pub use crate::types::_execute_command_session_configuration::ExecuteCommandSess
 
 pub use crate::types::_ide_configuration::IdeConfigurationBuilder;
 
+pub use crate::types::_dev_environment_session_summary::DevEnvironmentSessionSummaryBuilder;
+
 pub use crate::types::_dev_environment_summary::DevEnvironmentSummaryBuilder;
 
 pub use crate::types::_persistent_storage::PersistentStorageBuilder;

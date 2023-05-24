@@ -6,17 +6,17 @@
 pub struct WavSettings {
     /// Bits per sample.
     #[doc(hidden)]
-    pub bit_depth: f64,
+    pub bit_depth: std::option::Option<f64>,
     /// The audio coding mode for the WAV audio. The mode determines the number of channels in the audio.
     #[doc(hidden)]
     pub coding_mode: std::option::Option<crate::types::WavCodingMode>,
     /// Sample rate in Hz.
     #[doc(hidden)]
-    pub sample_rate: f64,
+    pub sample_rate: std::option::Option<f64>,
 }
 impl WavSettings {
     /// Bits per sample.
-    pub fn bit_depth(&self) -> f64 {
+    pub fn bit_depth(&self) -> std::option::Option<f64> {
         self.bit_depth
     }
     /// The audio coding mode for the WAV audio. The mode determines the number of channels in the audio.
@@ -24,7 +24,7 @@ impl WavSettings {
         self.coding_mode.as_ref()
     }
     /// Sample rate in Hz.
-    pub fn sample_rate(&self) -> f64 {
+    pub fn sample_rate(&self) -> std::option::Option<f64> {
         self.sample_rate
     }
 }
@@ -80,9 +80,9 @@ impl WavSettingsBuilder {
     /// Consumes the builder and constructs a [`WavSettings`](crate::types::WavSettings).
     pub fn build(self) -> crate::types::WavSettings {
         crate::types::WavSettings {
-            bit_depth: self.bit_depth.unwrap_or_default(),
+            bit_depth: self.bit_depth,
             coding_mode: self.coding_mode,
-            sample_rate: self.sample_rate.unwrap_or_default(),
+            sample_rate: self.sample_rate,
         }
     }
 }

@@ -19,6 +19,22 @@ pub use crate::types::_map_filter::MapFilterBuilder;
 
 pub use crate::types::_ecr_configuration::EcrConfigurationBuilder;
 
+pub use crate::types::_vulnerability::VulnerabilityBuilder;
+
+pub use crate::types::_epss::EpssBuilder;
+
+pub use crate::types::_exploit_observed::ExploitObservedBuilder;
+
+pub use crate::types::_cvss2::Cvss2Builder;
+
+pub use crate::types::_cvss3::Cvss3Builder;
+
+pub use crate::types::_atig_data::AtigDataBuilder;
+
+pub use crate::types::_cisa_data::CisaDataBuilder;
+
+pub use crate::types::_search_vulnerabilities_filter_criteria::SearchVulnerabilitiesFilterCriteriaBuilder;
+
 pub use crate::types::_usage_total::UsageTotalBuilder;
 
 pub use crate::types::_usage::UsageBuilder;
@@ -154,6 +170,12 @@ pub use crate::types::_failed_account::FailedAccountBuilder;
 pub use crate::types::_resource_status::ResourceStatusBuilder;
 
 pub use crate::types::_account::AccountBuilder;
+
+pub use crate::types::_failed_member_account_ec2_deep_inspection_status_state::FailedMemberAccountEc2DeepInspectionStatusStateBuilder;
+
+pub use crate::types::_member_account_ec2_deep_inspection_status_state::MemberAccountEc2DeepInspectionStatusStateBuilder;
+
+pub use crate::types::_member_account_ec2_deep_inspection_status::MemberAccountEc2DeepInspectionStatusBuilder;
 
 pub use crate::types::_free_trial_info_error::FreeTrialInfoErrorBuilder;
 

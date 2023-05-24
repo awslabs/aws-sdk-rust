@@ -24,50 +24,50 @@ pub fn ser_audio_selector(
     if let Some(var_7) = &input.language_code {
         object.key("languageCode").string(var_7.as_str());
     }
-    if input.offset != 0 {
+    if let Some(var_8) = &input.offset {
         object.key("offset").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.offset).into()),
+            aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_8) = &input.pids {
-        let mut array_9 = object.key("pids").start_array();
-        for item_10 in var_8 {
+    if let Some(var_9) = &input.pids {
+        let mut array_10 = object.key("pids").start_array();
+        for item_11 in var_9 {
             {
-                array_9.value().number(
+                array_10.value().number(
                     #[allow(clippy::useless_conversion)]
-                    aws_smithy_types::Number::NegInt((*item_10).into()),
+                    aws_smithy_types::Number::NegInt((*item_11).into()),
                 );
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
-    if input.program_selection != 0 {
+    if let Some(var_12) = &input.program_selection {
         object.key("programSelection").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.program_selection).into()),
+            aws_smithy_types::Number::NegInt((*var_12).into()),
         );
     }
-    if let Some(var_11) = &input.remix_settings {
+    if let Some(var_13) = &input.remix_settings {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("remixSettings").start_object();
-        crate::protocol_serde::shape_remix_settings::ser_remix_settings(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_14 = object.key("remixSettings").start_object();
+        crate::protocol_serde::shape_remix_settings::ser_remix_settings(&mut object_14, var_13)?;
+        object_14.finish();
     }
-    if let Some(var_13) = &input.selector_type {
-        object.key("selectorType").string(var_13.as_str());
+    if let Some(var_15) = &input.selector_type {
+        object.key("selectorType").string(var_15.as_str());
     }
-    if let Some(var_14) = &input.tracks {
-        let mut array_15 = object.key("tracks").start_array();
-        for item_16 in var_14 {
+    if let Some(var_16) = &input.tracks {
+        let mut array_17 = object.key("tracks").start_array();
+        for item_18 in var_16 {
             {
-                array_15.value().number(
+                array_17.value().number(
                     #[allow(clippy::useless_conversion)]
-                    aws_smithy_types::Number::NegInt((*item_16).into()),
+                    aws_smithy_types::Number::NegInt((*item_18).into()),
                 );
             }
         }
-        array_15.finish();
+        array_17.finish();
     }
     Ok(())
 }

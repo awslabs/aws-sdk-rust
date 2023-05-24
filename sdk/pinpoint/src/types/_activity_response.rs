@@ -30,16 +30,16 @@ pub struct ActivityResponse {
     pub state: std::option::Option<std::string::String>,
     /// <p>The total number of endpoints that the campaign successfully delivered messages to.</p>
     #[doc(hidden)]
-    pub successful_endpoint_count: i32,
+    pub successful_endpoint_count: std::option::Option<i32>,
     /// <p>The total number of time zones that were completed.</p>
     #[doc(hidden)]
-    pub timezones_completed_count: i32,
+    pub timezones_completed_count: std::option::Option<i32>,
     /// <p>The total number of unique time zones that are in the segment for the campaign.</p>
     #[doc(hidden)]
-    pub timezones_total_count: i32,
+    pub timezones_total_count: std::option::Option<i32>,
     /// <p>The total number of endpoints that the campaign attempted to deliver messages to.</p>
     #[doc(hidden)]
-    pub total_endpoint_count: i32,
+    pub total_endpoint_count: std::option::Option<i32>,
     /// <p>The unique identifier for the campaign treatment that the activity applies to. A treatment is a variation of a campaign that's used for A/B testing of a campaign.</p>
     #[doc(hidden)]
     pub treatment_id: std::option::Option<std::string::String>,
@@ -82,19 +82,19 @@ impl ActivityResponse {
         self.state.as_deref()
     }
     /// <p>The total number of endpoints that the campaign successfully delivered messages to.</p>
-    pub fn successful_endpoint_count(&self) -> i32 {
+    pub fn successful_endpoint_count(&self) -> std::option::Option<i32> {
         self.successful_endpoint_count
     }
     /// <p>The total number of time zones that were completed.</p>
-    pub fn timezones_completed_count(&self) -> i32 {
+    pub fn timezones_completed_count(&self) -> std::option::Option<i32> {
         self.timezones_completed_count
     }
     /// <p>The total number of unique time zones that are in the segment for the campaign.</p>
-    pub fn timezones_total_count(&self) -> i32 {
+    pub fn timezones_total_count(&self) -> std::option::Option<i32> {
         self.timezones_total_count
     }
     /// <p>The total number of endpoints that the campaign attempted to deliver messages to.</p>
-    pub fn total_endpoint_count(&self) -> i32 {
+    pub fn total_endpoint_count(&self) -> std::option::Option<i32> {
         self.total_endpoint_count
     }
     /// <p>The unique identifier for the campaign treatment that the activity applies to. A treatment is a variation of a campaign that's used for A/B testing of a campaign.</p>
@@ -303,10 +303,10 @@ impl ActivityResponseBuilder {
             scheduled_start: self.scheduled_start,
             start: self.start,
             state: self.state,
-            successful_endpoint_count: self.successful_endpoint_count.unwrap_or_default(),
-            timezones_completed_count: self.timezones_completed_count.unwrap_or_default(),
-            timezones_total_count: self.timezones_total_count.unwrap_or_default(),
-            total_endpoint_count: self.total_endpoint_count.unwrap_or_default(),
+            successful_endpoint_count: self.successful_endpoint_count,
+            timezones_completed_count: self.timezones_completed_count,
+            timezones_total_count: self.timezones_total_count,
+            total_endpoint_count: self.total_endpoint_count,
             treatment_id: self.treatment_id,
             execution_metrics: self.execution_metrics,
         }

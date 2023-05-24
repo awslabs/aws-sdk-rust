@@ -305,6 +305,8 @@ pub(crate) mod shape_managed_rule_state;
 
 pub(crate) mod shape_metric_data_queries;
 
+pub(crate) mod shape_metric_stream_filter_metric_names;
+
 pub(crate) mod shape_metric_stream_statistics_additional_statistics;
 
 pub(crate) mod shape_metric_stream_statistics_include_metrics;

@@ -113,6 +113,24 @@ pub use crate::types::_and_statement::AndStatementBuilder;
 
 pub use crate::types::_rate_based_statement::RateBasedStatementBuilder;
 
+pub use crate::types::_rate_based_statement_custom_key::RateBasedStatementCustomKeyBuilder;
+
+pub use crate::types::_rate_limit_label_namespace::RateLimitLabelNamespaceBuilder;
+
+pub use crate::types::_rate_limit_ip::RateLimitIpBuilder;
+
+pub use crate::types::_rate_limit_forwarded_ip::RateLimitForwardedIpBuilder;
+
+pub use crate::types::_rate_limit_http_method::RateLimitHttpMethodBuilder;
+
+pub use crate::types::_rate_limit_query_string::RateLimitQueryStringBuilder;
+
+pub use crate::types::_rate_limit_query_argument::RateLimitQueryArgumentBuilder;
+
+pub use crate::types::_rate_limit_cookie::RateLimitCookieBuilder;
+
+pub use crate::types::_rate_limit_header::RateLimitHeaderBuilder;
+
 pub use crate::types::_forwarded_ip_config::ForwardedIpConfigBuilder;
 
 pub use crate::types::_regex_pattern_set_reference_statement::RegexPatternSetReferenceStatementBuilder;

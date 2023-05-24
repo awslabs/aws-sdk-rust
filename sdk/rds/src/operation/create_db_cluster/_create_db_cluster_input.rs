@@ -209,12 +209,10 @@ pub struct CreateDbClusterInput {
     pub enable_cloudwatch_logs_exports: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
     /// <p>The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters.</p>
-    /// <p>Limitations and requirements apply to some DB engine modes. For more information, see the following sections in the <i>Amazon Aurora User Guide</i>:</p>
+    /// <p>For information about limitations and requirements for Serverless DB clusters, see the following sections in the <i>Amazon Aurora User Guide</i>:</p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations of Aurora Serverless v1</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">Requirements for Aurora Serverless v2</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">Limitations of parallel query</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">Limitations of Aurora global databases</a> </p> </li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters only</p>
     #[doc(hidden)]
@@ -269,10 +267,10 @@ pub struct CreateDbClusterInput {
     pub allocated_storage: std::option::Option<i32>,
     /// <p>Specifies the storage type to be associated with the DB cluster.</p>
     /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
-    /// <p>Valid values: <code>io1</code> </p>
-    /// <p>When specified, a value for the <code>Iops</code> parameter is required.</p>
-    /// <p>Default: <code>io1</code> </p>
-    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    /// <p>When specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is required.</p>
+    /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
+    /// <p>Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     #[doc(hidden)]
     pub storage_type: std::option::Option<std::string::String>,
     /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.</p>
@@ -609,12 +607,10 @@ impl CreateDbClusterInput {
     }
     /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
     /// <p>The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters.</p>
-    /// <p>Limitations and requirements apply to some DB engine modes. For more information, see the following sections in the <i>Amazon Aurora User Guide</i>:</p>
+    /// <p>For information about limitations and requirements for Serverless DB clusters, see the following sections in the <i>Amazon Aurora User Guide</i>:</p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations of Aurora Serverless v1</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">Requirements for Aurora Serverless v2</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">Limitations of parallel query</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">Limitations of Aurora global databases</a> </p> </li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn engine_mode(&self) -> std::option::Option<&str> {
@@ -682,10 +678,10 @@ impl CreateDbClusterInput {
     }
     /// <p>Specifies the storage type to be associated with the DB cluster.</p>
     /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
-    /// <p>Valid values: <code>io1</code> </p>
-    /// <p>When specified, a value for the <code>Iops</code> parameter is required.</p>
-    /// <p>Default: <code>io1</code> </p>
-    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    /// <p>When specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is required.</p>
+    /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
+    /// <p>Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn storage_type(&self) -> std::option::Option<&str> {
         self.storage_type.as_deref()
     }
@@ -1444,12 +1440,10 @@ impl CreateDbClusterInputBuilder {
     }
     /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
     /// <p>The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters.</p>
-    /// <p>Limitations and requirements apply to some DB engine modes. For more information, see the following sections in the <i>Amazon Aurora User Guide</i>:</p>
+    /// <p>For information about limitations and requirements for Serverless DB clusters, see the following sections in the <i>Amazon Aurora User Guide</i>:</p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations of Aurora Serverless v1</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">Requirements for Aurora Serverless v2</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">Limitations of parallel query</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">Limitations of Aurora global databases</a> </p> </li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn engine_mode(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1458,12 +1452,10 @@ impl CreateDbClusterInputBuilder {
     }
     /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
     /// <p>The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters.</p>
-    /// <p>Limitations and requirements apply to some DB engine modes. For more information, see the following sections in the <i>Amazon Aurora User Guide</i>:</p>
+    /// <p>For information about limitations and requirements for Serverless DB clusters, see the following sections in the <i>Amazon Aurora User Guide</i>:</p>
     /// <ul>
     /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations of Aurora Serverless v1</a> </p> </li>
     /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">Requirements for Aurora Serverless v2</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">Limitations of parallel query</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">Limitations of Aurora global databases</a> </p> </li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn set_engine_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -1620,20 +1612,20 @@ impl CreateDbClusterInputBuilder {
     }
     /// <p>Specifies the storage type to be associated with the DB cluster.</p>
     /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
-    /// <p>Valid values: <code>io1</code> </p>
-    /// <p>When specified, a value for the <code>Iops</code> parameter is required.</p>
-    /// <p>Default: <code>io1</code> </p>
-    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    /// <p>When specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is required.</p>
+    /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
+    /// <p>Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.storage_type = Some(input.into());
         self
     }
     /// <p>Specifies the storage type to be associated with the DB cluster.</p>
     /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
-    /// <p>Valid values: <code>io1</code> </p>
-    /// <p>When specified, a value for the <code>Iops</code> parameter is required.</p>
-    /// <p>Default: <code>io1</code> </p>
-    /// <p>Valid for: Multi-AZ DB clusters only</p>
+    /// <p>When specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is required.</p>
+    /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
+    /// <p>Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
+    /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.storage_type = input;
         self

@@ -165,9 +165,9 @@ pub type DescribeInboundConnectionsErrorKind = DescribeInboundConnectionsError;
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeInboundConnectionsError {
-    /// <p>An error occured because the client wanted to access a not supported operation.</p>
+    /// <p>An error occured because the client wanted to access an unsupported operation.</p>
     DisabledOperationException(crate::types::error::DisabledOperationException),
-    /// <p>The request processing has failed because you provided an invalid pagination token.</p>
+    /// <p>Request processing failed because you provided an invalid pagination token.</p>
     InvalidPaginationTokenException(crate::types::error::InvalidPaginationTokenException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),

@@ -9,7 +9,7 @@ pub struct BrokerSoftwareInfo {
     pub configuration_arn: std::option::Option<std::string::String>,
     /// <p>The revision of the configuration to use. This field isn't visible in this preview release.</p>
     #[doc(hidden)]
-    pub configuration_revision: i64,
+    pub configuration_revision: std::option::Option<i64>,
     /// <p>The version of Apache Kafka.</p>
     #[doc(hidden)]
     pub kafka_version: std::option::Option<std::string::String>,
@@ -20,7 +20,7 @@ impl BrokerSoftwareInfo {
         self.configuration_arn.as_deref()
     }
     /// <p>The revision of the configuration to use. This field isn't visible in this preview release.</p>
-    pub fn configuration_revision(&self) -> i64 {
+    pub fn configuration_revision(&self) -> std::option::Option<i64> {
         self.configuration_revision
     }
     /// <p>The version of Apache Kafka.</p>
@@ -81,7 +81,7 @@ impl BrokerSoftwareInfoBuilder {
     pub fn build(self) -> crate::types::BrokerSoftwareInfo {
         crate::types::BrokerSoftwareInfo {
             configuration_arn: self.configuration_arn,
-            configuration_revision: self.configuration_revision.unwrap_or_default(),
+            configuration_revision: self.configuration_revision,
             kafka_version: self.kafka_version,
         }
     }

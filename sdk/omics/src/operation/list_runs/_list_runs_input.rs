@@ -15,6 +15,9 @@ pub struct ListRunsInput {
     /// <p>The maximum number of runs to return in one page of results.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
+    /// <p> The status of a run. </p>
+    #[doc(hidden)]
+    pub status: std::option::Option<crate::types::RunStatus>,
 }
 impl ListRunsInput {
     /// <p>Filter the list by run name.</p>
@@ -33,6 +36,10 @@ impl ListRunsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
+    /// <p> The status of a run. </p>
+    pub fn status(&self) -> std::option::Option<&crate::types::RunStatus> {
+        self.status.as_ref()
+    }
 }
 impl ListRunsInput {
     /// Creates a new builder-style object to manufacture [`ListRunsInput`](crate::operation::list_runs::ListRunsInput).
@@ -49,6 +56,7 @@ pub struct ListRunsInputBuilder {
     pub(crate) run_group_id: std::option::Option<std::string::String>,
     pub(crate) starting_token: std::option::Option<std::string::String>,
     pub(crate) max_results: std::option::Option<i32>,
+    pub(crate) status: std::option::Option<crate::types::RunStatus>,
 }
 impl ListRunsInputBuilder {
     /// <p>Filter the list by run name.</p>
@@ -91,6 +99,16 @@ impl ListRunsInputBuilder {
         self.max_results = input;
         self
     }
+    /// <p> The status of a run. </p>
+    pub fn status(mut self, input: crate::types::RunStatus) -> Self {
+        self.status = Some(input);
+        self
+    }
+    /// <p> The status of a run. </p>
+    pub fn set_status(mut self, input: std::option::Option<crate::types::RunStatus>) -> Self {
+        self.status = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ListRunsInput`](crate::operation::list_runs::ListRunsInput).
     pub fn build(
         self,
@@ -103,6 +121,7 @@ impl ListRunsInputBuilder {
             run_group_id: self.run_group_id,
             starting_token: self.starting_token,
             max_results: self.max_results,
+            status: self.status,
         })
     }
 }

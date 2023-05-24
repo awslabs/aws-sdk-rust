@@ -228,6 +228,12 @@
 ///     InstanceType::I3enLarge => { /* ... */ },
 ///     InstanceType::I3enMetal => { /* ... */ },
 ///     InstanceType::I3enXlarge => { /* ... */ },
+///     InstanceType::I4g16xlarge => { /* ... */ },
+///     InstanceType::I4g2xlarge => { /* ... */ },
+///     InstanceType::I4g4xlarge => { /* ... */ },
+///     InstanceType::I4g8xlarge => { /* ... */ },
+///     InstanceType::I4gLarge => { /* ... */ },
+///     InstanceType::I4gXlarge => { /* ... */ },
 ///     InstanceType::I4i16xlarge => { /* ... */ },
 ///     InstanceType::I4i2xlarge => { /* ... */ },
 ///     InstanceType::I4i32xlarge => { /* ... */ },
@@ -246,6 +252,10 @@
 ///     InstanceType::Inf12xlarge => { /* ... */ },
 ///     InstanceType::Inf16xlarge => { /* ... */ },
 ///     InstanceType::Inf1Xlarge => { /* ... */ },
+///     InstanceType::Inf224xlarge => { /* ... */ },
+///     InstanceType::Inf248xlarge => { /* ... */ },
+///     InstanceType::Inf28xlarge => { /* ... */ },
+///     InstanceType::Inf2Xlarge => { /* ... */ },
 ///     InstanceType::Is4gen2xlarge => { /* ... */ },
 ///     InstanceType::Is4gen4xlarge => { /* ... */ },
 ///     InstanceType::Is4gen8xlarge => { /* ... */ },
@@ -598,6 +608,7 @@
 ///     InstanceType::T4gXlarge => { /* ... */ },
 ///     InstanceType::Trn12xlarge => { /* ... */ },
 ///     InstanceType::Trn132xlarge => { /* ... */ },
+///     InstanceType::Trn1n32xlarge => { /* ... */ },
 ///     InstanceType::U12tb1112xlarge => { /* ... */ },
 ///     InstanceType::U12tb1Metal => { /* ... */ },
 ///     InstanceType::U18tb1112xlarge => { /* ... */ },
@@ -1121,6 +1132,18 @@ pub enum InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     I3enXlarge,
     #[allow(missing_docs)] // documentation missing in model
+    I4g16xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    I4g2xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    I4g4xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    I4g8xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    I4gLarge,
+    #[allow(missing_docs)] // documentation missing in model
+    I4gXlarge,
+    #[allow(missing_docs)] // documentation missing in model
     I4i16xlarge,
     #[allow(missing_docs)] // documentation missing in model
     I4i2xlarge,
@@ -1156,6 +1179,14 @@ pub enum InstanceType {
     Inf16xlarge,
     #[allow(missing_docs)] // documentation missing in model
     Inf1Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    Inf224xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    Inf248xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    Inf28xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    Inf2Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     Is4gen2xlarge,
     #[allow(missing_docs)] // documentation missing in model
@@ -1861,6 +1892,8 @@ pub enum InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     Trn132xlarge,
     #[allow(missing_docs)] // documentation missing in model
+    Trn1n32xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     U12tb1112xlarge,
     #[allow(missing_docs)] // documentation missing in model
     U12tb1Metal,
@@ -2196,6 +2229,12 @@ impl std::convert::From<&str> for InstanceType {
             "i3en.large" => InstanceType::I3enLarge,
             "i3en.metal" => InstanceType::I3enMetal,
             "i3en.xlarge" => InstanceType::I3enXlarge,
+            "i4g.16xlarge" => InstanceType::I4g16xlarge,
+            "i4g.2xlarge" => InstanceType::I4g2xlarge,
+            "i4g.4xlarge" => InstanceType::I4g4xlarge,
+            "i4g.8xlarge" => InstanceType::I4g8xlarge,
+            "i4g.large" => InstanceType::I4gLarge,
+            "i4g.xlarge" => InstanceType::I4gXlarge,
             "i4i.16xlarge" => InstanceType::I4i16xlarge,
             "i4i.2xlarge" => InstanceType::I4i2xlarge,
             "i4i.32xlarge" => InstanceType::I4i32xlarge,
@@ -2214,6 +2253,10 @@ impl std::convert::From<&str> for InstanceType {
             "inf1.2xlarge" => InstanceType::Inf12xlarge,
             "inf1.6xlarge" => InstanceType::Inf16xlarge,
             "inf1.xlarge" => InstanceType::Inf1Xlarge,
+            "inf2.24xlarge" => InstanceType::Inf224xlarge,
+            "inf2.48xlarge" => InstanceType::Inf248xlarge,
+            "inf2.8xlarge" => InstanceType::Inf28xlarge,
+            "inf2.xlarge" => InstanceType::Inf2Xlarge,
             "is4gen.2xlarge" => InstanceType::Is4gen2xlarge,
             "is4gen.4xlarge" => InstanceType::Is4gen4xlarge,
             "is4gen.8xlarge" => InstanceType::Is4gen8xlarge,
@@ -2566,6 +2609,7 @@ impl std::convert::From<&str> for InstanceType {
             "t4g.xlarge" => InstanceType::T4gXlarge,
             "trn1.2xlarge" => InstanceType::Trn12xlarge,
             "trn1.32xlarge" => InstanceType::Trn132xlarge,
+            "trn1n.32xlarge" => InstanceType::Trn1n32xlarge,
             "u-12tb1.112xlarge" => InstanceType::U12tb1112xlarge,
             "u-12tb1.metal" => InstanceType::U12tb1Metal,
             "u-18tb1.112xlarge" => InstanceType::U18tb1112xlarge,
@@ -2856,6 +2900,12 @@ impl InstanceType {
             InstanceType::I3enLarge => "i3en.large",
             InstanceType::I3enMetal => "i3en.metal",
             InstanceType::I3enXlarge => "i3en.xlarge",
+            InstanceType::I4g16xlarge => "i4g.16xlarge",
+            InstanceType::I4g2xlarge => "i4g.2xlarge",
+            InstanceType::I4g4xlarge => "i4g.4xlarge",
+            InstanceType::I4g8xlarge => "i4g.8xlarge",
+            InstanceType::I4gLarge => "i4g.large",
+            InstanceType::I4gXlarge => "i4g.xlarge",
             InstanceType::I4i16xlarge => "i4i.16xlarge",
             InstanceType::I4i2xlarge => "i4i.2xlarge",
             InstanceType::I4i32xlarge => "i4i.32xlarge",
@@ -2874,6 +2924,10 @@ impl InstanceType {
             InstanceType::Inf12xlarge => "inf1.2xlarge",
             InstanceType::Inf16xlarge => "inf1.6xlarge",
             InstanceType::Inf1Xlarge => "inf1.xlarge",
+            InstanceType::Inf224xlarge => "inf2.24xlarge",
+            InstanceType::Inf248xlarge => "inf2.48xlarge",
+            InstanceType::Inf28xlarge => "inf2.8xlarge",
+            InstanceType::Inf2Xlarge => "inf2.xlarge",
             InstanceType::Is4gen2xlarge => "is4gen.2xlarge",
             InstanceType::Is4gen4xlarge => "is4gen.4xlarge",
             InstanceType::Is4gen8xlarge => "is4gen.8xlarge",
@@ -3226,6 +3280,7 @@ impl InstanceType {
             InstanceType::T4gXlarge => "t4g.xlarge",
             InstanceType::Trn12xlarge => "trn1.2xlarge",
             InstanceType::Trn132xlarge => "trn1.32xlarge",
+            InstanceType::Trn1n32xlarge => "trn1n.32xlarge",
             InstanceType::U12tb1112xlarge => "u-12tb1.112xlarge",
             InstanceType::U12tb1Metal => "u-12tb1.metal",
             InstanceType::U18tb1112xlarge => "u-18tb1.112xlarge",
@@ -3505,6 +3560,12 @@ impl InstanceType {
             "i3en.large",
             "i3en.metal",
             "i3en.xlarge",
+            "i4g.16xlarge",
+            "i4g.2xlarge",
+            "i4g.4xlarge",
+            "i4g.8xlarge",
+            "i4g.large",
+            "i4g.xlarge",
             "i4i.16xlarge",
             "i4i.2xlarge",
             "i4i.32xlarge",
@@ -3523,6 +3584,10 @@ impl InstanceType {
             "inf1.2xlarge",
             "inf1.6xlarge",
             "inf1.xlarge",
+            "inf2.24xlarge",
+            "inf2.48xlarge",
+            "inf2.8xlarge",
+            "inf2.xlarge",
             "is4gen.2xlarge",
             "is4gen.4xlarge",
             "is4gen.8xlarge",
@@ -3875,6 +3940,7 @@ impl InstanceType {
             "t4g.xlarge",
             "trn1.2xlarge",
             "trn1.32xlarge",
+            "trn1n.32xlarge",
             "u-12tb1.112xlarge",
             "u-12tb1.metal",
             "u-18tb1.112xlarge",

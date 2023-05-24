@@ -157,7 +157,7 @@ pub enum StartDBInstanceAutomatedBackupsReplicationError {
     InvalidDbInstanceStateFault(crate::types::error::InvalidDbInstanceStateFault),
     /// <p>An error occurred accessing an Amazon Web Services KMS key.</p>
     KmsKeyNotAccessibleFault(crate::types::error::KmsKeyNotAccessibleFault),
-    /// <p>Storage of the <code>StorageType</code> specified can't be associated with the DB instance.</p>
+    /// <p>The specified <code>StorageType</code> can't be associated with the DB instance.</p>
     StorageTypeNotSupportedFault(crate::types::error::StorageTypeNotSupportedFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),

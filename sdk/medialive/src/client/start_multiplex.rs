@@ -11,8 +11,8 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::start_multiplex::StartMultiplexOutput::id): The unique id of the multiplex.
     ///   - [`multiplex_settings(Option<MultiplexSettings>)`](crate::operation::start_multiplex::StartMultiplexOutput::multiplex_settings): Configuration for a multiplex event.
     ///   - [`name(Option<String>)`](crate::operation::start_multiplex::StartMultiplexOutput::name): The name of the multiplex.
-    ///   - [`pipelines_running_count(i32)`](crate::operation::start_multiplex::StartMultiplexOutput::pipelines_running_count): The number of currently healthy pipelines.
-    ///   - [`program_count(i32)`](crate::operation::start_multiplex::StartMultiplexOutput::program_count): The number of programs in the multiplex.
+    ///   - [`pipelines_running_count(Option<i32>)`](crate::operation::start_multiplex::StartMultiplexOutput::pipelines_running_count): The number of currently healthy pipelines.
+    ///   - [`program_count(Option<i32>)`](crate::operation::start_multiplex::StartMultiplexOutput::program_count): The number of programs in the multiplex.
     ///   - [`state(Option<MultiplexState>)`](crate::operation::start_multiplex::StartMultiplexOutput::state): The current state of the multiplex.
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::start_multiplex::StartMultiplexOutput::tags): A collection of key-value pairs.
     /// - On failure, responds with [`SdkError<StartMultiplexError>`](crate::operation::start_multiplex::StartMultiplexError)

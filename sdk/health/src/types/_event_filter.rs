@@ -10,7 +10,7 @@ pub struct EventFilter {
     /// <p>A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code> </p>
     #[doc(hidden)]
     pub event_type_codes: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Amazon Web Services services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    /// <p>The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     #[doc(hidden)]
     pub services: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of Amazon Web Services Regions.</p>
@@ -57,7 +57,7 @@ impl EventFilter {
     pub fn event_type_codes(&self) -> std::option::Option<&[std::string::String]> {
         self.event_type_codes.as_deref()
     }
-    /// <p>The Amazon Web Services services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    /// <p>The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     pub fn services(&self) -> std::option::Option<&[std::string::String]> {
         self.services.as_deref()
     }
@@ -179,14 +179,14 @@ impl EventFilterBuilder {
     ///
     /// To override the contents of this collection use [`set_services`](Self::set_services).
     ///
-    /// <p>The Amazon Web Services services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    /// <p>The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     pub fn services(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.services.unwrap_or_default();
         v.push(input.into());
         self.services = Some(v);
         self
     }
-    /// <p>The Amazon Web Services services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    /// <p>The Amazon Web Services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     pub fn set_services(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

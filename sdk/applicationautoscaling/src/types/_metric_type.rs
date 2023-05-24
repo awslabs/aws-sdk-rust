@@ -33,6 +33,7 @@
 ///     MetricType::RdsReaderAverageCpuUtilization => { /* ... */ },
 ///     MetricType::RdsReaderAverageDatabaseConnections => { /* ... */ },
 ///     MetricType::SageMakerVariantInvocationsPerInstance => { /* ... */ },
+///     MetricType::SageMakerVariantProvisionedConcurrencyUtilization => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -108,6 +109,8 @@ pub enum MetricType {
     RdsReaderAverageDatabaseConnections,
     #[allow(missing_docs)] // documentation missing in model
     SageMakerVariantInvocationsPerInstance,
+    #[allow(missing_docs)] // documentation missing in model
+    SageMakerVariantProvisionedConcurrencyUtilization,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -154,6 +157,9 @@ impl std::convert::From<&str> for MetricType {
             }
             "SageMakerVariantInvocationsPerInstance" => {
                 MetricType::SageMakerVariantInvocationsPerInstance
+            }
+            "SageMakerVariantProvisionedConcurrencyUtilization" => {
+                MetricType::SageMakerVariantProvisionedConcurrencyUtilization
             }
             other => MetricType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
@@ -211,6 +217,9 @@ impl MetricType {
             MetricType::SageMakerVariantInvocationsPerInstance => {
                 "SageMakerVariantInvocationsPerInstance"
             }
+            MetricType::SageMakerVariantProvisionedConcurrencyUtilization => {
+                "SageMakerVariantProvisionedConcurrencyUtilization"
+            }
             MetricType::Unknown(value) => value.as_str(),
         }
     }
@@ -238,6 +247,7 @@ impl MetricType {
             "RDSReaderAverageCPUUtilization",
             "RDSReaderAverageDatabaseConnections",
             "SageMakerVariantInvocationsPerInstance",
+            "SageMakerVariantProvisionedConcurrencyUtilization",
         ]
     }
 }

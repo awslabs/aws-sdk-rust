@@ -13,7 +13,7 @@ pub struct ClusterStatus {
     /// <p>A timeline that represents the status of a cluster over the lifetime of the cluster.</p>
     #[doc(hidden)]
     pub timeline: std::option::Option<crate::types::ClusterTimeline>,
-    /// <p>A list of tuples that provide information about the errors that caused a cluster termination. This structure may have up to 10 different <code>ErrorDetail</code> tuples.</p>
+    /// <p>A list of tuples that provides information about the errors that caused a cluster to terminate. This structure can contain up to 10 different <code>ErrorDetail</code> tuples.</p>
     #[doc(hidden)]
     pub error_details: std::option::Option<std::vec::Vec<crate::types::ErrorDetail>>,
 }
@@ -32,7 +32,7 @@ impl ClusterStatus {
     pub fn timeline(&self) -> std::option::Option<&crate::types::ClusterTimeline> {
         self.timeline.as_ref()
     }
-    /// <p>A list of tuples that provide information about the errors that caused a cluster termination. This structure may have up to 10 different <code>ErrorDetail</code> tuples.</p>
+    /// <p>A list of tuples that provides information about the errors that caused a cluster to terminate. This structure can contain up to 10 different <code>ErrorDetail</code> tuples.</p>
     pub fn error_details(&self) -> std::option::Option<&[crate::types::ErrorDetail]> {
         self.error_details.as_deref()
     }
@@ -94,14 +94,14 @@ impl ClusterStatusBuilder {
     ///
     /// To override the contents of this collection use [`set_error_details`](Self::set_error_details).
     ///
-    /// <p>A list of tuples that provide information about the errors that caused a cluster termination. This structure may have up to 10 different <code>ErrorDetail</code> tuples.</p>
+    /// <p>A list of tuples that provides information about the errors that caused a cluster to terminate. This structure can contain up to 10 different <code>ErrorDetail</code> tuples.</p>
     pub fn error_details(mut self, input: crate::types::ErrorDetail) -> Self {
         let mut v = self.error_details.unwrap_or_default();
         v.push(input);
         self.error_details = Some(v);
         self
     }
-    /// <p>A list of tuples that provide information about the errors that caused a cluster termination. This structure may have up to 10 different <code>ErrorDetail</code> tuples.</p>
+    /// <p>A list of tuples that provides information about the errors that caused a cluster to terminate. This structure can contain up to 10 different <code>ErrorDetail</code> tuples.</p>
     pub fn set_error_details(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::ErrorDetail>>,

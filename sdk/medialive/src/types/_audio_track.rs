@@ -6,11 +6,11 @@
 pub struct AudioTrack {
     /// 1-based integer value that maps to a specific audio track
     #[doc(hidden)]
-    pub track: i32,
+    pub track: std::option::Option<i32>,
 }
 impl AudioTrack {
     /// 1-based integer value that maps to a specific audio track
-    pub fn track(&self) -> i32 {
+    pub fn track(&self) -> std::option::Option<i32> {
         self.track
     }
 }
@@ -40,8 +40,6 @@ impl AudioTrackBuilder {
     }
     /// Consumes the builder and constructs a [`AudioTrack`](crate::types::AudioTrack).
     pub fn build(self) -> crate::types::AudioTrack {
-        crate::types::AudioTrack {
-            track: self.track.unwrap_or_default(),
-        }
+        crate::types::AudioTrack { track: self.track }
     }
 }

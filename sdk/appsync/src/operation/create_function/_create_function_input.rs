@@ -30,7 +30,7 @@ pub struct CreateFunctionInput {
     pub sync_config: std::option::Option<crate::types::SyncConfig>,
     /// <p>The maximum batching size for a resolver.</p>
     #[doc(hidden)]
-    pub max_batch_size: i32,
+    pub max_batch_size: std::option::Option<i32>,
     /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
     #[doc(hidden)]
     pub runtime: std::option::Option<crate::types::AppSyncRuntime>,
@@ -73,7 +73,7 @@ impl CreateFunctionInput {
         self.sync_config.as_ref()
     }
     /// <p>The maximum batching size for a resolver.</p>
-    pub fn max_batch_size(&self) -> i32 {
+    pub fn max_batch_size(&self) -> std::option::Option<i32> {
         self.max_batch_size
     }
     /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
@@ -243,7 +243,7 @@ impl CreateFunctionInputBuilder {
             response_mapping_template: self.response_mapping_template,
             function_version: self.function_version,
             sync_config: self.sync_config,
-            max_batch_size: self.max_batch_size.unwrap_or_default(),
+            max_batch_size: self.max_batch_size,
             runtime: self.runtime,
             code: self.code,
         })

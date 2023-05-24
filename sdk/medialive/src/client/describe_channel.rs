@@ -18,7 +18,7 @@ impl super::Client {
     ///   - [`maintenance(Option<MaintenanceStatus>)`](crate::operation::describe_channel::DescribeChannelOutput::maintenance): Maintenance settings for this channel.
     ///   - [`name(Option<String>)`](crate::operation::describe_channel::DescribeChannelOutput::name): The name of the channel. (user-mutable)
     ///   - [`pipeline_details(Option<Vec<PipelineDetail>>)`](crate::operation::describe_channel::DescribeChannelOutput::pipeline_details): Runtime details for the pipelines of a running channel.
-    ///   - [`pipelines_running_count(i32)`](crate::operation::describe_channel::DescribeChannelOutput::pipelines_running_count): The number of currently healthy pipelines.
+    ///   - [`pipelines_running_count(Option<i32>)`](crate::operation::describe_channel::DescribeChannelOutput::pipelines_running_count): The number of currently healthy pipelines.
     ///   - [`role_arn(Option<String>)`](crate::operation::describe_channel::DescribeChannelOutput::role_arn): The Amazon Resource Name (ARN) of the role assumed when running the Channel.
     ///   - [`state(Option<ChannelState>)`](crate::operation::describe_channel::DescribeChannelOutput::state): Placeholder documentation for ChannelState
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_channel::DescribeChannelOutput::tags): A collection of key-value pairs.

@@ -159,7 +159,7 @@ pub type PurchaseReservedInstanceOfferingErrorKind = PurchaseReservedInstanceOff
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PurchaseReservedInstanceOfferingError {
-    /// <p>An error occured because the client wanted to access a not supported operation.</p>
+    /// <p>An error occured because the client wanted to access an unsupported operation.</p>
     DisabledOperationException(crate::types::error::DisabledOperationException),
     /// <p>Request processing failed because of an unknown error, exception, or internal failure.</p>
     InternalException(crate::types::error::InternalException),
@@ -167,7 +167,7 @@ pub enum PurchaseReservedInstanceOfferingError {
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>An exception for creating a resource that already exists.</p>
     ResourceAlreadyExistsException(crate::types::error::ResourceAlreadyExistsException),
-    /// <p>An exception for accessing or deleting a resource that does not exist..</p>
+    /// <p>An exception for accessing or deleting a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>An exception for accessing or deleting a resource that doesn't exist.</p>
     ValidationException(crate::types::error::ValidationException),

@@ -15,7 +15,7 @@ pub struct CopyObjectOutput {
     /// <p>Version ID of the newly created copy.</p>
     #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
+    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
     #[doc(hidden)]
     pub server_side_encryption: std::option::Option<crate::types::ServerSideEncryption>,
     /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
@@ -24,7 +24,7 @@ pub struct CopyObjectOutput {
     /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
     #[doc(hidden)]
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
-    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
+    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key that was used for the object.</p>
     #[doc(hidden)]
     pub ssekms_key_id: std::option::Option<std::string::String>,
     /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
@@ -56,7 +56,7 @@ impl CopyObjectOutput {
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
+    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
     pub fn server_side_encryption(
         &self,
     ) -> std::option::Option<&crate::types::ServerSideEncryption> {
@@ -70,7 +70,7 @@ impl CopyObjectOutput {
     pub fn sse_customer_key_md5(&self) -> std::option::Option<&str> {
         self.sse_customer_key_md5.as_deref()
     }
-    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
+    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key that was used for the object.</p>
     pub fn ssekms_key_id(&self) -> std::option::Option<&str> {
         self.ssekms_key_id.as_deref()
     }
@@ -191,12 +191,12 @@ impl CopyObjectOutputBuilder {
         self.version_id = input;
         self
     }
-    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
+    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
     pub fn server_side_encryption(mut self, input: crate::types::ServerSideEncryption) -> Self {
         self.server_side_encryption = Some(input);
         self
     }
-    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
+    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, <code>aws:kms</code>).</p>
     pub fn set_server_side_encryption(
         mut self,
         input: std::option::Option<crate::types::ServerSideEncryption>,
@@ -230,12 +230,12 @@ impl CopyObjectOutputBuilder {
         self.sse_customer_key_md5 = input;
         self
     }
-    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
+    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key that was used for the object.</p>
     pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.ssekms_key_id = Some(input.into());
         self
     }
-    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
+    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key that was used for the object.</p>
     pub fn set_ssekms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.ssekms_key_id = input;
         self

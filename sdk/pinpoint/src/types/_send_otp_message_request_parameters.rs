@@ -6,7 +6,7 @@
 pub struct SendOtpMessageRequestParameters {
     /// <p>The attempts allowed to validate an OTP.</p>
     #[doc(hidden)]
-    pub allowed_attempts: i32,
+    pub allowed_attempts: std::option::Option<i32>,
     /// <p>The brand name that will be substituted into the OTP message body. Should be owned by calling AWS account.</p>
     #[doc(hidden)]
     pub brand_name: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct SendOtpMessageRequestParameters {
     pub channel: std::option::Option<std::string::String>,
     /// <p>The number of characters in the generated OTP.</p>
     #[doc(hidden)]
-    pub code_length: i32,
+    pub code_length: std::option::Option<i32>,
     /// <p>The destination identity to send OTP to.</p>
     #[doc(hidden)]
     pub destination_identity: std::option::Option<std::string::String>,
@@ -36,11 +36,11 @@ pub struct SendOtpMessageRequestParameters {
     pub template_id: std::option::Option<std::string::String>,
     /// <p>The time in minutes before the OTP is no longer valid.</p>
     #[doc(hidden)]
-    pub validity_period: i32,
+    pub validity_period: std::option::Option<i32>,
 }
 impl SendOtpMessageRequestParameters {
     /// <p>The attempts allowed to validate an OTP.</p>
-    pub fn allowed_attempts(&self) -> i32 {
+    pub fn allowed_attempts(&self) -> std::option::Option<i32> {
         self.allowed_attempts
     }
     /// <p>The brand name that will be substituted into the OTP message body. Should be owned by calling AWS account.</p>
@@ -52,7 +52,7 @@ impl SendOtpMessageRequestParameters {
         self.channel.as_deref()
     }
     /// <p>The number of characters in the generated OTP.</p>
-    pub fn code_length(&self) -> i32 {
+    pub fn code_length(&self) -> std::option::Option<i32> {
         self.code_length
     }
     /// <p>The destination identity to send OTP to.</p>
@@ -80,7 +80,7 @@ impl SendOtpMessageRequestParameters {
         self.template_id.as_deref()
     }
     /// <p>The time in minutes before the OTP is no longer valid.</p>
-    pub fn validity_period(&self) -> i32 {
+    pub fn validity_period(&self) -> std::option::Option<i32> {
         self.validity_period
     }
 }
@@ -227,17 +227,17 @@ impl SendOtpMessageRequestParametersBuilder {
     /// Consumes the builder and constructs a [`SendOtpMessageRequestParameters`](crate::types::SendOtpMessageRequestParameters).
     pub fn build(self) -> crate::types::SendOtpMessageRequestParameters {
         crate::types::SendOtpMessageRequestParameters {
-            allowed_attempts: self.allowed_attempts.unwrap_or_default(),
+            allowed_attempts: self.allowed_attempts,
             brand_name: self.brand_name,
             channel: self.channel,
-            code_length: self.code_length.unwrap_or_default(),
+            code_length: self.code_length,
             destination_identity: self.destination_identity,
             entity_id: self.entity_id,
             language: self.language,
             origination_identity: self.origination_identity,
             reference_id: self.reference_id,
             template_id: self.template_id,
-            validity_period: self.validity_period.unwrap_or_default(),
+            validity_period: self.validity_period,
         }
     }
 }

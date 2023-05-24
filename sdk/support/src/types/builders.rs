@@ -15,11 +15,19 @@ pub use crate::types::_trusted_advisor_check_result::TrustedAdvisorCheckResultBu
 
 pub use crate::types::_trusted_advisor_resource_detail::TrustedAdvisorResourceDetailBuilder;
 
+pub use crate::types::_supported_language::SupportedLanguageBuilder;
+
 pub use crate::types::_severity_level::SeverityLevelBuilder;
 
 pub use crate::types::_service::ServiceBuilder;
 
 pub use crate::types::_category::CategoryBuilder;
+
+pub use crate::types::_communication_type_options::CommunicationTypeOptionsBuilder;
+
+pub use crate::types::_date_interval::DateIntervalBuilder;
+
+pub use crate::types::_supported_hour::SupportedHourBuilder;
 
 pub use crate::types::_communication::CommunicationBuilder;
 

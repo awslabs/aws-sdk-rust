@@ -9,29 +9,29 @@ pub fn ser_event_destination_definition(
         crate::protocol_serde::shape_cloud_watch_logs_destination::ser_cloud_watch_logs_destination(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if input.enabled {
-        object.key("Enabled").boolean(input.enabled);
+    if let Some(var_3) = &input.enabled {
+        object.key("Enabled").boolean(*var_3);
     }
-    if let Some(var_3) = &input.kinesis_firehose_destination {
+    if let Some(var_4) = &input.kinesis_firehose_destination {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("KinesisFirehoseDestination").start_object();
-        crate::protocol_serde::shape_kinesis_firehose_destination::ser_kinesis_firehose_destination(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("KinesisFirehoseDestination").start_object();
+        crate::protocol_serde::shape_kinesis_firehose_destination::ser_kinesis_firehose_destination(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_5) = &input.matching_event_types {
-        let mut array_6 = object.key("MatchingEventTypes").start_array();
-        for item_7 in var_5 {
+    if let Some(var_6) = &input.matching_event_types {
+        let mut array_7 = object.key("MatchingEventTypes").start_array();
+        for item_8 in var_6 {
             {
-                array_6.value().string(item_7.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_6.finish();
+        array_7.finish();
     }
-    if let Some(var_8) = &input.sns_destination {
+    if let Some(var_9) = &input.sns_destination {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("SnsDestination").start_object();
-        crate::protocol_serde::shape_sns_destination::ser_sns_destination(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_10 = object.key("SnsDestination").start_object();
+        crate::protocol_serde::shape_sns_destination::ser_sns_destination(&mut object_10, var_9)?;
+        object_10.finish();
     }
     Ok(())
 }

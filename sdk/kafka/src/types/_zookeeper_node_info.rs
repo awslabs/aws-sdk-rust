@@ -15,7 +15,7 @@ pub struct ZookeeperNodeInfo {
     pub endpoints: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The role-specific ID for Zookeeper.</p>
     #[doc(hidden)]
-    pub zookeeper_id: f64,
+    pub zookeeper_id: std::option::Option<f64>,
     /// <p>The version of Zookeeper.</p>
     #[doc(hidden)]
     pub zookeeper_version: std::option::Option<std::string::String>,
@@ -34,7 +34,7 @@ impl ZookeeperNodeInfo {
         self.endpoints.as_deref()
     }
     /// <p>The role-specific ID for Zookeeper.</p>
-    pub fn zookeeper_id(&self) -> f64 {
+    pub fn zookeeper_id(&self) -> std::option::Option<f64> {
         self.zookeeper_id
     }
     /// <p>The version of Zookeeper.</p>
@@ -131,7 +131,7 @@ impl ZookeeperNodeInfoBuilder {
             attached_eni_id: self.attached_eni_id,
             client_vpc_ip_address: self.client_vpc_ip_address,
             endpoints: self.endpoints,
-            zookeeper_id: self.zookeeper_id.unwrap_or_default(),
+            zookeeper_id: self.zookeeper_id,
             zookeeper_version: self.zookeeper_version,
         }
     }

@@ -6,11 +6,11 @@
 pub struct NodeExporterInfo {
     /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
     #[doc(hidden)]
-    pub enabled_in_broker: bool,
+    pub enabled_in_broker: std::option::Option<bool>,
 }
 impl NodeExporterInfo {
     /// <p>Indicates whether you want to turn on or turn off the Node Exporter.</p>
-    pub fn enabled_in_broker(&self) -> bool {
+    pub fn enabled_in_broker(&self) -> std::option::Option<bool> {
         self.enabled_in_broker
     }
 }
@@ -41,7 +41,7 @@ impl NodeExporterInfoBuilder {
     /// Consumes the builder and constructs a [`NodeExporterInfo`](crate::types::NodeExporterInfo).
     pub fn build(self) -> crate::types::NodeExporterInfo {
         crate::types::NodeExporterInfo {
-            enabled_in_broker: self.enabled_in_broker.unwrap_or_default(),
+            enabled_in_broker: self.enabled_in_broker,
         }
     }
 }

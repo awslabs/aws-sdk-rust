@@ -22,23 +22,26 @@
 pub struct DataResource {
     /// <p>The resource type in which you want to log data events. You can specify the following <i>basic</i> event selector resource types:</p>
     /// <ul>
-    /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
-    /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li>
+    /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
+    /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
     /// </ul>
     /// <p>The following resource types are also available through <i>advanced</i> event selectors. Basic event selector resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in basic event selectors. For more information, see <code>AdvancedFieldSelector$Field</code>.</p>
     /// <ul>
     /// <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li>
-    /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
-    /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
-    /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
-    /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
-    /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::Cognito::IdentityPool</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
-    /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
+    /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
     /// <li> <p> <code>AWS::FinSpace::Environment</code> </p> </li>
+    /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
+    /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
+    /// <li> <p> <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li>
+    /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::FeatureGroup</code> </p> </li>
+    /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -63,23 +66,26 @@ pub struct DataResource {
 impl DataResource {
     /// <p>The resource type in which you want to log data events. You can specify the following <i>basic</i> event selector resource types:</p>
     /// <ul>
-    /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
-    /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li>
+    /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
+    /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
     /// </ul>
     /// <p>The following resource types are also available through <i>advanced</i> event selectors. Basic event selector resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in basic event selectors. For more information, see <code>AdvancedFieldSelector$Field</code>.</p>
     /// <ul>
     /// <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li>
-    /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
-    /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
-    /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
-    /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
-    /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::Cognito::IdentityPool</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
-    /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
+    /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
     /// <li> <p> <code>AWS::FinSpace::Environment</code> </p> </li>
+    /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
+    /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
+    /// <li> <p> <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li>
+    /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::FeatureGroup</code> </p> </li>
+    /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
@@ -120,23 +126,26 @@ pub struct DataResourceBuilder {
 impl DataResourceBuilder {
     /// <p>The resource type in which you want to log data events. You can specify the following <i>basic</i> event selector resource types:</p>
     /// <ul>
-    /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
-    /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li>
+    /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
+    /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
     /// </ul>
     /// <p>The following resource types are also available through <i>advanced</i> event selectors. Basic event selector resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in basic event selectors. For more information, see <code>AdvancedFieldSelector$Field</code>.</p>
     /// <ul>
     /// <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li>
-    /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
-    /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
-    /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
-    /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
-    /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::Cognito::IdentityPool</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
-    /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
+    /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
     /// <li> <p> <code>AWS::FinSpace::Environment</code> </p> </li>
+    /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
+    /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
+    /// <li> <p> <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li>
+    /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::FeatureGroup</code> </p> </li>
+    /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
     /// </ul>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
         self.r#type = Some(input.into());
@@ -144,23 +153,26 @@ impl DataResourceBuilder {
     }
     /// <p>The resource type in which you want to log data events. You can specify the following <i>basic</i> event selector resource types:</p>
     /// <ul>
-    /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
-    /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li>
+    /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
+    /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
     /// </ul>
     /// <p>The following resource types are also available through <i>advanced</i> event selectors. Basic event selector resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in basic event selectors. For more information, see <code>AdvancedFieldSelector$Field</code>.</p>
     /// <ul>
     /// <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li>
-    /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
-    /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
-    /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
-    /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
-    /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::Cognito::IdentityPool</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
-    /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
+    /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
     /// <li> <p> <code>AWS::FinSpace::Environment</code> </p> </li>
+    /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
+    /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
+    /// <li> <p> <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li>
+    /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::FeatureGroup</code> </p> </li>
+    /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
     /// </ul>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.r#type = input;

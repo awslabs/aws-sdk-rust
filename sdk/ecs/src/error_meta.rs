@@ -177,6 +177,9 @@ impl From<crate::operation::create_cluster::CreateClusterError> for Error {
             crate::operation::create_cluster::CreateClusterError::InvalidParameterException(
                 inner,
             ) => Error::InvalidParameterException(inner),
+            crate::operation::create_cluster::CreateClusterError::NamespaceNotFoundException(
+                inner,
+            ) => Error::NamespaceNotFoundException(inner),
             crate::operation::create_cluster::CreateClusterError::ServerException(inner) => {
                 Error::ServerException(inner)
             }
@@ -2267,6 +2270,9 @@ impl From<crate::operation::update_cluster::UpdateClusterError> for Error {
             crate::operation::update_cluster::UpdateClusterError::InvalidParameterException(
                 inner,
             ) => Error::InvalidParameterException(inner),
+            crate::operation::update_cluster::UpdateClusterError::NamespaceNotFoundException(
+                inner,
+            ) => Error::NamespaceNotFoundException(inner),
             crate::operation::update_cluster::UpdateClusterError::ServerException(inner) => {
                 Error::ServerException(inner)
             }

@@ -42,7 +42,7 @@ pub struct ClusterInfo {
     pub logging_info: std::option::Option<crate::types::LoggingInfo>,
     /// <p>The number of broker nodes in the cluster.</p>
     #[doc(hidden)]
-    pub number_of_broker_nodes: i32,
+    pub number_of_broker_nodes: std::option::Option<i32>,
     /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::ClusterState>,
@@ -119,7 +119,7 @@ impl ClusterInfo {
         self.logging_info.as_ref()
     }
     /// <p>The number of broker nodes in the cluster.</p>
-    pub fn number_of_broker_nodes(&self) -> i32 {
+    pub fn number_of_broker_nodes(&self) -> std::option::Option<i32> {
         self.number_of_broker_nodes
     }
     /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
@@ -439,7 +439,7 @@ impl ClusterInfoBuilder {
             enhanced_monitoring: self.enhanced_monitoring,
             open_monitoring: self.open_monitoring,
             logging_info: self.logging_info,
-            number_of_broker_nodes: self.number_of_broker_nodes.unwrap_or_default(),
+            number_of_broker_nodes: self.number_of_broker_nodes,
             state: self.state,
             state_info: self.state_info,
             tags: self.tags,

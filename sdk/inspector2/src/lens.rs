@@ -89,6 +89,16 @@ pub(crate) fn reflens_list_usage_totals_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_search_vulnerabilities_output_next_token(
+    input: &crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn lens_list_account_permissions_output_permissions(
     input: crate::operation::list_account_permissions::ListAccountPermissionsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::types::Permission>> {
@@ -173,6 +183,16 @@ pub(crate) fn lens_list_usage_totals_output_totals(
     input: crate::operation::list_usage_totals::ListUsageTotalsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::types::UsageTotal>> {
     let input = match input.totals {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_search_vulnerabilities_output_vulnerabilities(
+    input: crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::Vulnerability>> {
+    let input = match input.vulnerabilities {
         None => return None,
         Some(t) => t,
     };

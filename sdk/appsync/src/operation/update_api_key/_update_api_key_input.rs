@@ -14,7 +14,7 @@ pub struct UpdateApiKeyInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>From the update time, the time after which the API key expires. The date is represented as seconds since the epoch. For more information, see .</p>
     #[doc(hidden)]
-    pub expires: i64,
+    pub expires: std::option::Option<i64>,
 }
 impl UpdateApiKeyInput {
     /// <p>The ID for the GraphQL API.</p>
@@ -30,7 +30,7 @@ impl UpdateApiKeyInput {
         self.description.as_deref()
     }
     /// <p>From the update time, the time after which the API key expires. The date is represented as seconds since the epoch. For more information, see .</p>
-    pub fn expires(&self) -> i64 {
+    pub fn expires(&self) -> std::option::Option<i64> {
         self.expires
     }
 }
@@ -102,7 +102,7 @@ impl UpdateApiKeyInputBuilder {
             api_id: self.api_id,
             id: self.id,
             description: self.description,
-            expires: self.expires.unwrap_or_default(),
+            expires: self.expires,
         })
     }
 }

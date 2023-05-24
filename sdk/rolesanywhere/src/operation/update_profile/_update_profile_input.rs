@@ -12,7 +12,7 @@ pub struct UpdateProfileInput {
     /// <p>A session policy that applies to the trust boundary of the vended session credentials. </p>
     #[doc(hidden)]
     pub session_policy: std::option::Option<std::string::String>,
-    /// <p>A list of IAM roles that this profile can assume in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
+    /// <p>A list of IAM roles that this profile can assume in a temporary credential request.</p>
     #[doc(hidden)]
     pub role_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of managed policy ARNs that apply to the vended session credentials. </p>
@@ -35,7 +35,7 @@ impl UpdateProfileInput {
     pub fn session_policy(&self) -> std::option::Option<&str> {
         self.session_policy.as_deref()
     }
-    /// <p>A list of IAM roles that this profile can assume in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
+    /// <p>A list of IAM roles that this profile can assume in a temporary credential request.</p>
     pub fn role_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.role_arns.as_deref()
     }
@@ -101,14 +101,14 @@ impl UpdateProfileInputBuilder {
     ///
     /// To override the contents of this collection use [`set_role_arns`](Self::set_role_arns).
     ///
-    /// <p>A list of IAM roles that this profile can assume in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
+    /// <p>A list of IAM roles that this profile can assume in a temporary credential request.</p>
     pub fn role_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.role_arns.unwrap_or_default();
         v.push(input.into());
         self.role_arns = Some(v);
         self
     }
-    /// <p>A list of IAM roles that this profile can assume in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
+    /// <p>A list of IAM roles that this profile can assume in a temporary credential request.</p>
     pub fn set_role_arns(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

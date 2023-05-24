@@ -15,5 +15,20 @@ pub fn ser_get_query_suggestions_input(
             aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
+    if let Some(var_4) = &input.suggestion_types {
+        let mut array_5 = object.key("SuggestionTypes").start_array();
+        for item_6 in var_4 {
+            {
+                array_5.value().string(item_6.as_str());
+            }
+        }
+        array_5.finish();
+    }
+    if let Some(var_7) = &input.attribute_suggestions_config {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("AttributeSuggestionsConfig").start_object();
+        crate::protocol_serde::shape_attribute_suggestions_get_config::ser_attribute_suggestions_get_config(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }

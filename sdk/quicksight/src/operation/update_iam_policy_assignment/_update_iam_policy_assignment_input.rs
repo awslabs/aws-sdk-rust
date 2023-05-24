@@ -6,7 +6,7 @@ pub struct UpdateIamPolicyAssignmentInput {
     /// <p>The ID of the Amazon Web Services account that contains the IAM policy assignment. </p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The name of the assignment, also called a rule. This name must be unique within an Amazon Web Services account.</p>
+    /// <p>The name of the assignment, also called a rule. The name must be unique within the Amazon Web Services account.</p>
     #[doc(hidden)]
     pub assignment_name: std::option::Option<std::string::String>,
     /// <p>The namespace of the assignment.</p>
@@ -34,7 +34,7 @@ impl UpdateIamPolicyAssignmentInput {
     pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>The name of the assignment, also called a rule. This name must be unique within an Amazon Web Services account.</p>
+    /// <p>The name of the assignment, also called a rule. The name must be unique within the Amazon Web Services account.</p>
     pub fn assignment_name(&self) -> std::option::Option<&str> {
         self.assignment_name.as_deref()
     }
@@ -95,12 +95,12 @@ impl UpdateIamPolicyAssignmentInputBuilder {
         self.aws_account_id = input;
         self
     }
-    /// <p>The name of the assignment, also called a rule. This name must be unique within an Amazon Web Services account.</p>
+    /// <p>The name of the assignment, also called a rule. The name must be unique within the Amazon Web Services account.</p>
     pub fn assignment_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.assignment_name = Some(input.into());
         self
     }
-    /// <p>The name of the assignment, also called a rule. This name must be unique within an Amazon Web Services account.</p>
+    /// <p>The name of the assignment, also called a rule. The name must be unique within the Amazon Web Services account.</p>
     pub fn set_assignment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.assignment_name = input;
         self

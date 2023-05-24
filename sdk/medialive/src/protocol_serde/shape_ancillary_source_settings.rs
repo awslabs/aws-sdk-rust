@@ -3,10 +3,10 @@ pub fn ser_ancillary_source_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AncillarySourceSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.source_ancillary_channel_number != 0 {
+    if let Some(var_1) = &input.source_ancillary_channel_number {
         object.key("sourceAncillaryChannelNumber").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.source_ancillary_channel_number).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())

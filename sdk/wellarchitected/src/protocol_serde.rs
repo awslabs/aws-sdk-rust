@@ -282,6 +282,8 @@ pub(crate) mod shape_pillar_difference;
 
 pub(crate) mod shape_pillar_review_summary;
 
+pub(crate) mod shape_workload_resource_definition;
+
 pub(crate) mod shape_additional_resources_list;
 
 pub(crate) mod shape_choice_answer_summary;

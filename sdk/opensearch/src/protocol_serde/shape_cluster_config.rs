@@ -57,6 +57,9 @@ pub fn ser_cluster_config(
         )?;
         object_13.finish();
     }
+    if let Some(var_14) = &input.multi_az_with_standby_enabled {
+        object.key("MultiAZWithStandbyEnabled").boolean(*var_14);
+    }
     Ok(())
 }
 
@@ -185,6 +188,13 @@ where
                             "ColdStorageOptions" => {
                                 builder = builder.set_cold_storage_options(
                                     crate::protocol_serde::shape_cold_storage_options::de_cold_storage_options(tokens)?
+                                );
+                            }
+                            "MultiAZWithStandbyEnabled" => {
+                                builder = builder.set_multi_az_with_standby_enabled(
+                                    aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

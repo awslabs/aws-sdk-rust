@@ -11,7 +11,7 @@ pub struct ListSuiteRunsInput {
     pub suite_definition_version: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at once.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>A token to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -26,7 +26,7 @@ impl ListSuiteRunsInput {
         self.suite_definition_version.as_deref()
     }
     /// <p>The maximum number of results to return at once.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>A token to retrieve the next set of results.</p>
@@ -107,7 +107,7 @@ impl ListSuiteRunsInputBuilder {
         Ok(crate::operation::list_suite_runs::ListSuiteRunsInput {
             suite_definition_id: self.suite_definition_id,
             suite_definition_version: self.suite_definition_version,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

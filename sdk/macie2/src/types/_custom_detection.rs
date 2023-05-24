@@ -9,7 +9,7 @@ pub struct CustomDetection {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The total number of occurrences of the sensitive data that the custom data identifier detected.</p>
     #[doc(hidden)]
-    pub count: i64,
+    pub count: std::option::Option<i64>,
     /// <p>The name of the custom data identifier.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -23,7 +23,7 @@ impl CustomDetection {
         self.arn.as_deref()
     }
     /// <p>The total number of occurrences of the sensitive data that the custom data identifier detected.</p>
-    pub fn count(&self) -> i64 {
+    pub fn count(&self) -> std::option::Option<i64> {
         self.count
     }
     /// <p>The name of the custom data identifier.</p>
@@ -99,7 +99,7 @@ impl CustomDetectionBuilder {
     pub fn build(self) -> crate::types::CustomDetection {
         crate::types::CustomDetection {
             arn: self.arn,
-            count: self.count.unwrap_or_default(),
+            count: self.count,
             name: self.name,
             occurrences: self.occurrences,
         }

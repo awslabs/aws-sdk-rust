@@ -9,7 +9,7 @@ pub struct RemoveAllBackendsInput {
     pub app_id: std::option::Option<std::string::String>,
     /// <p>Cleans up the Amplify Console app if this value is set to true.</p>
     #[doc(hidden)]
-    pub clean_amplify_app: bool,
+    pub clean_amplify_app: std::option::Option<bool>,
 }
 impl RemoveAllBackendsInput {
     /// <p>The app ID.</p>
@@ -17,7 +17,7 @@ impl RemoveAllBackendsInput {
         self.app_id.as_deref()
     }
     /// <p>Cleans up the Amplify Console app if this value is set to true.</p>
-    pub fn clean_amplify_app(&self) -> bool {
+    pub fn clean_amplify_app(&self) -> std::option::Option<bool> {
         self.clean_amplify_app
     }
 }
@@ -67,7 +67,7 @@ impl RemoveAllBackendsInputBuilder {
         Ok(
             crate::operation::remove_all_backends::RemoveAllBackendsInput {
                 app_id: self.app_id,
-                clean_amplify_app: self.clean_amplify_app.unwrap_or_default(),
+                clean_amplify_app: self.clean_amplify_app,
             },
         )
     }

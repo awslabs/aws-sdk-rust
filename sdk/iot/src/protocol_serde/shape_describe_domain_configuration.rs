@@ -234,6 +234,11 @@ pub(crate) fn de_describe_domain_configuration(value: &[u8], mut builder: crate:
                             .transpose()?,
                         );
                     }
+                    "tlsConfig" => {
+                        builder = builder.set_tls_config(
+                            crate::protocol_serde::shape_tls_config::de_tls_config(tokens)?,
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

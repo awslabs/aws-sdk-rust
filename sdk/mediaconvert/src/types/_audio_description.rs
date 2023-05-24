@@ -16,7 +16,7 @@ pub struct AudioDescription {
     pub audio_source_name: std::option::Option<std::string::String>,
     /// Applies only if Follow Input Audio Type is unchecked (false). A number between 0 and 255. The following are defined in ISO-IEC 13818-1: 0 = Undefined, 1 = Clean Effects, 2 = Hearing Impaired, 3 = Visually Impaired Commentary, 4-255 = Reserved.
     #[doc(hidden)]
-    pub audio_type: i32,
+    pub audio_type: std::option::Option<i32>,
     /// When set to FOLLOW_INPUT, if the input contains an ISO 639 audio_type, then that value is passed through to the output. If the input contains no ISO 639 audio_type, the value in Audio Type is included in the output. Otherwise the value in Audio Type is included in the output. Note that this field and audioType are both ignored if audioDescriptionBroadcasterMix is set to BROADCASTER_MIXED_AD.
     #[doc(hidden)]
     pub audio_type_control: std::option::Option<crate::types::AudioTypeControl>,
@@ -57,7 +57,7 @@ impl AudioDescription {
         self.audio_source_name.as_deref()
     }
     /// Applies only if Follow Input Audio Type is unchecked (false). A number between 0 and 255. The following are defined in ISO-IEC 13818-1: 0 = Undefined, 1 = Clean Effects, 2 = Hearing Impaired, 3 = Visually Impaired Commentary, 4-255 = Reserved.
-    pub fn audio_type(&self) -> i32 {
+    pub fn audio_type(&self) -> std::option::Option<i32> {
         self.audio_type
     }
     /// When set to FOLLOW_INPUT, if the input contains an ISO 639 audio_type, then that value is passed through to the output. If the input contains no ISO 639 audio_type, the value in Audio Type is included in the output. Otherwise the value in Audio Type is included in the output. Note that this field and audioType are both ignored if audioDescriptionBroadcasterMix is set to BROADCASTER_MIXED_AD.
@@ -266,7 +266,7 @@ impl AudioDescriptionBuilder {
             audio_channel_tagging_settings: self.audio_channel_tagging_settings,
             audio_normalization_settings: self.audio_normalization_settings,
             audio_source_name: self.audio_source_name,
-            audio_type: self.audio_type.unwrap_or_default(),
+            audio_type: self.audio_type,
             audio_type_control: self.audio_type_control,
             codec_settings: self.codec_settings,
             custom_language_code: self.custom_language_code,

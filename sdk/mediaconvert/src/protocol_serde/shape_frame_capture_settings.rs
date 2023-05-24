@@ -3,28 +3,28 @@ pub fn ser_frame_capture_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FrameCaptureSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.framerate_denominator != 0 {
+    if let Some(var_1) = &input.framerate_denominator {
         object.key("framerateDenominator").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.framerate_denominator).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.framerate_numerator != 0 {
+    if let Some(var_2) = &input.framerate_numerator {
         object.key("framerateNumerator").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.framerate_numerator).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.max_captures != 0 {
+    if let Some(var_3) = &input.max_captures {
         object.key("maxCaptures").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_captures).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if input.quality != 0 {
+    if let Some(var_4) = &input.quality {
         object.key("quality").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.quality).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     Ok(())

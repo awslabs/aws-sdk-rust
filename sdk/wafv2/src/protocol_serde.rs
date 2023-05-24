@@ -258,6 +258,8 @@ pub(crate) mod shape_waf_tag_operation_internal_error_exception;
 
 pub(crate) mod shape_waf_unavailable_entity_exception;
 
+pub(crate) mod shape_waf_unsupported_aggregate_key_type_exception;
+
 pub(crate) mod shape_api_key_summaries;
 
 pub(crate) mod shape_association_config;
@@ -494,6 +496,8 @@ pub(crate) mod shape_json_match_pattern;
 
 pub(crate) mod shape_managed_rule_group_config;
 
+pub(crate) mod shape_rate_based_statement_custom_key;
+
 pub(crate) mod shape_rule_action_override;
 
 pub(crate) mod shape_text_transformation;
@@ -514,6 +518,22 @@ pub(crate) mod shape_label_name_condition;
 
 pub(crate) mod shape_password_field;
 
+pub(crate) mod shape_rate_limit_cookie;
+
+pub(crate) mod shape_rate_limit_forwarded_ip;
+
+pub(crate) mod shape_rate_limit_header;
+
+pub(crate) mod shape_rate_limit_http_method;
+
+pub(crate) mod shape_rate_limit_ip;
+
+pub(crate) mod shape_rate_limit_label_namespace;
+
+pub(crate) mod shape_rate_limit_query_argument;
+
+pub(crate) mod shape_rate_limit_query_string;
+
 pub(crate) mod shape_username_field;
 
 pub(crate) mod shape_cookie_names;
@@ -527,6 +547,8 @@ pub(crate) mod shape_header_names;
 pub(crate) mod shape_json_pointer_paths;
 
 pub(crate) mod shape_managed_rule_group_configs;
+
+pub(crate) mod shape_rate_based_statement_custom_keys;
 
 pub(crate) mod shape_request_inspection;
 

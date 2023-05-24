@@ -261,4 +261,21 @@ impl UpdateDataSetFluentBuilder {
         self.inner = self.inner.set_data_set_usage_configuration(input);
         self
     }
+    /// Appends an item to `DatasetParameters`.
+    ///
+    /// To override the contents of this collection use [`set_dataset_parameters`](Self::set_dataset_parameters).
+    ///
+    /// <p>The parameter declarations of the dataset.</p>
+    pub fn dataset_parameters(mut self, input: crate::types::DatasetParameter) -> Self {
+        self.inner = self.inner.dataset_parameters(input);
+        self
+    }
+    /// <p>The parameter declarations of the dataset.</p>
+    pub fn set_dataset_parameters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DatasetParameter>>,
+    ) -> Self {
+        self.inner = self.inner.set_dataset_parameters(input);
+        self
+    }
 }

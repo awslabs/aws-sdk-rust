@@ -15,16 +15,14 @@ pub fn ser_create_members_input(
         }
         array_2.finish();
     }
-    if input.disable_email_notification {
-        object
-            .key("DisableEmailNotification")
-            .boolean(input.disable_email_notification);
+    if let Some(var_5) = &input.disable_email_notification {
+        object.key("DisableEmailNotification").boolean(*var_5);
     }
-    if let Some(var_5) = &input.graph_arn {
-        object.key("GraphArn").string(var_5.as_str());
+    if let Some(var_6) = &input.graph_arn {
+        object.key("GraphArn").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.message {
-        object.key("Message").string(var_6.as_str());
+    if let Some(var_7) = &input.message {
+        object.key("Message").string(var_7.as_str());
     }
     Ok(())
 }

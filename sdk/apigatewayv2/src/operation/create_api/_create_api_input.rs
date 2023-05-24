@@ -18,10 +18,10 @@ pub struct CreateApiInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
     #[doc(hidden)]
-    pub disable_schema_validation: bool,
+    pub disable_schema_validation: std::option::Option<bool>,
     /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     #[doc(hidden)]
-    pub disable_execute_api_endpoint: bool,
+    pub disable_execute_api_endpoint: std::option::Option<bool>,
     /// <p>The name of the API.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -63,11 +63,11 @@ impl CreateApiInput {
         self.description.as_deref()
     }
     /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
-    pub fn disable_schema_validation(&self) -> bool {
+    pub fn disable_schema_validation(&self) -> std::option::Option<bool> {
         self.disable_schema_validation
     }
     /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
-    pub fn disable_execute_api_endpoint(&self) -> bool {
+    pub fn disable_execute_api_endpoint(&self) -> std::option::Option<bool> {
         self.disable_execute_api_endpoint
     }
     /// <p>The name of the API.</p>
@@ -298,8 +298,8 @@ impl CreateApiInputBuilder {
             cors_configuration: self.cors_configuration,
             credentials_arn: self.credentials_arn,
             description: self.description,
-            disable_schema_validation: self.disable_schema_validation.unwrap_or_default(),
-            disable_execute_api_endpoint: self.disable_execute_api_endpoint.unwrap_or_default(),
+            disable_schema_validation: self.disable_schema_validation,
+            disable_execute_api_endpoint: self.disable_execute_api_endpoint,
             name: self.name,
             protocol_type: self.protocol_type,
             route_key: self.route_key,

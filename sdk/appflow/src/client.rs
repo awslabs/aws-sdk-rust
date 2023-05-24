@@ -61,14 +61,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateConnectorProfile`](crate::operation::create_connector_profile) operation has
-/// a [`Client::create_connector_profile`], function which returns a builder for that operation.
+/// For example, the [`CancelFlowExecutions`](crate::operation::cancel_flow_executions) operation has
+/// a [`Client::cancel_flow_executions`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_connector_profile()
-///     .connector_profile_name("example")
+/// let result = client.cancel_flow_executions()
+///     .flow_name("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -212,6 +212,8 @@ impl Client {
     }
 }
 
+mod cancel_flow_executions;
+
 mod create_connector_profile;
 
 mod create_flow;
@@ -227,7 +229,7 @@ mod create_flow;
 /// # let client: aws_sdk_appflow::Client = unimplemented!();
 /// use http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_connector_profile()
+/// let result = client.cancel_flow_executions()
 ///     .customize()
 ///     .await?
 ///     .mutate_request(|req| {

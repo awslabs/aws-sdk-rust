@@ -12,10 +12,10 @@ pub struct EndpointLocation {
     pub country: std::option::Option<std::string::String>,
     /// <p>The latitude coordinate of the endpoint location, rounded to one decimal place.</p>
     #[doc(hidden)]
-    pub latitude: f64,
+    pub latitude: std::option::Option<f64>,
     /// <p>The longitude coordinate of the endpoint location, rounded to one decimal place.</p>
     #[doc(hidden)]
-    pub longitude: f64,
+    pub longitude: std::option::Option<f64>,
     /// <p>The postal or ZIP code for the area where the endpoint is located.</p>
     #[doc(hidden)]
     pub postal_code: std::option::Option<std::string::String>,
@@ -33,11 +33,11 @@ impl EndpointLocation {
         self.country.as_deref()
     }
     /// <p>The latitude coordinate of the endpoint location, rounded to one decimal place.</p>
-    pub fn latitude(&self) -> f64 {
+    pub fn latitude(&self) -> std::option::Option<f64> {
         self.latitude
     }
     /// <p>The longitude coordinate of the endpoint location, rounded to one decimal place.</p>
-    pub fn longitude(&self) -> f64 {
+    pub fn longitude(&self) -> std::option::Option<f64> {
         self.longitude
     }
     /// <p>The postal or ZIP code for the area where the endpoint is located.</p>
@@ -133,8 +133,8 @@ impl EndpointLocationBuilder {
         crate::types::EndpointLocation {
             city: self.city,
             country: self.country,
-            latitude: self.latitude.unwrap_or_default(),
-            longitude: self.longitude.unwrap_or_default(),
+            latitude: self.latitude,
+            longitude: self.longitude,
             postal_code: self.postal_code,
             region: self.region,
         }

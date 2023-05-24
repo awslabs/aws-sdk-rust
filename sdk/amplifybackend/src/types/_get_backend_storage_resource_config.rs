@@ -9,7 +9,7 @@ pub struct GetBackendStorageResourceConfig {
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>Returns True if the storage resource has been imported.</p>
     #[doc(hidden)]
-    pub imported: bool,
+    pub imported: std::option::Option<bool>,
     /// <p>The authorization configuration for the storage S3 bucket.</p>
     #[doc(hidden)]
     pub permissions: std::option::Option<crate::types::BackendStoragePermissions>,
@@ -23,7 +23,7 @@ impl GetBackendStorageResourceConfig {
         self.bucket_name.as_deref()
     }
     /// <p>Returns True if the storage resource has been imported.</p>
-    pub fn imported(&self) -> bool {
+    pub fn imported(&self) -> std::option::Option<bool> {
         self.imported
     }
     /// <p>The authorization configuration for the storage S3 bucket.</p>
@@ -102,7 +102,7 @@ impl GetBackendStorageResourceConfigBuilder {
     pub fn build(self) -> crate::types::GetBackendStorageResourceConfig {
         crate::types::GetBackendStorageResourceConfig {
             bucket_name: self.bucket_name,
-            imported: self.imported.unwrap_or_default(),
+            imported: self.imported,
             permissions: self.permissions,
             service_name: self.service_name,
         }

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListLedgersOutput {
-    /// <p>The array of ledger summaries that are associated with the current Amazon Web Services account and Region.</p>
+    /// <p>The ledgers that are associated with the current Amazon Web Services account and Region.</p>
     #[doc(hidden)]
     pub ledgers: std::option::Option<std::vec::Vec<crate::types::LedgerSummary>>,
     /// <p>A pagination token, indicating whether there are more results available:</p>
@@ -16,7 +16,7 @@ pub struct ListLedgersOutput {
     _request_id: Option<String>,
 }
 impl ListLedgersOutput {
-    /// <p>The array of ledger summaries that are associated with the current Amazon Web Services account and Region.</p>
+    /// <p>The ledgers that are associated with the current Amazon Web Services account and Region.</p>
     pub fn ledgers(&self) -> std::option::Option<&[crate::types::LedgerSummary]> {
         self.ledgers.as_deref()
     }
@@ -54,14 +54,14 @@ impl ListLedgersOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_ledgers`](Self::set_ledgers).
     ///
-    /// <p>The array of ledger summaries that are associated with the current Amazon Web Services account and Region.</p>
+    /// <p>The ledgers that are associated with the current Amazon Web Services account and Region.</p>
     pub fn ledgers(mut self, input: crate::types::LedgerSummary) -> Self {
         let mut v = self.ledgers.unwrap_or_default();
         v.push(input);
         self.ledgers = Some(v);
         self
     }
-    /// <p>The array of ledger summaries that are associated with the current Amazon Web Services account and Region.</p>
+    /// <p>The ledgers that are associated with the current Amazon Web Services account and Region.</p>
     pub fn set_ledgers(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::LedgerSummary>>,

@@ -3,16 +3,16 @@ pub fn ser_embedded_destination_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EmbeddedDestinationSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.destination608_channel_number != 0 {
+    if let Some(var_1) = &input.destination608_channel_number {
         object.key("destination608ChannelNumber").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.destination608_channel_number).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.destination708_service_number != 0 {
+    if let Some(var_2) = &input.destination708_service_number {
         object.key("destination708ServiceNumber").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.destination708_service_number).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

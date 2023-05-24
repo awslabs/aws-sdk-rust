@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EngineConfiguration {
-    /// <p>The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing work and manages other executors in a notebook session.</p>
+    /// <p>The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing work and manages other executors in a notebook session. The default is 1.</p>
     #[doc(hidden)]
     pub coordinator_dpu_size: std::option::Option<i32>,
     /// <p>The maximum number of DPUs that can run concurrently.</p>
     #[doc(hidden)]
     pub max_concurrent_dpus: i32,
-    /// <p>The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook session can request from Athena.</p>
+    /// <p>The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook session can request from Athena. The default is 1.</p>
     #[doc(hidden)]
     pub default_executor_dpu_size: std::option::Option<i32>,
     /// <p>Contains additional notebook engine <code>MAP
@@ -20,7 +20,7 @@ pub struct EngineConfiguration {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl EngineConfiguration {
-    /// <p>The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing work and manages other executors in a notebook session.</p>
+    /// <p>The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing work and manages other executors in a notebook session. The default is 1.</p>
     pub fn coordinator_dpu_size(&self) -> std::option::Option<i32> {
         self.coordinator_dpu_size
     }
@@ -28,7 +28,7 @@ impl EngineConfiguration {
     pub fn max_concurrent_dpus(&self) -> i32 {
         self.max_concurrent_dpus
     }
-    /// <p>The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook session can request from Athena.</p>
+    /// <p>The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook session can request from Athena. The default is 1.</p>
     pub fn default_executor_dpu_size(&self) -> std::option::Option<i32> {
         self.default_executor_dpu_size
     }
@@ -59,12 +59,12 @@ pub struct EngineConfigurationBuilder {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl EngineConfigurationBuilder {
-    /// <p>The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing work and manages other executors in a notebook session.</p>
+    /// <p>The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing work and manages other executors in a notebook session. The default is 1.</p>
     pub fn coordinator_dpu_size(mut self, input: i32) -> Self {
         self.coordinator_dpu_size = Some(input);
         self
     }
-    /// <p>The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing work and manages other executors in a notebook session.</p>
+    /// <p>The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing work and manages other executors in a notebook session. The default is 1.</p>
     pub fn set_coordinator_dpu_size(mut self, input: std::option::Option<i32>) -> Self {
         self.coordinator_dpu_size = input;
         self
@@ -79,12 +79,12 @@ impl EngineConfigurationBuilder {
         self.max_concurrent_dpus = input;
         self
     }
-    /// <p>The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook session can request from Athena.</p>
+    /// <p>The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook session can request from Athena. The default is 1.</p>
     pub fn default_executor_dpu_size(mut self, input: i32) -> Self {
         self.default_executor_dpu_size = Some(input);
         self
     }
-    /// <p>The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook session can request from Athena.</p>
+    /// <p>The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook session can request from Athena. The default is 1.</p>
     pub fn set_default_executor_dpu_size(mut self, input: std::option::Option<i32>) -> Self {
         self.default_executor_dpu_size = input;
         self

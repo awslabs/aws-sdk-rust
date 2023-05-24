@@ -6,18 +6,18 @@
 pub struct GpsCoordinates {
     /// <p>The latitude coordinate of the location.</p>
     #[doc(hidden)]
-    pub latitude: f64,
+    pub latitude: std::option::Option<f64>,
     /// <p>The longitude coordinate of the location.</p>
     #[doc(hidden)]
-    pub longitude: f64,
+    pub longitude: std::option::Option<f64>,
 }
 impl GpsCoordinates {
     /// <p>The latitude coordinate of the location.</p>
-    pub fn latitude(&self) -> f64 {
+    pub fn latitude(&self) -> std::option::Option<f64> {
         self.latitude
     }
     /// <p>The longitude coordinate of the location.</p>
-    pub fn longitude(&self) -> f64 {
+    pub fn longitude(&self) -> std::option::Option<f64> {
         self.longitude
     }
 }
@@ -59,8 +59,8 @@ impl GpsCoordinatesBuilder {
     /// Consumes the builder and constructs a [`GpsCoordinates`](crate::types::GpsCoordinates).
     pub fn build(self) -> crate::types::GpsCoordinates {
         crate::types::GpsCoordinates {
-            latitude: self.latitude.unwrap_or_default(),
-            longitude: self.longitude.unwrap_or_default(),
+            latitude: self.latitude,
+            longitude: self.longitude,
         }
     }
 }

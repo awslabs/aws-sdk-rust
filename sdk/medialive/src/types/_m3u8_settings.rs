@@ -6,7 +6,7 @@
 pub struct M3u8Settings {
     /// The number of audio frames to insert for each PES packet.
     #[doc(hidden)]
-    pub audio_frames_per_pes: i32,
+    pub audio_frames_per_pes: std::option::Option<i32>,
     /// Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.
     #[doc(hidden)]
     pub audio_pids: std::option::Option<std::string::String>,
@@ -18,25 +18,25 @@ pub struct M3u8Settings {
     pub nielsen_id3_behavior: std::option::Option<crate::types::M3u8NielsenId3Behavior>,
     /// The number of milliseconds between instances of this table in the output transport stream. A value of \"0\" writes out the PMT once per segment file.
     #[doc(hidden)]
-    pub pat_interval: i32,
+    pub pat_interval: std::option::Option<i32>,
     /// When set to pcrEveryPesPacket, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
     #[doc(hidden)]
     pub pcr_control: std::option::Option<crate::types::M3u8PcrControl>,
     /// Maximum time in milliseconds between Program Clock References (PCRs) inserted into the transport stream.
     #[doc(hidden)]
-    pub pcr_period: i32,
+    pub pcr_period: std::option::Option<i32>,
     /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID. Can be entered as a decimal or hexadecimal value.
     #[doc(hidden)]
     pub pcr_pid: std::option::Option<std::string::String>,
     /// The number of milliseconds between instances of this table in the output transport stream. A value of \"0\" writes out the PMT once per segment file.
     #[doc(hidden)]
-    pub pmt_interval: i32,
+    pub pmt_interval: std::option::Option<i32>,
     /// Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream. Can be entered as a decimal or hexadecimal value.
     #[doc(hidden)]
     pub pmt_pid: std::option::Option<std::string::String>,
     /// The value of the program number field in the Program Map Table.
     #[doc(hidden)]
-    pub program_num: i32,
+    pub program_num: std::option::Option<i32>,
     /// If set to passthrough, passes any SCTE-35 signals from the input source to this output.
     #[doc(hidden)]
     pub scte35_behavior: std::option::Option<crate::types::M3u8Scte35Behavior>,
@@ -51,14 +51,14 @@ pub struct M3u8Settings {
     pub timed_metadata_pid: std::option::Option<std::string::String>,
     /// The value of the transport stream ID field in the Program Map Table.
     #[doc(hidden)]
-    pub transport_stream_id: i32,
+    pub transport_stream_id: std::option::Option<i32>,
     /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value.
     #[doc(hidden)]
     pub video_pid: std::option::Option<std::string::String>,
 }
 impl M3u8Settings {
     /// The number of audio frames to insert for each PES packet.
-    pub fn audio_frames_per_pes(&self) -> i32 {
+    pub fn audio_frames_per_pes(&self) -> std::option::Option<i32> {
         self.audio_frames_per_pes
     }
     /// Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.
@@ -76,7 +76,7 @@ impl M3u8Settings {
         self.nielsen_id3_behavior.as_ref()
     }
     /// The number of milliseconds between instances of this table in the output transport stream. A value of \"0\" writes out the PMT once per segment file.
-    pub fn pat_interval(&self) -> i32 {
+    pub fn pat_interval(&self) -> std::option::Option<i32> {
         self.pat_interval
     }
     /// When set to pcrEveryPesPacket, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
@@ -84,7 +84,7 @@ impl M3u8Settings {
         self.pcr_control.as_ref()
     }
     /// Maximum time in milliseconds between Program Clock References (PCRs) inserted into the transport stream.
-    pub fn pcr_period(&self) -> i32 {
+    pub fn pcr_period(&self) -> std::option::Option<i32> {
         self.pcr_period
     }
     /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID. Can be entered as a decimal or hexadecimal value.
@@ -92,7 +92,7 @@ impl M3u8Settings {
         self.pcr_pid.as_deref()
     }
     /// The number of milliseconds between instances of this table in the output transport stream. A value of \"0\" writes out the PMT once per segment file.
-    pub fn pmt_interval(&self) -> i32 {
+    pub fn pmt_interval(&self) -> std::option::Option<i32> {
         self.pmt_interval
     }
     /// Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream. Can be entered as a decimal or hexadecimal value.
@@ -100,7 +100,7 @@ impl M3u8Settings {
         self.pmt_pid.as_deref()
     }
     /// The value of the program number field in the Program Map Table.
-    pub fn program_num(&self) -> i32 {
+    pub fn program_num(&self) -> std::option::Option<i32> {
         self.program_num
     }
     /// If set to passthrough, passes any SCTE-35 signals from the input source to this output.
@@ -122,7 +122,7 @@ impl M3u8Settings {
         self.timed_metadata_pid.as_deref()
     }
     /// The value of the transport stream ID field in the Program Map Table.
-    pub fn transport_stream_id(&self) -> i32 {
+    pub fn transport_stream_id(&self) -> std::option::Option<i32> {
         self.transport_stream_id
     }
     /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value.
@@ -352,22 +352,22 @@ impl M3u8SettingsBuilder {
     /// Consumes the builder and constructs a [`M3u8Settings`](crate::types::M3u8Settings).
     pub fn build(self) -> crate::types::M3u8Settings {
         crate::types::M3u8Settings {
-            audio_frames_per_pes: self.audio_frames_per_pes.unwrap_or_default(),
+            audio_frames_per_pes: self.audio_frames_per_pes,
             audio_pids: self.audio_pids,
             ecm_pid: self.ecm_pid,
             nielsen_id3_behavior: self.nielsen_id3_behavior,
-            pat_interval: self.pat_interval.unwrap_or_default(),
+            pat_interval: self.pat_interval,
             pcr_control: self.pcr_control,
-            pcr_period: self.pcr_period.unwrap_or_default(),
+            pcr_period: self.pcr_period,
             pcr_pid: self.pcr_pid,
-            pmt_interval: self.pmt_interval.unwrap_or_default(),
+            pmt_interval: self.pmt_interval,
             pmt_pid: self.pmt_pid,
-            program_num: self.program_num.unwrap_or_default(),
+            program_num: self.program_num,
             scte35_behavior: self.scte35_behavior,
             scte35_pid: self.scte35_pid,
             timed_metadata_behavior: self.timed_metadata_behavior,
             timed_metadata_pid: self.timed_metadata_pid,
-            transport_stream_id: self.transport_stream_id.unwrap_or_default(),
+            transport_stream_id: self.transport_stream_id,
             video_pid: self.video_pid,
         }
     }

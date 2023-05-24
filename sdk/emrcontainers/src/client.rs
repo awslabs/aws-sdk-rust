@@ -262,6 +262,8 @@ mod describe_managed_endpoint;
 
 mod describe_virtual_cluster;
 
+mod get_managed_endpoint_session_credentials;
+
 mod list_job_runs;
 
 mod list_job_templates;

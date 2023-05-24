@@ -6,11 +6,11 @@
 pub struct DvbSubSourceSettings {
     /// When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source content. Unused for DVB-Sub passthrough. All DVB-Sub content is passed through, regardless of selectors.
     #[doc(hidden)]
-    pub pid: i32,
+    pub pid: std::option::Option<i32>,
 }
 impl DvbSubSourceSettings {
     /// When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source content. Unused for DVB-Sub passthrough. All DVB-Sub content is passed through, regardless of selectors.
-    pub fn pid(&self) -> i32 {
+    pub fn pid(&self) -> std::option::Option<i32> {
         self.pid
     }
 }
@@ -40,8 +40,6 @@ impl DvbSubSourceSettingsBuilder {
     }
     /// Consumes the builder and constructs a [`DvbSubSourceSettings`](crate::types::DvbSubSourceSettings).
     pub fn build(self) -> crate::types::DvbSubSourceSettings {
-        crate::types::DvbSubSourceSettings {
-            pid: self.pid.unwrap_or_default(),
-        }
+        crate::types::DvbSubSourceSettings { pid: self.pid }
     }
 }

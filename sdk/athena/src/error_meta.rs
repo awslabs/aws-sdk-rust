@@ -158,6 +158,90 @@ impl From<crate::operation::batch_get_query_execution::BatchGetQueryExecutionErr
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
+            crate::operation::cancel_capacity_reservation::CancelCapacityReservationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::cancel_capacity_reservation::CancelCapacityReservationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::cancel_capacity_reservation::CancelCapacityReservationError> for Error {
+    fn from(
+        err: crate::operation::cancel_capacity_reservation::CancelCapacityReservationError,
+    ) -> Self {
+        match err {
+            crate::operation::cancel_capacity_reservation::CancelCapacityReservationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::cancel_capacity_reservation::CancelCapacityReservationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::cancel_capacity_reservation::CancelCapacityReservationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_capacity_reservation::CreateCapacityReservationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_capacity_reservation::CreateCapacityReservationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_capacity_reservation::CreateCapacityReservationError> for Error {
+    fn from(
+        err: crate::operation::create_capacity_reservation::CreateCapacityReservationError,
+    ) -> Self {
+        match err {
+            crate::operation::create_capacity_reservation::CreateCapacityReservationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_capacity_reservation::CreateCapacityReservationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_capacity_reservation::CreateCapacityReservationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
             crate::operation::create_data_catalog::CreateDataCatalogError,
             R,
         >,
@@ -817,6 +901,68 @@ impl From<crate::operation::get_calculation_execution_status::GetCalculationExec
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationError> for Error {
+    fn from(err: crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationError) -> Self {
+        match err {
+            crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_capacity_reservation::GetCapacityReservationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_capacity_reservation::GetCapacityReservationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_capacity_reservation::GetCapacityReservationError> for Error {
+    fn from(err: crate::operation::get_capacity_reservation::GetCapacityReservationError) -> Self {
+        match err {
+            crate::operation::get_capacity_reservation::GetCapacityReservationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_capacity_reservation::GetCapacityReservationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::get_capacity_reservation::GetCapacityReservationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_database::GetDatabaseError, R>>
     for Error
 where
@@ -1463,6 +1609,48 @@ impl From<crate::operation::list_calculation_executions::ListCalculationExecutio
     }
 }
 impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_capacity_reservations::ListCapacityReservationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_capacity_reservations::ListCapacityReservationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_capacity_reservations::ListCapacityReservationsError> for Error {
+    fn from(
+        err: crate::operation::list_capacity_reservations::ListCapacityReservationsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_capacity_reservations::ListCapacityReservationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_capacity_reservations::ListCapacityReservationsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_capacity_reservations::ListCapacityReservationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<aws_smithy_http::result::SdkError<crate::operation::list_databases::ListDatabasesError, R>>
     for Error
 where
@@ -2007,6 +2195,28 @@ impl From<crate::operation::list_work_groups::ListWorkGroupsError> for Error {
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationError> for Error {
+    fn from(err: crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationError) -> Self {
+        match err {
+            crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
@@ -2349,6 +2559,48 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_capacity_reservation::UpdateCapacityReservationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_capacity_reservation::UpdateCapacityReservationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_capacity_reservation::UpdateCapacityReservationError> for Error {
+    fn from(
+        err: crate::operation::update_capacity_reservation::UpdateCapacityReservationError,
+    ) -> Self {
+        match err {
+            crate::operation::update_capacity_reservation::UpdateCapacityReservationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_capacity_reservation::UpdateCapacityReservationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::update_capacity_reservation::UpdateCapacityReservationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

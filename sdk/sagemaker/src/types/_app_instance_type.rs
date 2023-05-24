@@ -55,6 +55,8 @@
 ///     AppInstanceType::MlP32Xlarge => { /* ... */ },
 ///     AppInstanceType::MlP38Xlarge => { /* ... */ },
 ///     AppInstanceType::MlP3Dn24Xlarge => { /* ... */ },
+///     AppInstanceType::MlP4D24Xlarge => { /* ... */ },
+///     AppInstanceType::MlP4De24Xlarge => { /* ... */ },
 ///     AppInstanceType::MlR512Xlarge => { /* ... */ },
 ///     AppInstanceType::MlR516Xlarge => { /* ... */ },
 ///     AppInstanceType::MlR524Xlarge => { /* ... */ },
@@ -190,6 +192,10 @@ pub enum AppInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlP3Dn24Xlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MlP4D24Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP4De24Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     MlR512Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlR516Xlarge,
@@ -268,6 +274,8 @@ impl std::convert::From<&str> for AppInstanceType {
             "ml.p3.2xlarge" => AppInstanceType::MlP32Xlarge,
             "ml.p3.8xlarge" => AppInstanceType::MlP38Xlarge,
             "ml.p3dn.24xlarge" => AppInstanceType::MlP3Dn24Xlarge,
+            "ml.p4d.24xlarge" => AppInstanceType::MlP4D24Xlarge,
+            "ml.p4de.24xlarge" => AppInstanceType::MlP4De24Xlarge,
             "ml.r5.12xlarge" => AppInstanceType::MlR512Xlarge,
             "ml.r5.16xlarge" => AppInstanceType::MlR516Xlarge,
             "ml.r5.24xlarge" => AppInstanceType::MlR524Xlarge,
@@ -343,6 +351,8 @@ impl AppInstanceType {
             AppInstanceType::MlP32Xlarge => "ml.p3.2xlarge",
             AppInstanceType::MlP38Xlarge => "ml.p3.8xlarge",
             AppInstanceType::MlP3Dn24Xlarge => "ml.p3dn.24xlarge",
+            AppInstanceType::MlP4D24Xlarge => "ml.p4d.24xlarge",
+            AppInstanceType::MlP4De24Xlarge => "ml.p4de.24xlarge",
             AppInstanceType::MlR512Xlarge => "ml.r5.12xlarge",
             AppInstanceType::MlR516Xlarge => "ml.r5.16xlarge",
             AppInstanceType::MlR524Xlarge => "ml.r5.24xlarge",
@@ -407,6 +417,8 @@ impl AppInstanceType {
             "ml.p3.2xlarge",
             "ml.p3.8xlarge",
             "ml.p3dn.24xlarge",
+            "ml.p4d.24xlarge",
+            "ml.p4de.24xlarge",
             "ml.r5.12xlarge",
             "ml.r5.16xlarge",
             "ml.r5.24xlarge",

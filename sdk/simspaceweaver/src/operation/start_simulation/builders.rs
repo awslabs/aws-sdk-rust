@@ -5,7 +5,7 @@ pub use crate::operation::start_simulation::_start_simulation_input::StartSimula
 
 /// Fluent builder constructing a request to `StartSimulation`.
 ///
-/// <p>Starts a simulation with the given name and schema.</p>
+/// <p>Starts a simulation with the given name. You must choose to start your simulation from a schema or from a snapshot. For more information about the schema, see the <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/schema-reference.html">schema reference</a> in the <i>SimSpace Weaver User Guide</i>. For more information about snapshots, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/working-with_snapshots.html">Snapshots</a> in the <i>SimSpace Weaver User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartSimulationFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -105,11 +105,15 @@ impl StartSimulationFluentBuilder {
         self
     }
     /// <p>The location of the simulation schema in Amazon Simple Storage Service (Amazon S3). For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+    /// <p>Provide a <code>SchemaS3Location</code> to start your simulation from a schema.</p>
+    /// <p>If you provide a <code>SchemaS3Location</code> then you can't provide a <code>SnapshotS3Location</code>.</p>
     pub fn schema_s3_location(mut self, input: crate::types::S3Location) -> Self {
         self.inner = self.inner.schema_s3_location(input);
         self
     }
     /// <p>The location of the simulation schema in Amazon Simple Storage Service (Amazon S3). For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+    /// <p>Provide a <code>SchemaS3Location</code> to start your simulation from a schema.</p>
+    /// <p>If you provide a <code>SchemaS3Location</code> then you can't provide a <code>SnapshotS3Location</code>.</p>
     pub fn set_schema_s3_location(
         mut self,
         input: std::option::Option<crate::types::S3Location>,
@@ -117,12 +121,12 @@ impl StartSimulationFluentBuilder {
         self.inner = self.inner.set_schema_s3_location(input);
         self
     }
-    /// <p>The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit.</p>
+    /// <p>The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
     pub fn maximum_duration(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.maximum_duration(input.into());
         self
     }
-    /// <p>The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit.</p>
+    /// <p>The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
     pub fn set_maximum_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_maximum_duration(input);
         self
@@ -148,6 +152,23 @@ impl StartSimulationFluentBuilder {
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// <p>The location of the snapshot .zip file in Amazon Simple Storage Service (Amazon S3). For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+    /// <p>Provide a <code>SnapshotS3Location</code> to start your simulation from a snapshot.</p>
+    /// <p>If you provide a <code>SnapshotS3Location</code> then you can't provide a <code>SchemaS3Location</code>.</p>
+    pub fn snapshot_s3_location(mut self, input: crate::types::S3Location) -> Self {
+        self.inner = self.inner.snapshot_s3_location(input);
+        self
+    }
+    /// <p>The location of the snapshot .zip file in Amazon Simple Storage Service (Amazon S3). For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+    /// <p>Provide a <code>SnapshotS3Location</code> to start your simulation from a snapshot.</p>
+    /// <p>If you provide a <code>SnapshotS3Location</code> then you can't provide a <code>SchemaS3Location</code>.</p>
+    pub fn set_snapshot_s3_location(
+        mut self,
+        input: std::option::Option<crate::types::S3Location>,
+    ) -> Self {
+        self.inner = self.inner.set_snapshot_s3_location(input);
         self
     }
 }

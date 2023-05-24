@@ -24,10 +24,10 @@ pub struct DeleteMultiplexOutput {
     pub name: std::option::Option<std::string::String>,
     /// The number of currently healthy pipelines.
     #[doc(hidden)]
-    pub pipelines_running_count: i32,
+    pub pipelines_running_count: std::option::Option<i32>,
     /// The number of programs in the multiplex.
     #[doc(hidden)]
-    pub program_count: i32,
+    pub program_count: std::option::Option<i32>,
     /// The current state of the multiplex.
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::MultiplexState>,
@@ -63,11 +63,11 @@ impl DeleteMultiplexOutput {
         self.name.as_deref()
     }
     /// The number of currently healthy pipelines.
-    pub fn pipelines_running_count(&self) -> i32 {
+    pub fn pipelines_running_count(&self) -> std::option::Option<i32> {
         self.pipelines_running_count
     }
     /// The number of programs in the multiplex.
-    pub fn program_count(&self) -> i32 {
+    pub fn program_count(&self) -> std::option::Option<i32> {
         self.program_count
     }
     /// The current state of the multiplex.
@@ -267,8 +267,8 @@ impl DeleteMultiplexOutputBuilder {
             id: self.id,
             multiplex_settings: self.multiplex_settings,
             name: self.name,
-            pipelines_running_count: self.pipelines_running_count.unwrap_or_default(),
-            program_count: self.program_count.unwrap_or_default(),
+            pipelines_running_count: self.pipelines_running_count,
+            program_count: self.program_count,
             state: self.state,
             tags: self.tags,
             _request_id: self._request_id,

@@ -3,14 +3,14 @@ pub fn ser_encoding_parameters_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EncodingParametersRequest,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    {
+    if let Some(var_1) = &input.compression_factor {
         object.key("compressionFactor").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.compression_factor).into()),
+            aws_smithy_types::Number::Float((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.encoder_profile {
-        object.key("encoderProfile").string(var_1.as_str());
+    if let Some(var_2) = &input.encoder_profile {
+        object.key("encoderProfile").string(var_2.as_str());
     }
     Ok(())
 }

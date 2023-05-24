@@ -7,7 +7,7 @@ pub struct ClassificationResult {
     /// <p>Specifies whether Amazon Macie detected additional occurrences of sensitive data in the S3 object. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
     /// <p>This value can help you determine whether to investigate additional occurrences of sensitive data in an object. You can do this by referring to the corresponding sensitive data discovery result for the finding (ClassificationDetails.detailedResultsLocation).</p>
     #[doc(hidden)]
-    pub additional_occurrences: bool,
+    pub additional_occurrences: std::option::Option<bool>,
     /// <p>The custom data identifiers that detected the sensitive data and the number of occurrences of the data that they detected.</p>
     #[doc(hidden)]
     pub custom_data_identifiers: std::option::Option<crate::types::CustomDataIdentifiers>,
@@ -19,7 +19,7 @@ pub struct ClassificationResult {
     pub sensitive_data: std::option::Option<std::vec::Vec<crate::types::SensitiveDataItem>>,
     /// <p>The total size, in bytes, of the data that the finding applies to.</p>
     #[doc(hidden)]
-    pub size_classified: i64,
+    pub size_classified: std::option::Option<i64>,
     /// <p>The status of the finding.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::ClassificationResultStatus>,
@@ -27,7 +27,7 @@ pub struct ClassificationResult {
 impl ClassificationResult {
     /// <p>Specifies whether Amazon Macie detected additional occurrences of sensitive data in the S3 object. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
     /// <p>This value can help you determine whether to investigate additional occurrences of sensitive data in an object. You can do this by referring to the corresponding sensitive data discovery result for the finding (ClassificationDetails.detailedResultsLocation).</p>
-    pub fn additional_occurrences(&self) -> bool {
+    pub fn additional_occurrences(&self) -> std::option::Option<bool> {
         self.additional_occurrences
     }
     /// <p>The custom data identifiers that detected the sensitive data and the number of occurrences of the data that they detected.</p>
@@ -45,7 +45,7 @@ impl ClassificationResult {
         self.sensitive_data.as_deref()
     }
     /// <p>The total size, in bytes, of the data that the finding applies to.</p>
-    pub fn size_classified(&self) -> i64 {
+    pub fn size_classified(&self) -> std::option::Option<i64> {
         self.size_classified
     }
     /// <p>The status of the finding.</p>
@@ -152,11 +152,11 @@ impl ClassificationResultBuilder {
     /// Consumes the builder and constructs a [`ClassificationResult`](crate::types::ClassificationResult).
     pub fn build(self) -> crate::types::ClassificationResult {
         crate::types::ClassificationResult {
-            additional_occurrences: self.additional_occurrences.unwrap_or_default(),
+            additional_occurrences: self.additional_occurrences,
             custom_data_identifiers: self.custom_data_identifiers,
             mime_type: self.mime_type,
             sensitive_data: self.sensitive_data,
-            size_classified: self.size_classified.unwrap_or_default(),
+            size_classified: self.size_classified,
             status: self.status,
         }
     }

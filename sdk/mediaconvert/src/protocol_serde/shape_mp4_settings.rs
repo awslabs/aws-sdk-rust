@@ -9,20 +9,20 @@ pub fn ser_mp4_settings(
     if let Some(var_2) = &input.cslg_atom {
         object.key("cslgAtom").string(var_2.as_str());
     }
-    if input.ctts_version != 0 {
+    if let Some(var_3) = &input.ctts_version {
         object.key("cttsVersion").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.ctts_version).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.free_space_box {
-        object.key("freeSpaceBox").string(var_3.as_str());
+    if let Some(var_4) = &input.free_space_box {
+        object.key("freeSpaceBox").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.moov_placement {
-        object.key("moovPlacement").string(var_4.as_str());
+    if let Some(var_5) = &input.moov_placement {
+        object.key("moovPlacement").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.mp4_major_brand {
-        object.key("mp4MajorBrand").string(var_5.as_str());
+    if let Some(var_6) = &input.mp4_major_brand {
+        object.key("mp4MajorBrand").string(var_6.as_str());
     }
     Ok(())
 }

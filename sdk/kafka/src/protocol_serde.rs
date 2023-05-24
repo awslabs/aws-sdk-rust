@@ -20,9 +20,15 @@ pub(crate) mod shape_create_cluster_v2;
 
 pub(crate) mod shape_create_configuration;
 
+pub(crate) mod shape_create_vpc_connection;
+
 pub(crate) mod shape_delete_cluster;
 
+pub(crate) mod shape_delete_cluster_policy;
+
 pub(crate) mod shape_delete_configuration;
+
+pub(crate) mod shape_delete_vpc_connection;
 
 pub(crate) mod shape_describe_cluster;
 
@@ -34,9 +40,15 @@ pub(crate) mod shape_describe_configuration;
 
 pub(crate) mod shape_describe_configuration_revision;
 
+pub(crate) mod shape_describe_vpc_connection;
+
 pub(crate) mod shape_get_bootstrap_brokers;
 
+pub(crate) mod shape_get_cluster_policy;
+
 pub(crate) mod shape_get_compatible_kafka_versions;
+
+pub(crate) mod shape_list_client_vpc_connections;
 
 pub(crate) mod shape_list_cluster_operations;
 
@@ -56,7 +68,13 @@ pub(crate) mod shape_list_scram_secrets;
 
 pub(crate) mod shape_list_tags_for_resource;
 
+pub(crate) mod shape_list_vpc_connections;
+
+pub(crate) mod shape_put_cluster_policy;
+
 pub(crate) mod shape_reboot_broker;
+
+pub(crate) mod shape_reject_client_vpc_connection;
 
 pub(crate) mod shape_tag_resource;
 
@@ -104,13 +122,19 @@ pub(crate) mod shape_create_cluster_v2_input;
 
 pub(crate) mod shape_create_configuration_input;
 
+pub(crate) mod shape_create_vpc_connection_input;
+
 pub(crate) mod shape_forbidden_exception;
 
 pub(crate) mod shape_internal_server_error_exception;
 
 pub(crate) mod shape_not_found_exception;
 
+pub(crate) mod shape_put_cluster_policy_input;
+
 pub(crate) mod shape_reboot_broker_input;
+
+pub(crate) mod shape_reject_client_vpc_connection_input;
 
 pub(crate) mod shape_service_unavailable_exception;
 
@@ -144,6 +168,9 @@ pub(crate) mod shape_update_storage_input;
 pub(crate) mod shape___list_of__string;
 
 #[allow(non_snake_case)]
+pub(crate) mod shape___list_of_client_vpc_connection;
+
+#[allow(non_snake_case)]
 pub(crate) mod shape___list_of_cluster;
 
 #[allow(non_snake_case)]
@@ -169,6 +196,9 @@ pub(crate) mod shape___list_of_node_info;
 
 #[allow(non_snake_case)]
 pub(crate) mod shape___list_of_unprocessed_scram_secret;
+
+#[allow(non_snake_case)]
+pub(crate) mod shape___list_of_vpc_connection;
 
 #[allow(non_snake_case)]
 pub(crate) mod shape___map_of__string;
@@ -209,6 +239,8 @@ pub(crate) mod shape___list_of_cluster_operation_step;
 pub(crate) mod shape_broker_logs;
 
 pub(crate) mod shape_broker_software_info;
+
+pub(crate) mod shape_client_vpc_connection;
 
 pub(crate) mod shape_compatible_kafka_version;
 
@@ -252,6 +284,12 @@ pub(crate) mod shape_unprocessed_scram_secret;
 
 pub(crate) mod shape_vpc_config;
 
+pub(crate) mod shape_vpc_connection;
+
+pub(crate) mod shape_vpc_connection_info;
+
+pub(crate) mod shape_vpc_connectivity;
+
 #[allow(non_snake_case)]
 pub(crate) mod shape___list_of_broker_ebs_volume_info;
 
@@ -282,6 +320,10 @@ pub(crate) mod shape_scram;
 
 pub(crate) mod shape_serverless_sasl;
 
+pub(crate) mod shape_user_identity;
+
+pub(crate) mod shape_vpc_connectivity_client_authentication;
+
 pub(crate) mod shape_zookeeper_node_info;
 
 pub(crate) mod shape_cluster_operation_step_info;
@@ -289,3 +331,11 @@ pub(crate) mod shape_cluster_operation_step_info;
 pub(crate) mod shape_jmx_exporter;
 
 pub(crate) mod shape_node_exporter;
+
+pub(crate) mod shape_vpc_connectivity_sasl;
+
+pub(crate) mod shape_vpc_connectivity_tls;
+
+pub(crate) mod shape_vpc_connectivity_iam;
+
+pub(crate) mod shape_vpc_connectivity_scram;

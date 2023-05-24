@@ -9,7 +9,7 @@ pub struct BrokerNodeInfo {
     pub attached_eni_id: std::option::Option<std::string::String>,
     /// <p>The ID of the broker.</p>
     #[doc(hidden)]
-    pub broker_id: f64,
+    pub broker_id: std::option::Option<f64>,
     /// <p>The client subnet to which this broker node belongs.</p>
     #[doc(hidden)]
     pub client_subnet: std::option::Option<std::string::String>,
@@ -29,7 +29,7 @@ impl BrokerNodeInfo {
         self.attached_eni_id.as_deref()
     }
     /// <p>The ID of the broker.</p>
-    pub fn broker_id(&self) -> f64 {
+    pub fn broker_id(&self) -> std::option::Option<f64> {
         self.broker_id
     }
     /// <p>The client subnet to which this broker node belongs.</p>
@@ -149,7 +149,7 @@ impl BrokerNodeInfoBuilder {
     pub fn build(self) -> crate::types::BrokerNodeInfo {
         crate::types::BrokerNodeInfo {
             attached_eni_id: self.attached_eni_id,
-            broker_id: self.broker_id.unwrap_or_default(),
+            broker_id: self.broker_id,
             client_subnet: self.client_subnet,
             client_vpc_ip_address: self.client_vpc_ip_address,
             current_broker_software_info: self.current_broker_software_info,

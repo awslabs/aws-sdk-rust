@@ -128,4 +128,17 @@ impl GetContentModerationFluentBuilder {
         self.inner = self.inner.set_sort_by(input);
         self
     }
+    /// <p>Defines how to aggregate results of the StartContentModeration request. Default aggregation option is TIMESTAMPS. SEGMENTS mode aggregates moderation labels over time.</p>
+    pub fn aggregate_by(mut self, input: crate::types::ContentModerationAggregateBy) -> Self {
+        self.inner = self.inner.aggregate_by(input);
+        self
+    }
+    /// <p>Defines how to aggregate results of the StartContentModeration request. Default aggregation option is TIMESTAMPS. SEGMENTS mode aggregates moderation labels over time.</p>
+    pub fn set_aggregate_by(
+        mut self,
+        input: std::option::Option<crate::types::ContentModerationAggregateBy>,
+    ) -> Self {
+        self.inner = self.inner.set_aggregate_by(input);
+        self
+    }
 }

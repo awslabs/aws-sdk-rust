@@ -24,13 +24,13 @@ pub struct S3Object {
     pub path: std::option::Option<std::string::String>,
     /// <p>Specifies whether the object is publicly accessible due to the combination of permissions settings that apply to the object.</p>
     #[doc(hidden)]
-    pub public_access: bool,
+    pub public_access: std::option::Option<bool>,
     /// <p>The type of server-side encryption that was used to encrypt the object.</p>
     #[doc(hidden)]
     pub server_side_encryption: std::option::Option<crate::types::ServerSideEncryption>,
     /// <p>The total storage size, in bytes, of the object.</p>
     #[doc(hidden)]
-    pub size: i64,
+    pub size: std::option::Option<i64>,
     /// <p>The storage class of the object.</p>
     #[doc(hidden)]
     pub storage_class: std::option::Option<crate::types::StorageClass>,
@@ -67,7 +67,7 @@ impl S3Object {
         self.path.as_deref()
     }
     /// <p>Specifies whether the object is publicly accessible due to the combination of permissions settings that apply to the object.</p>
-    pub fn public_access(&self) -> bool {
+    pub fn public_access(&self) -> std::option::Option<bool> {
         self.public_access
     }
     /// <p>The type of server-side encryption that was used to encrypt the object.</p>
@@ -77,7 +77,7 @@ impl S3Object {
         self.server_side_encryption.as_ref()
     }
     /// <p>The total storage size, in bytes, of the object.</p>
-    pub fn size(&self) -> i64 {
+    pub fn size(&self) -> std::option::Option<i64> {
         self.size
     }
     /// <p>The storage class of the object.</p>
@@ -265,9 +265,9 @@ impl S3ObjectBuilder {
             key: self.key,
             last_modified: self.last_modified,
             path: self.path,
-            public_access: self.public_access.unwrap_or_default(),
+            public_access: self.public_access,
             server_side_encryption: self.server_side_encryption,
-            size: self.size.unwrap_or_default(),
+            size: self.size,
             storage_class: self.storage_class,
             tags: self.tags,
             version_id: self.version_id,

@@ -13,7 +13,7 @@ pub struct ClusterSummary {
     /// <p>The details about the current status of the cluster.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::ClusterStatus>,
-    /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
+    /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an Amazon EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
     #[doc(hidden)]
     pub normalized_instance_hours: std::option::Option<i32>,
     /// <p>The Amazon Resource Name of the cluster.</p>
@@ -36,7 +36,7 @@ impl ClusterSummary {
     pub fn status(&self) -> std::option::Option<&crate::types::ClusterStatus> {
         self.status.as_ref()
     }
-    /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
+    /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an Amazon EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
     pub fn normalized_instance_hours(&self) -> std::option::Option<i32> {
         self.normalized_instance_hours
     }
@@ -98,12 +98,12 @@ impl ClusterSummaryBuilder {
         self.status = input;
         self
     }
-    /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
+    /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an Amazon EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
     pub fn normalized_instance_hours(mut self, input: i32) -> Self {
         self.normalized_instance_hours = Some(input);
         self
     }
-    /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
+    /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an Amazon EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
     pub fn set_normalized_instance_hours(mut self, input: std::option::Option<i32>) -> Self {
         self.normalized_instance_hours = input;
         self

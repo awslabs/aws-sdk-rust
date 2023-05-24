@@ -105,13 +105,17 @@ impl UpdateCustomKeyStoreFluentBuilder {
         self.inner = self.inner.set_custom_key_store_id(input);
         self
     }
-    /// <p>Changes the friendly name of the custom key store to the value that you specify. The custom key store name must be unique in the Amazon Web Services account.</p>
+    /// <p>Changes the friendly name of the custom key store to the value that you specify. The custom key store name must be unique in the Amazon Web Services account.</p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
     /// <p>To change this value, an CloudHSM key store must be disconnected. An external key store can be connected or disconnected.</p>
     pub fn new_custom_key_store_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.new_custom_key_store_name(input.into());
         self
     }
-    /// <p>Changes the friendly name of the custom key store to the value that you specify. The custom key store name must be unique in the Amazon Web Services account.</p>
+    /// <p>Changes the friendly name of the custom key store to the value that you specify. The custom key store name must be unique in the Amazon Web Services account.</p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
     /// <p>To change this value, an CloudHSM key store must be disconnected. An external key store can be connected or disconnected.</p>
     pub fn set_new_custom_key_store_name(
         mut self,

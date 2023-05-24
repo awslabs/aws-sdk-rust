@@ -51,6 +51,8 @@ pub use crate::types::_bumper::Bumper;
 
 pub use crate::types::_avail_suppression::AvailSuppression;
 
+pub use crate::types::_fill_policy::FillPolicy;
+
 pub use crate::types::_mode::Mode;
 
 pub use crate::types::_dash_configuration_for_put::DashConfigurationForPut;
@@ -140,6 +142,8 @@ mod _dash_configuration_for_put;
 mod _dash_playlist_settings;
 
 mod _default_segment_delivery_configuration;
+
+mod _fill_policy;
 
 mod _hls_configuration;
 

@@ -3,10 +3,10 @@ pub fn ser_input_loss_failover_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InputLossFailoverSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.input_loss_threshold_msec != 0 {
+    if let Some(var_1) = &input.input_loss_threshold_msec {
         object.key("inputLossThresholdMsec").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.input_loss_threshold_msec).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())

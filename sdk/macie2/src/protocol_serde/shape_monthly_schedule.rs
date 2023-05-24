@@ -3,10 +3,10 @@ pub fn ser_monthly_schedule(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MonthlySchedule,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.day_of_month != 0 {
+    if let Some(var_1) = &input.day_of_month {
         object.key("dayOfMonth").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.day_of_month).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())

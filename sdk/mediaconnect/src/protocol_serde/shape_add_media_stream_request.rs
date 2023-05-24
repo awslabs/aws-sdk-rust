@@ -9,29 +9,29 @@ pub fn ser_add_media_stream_request(
         crate::protocol_serde::shape_media_stream_attributes_request::ser_media_stream_attributes_request(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if input.clock_rate != 0 {
+    if let Some(var_3) = &input.clock_rate {
         object.key("clockRate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.clock_rate).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.description {
-        object.key("description").string(var_3.as_str());
+    if let Some(var_4) = &input.description {
+        object.key("description").string(var_4.as_str());
     }
-    {
+    if let Some(var_5) = &input.media_stream_id {
         object.key("mediaStreamId").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.media_stream_id).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_4) = &input.media_stream_name {
-        object.key("mediaStreamName").string(var_4.as_str());
+    if let Some(var_6) = &input.media_stream_name {
+        object.key("mediaStreamName").string(var_6.as_str());
     }
-    if let Some(var_5) = &input.media_stream_type {
-        object.key("mediaStreamType").string(var_5.as_str());
+    if let Some(var_7) = &input.media_stream_type {
+        object.key("mediaStreamType").string(var_7.as_str());
     }
-    if let Some(var_6) = &input.video_format {
-        object.key("videoFormat").string(var_6.as_str());
+    if let Some(var_8) = &input.video_format {
+        object.key("videoFormat").string(var_8.as_str());
     }
     Ok(())
 }

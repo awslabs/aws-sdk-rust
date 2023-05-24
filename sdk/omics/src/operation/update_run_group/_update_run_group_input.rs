@@ -18,6 +18,9 @@ pub struct UpdateRunGroupInput {
     /// <p>A maximum run time for the group in minutes.</p>
     #[doc(hidden)]
     pub max_duration: std::option::Option<i32>,
+    /// <p> The maximum GPUs that can be used by a run group. </p>
+    #[doc(hidden)]
+    pub max_gpus: std::option::Option<i32>,
 }
 impl UpdateRunGroupInput {
     /// <p>The group's ID.</p>
@@ -40,6 +43,10 @@ impl UpdateRunGroupInput {
     pub fn max_duration(&self) -> std::option::Option<i32> {
         self.max_duration
     }
+    /// <p> The maximum GPUs that can be used by a run group. </p>
+    pub fn max_gpus(&self) -> std::option::Option<i32> {
+        self.max_gpus
+    }
 }
 impl UpdateRunGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateRunGroupInput`](crate::operation::update_run_group::UpdateRunGroupInput).
@@ -57,6 +64,7 @@ pub struct UpdateRunGroupInputBuilder {
     pub(crate) max_cpus: std::option::Option<i32>,
     pub(crate) max_runs: std::option::Option<i32>,
     pub(crate) max_duration: std::option::Option<i32>,
+    pub(crate) max_gpus: std::option::Option<i32>,
 }
 impl UpdateRunGroupInputBuilder {
     /// <p>The group's ID.</p>
@@ -109,6 +117,16 @@ impl UpdateRunGroupInputBuilder {
         self.max_duration = input;
         self
     }
+    /// <p> The maximum GPUs that can be used by a run group. </p>
+    pub fn max_gpus(mut self, input: i32) -> Self {
+        self.max_gpus = Some(input);
+        self
+    }
+    /// <p> The maximum GPUs that can be used by a run group. </p>
+    pub fn set_max_gpus(mut self, input: std::option::Option<i32>) -> Self {
+        self.max_gpus = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateRunGroupInput`](crate::operation::update_run_group::UpdateRunGroupInput).
     pub fn build(
         self,
@@ -122,6 +140,7 @@ impl UpdateRunGroupInputBuilder {
             max_cpus: self.max_cpus,
             max_runs: self.max_runs,
             max_duration: self.max_duration,
+            max_gpus: self.max_gpus,
         })
     }
 }

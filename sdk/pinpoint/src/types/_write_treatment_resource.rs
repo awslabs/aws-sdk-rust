@@ -16,7 +16,7 @@ pub struct WriteTreatmentResource {
     pub schedule: std::option::Option<crate::types::Schedule>,
     /// <p>The allocated percentage of users (segment members) to send the treatment to.</p>
     #[doc(hidden)]
-    pub size_percent: i32,
+    pub size_percent: std::option::Option<i32>,
     /// <p>The message template to use for the treatment.</p>
     #[doc(hidden)]
     pub template_configuration: std::option::Option<crate::types::TemplateConfiguration>,
@@ -45,7 +45,7 @@ impl WriteTreatmentResource {
         self.schedule.as_ref()
     }
     /// <p>The allocated percentage of users (segment members) to send the treatment to.</p>
-    pub fn size_percent(&self) -> i32 {
+    pub fn size_percent(&self) -> std::option::Option<i32> {
         self.size_percent
     }
     /// <p>The message template to use for the treatment.</p>
@@ -175,7 +175,7 @@ impl WriteTreatmentResourceBuilder {
             custom_delivery_configuration: self.custom_delivery_configuration,
             message_configuration: self.message_configuration,
             schedule: self.schedule,
-            size_percent: self.size_percent.unwrap_or_default(),
+            size_percent: self.size_percent,
             template_configuration: self.template_configuration,
             treatment_description: self.treatment_description,
             treatment_name: self.treatment_name,

@@ -5,7 +5,7 @@ pub use crate::operation::tag_resource::_tag_resource_input::TagResourceInputBui
 
 /// Fluent builder constructing a request to `TagResource`.
 ///
-/// <p>Adds one or more tags to an Athena resource. A tag is a label that you assign to a resource. In Athena, a resource can be a workgroup or data catalog. Each tag consists of a key and an optional value, both of which you define. For example, you can use tags to categorize Athena workgroups or data catalogs by purpose, owner, or environment. Use a consistent set of tag keys to make it easier to search and filter workgroups or data catalogs in your account. For best practices, see <a href="https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html">Tagging Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256 UTF-8 Unicode characters. Tags can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive. Tag keys must be unique per resource. If you specify more than one tag, separate them by commas.</p>
+/// <p>Adds one or more tags to an Athena resource. A tag is a label that you assign to a resource. Each tag consists of a key and an optional value, both of which you define. For example, you can use tags to categorize Athena workgroups, data catalogs, or capacity reservations by purpose, owner, or environment. Use a consistent set of tag keys to make it easier to search and filter the resources in your account. For best practices, see <a href="https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html">Tagging Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256 UTF-8 Unicode characters. Tags can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive. Tag keys must be unique per resource. If you specify more than one tag, separate them by commas.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TagResourceFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -64,12 +64,12 @@ impl TagResourceFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to which tags are to be added.</p>
+    /// <p>Specifies the ARN of the Athena resource to which tags are to be added.</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to which tags are to be added.</p>
+    /// <p>Specifies the ARN of the Athena resource to which tags are to be added.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
@@ -78,12 +78,12 @@ impl TagResourceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A collection of one or more tags, separated by commas, to be added to an Athena workgroup or data catalog resource.</p>
+    /// <p>A collection of one or more tags, separated by commas, to be added to an Athena resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>A collection of one or more tags, separated by commas, to be added to an Athena workgroup or data catalog resource.</p>
+    /// <p>A collection of one or more tags, separated by commas, to be added to an Athena resource.</p>
     pub fn set_tags(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::Tag>>,

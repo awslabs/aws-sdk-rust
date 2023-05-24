@@ -9,7 +9,7 @@ pub struct VideoDescription {
     pub codec_settings: std::option::Option<crate::types::VideoCodecSettings>,
     /// Output video height, in pixels. Must be an even number. For most codecs, you can leave this field and width blank in order to use the height and width (resolution) from the source. Note, however, that leaving blank is not recommended. For the Frame Capture codec, height and width are required.
     #[doc(hidden)]
-    pub height: i32,
+    pub height: std::option::Option<i32>,
     /// The name of this VideoDescription. Outputs will use this name to uniquely identify this Description. Description names should be unique within this Live Event.
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -21,10 +21,10 @@ pub struct VideoDescription {
     pub scaling_behavior: std::option::Option<crate::types::VideoDescriptionScalingBehavior>,
     /// Changes the strength of the anti-alias filter used for scaling. 0 is the softest setting, 100 is the sharpest. A setting of 50 is recommended for most content.
     #[doc(hidden)]
-    pub sharpness: i32,
+    pub sharpness: std::option::Option<i32>,
     /// Output video width, in pixels. Must be an even number. For most codecs, you can leave this field and height blank in order to use the height and width (resolution) from the source. Note, however, that leaving blank is not recommended. For the Frame Capture codec, height and width are required.
     #[doc(hidden)]
-    pub width: i32,
+    pub width: std::option::Option<i32>,
 }
 impl VideoDescription {
     /// Video codec settings.
@@ -32,7 +32,7 @@ impl VideoDescription {
         self.codec_settings.as_ref()
     }
     /// Output video height, in pixels. Must be an even number. For most codecs, you can leave this field and width blank in order to use the height and width (resolution) from the source. Note, however, that leaving blank is not recommended. For the Frame Capture codec, height and width are required.
-    pub fn height(&self) -> i32 {
+    pub fn height(&self) -> std::option::Option<i32> {
         self.height
     }
     /// The name of this VideoDescription. Outputs will use this name to uniquely identify this Description. Description names should be unique within this Live Event.
@@ -52,11 +52,11 @@ impl VideoDescription {
         self.scaling_behavior.as_ref()
     }
     /// Changes the strength of the anti-alias filter used for scaling. 0 is the softest setting, 100 is the sharpest. A setting of 50 is recommended for most content.
-    pub fn sharpness(&self) -> i32 {
+    pub fn sharpness(&self) -> std::option::Option<i32> {
         self.sharpness
     }
     /// Output video width, in pixels. Must be an even number. For most codecs, you can leave this field and height blank in order to use the height and width (resolution) from the source. Note, however, that leaving blank is not recommended. For the Frame Capture codec, height and width are required.
-    pub fn width(&self) -> i32 {
+    pub fn width(&self) -> std::option::Option<i32> {
         self.width
     }
 }
@@ -166,12 +166,12 @@ impl VideoDescriptionBuilder {
     pub fn build(self) -> crate::types::VideoDescription {
         crate::types::VideoDescription {
             codec_settings: self.codec_settings,
-            height: self.height.unwrap_or_default(),
+            height: self.height,
             name: self.name,
             respond_to_afd: self.respond_to_afd,
             scaling_behavior: self.scaling_behavior,
-            sharpness: self.sharpness.unwrap_or_default(),
-            width: self.width.unwrap_or_default(),
+            sharpness: self.sharpness,
+            width: self.width,
         }
     }
 }

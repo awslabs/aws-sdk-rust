@@ -3,16 +3,16 @@ pub fn ser_hdr10_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Hdr10Settings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.max_cll != 0 {
+    if let Some(var_1) = &input.max_cll {
         object.key("maxCll").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_cll).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.max_fall != 0 {
+    if let Some(var_2) = &input.max_fall {
         object.key("maxFall").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_fall).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

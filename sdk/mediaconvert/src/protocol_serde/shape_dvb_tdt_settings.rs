@@ -3,10 +3,10 @@ pub fn ser_dvb_tdt_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DvbTdtSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.tdt_interval != 0 {
+    if let Some(var_1) = &input.tdt_interval {
         object.key("tdtInterval").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.tdt_interval).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())

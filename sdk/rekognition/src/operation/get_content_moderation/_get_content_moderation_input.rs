@@ -15,6 +15,9 @@ pub struct GetContentModerationInput {
     /// <p>Sort to use for elements in the <code>ModerationLabelDetections</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time labels are detected. Use <code>NAME</code> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
     #[doc(hidden)]
     pub sort_by: std::option::Option<crate::types::ContentModerationSortBy>,
+    /// <p>Defines how to aggregate results of the StartContentModeration request. Default aggregation option is TIMESTAMPS. SEGMENTS mode aggregates moderation labels over time.</p>
+    #[doc(hidden)]
+    pub aggregate_by: std::option::Option<crate::types::ContentModerationAggregateBy>,
 }
 impl GetContentModerationInput {
     /// <p>The identifier for the inappropriate, unwanted, or offensive content moderation job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
@@ -33,6 +36,10 @@ impl GetContentModerationInput {
     pub fn sort_by(&self) -> std::option::Option<&crate::types::ContentModerationSortBy> {
         self.sort_by.as_ref()
     }
+    /// <p>Defines how to aggregate results of the StartContentModeration request. Default aggregation option is TIMESTAMPS. SEGMENTS mode aggregates moderation labels over time.</p>
+    pub fn aggregate_by(&self) -> std::option::Option<&crate::types::ContentModerationAggregateBy> {
+        self.aggregate_by.as_ref()
+    }
 }
 impl GetContentModerationInput {
     /// Creates a new builder-style object to manufacture [`GetContentModerationInput`](crate::operation::get_content_moderation::GetContentModerationInput).
@@ -50,6 +57,7 @@ pub struct GetContentModerationInputBuilder {
     pub(crate) max_results: std::option::Option<i32>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     pub(crate) sort_by: std::option::Option<crate::types::ContentModerationSortBy>,
+    pub(crate) aggregate_by: std::option::Option<crate::types::ContentModerationAggregateBy>,
 }
 impl GetContentModerationInputBuilder {
     /// <p>The identifier for the inappropriate, unwanted, or offensive content moderation job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
@@ -95,6 +103,19 @@ impl GetContentModerationInputBuilder {
         self.sort_by = input;
         self
     }
+    /// <p>Defines how to aggregate results of the StartContentModeration request. Default aggregation option is TIMESTAMPS. SEGMENTS mode aggregates moderation labels over time.</p>
+    pub fn aggregate_by(mut self, input: crate::types::ContentModerationAggregateBy) -> Self {
+        self.aggregate_by = Some(input);
+        self
+    }
+    /// <p>Defines how to aggregate results of the StartContentModeration request. Default aggregation option is TIMESTAMPS. SEGMENTS mode aggregates moderation labels over time.</p>
+    pub fn set_aggregate_by(
+        mut self,
+        input: std::option::Option<crate::types::ContentModerationAggregateBy>,
+    ) -> Self {
+        self.aggregate_by = input;
+        self
+    }
     /// Consumes the builder and constructs a [`GetContentModerationInput`](crate::operation::get_content_moderation::GetContentModerationInput).
     pub fn build(
         self,
@@ -108,6 +129,7 @@ impl GetContentModerationInputBuilder {
                 max_results: self.max_results,
                 next_token: self.next_token,
                 sort_by: self.sort_by,
+                aggregate_by: self.aggregate_by,
             },
         )
     }

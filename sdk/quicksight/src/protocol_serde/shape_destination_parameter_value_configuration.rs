@@ -21,6 +21,15 @@ pub fn ser_destination_parameter_value_configuration(
     if let Some(var_5) = &input.source_field {
         object.key("SourceField").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.source_column {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("SourceColumn").start_object();
+        crate::protocol_serde::shape_column_identifier::ser_column_identifier(
+            &mut object_7,
+            var_6,
+        )?;
+        object_7.finish();
+    }
     Ok(())
 }
 
@@ -83,6 +92,11 @@ where
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            "SourceColumn" => {
+                                builder = builder.set_source_column(
+                                    crate::protocol_serde::shape_column_identifier::de_column_identifier(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

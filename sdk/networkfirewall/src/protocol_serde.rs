@@ -242,6 +242,8 @@ pub(crate) mod shape_log_destination_config;
 
 pub(crate) mod shape_log_destination_configs;
 
+pub(crate) mod shape_policy_variables;
+
 pub(crate) mod shape_reference_sets;
 
 pub(crate) mod shape_rule_group_metadata;

@@ -14,7 +14,7 @@ pub struct EncryptionInTransit {
     /// <p>When set to true, it indicates that data communication among the broker nodes of the cluster is encrypted. When set to false, the communication happens in plaintext.</p>
     /// <p>The default value is true.</p>
     #[doc(hidden)]
-    pub in_cluster: bool,
+    pub in_cluster: std::option::Option<bool>,
 }
 impl EncryptionInTransit {
     /// <p>Indicates the encryption setting for data in transit between clients and brokers. The following are the possible values.</p>
@@ -27,7 +27,7 @@ impl EncryptionInTransit {
     }
     /// <p>When set to true, it indicates that data communication among the broker nodes of the cluster is encrypted. When set to false, the communication happens in plaintext.</p>
     /// <p>The default value is true.</p>
-    pub fn in_cluster(&self) -> bool {
+    pub fn in_cluster(&self) -> std::option::Option<bool> {
         self.in_cluster
     }
 }
@@ -83,7 +83,7 @@ impl EncryptionInTransitBuilder {
     pub fn build(self) -> crate::types::EncryptionInTransit {
         crate::types::EncryptionInTransit {
             client_broker: self.client_broker,
-            in_cluster: self.in_cluster.unwrap_or_default(),
+            in_cluster: self.in_cluster,
         }
     }
 }

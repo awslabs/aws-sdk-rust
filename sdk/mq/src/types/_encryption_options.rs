@@ -12,7 +12,7 @@ pub struct EncryptionOptions {
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Enables the use of an AWS owned CMK using AWS Key Management Service (KMS). Set to true by default, if no value is provided, for example, for RabbitMQ brokers.</p>
     #[doc(hidden)]
-    pub use_aws_owned_key: bool,
+    pub use_aws_owned_key: std::option::Option<bool>,
 }
 impl EncryptionOptions {
     /// <p>The customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used to encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.</p>
@@ -20,7 +20,7 @@ impl EncryptionOptions {
         self.kms_key_id.as_deref()
     }
     /// <p>Enables the use of an AWS owned CMK using AWS Key Management Service (KMS). Set to true by default, if no value is provided, for example, for RabbitMQ brokers.</p>
-    pub fn use_aws_owned_key(&self) -> bool {
+    pub fn use_aws_owned_key(&self) -> std::option::Option<bool> {
         self.use_aws_owned_key
     }
 }
@@ -63,7 +63,7 @@ impl EncryptionOptionsBuilder {
     pub fn build(self) -> crate::types::EncryptionOptions {
         crate::types::EncryptionOptions {
             kms_key_id: self.kms_key_id,
-            use_aws_owned_key: self.use_aws_owned_key.unwrap_or_default(),
+            use_aws_owned_key: self.use_aws_owned_key,
         }
     }
 }

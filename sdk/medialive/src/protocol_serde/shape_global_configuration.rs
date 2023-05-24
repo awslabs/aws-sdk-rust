@@ -3,34 +3,34 @@ pub fn ser_global_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GlobalConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.initial_audio_gain != 0 {
+    if let Some(var_1) = &input.initial_audio_gain {
         object.key("initialAudioGain").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.initial_audio_gain).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.input_end_action {
-        object.key("inputEndAction").string(var_1.as_str());
+    if let Some(var_2) = &input.input_end_action {
+        object.key("inputEndAction").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.input_loss_behavior {
+    if let Some(var_3) = &input.input_loss_behavior {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("inputLossBehavior").start_object();
+        let mut object_4 = object.key("inputLossBehavior").start_object();
         crate::protocol_serde::shape_input_loss_behavior::ser_input_loss_behavior(
-            &mut object_3,
-            var_2,
+            &mut object_4,
+            var_3,
         )?;
-        object_3.finish();
+        object_4.finish();
     }
-    if let Some(var_4) = &input.output_locking_mode {
-        object.key("outputLockingMode").string(var_4.as_str());
+    if let Some(var_5) = &input.output_locking_mode {
+        object.key("outputLockingMode").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.output_timing_source {
-        object.key("outputTimingSource").string(var_5.as_str());
+    if let Some(var_6) = &input.output_timing_source {
+        object.key("outputTimingSource").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.support_low_framerate_inputs {
+    if let Some(var_7) = &input.support_low_framerate_inputs {
         object
             .key("supportLowFramerateInputs")
-            .string(var_6.as_str());
+            .string(var_7.as_str());
     }
     Ok(())
 }

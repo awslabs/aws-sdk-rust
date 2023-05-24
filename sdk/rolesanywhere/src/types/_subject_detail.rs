@@ -16,7 +16,7 @@ pub struct SubjectDetail {
     /// <p>The x509 principal identifier of the authenticating certificate.</p>
     #[doc(hidden)]
     pub x509_subject: std::option::Option<std::string::String>,
-    /// <p>The ISO-8601 timestamp of the last time this Subject requested temporary session credentials.</p>
+    /// <p>The ISO-8601 timestamp of the last time this subject requested temporary session credentials.</p>
     #[doc(hidden)]
     pub last_seen_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ISO-8601 timestamp when the subject was created. </p>
@@ -25,7 +25,7 @@ pub struct SubjectDetail {
     /// <p>The ISO-8601 timestamp when the subject was last updated.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The temporary session credentials vended at the last authenticating call with this Subject.</p>
+    /// <p>The temporary session credentials vended at the last authenticating call with this subject.</p>
     #[doc(hidden)]
     pub credentials: std::option::Option<std::vec::Vec<crate::types::CredentialSummary>>,
     /// <p>The specified instance properties associated with the request.</p>
@@ -49,7 +49,7 @@ impl SubjectDetail {
     pub fn x509_subject(&self) -> std::option::Option<&str> {
         self.x509_subject.as_deref()
     }
-    /// <p>The ISO-8601 timestamp of the last time this Subject requested temporary session credentials.</p>
+    /// <p>The ISO-8601 timestamp of the last time this subject requested temporary session credentials.</p>
     pub fn last_seen_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_seen_at.as_ref()
     }
@@ -61,7 +61,7 @@ impl SubjectDetail {
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
-    /// <p>The temporary session credentials vended at the last authenticating call with this Subject.</p>
+    /// <p>The temporary session credentials vended at the last authenticating call with this subject.</p>
     pub fn credentials(&self) -> std::option::Option<&[crate::types::CredentialSummary]> {
         self.credentials.as_deref()
     }
@@ -133,12 +133,12 @@ impl SubjectDetailBuilder {
         self.x509_subject = input;
         self
     }
-    /// <p>The ISO-8601 timestamp of the last time this Subject requested temporary session credentials.</p>
+    /// <p>The ISO-8601 timestamp of the last time this subject requested temporary session credentials.</p>
     pub fn last_seen_at(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.last_seen_at = Some(input);
         self
     }
-    /// <p>The ISO-8601 timestamp of the last time this Subject requested temporary session credentials.</p>
+    /// <p>The ISO-8601 timestamp of the last time this subject requested temporary session credentials.</p>
     pub fn set_last_seen_at(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,
@@ -176,14 +176,14 @@ impl SubjectDetailBuilder {
     ///
     /// To override the contents of this collection use [`set_credentials`](Self::set_credentials).
     ///
-    /// <p>The temporary session credentials vended at the last authenticating call with this Subject.</p>
+    /// <p>The temporary session credentials vended at the last authenticating call with this subject.</p>
     pub fn credentials(mut self, input: crate::types::CredentialSummary) -> Self {
         let mut v = self.credentials.unwrap_or_default();
         v.push(input);
         self.credentials = Some(v);
         self
     }
-    /// <p>The temporary session credentials vended at the last authenticating call with this Subject.</p>
+    /// <p>The temporary session credentials vended at the last authenticating call with this subject.</p>
     pub fn set_credentials(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::CredentialSummary>>,

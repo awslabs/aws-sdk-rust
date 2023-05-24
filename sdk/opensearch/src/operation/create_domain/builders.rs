@@ -226,7 +226,7 @@ impl CreateDomainFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_log_publishing_options`](Self::set_log_publishing_options).
     ///
-    /// <p>Key-value pairs to configure slow log publishing.</p>
+    /// <p>Key-value pairs to configure log publishing.</p>
     pub fn log_publishing_options(
         mut self,
         k: crate::types::LogType,
@@ -235,7 +235,7 @@ impl CreateDomainFluentBuilder {
         self.inner = self.inner.log_publishing_options(k, v);
         self
     }
-    /// <p>Key-value pairs to configure slow log publishing.</p>
+    /// <p>Key-value pairs to configure log publishing.</p>
     pub fn set_log_publishing_options(
         mut self,
         input: std::option::Option<

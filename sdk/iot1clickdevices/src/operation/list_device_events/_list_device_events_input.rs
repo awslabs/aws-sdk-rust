@@ -11,7 +11,7 @@ pub struct ListDeviceEventsInput {
     pub from_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>The token to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -29,7 +29,7 @@ impl ListDeviceEventsInput {
         self.from_time_stamp.as_ref()
     }
     /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token to retrieve the next set of results.</p>
@@ -127,7 +127,7 @@ impl ListDeviceEventsInputBuilder {
             crate::operation::list_device_events::ListDeviceEventsInput {
                 device_id: self.device_id,
                 from_time_stamp: self.from_time_stamp,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
                 next_token: self.next_token,
                 to_time_stamp: self.to_time_stamp,
             },

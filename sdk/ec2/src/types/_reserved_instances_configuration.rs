@@ -15,7 +15,7 @@ pub struct ReservedInstancesConfiguration {
     /// <p>The instance type for the modified Reserved Instances.</p>
     #[doc(hidden)]
     pub instance_type: std::option::Option<crate::types::InstanceType>,
-    /// <p>The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.</p>
+    /// <p>The network platform of the modified Reserved Instances.</p>
     #[doc(hidden)]
     pub platform: std::option::Option<std::string::String>,
     /// <p>Whether the Reserved Instance is applied to instances in a Region or instances in a specific Availability Zone.</p>
@@ -37,7 +37,7 @@ impl ReservedInstancesConfiguration {
     pub fn instance_type(&self) -> std::option::Option<&crate::types::InstanceType> {
         self.instance_type.as_ref()
     }
-    /// <p>The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.</p>
+    /// <p>The network platform of the modified Reserved Instances.</p>
     pub fn platform(&self) -> std::option::Option<&str> {
         self.platform.as_deref()
     }
@@ -104,12 +104,12 @@ impl ReservedInstancesConfigurationBuilder {
         self.instance_type = input;
         self
     }
-    /// <p>The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.</p>
+    /// <p>The network platform of the modified Reserved Instances.</p>
     pub fn platform(mut self, input: impl Into<std::string::String>) -> Self {
         self.platform = Some(input.into());
         self
     }
-    /// <p>The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.</p>
+    /// <p>The network platform of the modified Reserved Instances.</p>
     pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.platform = input;
         self

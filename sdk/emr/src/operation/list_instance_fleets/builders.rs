@@ -6,7 +6,7 @@ pub use crate::operation::list_instance_fleets::_list_instance_fleets_input::Lis
 /// Fluent builder constructing a request to `ListInstanceFleets`.
 ///
 /// <p>Lists all available details about the instance fleets in a cluster.</p> <note>
-/// <p>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
+/// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListInstanceFleetsFluentBuilder {

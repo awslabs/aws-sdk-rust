@@ -12,7 +12,7 @@ pub struct UpdateStageInput {
     pub api_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
     #[doc(hidden)]
-    pub auto_deploy: bool,
+    pub auto_deploy: std::option::Option<bool>,
     /// <p>The identifier of a client certificate for a Stage.</p>
     #[doc(hidden)]
     pub client_certificate_id: std::option::Option<std::string::String>,
@@ -48,7 +48,7 @@ impl UpdateStageInput {
         self.api_id.as_deref()
     }
     /// <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
-    pub fn auto_deploy(&self) -> bool {
+    pub fn auto_deploy(&self) -> std::option::Option<bool> {
         self.auto_deploy
     }
     /// <p>The identifier of a client certificate for a Stage.</p>
@@ -262,7 +262,7 @@ impl UpdateStageInputBuilder {
         Ok(crate::operation::update_stage::UpdateStageInput {
             access_log_settings: self.access_log_settings,
             api_id: self.api_id,
-            auto_deploy: self.auto_deploy.unwrap_or_default(),
+            auto_deploy: self.auto_deploy,
             client_certificate_id: self.client_certificate_id,
             default_route_settings: self.default_route_settings,
             deployment_id: self.deployment_id,

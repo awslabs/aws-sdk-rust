@@ -11,7 +11,7 @@ pub struct UpdateDiscovererInput {
     pub discoverer_id: std::option::Option<std::string::String>,
     /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true)</p>
     #[doc(hidden)]
-    pub cross_account: bool,
+    pub cross_account: std::option::Option<bool>,
 }
 impl UpdateDiscovererInput {
     /// <p>The description of the discoverer to update.</p>
@@ -23,7 +23,7 @@ impl UpdateDiscovererInput {
         self.discoverer_id.as_deref()
     }
     /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true)</p>
-    pub fn cross_account(&self) -> bool {
+    pub fn cross_account(&self) -> std::option::Option<bool> {
         self.cross_account
     }
 }
@@ -84,7 +84,7 @@ impl UpdateDiscovererInputBuilder {
         Ok(crate::operation::update_discoverer::UpdateDiscovererInput {
             description: self.description,
             discoverer_id: self.discoverer_id,
-            cross_account: self.cross_account.unwrap_or_default(),
+            cross_account: self.cross_account,
         })
     }
 }

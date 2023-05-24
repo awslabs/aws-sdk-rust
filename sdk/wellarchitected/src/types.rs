@@ -13,6 +13,8 @@ pub use crate::types::_workload::Workload;
 
 pub use crate::types::_workload_discovery_config::WorkloadDiscoveryConfig;
 
+pub use crate::types::_definition_type::DefinitionType;
+
 pub use crate::types::_trusted_advisor_integration_status::TrustedAdvisorIntegrationStatus;
 
 pub use crate::types::_risk::Risk;
@@ -32,6 +34,8 @@ pub use crate::types::_lens_review::LensReview;
 pub use crate::types::_pillar_review_summary::PillarReviewSummary;
 
 pub use crate::types::_lens_status::LensStatus;
+
+pub use crate::types::_discovery_integration_status::DiscoveryIntegrationStatus;
 
 pub use crate::types::_organization_sharing_status::OrganizationSharingStatus;
 
@@ -167,7 +171,11 @@ mod _choice_update;
 
 mod _consolidated_report_metric;
 
+mod _definition_type;
+
 mod _difference_status;
+
+mod _discovery_integration_status;
 
 mod _import_lens_status;
 

@@ -62,6 +62,22 @@ impl GetEndpointInput {
                         );
                     }
                 }
+                if let Some(inner_3) = &_input.device_role_arn {
+                    {
+                        query.push_kv(
+                            "deviceRoleArn",
+                            &aws_smithy_http::query::fmt_string(&inner_3),
+                        );
+                    }
+                }
+                if let Some(inner_4) = &_input.authentication_method {
+                    {
+                        query.push_kv(
+                            "authenticationMethod",
+                            &aws_smithy_http::query::fmt_string(&inner_4),
+                        );
+                    }
+                }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

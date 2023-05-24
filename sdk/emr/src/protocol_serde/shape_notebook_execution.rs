@@ -134,6 +134,34 @@ where
                                     crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?,
                                 );
                             }
+                            "NotebookS3Location" => {
+                                builder = builder.set_notebook_s3_location(
+                                    crate::protocol_serde::shape_notebook_s3_location_for_output::de_notebook_s3_location_for_output(tokens)?
+                                );
+                            }
+                            "OutputNotebookS3Location" => {
+                                builder = builder.set_output_notebook_s3_location(
+                                    crate::protocol_serde::shape_output_notebook_s3_location_for_output::de_output_notebook_s3_location_for_output(tokens)?
+                                );
+                            }
+                            "OutputNotebookFormat" => {
+                                builder = builder.set_output_notebook_format(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::types::OutputNotebookFormat::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "EnvironmentVariables" => {
+                                builder = builder.set_environment_variables(
+                                    crate::protocol_serde::shape_environment_variables_map::de_environment_variables_map(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

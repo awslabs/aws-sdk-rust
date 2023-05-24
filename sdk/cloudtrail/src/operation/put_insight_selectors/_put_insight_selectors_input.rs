@@ -6,7 +6,9 @@ pub struct PutInsightSelectorsInput {
     /// <p>The name of the CloudTrail trail for which you want to change or add Insights selectors.</p>
     #[doc(hidden)]
     pub trail_name: std::option::Option<std::string::String>,
-    /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid insight types.</p>
+    /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
+    /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume.</p>
+    /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
     #[doc(hidden)]
     pub insight_selectors: std::option::Option<std::vec::Vec<crate::types::InsightSelector>>,
 }
@@ -15,7 +17,9 @@ impl PutInsightSelectorsInput {
     pub fn trail_name(&self) -> std::option::Option<&str> {
         self.trail_name.as_deref()
     }
-    /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid insight types.</p>
+    /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
+    /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume.</p>
+    /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
     pub fn insight_selectors(&self) -> std::option::Option<&[crate::types::InsightSelector]> {
         self.insight_selectors.as_deref()
     }
@@ -51,14 +55,18 @@ impl PutInsightSelectorsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_insight_selectors`](Self::set_insight_selectors).
     ///
-    /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid insight types.</p>
+    /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
+    /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume.</p>
+    /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
     pub fn insight_selectors(mut self, input: crate::types::InsightSelector) -> Self {
         let mut v = self.insight_selectors.unwrap_or_default();
         v.push(input);
         self.insight_selectors = Some(v);
         self
     }
-    /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid insight types.</p>
+    /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
+    /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume.</p>
+    /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
     pub fn set_insight_selectors(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::InsightSelector>>,

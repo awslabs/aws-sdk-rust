@@ -18,28 +18,28 @@ pub struct HlsPackage {
     pub encryption: std::option::Option<crate::types::HlsEncryption>,
     /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
     #[doc(hidden)]
-    pub include_dvb_subtitles: bool,
+    pub include_dvb_subtitles: std::option::Option<bool>,
     /// When enabled, an I-Frame only stream will be included in the output.
     #[doc(hidden)]
-    pub include_iframe_only_stream: bool,
+    pub include_iframe_only_stream: std::option::Option<bool>,
     /// The HTTP Live Streaming (HLS) playlist type. When either "EVENT" or "VOD" is specified, a corresponding EXT-X-PLAYLIST-TYPE entry will be included in the media playlist.
     #[doc(hidden)]
     pub playlist_type: std::option::Option<crate::types::PlaylistType>,
     /// Time window (in seconds) contained in each parent manifest.
     #[doc(hidden)]
-    pub playlist_window_seconds: i32,
+    pub playlist_window_seconds: std::option::Option<i32>,
     /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag inserted into manifests. Additionally, when an interval is specified ID3Timed Metadata messages will be generated every 5 seconds using the ingest time of the content. If the interval is not specified, or set to 0, then no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no ID3Timed Metadata messages will be generated. Note that irrespective of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input, it will be passed through to HLS output.
     #[doc(hidden)]
-    pub program_date_time_interval_seconds: i32,
+    pub program_date_time_interval_seconds: std::option::Option<i32>,
     /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
     #[doc(hidden)]
-    pub segment_duration_seconds: i32,
+    pub segment_duration_seconds: std::option::Option<i32>,
     /// A StreamSelection configuration.
     #[doc(hidden)]
     pub stream_selection: std::option::Option<crate::types::StreamSelection>,
     /// When enabled, audio streams will be placed in rendition groups in the output.
     #[doc(hidden)]
-    pub use_audio_rendition_group: bool,
+    pub use_audio_rendition_group: std::option::Option<bool>,
 }
 impl HlsPackage {
     /// This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all SCTE-35 ad markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED" generates ad markers and blackout tags based on SCTE-35 messages in the input source. "DATERANGE" inserts EXT-X-DATERANGE tags to signal ad and program transition events in HLS and CMAF manifests. For this option, you must set a programDateTimeIntervalSeconds value that is greater than 0.
@@ -61,11 +61,11 @@ impl HlsPackage {
         self.encryption.as_ref()
     }
     /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
-    pub fn include_dvb_subtitles(&self) -> bool {
+    pub fn include_dvb_subtitles(&self) -> std::option::Option<bool> {
         self.include_dvb_subtitles
     }
     /// When enabled, an I-Frame only stream will be included in the output.
-    pub fn include_iframe_only_stream(&self) -> bool {
+    pub fn include_iframe_only_stream(&self) -> std::option::Option<bool> {
         self.include_iframe_only_stream
     }
     /// The HTTP Live Streaming (HLS) playlist type. When either "EVENT" or "VOD" is specified, a corresponding EXT-X-PLAYLIST-TYPE entry will be included in the media playlist.
@@ -73,15 +73,15 @@ impl HlsPackage {
         self.playlist_type.as_ref()
     }
     /// Time window (in seconds) contained in each parent manifest.
-    pub fn playlist_window_seconds(&self) -> i32 {
+    pub fn playlist_window_seconds(&self) -> std::option::Option<i32> {
         self.playlist_window_seconds
     }
     /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag inserted into manifests. Additionally, when an interval is specified ID3Timed Metadata messages will be generated every 5 seconds using the ingest time of the content. If the interval is not specified, or set to 0, then no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no ID3Timed Metadata messages will be generated. Note that irrespective of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input, it will be passed through to HLS output.
-    pub fn program_date_time_interval_seconds(&self) -> i32 {
+    pub fn program_date_time_interval_seconds(&self) -> std::option::Option<i32> {
         self.program_date_time_interval_seconds
     }
     /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
-    pub fn segment_duration_seconds(&self) -> i32 {
+    pub fn segment_duration_seconds(&self) -> std::option::Option<i32> {
         self.segment_duration_seconds
     }
     /// A StreamSelection configuration.
@@ -89,7 +89,7 @@ impl HlsPackage {
         self.stream_selection.as_ref()
     }
     /// When enabled, audio streams will be placed in rendition groups in the output.
-    pub fn use_audio_rendition_group(&self) -> bool {
+    pub fn use_audio_rendition_group(&self) -> std::option::Option<bool> {
         self.use_audio_rendition_group
     }
 }
@@ -273,16 +273,14 @@ impl HlsPackageBuilder {
             ad_triggers: self.ad_triggers,
             ads_on_delivery_restrictions: self.ads_on_delivery_restrictions,
             encryption: self.encryption,
-            include_dvb_subtitles: self.include_dvb_subtitles.unwrap_or_default(),
-            include_iframe_only_stream: self.include_iframe_only_stream.unwrap_or_default(),
+            include_dvb_subtitles: self.include_dvb_subtitles,
+            include_iframe_only_stream: self.include_iframe_only_stream,
             playlist_type: self.playlist_type,
-            playlist_window_seconds: self.playlist_window_seconds.unwrap_or_default(),
-            program_date_time_interval_seconds: self
-                .program_date_time_interval_seconds
-                .unwrap_or_default(),
-            segment_duration_seconds: self.segment_duration_seconds.unwrap_or_default(),
+            playlist_window_seconds: self.playlist_window_seconds,
+            program_date_time_interval_seconds: self.program_date_time_interval_seconds,
+            segment_duration_seconds: self.segment_duration_seconds,
             stream_selection: self.stream_selection,
-            use_audio_rendition_group: self.use_audio_rendition_group.unwrap_or_default(),
+            use_audio_rendition_group: self.use_audio_rendition_group,
         }
     }
 }

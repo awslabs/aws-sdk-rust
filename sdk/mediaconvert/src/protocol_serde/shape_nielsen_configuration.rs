@@ -3,14 +3,14 @@ pub fn ser_nielsen_configuration(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NielsenConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.breakout_code != 0 {
+    if let Some(var_1) = &input.breakout_code {
         object.key("breakoutCode").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.breakout_code).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.distributor_id {
-        object.key("distributorId").string(var_1.as_str());
+    if let Some(var_2) = &input.distributor_id {
+        object.key("distributorId").string(var_2.as_str());
     }
     Ok(())
 }

@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`description(impl Into<String>)`](crate::operation::create_discoverer::builders::CreateDiscovererFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::create_discoverer::builders::CreateDiscovererFluentBuilder::set_description): <p>A description for the discoverer.</p>
     ///   - [`source_arn(impl Into<String>)`](crate::operation::create_discoverer::builders::CreateDiscovererFluentBuilder::source_arn) / [`set_source_arn(Option<String>)`](crate::operation::create_discoverer::builders::CreateDiscovererFluentBuilder::set_source_arn): <p>The ARN of the event bus.</p>
-    ///   - [`cross_account(bool)`](crate::operation::create_discoverer::builders::CreateDiscovererFluentBuilder::cross_account) / [`set_cross_account(bool)`](crate::operation::create_discoverer::builders::CreateDiscovererFluentBuilder::set_cross_account): <p>Support discovery of schemas in events sent to the bus from another account. (default: true).</p>
+    ///   - [`cross_account(bool)`](crate::operation::create_discoverer::builders::CreateDiscovererFluentBuilder::cross_account) / [`set_cross_account(Option<bool>)`](crate::operation::create_discoverer::builders::CreateDiscovererFluentBuilder::set_cross_account): <p>Support discovery of schemas in events sent to the bus from another account. (default: true).</p>
     ///   - [`tags(HashMap<String, String>)`](crate::operation::create_discoverer::builders::CreateDiscovererFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_discoverer::builders::CreateDiscovererFluentBuilder::set_tags): <p>Tags associated with the resource.</p>
     /// - On success, responds with [`CreateDiscovererOutput`](crate::operation::create_discoverer::CreateDiscovererOutput) with field(s):
     ///   - [`description(Option<String>)`](crate::operation::create_discoverer::CreateDiscovererOutput::description): <p>The description of the discoverer.</p>
@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`discoverer_id(Option<String>)`](crate::operation::create_discoverer::CreateDiscovererOutput::discoverer_id): <p>The ID of the discoverer.</p>
     ///   - [`source_arn(Option<String>)`](crate::operation::create_discoverer::CreateDiscovererOutput::source_arn): <p>The ARN of the event bus.</p>
     ///   - [`state(Option<DiscovererState>)`](crate::operation::create_discoverer::CreateDiscovererOutput::state): <p>The state of the discoverer.</p>
-    ///   - [`cross_account(bool)`](crate::operation::create_discoverer::CreateDiscovererOutput::cross_account): <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
+    ///   - [`cross_account(Option<bool>)`](crate::operation::create_discoverer::CreateDiscovererOutput::cross_account): <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::create_discoverer::CreateDiscovererOutput::tags): <p>Tags associated with the resource.</p>
     /// - On failure, responds with [`SdkError<CreateDiscovererError>`](crate::operation::create_discoverer::CreateDiscovererError)
     pub fn create_discoverer(

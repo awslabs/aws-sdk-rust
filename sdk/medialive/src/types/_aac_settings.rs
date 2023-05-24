@@ -6,7 +6,7 @@
 pub struct AacSettings {
     /// Average bitrate in bits/second. Valid values depend on rate control mode and profile.
     #[doc(hidden)]
-    pub bitrate: f64,
+    pub bitrate: std::option::Option<f64>,
     /// Mono, Stereo, or 5.1 channel layout. Valid values depend on rate control mode and profile. The adReceiverMix setting receives a stereo description plus control track and emits a mono AAC encode of the description track, with control data emitted in the PES header as per ETSI TS 101 154 Annex E.
     #[doc(hidden)]
     pub coding_mode: std::option::Option<crate::types::AacCodingMode>,
@@ -24,7 +24,7 @@ pub struct AacSettings {
     pub raw_format: std::option::Option<crate::types::AacRawFormat>,
     /// Sample rate in Hz. Valid values depend on rate control mode and profile.
     #[doc(hidden)]
-    pub sample_rate: f64,
+    pub sample_rate: std::option::Option<f64>,
     /// Use MPEG-2 AAC audio instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers.
     #[doc(hidden)]
     pub spec: std::option::Option<crate::types::AacSpec>,
@@ -34,7 +34,7 @@ pub struct AacSettings {
 }
 impl AacSettings {
     /// Average bitrate in bits/second. Valid values depend on rate control mode and profile.
-    pub fn bitrate(&self) -> f64 {
+    pub fn bitrate(&self) -> std::option::Option<f64> {
         self.bitrate
     }
     /// Mono, Stereo, or 5.1 channel layout. Valid values depend on rate control mode and profile. The adReceiverMix setting receives a stereo description plus control track and emits a mono AAC encode of the description track, with control data emitted in the PES header as per ETSI TS 101 154 Annex E.
@@ -58,7 +58,7 @@ impl AacSettings {
         self.raw_format.as_ref()
     }
     /// Sample rate in Hz. Valid values depend on rate control mode and profile.
-    pub fn sample_rate(&self) -> f64 {
+    pub fn sample_rate(&self) -> std::option::Option<f64> {
         self.sample_rate
     }
     /// Use MPEG-2 AAC audio instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers.
@@ -200,13 +200,13 @@ impl AacSettingsBuilder {
     /// Consumes the builder and constructs a [`AacSettings`](crate::types::AacSettings).
     pub fn build(self) -> crate::types::AacSettings {
         crate::types::AacSettings {
-            bitrate: self.bitrate.unwrap_or_default(),
+            bitrate: self.bitrate,
             coding_mode: self.coding_mode,
             input_type: self.input_type,
             profile: self.profile,
             rate_control_mode: self.rate_control_mode,
             raw_format: self.raw_format,
-            sample_rate: self.sample_rate.unwrap_or_default(),
+            sample_rate: self.sample_rate,
             spec: self.spec,
             vbr_quality: self.vbr_quality,
         }

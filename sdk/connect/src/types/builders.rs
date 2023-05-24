@@ -307,6 +307,8 @@ pub use crate::types::_rule_trigger_event_source::RuleTriggerEventSourceBuilder;
 
 pub use crate::types::_quick_connect::QuickConnectBuilder;
 
+pub use crate::types::_prompt::PromptBuilder;
+
 pub use crate::types::_claimed_phone_number_summary::ClaimedPhoneNumberSummaryBuilder;
 
 pub use crate::types::_phone_number_status::PhoneNumberStatusBuilder;

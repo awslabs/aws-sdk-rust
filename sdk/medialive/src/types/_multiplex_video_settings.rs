@@ -6,14 +6,14 @@
 pub struct MultiplexVideoSettings {
     /// The constant bitrate configuration for the video encode. When this field is defined, StatmuxSettings must be undefined.
     #[doc(hidden)]
-    pub constant_bitrate: i32,
+    pub constant_bitrate: std::option::Option<i32>,
     /// Statmux rate control settings. When this field is defined, ConstantBitrate must be undefined.
     #[doc(hidden)]
     pub statmux_settings: std::option::Option<crate::types::MultiplexStatmuxVideoSettings>,
 }
 impl MultiplexVideoSettings {
     /// The constant bitrate configuration for the video encode. When this field is defined, StatmuxSettings must be undefined.
-    pub fn constant_bitrate(&self) -> i32 {
+    pub fn constant_bitrate(&self) -> std::option::Option<i32> {
         self.constant_bitrate
     }
     /// Statmux rate control settings. When this field is defined, ConstantBitrate must be undefined.
@@ -64,7 +64,7 @@ impl MultiplexVideoSettingsBuilder {
     /// Consumes the builder and constructs a [`MultiplexVideoSettings`](crate::types::MultiplexVideoSettings).
     pub fn build(self) -> crate::types::MultiplexVideoSettings {
         crate::types::MultiplexVideoSettings {
-            constant_bitrate: self.constant_bitrate.unwrap_or_default(),
+            constant_bitrate: self.constant_bitrate,
             statmux_settings: self.statmux_settings,
         }
     }

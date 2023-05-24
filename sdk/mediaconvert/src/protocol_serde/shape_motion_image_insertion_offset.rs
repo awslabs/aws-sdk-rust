@@ -3,16 +3,16 @@ pub fn ser_motion_image_insertion_offset(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MotionImageInsertionOffset,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.image_x != 0 {
+    if let Some(var_1) = &input.image_x {
         object.key("imageX").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.image_x).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.image_y != 0 {
+    if let Some(var_2) = &input.image_y {
         object.key("imageY").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.image_y).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

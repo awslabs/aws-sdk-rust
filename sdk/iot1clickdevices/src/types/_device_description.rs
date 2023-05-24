@@ -15,10 +15,10 @@ pub struct DeviceDescription {
     pub device_id: std::option::Option<std::string::String>,
     /// <p>A Boolean value indicating whether or not the device is enabled.</p>
     #[doc(hidden)]
-    pub enabled: bool,
+    pub enabled: std::option::Option<bool>,
     /// <p>A value between 0 and 1 inclusive, representing the fraction of life remaining for the device.</p>
     #[doc(hidden)]
-    pub remaining_life: f64,
+    pub remaining_life: std::option::Option<f64>,
     /// <p>The type of the device, such as "button".</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -44,11 +44,11 @@ impl DeviceDescription {
         self.device_id.as_deref()
     }
     /// <p>A Boolean value indicating whether or not the device is enabled.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
     /// <p>A value between 0 and 1 inclusive, representing the fraction of life remaining for the device.</p>
-    pub fn remaining_life(&self) -> f64 {
+    pub fn remaining_life(&self) -> std::option::Option<f64> {
         self.remaining_life
     }
     /// <p>The type of the device, such as "button".</p>
@@ -191,8 +191,8 @@ impl DeviceDescriptionBuilder {
             arn: self.arn,
             attributes: self.attributes,
             device_id: self.device_id,
-            enabled: self.enabled.unwrap_or_default(),
-            remaining_life: self.remaining_life.unwrap_or_default(),
+            enabled: self.enabled,
+            remaining_life: self.remaining_life,
             r#type: self.r#type,
             tags: self.tags,
         }

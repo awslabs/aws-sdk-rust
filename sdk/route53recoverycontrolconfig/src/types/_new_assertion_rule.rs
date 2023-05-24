@@ -18,7 +18,7 @@ pub struct NewAssertionRule {
     pub rule_config: std::option::Option<crate::types::RuleConfig>,
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     #[doc(hidden)]
-    pub wait_period_ms: i32,
+    pub wait_period_ms: std::option::Option<i32>,
 }
 impl NewAssertionRule {
     /// <p>The routing controls that are part of transactions that are evaluated to determine if a request to change a routing control state is allowed. For example, you might include three routing controls, one for each of three Amazon Web Services Regions.</p>
@@ -38,7 +38,7 @@ impl NewAssertionRule {
         self.rule_config.as_ref()
     }
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
-    pub fn wait_period_ms(&self) -> i32 {
+    pub fn wait_period_ms(&self) -> std::option::Option<i32> {
         self.wait_period_ms
     }
 }
@@ -129,7 +129,7 @@ impl NewAssertionRuleBuilder {
             control_panel_arn: self.control_panel_arn,
             name: self.name,
             rule_config: self.rule_config,
-            wait_period_ms: self.wait_period_ms.unwrap_or_default(),
+            wait_period_ms: self.wait_period_ms,
         }
     }
 }

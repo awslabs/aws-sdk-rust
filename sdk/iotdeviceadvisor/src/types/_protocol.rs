@@ -13,7 +13,9 @@
 /// # let protocol = unimplemented!();
 /// match protocol {
 ///     Protocol::MqttV311 => { /* ... */ },
+///     Protocol::MqttV311OverWebSocket => { /* ... */ },
 ///     Protocol::MqttV5 => { /* ... */ },
+///     Protocol::MqttV5OverWebSocket => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -50,7 +52,11 @@ pub enum Protocol {
     #[allow(missing_docs)] // documentation missing in model
     MqttV311,
     #[allow(missing_docs)] // documentation missing in model
+    MqttV311OverWebSocket,
+    #[allow(missing_docs)] // documentation missing in model
     MqttV5,
+    #[allow(missing_docs)] // documentation missing in model
+    MqttV5OverWebSocket,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -58,7 +64,9 @@ impl std::convert::From<&str> for Protocol {
     fn from(s: &str) -> Self {
         match s {
             "MqttV3_1_1" => Protocol::MqttV311,
+            "MqttV3_1_1_OverWebSocket" => Protocol::MqttV311OverWebSocket,
             "MqttV5" => Protocol::MqttV5,
+            "MqttV5_OverWebSocket" => Protocol::MqttV5OverWebSocket,
             other => Protocol::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -75,13 +83,20 @@ impl Protocol {
     pub fn as_str(&self) -> &str {
         match self {
             Protocol::MqttV311 => "MqttV3_1_1",
+            Protocol::MqttV311OverWebSocket => "MqttV3_1_1_OverWebSocket",
             Protocol::MqttV5 => "MqttV5",
+            Protocol::MqttV5OverWebSocket => "MqttV5_OverWebSocket",
             Protocol::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MqttV3_1_1", "MqttV5"]
+        &[
+            "MqttV3_1_1",
+            "MqttV3_1_1_OverWebSocket",
+            "MqttV5",
+            "MqttV5_OverWebSocket",
+        ]
     }
 }
 impl AsRef<str> for Protocol {

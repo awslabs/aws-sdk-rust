@@ -3,11 +3,11 @@ pub fn ser_update_discoverer_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_discoverer::UpdateDiscovererInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.cross_account {
-        object.key("CrossAccount").boolean(input.cross_account);
+    if let Some(var_1) = &input.cross_account {
+        object.key("CrossAccount").boolean(*var_1);
     }
-    if let Some(var_1) = &input.description {
-        object.key("Description").string(var_1.as_str());
+    if let Some(var_2) = &input.description {
+        object.key("Description").string(var_2.as_str());
     }
     Ok(())
 }

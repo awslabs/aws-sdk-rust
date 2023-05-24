@@ -214,6 +214,11 @@ pub fn ser_restore_db_cluster_from_s3_input_input(
     if let Some(var_82) = &input.master_user_secret_kms_key_id {
         scope_81.string(var_82);
     }
+    #[allow(unused_mut)]
+    let mut scope_83 = writer.prefix("StorageType");
+    if let Some(var_84) = &input.storage_type {
+        scope_83.string(var_84);
+    }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }

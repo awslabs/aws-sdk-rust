@@ -12,16 +12,17 @@ pub struct TestIdentityProviderInput {
     /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p> </li>
     /// <li> <p>File Transfer Protocol Secure (FTPS)</p> </li>
     /// <li> <p>File Transfer Protocol (FTP)</p> </li>
+    /// <li> <p>Applicability Statement 2 (AS2)</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub server_protocol: std::option::Option<crate::types::Protocol>,
-    /// <p>The source IP address of the user account to be tested.</p>
+    /// <p>The source IP address of the account to be tested.</p>
     #[doc(hidden)]
     pub source_ip: std::option::Option<std::string::String>,
-    /// <p>The name of the user account to be tested.</p>
+    /// <p>The name of the account to be tested.</p>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
-    /// <p>The password of the user account to be tested.</p>
+    /// <p>The password of the account to be tested.</p>
     #[doc(hidden)]
     pub user_password: std::option::Option<std::string::String>,
 }
@@ -36,19 +37,20 @@ impl TestIdentityProviderInput {
     /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p> </li>
     /// <li> <p>File Transfer Protocol Secure (FTPS)</p> </li>
     /// <li> <p>File Transfer Protocol (FTP)</p> </li>
+    /// <li> <p>Applicability Statement 2 (AS2)</p> </li>
     /// </ul>
     pub fn server_protocol(&self) -> std::option::Option<&crate::types::Protocol> {
         self.server_protocol.as_ref()
     }
-    /// <p>The source IP address of the user account to be tested.</p>
+    /// <p>The source IP address of the account to be tested.</p>
     pub fn source_ip(&self) -> std::option::Option<&str> {
         self.source_ip.as_deref()
     }
-    /// <p>The name of the user account to be tested.</p>
+    /// <p>The name of the account to be tested.</p>
     pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
-    /// <p>The password of the user account to be tested.</p>
+    /// <p>The password of the account to be tested.</p>
     pub fn user_password(&self) -> std::option::Option<&str> {
         self.user_password.as_deref()
     }
@@ -99,6 +101,7 @@ impl TestIdentityProviderInputBuilder {
     /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p> </li>
     /// <li> <p>File Transfer Protocol Secure (FTPS)</p> </li>
     /// <li> <p>File Transfer Protocol (FTP)</p> </li>
+    /// <li> <p>Applicability Statement 2 (AS2)</p> </li>
     /// </ul>
     pub fn server_protocol(mut self, input: crate::types::Protocol) -> Self {
         self.server_protocol = Some(input);
@@ -110,6 +113,7 @@ impl TestIdentityProviderInputBuilder {
     /// <li> <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p> </li>
     /// <li> <p>File Transfer Protocol Secure (FTPS)</p> </li>
     /// <li> <p>File Transfer Protocol (FTP)</p> </li>
+    /// <li> <p>Applicability Statement 2 (AS2)</p> </li>
     /// </ul>
     pub fn set_server_protocol(
         mut self,
@@ -118,32 +122,32 @@ impl TestIdentityProviderInputBuilder {
         self.server_protocol = input;
         self
     }
-    /// <p>The source IP address of the user account to be tested.</p>
+    /// <p>The source IP address of the account to be tested.</p>
     pub fn source_ip(mut self, input: impl Into<std::string::String>) -> Self {
         self.source_ip = Some(input.into());
         self
     }
-    /// <p>The source IP address of the user account to be tested.</p>
+    /// <p>The source IP address of the account to be tested.</p>
     pub fn set_source_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.source_ip = input;
         self
     }
-    /// <p>The name of the user account to be tested.</p>
+    /// <p>The name of the account to be tested.</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.user_name = Some(input.into());
         self
     }
-    /// <p>The name of the user account to be tested.</p>
+    /// <p>The name of the account to be tested.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.user_name = input;
         self
     }
-    /// <p>The password of the user account to be tested.</p>
+    /// <p>The password of the account to be tested.</p>
     pub fn user_password(mut self, input: impl Into<std::string::String>) -> Self {
         self.user_password = Some(input.into());
         self
     }
-    /// <p>The password of the user account to be tested.</p>
+    /// <p>The password of the account to be tested.</p>
     pub fn set_user_password(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.user_password = input;
         self

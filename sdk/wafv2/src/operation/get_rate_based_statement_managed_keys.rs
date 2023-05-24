@@ -165,6 +165,10 @@ pub enum GetRateBasedStatementManagedKeysError {
     WafInvalidParameterException(crate::types::error::WafInvalidParameterException),
     /// <p>WAF couldn’t perform the operation because your resource doesn't exist. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. </p>
     WafNonexistentItemException(crate::types::error::WafNonexistentItemException),
+    /// <p>The rule that you've named doesn't aggregate solely on the IP address or solely on the forwarded IP address. This call is only available for rate-based rules with an <code>AggregateKeyType</code> setting of <code>IP</code> or <code>FORWARDED_IP</code>.</p>
+    WafUnsupportedAggregateKeyTypeException(
+        crate::types::error::WafUnsupportedAggregateKeyTypeException,
+    ),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -187,6 +191,7 @@ impl std::fmt::Display for GetRateBasedStatementManagedKeysError {
             Self::WafInvalidOperationException(_inner) => _inner.fmt(f),
             Self::WafInvalidParameterException(_inner) => _inner.fmt(f),
             Self::WafNonexistentItemException(_inner) => _inner.fmt(f),
+            Self::WafUnsupportedAggregateKeyTypeException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -206,6 +211,9 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::WafNonexistentItemException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::WafUnsupportedAggregateKeyTypeException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::Unhandled(_inner) => {
@@ -257,6 +265,7 @@ impl GetRateBasedStatementManagedKeysError {
             Self::WafInvalidOperationException(e) => e.meta(),
             Self::WafInvalidParameterException(e) => e.meta(),
             Self::WafNonexistentItemException(e) => e.meta(),
+            Self::WafUnsupportedAggregateKeyTypeException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
     }
@@ -276,6 +285,10 @@ impl GetRateBasedStatementManagedKeysError {
     pub fn is_waf_nonexistent_item_exception(&self) -> bool {
         matches!(self, Self::WafNonexistentItemException(_))
     }
+    /// Returns `true` if the error kind is `GetRateBasedStatementManagedKeysError::WafUnsupportedAggregateKeyTypeException`.
+    pub fn is_waf_unsupported_aggregate_key_type_exception(&self) -> bool {
+        matches!(self, Self::WafUnsupportedAggregateKeyTypeException(_))
+    }
 }
 impl std::error::Error for GetRateBasedStatementManagedKeysError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
@@ -284,6 +297,7 @@ impl std::error::Error for GetRateBasedStatementManagedKeysError {
             Self::WafInvalidOperationException(_inner) => Some(_inner),
             Self::WafInvalidParameterException(_inner) => Some(_inner),
             Self::WafNonexistentItemException(_inner) => Some(_inner),
+            Self::WafUnsupportedAggregateKeyTypeException(_inner) => Some(_inner),
             Self::Unhandled(_inner) => Some(_inner),
         }
     }

@@ -4367,6 +4367,8 @@ pub(crate) mod shape_stale_ip_permission;
 
 pub(crate) mod shape_string_list;
 
+pub(crate) mod shape_supported_additional_processor_feature_list;
+
 pub(crate) mod shape_tag_specification_list;
 
 pub(crate) mod shape_threads_per_core_list;

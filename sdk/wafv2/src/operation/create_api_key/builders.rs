@@ -5,8 +5,9 @@ pub use crate::operation::create_api_key::_create_api_key_input::CreateApiKeyInp
 
 /// Fluent builder constructing a request to `CreateAPIKey`.
 ///
-/// <p>Creates an API key for use in the integration of the CAPTCHA API in your JavaScript client applications. The integration lets you customize the placement and characteristics of the CAPTCHA puzzle for your end users. For more information about the CAPTCHA JavaScript integration, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
-/// <p>The CAPTCHA API requires a key that authorizes CAPTCHA use from the client application domain. You can use a single key for up to 5 domains. After you generate a key, you can copy it for use in your JavaScript integration. </p>
+/// <p>Creates an API key that contains a set of token domains.</p>
+/// <p>API keys are required for the integration of the CAPTCHA API in your JavaScript client applications. The API lets you customize the placement and characteristics of the CAPTCHA puzzle for your end users. For more information about the CAPTCHA JavaScript integration, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
+/// <p>You can use a single key for up to 5 domains. After you generate a key, you can copy it for use in your JavaScript integration. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAPIKeyFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -65,7 +66,7 @@ impl CreateAPIKeyFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p>
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
     /// <ul>
     /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -75,7 +76,7 @@ impl CreateAPIKeyFluentBuilder {
         self.inner = self.inner.scope(input);
         self
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p>
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
     /// <ul>
     /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
@@ -90,11 +91,15 @@ impl CreateAPIKeyFluentBuilder {
     /// To override the contents of this collection use [`set_token_domains`](Self::set_token_domains).
     ///
     /// <p>The client application domains that you want to use this API key for. </p>
+    /// <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
+    /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
     pub fn token_domains(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.token_domains(input.into());
         self
     }
     /// <p>The client application domains that you want to use this API key for. </p>
+    /// <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
+    /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
     pub fn set_token_domains(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

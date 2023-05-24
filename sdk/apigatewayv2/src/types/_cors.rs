@@ -6,7 +6,7 @@
 pub struct Cors {
     /// <p>Specifies whether credentials are included in the CORS request. Supported only for HTTP APIs.</p>
     #[doc(hidden)]
-    pub allow_credentials: bool,
+    pub allow_credentials: std::option::Option<bool>,
     /// <p>Represents a collection of allowed headers. Supported only for HTTP APIs.</p>
     #[doc(hidden)]
     pub allow_headers: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -21,11 +21,11 @@ pub struct Cors {
     pub expose_headers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The number of seconds that the browser should cache preflight request results. Supported only for HTTP APIs.</p>
     #[doc(hidden)]
-    pub max_age: i32,
+    pub max_age: std::option::Option<i32>,
 }
 impl Cors {
     /// <p>Specifies whether credentials are included in the CORS request. Supported only for HTTP APIs.</p>
-    pub fn allow_credentials(&self) -> bool {
+    pub fn allow_credentials(&self) -> std::option::Option<bool> {
         self.allow_credentials
     }
     /// <p>Represents a collection of allowed headers. Supported only for HTTP APIs.</p>
@@ -45,7 +45,7 @@ impl Cors {
         self.expose_headers.as_deref()
     }
     /// <p>The number of seconds that the browser should cache preflight request results. Supported only for HTTP APIs.</p>
-    pub fn max_age(&self) -> i32 {
+    pub fn max_age(&self) -> std::option::Option<i32> {
         self.max_age
     }
 }
@@ -167,12 +167,12 @@ impl CorsBuilder {
     /// Consumes the builder and constructs a [`Cors`](crate::types::Cors).
     pub fn build(self) -> crate::types::Cors {
         crate::types::Cors {
-            allow_credentials: self.allow_credentials.unwrap_or_default(),
+            allow_credentials: self.allow_credentials,
             allow_headers: self.allow_headers,
             allow_methods: self.allow_methods,
             allow_origins: self.allow_origins,
             expose_headers: self.expose_headers,
-            max_age: self.max_age.unwrap_or_default(),
+            max_age: self.max_age,
         }
     }
 }

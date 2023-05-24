@@ -22,7 +22,7 @@ pub struct M2tsSettings {
     pub audio_buffer_model: std::option::Option<crate::types::M2tsAudioBufferModel>,
     /// The number of audio frames to insert for each PES packet.
     #[doc(hidden)]
-    pub audio_frames_per_pes: i32,
+    pub audio_frames_per_pes: std::option::Option<i32>,
     /// Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
     #[doc(hidden)]
     pub audio_pids: std::option::Option<std::string::String>,
@@ -31,7 +31,7 @@ pub struct M2tsSettings {
     pub audio_stream_type: std::option::Option<crate::types::M2tsAudioStreamType>,
     /// The output bitrate of the transport stream in bits per second. Setting to 0 lets the muxer automatically determine the appropriate bitrate.
     #[doc(hidden)]
-    pub bitrate: i32,
+    pub bitrate: std::option::Option<i32>,
     /// Controls the timing accuracy for output network traffic. Leave as MULTIPLEX to ensure accurate network packet timing. Or set to NONE, which might result in lower latency but will result in more variability in output network packet timing. This variability might cause interruptions, jitter, or bursty behavior in your playback or receiving devices.
     #[doc(hidden)]
     pub buffer_model: std::option::Option<crate::types::M2tsBufferModel>,
@@ -61,7 +61,7 @@ pub struct M2tsSettings {
     pub ebp_audio_interval: std::option::Option<crate::types::M2tsAudioInterval>,
     /// When set, enforces that Encoder Boundary Points do not come within the specified time interval of each other by looking ahead at input video. If another EBP is going to come in within the specified time interval, the current EBP is not emitted, and the segment is "stretched" to the next marker. The lookahead value does not add latency to the system. The Live Event must be configured elsewhere to create sufficient latency to make the lookahead accurate.
     #[doc(hidden)]
-    pub ebp_lookahead_ms: i32,
+    pub ebp_lookahead_ms: std::option::Option<i32>,
     /// Controls placement of EBP on Audio PIDs. If set to videoAndAudioPids, EBP markers will be placed on the video PID and all audio PIDs. If set to videoPid, EBP markers will be placed on only the video PID.
     #[doc(hidden)]
     pub ebp_placement: std::option::Option<crate::types::M2tsEbpPlacement>,
@@ -79,7 +79,7 @@ pub struct M2tsSettings {
     pub etv_signal_pid: std::option::Option<std::string::String>,
     /// The length in seconds of each fragment. Only used with EBP markers.
     #[doc(hidden)]
-    pub fragment_time: f64,
+    pub fragment_time: std::option::Option<f64>,
     /// If set to passthrough, passes any KLV data from the input source to this output.
     #[doc(hidden)]
     pub klv: std::option::Option<crate::types::M2tsKlv>,
@@ -91,28 +91,28 @@ pub struct M2tsSettings {
     pub nielsen_id3_behavior: std::option::Option<crate::types::M2tsNielsenId3Behavior>,
     /// Value in bits per second of extra null packets to insert into the transport stream. This can be used if a downstream encryption system requires periodic null packets.
     #[doc(hidden)]
-    pub null_packet_bitrate: f64,
+    pub null_packet_bitrate: std::option::Option<f64>,
     /// The number of milliseconds between instances of this table in the output transport stream. Valid values are 0, 10..1000.
     #[doc(hidden)]
-    pub pat_interval: i32,
+    pub pat_interval: std::option::Option<i32>,
     /// When set to pcrEveryPesPacket, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
     #[doc(hidden)]
     pub pcr_control: std::option::Option<crate::types::M2tsPcrControl>,
     /// Maximum time in milliseconds between Program Clock Reference (PCRs) inserted into the transport stream.
     #[doc(hidden)]
-    pub pcr_period: i32,
+    pub pcr_period: std::option::Option<i32>,
     /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     #[doc(hidden)]
     pub pcr_pid: std::option::Option<std::string::String>,
     /// The number of milliseconds between instances of this table in the output transport stream. Valid values are 0, 10..1000.
     #[doc(hidden)]
-    pub pmt_interval: i32,
+    pub pmt_interval: std::option::Option<i32>,
     /// Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     #[doc(hidden)]
     pub pmt_pid: std::option::Option<std::string::String>,
     /// The value of the program number field in the Program Map Table.
     #[doc(hidden)]
-    pub program_num: i32,
+    pub program_num: std::option::Option<i32>,
     /// When vbr, does not insert null packets into transport stream to fill specified bitrate. The bitrate setting acts as the maximum bitrate when vbr is set.
     #[doc(hidden)]
     pub rate_mode: std::option::Option<crate::types::M2tsRateMode>,
@@ -133,7 +133,7 @@ pub struct M2tsSettings {
     pub segmentation_style: std::option::Option<crate::types::M2tsSegmentationStyle>,
     /// The length in seconds of each segment. Required unless markers is set to _none_.
     #[doc(hidden)]
-    pub segmentation_time: f64,
+    pub segmentation_time: std::option::Option<f64>,
     /// When set to passthrough, timed metadata will be passed through from input to output.
     #[doc(hidden)]
     pub timed_metadata_behavior: std::option::Option<crate::types::M2tsTimedMetadataBehavior>,
@@ -142,13 +142,13 @@ pub struct M2tsSettings {
     pub timed_metadata_pid: std::option::Option<std::string::String>,
     /// The value of the transport stream ID field in the Program Map Table.
     #[doc(hidden)]
-    pub transport_stream_id: i32,
+    pub transport_stream_id: std::option::Option<i32>,
     /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     #[doc(hidden)]
     pub video_pid: std::option::Option<std::string::String>,
     /// Defines the amount SCTE-35 preroll will be increased (in milliseconds) on the output. Preroll is the amount of time between the presence of a SCTE-35 indication in a transport stream and the PTS of the video frame it references. Zero means don't add pullup (it doesn't mean set the preroll to zero). Negative pullup is not supported, which means that you can't make the preroll shorter. Be aware that latency in the output will increase by the pullup amount.
     #[doc(hidden)]
-    pub scte35_preroll_pullup_milliseconds: f64,
+    pub scte35_preroll_pullup_milliseconds: std::option::Option<f64>,
 }
 impl M2tsSettings {
     /// When set to drop, output audio streams will be removed from the program if the selected input audio stream is removed from the input. This allows the output audio configuration to dynamically change based on input configuration. If this is set to encodeSilence, all output audio streams will output encoded silence when not connected to an active input stream.
@@ -176,7 +176,7 @@ impl M2tsSettings {
         self.audio_buffer_model.as_ref()
     }
     /// The number of audio frames to insert for each PES packet.
-    pub fn audio_frames_per_pes(&self) -> i32 {
+    pub fn audio_frames_per_pes(&self) -> std::option::Option<i32> {
         self.audio_frames_per_pes
     }
     /// Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
@@ -188,7 +188,7 @@ impl M2tsSettings {
         self.audio_stream_type.as_ref()
     }
     /// The output bitrate of the transport stream in bits per second. Setting to 0 lets the muxer automatically determine the appropriate bitrate.
-    pub fn bitrate(&self) -> i32 {
+    pub fn bitrate(&self) -> std::option::Option<i32> {
         self.bitrate
     }
     /// Controls the timing accuracy for output network traffic. Leave as MULTIPLEX to ensure accurate network packet timing. Or set to NONE, which might result in lower latency but will result in more variability in output network packet timing. This variability might cause interruptions, jitter, or bursty behavior in your playback or receiving devices.
@@ -228,7 +228,7 @@ impl M2tsSettings {
         self.ebp_audio_interval.as_ref()
     }
     /// When set, enforces that Encoder Boundary Points do not come within the specified time interval of each other by looking ahead at input video. If another EBP is going to come in within the specified time interval, the current EBP is not emitted, and the segment is "stretched" to the next marker. The lookahead value does not add latency to the system. The Live Event must be configured elsewhere to create sufficient latency to make the lookahead accurate.
-    pub fn ebp_lookahead_ms(&self) -> i32 {
+    pub fn ebp_lookahead_ms(&self) -> std::option::Option<i32> {
         self.ebp_lookahead_ms
     }
     /// Controls placement of EBP on Audio PIDs. If set to videoAndAudioPids, EBP markers will be placed on the video PID and all audio PIDs. If set to videoPid, EBP markers will be placed on only the video PID.
@@ -252,7 +252,7 @@ impl M2tsSettings {
         self.etv_signal_pid.as_deref()
     }
     /// The length in seconds of each fragment. Only used with EBP markers.
-    pub fn fragment_time(&self) -> f64 {
+    pub fn fragment_time(&self) -> std::option::Option<f64> {
         self.fragment_time
     }
     /// If set to passthrough, passes any KLV data from the input source to this output.
@@ -270,11 +270,11 @@ impl M2tsSettings {
         self.nielsen_id3_behavior.as_ref()
     }
     /// Value in bits per second of extra null packets to insert into the transport stream. This can be used if a downstream encryption system requires periodic null packets.
-    pub fn null_packet_bitrate(&self) -> f64 {
+    pub fn null_packet_bitrate(&self) -> std::option::Option<f64> {
         self.null_packet_bitrate
     }
     /// The number of milliseconds between instances of this table in the output transport stream. Valid values are 0, 10..1000.
-    pub fn pat_interval(&self) -> i32 {
+    pub fn pat_interval(&self) -> std::option::Option<i32> {
         self.pat_interval
     }
     /// When set to pcrEveryPesPacket, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
@@ -282,7 +282,7 @@ impl M2tsSettings {
         self.pcr_control.as_ref()
     }
     /// Maximum time in milliseconds between Program Clock Reference (PCRs) inserted into the transport stream.
-    pub fn pcr_period(&self) -> i32 {
+    pub fn pcr_period(&self) -> std::option::Option<i32> {
         self.pcr_period
     }
     /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
@@ -290,7 +290,7 @@ impl M2tsSettings {
         self.pcr_pid.as_deref()
     }
     /// The number of milliseconds between instances of this table in the output transport stream. Valid values are 0, 10..1000.
-    pub fn pmt_interval(&self) -> i32 {
+    pub fn pmt_interval(&self) -> std::option::Option<i32> {
         self.pmt_interval
     }
     /// Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
@@ -298,7 +298,7 @@ impl M2tsSettings {
         self.pmt_pid.as_deref()
     }
     /// The value of the program number field in the Program Map Table.
-    pub fn program_num(&self) -> i32 {
+    pub fn program_num(&self) -> std::option::Option<i32> {
         self.program_num
     }
     /// When vbr, does not insert null packets into transport stream to fill specified bitrate. The bitrate setting acts as the maximum bitrate when vbr is set.
@@ -328,7 +328,7 @@ impl M2tsSettings {
         self.segmentation_style.as_ref()
     }
     /// The length in seconds of each segment. Required unless markers is set to _none_.
-    pub fn segmentation_time(&self) -> f64 {
+    pub fn segmentation_time(&self) -> std::option::Option<f64> {
         self.segmentation_time
     }
     /// When set to passthrough, timed metadata will be passed through from input to output.
@@ -342,7 +342,7 @@ impl M2tsSettings {
         self.timed_metadata_pid.as_deref()
     }
     /// The value of the transport stream ID field in the Program Map Table.
-    pub fn transport_stream_id(&self) -> i32 {
+    pub fn transport_stream_id(&self) -> std::option::Option<i32> {
         self.transport_stream_id
     }
     /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
@@ -350,7 +350,7 @@ impl M2tsSettings {
         self.video_pid.as_deref()
     }
     /// Defines the amount SCTE-35 preroll will be increased (in milliseconds) on the output. Preroll is the amount of time between the presence of a SCTE-35 indication in a transport stream and the PTS of the video frame it references. Zero means don't add pullup (it doesn't mean set the preroll to zero). Negative pullup is not supported, which means that you can't make the preroll shorter. Be aware that latency in the output will increase by the pullup amount.
-    pub fn scte35_preroll_pullup_milliseconds(&self) -> f64 {
+    pub fn scte35_preroll_pullup_milliseconds(&self) -> std::option::Option<f64> {
         self.scte35_preroll_pullup_milliseconds
     }
 }
@@ -978,10 +978,10 @@ impl M2tsSettingsBuilder {
             arib_captions_pid: self.arib_captions_pid,
             arib_captions_pid_control: self.arib_captions_pid_control,
             audio_buffer_model: self.audio_buffer_model,
-            audio_frames_per_pes: self.audio_frames_per_pes.unwrap_or_default(),
+            audio_frames_per_pes: self.audio_frames_per_pes,
             audio_pids: self.audio_pids,
             audio_stream_type: self.audio_stream_type,
-            bitrate: self.bitrate.unwrap_or_default(),
+            bitrate: self.bitrate,
             buffer_model: self.buffer_model,
             cc_descriptor: self.cc_descriptor,
             dvb_nit_settings: self.dvb_nit_settings,
@@ -991,38 +991,36 @@ impl M2tsSettingsBuilder {
             dvb_teletext_pid: self.dvb_teletext_pid,
             ebif: self.ebif,
             ebp_audio_interval: self.ebp_audio_interval,
-            ebp_lookahead_ms: self.ebp_lookahead_ms.unwrap_or_default(),
+            ebp_lookahead_ms: self.ebp_lookahead_ms,
             ebp_placement: self.ebp_placement,
             ecm_pid: self.ecm_pid,
             es_rate_in_pes: self.es_rate_in_pes,
             etv_platform_pid: self.etv_platform_pid,
             etv_signal_pid: self.etv_signal_pid,
-            fragment_time: self.fragment_time.unwrap_or_default(),
+            fragment_time: self.fragment_time,
             klv: self.klv,
             klv_data_pids: self.klv_data_pids,
             nielsen_id3_behavior: self.nielsen_id3_behavior,
-            null_packet_bitrate: self.null_packet_bitrate.unwrap_or_default(),
-            pat_interval: self.pat_interval.unwrap_or_default(),
+            null_packet_bitrate: self.null_packet_bitrate,
+            pat_interval: self.pat_interval,
             pcr_control: self.pcr_control,
-            pcr_period: self.pcr_period.unwrap_or_default(),
+            pcr_period: self.pcr_period,
             pcr_pid: self.pcr_pid,
-            pmt_interval: self.pmt_interval.unwrap_or_default(),
+            pmt_interval: self.pmt_interval,
             pmt_pid: self.pmt_pid,
-            program_num: self.program_num.unwrap_or_default(),
+            program_num: self.program_num,
             rate_mode: self.rate_mode,
             scte27_pids: self.scte27_pids,
             scte35_control: self.scte35_control,
             scte35_pid: self.scte35_pid,
             segmentation_markers: self.segmentation_markers,
             segmentation_style: self.segmentation_style,
-            segmentation_time: self.segmentation_time.unwrap_or_default(),
+            segmentation_time: self.segmentation_time,
             timed_metadata_behavior: self.timed_metadata_behavior,
             timed_metadata_pid: self.timed_metadata_pid,
-            transport_stream_id: self.transport_stream_id.unwrap_or_default(),
+            transport_stream_id: self.transport_stream_id,
             video_pid: self.video_pid,
-            scte35_preroll_pullup_milliseconds: self
-                .scte35_preroll_pullup_milliseconds
-                .unwrap_or_default(),
+            scte35_preroll_pullup_milliseconds: self.scte35_preroll_pullup_milliseconds,
         }
     }
 }

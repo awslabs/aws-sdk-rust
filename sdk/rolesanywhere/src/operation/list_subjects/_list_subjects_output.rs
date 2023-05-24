@@ -6,7 +6,7 @@ pub struct ListSubjectsOutput {
     /// <p>A list of subjects.</p>
     #[doc(hidden)]
     pub subjects: std::option::Option<std::vec::Vec<crate::types::SubjectSummary>>,
-    /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
+    /// <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
@@ -16,7 +16,7 @@ impl ListSubjectsOutput {
     pub fn subjects(&self) -> std::option::Option<&[crate::types::SubjectSummary]> {
         self.subjects.as_deref()
     }
-    /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
+    /// <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -61,12 +61,12 @@ impl ListSubjectsOutputBuilder {
         self.subjects = input;
         self
     }
-    /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
+    /// <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
+    /// <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.next_token = input;
         self

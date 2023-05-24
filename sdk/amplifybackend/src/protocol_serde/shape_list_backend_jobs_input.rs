@@ -6,20 +6,20 @@ pub fn ser_list_backend_jobs_input(
     if let Some(var_1) = &input.job_id {
         object.key("jobId").string(var_1.as_str());
     }
-    if input.max_results != 0 {
+    if let Some(var_2) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_results).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.next_token {
-        object.key("nextToken").string(var_2.as_str());
+    if let Some(var_3) = &input.next_token {
+        object.key("nextToken").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.operation {
-        object.key("operation").string(var_3.as_str());
+    if let Some(var_4) = &input.operation {
+        object.key("operation").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.status {
-        object.key("status").string(var_4.as_str());
+    if let Some(var_5) = &input.status {
+        object.key("status").string(var_5.as_str());
     }
     Ok(())
 }

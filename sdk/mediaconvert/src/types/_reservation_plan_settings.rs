@@ -12,7 +12,7 @@ pub struct ReservationPlanSettings {
     pub renewal_type: std::option::Option<crate::types::RenewalType>,
     /// Specifies the number of reserved transcode slots (RTS) for this queue. The number of RTS determines how many jobs the queue can process in parallel; each RTS can process one job at a time. You can't decrease the number of RTS in your reserved queue. You can increase the number of RTS by extending your existing commitment with a new 12-month commitment for the larger number. The new commitment begins when you purchase the additional capacity. You can't cancel your commitment or revert to your original commitment after you increase the capacity.
     #[doc(hidden)]
-    pub reserved_slots: i32,
+    pub reserved_slots: std::option::Option<i32>,
 }
 impl ReservationPlanSettings {
     /// The length of the term of your reserved queue pricing plan commitment.
@@ -24,7 +24,7 @@ impl ReservationPlanSettings {
         self.renewal_type.as_ref()
     }
     /// Specifies the number of reserved transcode slots (RTS) for this queue. The number of RTS determines how many jobs the queue can process in parallel; each RTS can process one job at a time. You can't decrease the number of RTS in your reserved queue. You can increase the number of RTS by extending your existing commitment with a new 12-month commitment for the larger number. The new commitment begins when you purchase the additional capacity. You can't cancel your commitment or revert to your original commitment after you increase the capacity.
-    pub fn reserved_slots(&self) -> i32 {
+    pub fn reserved_slots(&self) -> std::option::Option<i32> {
         self.reserved_slots
     }
 }
@@ -82,7 +82,7 @@ impl ReservationPlanSettingsBuilder {
         crate::types::ReservationPlanSettings {
             commitment: self.commitment,
             renewal_type: self.renewal_type,
-            reserved_slots: self.reserved_slots.unwrap_or_default(),
+            reserved_slots: self.reserved_slots,
         }
     }
 }

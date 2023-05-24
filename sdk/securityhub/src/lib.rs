@@ -41,7 +41,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.55.2"
-//! aws-sdk-securityhub = "0.27.0"
+//! aws-sdk-securityhub = "0.28.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

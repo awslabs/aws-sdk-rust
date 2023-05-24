@@ -195,6 +195,12 @@ pub struct CodeGenConfigurationNode {
     /// <p>Specifies a target that writes to a Delta Lake data source in Amazon S3.</p>
     #[doc(hidden)]
     pub s3_delta_direct_target: std::option::Option<crate::types::S3DeltaDirectTarget>,
+    /// <p>Specifies a target that writes to a data source in Amazon Redshift.</p>
+    #[doc(hidden)]
+    pub amazon_redshift_source: std::option::Option<crate::types::AmazonRedshiftSource>,
+    /// <p>Specifies a target that writes to a data target in Amazon Redshift.</p>
+    #[doc(hidden)]
+    pub amazon_redshift_target: std::option::Option<crate::types::AmazonRedshiftTarget>,
 }
 impl CodeGenConfigurationNode {
     /// <p>Specifies a connector to an Amazon Athena data source.</p>
@@ -491,6 +497,18 @@ impl CodeGenConfigurationNode {
     ) -> std::option::Option<&crate::types::S3DeltaDirectTarget> {
         self.s3_delta_direct_target.as_ref()
     }
+    /// <p>Specifies a target that writes to a data source in Amazon Redshift.</p>
+    pub fn amazon_redshift_source(
+        &self,
+    ) -> std::option::Option<&crate::types::AmazonRedshiftSource> {
+        self.amazon_redshift_source.as_ref()
+    }
+    /// <p>Specifies a target that writes to a data target in Amazon Redshift.</p>
+    pub fn amazon_redshift_target(
+        &self,
+    ) -> std::option::Option<&crate::types::AmazonRedshiftTarget> {
+        self.amazon_redshift_target.as_ref()
+    }
 }
 impl CodeGenConfigurationNode {
     /// Creates a new builder-style object to manufacture [`CodeGenConfigurationNode`](crate::types::CodeGenConfigurationNode).
@@ -571,6 +589,8 @@ pub struct CodeGenConfigurationNodeBuilder {
     pub(crate) s3_delta_source: std::option::Option<crate::types::S3DeltaSource>,
     pub(crate) s3_delta_catalog_target: std::option::Option<crate::types::S3DeltaCatalogTarget>,
     pub(crate) s3_delta_direct_target: std::option::Option<crate::types::S3DeltaDirectTarget>,
+    pub(crate) amazon_redshift_source: std::option::Option<crate::types::AmazonRedshiftSource>,
+    pub(crate) amazon_redshift_target: std::option::Option<crate::types::AmazonRedshiftTarget>,
 }
 impl CodeGenConfigurationNodeBuilder {
     /// <p>Specifies a connector to an Amazon Athena data source.</p>
@@ -1386,6 +1406,32 @@ impl CodeGenConfigurationNodeBuilder {
         self.s3_delta_direct_target = input;
         self
     }
+    /// <p>Specifies a target that writes to a data source in Amazon Redshift.</p>
+    pub fn amazon_redshift_source(mut self, input: crate::types::AmazonRedshiftSource) -> Self {
+        self.amazon_redshift_source = Some(input);
+        self
+    }
+    /// <p>Specifies a target that writes to a data source in Amazon Redshift.</p>
+    pub fn set_amazon_redshift_source(
+        mut self,
+        input: std::option::Option<crate::types::AmazonRedshiftSource>,
+    ) -> Self {
+        self.amazon_redshift_source = input;
+        self
+    }
+    /// <p>Specifies a target that writes to a data target in Amazon Redshift.</p>
+    pub fn amazon_redshift_target(mut self, input: crate::types::AmazonRedshiftTarget) -> Self {
+        self.amazon_redshift_target = Some(input);
+        self
+    }
+    /// <p>Specifies a target that writes to a data target in Amazon Redshift.</p>
+    pub fn set_amazon_redshift_target(
+        mut self,
+        input: std::option::Option<crate::types::AmazonRedshiftTarget>,
+    ) -> Self {
+        self.amazon_redshift_target = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CodeGenConfigurationNode`](crate::types::CodeGenConfigurationNode).
     pub fn build(self) -> crate::types::CodeGenConfigurationNode {
         crate::types::CodeGenConfigurationNode {
@@ -1452,6 +1498,8 @@ impl CodeGenConfigurationNodeBuilder {
             s3_delta_source: self.s3_delta_source,
             s3_delta_catalog_target: self.s3_delta_catalog_target,
             s3_delta_direct_target: self.s3_delta_direct_target,
+            amazon_redshift_source: self.amazon_redshift_source,
+            amazon_redshift_target: self.amazon_redshift_target,
         }
     }
 }

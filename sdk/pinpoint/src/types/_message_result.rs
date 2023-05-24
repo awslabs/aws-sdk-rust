@@ -22,7 +22,7 @@ pub struct MessageResult {
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The downstream service status code for delivering the message.</p>
     #[doc(hidden)]
-    pub status_code: i32,
+    pub status_code: std::option::Option<i32>,
     /// <p>The status message for delivering the message.</p>
     #[doc(hidden)]
     pub status_message: std::option::Option<std::string::String>,
@@ -50,7 +50,7 @@ impl MessageResult {
         self.message_id.as_deref()
     }
     /// <p>The downstream service status code for delivering the message.</p>
-    pub fn status_code(&self) -> i32 {
+    pub fn status_code(&self) -> std::option::Option<i32> {
         self.status_code
     }
     /// <p>The status message for delivering the message.</p>
@@ -158,7 +158,7 @@ impl MessageResultBuilder {
         crate::types::MessageResult {
             delivery_status: self.delivery_status,
             message_id: self.message_id,
-            status_code: self.status_code.unwrap_or_default(),
+            status_code: self.status_code,
             status_message: self.status_message,
             updated_token: self.updated_token,
         }

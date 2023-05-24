@@ -20,20 +20,23 @@ pub struct AdvancedFieldSelector {
     /// </ul> </li>
     /// <li> <p> <b> <code>resources.type</code> </b> - This ﬁeld is required for CloudTrail data events. <code>resources.type</code> can only use the <code>Equals</code> operator, and the value can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li>
-    /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
-    /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li>
-    /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
-    /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
-    /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
-    /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
-    /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
+    /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
+    /// <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li>
+    /// <li> <p> <code>AWS::Cognito::IdentityPool</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
-    /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
+    /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
     /// <li> <p> <code>AWS::FinSpace::Environment</code> </p> </li>
+    /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
+    /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
+    /// <li> <p> <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li>
+    /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::FeatureGroup</code> </p> </li>
+    /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
     /// </ul> <p> You can have only one <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another selector.</p> </li>
     /// <li> <p> <b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p> <p>The trailing slash is intentional; do not exclude it. Replace the text between less than and greater than symbols (&lt;&gt;) with resource-specific information. </p>
     /// <ul>
@@ -53,6 +56,178 @@ pub struct AdvancedFieldSelector {
     /// /
     /// </object_path>
     /// </bucket_name>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::DynamoDB::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :dynamodb:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :table/
+    /// <table_name></table_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::Lambda::Function</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :lambda:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :function:
+    /// <function_name></function_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::CloudTrail::Channel</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :cloudtrail:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :channel/
+    /// <channel_uuid></channel_uuid>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::Cognito::IdentityPool</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :cognito-identity:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :identitypool/
+    /// <identity_pool_id></identity_pool_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::DynamoDB::Stream</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :dynamodb:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :table/
+    /// <table_name>
+    /// /stream/
+    /// <date_time></date_time>
+    /// </table_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::EC2::Snapshot</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :ec2:
+    /// <region>
+    /// ::snapshot/
+    /// <snapshot_id></snapshot_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::FinSpace::Environment</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :finspace:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :environment/
+    /// <environment_id></environment_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :glue:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :table/
+    /// <database_name>
+    /// /
+    /// <table_name></table_name>
+    /// </database_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::GuardDuty::Detector</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :guardduty:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :detector/
+    /// <detector_id></detector_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::KendraRanking::ExecutionPlan</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :kendra-ranking:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :rescore-execution-plan/
+    /// <rescore_execution_plan_id></rescore_execution_plan_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :managedblockchain:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :nodes/
+    /// <node_id></node_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :sagemaker:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :experiment-trial-component/
+    /// <experiment_trial_component_name></experiment_trial_component_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SageMaker::FeatureGroup</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :sagemaker:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :feature-group/
+    /// <feature_group_name></feature_group_name>
+    /// </account_id>
+    /// </region>
     /// </partition></code> </p> </li>
     /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the following formats. To log events on all objects in an S3 access point, we recommend that you use only the access point ARN, don’t include the object path, and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
     /// <ul>
@@ -81,71 +256,6 @@ pub struct AdvancedFieldSelector {
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
-    /// </ul> <p>When resources.type equals <code>AWS::Lambda::Function</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :lambda:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :function:
-    /// <function_name></function_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When resources.type equals <code>AWS::DynamoDB::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :dynamodb:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :table/
-    /// <table_name></table_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When resources.type equals <code>AWS::CloudTrail::Channel</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :cloudtrail:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :channel/
-    /// <channel_uuid></channel_uuid>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :s3-outposts:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :
-    /// <object_path></object_path>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :managedblockchain:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :nodes/
-    /// <node_id></node_id>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
     /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li> <p> <code>arn:
@@ -159,84 +269,16 @@ pub struct AdvancedFieldSelector {
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::EC2::Snapshot</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li> <p> <code>arn:
     /// <partition>
-    /// :ec2:
-    /// <region>
-    /// ::snapshot/
-    /// <snapshot_id></snapshot_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::DynamoDB::Stream</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :dynamodb:
+    /// :s3-outposts:
     /// <region>
     /// :
     /// <account_id>
-    /// :table/
-    /// <table_name>
-    /// /stream/
-    /// <date_time></date_time>
-    /// </table_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :glue:
-    /// <region>
     /// :
-    /// <account_id>
-    /// :table/
-    /// <database_name>
-    /// /
-    /// <table_name></table_name>
-    /// </database_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::FinSpace::Environment</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :finspace:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :environment/
-    /// <environment_id></environment_id>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :sagemaker:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :experiment-trial-component/
-    /// <experiment_trial_component_name></experiment_trial_component_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SageMaker::FeatureGroup</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :sagemaker:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :feature-group/
-    /// <feature_group_name></feature_group_name>
+    /// <object_path></object_path>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
@@ -280,20 +322,23 @@ impl AdvancedFieldSelector {
     /// </ul> </li>
     /// <li> <p> <b> <code>resources.type</code> </b> - This ﬁeld is required for CloudTrail data events. <code>resources.type</code> can only use the <code>Equals</code> operator, and the value can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li>
-    /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
-    /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li>
-    /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
-    /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
-    /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
-    /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
-    /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
+    /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
+    /// <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li>
+    /// <li> <p> <code>AWS::Cognito::IdentityPool</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
-    /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
+    /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
     /// <li> <p> <code>AWS::FinSpace::Environment</code> </p> </li>
+    /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
+    /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
+    /// <li> <p> <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li>
+    /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::FeatureGroup</code> </p> </li>
+    /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
     /// </ul> <p> You can have only one <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another selector.</p> </li>
     /// <li> <p> <b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p> <p>The trailing slash is intentional; do not exclude it. Replace the text between less than and greater than symbols (&lt;&gt;) with resource-specific information. </p>
     /// <ul>
@@ -313,6 +358,178 @@ impl AdvancedFieldSelector {
     /// /
     /// </object_path>
     /// </bucket_name>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::DynamoDB::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :dynamodb:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :table/
+    /// <table_name></table_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::Lambda::Function</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :lambda:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :function:
+    /// <function_name></function_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::CloudTrail::Channel</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :cloudtrail:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :channel/
+    /// <channel_uuid></channel_uuid>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::Cognito::IdentityPool</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :cognito-identity:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :identitypool/
+    /// <identity_pool_id></identity_pool_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::DynamoDB::Stream</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :dynamodb:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :table/
+    /// <table_name>
+    /// /stream/
+    /// <date_time></date_time>
+    /// </table_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::EC2::Snapshot</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :ec2:
+    /// <region>
+    /// ::snapshot/
+    /// <snapshot_id></snapshot_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::FinSpace::Environment</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :finspace:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :environment/
+    /// <environment_id></environment_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :glue:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :table/
+    /// <database_name>
+    /// /
+    /// <table_name></table_name>
+    /// </database_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::GuardDuty::Detector</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :guardduty:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :detector/
+    /// <detector_id></detector_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::KendraRanking::ExecutionPlan</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :kendra-ranking:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :rescore-execution-plan/
+    /// <rescore_execution_plan_id></rescore_execution_plan_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :managedblockchain:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :nodes/
+    /// <node_id></node_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :sagemaker:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :experiment-trial-component/
+    /// <experiment_trial_component_name></experiment_trial_component_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SageMaker::FeatureGroup</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :sagemaker:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :feature-group/
+    /// <feature_group_name></feature_group_name>
+    /// </account_id>
+    /// </region>
     /// </partition></code> </p> </li>
     /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the following formats. To log events on all objects in an S3 access point, we recommend that you use only the access point ARN, don’t include the object path, and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
     /// <ul>
@@ -341,71 +558,6 @@ impl AdvancedFieldSelector {
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
-    /// </ul> <p>When resources.type equals <code>AWS::Lambda::Function</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :lambda:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :function:
-    /// <function_name></function_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When resources.type equals <code>AWS::DynamoDB::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :dynamodb:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :table/
-    /// <table_name></table_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When resources.type equals <code>AWS::CloudTrail::Channel</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :cloudtrail:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :channel/
-    /// <channel_uuid></channel_uuid>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :s3-outposts:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :
-    /// <object_path></object_path>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :managedblockchain:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :nodes/
-    /// <node_id></node_id>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
     /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li> <p> <code>arn:
@@ -419,84 +571,16 @@ impl AdvancedFieldSelector {
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::EC2::Snapshot</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li> <p> <code>arn:
     /// <partition>
-    /// :ec2:
-    /// <region>
-    /// ::snapshot/
-    /// <snapshot_id></snapshot_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::DynamoDB::Stream</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :dynamodb:
+    /// :s3-outposts:
     /// <region>
     /// :
     /// <account_id>
-    /// :table/
-    /// <table_name>
-    /// /stream/
-    /// <date_time></date_time>
-    /// </table_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :glue:
-    /// <region>
     /// :
-    /// <account_id>
-    /// :table/
-    /// <database_name>
-    /// /
-    /// <table_name></table_name>
-    /// </database_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::FinSpace::Environment</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :finspace:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :environment/
-    /// <environment_id></environment_id>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :sagemaker:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :experiment-trial-component/
-    /// <experiment_trial_component_name></experiment_trial_component_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SageMaker::FeatureGroup</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :sagemaker:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :feature-group/
-    /// <feature_group_name></feature_group_name>
+    /// <object_path></object_path>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
@@ -566,20 +650,23 @@ impl AdvancedFieldSelectorBuilder {
     /// </ul> </li>
     /// <li> <p> <b> <code>resources.type</code> </b> - This ﬁeld is required for CloudTrail data events. <code>resources.type</code> can only use the <code>Equals</code> operator, and the value can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li>
-    /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
-    /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li>
-    /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
-    /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
-    /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
-    /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
-    /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
+    /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
+    /// <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li>
+    /// <li> <p> <code>AWS::Cognito::IdentityPool</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
-    /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
+    /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
     /// <li> <p> <code>AWS::FinSpace::Environment</code> </p> </li>
+    /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
+    /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
+    /// <li> <p> <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li>
+    /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::FeatureGroup</code> </p> </li>
+    /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
     /// </ul> <p> You can have only one <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another selector.</p> </li>
     /// <li> <p> <b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p> <p>The trailing slash is intentional; do not exclude it. Replace the text between less than and greater than symbols (&lt;&gt;) with resource-specific information. </p>
     /// <ul>
@@ -599,6 +686,178 @@ impl AdvancedFieldSelectorBuilder {
     /// /
     /// </object_path>
     /// </bucket_name>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::DynamoDB::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :dynamodb:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :table/
+    /// <table_name></table_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::Lambda::Function</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :lambda:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :function:
+    /// <function_name></function_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::CloudTrail::Channel</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :cloudtrail:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :channel/
+    /// <channel_uuid></channel_uuid>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::Cognito::IdentityPool</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :cognito-identity:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :identitypool/
+    /// <identity_pool_id></identity_pool_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::DynamoDB::Stream</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :dynamodb:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :table/
+    /// <table_name>
+    /// /stream/
+    /// <date_time></date_time>
+    /// </table_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::EC2::Snapshot</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :ec2:
+    /// <region>
+    /// ::snapshot/
+    /// <snapshot_id></snapshot_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::FinSpace::Environment</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :finspace:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :environment/
+    /// <environment_id></environment_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :glue:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :table/
+    /// <database_name>
+    /// /
+    /// <table_name></table_name>
+    /// </database_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::GuardDuty::Detector</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :guardduty:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :detector/
+    /// <detector_id></detector_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::KendraRanking::ExecutionPlan</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :kendra-ranking:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :rescore-execution-plan/
+    /// <rescore_execution_plan_id></rescore_execution_plan_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :managedblockchain:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :nodes/
+    /// <node_id></node_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :sagemaker:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :experiment-trial-component/
+    /// <experiment_trial_component_name></experiment_trial_component_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SageMaker::FeatureGroup</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :sagemaker:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :feature-group/
+    /// <feature_group_name></feature_group_name>
+    /// </account_id>
+    /// </region>
     /// </partition></code> </p> </li>
     /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the following formats. To log events on all objects in an S3 access point, we recommend that you use only the access point ARN, don’t include the object path, and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
     /// <ul>
@@ -627,71 +886,6 @@ impl AdvancedFieldSelectorBuilder {
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
-    /// </ul> <p>When resources.type equals <code>AWS::Lambda::Function</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :lambda:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :function:
-    /// <function_name></function_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When resources.type equals <code>AWS::DynamoDB::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :dynamodb:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :table/
-    /// <table_name></table_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When resources.type equals <code>AWS::CloudTrail::Channel</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :cloudtrail:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :channel/
-    /// <channel_uuid></channel_uuid>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :s3-outposts:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :
-    /// <object_path></object_path>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :managedblockchain:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :nodes/
-    /// <node_id></node_id>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
     /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li> <p> <code>arn:
@@ -705,84 +899,16 @@ impl AdvancedFieldSelectorBuilder {
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::EC2::Snapshot</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li> <p> <code>arn:
     /// <partition>
-    /// :ec2:
-    /// <region>
-    /// ::snapshot/
-    /// <snapshot_id></snapshot_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::DynamoDB::Stream</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :dynamodb:
+    /// :s3-outposts:
     /// <region>
     /// :
     /// <account_id>
-    /// :table/
-    /// <table_name>
-    /// /stream/
-    /// <date_time></date_time>
-    /// </table_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :glue:
-    /// <region>
     /// :
-    /// <account_id>
-    /// :table/
-    /// <database_name>
-    /// /
-    /// <table_name></table_name>
-    /// </database_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::FinSpace::Environment</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :finspace:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :environment/
-    /// <environment_id></environment_id>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :sagemaker:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :experiment-trial-component/
-    /// <experiment_trial_component_name></experiment_trial_component_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SageMaker::FeatureGroup</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :sagemaker:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :feature-group/
-    /// <feature_group_name></feature_group_name>
+    /// <object_path></object_path>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
@@ -808,20 +934,23 @@ impl AdvancedFieldSelectorBuilder {
     /// </ul> </li>
     /// <li> <p> <b> <code>resources.type</code> </b> - This ﬁeld is required for CloudTrail data events. <code>resources.type</code> can only use the <code>Equals</code> operator, and the value can be one of the following:</p>
     /// <ul>
-    /// <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li>
-    /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
-    /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li>
-    /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
-    /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
-    /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
-    /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
-    /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
+    /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
+    /// <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li>
+    /// <li> <p> <code>AWS::Cognito::IdentityPool</code> </p> </li>
     /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
-    /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
+    /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
     /// <li> <p> <code>AWS::FinSpace::Environment</code> </p> </li>
+    /// <li> <p> <code>AWS::Glue::Table</code> </p> </li>
+    /// <li> <p> <code>AWS::GuardDuty::Detector</code> </p> </li>
+    /// <li> <p> <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li>
+    /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li>
     /// <li> <p> <code>AWS::SageMaker::FeatureGroup</code> </p> </li>
+    /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
     /// </ul> <p> You can have only one <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another selector.</p> </li>
     /// <li> <p> <b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p> <p>The trailing slash is intentional; do not exclude it. Replace the text between less than and greater than symbols (&lt;&gt;) with resource-specific information. </p>
     /// <ul>
@@ -841,6 +970,178 @@ impl AdvancedFieldSelectorBuilder {
     /// /
     /// </object_path>
     /// </bucket_name>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::DynamoDB::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :dynamodb:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :table/
+    /// <table_name></table_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::Lambda::Function</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :lambda:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :function:
+    /// <function_name></function_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::CloudTrail::Channel</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :cloudtrail:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :channel/
+    /// <channel_uuid></channel_uuid>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::Cognito::IdentityPool</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :cognito-identity:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :identitypool/
+    /// <identity_pool_id></identity_pool_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::DynamoDB::Stream</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :dynamodb:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :table/
+    /// <table_name>
+    /// /stream/
+    /// <date_time></date_time>
+    /// </table_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::EC2::Snapshot</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :ec2:
+    /// <region>
+    /// ::snapshot/
+    /// <snapshot_id></snapshot_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::FinSpace::Environment</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :finspace:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :environment/
+    /// <environment_id></environment_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :glue:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :table/
+    /// <database_name>
+    /// /
+    /// <table_name></table_name>
+    /// </database_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::GuardDuty::Detector</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :guardduty:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :detector/
+    /// <detector_id></detector_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::KendraRanking::ExecutionPlan</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :kendra-ranking:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :rescore-execution-plan/
+    /// <rescore_execution_plan_id></rescore_execution_plan_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :managedblockchain:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :nodes/
+    /// <node_id></node_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :sagemaker:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :experiment-trial-component/
+    /// <experiment_trial_component_name></experiment_trial_component_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SageMaker::FeatureGroup</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :sagemaker:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :feature-group/
+    /// <feature_group_name></feature_group_name>
+    /// </account_id>
+    /// </region>
     /// </partition></code> </p> </li>
     /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the following formats. To log events on all objects in an S3 access point, we recommend that you use only the access point ARN, don’t include the object path, and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
     /// <ul>
@@ -869,71 +1170,6 @@ impl AdvancedFieldSelectorBuilder {
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
-    /// </ul> <p>When resources.type equals <code>AWS::Lambda::Function</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :lambda:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :function:
-    /// <function_name></function_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When resources.type equals <code>AWS::DynamoDB::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :dynamodb:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :table/
-    /// <table_name></table_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When resources.type equals <code>AWS::CloudTrail::Channel</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :cloudtrail:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :channel/
-    /// <channel_uuid></channel_uuid>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :s3-outposts:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :
-    /// <object_path></object_path>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :managedblockchain:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :nodes/
-    /// <node_id></node_id>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
     /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li> <p> <code>arn:
@@ -947,84 +1183,16 @@ impl AdvancedFieldSelectorBuilder {
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::EC2::Snapshot</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li> <p> <code>arn:
     /// <partition>
-    /// :ec2:
-    /// <region>
-    /// ::snapshot/
-    /// <snapshot_id></snapshot_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::DynamoDB::Stream</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :dynamodb:
+    /// :s3-outposts:
     /// <region>
     /// :
     /// <account_id>
-    /// :table/
-    /// <table_name>
-    /// /stream/
-    /// <date_time></date_time>
-    /// </table_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :glue:
-    /// <region>
     /// :
-    /// <account_id>
-    /// :table/
-    /// <database_name>
-    /// /
-    /// <table_name></table_name>
-    /// </database_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::FinSpace::Environment</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :finspace:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :environment/
-    /// <environment_id></environment_id>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :sagemaker:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :experiment-trial-component/
-    /// <experiment_trial_component_name></experiment_trial_component_name>
-    /// </account_id>
-    /// </region>
-    /// </partition></code> </p> </li>
-    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::SageMaker::FeatureGroup</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
-    /// <ul>
-    /// <li> <p> <code>arn:
-    /// <partition>
-    /// :sagemaker:
-    /// <region>
-    /// :
-    /// <account_id>
-    /// :feature-group/
-    /// <feature_group_name></feature_group_name>
+    /// <object_path></object_path>
     /// </account_id>
     /// </region>
     /// </partition></code> </p> </li>

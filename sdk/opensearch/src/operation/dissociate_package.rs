@@ -206,7 +206,7 @@ pub enum DissociatePackageError {
     ConflictException(crate::types::error::ConflictException),
     /// <p>Request processing failed because of an unknown error, exception, or internal failure.</p>
     InternalException(crate::types::error::InternalException),
-    /// <p>An exception for accessing or deleting a resource that does not exist..</p>
+    /// <p>An exception for accessing or deleting a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>An exception for accessing or deleting a resource that doesn't exist.</p>
     ValidationException(crate::types::error::ValidationException),

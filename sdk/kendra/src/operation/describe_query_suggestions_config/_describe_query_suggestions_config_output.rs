@@ -24,6 +24,7 @@ pub struct DescribeQuerySuggestionsConfigOutput {
     #[doc(hidden)]
     pub minimum_query_count: std::option::Option<i32>,
     /// <p>The Unix timestamp when query suggestions for an index was last updated.</p>
+    /// <p>Amazon Kendra automatically updates suggestions every 24 hours, after you change a setting or after you apply a <a href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#query-suggestions-blocklist">block list</a>.</p>
     #[doc(hidden)]
     pub last_suggestions_build_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp when query suggestions for an index was last cleared.</p>
@@ -32,8 +33,13 @@ pub struct DescribeQuerySuggestionsConfigOutput {
     pub last_clear_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current total count of query suggestions for an index.</p>
     /// <p>This count can change when you update your query suggestions settings, if you filter out certain queries from suggestions using a block list, and as the query log accumulates more queries for Amazon Kendra to learn from.</p>
+    /// <p>If the count is much lower than you expected, it could be because Amazon Kendra needs more queries in the query history to learn from or your current query suggestions settings are too strict.</p>
     #[doc(hidden)]
     pub total_suggestions_count: std::option::Option<i32>,
+    /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
+    #[doc(hidden)]
+    pub attribute_suggestions_config:
+        std::option::Option<crate::types::AttributeSuggestionsDescribeConfig>,
     _request_id: Option<String>,
 }
 impl DescribeQuerySuggestionsConfigOutput {
@@ -64,6 +70,7 @@ impl DescribeQuerySuggestionsConfigOutput {
         self.minimum_query_count
     }
     /// <p>The Unix timestamp when query suggestions for an index was last updated.</p>
+    /// <p>Amazon Kendra automatically updates suggestions every 24 hours, after you change a setting or after you apply a <a href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#query-suggestions-blocklist">block list</a>.</p>
     pub fn last_suggestions_build_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_suggestions_build_time.as_ref()
     }
@@ -74,8 +81,15 @@ impl DescribeQuerySuggestionsConfigOutput {
     }
     /// <p>The current total count of query suggestions for an index.</p>
     /// <p>This count can change when you update your query suggestions settings, if you filter out certain queries from suggestions using a block list, and as the query log accumulates more queries for Amazon Kendra to learn from.</p>
+    /// <p>If the count is much lower than you expected, it could be because Amazon Kendra needs more queries in the query history to learn from or your current query suggestions settings are too strict.</p>
     pub fn total_suggestions_count(&self) -> std::option::Option<i32> {
         self.total_suggestions_count
+    }
+    /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
+    pub fn attribute_suggestions_config(
+        &self,
+    ) -> std::option::Option<&crate::types::AttributeSuggestionsDescribeConfig> {
+        self.attribute_suggestions_config.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeQuerySuggestionsConfigOutput {
@@ -103,6 +117,8 @@ pub struct DescribeQuerySuggestionsConfigOutputBuilder {
     pub(crate) last_suggestions_build_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) last_clear_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) total_suggestions_count: std::option::Option<i32>,
+    pub(crate) attribute_suggestions_config:
+        std::option::Option<crate::types::AttributeSuggestionsDescribeConfig>,
     _request_id: Option<String>,
 }
 impl DescribeQuerySuggestionsConfigOutputBuilder {
@@ -180,11 +196,13 @@ impl DescribeQuerySuggestionsConfigOutputBuilder {
         self
     }
     /// <p>The Unix timestamp when query suggestions for an index was last updated.</p>
+    /// <p>Amazon Kendra automatically updates suggestions every 24 hours, after you change a setting or after you apply a <a href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#query-suggestions-blocklist">block list</a>.</p>
     pub fn last_suggestions_build_time(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.last_suggestions_build_time = Some(input);
         self
     }
     /// <p>The Unix timestamp when query suggestions for an index was last updated.</p>
+    /// <p>Amazon Kendra automatically updates suggestions every 24 hours, after you change a setting or after you apply a <a href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#query-suggestions-blocklist">block list</a>.</p>
     pub fn set_last_suggestions_build_time(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,
@@ -209,14 +227,32 @@ impl DescribeQuerySuggestionsConfigOutputBuilder {
     }
     /// <p>The current total count of query suggestions for an index.</p>
     /// <p>This count can change when you update your query suggestions settings, if you filter out certain queries from suggestions using a block list, and as the query log accumulates more queries for Amazon Kendra to learn from.</p>
+    /// <p>If the count is much lower than you expected, it could be because Amazon Kendra needs more queries in the query history to learn from or your current query suggestions settings are too strict.</p>
     pub fn total_suggestions_count(mut self, input: i32) -> Self {
         self.total_suggestions_count = Some(input);
         self
     }
     /// <p>The current total count of query suggestions for an index.</p>
     /// <p>This count can change when you update your query suggestions settings, if you filter out certain queries from suggestions using a block list, and as the query log accumulates more queries for Amazon Kendra to learn from.</p>
+    /// <p>If the count is much lower than you expected, it could be because Amazon Kendra needs more queries in the query history to learn from or your current query suggestions settings are too strict.</p>
     pub fn set_total_suggestions_count(mut self, input: std::option::Option<i32>) -> Self {
         self.total_suggestions_count = input;
+        self
+    }
+    /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
+    pub fn attribute_suggestions_config(
+        mut self,
+        input: crate::types::AttributeSuggestionsDescribeConfig,
+    ) -> Self {
+        self.attribute_suggestions_config = Some(input);
+        self
+    }
+    /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
+    pub fn set_attribute_suggestions_config(
+        mut self,
+        input: std::option::Option<crate::types::AttributeSuggestionsDescribeConfig>,
+    ) -> Self {
+        self.attribute_suggestions_config = input;
         self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -243,6 +279,7 @@ impl DescribeQuerySuggestionsConfigOutputBuilder {
             last_suggestions_build_time: self.last_suggestions_build_time,
             last_clear_time: self.last_clear_time,
             total_suggestions_count: self.total_suggestions_count,
+            attribute_suggestions_config: self.attribute_suggestions_config,
             _request_id: self._request_id,
         }
     }

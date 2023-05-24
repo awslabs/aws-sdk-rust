@@ -9,7 +9,7 @@ pub struct Mpeg2Settings {
     pub adaptive_quantization: std::option::Option<crate::types::Mpeg2AdaptiveQuantization>,
     /// Specify the average bitrate in bits per second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique when rounded down to the nearest multiple of 1000.
     #[doc(hidden)]
-    pub bitrate: i32,
+    pub bitrate: std::option::Option<i32>,
     /// Use Level (Mpeg2CodecLevel) to set the MPEG-2 level for the video output.
     #[doc(hidden)]
     pub codec_level: std::option::Option<crate::types::Mpeg2CodecLevel>,
@@ -28,28 +28,28 @@ pub struct Mpeg2Settings {
         std::option::Option<crate::types::Mpeg2FramerateConversionAlgorithm>,
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     #[doc(hidden)]
-    pub framerate_denominator: i32,
+    pub framerate_denominator: std::option::Option<i32>,
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     #[doc(hidden)]
-    pub framerate_numerator: i32,
+    pub framerate_numerator: std::option::Option<i32>,
     /// Specify the relative frequency of open to closed GOPs in this output. For example, if you want to allow four open GOPs and then require a closed GOP, set this value to 5. When you create a streaming output, we recommend that you keep the default value, 1, so that players starting mid-stream receive an IDR frame as quickly as possible. Don't set this value to 0; that would break output segmenting.
     #[doc(hidden)]
-    pub gop_closed_cadence: i32,
+    pub gop_closed_cadence: std::option::Option<i32>,
     /// Specify the interval between keyframes, in seconds or frames, for this output. Default: 12 Related settings: When you specify the GOP size in seconds, set GOP mode control (GopSizeUnits) to Specified, seconds (SECONDS). The default value for GOP mode control (GopSizeUnits) is Frames (FRAMES).
     #[doc(hidden)]
-    pub gop_size: f64,
+    pub gop_size: std::option::Option<f64>,
     /// Specify the units for GOP size (GopSize). If you don't specify a value here, by default the encoder measures GOP size in frames.
     #[doc(hidden)]
     pub gop_size_units: std::option::Option<crate::types::Mpeg2GopSizeUnits>,
     /// If your downstream systems have strict buffer requirements: Specify the minimum percentage of the HRD buffer that's available at the end of each encoded video segment. For the best video quality: Set to 0 or leave blank to automatically determine the final buffer fill percentage.
     #[doc(hidden)]
-    pub hrd_buffer_final_fill_percentage: i32,
+    pub hrd_buffer_final_fill_percentage: std::option::Option<i32>,
     /// Percentage of the buffer that should initially be filled (HRD buffer model).
     #[doc(hidden)]
-    pub hrd_buffer_initial_fill_percentage: i32,
+    pub hrd_buffer_initial_fill_percentage: std::option::Option<i32>,
     /// Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000.
     #[doc(hidden)]
-    pub hrd_buffer_size: i32,
+    pub hrd_buffer_size: std::option::Option<i32>,
     /// Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
     #[doc(hidden)]
     pub interlace_mode: std::option::Option<crate::types::Mpeg2InterlaceMode>,
@@ -58,22 +58,22 @@ pub struct Mpeg2Settings {
     pub intra_dc_precision: std::option::Option<crate::types::Mpeg2IntraDcPrecision>,
     /// Maximum bitrate in bits/second. For example, enter five megabits per second as 5000000.
     #[doc(hidden)]
-    pub max_bitrate: i32,
+    pub max_bitrate: std::option::Option<i32>,
     /// Use this setting only when you also enable Scene change detection (SceneChangeDetect). This setting determines how the encoder manages the spacing between I-frames that it inserts as part of the I-frame cadence and the I-frames that it inserts for Scene change detection. When you specify a value for this setting, the encoder determines whether to skip a cadence-driven I-frame by the value you set. For example, if you set Min I interval (minIInterval) to 5 and a cadence-driven I-frame would fall within 5 frames of a scene-change I-frame, then the encoder skips the cadence-driven I-frame. In this way, one GOP is shrunk slightly and one GOP is stretched slightly. When the cadence-driven I-frames are farther from the scene-change I-frame than the value you set, then the encoder leaves all I-frames in place and the GOPs surrounding the scene change are smaller than the usual cadence GOPs.
     #[doc(hidden)]
-    pub min_i_interval: i32,
+    pub min_i_interval: std::option::Option<i32>,
     /// Specify the number of B-frames that MediaConvert puts between reference frames in this output. Valid values are whole numbers from 0 through 7. When you don't specify a value, MediaConvert defaults to 2.
     #[doc(hidden)]
-    pub number_b_frames_between_reference_frames: i32,
+    pub number_b_frames_between_reference_frames: std::option::Option<i32>,
     /// Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
     #[doc(hidden)]
     pub par_control: std::option::Option<crate::types::Mpeg2ParControl>,
     /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parDenominator is 33.
     #[doc(hidden)]
-    pub par_denominator: i32,
+    pub par_denominator: std::option::Option<i32>,
     /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parNumerator is 40.
     #[doc(hidden)]
-    pub par_numerator: i32,
+    pub par_numerator: std::option::Option<i32>,
     /// Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
     #[doc(hidden)]
     pub quality_tuning_level: std::option::Option<crate::types::Mpeg2QualityTuningLevel>,
@@ -91,7 +91,7 @@ pub struct Mpeg2Settings {
     pub slow_pal: std::option::Option<crate::types::Mpeg2SlowPal>,
     /// Ignore this setting unless you need to comply with a specification that requires a specific value. If you don't have a specification requirement, we recommend that you adjust the softness of your output by using a lower value for the setting Sharpness (sharpness) or by enabling a noise reducer filter (noiseReducerFilter). The Softness (softness) setting specifies the quantization matrices that the encoder uses. Keep the default value, 0, to use the AWS Elemental default matrices. Choose a value from 17 to 128 to use planar interpolation. Increasing values from 17 to 128 result in increasing reduction of high-frequency data. The value 128 results in the softest video.
     #[doc(hidden)]
-    pub softness: i32,
+    pub softness: std::option::Option<i32>,
     /// Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
     #[doc(hidden)]
     pub spatial_adaptive_quantization:
@@ -115,7 +115,7 @@ impl Mpeg2Settings {
         self.adaptive_quantization.as_ref()
     }
     /// Specify the average bitrate in bits per second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique when rounded down to the nearest multiple of 1000.
-    pub fn bitrate(&self) -> i32 {
+    pub fn bitrate(&self) -> std::option::Option<i32> {
         self.bitrate
     }
     /// Use Level (Mpeg2CodecLevel) to set the MPEG-2 level for the video output.
@@ -141,19 +141,19 @@ impl Mpeg2Settings {
         self.framerate_conversion_algorithm.as_ref()
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
-    pub fn framerate_denominator(&self) -> i32 {
+    pub fn framerate_denominator(&self) -> std::option::Option<i32> {
         self.framerate_denominator
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
-    pub fn framerate_numerator(&self) -> i32 {
+    pub fn framerate_numerator(&self) -> std::option::Option<i32> {
         self.framerate_numerator
     }
     /// Specify the relative frequency of open to closed GOPs in this output. For example, if you want to allow four open GOPs and then require a closed GOP, set this value to 5. When you create a streaming output, we recommend that you keep the default value, 1, so that players starting mid-stream receive an IDR frame as quickly as possible. Don't set this value to 0; that would break output segmenting.
-    pub fn gop_closed_cadence(&self) -> i32 {
+    pub fn gop_closed_cadence(&self) -> std::option::Option<i32> {
         self.gop_closed_cadence
     }
     /// Specify the interval between keyframes, in seconds or frames, for this output. Default: 12 Related settings: When you specify the GOP size in seconds, set GOP mode control (GopSizeUnits) to Specified, seconds (SECONDS). The default value for GOP mode control (GopSizeUnits) is Frames (FRAMES).
-    pub fn gop_size(&self) -> f64 {
+    pub fn gop_size(&self) -> std::option::Option<f64> {
         self.gop_size
     }
     /// Specify the units for GOP size (GopSize). If you don't specify a value here, by default the encoder measures GOP size in frames.
@@ -161,15 +161,15 @@ impl Mpeg2Settings {
         self.gop_size_units.as_ref()
     }
     /// If your downstream systems have strict buffer requirements: Specify the minimum percentage of the HRD buffer that's available at the end of each encoded video segment. For the best video quality: Set to 0 or leave blank to automatically determine the final buffer fill percentage.
-    pub fn hrd_buffer_final_fill_percentage(&self) -> i32 {
+    pub fn hrd_buffer_final_fill_percentage(&self) -> std::option::Option<i32> {
         self.hrd_buffer_final_fill_percentage
     }
     /// Percentage of the buffer that should initially be filled (HRD buffer model).
-    pub fn hrd_buffer_initial_fill_percentage(&self) -> i32 {
+    pub fn hrd_buffer_initial_fill_percentage(&self) -> std::option::Option<i32> {
         self.hrd_buffer_initial_fill_percentage
     }
     /// Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000.
-    pub fn hrd_buffer_size(&self) -> i32 {
+    pub fn hrd_buffer_size(&self) -> std::option::Option<i32> {
         self.hrd_buffer_size
     }
     /// Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
@@ -181,15 +181,15 @@ impl Mpeg2Settings {
         self.intra_dc_precision.as_ref()
     }
     /// Maximum bitrate in bits/second. For example, enter five megabits per second as 5000000.
-    pub fn max_bitrate(&self) -> i32 {
+    pub fn max_bitrate(&self) -> std::option::Option<i32> {
         self.max_bitrate
     }
     /// Use this setting only when you also enable Scene change detection (SceneChangeDetect). This setting determines how the encoder manages the spacing between I-frames that it inserts as part of the I-frame cadence and the I-frames that it inserts for Scene change detection. When you specify a value for this setting, the encoder determines whether to skip a cadence-driven I-frame by the value you set. For example, if you set Min I interval (minIInterval) to 5 and a cadence-driven I-frame would fall within 5 frames of a scene-change I-frame, then the encoder skips the cadence-driven I-frame. In this way, one GOP is shrunk slightly and one GOP is stretched slightly. When the cadence-driven I-frames are farther from the scene-change I-frame than the value you set, then the encoder leaves all I-frames in place and the GOPs surrounding the scene change are smaller than the usual cadence GOPs.
-    pub fn min_i_interval(&self) -> i32 {
+    pub fn min_i_interval(&self) -> std::option::Option<i32> {
         self.min_i_interval
     }
     /// Specify the number of B-frames that MediaConvert puts between reference frames in this output. Valid values are whole numbers from 0 through 7. When you don't specify a value, MediaConvert defaults to 2.
-    pub fn number_b_frames_between_reference_frames(&self) -> i32 {
+    pub fn number_b_frames_between_reference_frames(&self) -> std::option::Option<i32> {
         self.number_b_frames_between_reference_frames
     }
     /// Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
@@ -197,11 +197,11 @@ impl Mpeg2Settings {
         self.par_control.as_ref()
     }
     /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parDenominator is 33.
-    pub fn par_denominator(&self) -> i32 {
+    pub fn par_denominator(&self) -> std::option::Option<i32> {
         self.par_denominator
     }
     /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parNumerator is 40.
-    pub fn par_numerator(&self) -> i32 {
+    pub fn par_numerator(&self) -> std::option::Option<i32> {
         self.par_numerator
     }
     /// Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
@@ -231,7 +231,7 @@ impl Mpeg2Settings {
         self.slow_pal.as_ref()
     }
     /// Ignore this setting unless you need to comply with a specification that requires a specific value. If you don't have a specification requirement, we recommend that you adjust the softness of your output by using a lower value for the setting Sharpness (sharpness) or by enabling a noise reducer filter (noiseReducerFilter). The Softness (softness) setting specifies the quantization matrices that the encoder uses. Keep the default value, 0, to use the AWS Elemental default matrices. Choose a value from 17 to 128 to use planar interpolation. Increasing values from 17 to 128 result in increasing reduction of high-frequency data. The value 128 results in the softest video.
-    pub fn softness(&self) -> i32 {
+    pub fn softness(&self) -> std::option::Option<i32> {
         self.softness
     }
     /// Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
@@ -705,40 +705,34 @@ impl Mpeg2SettingsBuilder {
     pub fn build(self) -> crate::types::Mpeg2Settings {
         crate::types::Mpeg2Settings {
             adaptive_quantization: self.adaptive_quantization,
-            bitrate: self.bitrate.unwrap_or_default(),
+            bitrate: self.bitrate,
             codec_level: self.codec_level,
             codec_profile: self.codec_profile,
             dynamic_sub_gop: self.dynamic_sub_gop,
             framerate_control: self.framerate_control,
             framerate_conversion_algorithm: self.framerate_conversion_algorithm,
-            framerate_denominator: self.framerate_denominator.unwrap_or_default(),
-            framerate_numerator: self.framerate_numerator.unwrap_or_default(),
-            gop_closed_cadence: self.gop_closed_cadence.unwrap_or_default(),
-            gop_size: self.gop_size.unwrap_or_default(),
+            framerate_denominator: self.framerate_denominator,
+            framerate_numerator: self.framerate_numerator,
+            gop_closed_cadence: self.gop_closed_cadence,
+            gop_size: self.gop_size,
             gop_size_units: self.gop_size_units,
-            hrd_buffer_final_fill_percentage: self
-                .hrd_buffer_final_fill_percentage
-                .unwrap_or_default(),
-            hrd_buffer_initial_fill_percentage: self
-                .hrd_buffer_initial_fill_percentage
-                .unwrap_or_default(),
-            hrd_buffer_size: self.hrd_buffer_size.unwrap_or_default(),
+            hrd_buffer_final_fill_percentage: self.hrd_buffer_final_fill_percentage,
+            hrd_buffer_initial_fill_percentage: self.hrd_buffer_initial_fill_percentage,
+            hrd_buffer_size: self.hrd_buffer_size,
             interlace_mode: self.interlace_mode,
             intra_dc_precision: self.intra_dc_precision,
-            max_bitrate: self.max_bitrate.unwrap_or_default(),
-            min_i_interval: self.min_i_interval.unwrap_or_default(),
-            number_b_frames_between_reference_frames: self
-                .number_b_frames_between_reference_frames
-                .unwrap_or_default(),
+            max_bitrate: self.max_bitrate,
+            min_i_interval: self.min_i_interval,
+            number_b_frames_between_reference_frames: self.number_b_frames_between_reference_frames,
             par_control: self.par_control,
-            par_denominator: self.par_denominator.unwrap_or_default(),
-            par_numerator: self.par_numerator.unwrap_or_default(),
+            par_denominator: self.par_denominator,
+            par_numerator: self.par_numerator,
             quality_tuning_level: self.quality_tuning_level,
             rate_control_mode: self.rate_control_mode,
             scan_type_conversion_mode: self.scan_type_conversion_mode,
             scene_change_detect: self.scene_change_detect,
             slow_pal: self.slow_pal,
-            softness: self.softness.unwrap_or_default(),
+            softness: self.softness,
             spatial_adaptive_quantization: self.spatial_adaptive_quantization,
             syntax: self.syntax,
             telecine: self.telecine,

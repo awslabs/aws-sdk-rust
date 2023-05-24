@@ -31,6 +31,9 @@ pub struct DescribeDomainConfigurationOutput {
     /// <p>The date and time the domain configuration's status was last changed.</p>
     #[doc(hidden)]
     pub last_status_change_date: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>An object that specifies the TLS configuration for a domain.</p>
+    #[doc(hidden)]
+    pub tls_config: std::option::Option<crate::types::TlsConfig>,
     _request_id: Option<String>,
 }
 impl DescribeDomainConfigurationOutput {
@@ -74,6 +77,10 @@ impl DescribeDomainConfigurationOutput {
     pub fn last_status_change_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_status_change_date.as_ref()
     }
+    /// <p>An object that specifies the TLS configuration for a domain.</p>
+    pub fn tls_config(&self) -> std::option::Option<&crate::types::TlsConfig> {
+        self.tls_config.as_ref()
+    }
 }
 impl aws_http::request_id::RequestId for DescribeDomainConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -102,6 +109,7 @@ pub struct DescribeDomainConfigurationOutputBuilder {
     pub(crate) service_type: std::option::Option<crate::types::ServiceType>,
     pub(crate) domain_type: std::option::Option<crate::types::DomainType>,
     pub(crate) last_status_change_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) tls_config: std::option::Option<crate::types::TlsConfig>,
     _request_id: Option<String>,
 }
 impl DescribeDomainConfigurationOutputBuilder {
@@ -225,6 +233,16 @@ impl DescribeDomainConfigurationOutputBuilder {
         self.last_status_change_date = input;
         self
     }
+    /// <p>An object that specifies the TLS configuration for a domain.</p>
+    pub fn tls_config(mut self, input: crate::types::TlsConfig) -> Self {
+        self.tls_config = Some(input);
+        self
+    }
+    /// <p>An object that specifies the TLS configuration for a domain.</p>
+    pub fn set_tls_config(mut self, input: std::option::Option<crate::types::TlsConfig>) -> Self {
+        self.tls_config = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -248,6 +266,7 @@ impl DescribeDomainConfigurationOutputBuilder {
             service_type: self.service_type,
             domain_type: self.domain_type,
             last_status_change_date: self.last_status_change_date,
+            tls_config: self.tls_config,
             _request_id: self._request_id,
         }
     }

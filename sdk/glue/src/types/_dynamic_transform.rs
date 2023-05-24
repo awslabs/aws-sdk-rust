@@ -25,6 +25,9 @@ pub struct DynamicTransform {
     /// <p>This field is not used and will be deprecated in future release.</p>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
+    /// <p>Specifies the data schema for the dynamic transform.</p>
+    #[doc(hidden)]
+    pub output_schemas: std::option::Option<std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl DynamicTransform {
     /// <p>Specifies the name of the dynamic transform.</p>
@@ -55,6 +58,10 @@ impl DynamicTransform {
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
+    /// <p>Specifies the data schema for the dynamic transform.</p>
+    pub fn output_schemas(&self) -> std::option::Option<&[crate::types::GlueSchema]> {
+        self.output_schemas.as_deref()
+    }
 }
 impl DynamicTransform {
     /// Creates a new builder-style object to manufacture [`DynamicTransform`](crate::types::DynamicTransform).
@@ -75,6 +82,7 @@ pub struct DynamicTransformBuilder {
     pub(crate) function_name: std::option::Option<std::string::String>,
     pub(crate) path: std::option::Option<std::string::String>,
     pub(crate) version: std::option::Option<std::string::String>,
+    pub(crate) output_schemas: std::option::Option<std::vec::Vec<crate::types::GlueSchema>>,
 }
 impl DynamicTransformBuilder {
     /// <p>Specifies the name of the dynamic transform.</p>
@@ -165,6 +173,25 @@ impl DynamicTransformBuilder {
         self.version = input;
         self
     }
+    /// Appends an item to `output_schemas`.
+    ///
+    /// To override the contents of this collection use [`set_output_schemas`](Self::set_output_schemas).
+    ///
+    /// <p>Specifies the data schema for the dynamic transform.</p>
+    pub fn output_schemas(mut self, input: crate::types::GlueSchema) -> Self {
+        let mut v = self.output_schemas.unwrap_or_default();
+        v.push(input);
+        self.output_schemas = Some(v);
+        self
+    }
+    /// <p>Specifies the data schema for the dynamic transform.</p>
+    pub fn set_output_schemas(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::GlueSchema>>,
+    ) -> Self {
+        self.output_schemas = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DynamicTransform`](crate::types::DynamicTransform).
     pub fn build(self) -> crate::types::DynamicTransform {
         crate::types::DynamicTransform {
@@ -175,6 +202,7 @@ impl DynamicTransformBuilder {
             function_name: self.function_name,
             path: self.path,
             version: self.version,
+            output_schemas: self.output_schemas,
         }
     }
 }

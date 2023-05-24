@@ -17,7 +17,7 @@ pub struct ResourceProfileArtifact {
     pub classification_result_status: std::option::Option<std::string::String>,
     /// <p>Specifies whether Amazon Macie found sensitive data in the object.</p>
     #[doc(hidden)]
-    pub sensitive: bool,
+    pub sensitive: std::option::Option<bool>,
 }
 impl ResourceProfileArtifact {
     /// <p>The Amazon Resource Name (ARN) of the object.</p>
@@ -34,7 +34,7 @@ impl ResourceProfileArtifact {
         self.classification_result_status.as_deref()
     }
     /// <p>Specifies whether Amazon Macie found sensitive data in the object.</p>
-    pub fn sensitive(&self) -> bool {
+    pub fn sensitive(&self) -> std::option::Option<bool> {
         self.sensitive
     }
 }
@@ -102,7 +102,7 @@ impl ResourceProfileArtifactBuilder {
         crate::types::ResourceProfileArtifact {
             arn: self.arn,
             classification_result_status: self.classification_result_status,
-            sensitive: self.sensitive.unwrap_or_default(),
+            sensitive: self.sensitive,
         }
     }
 }

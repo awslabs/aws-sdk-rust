@@ -139,64 +139,64 @@ pub fn ser_static_image_activate_schedule_action_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StaticImageActivateScheduleActionSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.duration != 0 {
+    if let Some(var_1) = &input.duration {
         object.key("duration").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.duration).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.fade_in != 0 {
+    if let Some(var_2) = &input.fade_in {
         object.key("fadeIn").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.fade_in).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.fade_out != 0 {
+    if let Some(var_3) = &input.fade_out {
         object.key("fadeOut").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.fade_out).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if input.height != 0 {
+    if let Some(var_4) = &input.height {
         object.key("height").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.height).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_1) = &input.image {
+    if let Some(var_5) = &input.image {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("image").start_object();
-        crate::protocol_serde::shape_input_location::ser_input_location(&mut object_2, var_1)?;
-        object_2.finish();
+        let mut object_6 = object.key("image").start_object();
+        crate::protocol_serde::shape_input_location::ser_input_location(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if input.image_x != 0 {
+    if let Some(var_7) = &input.image_x {
         object.key("imageX").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.image_x).into()),
+            aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if input.image_y != 0 {
+    if let Some(var_8) = &input.image_y {
         object.key("imageY").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.image_y).into()),
+            aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if input.layer != 0 {
+    if let Some(var_9) = &input.layer {
         object.key("layer").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.layer).into()),
+            aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if input.opacity != 0 {
+    if let Some(var_10) = &input.opacity {
         object.key("opacity").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.opacity).into()),
+            aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if input.width != 0 {
+    if let Some(var_11) = &input.width {
         object.key("width").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.width).into()),
+            aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
     Ok(())

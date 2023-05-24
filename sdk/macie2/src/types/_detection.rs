@@ -9,7 +9,7 @@ pub struct Detection {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The total number of occurrences of the sensitive data.</p>
     #[doc(hidden)]
-    pub count: i64,
+    pub count: std::option::Option<i64>,
     /// <p>The unique identifier for the custom data identifier or managed data identifier that detected the sensitive data. For additional details about a specified managed data identifier, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct Detection {
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies whether occurrences of this type of sensitive data are excluded (true) or included (false) in the bucket's sensitivity score.</p>
     #[doc(hidden)]
-    pub suppressed: bool,
+    pub suppressed: std::option::Option<bool>,
     /// <p>The type of data identifier that detected the sensitive data. Possible values are: CUSTOM, for a custom data identifier; and, MANAGED, for a managed data identifier.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::DataIdentifierType>,
@@ -29,7 +29,7 @@ impl Detection {
         self.arn.as_deref()
     }
     /// <p>The total number of occurrences of the sensitive data.</p>
-    pub fn count(&self) -> i64 {
+    pub fn count(&self) -> std::option::Option<i64> {
         self.count
     }
     /// <p>The unique identifier for the custom data identifier or managed data identifier that detected the sensitive data. For additional details about a specified managed data identifier, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
@@ -41,7 +41,7 @@ impl Detection {
         self.name.as_deref()
     }
     /// <p>Specifies whether occurrences of this type of sensitive data are excluded (true) or included (false) in the bucket's sensitivity score.</p>
-    pub fn suppressed(&self) -> bool {
+    pub fn suppressed(&self) -> std::option::Option<bool> {
         self.suppressed
     }
     /// <p>The type of data identifier that detected the sensitive data. Possible values are: CUSTOM, for a custom data identifier; and, MANAGED, for a managed data identifier.</p>
@@ -135,10 +135,10 @@ impl DetectionBuilder {
     pub fn build(self) -> crate::types::Detection {
         crate::types::Detection {
             arn: self.arn,
-            count: self.count.unwrap_or_default(),
+            count: self.count,
             id: self.id,
             name: self.name,
-            suppressed: self.suppressed.unwrap_or_default(),
+            suppressed: self.suppressed,
             r#type: self.r#type,
         }
     }

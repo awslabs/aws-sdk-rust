@@ -15,22 +15,22 @@ pub struct InputDeviceUhdSettings {
     pub device_state: std::option::Option<crate::types::InputDeviceState>,
     /// The frame rate of the video source.
     #[doc(hidden)]
-    pub framerate: f64,
+    pub framerate: std::option::Option<f64>,
     /// The height of the video source, in pixels.
     #[doc(hidden)]
-    pub height: i32,
+    pub height: std::option::Option<i32>,
     /// The current maximum bitrate for ingesting this source, in bits per second. You can specify this maximum.
     #[doc(hidden)]
-    pub max_bitrate: i32,
+    pub max_bitrate: std::option::Option<i32>,
     /// The scan type of the video source.
     #[doc(hidden)]
     pub scan_type: std::option::Option<crate::types::InputDeviceScanType>,
     /// The width of the video source, in pixels.
     #[doc(hidden)]
-    pub width: i32,
+    pub width: std::option::Option<i32>,
     /// The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
     #[doc(hidden)]
-    pub latency_ms: i32,
+    pub latency_ms: std::option::Option<i32>,
 }
 impl InputDeviceUhdSettings {
     /// If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
@@ -48,15 +48,15 @@ impl InputDeviceUhdSettings {
         self.device_state.as_ref()
     }
     /// The frame rate of the video source.
-    pub fn framerate(&self) -> f64 {
+    pub fn framerate(&self) -> std::option::Option<f64> {
         self.framerate
     }
     /// The height of the video source, in pixels.
-    pub fn height(&self) -> i32 {
+    pub fn height(&self) -> std::option::Option<i32> {
         self.height
     }
     /// The current maximum bitrate for ingesting this source, in bits per second. You can specify this maximum.
-    pub fn max_bitrate(&self) -> i32 {
+    pub fn max_bitrate(&self) -> std::option::Option<i32> {
         self.max_bitrate
     }
     /// The scan type of the video source.
@@ -64,11 +64,11 @@ impl InputDeviceUhdSettings {
         self.scan_type.as_ref()
     }
     /// The width of the video source, in pixels.
-    pub fn width(&self) -> i32 {
+    pub fn width(&self) -> std::option::Option<i32> {
         self.width
     }
     /// The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
-    pub fn latency_ms(&self) -> i32 {
+    pub fn latency_ms(&self) -> std::option::Option<i32> {
         self.latency_ms
     }
 }
@@ -202,12 +202,12 @@ impl InputDeviceUhdSettingsBuilder {
             active_input: self.active_input,
             configured_input: self.configured_input,
             device_state: self.device_state,
-            framerate: self.framerate.unwrap_or_default(),
-            height: self.height.unwrap_or_default(),
-            max_bitrate: self.max_bitrate.unwrap_or_default(),
+            framerate: self.framerate,
+            height: self.height,
+            max_bitrate: self.max_bitrate,
             scan_type: self.scan_type,
-            width: self.width.unwrap_or_default(),
-            latency_ms: self.latency_ms.unwrap_or_default(),
+            width: self.width,
+            latency_ms: self.latency_ms,
         }
     }
 }

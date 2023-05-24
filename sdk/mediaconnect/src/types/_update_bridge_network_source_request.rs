@@ -12,7 +12,7 @@ pub struct UpdateBridgeNetworkSourceRequest {
     pub network_name: std::option::Option<std::string::String>,
     /// The network source port.
     #[doc(hidden)]
-    pub port: i32,
+    pub port: std::option::Option<i32>,
     /// The network source protocol.
     #[doc(hidden)]
     pub protocol: std::option::Option<crate::types::Protocol>,
@@ -27,7 +27,7 @@ impl UpdateBridgeNetworkSourceRequest {
         self.network_name.as_deref()
     }
     /// The network source port.
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> std::option::Option<i32> {
         self.port
     }
     /// The network source protocol.
@@ -97,7 +97,7 @@ impl UpdateBridgeNetworkSourceRequestBuilder {
         crate::types::UpdateBridgeNetworkSourceRequest {
             multicast_ip: self.multicast_ip,
             network_name: self.network_name,
-            port: self.port.unwrap_or_default(),
+            port: self.port,
             protocol: self.protocol,
         }
     }

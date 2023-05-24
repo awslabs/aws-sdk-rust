@@ -9,6 +9,9 @@ pub fn ser_device_under_test(
     if let Some(var_2) = &input.certificate_arn {
         object.key("certificateArn").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.device_role_arn {
+        object.key("deviceRoleArn").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -47,6 +50,15 @@ where
                             }
                             "certificateArn" => {
                                 builder = builder.set_certificate_arn(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "deviceRoleArn" => {
+                                builder = builder.set_device_role_arn(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?

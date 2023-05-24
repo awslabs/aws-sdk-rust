@@ -26,6 +26,8 @@
 ///     ExportableInstanceField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics => { /* ... */ },
 ///     ExportableInstanceField::EffectiveRecommendationPreferencesExternalMetricsSource => { /* ... */ },
 ///     ExportableInstanceField::EffectiveRecommendationPreferencesInferredWorkloadTypes => { /* ... */ },
+///     ExportableInstanceField::ExternalMetricStatusCode => { /* ... */ },
+///     ExportableInstanceField::ExternalMetricStatusReason => { /* ... */ },
 ///     ExportableInstanceField::Finding => { /* ... */ },
 ///     ExportableInstanceField::FindingReasonCodes => { /* ... */ },
 ///     ExportableInstanceField::InferredWorkloadTypes => { /* ... */ },
@@ -52,6 +54,7 @@
 ///     ExportableInstanceField::RecommendationOptionsVcpus => { /* ... */ },
 ///     ExportableInstanceField::RecommendationsSourcesRecommendationSourceArn => { /* ... */ },
 ///     ExportableInstanceField::RecommendationsSourcesRecommendationSourceType => { /* ... */ },
+///     ExportableInstanceField::Tags => { /* ... */ },
 ///     ExportableInstanceField::UtilizationMetricsCpuMaximum => { /* ... */ },
 ///     ExportableInstanceField::UtilizationMetricsDiskReadBytesPerSecondMaximum => { /* ... */ },
 ///     ExportableInstanceField::UtilizationMetricsDiskReadOpsPerSecondMaximum => { /* ... */ },
@@ -128,6 +131,10 @@ pub enum ExportableInstanceField {
     #[allow(missing_docs)] // documentation missing in model
     EffectiveRecommendationPreferencesInferredWorkloadTypes,
     #[allow(missing_docs)] // documentation missing in model
+    ExternalMetricStatusCode,
+    #[allow(missing_docs)] // documentation missing in model
+    ExternalMetricStatusReason,
+    #[allow(missing_docs)] // documentation missing in model
     Finding,
     #[allow(missing_docs)] // documentation missing in model
     FindingReasonCodes,
@@ -180,6 +187,8 @@ pub enum ExportableInstanceField {
     #[allow(missing_docs)] // documentation missing in model
     RecommendationsSourcesRecommendationSourceType,
     #[allow(missing_docs)] // documentation missing in model
+    Tags,
+    #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsCpuMaximum,
     #[allow(missing_docs)] // documentation missing in model
     UtilizationMetricsDiskReadBytesPerSecondMaximum,
@@ -227,6 +236,8 @@ impl std::convert::From<&str> for ExportableInstanceField {
 "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics" => ExportableInstanceField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics,
 "EffectiveRecommendationPreferencesExternalMetricsSource" => ExportableInstanceField::EffectiveRecommendationPreferencesExternalMetricsSource,
 "EffectiveRecommendationPreferencesInferredWorkloadTypes" => ExportableInstanceField::EffectiveRecommendationPreferencesInferredWorkloadTypes,
+"ExternalMetricStatusCode" => ExportableInstanceField::ExternalMetricStatusCode,
+"ExternalMetricStatusReason" => ExportableInstanceField::ExternalMetricStatusReason,
 "Finding" => ExportableInstanceField::Finding,
 "FindingReasonCodes" => ExportableInstanceField::FindingReasonCodes,
 "InferredWorkloadTypes" => ExportableInstanceField::InferredWorkloadTypes,
@@ -253,6 +264,7 @@ impl std::convert::From<&str> for ExportableInstanceField {
 "RecommendationOptionsVcpus" => ExportableInstanceField::RecommendationOptionsVcpus,
 "RecommendationsSourcesRecommendationSourceArn" => ExportableInstanceField::RecommendationsSourcesRecommendationSourceArn,
 "RecommendationsSourcesRecommendationSourceType" => ExportableInstanceField::RecommendationsSourcesRecommendationSourceType,
+"Tags" => ExportableInstanceField::Tags,
 "UtilizationMetricsCpuMaximum" => ExportableInstanceField::UtilizationMetricsCpuMaximum,
 "UtilizationMetricsDiskReadBytesPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsDiskReadBytesPerSecondMaximum,
 "UtilizationMetricsDiskReadOpsPerSecondMaximum" => ExportableInstanceField::UtilizationMetricsDiskReadOpsPerSecondMaximum,
@@ -296,6 +308,8 @@ impl ExportableInstanceField {
     ExportableInstanceField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics => "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics",
     ExportableInstanceField::EffectiveRecommendationPreferencesExternalMetricsSource => "EffectiveRecommendationPreferencesExternalMetricsSource",
     ExportableInstanceField::EffectiveRecommendationPreferencesInferredWorkloadTypes => "EffectiveRecommendationPreferencesInferredWorkloadTypes",
+    ExportableInstanceField::ExternalMetricStatusCode => "ExternalMetricStatusCode",
+    ExportableInstanceField::ExternalMetricStatusReason => "ExternalMetricStatusReason",
     ExportableInstanceField::Finding => "Finding",
     ExportableInstanceField::FindingReasonCodes => "FindingReasonCodes",
     ExportableInstanceField::InferredWorkloadTypes => "InferredWorkloadTypes",
@@ -322,6 +336,7 @@ impl ExportableInstanceField {
     ExportableInstanceField::RecommendationOptionsVcpus => "RecommendationOptionsVcpus",
     ExportableInstanceField::RecommendationsSourcesRecommendationSourceArn => "RecommendationsSourcesRecommendationSourceArn",
     ExportableInstanceField::RecommendationsSourcesRecommendationSourceType => "RecommendationsSourcesRecommendationSourceType",
+    ExportableInstanceField::Tags => "Tags",
     ExportableInstanceField::UtilizationMetricsCpuMaximum => "UtilizationMetricsCpuMaximum",
     ExportableInstanceField::UtilizationMetricsDiskReadBytesPerSecondMaximum => "UtilizationMetricsDiskReadBytesPerSecondMaximum",
     ExportableInstanceField::UtilizationMetricsDiskReadOpsPerSecondMaximum => "UtilizationMetricsDiskReadOpsPerSecondMaximum",
@@ -356,6 +371,8 @@ impl ExportableInstanceField {
             "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics",
             "EffectiveRecommendationPreferencesExternalMetricsSource",
             "EffectiveRecommendationPreferencesInferredWorkloadTypes",
+            "ExternalMetricStatusCode",
+            "ExternalMetricStatusReason",
             "Finding",
             "FindingReasonCodes",
             "InferredWorkloadTypes",
@@ -382,6 +399,7 @@ impl ExportableInstanceField {
             "RecommendationOptionsVcpus",
             "RecommendationsSourcesRecommendationSourceArn",
             "RecommendationsSourcesRecommendationSourceType",
+            "Tags",
             "UtilizationMetricsCpuMaximum",
             "UtilizationMetricsDiskReadBytesPerSecondMaximum",
             "UtilizationMetricsDiskReadOpsPerSecondMaximum",

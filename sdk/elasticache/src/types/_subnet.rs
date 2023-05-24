@@ -13,7 +13,7 @@ pub struct Subnet {
     /// <p>The outpost ARN of the subnet.</p>
     #[doc(hidden)]
     pub subnet_outpost: std::option::Option<crate::types::SubnetOutpost>,
-    /// <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     #[doc(hidden)]
     pub supported_network_types: std::option::Option<std::vec::Vec<crate::types::NetworkType>>,
 }
@@ -30,7 +30,7 @@ impl Subnet {
     pub fn subnet_outpost(&self) -> std::option::Option<&crate::types::SubnetOutpost> {
         self.subnet_outpost.as_ref()
     }
-    /// <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn supported_network_types(&self) -> std::option::Option<&[crate::types::NetworkType]> {
         self.supported_network_types.as_deref()
     }
@@ -96,14 +96,14 @@ impl SubnetBuilder {
     ///
     /// To override the contents of this collection use [`set_supported_network_types`](Self::set_supported_network_types).
     ///
-    /// <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn supported_network_types(mut self, input: crate::types::NetworkType) -> Self {
         let mut v = self.supported_network_types.unwrap_or_default();
         v.push(input);
         self.supported_network_types = Some(v);
         self
     }
-    /// <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn set_supported_network_types(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::NetworkType>>,

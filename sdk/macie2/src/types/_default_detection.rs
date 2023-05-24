@@ -6,7 +6,7 @@
 pub struct DefaultDetection {
     /// <p>The total number of occurrences of the type of sensitive data that was detected.</p>
     #[doc(hidden)]
-    pub count: i64,
+    pub count: std::option::Option<i64>,
     /// <p>The location of 1-15 occurrences of the sensitive data that was detected. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
     #[doc(hidden)]
     pub occurrences: std::option::Option<crate::types::Occurrences>,
@@ -16,7 +16,7 @@ pub struct DefaultDetection {
 }
 impl DefaultDetection {
     /// <p>The total number of occurrences of the type of sensitive data that was detected.</p>
-    pub fn count(&self) -> i64 {
+    pub fn count(&self) -> std::option::Option<i64> {
         self.count
     }
     /// <p>The location of 1-15 occurrences of the sensitive data that was detected. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
@@ -80,7 +80,7 @@ impl DefaultDetectionBuilder {
     /// Consumes the builder and constructs a [`DefaultDetection`](crate::types::DefaultDetection).
     pub fn build(self) -> crate::types::DefaultDetection {
         crate::types::DefaultDetection {
-            count: self.count.unwrap_or_default(),
+            count: self.count,
             occurrences: self.occurrences,
             r#type: self.r#type,
         }

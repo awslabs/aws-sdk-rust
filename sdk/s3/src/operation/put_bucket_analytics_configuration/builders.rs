@@ -10,7 +10,7 @@ pub use crate::operation::put_bucket_analytics_configuration::_put_bucket_analyt
 /// <p>You must create a bucket policy on the destination bucket where the exported file is written to grant permissions to Amazon S3 to write objects to the bucket. For an example policy, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html#example-bucket-policies-use-case-9">Granting Permissions for Amazon S3 Inventory and Storage Class Analysis</a>.</p>
 /// </important>
 /// <p>To use this operation, you must have permissions to perform the <code>s3:PutAnalyticsConfiguration</code> action. The bucket owner has this permission by default. The bucket owner can grant this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing Access Permissions to Your Amazon S3 Resources</a>.</p>
-/// <p class="title"> <b>Special Errors</b> </p>
+/// <p> <code>PutBucketAnalyticsConfiguration</code> has the following special errors:</p>
 /// <ul>
 /// <li>
 /// <ul>
@@ -31,7 +31,7 @@ pub use crate::operation::put_bucket_analytics_configuration::_put_bucket_analyt
 /// <li> <p> <i>Cause: You are not the owner of the specified bucket, or you do not have the s3:PutAnalyticsConfiguration bucket permission to set the configuration on the bucket.</i> </p> </li>
 /// </ul> </li>
 /// </ul>
-/// <p class="title"> <b>Related Resources</b> </p>
+/// <p>The following operations are related to <code>PutBucketAnalyticsConfiguration</code>:</p>
 /// <ul>
 /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAnalyticsConfiguration.html">GetBucketAnalyticsConfiguration</a> </p> </li>
 /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketAnalyticsConfiguration.html">DeleteBucketAnalyticsConfiguration</a> </p> </li>

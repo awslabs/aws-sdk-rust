@@ -119,6 +119,26 @@ pub(crate) fn reflens_list_themes_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_list_topics_output_next_token(
+    input: &crate::operation::list_topics::ListTopicsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn reflens_list_vpc_connections_output_next_token(
+    input: &crate::operation::list_vpc_connections::ListVpcConnectionsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_search_analyses_output_next_token(
     input: &crate::operation::search_analyses::SearchAnalysesOutput,
 ) -> std::option::Option<&std::string::String> {

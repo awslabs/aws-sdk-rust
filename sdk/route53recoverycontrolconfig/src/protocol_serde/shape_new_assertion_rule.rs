@@ -24,10 +24,10 @@ pub fn ser_new_assertion_rule(
         crate::protocol_serde::shape_rule_config::ser_rule_config(&mut object_7, var_6)?;
         object_7.finish();
     }
-    {
+    if let Some(var_8) = &input.wait_period_ms {
         object.key("WaitPeriodMs").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.wait_period_ms).into()),
+            aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
     Ok(())

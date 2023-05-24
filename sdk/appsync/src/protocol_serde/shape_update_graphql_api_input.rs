@@ -56,8 +56,8 @@ pub fn ser_update_graphql_api_input(
         )?;
         object_14.finish();
     }
-    if input.xray_enabled {
-        object.key("xrayEnabled").boolean(input.xray_enabled);
+    if let Some(var_15) = &input.xray_enabled {
+        object.key("xrayEnabled").boolean(*var_15);
     }
     Ok(())
 }

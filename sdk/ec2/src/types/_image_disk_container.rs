@@ -2,7 +2,7 @@
 
 /// <p>Describes the disk container object for an import image task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageDiskContainer {
     /// <p>The description of the disk image.</p>
     #[doc(hidden)]
@@ -51,6 +51,18 @@ impl ImageDiskContainer {
         self.user_bucket.as_ref()
     }
 }
+impl std::fmt::Debug for ImageDiskContainer {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImageDiskContainer");
+        formatter.field("description", &self.description);
+        formatter.field("device_name", &self.device_name);
+        formatter.field("format", &self.format);
+        formatter.field("snapshot_id", &self.snapshot_id);
+        formatter.field("url", &"*** Sensitive Data Redacted ***");
+        formatter.field("user_bucket", &self.user_bucket);
+        formatter.finish()
+    }
+}
 impl ImageDiskContainer {
     /// Creates a new builder-style object to manufacture [`ImageDiskContainer`](crate::types::ImageDiskContainer).
     pub fn builder() -> crate::types::builders::ImageDiskContainerBuilder {
@@ -60,7 +72,7 @@ impl ImageDiskContainer {
 
 /// A builder for [`ImageDiskContainer`](crate::types::ImageDiskContainer).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct ImageDiskContainerBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) device_name: std::option::Option<std::string::String>,
@@ -142,5 +154,17 @@ impl ImageDiskContainerBuilder {
             url: self.url,
             user_bucket: self.user_bucket,
         }
+    }
+}
+impl std::fmt::Debug for ImageDiskContainerBuilder {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImageDiskContainerBuilder");
+        formatter.field("description", &self.description);
+        formatter.field("device_name", &self.device_name);
+        formatter.field("format", &self.format);
+        formatter.field("snapshot_id", &self.snapshot_id);
+        formatter.field("url", &"*** Sensitive Data Redacted ***");
+        formatter.field("user_bucket", &self.user_bucket);
+        formatter.finish()
     }
 }

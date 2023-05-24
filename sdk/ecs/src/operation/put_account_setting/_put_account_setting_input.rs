@@ -6,7 +6,7 @@ pub struct PutAccountSettingInput {
     /// <p>The Amazon ECS resource name for which to modify the account setting. If <code>serviceLongArnFormat</code> is specified, the ARN for your Amazon ECS services is affected. If <code>taskLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS tasks is affected. If <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI) limit for your Amazon ECS container instances is affected. If <code>containerInsights</code> is specified, the default setting for Amazon Web Services CloudWatch Container Insights for your clusters is affected. If <code>fargateFIPSMode</code> is specified, Fargate FIPS 140 compliance is affected. If <code>tagResourceAuthorization</code> is specified, the opt-in option for tagging resources on creation is affected. For information about the opt-in timeline, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources">Tagging authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::SettingName>,
-    /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code> and <code>disabled</code>.</p>
+    /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and <code>off</code>.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies the account setting for all users, roles, and the root user of the account unless a user or role explicitly overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.</p> <note>
@@ -20,7 +20,7 @@ impl PutAccountSettingInput {
     pub fn name(&self) -> std::option::Option<&crate::types::SettingName> {
         self.name.as_ref()
     }
-    /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code> and <code>disabled</code>.</p>
+    /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and <code>off</code>.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -58,12 +58,12 @@ impl PutAccountSettingInputBuilder {
         self.name = input;
         self
     }
-    /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code> and <code>disabled</code>.</p>
+    /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and <code>off</code>.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
         self.value = Some(input.into());
         self
     }
-    /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code> and <code>disabled</code>.</p>
+    /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and <code>off</code>.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.value = input;
         self

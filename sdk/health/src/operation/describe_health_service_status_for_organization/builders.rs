@@ -5,7 +5,7 @@ pub use crate::operation::describe_health_service_status_for_organization::_desc
 
 /// Fluent builder constructing a request to `DescribeHealthServiceStatusForOrganization`.
 ///
-/// <p>This operation provides status information on enabling or disabling Health to work with your organization. To call this operation, you must sign in as an IAM user, assume an IAM role, or sign in as the root user (not recommended) in the organization's management account.</p>
+/// <p>This operation provides status information on enabling or disabling Health to work with your organization. To call this operation, you must use the organization's management account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeHealthServiceStatusForOrganizationFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

@@ -23,7 +23,7 @@ pub struct GetApplicationOutput {
     pub home_page_url: std::option::Option<std::string::String>,
     /// <p>Whether the author of this application has been verified. This means means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed.</p>
     #[doc(hidden)]
-    pub is_verified_author: bool,
+    pub is_verified_author: std::option::Option<bool>,
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
@@ -78,7 +78,7 @@ impl GetApplicationOutput {
         self.home_page_url.as_deref()
     }
     /// <p>Whether the author of this application has been verified. This means means that AWS has made a good faith review, as a reasonable and prudent service provider, of the information provided by the requester and has confirmed that the requester's identity is as claimed.</p>
-    pub fn is_verified_author(&self) -> bool {
+    pub fn is_verified_author(&self) -> std::option::Option<bool> {
         self.is_verified_author
     }
     /// <p>Labels to improve discovery of apps in search results.</p>
@@ -325,7 +325,7 @@ impl GetApplicationOutputBuilder {
             creation_time: self.creation_time,
             description: self.description,
             home_page_url: self.home_page_url,
-            is_verified_author: self.is_verified_author.unwrap_or_default(),
+            is_verified_author: self.is_verified_author,
             labels: self.labels,
             license_url: self.license_url,
             name: self.name,

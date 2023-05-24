@@ -9,13 +9,13 @@ pub struct RtmpOutputSettings {
     pub certificate_mode: std::option::Option<crate::types::RtmpOutputCertificateMode>,
     /// Number of seconds to wait before retrying a connection to the Flash Media server if the connection is lost.
     #[doc(hidden)]
-    pub connection_retry_interval: i32,
+    pub connection_retry_interval: std::option::Option<i32>,
     /// The RTMP endpoint excluding the stream name (eg. rtmp://host/appname). For connection to Akamai, a username and password must be supplied. URI fields accept format identifiers.
     #[doc(hidden)]
     pub destination: std::option::Option<crate::types::OutputLocationRef>,
     /// Number of retry attempts.
     #[doc(hidden)]
-    pub num_retries: i32,
+    pub num_retries: std::option::Option<i32>,
 }
 impl RtmpOutputSettings {
     /// If set to verifyAuthenticity, verify the tls certificate chain to a trusted Certificate Authority (CA). This will cause rtmps outputs with self-signed certificates to fail.
@@ -25,7 +25,7 @@ impl RtmpOutputSettings {
         self.certificate_mode.as_ref()
     }
     /// Number of seconds to wait before retrying a connection to the Flash Media server if the connection is lost.
-    pub fn connection_retry_interval(&self) -> i32 {
+    pub fn connection_retry_interval(&self) -> std::option::Option<i32> {
         self.connection_retry_interval
     }
     /// The RTMP endpoint excluding the stream name (eg. rtmp://host/appname). For connection to Akamai, a username and password must be supplied. URI fields accept format identifiers.
@@ -33,7 +33,7 @@ impl RtmpOutputSettings {
         self.destination.as_ref()
     }
     /// Number of retry attempts.
-    pub fn num_retries(&self) -> i32 {
+    pub fn num_retries(&self) -> std::option::Option<i32> {
         self.num_retries
     }
 }
@@ -104,9 +104,9 @@ impl RtmpOutputSettingsBuilder {
     pub fn build(self) -> crate::types::RtmpOutputSettings {
         crate::types::RtmpOutputSettings {
             certificate_mode: self.certificate_mode,
-            connection_retry_interval: self.connection_retry_interval.unwrap_or_default(),
+            connection_retry_interval: self.connection_retry_interval,
             destination: self.destination,
-            num_retries: self.num_retries.unwrap_or_default(),
+            num_retries: self.num_retries,
         }
     }
 }

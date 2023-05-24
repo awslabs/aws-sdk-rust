@@ -147,6 +147,8 @@ pub use crate::types::_feature_definition::FeatureDefinitionBuilder;
 
 pub use crate::types::_desired_weight_and_capacity::DesiredWeightAndCapacityBuilder;
 
+pub use crate::types::_production_variant_serverless_update_config::ProductionVariantServerlessUpdateConfigBuilder;
+
 pub use crate::types::_deployment_config::DeploymentConfigBuilder;
 
 pub use crate::types::_auto_rollback_config::AutoRollbackConfigBuilder;

@@ -6,7 +6,7 @@
 pub struct InputLossBehavior {
     /// Documentation update needed
     #[doc(hidden)]
-    pub black_frame_msec: i32,
+    pub black_frame_msec: std::option::Option<i32>,
     /// When input loss image type is "color" this field specifies the color to use. Value: 6 hex characters representing the values of RGB.
     #[doc(hidden)]
     pub input_loss_image_color: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct InputLossBehavior {
     pub input_loss_image_type: std::option::Option<crate::types::InputLossImageType>,
     /// Documentation update needed
     #[doc(hidden)]
-    pub repeat_frame_msec: i32,
+    pub repeat_frame_msec: std::option::Option<i32>,
 }
 impl InputLossBehavior {
     /// Documentation update needed
-    pub fn black_frame_msec(&self) -> i32 {
+    pub fn black_frame_msec(&self) -> std::option::Option<i32> {
         self.black_frame_msec
     }
     /// When input loss image type is "color" this field specifies the color to use. Value: 6 hex characters representing the values of RGB.
@@ -38,7 +38,7 @@ impl InputLossBehavior {
         self.input_loss_image_type.as_ref()
     }
     /// Documentation update needed
-    pub fn repeat_frame_msec(&self) -> i32 {
+    pub fn repeat_frame_msec(&self) -> std::option::Option<i32> {
         self.repeat_frame_msec
     }
 }
@@ -122,11 +122,11 @@ impl InputLossBehaviorBuilder {
     /// Consumes the builder and constructs a [`InputLossBehavior`](crate::types::InputLossBehavior).
     pub fn build(self) -> crate::types::InputLossBehavior {
         crate::types::InputLossBehavior {
-            black_frame_msec: self.black_frame_msec.unwrap_or_default(),
+            black_frame_msec: self.black_frame_msec,
             input_loss_image_color: self.input_loss_image_color,
             input_loss_image_slate: self.input_loss_image_slate,
             input_loss_image_type: self.input_loss_image_type,
-            repeat_frame_msec: self.repeat_frame_msec.unwrap_or_default(),
+            repeat_frame_msec: self.repeat_frame_msec,
         }
     }
 }

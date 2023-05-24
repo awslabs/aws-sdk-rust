@@ -12,7 +12,7 @@ pub struct AdmChannelRequest {
     pub client_secret: std::option::Option<std::string::String>,
     /// <p>Specifies whether to enable the ADM channel for the application.</p>
     #[doc(hidden)]
-    pub enabled: bool,
+    pub enabled: std::option::Option<bool>,
 }
 impl AdmChannelRequest {
     /// <p>The Client ID that you received from Amazon to send messages by using ADM.</p>
@@ -24,7 +24,7 @@ impl AdmChannelRequest {
         self.client_secret.as_deref()
     }
     /// <p>Specifies whether to enable the ADM channel for the application.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
 }
@@ -79,7 +79,7 @@ impl AdmChannelRequestBuilder {
         crate::types::AdmChannelRequest {
             client_id: self.client_id,
             client_secret: self.client_secret,
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled,
         }
     }
 }

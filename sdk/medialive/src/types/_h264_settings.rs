@@ -12,13 +12,13 @@ pub struct H264Settings {
     pub afd_signaling: std::option::Option<crate::types::AfdSignaling>,
     /// Average bitrate in bits/second. Required when the rate control mode is VBR or CBR. Not used for QVBR. In an MS Smooth output group, each output must have a unique value when its bitrate is rounded down to the nearest multiple of 1000.
     #[doc(hidden)]
-    pub bitrate: i32,
+    pub bitrate: std::option::Option<i32>,
     /// Percentage of the buffer that should initially be filled (HRD buffer model).
     #[doc(hidden)]
-    pub buf_fill_pct: i32,
+    pub buf_fill_pct: std::option::Option<i32>,
     /// Size of buffer (HRD buffer model) in bits.
     #[doc(hidden)]
-    pub buf_size: i32,
+    pub buf_size: std::option::Option<i32>,
     /// Includes colorspace metadata in the output.
     #[doc(hidden)]
     pub color_metadata: std::option::Option<crate::types::H264ColorMetadata>,
@@ -45,22 +45,22 @@ pub struct H264Settings {
     pub framerate_control: std::option::Option<crate::types::H264FramerateControl>,
     /// Framerate denominator.
     #[doc(hidden)]
-    pub framerate_denominator: i32,
+    pub framerate_denominator: std::option::Option<i32>,
     /// Framerate numerator - framerate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
     #[doc(hidden)]
-    pub framerate_numerator: i32,
+    pub framerate_numerator: std::option::Option<i32>,
     /// Documentation update needed
     #[doc(hidden)]
     pub gop_b_reference: std::option::Option<crate::types::H264GopBReference>,
     /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
     #[doc(hidden)]
-    pub gop_closed_cadence: i32,
+    pub gop_closed_cadence: std::option::Option<i32>,
     /// Number of B-frames between reference frames.
     #[doc(hidden)]
-    pub gop_num_b_frames: i32,
+    pub gop_num_b_frames: std::option::Option<i32>,
     /// GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. If gopSizeUnits is frames, gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds, gopSize must be greater than 0, but need not be an integer.
     #[doc(hidden)]
-    pub gop_size: f64,
+    pub gop_size: std::option::Option<f64>,
     /// Indicates if the gopSize is specified in frames or seconds. If seconds the system will convert the gopSize into a frame count at run time.
     #[doc(hidden)]
     pub gop_size_units: std::option::Option<crate::types::H264GopSizeUnits>,
@@ -72,22 +72,22 @@ pub struct H264Settings {
     pub look_ahead_rate_control: std::option::Option<crate::types::H264LookAheadRateControl>,
     /// For QVBR: See the tooltip for Quality level For VBR: Set the maximum bitrate in order to accommodate expected spikes in the complexity of the video.
     #[doc(hidden)]
-    pub max_bitrate: i32,
+    pub max_bitrate: std::option::Option<i32>,
     /// Only meaningful if sceneChangeDetect is set to enabled. Defaults to 5 if multiplex rate control is used. Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
     #[doc(hidden)]
-    pub min_i_interval: i32,
+    pub min_i_interval: std::option::Option<i32>,
     /// Number of reference frames to use. The encoder may use more than requested if using B-frames and/or interlaced encoding.
     #[doc(hidden)]
-    pub num_ref_frames: i32,
+    pub num_ref_frames: std::option::Option<i32>,
     /// This field indicates how the output pixel aspect ratio is specified. If "specified" is selected then the output video pixel aspect ratio is determined by parNumerator and parDenominator, else if "initializeFromSource" is selected then the output pixsel aspect ratio will be set equal to the input video pixel aspect ratio of the first input.
     #[doc(hidden)]
     pub par_control: std::option::Option<crate::types::H264ParControl>,
     /// Pixel Aspect Ratio denominator.
     #[doc(hidden)]
-    pub par_denominator: i32,
+    pub par_denominator: std::option::Option<i32>,
     /// Pixel Aspect Ratio numerator.
     #[doc(hidden)]
-    pub par_numerator: i32,
+    pub par_numerator: std::option::Option<i32>,
     /// H.264 Profile.
     #[doc(hidden)]
     pub profile: std::option::Option<crate::types::H264Profile>,
@@ -96,7 +96,7 @@ pub struct H264Settings {
     pub quality_level: std::option::Option<crate::types::H264QualityLevel>,
     /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. You can set a target quality or you can let MediaLive determine the best quality. To set a target quality, enter values in the QVBR quality level field and the Max bitrate field. Enter values that suit your most important viewing devices. Recommended values are: - Primary screen: Quality level: 8 to 10. Max bitrate: 4M - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M To let MediaLive decide, leave the QVBR quality level field empty, and in Max bitrate enter the maximum rate you want in the video. For more information, see the section called "Video - rate control mode" in the MediaLive user guide
     #[doc(hidden)]
-    pub qvbr_quality_level: i32,
+    pub qvbr_quality_level: std::option::Option<i32>,
     /// Rate control mode. QVBR: Quality will match the specified quality level except when it is constrained by the maximum bitrate. Recommended if you or your viewers pay for bandwidth. VBR: Quality and bitrate vary, depending on the video complexity. Recommended instead of QVBR if you want to maintain a specific average bitrate over the duration of the channel. CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices that cannot handle variable bitrates. Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the Multiplex Program.
     #[doc(hidden)]
     pub rate_control_mode: std::option::Option<crate::types::H264RateControlMode>,
@@ -108,10 +108,10 @@ pub struct H264Settings {
     pub scene_change_detect: std::option::Option<crate::types::H264SceneChangeDetect>,
     /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures. This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
     #[doc(hidden)]
-    pub slices: i32,
+    pub slices: std::option::Option<i32>,
     /// Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image. If not set to zero, must be greater than 15.
     #[doc(hidden)]
-    pub softness: i32,
+    pub softness: std::option::Option<i32>,
     /// Spatial AQ makes adjustments within each frame based on spatial variation of content complexity. The value to enter in this field depends on the value in the Adaptive quantization field: If you have set the Adaptive quantization field to Auto, MediaLive ignores any value in this field. MediaLive will determine if spatial AQ is appropriate and will apply the appropriate strength. If you have set the Adaptive quantization field to a strength, you can set this field to Enabled or Disabled. Enabled: MediaLive will apply spatial AQ using the specified strength. Disabled: MediaLive won't apply spatial AQ. If you have set the Adaptive quantization to Disabled, MediaLive ignores any value in this field and doesn't apply spatial AQ.
     #[doc(hidden)]
     pub spatial_aq: std::option::Option<crate::types::H264SpatialAq>,
@@ -143,15 +143,15 @@ impl H264Settings {
         self.afd_signaling.as_ref()
     }
     /// Average bitrate in bits/second. Required when the rate control mode is VBR or CBR. Not used for QVBR. In an MS Smooth output group, each output must have a unique value when its bitrate is rounded down to the nearest multiple of 1000.
-    pub fn bitrate(&self) -> i32 {
+    pub fn bitrate(&self) -> std::option::Option<i32> {
         self.bitrate
     }
     /// Percentage of the buffer that should initially be filled (HRD buffer model).
-    pub fn buf_fill_pct(&self) -> i32 {
+    pub fn buf_fill_pct(&self) -> std::option::Option<i32> {
         self.buf_fill_pct
     }
     /// Size of buffer (HRD buffer model) in bits.
-    pub fn buf_size(&self) -> i32 {
+    pub fn buf_size(&self) -> std::option::Option<i32> {
         self.buf_size
     }
     /// Includes colorspace metadata in the output.
@@ -191,11 +191,11 @@ impl H264Settings {
         self.framerate_control.as_ref()
     }
     /// Framerate denominator.
-    pub fn framerate_denominator(&self) -> i32 {
+    pub fn framerate_denominator(&self) -> std::option::Option<i32> {
         self.framerate_denominator
     }
     /// Framerate numerator - framerate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
-    pub fn framerate_numerator(&self) -> i32 {
+    pub fn framerate_numerator(&self) -> std::option::Option<i32> {
         self.framerate_numerator
     }
     /// Documentation update needed
@@ -203,15 +203,15 @@ impl H264Settings {
         self.gop_b_reference.as_ref()
     }
     /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
-    pub fn gop_closed_cadence(&self) -> i32 {
+    pub fn gop_closed_cadence(&self) -> std::option::Option<i32> {
         self.gop_closed_cadence
     }
     /// Number of B-frames between reference frames.
-    pub fn gop_num_b_frames(&self) -> i32 {
+    pub fn gop_num_b_frames(&self) -> std::option::Option<i32> {
         self.gop_num_b_frames
     }
     /// GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. If gopSizeUnits is frames, gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds, gopSize must be greater than 0, but need not be an integer.
-    pub fn gop_size(&self) -> f64 {
+    pub fn gop_size(&self) -> std::option::Option<f64> {
         self.gop_size
     }
     /// Indicates if the gopSize is specified in frames or seconds. If seconds the system will convert the gopSize into a frame count at run time.
@@ -229,15 +229,15 @@ impl H264Settings {
         self.look_ahead_rate_control.as_ref()
     }
     /// For QVBR: See the tooltip for Quality level For VBR: Set the maximum bitrate in order to accommodate expected spikes in the complexity of the video.
-    pub fn max_bitrate(&self) -> i32 {
+    pub fn max_bitrate(&self) -> std::option::Option<i32> {
         self.max_bitrate
     }
     /// Only meaningful if sceneChangeDetect is set to enabled. Defaults to 5 if multiplex rate control is used. Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
-    pub fn min_i_interval(&self) -> i32 {
+    pub fn min_i_interval(&self) -> std::option::Option<i32> {
         self.min_i_interval
     }
     /// Number of reference frames to use. The encoder may use more than requested if using B-frames and/or interlaced encoding.
-    pub fn num_ref_frames(&self) -> i32 {
+    pub fn num_ref_frames(&self) -> std::option::Option<i32> {
         self.num_ref_frames
     }
     /// This field indicates how the output pixel aspect ratio is specified. If "specified" is selected then the output video pixel aspect ratio is determined by parNumerator and parDenominator, else if "initializeFromSource" is selected then the output pixsel aspect ratio will be set equal to the input video pixel aspect ratio of the first input.
@@ -245,11 +245,11 @@ impl H264Settings {
         self.par_control.as_ref()
     }
     /// Pixel Aspect Ratio denominator.
-    pub fn par_denominator(&self) -> i32 {
+    pub fn par_denominator(&self) -> std::option::Option<i32> {
         self.par_denominator
     }
     /// Pixel Aspect Ratio numerator.
-    pub fn par_numerator(&self) -> i32 {
+    pub fn par_numerator(&self) -> std::option::Option<i32> {
         self.par_numerator
     }
     /// H.264 Profile.
@@ -261,7 +261,7 @@ impl H264Settings {
         self.quality_level.as_ref()
     }
     /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. You can set a target quality or you can let MediaLive determine the best quality. To set a target quality, enter values in the QVBR quality level field and the Max bitrate field. Enter values that suit your most important viewing devices. Recommended values are: - Primary screen: Quality level: 8 to 10. Max bitrate: 4M - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M To let MediaLive decide, leave the QVBR quality level field empty, and in Max bitrate enter the maximum rate you want in the video. For more information, see the section called "Video - rate control mode" in the MediaLive user guide
-    pub fn qvbr_quality_level(&self) -> i32 {
+    pub fn qvbr_quality_level(&self) -> std::option::Option<i32> {
         self.qvbr_quality_level
     }
     /// Rate control mode. QVBR: Quality will match the specified quality level except when it is constrained by the maximum bitrate. Recommended if you or your viewers pay for bandwidth. VBR: Quality and bitrate vary, depending on the video complexity. Recommended instead of QVBR if you want to maintain a specific average bitrate over the duration of the channel. CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices that cannot handle variable bitrates. Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the Multiplex Program.
@@ -277,11 +277,11 @@ impl H264Settings {
         self.scene_change_detect.as_ref()
     }
     /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures. This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
-    pub fn slices(&self) -> i32 {
+    pub fn slices(&self) -> std::option::Option<i32> {
         self.slices
     }
     /// Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image. If not set to zero, must be greater than 15.
-    pub fn softness(&self) -> i32 {
+    pub fn softness(&self) -> std::option::Option<i32> {
         self.softness
     }
     /// Spatial AQ makes adjustments within each frame based on spatial variation of content complexity. The value to enter in this field depends on the value in the Adaptive quantization field: If you have set the Adaptive quantization field to Auto, MediaLive ignores any value in this field. MediaLive will determine if spatial AQ is appropriate and will apply the appropriate strength. If you have set the Adaptive quantization field to a strength, you can set this field to Enabled or Disabled. Enabled: MediaLive will apply spatial AQ using the specified strength. Disabled: MediaLive won't apply spatial AQ. If you have set the Adaptive quantization to Disabled, MediaLive ignores any value in this field and doesn't apply spatial AQ.
@@ -862,9 +862,9 @@ impl H264SettingsBuilder {
         crate::types::H264Settings {
             adaptive_quantization: self.adaptive_quantization,
             afd_signaling: self.afd_signaling,
-            bitrate: self.bitrate.unwrap_or_default(),
-            buf_fill_pct: self.buf_fill_pct.unwrap_or_default(),
-            buf_size: self.buf_size.unwrap_or_default(),
+            bitrate: self.bitrate,
+            buf_fill_pct: self.buf_fill_pct,
+            buf_size: self.buf_size,
             color_metadata: self.color_metadata,
             color_space_settings: self.color_space_settings,
             entropy_encoding: self.entropy_encoding,
@@ -873,29 +873,29 @@ impl H264SettingsBuilder {
             flicker_aq: self.flicker_aq,
             force_field_pictures: self.force_field_pictures,
             framerate_control: self.framerate_control,
-            framerate_denominator: self.framerate_denominator.unwrap_or_default(),
-            framerate_numerator: self.framerate_numerator.unwrap_or_default(),
+            framerate_denominator: self.framerate_denominator,
+            framerate_numerator: self.framerate_numerator,
             gop_b_reference: self.gop_b_reference,
-            gop_closed_cadence: self.gop_closed_cadence.unwrap_or_default(),
-            gop_num_b_frames: self.gop_num_b_frames.unwrap_or_default(),
-            gop_size: self.gop_size.unwrap_or_default(),
+            gop_closed_cadence: self.gop_closed_cadence,
+            gop_num_b_frames: self.gop_num_b_frames,
+            gop_size: self.gop_size,
             gop_size_units: self.gop_size_units,
             level: self.level,
             look_ahead_rate_control: self.look_ahead_rate_control,
-            max_bitrate: self.max_bitrate.unwrap_or_default(),
-            min_i_interval: self.min_i_interval.unwrap_or_default(),
-            num_ref_frames: self.num_ref_frames.unwrap_or_default(),
+            max_bitrate: self.max_bitrate,
+            min_i_interval: self.min_i_interval,
+            num_ref_frames: self.num_ref_frames,
             par_control: self.par_control,
-            par_denominator: self.par_denominator.unwrap_or_default(),
-            par_numerator: self.par_numerator.unwrap_or_default(),
+            par_denominator: self.par_denominator,
+            par_numerator: self.par_numerator,
             profile: self.profile,
             quality_level: self.quality_level,
-            qvbr_quality_level: self.qvbr_quality_level.unwrap_or_default(),
+            qvbr_quality_level: self.qvbr_quality_level,
             rate_control_mode: self.rate_control_mode,
             scan_type: self.scan_type,
             scene_change_detect: self.scene_change_detect,
-            slices: self.slices.unwrap_or_default(),
-            softness: self.softness.unwrap_or_default(),
+            slices: self.slices,
+            softness: self.softness,
             spatial_aq: self.spatial_aq,
             subgop_length: self.subgop_length,
             syntax: self.syntax,

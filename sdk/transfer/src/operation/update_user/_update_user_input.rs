@@ -33,7 +33,7 @@ pub struct UpdateUserInput {
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
-    /// <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
+    /// <p>A system-assigned unique identifier for a Transfer Family server instance that the user is assigned to.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
     /// <p>A unique string that identifies a user and is associated with a server as specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen, period, or at sign.</p>
@@ -78,7 +78,7 @@ impl UpdateUserInput {
     pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
-    /// <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
+    /// <p>A system-assigned unique identifier for a Transfer Family server instance that the user is assigned to.</p>
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
@@ -206,12 +206,12 @@ impl UpdateUserInputBuilder {
         self.role = input;
         self
     }
-    /// <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
+    /// <p>A system-assigned unique identifier for a Transfer Family server instance that the user is assigned to.</p>
     pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.server_id = Some(input.into());
         self
     }
-    /// <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
+    /// <p>A system-assigned unique identifier for a Transfer Family server instance that the user is assigned to.</p>
     pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.server_id = input;
         self

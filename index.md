@@ -262,6 +262,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon MemoryDB | [aws-sdk-memorydb](https://crates.io/crates/aws-sdk-memorydb) ([docs](https://docs.rs/aws-sdk-memorydb)) |
 | Amazon Neptune | [aws-sdk-neptune](https://crates.io/crates/aws-sdk-neptune) ([docs](https://docs.rs/aws-sdk-neptune)) |
 | Amazon Omics | [aws-sdk-omics](https://crates.io/crates/aws-sdk-omics) ([docs](https://docs.rs/aws-sdk-omics)) |
+| Amazon OpenSearch Ingestion | [aws-sdk-osis](https://crates.io/crates/aws-sdk-osis) ([docs](https://docs.rs/aws-sdk-osis)) |
 | Amazon OpenSearch Service | [aws-sdk-opensearch](https://crates.io/crates/aws-sdk-opensearch) ([docs](https://docs.rs/aws-sdk-opensearch)) |
 | Amazon Personalize | [aws-sdk-personalize](https://crates.io/crates/aws-sdk-personalize) ([docs](https://docs.rs/aws-sdk-personalize)) |
 | Amazon Personalize Events | [aws-sdk-personalizeevents](https://crates.io/crates/aws-sdk-personalizeevents) ([docs](https://docs.rs/aws-sdk-personalizeevents)) |

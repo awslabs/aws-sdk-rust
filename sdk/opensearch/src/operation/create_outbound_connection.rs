@@ -165,7 +165,7 @@ pub type CreateOutboundConnectionErrorKind = CreateOutboundConnectionError;
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateOutboundConnectionError {
-    /// <p>An error occured because the client wanted to access a not supported operation.</p>
+    /// <p>An error occured because the client wanted to access an unsupported operation.</p>
     DisabledOperationException(crate::types::error::DisabledOperationException),
     /// <p>Request processing failed because of an unknown error, exception, or internal failure.</p>
     InternalException(crate::types::error::InternalException),

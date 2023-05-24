@@ -6,11 +6,11 @@ pub fn ser_s3(
     if let Some(var_1) = &input.bucket {
         object.key("bucket").string(var_1.as_str());
     }
-    {
-        object.key("enabled").boolean(input.enabled);
+    if let Some(var_2) = &input.enabled {
+        object.key("enabled").boolean(*var_2);
     }
-    if let Some(var_2) = &input.prefix {
-        object.key("prefix").string(var_2.as_str());
+    if let Some(var_3) = &input.prefix {
+        object.key("prefix").string(var_3.as_str());
     }
     Ok(())
 }

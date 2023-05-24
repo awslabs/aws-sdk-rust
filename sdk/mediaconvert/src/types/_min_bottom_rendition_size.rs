@@ -6,18 +6,18 @@
 pub struct MinBottomRenditionSize {
     /// Use Height to define the video resolution height, in pixels, for this rule.
     #[doc(hidden)]
-    pub height: i32,
+    pub height: std::option::Option<i32>,
     /// Use Width to define the video resolution width, in pixels, for this rule.
     #[doc(hidden)]
-    pub width: i32,
+    pub width: std::option::Option<i32>,
 }
 impl MinBottomRenditionSize {
     /// Use Height to define the video resolution height, in pixels, for this rule.
-    pub fn height(&self) -> i32 {
+    pub fn height(&self) -> std::option::Option<i32> {
         self.height
     }
     /// Use Width to define the video resolution width, in pixels, for this rule.
-    pub fn width(&self) -> i32 {
+    pub fn width(&self) -> std::option::Option<i32> {
         self.width
     }
 }
@@ -59,8 +59,8 @@ impl MinBottomRenditionSizeBuilder {
     /// Consumes the builder and constructs a [`MinBottomRenditionSize`](crate::types::MinBottomRenditionSize).
     pub fn build(self) -> crate::types::MinBottomRenditionSize {
         crate::types::MinBottomRenditionSize {
-            height: self.height.unwrap_or_default(),
-            width: self.width.unwrap_or_default(),
+            height: self.height,
+            width: self.width,
         }
     }
 }

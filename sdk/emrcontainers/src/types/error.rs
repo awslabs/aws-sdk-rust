@@ -5,7 +5,11 @@ pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExce
 
 pub use crate::types::error::_internal_server_exception::InternalServerException;
 
+pub use crate::types::error::_request_throttled_exception::RequestThrottledException;
+
 mod _internal_server_exception;
+
+mod _request_throttled_exception;
 
 mod _resource_not_found_exception;
 

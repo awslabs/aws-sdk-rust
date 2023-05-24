@@ -9,16 +9,16 @@ pub struct HlsManifest {
     pub ad_markers: std::option::Option<crate::types::AdMarkers>,
     /// When enabled, an I-Frame only stream will be included in the output.
     #[doc(hidden)]
-    pub include_iframe_only_stream: bool,
+    pub include_iframe_only_stream: std::option::Option<bool>,
     /// An optional string to include in the name of the manifest.
     #[doc(hidden)]
     pub manifest_name: std::option::Option<std::string::String>,
     /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag inserted into manifests. Additionally, when an interval is specified ID3Timed Metadata messages will be generated every 5 seconds using the ingest time of the content. If the interval is not specified, or set to 0, then no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no ID3Timed Metadata messages will be generated. Note that irrespective of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input, it will be passed through to HLS output.
     #[doc(hidden)]
-    pub program_date_time_interval_seconds: i32,
+    pub program_date_time_interval_seconds: std::option::Option<i32>,
     /// When enabled, the EXT-X-KEY tag will be repeated in output manifests.
     #[doc(hidden)]
-    pub repeat_ext_x_key: bool,
+    pub repeat_ext_x_key: std::option::Option<bool>,
     /// A StreamSelection configuration.
     #[doc(hidden)]
     pub stream_selection: std::option::Option<crate::types::StreamSelection>,
@@ -29,7 +29,7 @@ impl HlsManifest {
         self.ad_markers.as_ref()
     }
     /// When enabled, an I-Frame only stream will be included in the output.
-    pub fn include_iframe_only_stream(&self) -> bool {
+    pub fn include_iframe_only_stream(&self) -> std::option::Option<bool> {
         self.include_iframe_only_stream
     }
     /// An optional string to include in the name of the manifest.
@@ -37,11 +37,11 @@ impl HlsManifest {
         self.manifest_name.as_deref()
     }
     /// The interval (in seconds) between each EXT-X-PROGRAM-DATE-TIME tag inserted into manifests. Additionally, when an interval is specified ID3Timed Metadata messages will be generated every 5 seconds using the ingest time of the content. If the interval is not specified, or set to 0, then no EXT-X-PROGRAM-DATE-TIME tags will be inserted into manifests and no ID3Timed Metadata messages will be generated. Note that irrespective of this parameter, if any ID3 Timed Metadata is found in HTTP Live Streaming (HLS) input, it will be passed through to HLS output.
-    pub fn program_date_time_interval_seconds(&self) -> i32 {
+    pub fn program_date_time_interval_seconds(&self) -> std::option::Option<i32> {
         self.program_date_time_interval_seconds
     }
     /// When enabled, the EXT-X-KEY tag will be repeated in output manifests.
-    pub fn repeat_ext_x_key(&self) -> bool {
+    pub fn repeat_ext_x_key(&self) -> std::option::Option<bool> {
         self.repeat_ext_x_key
     }
     /// A StreamSelection configuration.
@@ -138,12 +138,10 @@ impl HlsManifestBuilder {
     pub fn build(self) -> crate::types::HlsManifest {
         crate::types::HlsManifest {
             ad_markers: self.ad_markers,
-            include_iframe_only_stream: self.include_iframe_only_stream.unwrap_or_default(),
+            include_iframe_only_stream: self.include_iframe_only_stream,
             manifest_name: self.manifest_name,
-            program_date_time_interval_seconds: self
-                .program_date_time_interval_seconds
-                .unwrap_or_default(),
-            repeat_ext_x_key: self.repeat_ext_x_key.unwrap_or_default(),
+            program_date_time_interval_seconds: self.program_date_time_interval_seconds,
+            repeat_ext_x_key: self.repeat_ext_x_key,
             stream_selection: self.stream_selection,
         }
     }

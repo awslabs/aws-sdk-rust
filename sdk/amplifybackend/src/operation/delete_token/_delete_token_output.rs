@@ -5,12 +5,12 @@
 pub struct DeleteTokenOutput {
     /// <p>Indicates whether the request succeeded or failed.</p>
     #[doc(hidden)]
-    pub is_success: bool,
+    pub is_success: std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DeleteTokenOutput {
     /// <p>Indicates whether the request succeeded or failed.</p>
-    pub fn is_success(&self) -> bool {
+    pub fn is_success(&self) -> std::option::Option<bool> {
         self.is_success
     }
 }
@@ -56,7 +56,7 @@ impl DeleteTokenOutputBuilder {
     /// Consumes the builder and constructs a [`DeleteTokenOutput`](crate::operation::delete_token::DeleteTokenOutput).
     pub fn build(self) -> crate::operation::delete_token::DeleteTokenOutput {
         crate::operation::delete_token::DeleteTokenOutput {
-            is_success: self.is_success.unwrap_or_default(),
+            is_success: self.is_success,
             _request_id: self._request_id,
         }
     }

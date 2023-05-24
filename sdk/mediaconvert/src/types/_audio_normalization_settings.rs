@@ -12,7 +12,7 @@ pub struct AudioNormalizationSettings {
     pub algorithm_control: std::option::Option<crate::types::AudioNormalizationAlgorithmControl>,
     /// Content measuring above this level will be corrected to the target level. Content measuring below this level will not be corrected.
     #[doc(hidden)]
-    pub correction_gate_level: i32,
+    pub correction_gate_level: std::option::Option<i32>,
     /// If set to LOG, log each output's audio track loudness to a CSV file.
     #[doc(hidden)]
     pub loudness_logging: std::option::Option<crate::types::AudioNormalizationLoudnessLogging>,
@@ -21,10 +21,10 @@ pub struct AudioNormalizationSettings {
     pub peak_calculation: std::option::Option<crate::types::AudioNormalizationPeakCalculation>,
     /// When you use Audio normalization (AudioNormalizationSettings), optionally use this setting to specify a target loudness. If you don't specify a value here, the encoder chooses a value for you, based on the algorithm that you choose for Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
     #[doc(hidden)]
-    pub target_lkfs: f64,
+    pub target_lkfs: std::option::Option<f64>,
     /// Specify the True-peak limiter threshold in decibels relative to full scale (dBFS). The peak inter-audio sample loudness in your output will be limited to the value that you specify, without affecting the overall target LKFS. Enter a value from 0 to -8. Leave blank to use the default value 0.
     #[doc(hidden)]
-    pub true_peak_limiter_threshold: f64,
+    pub true_peak_limiter_threshold: std::option::Option<f64>,
 }
 impl AudioNormalizationSettings {
     /// Choose one of the following audio normalization algorithms: ITU-R BS.1770-1: Ungated loudness. A measurement of ungated average loudness for an entire piece of content, suitable for measurement of short-form content under ATSC recommendation A/85. Supports up to 5.1 audio channels. ITU-R BS.1770-2: Gated loudness. A measurement of gated average loudness compliant with the requirements of EBU-R128. Supports up to 5.1 audio channels. ITU-R BS.1770-3: Modified peak. The same loudness measurement algorithm as 1770-2, with an updated true peak measurement. ITU-R BS.1770-4: Higher channel count. Allows for more audio channels than the other algorithms, including configurations such as 7.1.
@@ -38,7 +38,7 @@ impl AudioNormalizationSettings {
         self.algorithm_control.as_ref()
     }
     /// Content measuring above this level will be corrected to the target level. Content measuring below this level will not be corrected.
-    pub fn correction_gate_level(&self) -> i32 {
+    pub fn correction_gate_level(&self) -> std::option::Option<i32> {
         self.correction_gate_level
     }
     /// If set to LOG, log each output's audio track loudness to a CSV file.
@@ -54,11 +54,11 @@ impl AudioNormalizationSettings {
         self.peak_calculation.as_ref()
     }
     /// When you use Audio normalization (AudioNormalizationSettings), optionally use this setting to specify a target loudness. If you don't specify a value here, the encoder chooses a value for you, based on the algorithm that you choose for Algorithm (algorithm). If you choose algorithm 1770-1, the encoder will choose -24 LKFS; otherwise, the encoder will choose -23 LKFS.
-    pub fn target_lkfs(&self) -> f64 {
+    pub fn target_lkfs(&self) -> std::option::Option<f64> {
         self.target_lkfs
     }
     /// Specify the True-peak limiter threshold in decibels relative to full scale (dBFS). The peak inter-audio sample loudness in your output will be limited to the value that you specify, without affecting the overall target LKFS. Enter a value from 0 to -8. Leave blank to use the default value 0.
-    pub fn true_peak_limiter_threshold(&self) -> f64 {
+    pub fn true_peak_limiter_threshold(&self) -> std::option::Option<f64> {
         self.true_peak_limiter_threshold
     }
 }
@@ -181,11 +181,11 @@ impl AudioNormalizationSettingsBuilder {
         crate::types::AudioNormalizationSettings {
             algorithm: self.algorithm,
             algorithm_control: self.algorithm_control,
-            correction_gate_level: self.correction_gate_level.unwrap_or_default(),
+            correction_gate_level: self.correction_gate_level,
             loudness_logging: self.loudness_logging,
             peak_calculation: self.peak_calculation,
-            target_lkfs: self.target_lkfs.unwrap_or_default(),
-            true_peak_limiter_threshold: self.true_peak_limiter_threshold.unwrap_or_default(),
+            target_lkfs: self.target_lkfs,
+            true_peak_limiter_threshold: self.true_peak_limiter_threshold,
         }
     }
 }

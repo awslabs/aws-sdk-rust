@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct InputTemplate {
-    /// Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before encoding. The Advanced input filter removes more types of compression artifacts and is an improvement when compared to basic Deblock and Denoise filters. To remove video compression artifacts from your input and improve the video quality: Choose Enabled. Additionally, this filter can help increase the video quality of your output relative to its bitrate, since noisy inputs are more complex and require more bits to encode. To help restore loss of detail after applying the filter, you can optionally add texture or sharpening as an additional step.Jobs that use this feature incur pro-tier pricing. To not apply advanced input filtering: Choose Disabled. Note that you can still apply basic filtering with Deblock and Denoise.
+    /// Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before encoding. The Advanced input filter removes more types of compression artifacts and is an improvement when compared to basic Deblock and Denoise filters. To remove video compression artifacts from your input and improve the video quality: Choose Enabled. Additionally, this filter can help increase the video quality of your output relative to its bitrate, since noisy inputs are more complex and require more bits to encode. To help restore loss of detail after applying the filter, you can optionally add texture or sharpening as an additional step. Jobs that use this feature incur pro-tier pricing. To not apply advanced input filtering: Choose Disabled. Note that you can still apply basic filtering with Deblock and Denoise.
     #[doc(hidden)]
     pub advanced_input_filter: std::option::Option<crate::types::AdvancedInputFilter>,
     /// Optional settings for Advanced input filter when you set Advanced input filter to Enabled.
@@ -43,7 +43,7 @@ pub struct InputTemplate {
     pub filter_enable: std::option::Option<crate::types::InputFilterEnable>,
     /// Specify the strength of the input filter. To apply an automatic amount of filtering based the compression artifacts measured in your input: We recommend that you leave Filter strength blank and set Filter enable to Auto. To manually apply filtering: Enter a value from 1 to 5, where 1 is the least amount of filtering and 5 is the most. The value that you enter applies to the strength of the Deblock or Denoise filters, or to the strength of the Advanced input filter.
     #[doc(hidden)]
-    pub filter_strength: i32,
+    pub filter_strength: std::option::Option<i32>,
     /// Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for each input individually. This setting is disabled by default.
     #[doc(hidden)]
     pub image_inserter: std::option::Option<crate::types::ImageInserter>,
@@ -58,7 +58,7 @@ pub struct InputTemplate {
     pub position: std::option::Option<crate::types::Rectangle>,
     /// Use Program (programNumber) to select a specific program from within a multi-program transport stream. Note that Quad 4K is not currently supported. Default is the first program within the transport stream. If the program you specify doesn't exist, the transcoding service will use this default.
     #[doc(hidden)]
-    pub program_number: i32,
+    pub program_number: std::option::Option<i32>,
     /// Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to scans. * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
     #[doc(hidden)]
     pub psi_control: std::option::Option<crate::types::InputPsiControl>,
@@ -73,7 +73,7 @@ pub struct InputTemplate {
     pub video_selector: std::option::Option<crate::types::VideoSelector>,
 }
 impl InputTemplate {
-    /// Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before encoding. The Advanced input filter removes more types of compression artifacts and is an improvement when compared to basic Deblock and Denoise filters. To remove video compression artifacts from your input and improve the video quality: Choose Enabled. Additionally, this filter can help increase the video quality of your output relative to its bitrate, since noisy inputs are more complex and require more bits to encode. To help restore loss of detail after applying the filter, you can optionally add texture or sharpening as an additional step.Jobs that use this feature incur pro-tier pricing. To not apply advanced input filtering: Choose Disabled. Note that you can still apply basic filtering with Deblock and Denoise.
+    /// Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before encoding. The Advanced input filter removes more types of compression artifacts and is an improvement when compared to basic Deblock and Denoise filters. To remove video compression artifacts from your input and improve the video quality: Choose Enabled. Additionally, this filter can help increase the video quality of your output relative to its bitrate, since noisy inputs are more complex and require more bits to encode. To help restore loss of detail after applying the filter, you can optionally add texture or sharpening as an additional step. Jobs that use this feature incur pro-tier pricing. To not apply advanced input filtering: Choose Disabled. Note that you can still apply basic filtering with Deblock and Denoise.
     pub fn advanced_input_filter(&self) -> std::option::Option<&crate::types::AdvancedInputFilter> {
         self.advanced_input_filter.as_ref()
     }
@@ -128,7 +128,7 @@ impl InputTemplate {
         self.filter_enable.as_ref()
     }
     /// Specify the strength of the input filter. To apply an automatic amount of filtering based the compression artifacts measured in your input: We recommend that you leave Filter strength blank and set Filter enable to Auto. To manually apply filtering: Enter a value from 1 to 5, where 1 is the least amount of filtering and 5 is the most. The value that you enter applies to the strength of the Deblock or Denoise filters, or to the strength of the Advanced input filter.
-    pub fn filter_strength(&self) -> i32 {
+    pub fn filter_strength(&self) -> std::option::Option<i32> {
         self.filter_strength
     }
     /// Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for each input individually. This setting is disabled by default.
@@ -148,7 +148,7 @@ impl InputTemplate {
         self.position.as_ref()
     }
     /// Use Program (programNumber) to select a specific program from within a multi-program transport stream. Note that Quad 4K is not currently supported. Default is the first program within the transport stream. If the program you specify doesn't exist, the transcoding service will use this default.
-    pub fn program_number(&self) -> i32 {
+    pub fn program_number(&self) -> std::option::Option<i32> {
         self.program_number
     }
     /// Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to scans. * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
@@ -208,12 +208,12 @@ pub struct InputTemplateBuilder {
     pub(crate) video_selector: std::option::Option<crate::types::VideoSelector>,
 }
 impl InputTemplateBuilder {
-    /// Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before encoding. The Advanced input filter removes more types of compression artifacts and is an improvement when compared to basic Deblock and Denoise filters. To remove video compression artifacts from your input and improve the video quality: Choose Enabled. Additionally, this filter can help increase the video quality of your output relative to its bitrate, since noisy inputs are more complex and require more bits to encode. To help restore loss of detail after applying the filter, you can optionally add texture or sharpening as an additional step.Jobs that use this feature incur pro-tier pricing. To not apply advanced input filtering: Choose Disabled. Note that you can still apply basic filtering with Deblock and Denoise.
+    /// Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before encoding. The Advanced input filter removes more types of compression artifacts and is an improvement when compared to basic Deblock and Denoise filters. To remove video compression artifacts from your input and improve the video quality: Choose Enabled. Additionally, this filter can help increase the video quality of your output relative to its bitrate, since noisy inputs are more complex and require more bits to encode. To help restore loss of detail after applying the filter, you can optionally add texture or sharpening as an additional step. Jobs that use this feature incur pro-tier pricing. To not apply advanced input filtering: Choose Disabled. Note that you can still apply basic filtering with Deblock and Denoise.
     pub fn advanced_input_filter(mut self, input: crate::types::AdvancedInputFilter) -> Self {
         self.advanced_input_filter = Some(input);
         self
     }
-    /// Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before encoding. The Advanced input filter removes more types of compression artifacts and is an improvement when compared to basic Deblock and Denoise filters. To remove video compression artifacts from your input and improve the video quality: Choose Enabled. Additionally, this filter can help increase the video quality of your output relative to its bitrate, since noisy inputs are more complex and require more bits to encode. To help restore loss of detail after applying the filter, you can optionally add texture or sharpening as an additional step.Jobs that use this feature incur pro-tier pricing. To not apply advanced input filtering: Choose Disabled. Note that you can still apply basic filtering with Deblock and Denoise.
+    /// Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before encoding. The Advanced input filter removes more types of compression artifacts and is an improvement when compared to basic Deblock and Denoise filters. To remove video compression artifacts from your input and improve the video quality: Choose Enabled. Additionally, this filter can help increase the video quality of your output relative to its bitrate, since noisy inputs are more complex and require more bits to encode. To help restore loss of detail after applying the filter, you can optionally add texture or sharpening as an additional step. Jobs that use this feature incur pro-tier pricing. To not apply advanced input filtering: Choose Disabled. Note that you can still apply basic filtering with Deblock and Denoise.
     pub fn set_advanced_input_filter(
         mut self,
         input: std::option::Option<crate::types::AdvancedInputFilter>,
@@ -511,12 +511,12 @@ impl InputTemplateBuilder {
             denoise_filter: self.denoise_filter,
             dolby_vision_metadata_xml: self.dolby_vision_metadata_xml,
             filter_enable: self.filter_enable,
-            filter_strength: self.filter_strength.unwrap_or_default(),
+            filter_strength: self.filter_strength,
             image_inserter: self.image_inserter,
             input_clippings: self.input_clippings,
             input_scan_type: self.input_scan_type,
             position: self.position,
-            program_number: self.program_number.unwrap_or_default(),
+            program_number: self.program_number,
             psi_control: self.psi_control,
             timecode_source: self.timecode_source,
             timecode_start: self.timecode_start,

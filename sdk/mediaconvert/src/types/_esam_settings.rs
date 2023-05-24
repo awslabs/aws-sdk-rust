@@ -10,7 +10,7 @@ pub struct EsamSettings {
         std::option::Option<crate::types::EsamManifestConfirmConditionNotification>,
     /// Specifies the stream distance, in milliseconds, between the SCTE 35 messages that the transcoder places and the splice points that they refer to. If the time between the start of the asset and the SCTE-35 message is less than this value, then the transcoder places the SCTE-35 marker at the beginning of the stream.
     #[doc(hidden)]
-    pub response_signal_preroll: i32,
+    pub response_signal_preroll: std::option::Option<i32>,
     /// Specifies an ESAM SignalProcessingNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing instructions that you provide in the setting SCC XML (sccXml).
     #[doc(hidden)]
     pub signal_processing_notification:
@@ -24,7 +24,7 @@ impl EsamSettings {
         self.manifest_confirm_condition_notification.as_ref()
     }
     /// Specifies the stream distance, in milliseconds, between the SCTE 35 messages that the transcoder places and the splice points that they refer to. If the time between the start of the asset and the SCTE-35 message is less than this value, then the transcoder places the SCTE-35 marker at the beginning of the stream.
-    pub fn response_signal_preroll(&self) -> i32 {
+    pub fn response_signal_preroll(&self) -> std::option::Option<i32> {
         self.response_signal_preroll
     }
     /// Specifies an ESAM SignalProcessingNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing instructions that you provide in the setting SCC XML (sccXml).
@@ -98,7 +98,7 @@ impl EsamSettingsBuilder {
     pub fn build(self) -> crate::types::EsamSettings {
         crate::types::EsamSettings {
             manifest_confirm_condition_notification: self.manifest_confirm_condition_notification,
-            response_signal_preroll: self.response_signal_preroll.unwrap_or_default(),
+            response_signal_preroll: self.response_signal_preroll,
             signal_processing_notification: self.signal_processing_notification,
         }
     }

@@ -21,6 +21,9 @@ pub struct CreateSequenceStoreOutput {
     /// <p>When the store was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> An S3 location that is used to store files that have failed a direct upload. </p>
+    #[doc(hidden)]
+    pub fallback_location: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateSequenceStoreOutput {
@@ -48,6 +51,10 @@ impl CreateSequenceStoreOutput {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
+    /// <p> An S3 location that is used to store files that have failed a direct upload. </p>
+    pub fn fallback_location(&self) -> std::option::Option<&str> {
+        self.fallback_location.as_deref()
+    }
 }
 impl aws_http::request_id::RequestId for CreateSequenceStoreOutput {
     fn request_id(&self) -> Option<&str> {
@@ -73,6 +80,7 @@ pub struct CreateSequenceStoreOutputBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) sse_config: std::option::Option<crate::types::SseConfig>,
     pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) fallback_location: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateSequenceStoreOutputBuilder {
@@ -139,6 +147,19 @@ impl CreateSequenceStoreOutputBuilder {
         self.creation_time = input;
         self
     }
+    /// <p> An S3 location that is used to store files that have failed a direct upload. </p>
+    pub fn fallback_location(mut self, input: impl Into<std::string::String>) -> Self {
+        self.fallback_location = Some(input.into());
+        self
+    }
+    /// <p> An S3 location that is used to store files that have failed a direct upload. </p>
+    pub fn set_fallback_location(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.fallback_location = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -157,6 +178,7 @@ impl CreateSequenceStoreOutputBuilder {
             description: self.description,
             sse_config: self.sse_config,
             creation_time: self.creation_time,
+            fallback_location: self.fallback_location,
             _request_id: self._request_id,
         }
     }

@@ -17,13 +17,17 @@ pub use crate::types::_resource_type::ResourceType;
 
 pub use crate::types::_recommendation_summary::RecommendationSummary;
 
-pub use crate::types::_current_performance_risk_ratings::CurrentPerformanceRiskRatings;
-
-pub use crate::types::_savings_opportunity::SavingsOpportunity;
+pub use crate::types::_inferred_workload_saving::InferredWorkloadSaving;
 
 pub use crate::types::_estimated_monthly_savings::EstimatedMonthlySavings;
 
 pub use crate::types::_currency::Currency;
+
+pub use crate::types::_inferred_workload_type::InferredWorkloadType;
+
+pub use crate::types::_current_performance_risk_ratings::CurrentPerformanceRiskRatings;
+
+pub use crate::types::_savings_opportunity::SavingsOpportunity;
 
 pub use crate::types::_recommendation_source_type::RecommendationSourceType;
 
@@ -38,6 +42,8 @@ pub use crate::types::_finding::Finding;
 pub use crate::types::_recommendation_preferences_detail::RecommendationPreferencesDetail;
 
 pub use crate::types::_lambda_function_recommendation::LambdaFunctionRecommendation;
+
+pub use crate::types::_tag::Tag;
 
 pub use crate::types::_current_performance_risk::CurrentPerformanceRisk;
 
@@ -121,9 +127,11 @@ pub use crate::types::_cpu_vendor_architecture::CpuVendorArchitecture;
 
 pub use crate::types::_instance_recommendation::InstanceRecommendation;
 
-pub use crate::types::_instance_state::InstanceState;
+pub use crate::types::_external_metric_status::ExternalMetricStatus;
 
-pub use crate::types::_inferred_workload_type::InferredWorkloadType;
+pub use crate::types::_external_metric_status_code::ExternalMetricStatusCode;
+
+pub use crate::types::_instance_state::InstanceState;
 
 pub use crate::types::_effective_recommendation_preferences::EffectiveRecommendationPreferences;
 
@@ -273,6 +281,10 @@ mod _exportable_lambda_function_field;
 
 mod _exportable_volume_field;
 
+mod _external_metric_status;
+
+mod _external_metric_status_code;
+
 mod _external_metrics_preference;
 
 mod _external_metrics_source;
@@ -288,6 +300,8 @@ mod _finding;
 mod _finding_reason_code;
 
 mod _get_recommendation_error;
+
+mod _inferred_workload_saving;
 
 mod _inferred_workload_type;
 
@@ -378,6 +392,8 @@ mod _service_configuration;
 mod _status;
 
 mod _summary;
+
+mod _tag;
 
 mod _utilization_metric;
 

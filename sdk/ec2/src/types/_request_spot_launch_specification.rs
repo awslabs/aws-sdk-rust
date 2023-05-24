@@ -4,16 +4,16 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestSpotLaunchSpecification {
-    /// <p>One or more security group IDs.</p>
+    /// <p>The IDs of the security groups.</p>
     #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+    /// <p>Not supported.</p>
     #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Deprecated.</p>
     #[doc(hidden)]
     pub addressing_type: std::option::Option<std::string::String>,
-    /// <p>One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its encryption status is used for the volume encryption status.</p>
+    /// <p>The block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its encryption status is used for the volume encryption status.</p>
     #[doc(hidden)]
     pub block_device_mappings: std::option::Option<std::vec::Vec<crate::types::BlockDeviceMapping>>,
     /// <p>Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
@@ -39,7 +39,7 @@ pub struct RequestSpotLaunchSpecification {
     /// <p>Default: Disabled</p>
     #[doc(hidden)]
     pub monitoring: std::option::Option<crate::types::RunInstancesMonitoringEnabled>,
-    /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p>
+    /// <p>The network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p>
     #[doc(hidden)]
     pub network_interfaces:
         std::option::Option<std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
@@ -57,11 +57,11 @@ pub struct RequestSpotLaunchSpecification {
     pub user_data: std::option::Option<std::string::String>,
 }
 impl RequestSpotLaunchSpecification {
-    /// <p>One or more security group IDs.</p>
+    /// <p>The IDs of the security groups.</p>
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
-    /// <p>One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+    /// <p>Not supported.</p>
     pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.security_groups.as_deref()
     }
@@ -69,7 +69,7 @@ impl RequestSpotLaunchSpecification {
     pub fn addressing_type(&self) -> std::option::Option<&str> {
         self.addressing_type.as_deref()
     }
-    /// <p>One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its encryption status is used for the volume encryption status.</p>
+    /// <p>The block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its encryption status is used for the volume encryption status.</p>
     pub fn block_device_mappings(
         &self,
     ) -> std::option::Option<&[crate::types::BlockDeviceMapping]> {
@@ -107,7 +107,7 @@ impl RequestSpotLaunchSpecification {
     pub fn monitoring(&self) -> std::option::Option<&crate::types::RunInstancesMonitoringEnabled> {
         self.monitoring.as_ref()
     }
-    /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p>
+    /// <p>The network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p>
     pub fn network_interfaces(
         &self,
     ) -> std::option::Option<&[crate::types::InstanceNetworkInterfaceSpecification]> {
@@ -188,14 +188,14 @@ impl RequestSpotLaunchSpecificationBuilder {
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
-    /// <p>One or more security group IDs.</p>
+    /// <p>The IDs of the security groups.</p>
     pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
         self.security_group_ids = Some(v);
         self
     }
-    /// <p>One or more security group IDs.</p>
+    /// <p>The IDs of the security groups.</p>
     pub fn set_security_group_ids(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -207,14 +207,14 @@ impl RequestSpotLaunchSpecificationBuilder {
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
-    /// <p>One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+    /// <p>Not supported.</p>
     pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input.into());
         self.security_groups = Some(v);
         self
     }
-    /// <p>One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+    /// <p>Not supported.</p>
     pub fn set_security_groups(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -236,14 +236,14 @@ impl RequestSpotLaunchSpecificationBuilder {
     ///
     /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
     ///
-    /// <p>One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its encryption status is used for the volume encryption status.</p>
+    /// <p>The block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its encryption status is used for the volume encryption status.</p>
     pub fn block_device_mappings(mut self, input: crate::types::BlockDeviceMapping) -> Self {
         let mut v = self.block_device_mappings.unwrap_or_default();
         v.push(input);
         self.block_device_mappings = Some(v);
         self
     }
-    /// <p>One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its encryption status is used for the volume encryption status.</p>
+    /// <p>The block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its encryption status is used for the volume encryption status.</p>
     pub fn set_block_device_mappings(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::BlockDeviceMapping>>,
@@ -341,7 +341,7 @@ impl RequestSpotLaunchSpecificationBuilder {
     ///
     /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
     ///
-    /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p>
+    /// <p>The network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p>
     pub fn network_interfaces(
         mut self,
         input: crate::types::InstanceNetworkInterfaceSpecification,
@@ -351,7 +351,7 @@ impl RequestSpotLaunchSpecificationBuilder {
         self.network_interfaces = Some(v);
         self
     }
-    /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p>
+    /// <p>The network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p>
     pub fn set_network_interfaces(
         mut self,
         input: std::option::Option<

@@ -12,7 +12,7 @@ pub struct BackendApiAppSyncAuthSettings {
     pub description: std::option::Option<std::string::String>,
     /// <p>The API key expiration time for API_KEY, if it was used as an authentication mechanism to access your data models.</p>
     #[doc(hidden)]
-    pub expiration_time: f64,
+    pub expiration_time: std::option::Option<f64>,
     /// <p>The expiry time for the OpenID authentication mechanism.</p>
     #[doc(hidden)]
     pub open_id_auth_ttl: std::option::Option<std::string::String>,
@@ -39,7 +39,7 @@ impl BackendApiAppSyncAuthSettings {
         self.description.as_deref()
     }
     /// <p>The API key expiration time for API_KEY, if it was used as an authentication mechanism to access your data models.</p>
-    pub fn expiration_time(&self) -> f64 {
+    pub fn expiration_time(&self) -> std::option::Option<f64> {
         self.expiration_time
     }
     /// <p>The expiry time for the OpenID authentication mechanism.</p>
@@ -181,7 +181,7 @@ impl BackendApiAppSyncAuthSettingsBuilder {
         crate::types::BackendApiAppSyncAuthSettings {
             cognito_user_pool_id: self.cognito_user_pool_id,
             description: self.description,
-            expiration_time: self.expiration_time.unwrap_or_default(),
+            expiration_time: self.expiration_time,
             open_id_auth_ttl: self.open_id_auth_ttl,
             open_id_client_id: self.open_id_client_id,
             open_id_iat_ttl: self.open_id_iat_ttl,

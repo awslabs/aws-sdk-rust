@@ -13,7 +13,7 @@ pub struct LambdaFunctionConfiguration {
     /// <p>The Amazon S3 bucket event for which to invoke the Lambda function. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::types::Event>>,
-    /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/notification-how-to-filtering.html">Configuring event notifications using object key name filtering</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
     pub filter: std::option::Option<crate::types::NotificationConfigurationFilter>,
 }
@@ -30,7 +30,7 @@ impl LambdaFunctionConfiguration {
     pub fn events(&self) -> std::option::Option<&[crate::types::Event]> {
         self.events.as_deref()
     }
-    /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/notification-how-to-filtering.html">Configuring event notifications using object key name filtering</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn filter(&self) -> std::option::Option<&crate::types::NotificationConfigurationFilter> {
         self.filter.as_ref()
     }
@@ -94,12 +94,12 @@ impl LambdaFunctionConfigurationBuilder {
         self.events = input;
         self
     }
-    /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/notification-how-to-filtering.html">Configuring event notifications using object key name filtering</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn filter(mut self, input: crate::types::NotificationConfigurationFilter) -> Self {
         self.filter = Some(input);
         self
     }
-    /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/notification-how-to-filtering.html">Configuring event notifications using object key name filtering</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_filter(
         mut self,
         input: std::option::Option<crate::types::NotificationConfigurationFilter>,

@@ -24,7 +24,7 @@ pub struct Queue {
     pub pricing_plan: std::option::Option<crate::types::PricingPlan>,
     /// The estimated number of jobs with a PROGRESSING status.
     #[doc(hidden)]
-    pub progressing_jobs_count: i32,
+    pub progressing_jobs_count: std::option::Option<i32>,
     /// Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
     #[doc(hidden)]
     pub reservation_plan: std::option::Option<crate::types::ReservationPlan>,
@@ -33,7 +33,7 @@ pub struct Queue {
     pub status: std::option::Option<crate::types::QueueStatus>,
     /// The estimated number of jobs with a SUBMITTED status.
     #[doc(hidden)]
-    pub submitted_jobs_count: i32,
+    pub submitted_jobs_count: std::option::Option<i32>,
     /// Specifies whether this on-demand queue is system or custom. System queues are built in. You can't modify or delete system queues. You can create and modify custom queues.
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::Type>,
@@ -64,7 +64,7 @@ impl Queue {
         self.pricing_plan.as_ref()
     }
     /// The estimated number of jobs with a PROGRESSING status.
-    pub fn progressing_jobs_count(&self) -> i32 {
+    pub fn progressing_jobs_count(&self) -> std::option::Option<i32> {
         self.progressing_jobs_count
     }
     /// Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
@@ -76,7 +76,7 @@ impl Queue {
         self.status.as_ref()
     }
     /// The estimated number of jobs with a SUBMITTED status.
-    pub fn submitted_jobs_count(&self) -> i32 {
+    pub fn submitted_jobs_count(&self) -> std::option::Option<i32> {
         self.submitted_jobs_count
     }
     /// Specifies whether this on-demand queue is system or custom. System queues are built in. You can't modify or delete system queues. You can create and modify custom queues.
@@ -239,10 +239,10 @@ impl QueueBuilder {
             last_updated: self.last_updated,
             name: self.name,
             pricing_plan: self.pricing_plan,
-            progressing_jobs_count: self.progressing_jobs_count.unwrap_or_default(),
+            progressing_jobs_count: self.progressing_jobs_count,
             reservation_plan: self.reservation_plan,
             status: self.status,
-            submitted_jobs_count: self.submitted_jobs_count.unwrap_or_default(),
+            submitted_jobs_count: self.submitted_jobs_count,
             r#type: self.r#type,
         }
     }

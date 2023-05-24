@@ -6,14 +6,14 @@
 pub struct NielsenConfiguration {
     /// Nielsen has discontinued the use of breakout code functionality. If you must include this property, set the value to zero.
     #[doc(hidden)]
-    pub breakout_code: i32,
+    pub breakout_code: std::option::Option<i32>,
     /// Use Distributor ID (DistributorID) to specify the distributor ID that is assigned to your organization by Neilsen.
     #[doc(hidden)]
     pub distributor_id: std::option::Option<std::string::String>,
 }
 impl NielsenConfiguration {
     /// Nielsen has discontinued the use of breakout code functionality. If you must include this property, set the value to zero.
-    pub fn breakout_code(&self) -> i32 {
+    pub fn breakout_code(&self) -> std::option::Option<i32> {
         self.breakout_code
     }
     /// Use Distributor ID (DistributorID) to specify the distributor ID that is assigned to your organization by Neilsen.
@@ -59,7 +59,7 @@ impl NielsenConfigurationBuilder {
     /// Consumes the builder and constructs a [`NielsenConfiguration`](crate::types::NielsenConfiguration).
     pub fn build(self) -> crate::types::NielsenConfiguration {
         crate::types::NielsenConfiguration {
-            breakout_code: self.breakout_code.unwrap_or_default(),
+            breakout_code: self.breakout_code,
             distributor_id: self.distributor_id,
         }
     }

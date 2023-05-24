@@ -83,51 +83,49 @@ pub fn ser_cors(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Cors,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.allow_credentials {
-        object
-            .key("allowCredentials")
-            .boolean(input.allow_credentials);
+    if let Some(var_1) = &input.allow_credentials {
+        object.key("allowCredentials").boolean(*var_1);
     }
-    if let Some(var_1) = &input.allow_headers {
-        let mut array_2 = object.key("allowHeaders").start_array();
-        for item_3 in var_1 {
+    if let Some(var_2) = &input.allow_headers {
+        let mut array_3 = object.key("allowHeaders").start_array();
+        for item_4 in var_2 {
             {
-                array_2.value().string(item_3.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_2.finish();
+        array_3.finish();
     }
-    if let Some(var_4) = &input.allow_methods {
-        let mut array_5 = object.key("allowMethods").start_array();
-        for item_6 in var_4 {
+    if let Some(var_5) = &input.allow_methods {
+        let mut array_6 = object.key("allowMethods").start_array();
+        for item_7 in var_5 {
             {
-                array_5.value().string(item_6.as_str());
+                array_6.value().string(item_7.as_str());
             }
         }
-        array_5.finish();
+        array_6.finish();
     }
-    if let Some(var_7) = &input.allow_origins {
-        let mut array_8 = object.key("allowOrigins").start_array();
-        for item_9 in var_7 {
+    if let Some(var_8) = &input.allow_origins {
+        let mut array_9 = object.key("allowOrigins").start_array();
+        for item_10 in var_8 {
             {
-                array_8.value().string(item_9.as_str());
+                array_9.value().string(item_10.as_str());
             }
         }
-        array_8.finish();
+        array_9.finish();
     }
-    if let Some(var_10) = &input.expose_headers {
-        let mut array_11 = object.key("exposeHeaders").start_array();
-        for item_12 in var_10 {
+    if let Some(var_11) = &input.expose_headers {
+        let mut array_12 = object.key("exposeHeaders").start_array();
+        for item_13 in var_11 {
             {
-                array_11.value().string(item_12.as_str());
+                array_12.value().string(item_13.as_str());
             }
         }
-        array_11.finish();
+        array_12.finish();
     }
-    if input.max_age != 0 {
+    if let Some(var_14) = &input.max_age {
         object.key("maxAge").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_age).into()),
+            aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
     Ok(())

@@ -29,7 +29,7 @@ pub struct PutMetricAlarmInput {
     /// <ul>
     /// <li> <p> <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
-    /// <p> <b>SSN notification action:</b> </p>
+    /// <p> <b>SNS notification action:</b> </p>
     /// <ul>
     /// <li> <p> <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
@@ -56,7 +56,7 @@ pub struct PutMetricAlarmInput {
     /// <ul>
     /// <li> <p> <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
-    /// <p> <b>SSN notification action:</b> </p>
+    /// <p> <b>SNS notification action:</b> </p>
     /// <ul>
     /// <li> <p> <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
@@ -83,7 +83,7 @@ pub struct PutMetricAlarmInput {
     /// <ul>
     /// <li> <p> <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
-    /// <p> <b>SSN notification action:</b> </p>
+    /// <p> <b>SNS notification action:</b> </p>
     /// <ul>
     /// <li> <p> <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
@@ -194,7 +194,7 @@ impl PutMetricAlarmInput {
     /// <ul>
     /// <li> <p> <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
-    /// <p> <b>SSN notification action:</b> </p>
+    /// <p> <b>SNS notification action:</b> </p>
     /// <ul>
     /// <li> <p> <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
@@ -222,7 +222,7 @@ impl PutMetricAlarmInput {
     /// <ul>
     /// <li> <p> <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
-    /// <p> <b>SSN notification action:</b> </p>
+    /// <p> <b>SNS notification action:</b> </p>
     /// <ul>
     /// <li> <p> <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
@@ -250,7 +250,7 @@ impl PutMetricAlarmInput {
     /// <ul>
     /// <li> <p> <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
-    /// <p> <b>SSN notification action:</b> </p>
+    /// <p> <b>SNS notification action:</b> </p>
     /// <ul>
     /// <li> <p> <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
@@ -438,7 +438,7 @@ impl PutMetricAlarmInputBuilder {
     /// <ul>
     /// <li> <p> <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
-    /// <p> <b>SSN notification action:</b> </p>
+    /// <p> <b>SNS notification action:</b> </p>
     /// <ul>
     /// <li> <p> <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
@@ -469,7 +469,7 @@ impl PutMetricAlarmInputBuilder {
     /// <ul>
     /// <li> <p> <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
-    /// <p> <b>SSN notification action:</b> </p>
+    /// <p> <b>SNS notification action:</b> </p>
     /// <ul>
     /// <li> <p> <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
@@ -505,7 +505,7 @@ impl PutMetricAlarmInputBuilder {
     /// <ul>
     /// <li> <p> <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
-    /// <p> <b>SSN notification action:</b> </p>
+    /// <p> <b>SNS notification action:</b> </p>
     /// <ul>
     /// <li> <p> <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
@@ -536,7 +536,7 @@ impl PutMetricAlarmInputBuilder {
     /// <ul>
     /// <li> <p> <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
-    /// <p> <b>SSN notification action:</b> </p>
+    /// <p> <b>SNS notification action:</b> </p>
     /// <ul>
     /// <li> <p> <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
@@ -572,7 +572,7 @@ impl PutMetricAlarmInputBuilder {
     /// <ul>
     /// <li> <p> <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
-    /// <p> <b>SSN notification action:</b> </p>
+    /// <p> <b>SNS notification action:</b> </p>
     /// <ul>
     /// <li> <p> <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
@@ -603,7 +603,7 @@ impl PutMetricAlarmInputBuilder {
     /// <ul>
     /// <li> <p> <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>
-    /// <p> <b>SSN notification action:</b> </p>
+    /// <p> <b>SNS notification action:</b> </p>
     /// <ul>
     /// <li> <p> <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li>
     /// </ul>

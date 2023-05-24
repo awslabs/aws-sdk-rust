@@ -12,7 +12,7 @@ pub struct ConfigurationRevision {
     pub description: std::option::Option<std::string::String>,
     /// <p>Required. The revision number of the configuration.</p>
     #[doc(hidden)]
-    pub revision: i32,
+    pub revision: std::option::Option<i32>,
 }
 impl ConfigurationRevision {
     /// <p>Required. The date and time of the configuration revision.</p>
@@ -24,7 +24,7 @@ impl ConfigurationRevision {
         self.description.as_deref()
     }
     /// <p>Required. The revision number of the configuration.</p>
-    pub fn revision(&self) -> i32 {
+    pub fn revision(&self) -> std::option::Option<i32> {
         self.revision
     }
 }
@@ -79,7 +79,7 @@ impl ConfigurationRevisionBuilder {
         crate::types::ConfigurationRevision {
             created: self.created,
             description: self.description,
-            revision: self.revision.unwrap_or_default(),
+            revision: self.revision,
         }
     }
 }

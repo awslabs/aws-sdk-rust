@@ -3,10 +3,10 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListInstanceTypeDetailsInput {
-    /// <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
+    /// <p>The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
     #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
-    /// <p>Name of the domain to list instance type details for.</p>
+    /// <p>The name of the domain.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
@@ -15,13 +15,19 @@ pub struct ListInstanceTypeDetailsInput {
     /// <p>If your initial <code>ListInstanceTypeDetails</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListInstanceTypeDetails</code> operations, which returns results in the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    /// <p>An optional parameter that specifies the Availability Zones for the domain.</p>
+    #[doc(hidden)]
+    pub retrieve_a_zs: std::option::Option<bool>,
+    /// <p>An optional parameter that lists information for a given instance type.</p>
+    #[doc(hidden)]
+    pub instance_type: std::option::Option<std::string::String>,
 }
 impl ListInstanceTypeDetailsInput {
-    /// <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
+    /// <p>The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
     pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
     }
-    /// <p>Name of the domain to list instance type details for.</p>
+    /// <p>The name of the domain.</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
@@ -32,6 +38,14 @@ impl ListInstanceTypeDetailsInput {
     /// <p>If your initial <code>ListInstanceTypeDetails</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListInstanceTypeDetails</code> operations, which returns results in the next page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+    /// <p>An optional parameter that specifies the Availability Zones for the domain.</p>
+    pub fn retrieve_a_zs(&self) -> std::option::Option<bool> {
+        self.retrieve_a_zs
+    }
+    /// <p>An optional parameter that lists information for a given instance type.</p>
+    pub fn instance_type(&self) -> std::option::Option<&str> {
+        self.instance_type.as_deref()
     }
 }
 impl ListInstanceTypeDetailsInput {
@@ -51,24 +65,26 @@ pub struct ListInstanceTypeDetailsInputBuilder {
     pub(crate) domain_name: std::option::Option<std::string::String>,
     pub(crate) max_results: std::option::Option<i32>,
     pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) retrieve_a_zs: std::option::Option<bool>,
+    pub(crate) instance_type: std::option::Option<std::string::String>,
 }
 impl ListInstanceTypeDetailsInputBuilder {
-    /// <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
+    /// <p>The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
     pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.engine_version = Some(input.into());
         self
     }
-    /// <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
+    /// <p>The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
     pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.engine_version = input;
         self
     }
-    /// <p>Name of the domain to list instance type details for.</p>
+    /// <p>The name of the domain.</p>
     pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.domain_name = Some(input.into());
         self
     }
-    /// <p>Name of the domain to list instance type details for.</p>
+    /// <p>The name of the domain.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.domain_name = input;
         self
@@ -93,6 +109,26 @@ impl ListInstanceTypeDetailsInputBuilder {
         self.next_token = input;
         self
     }
+    /// <p>An optional parameter that specifies the Availability Zones for the domain.</p>
+    pub fn retrieve_a_zs(mut self, input: bool) -> Self {
+        self.retrieve_a_zs = Some(input);
+        self
+    }
+    /// <p>An optional parameter that specifies the Availability Zones for the domain.</p>
+    pub fn set_retrieve_a_zs(mut self, input: std::option::Option<bool>) -> Self {
+        self.retrieve_a_zs = input;
+        self
+    }
+    /// <p>An optional parameter that lists information for a given instance type.</p>
+    pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
+        self.instance_type = Some(input.into());
+        self
+    }
+    /// <p>An optional parameter that lists information for a given instance type.</p>
+    pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.instance_type = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ListInstanceTypeDetailsInput`](crate::operation::list_instance_type_details::ListInstanceTypeDetailsInput).
     pub fn build(
         self,
@@ -106,6 +142,8 @@ impl ListInstanceTypeDetailsInputBuilder {
                 domain_name: self.domain_name,
                 max_results: self.max_results,
                 next_token: self.next_token,
+                retrieve_a_zs: self.retrieve_a_zs,
+                instance_type: self.instance_type,
             },
         )
     }

@@ -69,16 +69,16 @@ pub fn ser_scte35_splice_insert_schedule_action_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Scte35SpliceInsertScheduleActionSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.duration != 0 {
+    if let Some(var_1) = &input.duration {
         object.key("duration").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.duration).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    {
+    if let Some(var_2) = &input.splice_event_id {
         object.key("spliceEventId").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.splice_event_id).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

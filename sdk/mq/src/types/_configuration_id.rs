@@ -11,7 +11,7 @@ pub struct ConfigurationId {
     pub id: std::option::Option<std::string::String>,
     /// <p>The revision number of the configuration.</p>
     #[doc(hidden)]
-    pub revision: i32,
+    pub revision: std::option::Option<i32>,
 }
 impl ConfigurationId {
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
@@ -19,7 +19,7 @@ impl ConfigurationId {
         self.id.as_deref()
     }
     /// <p>The revision number of the configuration.</p>
-    pub fn revision(&self) -> i32 {
+    pub fn revision(&self) -> std::option::Option<i32> {
         self.revision
     }
 }
@@ -62,7 +62,7 @@ impl ConfigurationIdBuilder {
     pub fn build(self) -> crate::types::ConfigurationId {
         crate::types::ConfigurationId {
             id: self.id,
-            revision: self.revision.unwrap_or_default(),
+            revision: self.revision,
         }
     }
 }

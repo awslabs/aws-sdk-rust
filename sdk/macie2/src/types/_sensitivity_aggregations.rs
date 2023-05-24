@@ -7,35 +7,35 @@ pub struct SensitivityAggregations {
     /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
     #[doc(hidden)]
-    pub classifiable_size_in_bytes: i64,
+    pub classifiable_size_in_bytes: std::option::Option<i64>,
     /// <p>The total number of buckets that are publicly accessible due to a combination of permissions settings for each bucket.</p>
     #[doc(hidden)]
-    pub publicly_accessible_count: i64,
+    pub publicly_accessible_count: std::option::Option<i64>,
     /// <p>The total number of buckets.</p>
     #[doc(hidden)]
-    pub total_count: i64,
+    pub total_count: std::option::Option<i64>,
     /// <p>The total storage size, in bytes, of the buckets.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each object in the buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
     #[doc(hidden)]
-    pub total_size_in_bytes: i64,
+    pub total_size_in_bytes: std::option::Option<i64>,
 }
 impl SensitivityAggregations {
     /// <p>The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each applicable object in the buckets. This value doesn't reflect the storage size of all versions of all applicable objects in the buckets.</p>
-    pub fn classifiable_size_in_bytes(&self) -> i64 {
+    pub fn classifiable_size_in_bytes(&self) -> std::option::Option<i64> {
         self.classifiable_size_in_bytes
     }
     /// <p>The total number of buckets that are publicly accessible due to a combination of permissions settings for each bucket.</p>
-    pub fn publicly_accessible_count(&self) -> i64 {
+    pub fn publicly_accessible_count(&self) -> std::option::Option<i64> {
         self.publicly_accessible_count
     }
     /// <p>The total number of buckets.</p>
-    pub fn total_count(&self) -> i64 {
+    pub fn total_count(&self) -> std::option::Option<i64> {
         self.total_count
     }
     /// <p>The total storage size, in bytes, of the buckets.</p>
     /// <p>If versioning is enabled for any of the buckets, this value is based on the size of the latest version of each object in the buckets. This value doesn't reflect the storage size of all versions of the objects in the buckets.</p>
-    pub fn total_size_in_bytes(&self) -> i64 {
+    pub fn total_size_in_bytes(&self) -> std::option::Option<i64> {
         self.total_size_in_bytes
     }
 }
@@ -103,10 +103,10 @@ impl SensitivityAggregationsBuilder {
     /// Consumes the builder and constructs a [`SensitivityAggregations`](crate::types::SensitivityAggregations).
     pub fn build(self) -> crate::types::SensitivityAggregations {
         crate::types::SensitivityAggregations {
-            classifiable_size_in_bytes: self.classifiable_size_in_bytes.unwrap_or_default(),
-            publicly_accessible_count: self.publicly_accessible_count.unwrap_or_default(),
-            total_count: self.total_count.unwrap_or_default(),
-            total_size_in_bytes: self.total_size_in_bytes.unwrap_or_default(),
+            classifiable_size_in_bytes: self.classifiable_size_in_bytes,
+            publicly_accessible_count: self.publicly_accessible_count,
+            total_count: self.total_count,
+            total_size_in_bytes: self.total_size_in_bytes,
         }
     }
 }

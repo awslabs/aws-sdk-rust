@@ -18,7 +18,7 @@ pub struct ReservationPlan {
     pub renewal_type: std::option::Option<crate::types::RenewalType>,
     /// Specifies the number of reserved transcode slots (RTS) for this queue. The number of RTS determines how many jobs the queue can process in parallel; each RTS can process one job at a time. When you increase this number, you extend your existing commitment with a new 12-month commitment for a larger number of RTS. The new commitment begins when you purchase the additional capacity. You can't decrease the number of RTS in your reserved queue.
     #[doc(hidden)]
-    pub reserved_slots: i32,
+    pub reserved_slots: std::option::Option<i32>,
     /// Specifies whether the pricing plan for your reserved queue is ACTIVE or EXPIRED.
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::ReservationPlanStatus>,
@@ -41,7 +41,7 @@ impl ReservationPlan {
         self.renewal_type.as_ref()
     }
     /// Specifies the number of reserved transcode slots (RTS) for this queue. The number of RTS determines how many jobs the queue can process in parallel; each RTS can process one job at a time. When you increase this number, you extend your existing commitment with a new 12-month commitment for a larger number of RTS. The new commitment begins when you purchase the additional capacity. You can't decrease the number of RTS in your reserved queue.
-    pub fn reserved_slots(&self) -> i32 {
+    pub fn reserved_slots(&self) -> std::option::Option<i32> {
         self.reserved_slots
     }
     /// Specifies whether the pricing plan for your reserved queue is ACTIVE or EXPIRED.
@@ -147,7 +147,7 @@ impl ReservationPlanBuilder {
             expires_at: self.expires_at,
             purchased_at: self.purchased_at,
             renewal_type: self.renewal_type,
-            reserved_slots: self.reserved_slots.unwrap_or_default(),
+            reserved_slots: self.reserved_slots,
             status: self.status,
         }
     }

@@ -16,6 +16,10 @@ pub(crate) mod shape_batch_get_prepared_statement;
 
 pub(crate) mod shape_batch_get_query_execution;
 
+pub(crate) mod shape_cancel_capacity_reservation;
+
+pub(crate) mod shape_create_capacity_reservation;
+
 pub(crate) mod shape_create_data_catalog;
 
 pub(crate) mod shape_create_named_query;
@@ -45,6 +49,10 @@ pub(crate) mod shape_get_calculation_execution;
 pub(crate) mod shape_get_calculation_execution_code;
 
 pub(crate) mod shape_get_calculation_execution_status;
+
+pub(crate) mod shape_get_capacity_assignment_configuration;
+
+pub(crate) mod shape_get_capacity_reservation;
 
 pub(crate) mod shape_get_data_catalog;
 
@@ -76,6 +84,8 @@ pub(crate) mod shape_list_application_dpu_sizes;
 
 pub(crate) mod shape_list_calculation_executions;
 
+pub(crate) mod shape_list_capacity_reservations;
+
 pub(crate) mod shape_list_data_catalogs;
 
 pub(crate) mod shape_list_databases;
@@ -102,6 +112,8 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_work_groups;
 
+pub(crate) mod shape_put_capacity_assignment_configuration;
+
 pub(crate) mod shape_start_calculation_execution;
 
 pub(crate) mod shape_start_query_execution;
@@ -117,6 +129,8 @@ pub(crate) mod shape_tag_resource;
 pub(crate) mod shape_terminate_session;
 
 pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_capacity_reservation;
 
 pub(crate) mod shape_update_data_catalog;
 
@@ -143,6 +157,10 @@ pub(crate) mod shape_batch_get_named_query_input;
 pub(crate) mod shape_batch_get_prepared_statement_input;
 
 pub(crate) mod shape_batch_get_query_execution_input;
+
+pub(crate) mod shape_cancel_capacity_reservation_input;
+
+pub(crate) mod shape_create_capacity_reservation_input;
 
 pub(crate) mod shape_create_data_catalog_input;
 
@@ -173,6 +191,10 @@ pub(crate) mod shape_get_calculation_execution_code_input;
 pub(crate) mod shape_get_calculation_execution_input;
 
 pub(crate) mod shape_get_calculation_execution_status_input;
+
+pub(crate) mod shape_get_capacity_assignment_configuration_input;
+
+pub(crate) mod shape_get_capacity_reservation_input;
 
 pub(crate) mod shape_get_data_catalog_input;
 
@@ -208,6 +230,8 @@ pub(crate) mod shape_list_application_dpu_sizes_input;
 
 pub(crate) mod shape_list_calculation_executions_input;
 
+pub(crate) mod shape_list_capacity_reservations_input;
+
 pub(crate) mod shape_list_data_catalogs_input;
 
 pub(crate) mod shape_list_databases_input;
@@ -236,6 +260,8 @@ pub(crate) mod shape_list_work_groups_input;
 
 pub(crate) mod shape_metadata_exception;
 
+pub(crate) mod shape_put_capacity_assignment_configuration_input;
+
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_session_already_exists_exception;
@@ -257,6 +283,8 @@ pub(crate) mod shape_terminate_session_input;
 pub(crate) mod shape_too_many_requests_exception;
 
 pub(crate) mod shape_untag_resource_input;
+
+pub(crate) mod shape_update_capacity_reservation_input;
 
 pub(crate) mod shape_update_data_catalog_input;
 
@@ -281,6 +309,14 @@ pub(crate) mod shape_calculation_statistics;
 pub(crate) mod shape_calculation_status;
 
 pub(crate) mod shape_calculations_list;
+
+pub(crate) mod shape_capacity_assignment;
+
+pub(crate) mod shape_capacity_assignment_configuration;
+
+pub(crate) mod shape_capacity_reservation;
+
+pub(crate) mod shape_capacity_reservations_list;
 
 pub(crate) mod shape_data_catalog;
 
@@ -368,6 +404,10 @@ pub(crate) mod shape_application_dpu_sizes;
 
 pub(crate) mod shape_calculation_summary;
 
+pub(crate) mod shape_capacity_allocation;
+
+pub(crate) mod shape_capacity_assignments_list;
+
 pub(crate) mod shape_column_list;
 
 pub(crate) mod shape_customer_content_encryption_configuration;
@@ -439,5 +479,7 @@ pub(crate) mod shape_datum_list;
 pub(crate) mod shape_query_stage_plan_nodes;
 
 pub(crate) mod shape_string_list;
+
+pub(crate) mod shape_work_group_names_list;
 
 pub(crate) mod shape_datum;

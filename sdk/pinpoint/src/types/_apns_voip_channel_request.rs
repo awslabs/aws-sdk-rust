@@ -15,7 +15,7 @@ pub struct ApnsVoipChannelRequest {
     pub default_authentication_method: std::option::Option<std::string::String>,
     /// <p>Specifies whether to enable the APNs VoIP channel for the application.</p>
     #[doc(hidden)]
-    pub enabled: bool,
+    pub enabled: std::option::Option<bool>,
     /// <p>The private key for the APNs client certificate that you want Amazon Pinpoint to use to communicate with APNs.</p>
     #[doc(hidden)]
     pub private_key: std::option::Option<std::string::String>,
@@ -43,7 +43,7 @@ impl ApnsVoipChannelRequest {
         self.default_authentication_method.as_deref()
     }
     /// <p>Specifies whether to enable the APNs VoIP channel for the application.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
     /// <p>The private key for the APNs client certificate that you want Amazon Pinpoint to use to communicate with APNs.</p>
@@ -173,7 +173,7 @@ impl ApnsVoipChannelRequestBuilder {
             bundle_id: self.bundle_id,
             certificate: self.certificate,
             default_authentication_method: self.default_authentication_method,
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled,
             private_key: self.private_key,
             team_id: self.team_id,
             token_key: self.token_key,

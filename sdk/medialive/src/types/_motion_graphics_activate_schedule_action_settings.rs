@@ -6,7 +6,7 @@
 pub struct MotionGraphicsActivateScheduleActionSettings {
     /// Duration (in milliseconds) that motion graphics should render on to the video stream. Leaving out this property or setting to 0 will result in rendering continuing until a deactivate action is processed.
     #[doc(hidden)]
-    pub duration: i64,
+    pub duration: std::option::Option<i64>,
     /// Key used to extract the password from EC2 Parameter store
     #[doc(hidden)]
     pub password_param: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ pub struct MotionGraphicsActivateScheduleActionSettings {
 }
 impl MotionGraphicsActivateScheduleActionSettings {
     /// Duration (in milliseconds) that motion graphics should render on to the video stream. Leaving out this property or setting to 0 will result in rendering continuing until a deactivate action is processed.
-    pub fn duration(&self) -> i64 {
+    pub fn duration(&self) -> std::option::Option<i64> {
         self.duration
     }
     /// Key used to extract the password from EC2 Parameter store
@@ -96,7 +96,7 @@ impl MotionGraphicsActivateScheduleActionSettingsBuilder {
     /// Consumes the builder and constructs a [`MotionGraphicsActivateScheduleActionSettings`](crate::types::MotionGraphicsActivateScheduleActionSettings).
     pub fn build(self) -> crate::types::MotionGraphicsActivateScheduleActionSettings {
         crate::types::MotionGraphicsActivateScheduleActionSettings {
-            duration: self.duration.unwrap_or_default(),
+            duration: self.duration,
             password_param: self.password_param,
             url: self.url,
             username: self.username,

@@ -6,115 +6,111 @@ pub fn ser_create_broker_input(
     if let Some(var_1) = &input.authentication_strategy {
         object.key("authenticationStrategy").string(var_1.as_str());
     }
-    {
-        object
-            .key("autoMinorVersionUpgrade")
-            .boolean(input.auto_minor_version_upgrade);
+    if let Some(var_2) = &input.auto_minor_version_upgrade {
+        object.key("autoMinorVersionUpgrade").boolean(*var_2);
     }
-    if let Some(var_2) = &input.broker_name {
-        object.key("brokerName").string(var_2.as_str());
+    if let Some(var_3) = &input.broker_name {
+        object.key("brokerName").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.configuration {
+    if let Some(var_4) = &input.configuration {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("configuration").start_object();
-        crate::protocol_serde::shape_configuration_id::ser_configuration_id(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("configuration").start_object();
+        crate::protocol_serde::shape_configuration_id::ser_configuration_id(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_5) = &input.creator_request_id {
-        object.key("creatorRequestId").string(var_5.as_str());
+    if let Some(var_6) = &input.creator_request_id {
+        object.key("creatorRequestId").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.deployment_mode {
-        object.key("deploymentMode").string(var_6.as_str());
+    if let Some(var_7) = &input.deployment_mode {
+        object.key("deploymentMode").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.encryption_options {
+    if let Some(var_8) = &input.encryption_options {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("encryptionOptions").start_object();
+        let mut object_9 = object.key("encryptionOptions").start_object();
         crate::protocol_serde::shape_encryption_options::ser_encryption_options(
-            &mut object_8,
-            var_7,
+            &mut object_9,
+            var_8,
         )?;
-        object_8.finish();
+        object_9.finish();
     }
-    if let Some(var_9) = &input.engine_type {
-        object.key("engineType").string(var_9.as_str());
+    if let Some(var_10) = &input.engine_type {
+        object.key("engineType").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.engine_version {
-        object.key("engineVersion").string(var_10.as_str());
+    if let Some(var_11) = &input.engine_version {
+        object.key("engineVersion").string(var_11.as_str());
     }
-    if let Some(var_11) = &input.host_instance_type {
-        object.key("hostInstanceType").string(var_11.as_str());
+    if let Some(var_12) = &input.host_instance_type {
+        object.key("hostInstanceType").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.ldap_server_metadata {
+    if let Some(var_13) = &input.ldap_server_metadata {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("ldapServerMetadata").start_object();
+        let mut object_14 = object.key("ldapServerMetadata").start_object();
         crate::protocol_serde::shape_ldap_server_metadata_input::ser_ldap_server_metadata_input(
-            &mut object_13,
-            var_12,
+            &mut object_14,
+            var_13,
         )?;
-        object_13.finish();
+        object_14.finish();
     }
-    if let Some(var_14) = &input.logs {
+    if let Some(var_15) = &input.logs {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("logs").start_object();
-        crate::protocol_serde::shape_logs::ser_logs(&mut object_15, var_14)?;
-        object_15.finish();
+        let mut object_16 = object.key("logs").start_object();
+        crate::protocol_serde::shape_logs::ser_logs(&mut object_16, var_15)?;
+        object_16.finish();
     }
-    if let Some(var_16) = &input.maintenance_window_start_time {
+    if let Some(var_17) = &input.maintenance_window_start_time {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("maintenanceWindowStartTime").start_object();
+        let mut object_18 = object.key("maintenanceWindowStartTime").start_object();
         crate::protocol_serde::shape_weekly_start_time::ser_weekly_start_time(
-            &mut object_17,
-            var_16,
+            &mut object_18,
+            var_17,
         )?;
-        object_17.finish();
+        object_18.finish();
     }
-    {
-        object
-            .key("publiclyAccessible")
-            .boolean(input.publicly_accessible);
+    if let Some(var_19) = &input.publicly_accessible {
+        object.key("publiclyAccessible").boolean(*var_19);
     }
-    if let Some(var_18) = &input.security_groups {
-        let mut array_19 = object.key("securityGroups").start_array();
-        for item_20 in var_18 {
+    if let Some(var_20) = &input.security_groups {
+        let mut array_21 = object.key("securityGroups").start_array();
+        for item_22 in var_20 {
             {
-                array_19.value().string(item_20.as_str());
+                array_21.value().string(item_22.as_str());
             }
         }
-        array_19.finish();
+        array_21.finish();
     }
-    if let Some(var_21) = &input.storage_type {
-        object.key("storageType").string(var_21.as_str());
+    if let Some(var_23) = &input.storage_type {
+        object.key("storageType").string(var_23.as_str());
     }
-    if let Some(var_22) = &input.subnet_ids {
-        let mut array_23 = object.key("subnetIds").start_array();
-        for item_24 in var_22 {
+    if let Some(var_24) = &input.subnet_ids {
+        let mut array_25 = object.key("subnetIds").start_array();
+        for item_26 in var_24 {
             {
-                array_23.value().string(item_24.as_str());
+                array_25.value().string(item_26.as_str());
             }
         }
-        array_23.finish();
+        array_25.finish();
     }
-    if let Some(var_25) = &input.tags {
+    if let Some(var_27) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_26 = object.key("tags").start_object();
-        for (key_27, value_28) in var_25 {
+        let mut object_28 = object.key("tags").start_object();
+        for (key_29, value_30) in var_27 {
             {
-                object_26.key(key_27.as_str()).string(value_28.as_str());
+                object_28.key(key_29.as_str()).string(value_30.as_str());
             }
         }
-        object_26.finish();
+        object_28.finish();
     }
-    if let Some(var_29) = &input.users {
-        let mut array_30 = object.key("users").start_array();
-        for item_31 in var_29 {
+    if let Some(var_31) = &input.users {
+        let mut array_32 = object.key("users").start_array();
+        for item_33 in var_31 {
             {
                 #[allow(unused_mut)]
-                let mut object_32 = array_30.value().start_object();
-                crate::protocol_serde::shape_user::ser_user(&mut object_32, item_31)?;
-                object_32.finish();
+                let mut object_34 = array_32.value().start_object();
+                crate::protocol_serde::shape_user::ser_user(&mut object_34, item_33)?;
+                object_34.finish();
             }
         }
-        array_30.finish();
+        array_32.finish();
     }
     Ok(())
 }

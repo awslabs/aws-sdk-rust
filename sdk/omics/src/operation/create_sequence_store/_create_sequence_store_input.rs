@@ -19,6 +19,9 @@ pub struct CreateSequenceStoreInput {
     /// <p>To ensure that requests don't run multiple times, specify a unique token for each request.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
+    /// <p> An S3 location that is used to store files that have failed a direct upload. </p>
+    #[doc(hidden)]
+    pub fallback_location: std::option::Option<std::string::String>,
 }
 impl CreateSequenceStoreInput {
     /// <p>A name for the store.</p>
@@ -44,6 +47,10 @@ impl CreateSequenceStoreInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p> An S3 location that is used to store files that have failed a direct upload. </p>
+    pub fn fallback_location(&self) -> std::option::Option<&str> {
+        self.fallback_location.as_deref()
+    }
 }
 impl CreateSequenceStoreInput {
     /// Creates a new builder-style object to manufacture [`CreateSequenceStoreInput`](crate::operation::create_sequence_store::CreateSequenceStoreInput).
@@ -64,6 +71,7 @@ pub struct CreateSequenceStoreInputBuilder {
     pub(crate) tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) client_token: std::option::Option<std::string::String>,
+    pub(crate) fallback_location: std::option::Option<std::string::String>,
 }
 impl CreateSequenceStoreInputBuilder {
     /// <p>A name for the store.</p>
@@ -131,6 +139,19 @@ impl CreateSequenceStoreInputBuilder {
         self.client_token = input;
         self
     }
+    /// <p> An S3 location that is used to store files that have failed a direct upload. </p>
+    pub fn fallback_location(mut self, input: impl Into<std::string::String>) -> Self {
+        self.fallback_location = Some(input.into());
+        self
+    }
+    /// <p> An S3 location that is used to store files that have failed a direct upload. </p>
+    pub fn set_fallback_location(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.fallback_location = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateSequenceStoreInput`](crate::operation::create_sequence_store::CreateSequenceStoreInput).
     pub fn build(
         self,
@@ -145,6 +166,7 @@ impl CreateSequenceStoreInputBuilder {
                 sse_config: self.sse_config,
                 tags: self.tags,
                 client_token: self.client_token,
+                fallback_location: self.fallback_location,
             },
         )
     }

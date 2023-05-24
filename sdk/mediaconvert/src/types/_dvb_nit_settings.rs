@@ -6,17 +6,17 @@
 pub struct DvbNitSettings {
     /// The numeric value placed in the Network Information Table (NIT).
     #[doc(hidden)]
-    pub network_id: i32,
+    pub network_id: std::option::Option<i32>,
     /// The network name text placed in the network_name_descriptor inside the Network Information Table. Maximum length is 256 characters.
     #[doc(hidden)]
     pub network_name: std::option::Option<std::string::String>,
     /// The number of milliseconds between instances of this table in the output transport stream.
     #[doc(hidden)]
-    pub nit_interval: i32,
+    pub nit_interval: std::option::Option<i32>,
 }
 impl DvbNitSettings {
     /// The numeric value placed in the Network Information Table (NIT).
-    pub fn network_id(&self) -> i32 {
+    pub fn network_id(&self) -> std::option::Option<i32> {
         self.network_id
     }
     /// The network name text placed in the network_name_descriptor inside the Network Information Table. Maximum length is 256 characters.
@@ -24,7 +24,7 @@ impl DvbNitSettings {
         self.network_name.as_deref()
     }
     /// The number of milliseconds between instances of this table in the output transport stream.
-    pub fn nit_interval(&self) -> i32 {
+    pub fn nit_interval(&self) -> std::option::Option<i32> {
         self.nit_interval
     }
 }
@@ -77,9 +77,9 @@ impl DvbNitSettingsBuilder {
     /// Consumes the builder and constructs a [`DvbNitSettings`](crate::types::DvbNitSettings).
     pub fn build(self) -> crate::types::DvbNitSettings {
         crate::types::DvbNitSettings {
-            network_id: self.network_id.unwrap_or_default(),
+            network_id: self.network_id,
             network_name: self.network_name,
-            nit_interval: self.nit_interval.unwrap_or_default(),
+            nit_interval: self.nit_interval,
         }
     }
 }

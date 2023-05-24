@@ -90,80 +90,80 @@ pub fn ser_input(
     if let Some(var_27) = &input.filter_enable {
         object.key("filterEnable").string(var_27.as_str());
     }
-    if input.filter_strength != 0 {
+    if let Some(var_28) = &input.filter_strength {
         object.key("filterStrength").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.filter_strength).into()),
+            aws_smithy_types::Number::NegInt((*var_28).into()),
         );
     }
-    if let Some(var_28) = &input.image_inserter {
+    if let Some(var_29) = &input.image_inserter {
         #[allow(unused_mut)]
-        let mut object_29 = object.key("imageInserter").start_object();
-        crate::protocol_serde::shape_image_inserter::ser_image_inserter(&mut object_29, var_28)?;
-        object_29.finish();
+        let mut object_30 = object.key("imageInserter").start_object();
+        crate::protocol_serde::shape_image_inserter::ser_image_inserter(&mut object_30, var_29)?;
+        object_30.finish();
     }
-    if let Some(var_30) = &input.input_clippings {
-        let mut array_31 = object.key("inputClippings").start_array();
-        for item_32 in var_30 {
+    if let Some(var_31) = &input.input_clippings {
+        let mut array_32 = object.key("inputClippings").start_array();
+        for item_33 in var_31 {
             {
                 #[allow(unused_mut)]
-                let mut object_33 = array_31.value().start_object();
+                let mut object_34 = array_32.value().start_object();
                 crate::protocol_serde::shape_input_clipping::ser_input_clipping(
-                    &mut object_33,
-                    item_32,
+                    &mut object_34,
+                    item_33,
                 )?;
-                object_33.finish();
+                object_34.finish();
             }
         }
-        array_31.finish();
+        array_32.finish();
     }
-    if let Some(var_34) = &input.input_scan_type {
-        object.key("inputScanType").string(var_34.as_str());
+    if let Some(var_35) = &input.input_scan_type {
+        object.key("inputScanType").string(var_35.as_str());
     }
-    if let Some(var_35) = &input.position {
+    if let Some(var_36) = &input.position {
         #[allow(unused_mut)]
-        let mut object_36 = object.key("position").start_object();
-        crate::protocol_serde::shape_rectangle::ser_rectangle(&mut object_36, var_35)?;
-        object_36.finish();
+        let mut object_37 = object.key("position").start_object();
+        crate::protocol_serde::shape_rectangle::ser_rectangle(&mut object_37, var_36)?;
+        object_37.finish();
     }
-    if input.program_number != 0 {
+    if let Some(var_38) = &input.program_number {
         object.key("programNumber").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.program_number).into()),
+            aws_smithy_types::Number::NegInt((*var_38).into()),
         );
     }
-    if let Some(var_37) = &input.psi_control {
-        object.key("psiControl").string(var_37.as_str());
+    if let Some(var_39) = &input.psi_control {
+        object.key("psiControl").string(var_39.as_str());
     }
-    if let Some(var_38) = &input.supplemental_imps {
-        let mut array_39 = object.key("supplementalImps").start_array();
-        for item_40 in var_38 {
+    if let Some(var_40) = &input.supplemental_imps {
+        let mut array_41 = object.key("supplementalImps").start_array();
+        for item_42 in var_40 {
             {
-                array_39.value().string(item_40.as_str());
+                array_41.value().string(item_42.as_str());
             }
         }
-        array_39.finish();
+        array_41.finish();
     }
-    if let Some(var_41) = &input.timecode_source {
-        object.key("timecodeSource").string(var_41.as_str());
+    if let Some(var_43) = &input.timecode_source {
+        object.key("timecodeSource").string(var_43.as_str());
     }
-    if let Some(var_42) = &input.timecode_start {
-        object.key("timecodeStart").string(var_42.as_str());
+    if let Some(var_44) = &input.timecode_start {
+        object.key("timecodeStart").string(var_44.as_str());
     }
-    if let Some(var_43) = &input.video_generator {
+    if let Some(var_45) = &input.video_generator {
         #[allow(unused_mut)]
-        let mut object_44 = object.key("videoGenerator").start_object();
+        let mut object_46 = object.key("videoGenerator").start_object();
         crate::protocol_serde::shape_input_video_generator::ser_input_video_generator(
-            &mut object_44,
-            var_43,
+            &mut object_46,
+            var_45,
         )?;
-        object_44.finish();
-    }
-    if let Some(var_45) = &input.video_selector {
-        #[allow(unused_mut)]
-        let mut object_46 = object.key("videoSelector").start_object();
-        crate::protocol_serde::shape_video_selector::ser_video_selector(&mut object_46, var_45)?;
         object_46.finish();
+    }
+    if let Some(var_47) = &input.video_selector {
+        #[allow(unused_mut)]
+        let mut object_48 = object.key("videoSelector").start_object();
+        crate::protocol_serde::shape_video_selector::ser_video_selector(&mut object_48, var_47)?;
+        object_48.finish();
     }
     Ok(())
 }

@@ -9,10 +9,10 @@ pub fn ser_gps_point_dimension(
         crate::protocol_serde::shape_gps_coordinates::ser_gps_coordinates(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if input.range_in_kilometers != 0.0 {
+    if let Some(var_3) = &input.range_in_kilometers {
         object.key("RangeInKilometers").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.range_in_kilometers).into()),
+            aws_smithy_types::Number::Float((*var_3).into()),
         );
     }
     Ok(())

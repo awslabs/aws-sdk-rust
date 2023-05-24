@@ -8,7 +8,7 @@ pub struct ListDiscoverersInput {
     pub discoverer_id_prefix: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub limit: i32,
+    pub limit: std::option::Option<i32>,
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -22,7 +22,7 @@ impl ListDiscoverersInput {
         self.discoverer_id_prefix.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn limit(&self) -> i32 {
+    pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
     /// <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
@@ -106,7 +106,7 @@ impl ListDiscoverersInputBuilder {
     > {
         Ok(crate::operation::list_discoverers::ListDiscoverersInput {
             discoverer_id_prefix: self.discoverer_id_prefix,
-            limit: self.limit.unwrap_or_default(),
+            limit: self.limit,
             next_token: self.next_token,
             source_arn_prefix: self.source_arn_prefix,
         })

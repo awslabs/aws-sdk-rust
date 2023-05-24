@@ -34,6 +34,23 @@ pub fn de_add_tags_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ChannelARNInvalidException" => {
+            crate::operation::add_tags::AddTagsError::ChannelArnInvalidException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::ChannelArnInvalidExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_channel_arn_invalid_exception::de_channel_arn_invalid_exception_json_err(_response_body, output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ChannelNotFoundException" => {
             crate::operation::add_tags::AddTagsError::ChannelNotFoundException({
                 #[allow(unused_mut)]
@@ -81,6 +98,22 @@ pub fn de_add_tags_http_error(
             }
             tmp
         }),
+        "EventDataStoreARNInvalidException" => {
+            crate::operation::add_tags::AddTagsError::EventDataStoreArnInvalidException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::EventDataStoreArnInvalidExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_event_data_store_arn_invalid_exception::de_event_data_store_arn_invalid_exception_json_err(_response_body, output).map_err(crate::operation::add_tags::AddTagsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "EventDataStoreNotFoundException" => {
             crate::operation::add_tags::AddTagsError::EventDataStoreNotFoundException({
                 #[allow(unused_mut)]

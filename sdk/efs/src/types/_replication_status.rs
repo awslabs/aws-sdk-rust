@@ -16,6 +16,8 @@
 ///     ReplicationStatus::Enabled => { /* ... */ },
 ///     ReplicationStatus::Enabling => { /* ... */ },
 ///     ReplicationStatus::Error => { /* ... */ },
+///     ReplicationStatus::Paused => { /* ... */ },
+///     ReplicationStatus::Pausing => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -57,6 +59,10 @@ pub enum ReplicationStatus {
     Enabling,
     #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
+    Paused,
+    #[allow(missing_docs)] // documentation missing in model
+    Pausing,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -67,6 +73,8 @@ impl std::convert::From<&str> for ReplicationStatus {
             "ENABLED" => ReplicationStatus::Enabled,
             "ENABLING" => ReplicationStatus::Enabling,
             "ERROR" => ReplicationStatus::Error,
+            "PAUSED" => ReplicationStatus::Paused,
+            "PAUSING" => ReplicationStatus::Pausing,
             other => {
                 ReplicationStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -88,12 +96,16 @@ impl ReplicationStatus {
             ReplicationStatus::Enabled => "ENABLED",
             ReplicationStatus::Enabling => "ENABLING",
             ReplicationStatus::Error => "ERROR",
+            ReplicationStatus::Paused => "PAUSED",
+            ReplicationStatus::Pausing => "PAUSING",
             ReplicationStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DELETING", "ENABLED", "ENABLING", "ERROR"]
+        &[
+            "DELETING", "ENABLED", "ENABLING", "ERROR", "PAUSED", "PAUSING",
+        ]
     }
 }
 impl AsRef<str> for ReplicationStatus {

@@ -97,6 +97,10 @@ pub use crate::types::_unindexed_face::UnindexedFace;
 
 pub use crate::types::_face_detail::FaceDetail;
 
+pub use crate::types::_eye_direction::EyeDirection;
+
+pub use crate::types::_face_occluded::FaceOccluded;
+
 pub use crate::types::_mouth_open::MouthOpen;
 
 pub use crate::types::_eye_open::EyeOpen;
@@ -153,6 +157,12 @@ pub use crate::types::_person_detail::PersonDetail;
 
 pub use crate::types::_person_tracking_sort_by::PersonTrackingSortBy;
 
+pub use crate::types::_get_label_detection_request_metadata::GetLabelDetectionRequestMetadata;
+
+pub use crate::types::_label_detection_aggregate_by::LabelDetectionAggregateBy;
+
+pub use crate::types::_label_detection_sort_by::LabelDetectionSortBy;
+
 pub use crate::types::_label_detection::LabelDetection;
 
 pub use crate::types::_label::Label;
@@ -167,10 +177,6 @@ pub use crate::types::_instance::Instance;
 
 pub use crate::types::_dominant_color::DominantColor;
 
-pub use crate::types::_label_detection_aggregate_by::LabelDetectionAggregateBy;
-
-pub use crate::types::_label_detection_sort_by::LabelDetectionSortBy;
-
 pub use crate::types::_person_match::PersonMatch;
 
 pub use crate::types::_face_search_sort_by::FaceSearchSortBy;
@@ -181,11 +187,15 @@ pub use crate::types::_liveness_session_status::LivenessSessionStatus;
 
 pub use crate::types::_face_detection::FaceDetection;
 
+pub use crate::types::_get_content_moderation_request_metadata::GetContentModerationRequestMetadata;
+
+pub use crate::types::_content_moderation_aggregate_by::ContentModerationAggregateBy;
+
+pub use crate::types::_content_moderation_sort_by::ContentModerationSortBy;
+
 pub use crate::types::_content_moderation_detection::ContentModerationDetection;
 
 pub use crate::types::_moderation_label::ModerationLabel;
-
-pub use crate::types::_content_moderation_sort_by::ContentModerationSortBy;
 
 pub use crate::types::_celebrity_recognition::CelebrityRecognition;
 
@@ -341,6 +351,8 @@ mod _connected_home_settings_for_update;
 
 mod _content_classifier;
 
+mod _content_moderation_aggregate_by;
+
 mod _content_moderation_detection;
 
 mod _content_moderation_sort_by;
@@ -401,6 +413,8 @@ mod _equipment_detection;
 
 mod _evaluation_result;
 
+mod _eye_direction;
+
 mod _eye_open;
 
 mod _eyeglasses;
@@ -415,6 +429,8 @@ mod _face_detection;
 
 mod _face_match;
 
+mod _face_occluded;
+
 mod _face_record;
 
 mod _face_search_settings;
@@ -428,6 +444,10 @@ mod _gender_type;
 mod _general_labels_settings;
 
 mod _geometry;
+
+mod _get_content_moderation_request_metadata;
+
+mod _get_label_detection_request_metadata;
 
 mod _ground_truth_manifest;
 

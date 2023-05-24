@@ -18,6 +18,15 @@ pub struct GetCelebrityRecognitionOutput {
     /// <p>Array of celebrities recognized in the video.</p>
     #[doc(hidden)]
     pub celebrities: std::option::Option<std::vec::Vec<crate::types::CelebrityRecognition>>,
+    /// <p>Job identifier for the celebrity recognition operation for which you want to obtain results. The job identifer is returned by an initial call to StartCelebrityRecognition.</p>
+    #[doc(hidden)]
+    pub job_id: std::option::Option<std::string::String>,
+    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    #[doc(hidden)]
+    pub video: std::option::Option<crate::types::Video>,
+    /// <p>A job identifier specified in the call to StartCelebrityRecognition and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
+    #[doc(hidden)]
+    pub job_tag: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl GetCelebrityRecognitionOutput {
@@ -40,6 +49,18 @@ impl GetCelebrityRecognitionOutput {
     /// <p>Array of celebrities recognized in the video.</p>
     pub fn celebrities(&self) -> std::option::Option<&[crate::types::CelebrityRecognition]> {
         self.celebrities.as_deref()
+    }
+    /// <p>Job identifier for the celebrity recognition operation for which you want to obtain results. The job identifer is returned by an initial call to StartCelebrityRecognition.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    pub fn video(&self) -> std::option::Option<&crate::types::Video> {
+        self.video.as_ref()
+    }
+    /// <p>A job identifier specified in the call to StartCelebrityRecognition and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
+    pub fn job_tag(&self) -> std::option::Option<&str> {
+        self.job_tag.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetCelebrityRecognitionOutput {
@@ -65,6 +86,9 @@ pub struct GetCelebrityRecognitionOutputBuilder {
     pub(crate) video_metadata: std::option::Option<crate::types::VideoMetadata>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     pub(crate) celebrities: std::option::Option<std::vec::Vec<crate::types::CelebrityRecognition>>,
+    pub(crate) job_id: std::option::Option<std::string::String>,
+    pub(crate) video: std::option::Option<crate::types::Video>,
+    pub(crate) job_tag: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl GetCelebrityRecognitionOutputBuilder {
@@ -133,6 +157,36 @@ impl GetCelebrityRecognitionOutputBuilder {
         self.celebrities = input;
         self
     }
+    /// <p>Job identifier for the celebrity recognition operation for which you want to obtain results. The job identifer is returned by an initial call to StartCelebrityRecognition.</p>
+    pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.job_id = Some(input.into());
+        self
+    }
+    /// <p>Job identifier for the celebrity recognition operation for which you want to obtain results. The job identifer is returned by an initial call to StartCelebrityRecognition.</p>
+    pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.job_id = input;
+        self
+    }
+    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    pub fn video(mut self, input: crate::types::Video) -> Self {
+        self.video = Some(input);
+        self
+    }
+    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    pub fn set_video(mut self, input: std::option::Option<crate::types::Video>) -> Self {
+        self.video = input;
+        self
+    }
+    /// <p>A job identifier specified in the call to StartCelebrityRecognition and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
+    pub fn job_tag(mut self, input: impl Into<std::string::String>) -> Self {
+        self.job_tag = Some(input.into());
+        self
+    }
+    /// <p>A job identifier specified in the call to StartCelebrityRecognition and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
+    pub fn set_job_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.job_tag = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -152,6 +206,9 @@ impl GetCelebrityRecognitionOutputBuilder {
             video_metadata: self.video_metadata,
             next_token: self.next_token,
             celebrities: self.celebrities,
+            job_id: self.job_id,
+            video: self.video,
+            job_tag: self.job_tag,
             _request_id: self._request_id,
         }
     }

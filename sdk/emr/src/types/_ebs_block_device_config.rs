@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EbsBlockDeviceConfig {
-    /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an EC2 instance in the cluster.</p>
+    /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an Amazon EC2 instance in the cluster.</p>
     #[doc(hidden)]
     pub volume_specification: std::option::Option<crate::types::VolumeSpecification>,
     /// <p>Number of EBS volumes with a specific volume configuration that are associated with every instance in the instance group</p>
@@ -12,7 +12,7 @@ pub struct EbsBlockDeviceConfig {
     pub volumes_per_instance: std::option::Option<i32>,
 }
 impl EbsBlockDeviceConfig {
-    /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an EC2 instance in the cluster.</p>
+    /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an Amazon EC2 instance in the cluster.</p>
     pub fn volume_specification(&self) -> std::option::Option<&crate::types::VolumeSpecification> {
         self.volume_specification.as_ref()
     }
@@ -36,12 +36,12 @@ pub struct EbsBlockDeviceConfigBuilder {
     pub(crate) volumes_per_instance: std::option::Option<i32>,
 }
 impl EbsBlockDeviceConfigBuilder {
-    /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an EC2 instance in the cluster.</p>
+    /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an Amazon EC2 instance in the cluster.</p>
     pub fn volume_specification(mut self, input: crate::types::VolumeSpecification) -> Self {
         self.volume_specification = Some(input);
         self
     }
-    /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an EC2 instance in the cluster.</p>
+    /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an Amazon EC2 instance in the cluster.</p>
     pub fn set_volume_specification(
         mut self,
         input: std::option::Option<crate::types::VolumeSpecification>,

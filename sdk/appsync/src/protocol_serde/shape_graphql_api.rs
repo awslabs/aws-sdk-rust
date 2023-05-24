@@ -111,6 +111,24 @@ where
                                     crate::protocol_serde::shape_lambda_authorizer_config::de_lambda_authorizer_config(tokens)?
                                 );
                             }
+                            "dns" => {
+                                builder = builder.set_dns(
+                                    crate::protocol_serde::shape_map_of_string_to_string::de_map_of_string_to_string(tokens)?
+                                );
+                            }
+                            "visibility" => {
+                                builder = builder.set_visibility(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::types::GraphQlApiVisibility::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

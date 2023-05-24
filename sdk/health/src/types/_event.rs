@@ -15,7 +15,7 @@ pub struct Event {
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    /// <p>The Amazon Web Service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     #[doc(hidden)]
     pub service: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
@@ -42,7 +42,7 @@ pub struct Event {
     /// <p>The most recent status of the event. Possible values are <code>open</code>, <code>closed</code>, and <code>upcoming</code>.</p>
     #[doc(hidden)]
     pub status_code: std::option::Option<crate::types::EventStatusCode>,
-    /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
+    /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
     /// <ul>
     /// <li> <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p> </li>
     /// <li> <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you have Amazon Web Services accounts that use that service, those account IDs appear in the response.</p> </li>
@@ -58,7 +58,7 @@ impl Event {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The Amazon Web Services service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    /// <p>The Amazon Web Service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     pub fn service(&self) -> std::option::Option<&str> {
         self.service.as_deref()
     }
@@ -94,7 +94,7 @@ impl Event {
     pub fn status_code(&self) -> std::option::Option<&crate::types::EventStatusCode> {
         self.status_code.as_ref()
     }
-    /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
+    /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
     /// <ul>
     /// <li> <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p> </li>
     /// <li> <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you have Amazon Web Services accounts that use that service, those account IDs appear in the response.</p> </li>
@@ -142,12 +142,12 @@ impl EventBuilder {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Web Services service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    /// <p>The Amazon Web Service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     pub fn service(mut self, input: impl Into<std::string::String>) -> Self {
         self.service = Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    /// <p>The Amazon Web Service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.service = input;
         self
@@ -247,7 +247,7 @@ impl EventBuilder {
         self.status_code = input;
         self
     }
-    /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
+    /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
     /// <ul>
     /// <li> <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p> </li>
     /// <li> <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you have Amazon Web Services accounts that use that service, those account IDs appear in the response.</p> </li>
@@ -257,7 +257,7 @@ impl EventBuilder {
         self.event_scope_code = Some(input);
         self
     }
-    /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
+    /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
     /// <ul>
     /// <li> <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p> </li>
     /// <li> <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you have Amazon Web Services accounts that use that service, those account IDs appear in the response.</p> </li>

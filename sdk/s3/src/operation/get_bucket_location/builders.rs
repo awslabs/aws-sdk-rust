@@ -6,8 +6,10 @@ pub use crate::operation::get_bucket_location::_get_bucket_location_input::GetBu
 /// Fluent builder constructing a request to `GetBucketLocation`.
 ///
 /// <p>Returns the Region the bucket resides in. You set the bucket's Region using the <code>LocationConstraint</code> request parameter in a <code>CreateBucket</code> request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>.</p>
-/// <p>To use this implementation of the operation, you must be the bucket owner.</p>
-/// <p>To use this API against an access point, provide the alias of the access point in place of the bucket name.</p>
+/// <p>To use this API operation against an access point, provide the alias of the access point in place of the bucket name.</p>
+/// <p>To use this API operation against an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <code>InvalidAccessPointAliasError</code> is returned. For more information about <code>InvalidAccessPointAliasError</code>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>.</p> <note>
+/// <p>We recommend that you use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html">HeadBucket</a> to return the Region that a bucket resides in. For backward compatibility, Amazon S3 continues to support GetBucketLocation.</p>
+/// </note>
 /// <p>The following operations are related to <code>GetBucketLocation</code>:</p>
 /// <ul>
 /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a> </p> </li>
@@ -76,11 +78,15 @@ impl GetBucketLocationFluentBuilder {
         self.handle.client.call(op).await
     }
     /// <p>The name of the bucket for which to get the location.</p>
+    /// <p>To use this API operation against an access point, provide the alias of the access point in place of the bucket name.</p>
+    /// <p>To use this API operation against an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <code>InvalidAccessPointAliasError</code> is returned. For more information about <code>InvalidAccessPointAliasError</code>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>.</p>
     pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.bucket(input.into());
         self
     }
     /// <p>The name of the bucket for which to get the location.</p>
+    /// <p>To use this API operation against an access point, provide the alias of the access point in place of the bucket name.</p>
+    /// <p>To use this API operation against an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <code>InvalidAccessPointAliasError</code> is returned. For more information about <code>InvalidAccessPointAliasError</code>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_bucket(input);
         self

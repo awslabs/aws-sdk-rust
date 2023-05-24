@@ -48,6 +48,12 @@ pub(crate) mod shape_create_theme;
 
 pub(crate) mod shape_create_theme_alias;
 
+pub(crate) mod shape_create_topic;
+
+pub(crate) mod shape_create_topic_refresh_schedule;
+
+pub(crate) mod shape_create_vpc_connection;
+
 pub(crate) mod shape_delete_account_customization;
 
 pub(crate) mod shape_delete_account_subscription;
@@ -84,9 +90,15 @@ pub(crate) mod shape_delete_theme;
 
 pub(crate) mod shape_delete_theme_alias;
 
+pub(crate) mod shape_delete_topic;
+
+pub(crate) mod shape_delete_topic_refresh_schedule;
+
 pub(crate) mod shape_delete_user;
 
 pub(crate) mod shape_delete_user_by_principal_id;
+
+pub(crate) mod shape_delete_vpc_connection;
 
 pub(crate) mod shape_describe_account_customization;
 
@@ -150,7 +162,17 @@ pub(crate) mod shape_describe_theme_alias;
 
 pub(crate) mod shape_describe_theme_permissions;
 
+pub(crate) mod shape_describe_topic;
+
+pub(crate) mod shape_describe_topic_permissions;
+
+pub(crate) mod shape_describe_topic_refresh;
+
+pub(crate) mod shape_describe_topic_refresh_schedule;
+
 pub(crate) mod shape_describe_user;
+
+pub(crate) mod shape_describe_vpc_connection;
 
 pub(crate) mod shape_generate_embed_url_for_anonymous_user;
 
@@ -202,9 +224,15 @@ pub(crate) mod shape_list_theme_versions;
 
 pub(crate) mod shape_list_themes;
 
+pub(crate) mod shape_list_topic_refresh_schedules;
+
+pub(crate) mod shape_list_topics;
+
 pub(crate) mod shape_list_user_groups;
 
 pub(crate) mod shape_list_users;
+
+pub(crate) mod shape_list_vpc_connections;
 
 pub(crate) mod shape_put_data_set_refresh_properties;
 
@@ -276,7 +304,15 @@ pub(crate) mod shape_update_theme_alias;
 
 pub(crate) mod shape_update_theme_permissions;
 
+pub(crate) mod shape_update_topic;
+
+pub(crate) mod shape_update_topic_permissions;
+
+pub(crate) mod shape_update_topic_refresh_schedule;
+
 pub(crate) mod shape_update_user;
+
+pub(crate) mod shape_update_vpc_connection;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -324,6 +360,12 @@ pub(crate) mod shape_create_theme_alias_input;
 
 pub(crate) mod shape_create_theme_input;
 
+pub(crate) mod shape_create_topic_input;
+
+pub(crate) mod shape_create_topic_refresh_schedule_input;
+
+pub(crate) mod shape_create_vpc_connection_input;
+
 pub(crate) mod shape_domain_not_whitelisted_exception;
 
 pub(crate) mod shape_generate_embed_url_for_anonymous_user_input;
@@ -341,8 +383,6 @@ pub(crate) mod shape_invalid_parameter_value_exception;
 pub(crate) mod shape_invalid_request_exception;
 
 pub(crate) mod shape_limit_exceeded_exception;
-
-pub(crate) mod shape_list_iam_policy_assignments_input;
 
 pub(crate) mod shape_precondition_not_met_exception;
 
@@ -426,7 +466,15 @@ pub(crate) mod shape_update_theme_input;
 
 pub(crate) mod shape_update_theme_permissions_input;
 
+pub(crate) mod shape_update_topic_input;
+
+pub(crate) mod shape_update_topic_permissions_input;
+
+pub(crate) mod shape_update_topic_refresh_schedule_input;
+
 pub(crate) mod shape_update_user_input;
+
+pub(crate) mod shape_update_vpc_connection_input;
 
 pub(crate) mod shape_account_customization;
 
@@ -491,6 +539,8 @@ pub(crate) mod shape_data_source_parameters;
 pub(crate) mod shape_data_source_search_filter;
 
 pub(crate) mod shape_data_source_summary_list;
+
+pub(crate) mod shape_dataset_parameter;
 
 pub(crate) mod shape_field_folder;
 
@@ -590,11 +640,25 @@ pub(crate) mod shape_theme_summary_list;
 
 pub(crate) mod shape_theme_version_summary_list;
 
+pub(crate) mod shape_topic_details;
+
+pub(crate) mod shape_topic_refresh_details;
+
+pub(crate) mod shape_topic_refresh_schedule;
+
+pub(crate) mod shape_topic_refresh_schedule_summaries;
+
+pub(crate) mod shape_topic_summaries;
+
 pub(crate) mod shape_user;
 
 pub(crate) mod shape_user_list;
 
+pub(crate) mod shape_vpc_connection;
+
 pub(crate) mod shape_vpc_connection_properties;
+
+pub(crate) mod shape_vpc_connection_summary_list;
 
 pub(crate) mod shape_active_iam_policy_assignment;
 
@@ -682,7 +746,17 @@ pub(crate) mod shape_data_source_summary;
 
 pub(crate) mod shape_databricks_parameters;
 
+pub(crate) mod shape_dataset_metadata;
+
+pub(crate) mod shape_dataset_parameter_list;
+
+pub(crate) mod shape_datasets;
+
+pub(crate) mod shape_date_time_dataset_parameter;
+
 pub(crate) mod shape_date_time_parameter;
+
+pub(crate) mod shape_decimal_dataset_parameter;
 
 pub(crate) mod shape_decimal_parameter;
 
@@ -708,6 +782,8 @@ pub(crate) mod shape_iam_policy_assignment_summary;
 
 pub(crate) mod shape_identity_name_list;
 
+pub(crate) mod shape_integer_dataset_parameter;
+
 pub(crate) mod shape_integer_parameter;
 
 pub(crate) mod shape_jira_parameters;
@@ -723,6 +799,8 @@ pub(crate) mod shape_member_id_arn_pair;
 pub(crate) mod shape_my_sql_parameters;
 
 pub(crate) mod shape_namespace_error;
+
+pub(crate) mod shape_network_interface_list;
 
 pub(crate) mod shape_oracle_parameters;
 
@@ -768,6 +846,8 @@ pub(crate) mod shape_s3_parameters;
 
 pub(crate) mod shape_s3_source;
 
+pub(crate) mod shape_security_group_id_list;
+
 pub(crate) mod shape_service_now_parameters;
 
 pub(crate) mod shape_sheet_controls_option;
@@ -787,6 +867,10 @@ pub(crate) mod shape_snowflake_parameters;
 pub(crate) mod shape_spark_parameters;
 
 pub(crate) mod shape_sql_server_parameters;
+
+pub(crate) mod shape_string_dataset_parameter;
+
+pub(crate) mod shape_string_list;
 
 pub(crate) mod shape_string_parameter;
 
@@ -810,6 +894,10 @@ pub(crate) mod shape_theme_version;
 
 pub(crate) mod shape_theme_version_summary;
 
+pub(crate) mod shape_topic_refresh_schedule_summary;
+
+pub(crate) mod shape_topic_summary;
+
 pub(crate) mod shape_transform_operation;
 
 pub(crate) mod shape_twitter_parameters;
@@ -821,6 +909,8 @@ pub(crate) mod shape_ui_color_palette;
 pub(crate) mod shape_visual_axis_sort_option;
 
 pub(crate) mod shape_visual_menu_option;
+
+pub(crate) mod shape_vpc_connection_summary;
 
 pub(crate) mod shape_action_list;
 
@@ -834,11 +924,17 @@ pub(crate) mod shape_create_columns_operation;
 
 pub(crate) mod shape_dashboard_visual_id;
 
+pub(crate) mod shape_data_aggregation;
+
 pub(crate) mod shape_data_set_reference;
 
 pub(crate) mod shape_data_set_schema;
 
+pub(crate) mod shape_date_time_dataset_parameter_default_values;
+
 pub(crate) mod shape_date_time_parameter_declaration;
+
+pub(crate) mod shape_decimal_dataset_parameter_default_values;
 
 pub(crate) mod shape_decimal_parameter_declaration;
 
@@ -864,6 +960,8 @@ pub(crate) mod shape_incremental_refresh;
 
 pub(crate) mod shape_input_column;
 
+pub(crate) mod shape_integer_dataset_parameter_default_values;
+
 pub(crate) mod shape_integer_parameter_declaration;
 
 pub(crate) mod shape_join_instruction;
@@ -872,7 +970,11 @@ pub(crate) mod shape_layout;
 
 pub(crate) mod shape_manifest_file_location;
 
+pub(crate) mod shape_network_interface;
+
 pub(crate) mod shape_output_column;
+
+pub(crate) mod shape_override_dataset_parameter_operation;
 
 pub(crate) mod shape_parameter_control;
 
@@ -896,6 +998,8 @@ pub(crate) mod shape_sheet_control_layout;
 
 pub(crate) mod shape_sheet_text_box;
 
+pub(crate) mod shape_string_dataset_parameter_default_values;
+
 pub(crate) mod shape_string_parameter_declaration;
 
 pub(crate) mod shape_tag_column_operation;
@@ -906,6 +1010,14 @@ pub(crate) mod shape_tile_layout_style;
 
 pub(crate) mod shape_tile_style;
 
+pub(crate) mod shape_topic_calculated_field;
+
+pub(crate) mod shape_topic_column;
+
+pub(crate) mod shape_topic_filter;
+
+pub(crate) mod shape_topic_named_entity;
+
 pub(crate) mod shape_untag_column_operation;
 
 pub(crate) mod shape_upload_settings;
@@ -914,6 +1026,8 @@ pub(crate) mod shape_visual;
 
 pub(crate) mod shape_bar_chart_visual;
 
+pub(crate) mod shape_bookmarks_configurations;
+
 pub(crate) mod shape_border_style;
 
 pub(crate) mod shape_box_plot_visual;
@@ -921,6 +1035,8 @@ pub(crate) mod shape_box_plot_visual;
 pub(crate) mod shape_calculated_column;
 
 pub(crate) mod shape_category_filter;
+
+pub(crate) mod shape_cell_value_synonym;
 
 pub(crate) mod shape_column_group_column_schema;
 
@@ -934,6 +1050,8 @@ pub(crate) mod shape_column_tag;
 
 pub(crate) mod shape_combo_chart_visual;
 
+pub(crate) mod shape_comparative_order;
+
 pub(crate) mod shape_custom_content_visual;
 
 pub(crate) mod shape_date_time_default_values;
@@ -945,6 +1063,8 @@ pub(crate) mod shape_date_time_value_when_unset_configuration;
 pub(crate) mod shape_decimal_default_values;
 
 pub(crate) mod shape_decimal_value_when_unset_configuration;
+
+pub(crate) mod shape_default_formatting;
 
 pub(crate) mod shape_default_interactive_layout_configuration;
 
@@ -1006,7 +1126,13 @@ pub(crate) mod shape_line_chart_visual;
 
 pub(crate) mod shape_lookback_window;
 
+pub(crate) mod shape_mapped_data_set_parameter;
+
 pub(crate) mod shape_margin_style;
+
+pub(crate) mod shape_named_entity_definition;
+
+pub(crate) mod shape_new_default_values;
 
 pub(crate) mod shape_number_format_configuration;
 
@@ -1046,6 +1172,10 @@ pub(crate) mod shape_scatter_plot_visual;
 
 pub(crate) mod shape_selected_sheets_filter_scope_configuration;
 
+pub(crate) mod shape_semantic_entity_type;
+
+pub(crate) mod shape_semantic_type;
+
 pub(crate) mod shape_sheet_control_layout_configuration;
 
 pub(crate) mod shape_sheet_control_layout_list;
@@ -1069,6 +1199,24 @@ pub(crate) mod shape_time_equality_filter;
 pub(crate) mod shape_time_range_filter;
 
 pub(crate) mod shape_top_bottom_filter;
+
+pub(crate) mod shape_topic_calculated_fields;
+
+pub(crate) mod shape_topic_category_filter;
+
+pub(crate) mod shape_topic_columns;
+
+pub(crate) mod shape_topic_date_range_filter;
+
+pub(crate) mod shape_topic_filters;
+
+pub(crate) mod shape_topic_named_entities;
+
+pub(crate) mod shape_topic_numeric_equality_filter;
+
+pub(crate) mod shape_topic_numeric_range_filter;
+
+pub(crate) mod shape_topic_relative_date_filter;
 
 pub(crate) mod shape_transform_operation_list;
 
@@ -1116,6 +1264,8 @@ pub(crate) mod shape_default_grid_layout_configuration;
 
 pub(crate) mod shape_default_section_based_layout_configuration;
 
+pub(crate) mod shape_display_format_options;
+
 pub(crate) mod shape_drop_down_control_display_options;
 
 pub(crate) mod shape_dynamic_default_value;
@@ -1158,6 +1308,10 @@ pub(crate) mod shape_line_chart_configuration;
 
 pub(crate) mod shape_list_control_display_options;
 
+pub(crate) mod shape_mapped_data_set_parameters;
+
+pub(crate) mod shape_named_entity_definition_metric;
+
 pub(crate) mod shape_null_value_format_configuration;
 
 pub(crate) mod shape_numeric_format_configuration;
@@ -1198,6 +1352,12 @@ pub(crate) mod shape_text_field_control_display_options;
 
 pub(crate) mod shape_time_range_filter_value;
 
+pub(crate) mod shape_topic_category_filter_constant;
+
+pub(crate) mod shape_topic_range_filter_constant;
+
+pub(crate) mod shape_topic_singular_filter_constant;
+
 pub(crate) mod shape_tree_map_configuration;
 
 pub(crate) mod shape_visual_custom_action;
@@ -1209,6 +1369,8 @@ pub(crate) mod shape_visual_title_label_options;
 pub(crate) mod shape_waterfall_chart_configuration;
 
 pub(crate) mod shape_word_cloud_chart_configuration;
+
+pub(crate) mod shape_author_specified_aggregations;
 
 pub(crate) mod shape_axis_display_options;
 
@@ -1226,7 +1388,11 @@ pub(crate) mod shape_box_plot_sort_configuration;
 
 pub(crate) mod shape_cascading_control_source;
 
+pub(crate) mod shape_cell_value_synonyms;
+
 pub(crate) mod shape_chart_axis_label_options;
+
+pub(crate) mod shape_collective_constant;
 
 pub(crate) mod shape_color_scale;
 
@@ -1250,9 +1416,13 @@ pub(crate) mod shape_custom_narrative_options;
 
 pub(crate) mod shape_data_label_options;
 
+pub(crate) mod shape_date_time_dataset_parameter_value_list;
+
 pub(crate) mod shape_date_time_default_value_list;
 
 pub(crate) mod shape_date_time_hierarchy;
+
+pub(crate) mod shape_decimal_dataset_parameter_value_list;
 
 pub(crate) mod shape_decimal_default_value_list;
 
@@ -1308,6 +1478,8 @@ pub(crate) mod shape_histogram_bin_options;
 
 pub(crate) mod shape_histogram_field_wells;
 
+pub(crate) mod shape_integer_dataset_parameter_value_list;
+
 pub(crate) mod shape_integer_default_value_list;
 
 pub(crate) mod shape_kpi_conditional_formatting_option;
@@ -1335,6 +1507,10 @@ pub(crate) mod shape_list_control_search_options;
 pub(crate) mod shape_list_control_select_all_options;
 
 pub(crate) mod shape_long_format_text;
+
+pub(crate) mod shape_named_entity_definitions;
+
+pub(crate) mod shape_negative_format;
 
 pub(crate) mod shape_number_display_format_configuration;
 
@@ -1368,6 +1544,8 @@ pub(crate) mod shape_radar_chart_series_settings;
 
 pub(crate) mod shape_radar_chart_sort_configuration;
 
+pub(crate) mod shape_range_constant;
+
 pub(crate) mod shape_reference_line;
 
 pub(crate) mod shape_sankey_diagram_field_wells;
@@ -1386,7 +1564,11 @@ pub(crate) mod shape_short_format_text;
 
 pub(crate) mod shape_small_multiples_options;
 
+pub(crate) mod shape_string_dataset_parameter_value_list;
+
 pub(crate) mod shape_string_default_value_list;
+
+pub(crate) mod shape_synonyms;
 
 pub(crate) mod shape_table_conditional_formatting_option;
 
@@ -1618,6 +1800,8 @@ pub(crate) mod shape_section_page_break_configuration;
 
 pub(crate) mod shape_section_style;
 
+pub(crate) mod shape_sensitive_string_list;
+
 pub(crate) mod shape_sheet_element_rendering_rule;
 
 pub(crate) mod shape_subtotal_options;
@@ -1645,6 +1829,8 @@ pub(crate) mod shape_total_aggregation_computation;
 pub(crate) mod shape_tree_map_aggregated_field_wells;
 
 pub(crate) mod shape_trend_arrow_options;
+
+pub(crate) mod shape_type_parameters;
 
 pub(crate) mod shape_unique_values_computation;
 
@@ -1800,6 +1986,8 @@ pub(crate) mod shape_what_if_point_scenario;
 
 pub(crate) mod shape_what_if_range_scenario;
 
+pub(crate) mod shape_aggregation_function_parameters;
+
 pub(crate) mod shape_axis_display_range;
 
 pub(crate) mod shape_axis_label_options_list;
@@ -1953,6 +2141,8 @@ pub(crate) mod shape_table_field_custom_icon_content;
 pub(crate) mod shape_table_field_custom_text_content;
 
 pub(crate) mod shape_set_parameter_value_configuration_list;
+
+pub(crate) mod shape_custom_action_column_list;
 
 pub(crate) mod shape_selected_field_list;
 

@@ -283,6 +283,50 @@ impl From<crate::operation::create_configuration::CreateConfigurationError> for 
     }
 }
 impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_vpc_connection::CreateVpcConnectionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_vpc_connection::CreateVpcConnectionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_vpc_connection::CreateVpcConnectionError> for Error {
+    fn from(err: crate::operation::create_vpc_connection::CreateVpcConnectionError) -> Self {
+        match err {
+            crate::operation::create_vpc_connection::CreateVpcConnectionError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_vpc_connection::CreateVpcConnectionError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_vpc_connection::CreateVpcConnectionError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::create_vpc_connection::CreateVpcConnectionError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_vpc_connection::CreateVpcConnectionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_vpc_connection::CreateVpcConnectionError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::create_vpc_connection::CreateVpcConnectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<aws_smithy_http::result::SdkError<crate::operation::delete_cluster::DeleteClusterError, R>>
     for Error
 where
@@ -333,6 +377,48 @@ impl From<crate::operation::delete_cluster::DeleteClusterError> for Error {
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
+            crate::operation::delete_cluster_policy::DeleteClusterPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_cluster_policy::DeleteClusterPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_cluster_policy::DeleteClusterPolicyError> for Error {
+    fn from(err: crate::operation::delete_cluster_policy::DeleteClusterPolicyError) -> Self {
+        match err {
+            crate::operation::delete_cluster_policy::DeleteClusterPolicyError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_cluster_policy::DeleteClusterPolicyError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_cluster_policy::DeleteClusterPolicyError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_cluster_policy::DeleteClusterPolicyError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_cluster_policy::DeleteClusterPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
             crate::operation::delete_configuration::DeleteConfigurationError,
             R,
         >,
@@ -369,6 +455,48 @@ impl From<crate::operation::delete_configuration::DeleteConfigurationError> for 
             crate::operation::delete_configuration::DeleteConfigurationError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::delete_configuration::DeleteConfigurationError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::delete_configuration::DeleteConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_vpc_connection::DeleteVpcConnectionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_vpc_connection::DeleteVpcConnectionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_vpc_connection::DeleteVpcConnectionError> for Error {
+    fn from(err: crate::operation::delete_vpc_connection::DeleteVpcConnectionError) -> Self {
+        match err {
+            crate::operation::delete_vpc_connection::DeleteVpcConnectionError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_vpc_connection::DeleteVpcConnectionError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_vpc_connection::DeleteVpcConnectionError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_vpc_connection::DeleteVpcConnectionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_vpc_connection::DeleteVpcConnectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -598,6 +726,50 @@ impl From<crate::operation::describe_configuration_revision::DescribeConfigurati
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
+            crate::operation::describe_vpc_connection::DescribeVpcConnectionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_vpc_connection::DescribeVpcConnectionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_vpc_connection::DescribeVpcConnectionError> for Error {
+    fn from(err: crate::operation::describe_vpc_connection::DescribeVpcConnectionError) -> Self {
+        match err {
+            crate::operation::describe_vpc_connection::DescribeVpcConnectionError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::describe_vpc_connection::DescribeVpcConnectionError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::describe_vpc_connection::DescribeVpcConnectionError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::describe_vpc_connection::DescribeVpcConnectionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_vpc_connection::DescribeVpcConnectionError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::describe_vpc_connection::DescribeVpcConnectionError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_vpc_connection::DescribeVpcConnectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
             crate::operation::get_bootstrap_brokers::GetBootstrapBrokersError,
             R,
         >,
@@ -635,6 +807,48 @@ impl From<crate::operation::get_bootstrap_brokers::GetBootstrapBrokersError> for
             crate::operation::get_bootstrap_brokers::GetBootstrapBrokersError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::get_bootstrap_brokers::GetBootstrapBrokersError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::get_bootstrap_brokers::GetBootstrapBrokersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_cluster_policy::GetClusterPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_cluster_policy::GetClusterPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_cluster_policy::GetClusterPolicyError> for Error {
+    fn from(err: crate::operation::get_cluster_policy::GetClusterPolicyError) -> Self {
+        match err {
+            crate::operation::get_cluster_policy::GetClusterPolicyError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_cluster_policy::GetClusterPolicyError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_cluster_policy::GetClusterPolicyError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_cluster_policy::GetClusterPolicyError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_cluster_policy::GetClusterPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -684,6 +898,51 @@ impl From<crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVer
             crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_client_vpc_connections::ListClientVpcConnectionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_client_vpc_connections::ListClientVpcConnectionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_client_vpc_connections::ListClientVpcConnectionsError> for Error {
+    fn from(
+        err: crate::operation::list_client_vpc_connections::ListClientVpcConnectionsError,
+    ) -> Self {
+        match err {
+            crate::operation::list_client_vpc_connections::ListClientVpcConnectionsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_client_vpc_connections::ListClientVpcConnectionsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_client_vpc_connections::ListClientVpcConnectionsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::list_client_vpc_connections::ListClientVpcConnectionsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_client_vpc_connections::ListClientVpcConnectionsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_client_vpc_connections::ListClientVpcConnectionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1083,6 +1342,90 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
     }
 }
 impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_vpc_connections::ListVpcConnectionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_vpc_connections::ListVpcConnectionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_vpc_connections::ListVpcConnectionsError> for Error {
+    fn from(err: crate::operation::list_vpc_connections::ListVpcConnectionsError) -> Self {
+        match err {
+            crate::operation::list_vpc_connections::ListVpcConnectionsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_vpc_connections::ListVpcConnectionsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_vpc_connections::ListVpcConnectionsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::list_vpc_connections::ListVpcConnectionsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_vpc_connections::ListVpcConnectionsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_vpc_connections::ListVpcConnectionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_cluster_policy::PutClusterPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_cluster_policy::PutClusterPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::put_cluster_policy::PutClusterPolicyError> for Error {
+    fn from(err: crate::operation::put_cluster_policy::PutClusterPolicyError) -> Self {
+        match err {
+            crate::operation::put_cluster_policy::PutClusterPolicyError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::put_cluster_policy::PutClusterPolicyError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::put_cluster_policy::PutClusterPolicyError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::put_cluster_policy::PutClusterPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<aws_smithy_http::result::SdkError<crate::operation::reboot_broker::RebootBrokerError, R>>
     for Error
 where
@@ -1136,6 +1479,53 @@ impl From<crate::operation::reboot_broker::RebootBrokerError> for Error {
             crate::operation::reboot_broker::RebootBrokerError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionError>
+    for Error
+{
+    fn from(
+        err: crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionError,
+    ) -> Self {
+        match err {
+            crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

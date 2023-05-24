@@ -21,10 +21,10 @@ pub fn ser_archive_group_settings(
         )?;
         object_4.finish();
     }
-    if input.rollover_interval != 0 {
+    if let Some(var_5) = &input.rollover_interval {
         object.key("rolloverInterval").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.rollover_interval).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
     Ok(())

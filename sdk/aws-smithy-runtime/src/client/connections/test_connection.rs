@@ -9,7 +9,7 @@ use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::result::ConnectorError;
 use aws_smithy_protocol_test::{assert_ok, validate_body, MediaType};
 use aws_smithy_runtime_api::client::orchestrator::{
-    BoxFallibleFut, Connection, HttpRequest, HttpResponse,
+    BoxFuture, Connection, HttpRequest, HttpResponse,
 };
 use http::header::{HeaderName, CONTENT_TYPE};
 use std::fmt::Debug;
@@ -187,7 +187,7 @@ impl TestConnection {
 }
 
 impl Connection for TestConnection {
-    fn call(&self, request: HttpRequest) -> BoxFallibleFut<HttpResponse> {
+    fn call(&self, request: HttpRequest) -> BoxFuture<HttpResponse> {
         // TODO(orchestrator) Validate request
 
         let res = if let Some((expected, resp)) = self.data.lock().unwrap().pop() {

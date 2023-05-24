@@ -6,7 +6,7 @@ pub struct CreateParticipantTokenInput {
     /// <p>ARN of the stage to which this token is scoped.</p>
     #[doc(hidden)]
     pub stage_arn: std::option::Option<std::string::String>,
-    /// <p>Duration (in minutes), after which the token expires. Default: 60 (1 hour).</p>
+    /// <p>Duration (in minutes), after which the token expires. Default: 720 (12 hours).</p>
     #[doc(hidden)]
     pub duration: i32,
     /// <p>Name that can be specified to help identify the token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
@@ -25,7 +25,7 @@ impl CreateParticipantTokenInput {
     pub fn stage_arn(&self) -> std::option::Option<&str> {
         self.stage_arn.as_deref()
     }
-    /// <p>Duration (in minutes), after which the token expires. Default: 60 (1 hour).</p>
+    /// <p>Duration (in minutes), after which the token expires. Default: 720 (12 hours).</p>
     pub fn duration(&self) -> i32 {
         self.duration
     }
@@ -77,12 +77,12 @@ impl CreateParticipantTokenInputBuilder {
         self.stage_arn = input;
         self
     }
-    /// <p>Duration (in minutes), after which the token expires. Default: 60 (1 hour).</p>
+    /// <p>Duration (in minutes), after which the token expires. Default: 720 (12 hours).</p>
     pub fn duration(mut self, input: i32) -> Self {
         self.duration = Some(input);
         self
     }
-    /// <p>Duration (in minutes), after which the token expires. Default: 60 (1 hour).</p>
+    /// <p>Duration (in minutes), after which the token expires. Default: 720 (12 hours).</p>
     pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
         self.duration = input;
         self

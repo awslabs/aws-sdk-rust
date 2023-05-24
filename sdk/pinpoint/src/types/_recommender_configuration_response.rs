@@ -46,7 +46,7 @@ pub struct RecommenderConfigurationResponse {
     pub recommendations_display_name: std::option::Option<std::string::String>,
     /// <p>The number of recommended items that are retrieved from the model for each endpoint or user, depending on the value for the RecommendationProviderIdType property. This number determines how many recommended items are available for use in message variables.</p>
     #[doc(hidden)]
-    pub recommendations_per_message: i32,
+    pub recommendations_per_message: std::option::Option<i32>,
 }
 impl RecommenderConfigurationResponse {
     /// <p>A map that defines 1-10 custom endpoint or user attributes, depending on the value for the RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item that's retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute can be used as a message variable in a message template.</p>
@@ -103,7 +103,7 @@ impl RecommenderConfigurationResponse {
         self.recommendations_display_name.as_deref()
     }
     /// <p>The number of recommended items that are retrieved from the model for each endpoint or user, depending on the value for the RecommendationProviderIdType property. This number determines how many recommended items are available for use in message variables.</p>
-    pub fn recommendations_per_message(&self) -> i32 {
+    pub fn recommendations_per_message(&self) -> std::option::Option<i32> {
         self.recommendations_per_message
     }
 }
@@ -318,7 +318,7 @@ impl RecommenderConfigurationResponseBuilder {
             recommendation_provider_uri: self.recommendation_provider_uri,
             recommendation_transformer_uri: self.recommendation_transformer_uri,
             recommendations_display_name: self.recommendations_display_name,
-            recommendations_per_message: self.recommendations_per_message.unwrap_or_default(),
+            recommendations_per_message: self.recommendations_per_message,
         }
     }
 }

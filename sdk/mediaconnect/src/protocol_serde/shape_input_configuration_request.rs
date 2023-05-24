@@ -3,20 +3,20 @@ pub fn ser_input_configuration_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InputConfigurationRequest,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    {
+    if let Some(var_1) = &input.input_port {
         object.key("inputPort").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.input_port).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.interface {
+    if let Some(var_2) = &input.interface {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("interface").start_object();
+        let mut object_3 = object.key("interface").start_object();
         crate::protocol_serde::shape_interface_request::ser_interface_request(
-            &mut object_2,
-            var_1,
+            &mut object_3,
+            var_2,
         )?;
-        object_2.finish();
+        object_3.finish();
     }
     Ok(())
 }

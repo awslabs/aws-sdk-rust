@@ -12,16 +12,16 @@ pub struct ChannelResponse {
     pub creation_date: std::option::Option<std::string::String>,
     /// <p>Specifies whether the channel is enabled for the application.</p>
     #[doc(hidden)]
-    pub enabled: bool,
+    pub enabled: std::option::Option<bool>,
     /// <p>(Not used) This property is retained only for backward compatibility.</p>
     #[doc(hidden)]
-    pub has_credential: bool,
+    pub has_credential: std::option::Option<bool>,
     /// <p>(Deprecated) An identifier for the channel. This property is retained only for backward compatibility.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the channel is archived.</p>
     #[doc(hidden)]
-    pub is_archived: bool,
+    pub is_archived: std::option::Option<bool>,
     /// <p>The user who last modified the channel.</p>
     #[doc(hidden)]
     pub last_modified_by: std::option::Option<std::string::String>,
@@ -30,7 +30,7 @@ pub struct ChannelResponse {
     pub last_modified_date: std::option::Option<std::string::String>,
     /// <p>The current version of the channel.</p>
     #[doc(hidden)]
-    pub version: i32,
+    pub version: std::option::Option<i32>,
 }
 impl ChannelResponse {
     /// <p>The unique identifier for the application.</p>
@@ -42,11 +42,11 @@ impl ChannelResponse {
         self.creation_date.as_deref()
     }
     /// <p>Specifies whether the channel is enabled for the application.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
     /// <p>(Not used) This property is retained only for backward compatibility.</p>
-    pub fn has_credential(&self) -> bool {
+    pub fn has_credential(&self) -> std::option::Option<bool> {
         self.has_credential
     }
     /// <p>(Deprecated) An identifier for the channel. This property is retained only for backward compatibility.</p>
@@ -54,7 +54,7 @@ impl ChannelResponse {
         self.id.as_deref()
     }
     /// <p>Specifies whether the channel is archived.</p>
-    pub fn is_archived(&self) -> bool {
+    pub fn is_archived(&self) -> std::option::Option<bool> {
         self.is_archived
     }
     /// <p>The user who last modified the channel.</p>
@@ -66,7 +66,7 @@ impl ChannelResponse {
         self.last_modified_date.as_deref()
     }
     /// <p>The current version of the channel.</p>
-    pub fn version(&self) -> i32 {
+    pub fn version(&self) -> std::option::Option<i32> {
         self.version
     }
 }
@@ -190,13 +190,13 @@ impl ChannelResponseBuilder {
         crate::types::ChannelResponse {
             application_id: self.application_id,
             creation_date: self.creation_date,
-            enabled: self.enabled.unwrap_or_default(),
-            has_credential: self.has_credential.unwrap_or_default(),
+            enabled: self.enabled,
+            has_credential: self.has_credential,
             id: self.id,
-            is_archived: self.is_archived.unwrap_or_default(),
+            is_archived: self.is_archived,
             last_modified_by: self.last_modified_by,
             last_modified_date: self.last_modified_date,
-            version: self.version.unwrap_or_default(),
+            version: self.version,
         }
     }
 }

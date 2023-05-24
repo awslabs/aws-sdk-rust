@@ -6,7 +6,7 @@ pub struct DescribeAffectedAccountsForOrganizationOutput {
     /// <p>A JSON set of elements of the affected accounts.</p>
     #[doc(hidden)]
     pub affected_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
+    /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
     /// <ul>
     /// <li> <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p> </li>
     /// <li> <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you have Amazon Web Services accounts that use that service, those account IDs appear in the response.</p> </li>
@@ -24,7 +24,7 @@ impl DescribeAffectedAccountsForOrganizationOutput {
     pub fn affected_accounts(&self) -> std::option::Option<&[std::string::String]> {
         self.affected_accounts.as_deref()
     }
-    /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
+    /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
     /// <ul>
     /// <li> <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p> </li>
     /// <li> <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you have Amazon Web Services accounts that use that service, those account IDs appear in the response.</p> </li>
@@ -79,7 +79,7 @@ impl DescribeAffectedAccountsForOrganizationOutputBuilder {
         self.affected_accounts = input;
         self
     }
-    /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
+    /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
     /// <ul>
     /// <li> <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p> </li>
     /// <li> <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you have Amazon Web Services accounts that use that service, those account IDs appear in the response.</p> </li>
@@ -89,7 +89,7 @@ impl DescribeAffectedAccountsForOrganizationOutputBuilder {
         self.event_scope_code = Some(input);
         self
     }
-    /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
+    /// <p>This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.</p>
     /// <ul>
     /// <li> <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p> </li>
     /// <li> <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you have Amazon Web Services accounts that use that service, those account IDs appear in the response.</p> </li>

@@ -6,7 +6,7 @@
 pub struct CaptionLanguageMapping {
     /// The closed caption channel being described by this CaptionLanguageMapping. Each channel mapping must have a unique channel number (maximum of 4)
     #[doc(hidden)]
-    pub caption_channel: i32,
+    pub caption_channel: std::option::Option<i32>,
     /// Three character ISO 639-2 language code (see http://www.loc.gov/standards/iso639-2)
     #[doc(hidden)]
     pub language_code: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct CaptionLanguageMapping {
 }
 impl CaptionLanguageMapping {
     /// The closed caption channel being described by this CaptionLanguageMapping. Each channel mapping must have a unique channel number (maximum of 4)
-    pub fn caption_channel(&self) -> i32 {
+    pub fn caption_channel(&self) -> std::option::Option<i32> {
         self.caption_channel
     }
     /// Three character ISO 639-2 language code (see http://www.loc.gov/standards/iso639-2)
@@ -80,7 +80,7 @@ impl CaptionLanguageMappingBuilder {
     /// Consumes the builder and constructs a [`CaptionLanguageMapping`](crate::types::CaptionLanguageMapping).
     pub fn build(self) -> crate::types::CaptionLanguageMapping {
         crate::types::CaptionLanguageMapping {
-            caption_channel: self.caption_channel.unwrap_or_default(),
+            caption_channel: self.caption_channel,
             language_code: self.language_code,
             language_description: self.language_description,
         }

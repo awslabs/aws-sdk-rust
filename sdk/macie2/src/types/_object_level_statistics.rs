@@ -6,25 +6,25 @@
 pub struct ObjectLevelStatistics {
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects don't have a file name extension for a supported file or storage format.</p>
     #[doc(hidden)]
-    pub file_type: i64,
+    pub file_type: std::option::Option<i64>,
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class.</p>
     #[doc(hidden)]
-    pub storage_class: i64,
+    pub storage_class: std::option::Option<i64>,
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class or don't have a file name extension for a supported file or storage format.</p>
     #[doc(hidden)]
-    pub total: i64,
+    pub total: std::option::Option<i64>,
 }
 impl ObjectLevelStatistics {
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects don't have a file name extension for a supported file or storage format.</p>
-    pub fn file_type(&self) -> i64 {
+    pub fn file_type(&self) -> std::option::Option<i64> {
         self.file_type
     }
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class.</p>
-    pub fn storage_class(&self) -> i64 {
+    pub fn storage_class(&self) -> std::option::Option<i64> {
         self.storage_class
     }
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class or don't have a file name extension for a supported file or storage format.</p>
-    pub fn total(&self) -> i64 {
+    pub fn total(&self) -> std::option::Option<i64> {
         self.total
     }
 }
@@ -77,9 +77,9 @@ impl ObjectLevelStatisticsBuilder {
     /// Consumes the builder and constructs a [`ObjectLevelStatistics`](crate::types::ObjectLevelStatistics).
     pub fn build(self) -> crate::types::ObjectLevelStatistics {
         crate::types::ObjectLevelStatistics {
-            file_type: self.file_type.unwrap_or_default(),
-            storage_class: self.storage_class.unwrap_or_default(),
-            total: self.total.unwrap_or_default(),
+            file_type: self.file_type,
+            storage_class: self.storage_class,
+            total: self.total,
         }
     }
 }

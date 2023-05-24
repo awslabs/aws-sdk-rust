@@ -7,7 +7,7 @@ pub struct CustomStepDetails {
     /// <p>The name of the step, used as an identifier.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The ARN for the lambda function that is being called.</p>
+    /// <p>The ARN for the Lambda function that is being called.</p>
     #[doc(hidden)]
     pub target: std::option::Option<std::string::String>,
     /// <p>Timeout, in seconds, for the step.</p>
@@ -26,7 +26,7 @@ impl CustomStepDetails {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The ARN for the lambda function that is being called.</p>
+    /// <p>The ARN for the Lambda function that is being called.</p>
     pub fn target(&self) -> std::option::Option<&str> {
         self.target.as_deref()
     }
@@ -70,12 +70,12 @@ impl CustomStepDetailsBuilder {
         self.name = input;
         self
     }
-    /// <p>The ARN for the lambda function that is being called.</p>
+    /// <p>The ARN for the Lambda function that is being called.</p>
     pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
         self.target = Some(input.into());
         self
     }
-    /// <p>The ARN for the lambda function that is being called.</p>
+    /// <p>The ARN for the Lambda function that is being called.</p>
     pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.target = input;
         self

@@ -78,12 +78,12 @@ impl UpdateFeaturedResultsSetFluentBuilder {
         self.inner = self.inner.set_index_id(input);
         self
     }
-    /// <p>The identifier of the index used for featuring results.</p>
+    /// <p>The identifier of the set of featured results that you want to update.</p>
     pub fn featured_results_set_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.featured_results_set_id(input.into());
         self
     }
-    /// <p>The identifier of the index used for featuring results.</p>
+    /// <p>The identifier of the set of featured results that you want to update.</p>
     pub fn set_featured_results_set_id(
         mut self,
         input: std::option::Option<std::string::String>,

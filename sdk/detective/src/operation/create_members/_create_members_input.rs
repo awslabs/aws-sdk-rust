@@ -12,7 +12,7 @@ pub struct CreateMembersInput {
     /// <p>if set to <code>true</code>, then the invited accounts do not receive email notifications. By default, this is set to <code>false</code>, and the invited accounts receive email notifications.</p>
     /// <p>Organization accounts in the organization behavior graph do not receive email notifications.</p>
     #[doc(hidden)]
-    pub disable_email_notification: bool,
+    pub disable_email_notification: std::option::Option<bool>,
     /// <p>The list of Amazon Web Services accounts to invite or to enable. You can invite or enable up to 50 accounts at a time. For each invited account, the account list contains the account identifier and the Amazon Web Services account root user email address. For organization accounts in the organization behavior graph, the email address is not required.</p>
     #[doc(hidden)]
     pub accounts: std::option::Option<std::vec::Vec<crate::types::Account>>,
@@ -28,7 +28,7 @@ impl CreateMembersInput {
     }
     /// <p>if set to <code>true</code>, then the invited accounts do not receive email notifications. By default, this is set to <code>false</code>, and the invited accounts receive email notifications.</p>
     /// <p>Organization accounts in the organization behavior graph do not receive email notifications.</p>
-    pub fn disable_email_notification(&self) -> bool {
+    pub fn disable_email_notification(&self) -> std::option::Option<bool> {
         self.disable_email_notification
     }
     /// <p>The list of Amazon Web Services accounts to invite or to enable. You can invite or enable up to 50 accounts at a time. For each invited account, the account list contains the account identifier and the Amazon Web Services account root user email address. For organization accounts in the organization behavior graph, the email address is not required.</p>
@@ -114,7 +114,7 @@ impl CreateMembersInputBuilder {
         Ok(crate::operation::create_members::CreateMembersInput {
             graph_arn: self.graph_arn,
             message: self.message,
-            disable_email_notification: self.disable_email_notification.unwrap_or_default(),
+            disable_email_notification: self.disable_email_notification,
             accounts: self.accounts,
         })
     }

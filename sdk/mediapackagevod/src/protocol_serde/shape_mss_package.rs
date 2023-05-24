@@ -86,10 +86,10 @@ pub fn ser_mss_package(
         }
         array_4.finish();
     }
-    if input.segment_duration_seconds != 0 {
+    if let Some(var_7) = &input.segment_duration_seconds {
         object.key("segmentDurationSeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.segment_duration_seconds).into()),
+            aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
     Ok(())

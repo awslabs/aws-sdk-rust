@@ -5,7 +5,7 @@ pub use crate::operation::import_ssh_public_key::_import_ssh_public_key_input::I
 
 /// Fluent builder constructing a request to `ImportSshPublicKey`.
 ///
-/// <p>Adds a Secure Shell (SSH) public key to a user account identified by a <code>UserName</code> value assigned to the specific file transfer protocol-enabled server, identified by <code>ServerId</code>.</p>
+/// <p>Adds a Secure Shell (SSH) public key to a Transfer Family user identified by a <code>UserName</code> value assigned to the specific file transfer protocol-enabled server, identified by <code>ServerId</code>.</p>
 /// <p>The response returns the <code>UserName</code> value, the <code>ServerId</code> value, and the name of the <code>SshPublicKeyId</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportSshPublicKeyFluentBuilder {
@@ -94,12 +94,12 @@ impl ImportSshPublicKeyFluentBuilder {
         self.inner = self.inner.set_ssh_public_key_body(input);
         self
     }
-    /// <p>The name of the user account that is assigned to one or more servers.</p>
+    /// <p>The name of the Transfer Family user that is assigned to one or more servers.</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.user_name(input.into());
         self
     }
-    /// <p>The name of the user account that is assigned to one or more servers.</p>
+    /// <p>The name of the Transfer Family user that is assigned to one or more servers.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_user_name(input);
         self

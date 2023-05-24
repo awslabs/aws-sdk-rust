@@ -20,45 +20,41 @@ pub fn ser_create_api_input(
     if let Some(var_5) = &input.description {
         object.key("description").string(var_5.as_str());
     }
-    if input.disable_execute_api_endpoint {
-        object
-            .key("disableExecuteApiEndpoint")
-            .boolean(input.disable_execute_api_endpoint);
+    if let Some(var_6) = &input.disable_execute_api_endpoint {
+        object.key("disableExecuteApiEndpoint").boolean(*var_6);
     }
-    if input.disable_schema_validation {
-        object
-            .key("disableSchemaValidation")
-            .boolean(input.disable_schema_validation);
+    if let Some(var_7) = &input.disable_schema_validation {
+        object.key("disableSchemaValidation").boolean(*var_7);
     }
-    if let Some(var_6) = &input.name {
-        object.key("name").string(var_6.as_str());
+    if let Some(var_8) = &input.name {
+        object.key("name").string(var_8.as_str());
     }
-    if let Some(var_7) = &input.protocol_type {
-        object.key("protocolType").string(var_7.as_str());
+    if let Some(var_9) = &input.protocol_type {
+        object.key("protocolType").string(var_9.as_str());
     }
-    if let Some(var_8) = &input.route_key {
-        object.key("routeKey").string(var_8.as_str());
+    if let Some(var_10) = &input.route_key {
+        object.key("routeKey").string(var_10.as_str());
     }
-    if let Some(var_9) = &input.route_selection_expression {
+    if let Some(var_11) = &input.route_selection_expression {
         object
             .key("routeSelectionExpression")
-            .string(var_9.as_str());
+            .string(var_11.as_str());
     }
-    if let Some(var_10) = &input.tags {
+    if let Some(var_12) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("tags").start_object();
-        for (key_12, value_13) in var_10 {
+        let mut object_13 = object.key("tags").start_object();
+        for (key_14, value_15) in var_12 {
             {
-                object_11.key(key_12.as_str()).string(value_13.as_str());
+                object_13.key(key_14.as_str()).string(value_15.as_str());
             }
         }
-        object_11.finish();
+        object_13.finish();
     }
-    if let Some(var_14) = &input.target {
-        object.key("target").string(var_14.as_str());
+    if let Some(var_16) = &input.target {
+        object.key("target").string(var_16.as_str());
     }
-    if let Some(var_15) = &input.version {
-        object.key("version").string(var_15.as_str());
+    if let Some(var_17) = &input.version {
+        object.key("version").string(var_17.as_str());
     }
     Ok(())
 }

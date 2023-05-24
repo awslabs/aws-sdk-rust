@@ -48,6 +48,9 @@ pub fn ser_data_label_options(
     if let Some(var_13) = &input.overlap {
         object.key("Overlap").string(var_13.as_str());
     }
+    if let Some(var_14) = &input.totals_visibility {
+        object.key("TotalsVisibility").string(var_14.as_str());
+    }
     Ok(())
 }
 
@@ -165,6 +168,18 @@ where
                                         s.to_unescaped().map(|u| {
                                             crate::types::DataLabelOverlap::from(u.as_ref())
                                         })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
+                            "TotalsVisibility" => {
+                                builder = builder.set_totals_visibility(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::Visibility::from(u.as_ref()))
                                     })
                                     .transpose()?,
                                 );

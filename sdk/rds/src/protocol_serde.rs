@@ -827,6 +827,8 @@ pub(crate) mod shape_source_not_found_fault;
 
 pub(crate) mod shape_storage_quota_exceeded_fault;
 
+pub(crate) mod shape_storage_type_not_available_fault;
+
 pub(crate) mod shape_storage_type_not_supported_fault;
 
 pub(crate) mod shape_subnet_already_in_use;

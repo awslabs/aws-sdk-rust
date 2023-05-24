@@ -34,8 +34,11 @@ pub struct RequestLaunchTemplateData {
     /// <li> <p> <code>resolve:ssm:parameter-name</code> </p> </li>
     /// <li> <p> <code>resolve:ssm:parameter-name:version-number</code> </p> </li>
     /// <li> <p> <code>resolve:ssm:parameter-name:label</code> </p> </li>
-    /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html#using-systems-manager-parameter-to-find-AMI">Use a Systems Manager parameter to find an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <li> <p> <code>resolve:ssm:public-parameter</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Currently, EC2 Fleet and Spot Fleet do not support specifying a Systems Manager parameter. If the launch template will be used by an EC2 Fleet or Spot Fleet, you must specify the AMI ID.</p>
+    /// </note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
@@ -183,8 +186,11 @@ impl RequestLaunchTemplateData {
     /// <li> <p> <code>resolve:ssm:parameter-name</code> </p> </li>
     /// <li> <p> <code>resolve:ssm:parameter-name:version-number</code> </p> </li>
     /// <li> <p> <code>resolve:ssm:parameter-name:label</code> </p> </li>
-    /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html#using-systems-manager-parameter-to-find-AMI">Use a Systems Manager parameter to find an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <li> <p> <code>resolve:ssm:public-parameter</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Currently, EC2 Fleet and Spot Fleet do not support specifying a Systems Manager parameter. If the launch template will be used by an EC2 Fleet or Spot Fleet, you must specify the AMI ID.</p>
+    /// </note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn image_id(&self) -> std::option::Option<&str> {
         self.image_id.as_deref()
     }
@@ -345,58 +351,49 @@ impl RequestLaunchTemplateData {
 impl std::fmt::Debug for RequestLaunchTemplateData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RequestLaunchTemplateData");
-        formatter.field("kernel_id", &"*** Sensitive Data Redacted ***");
-        formatter.field("ebs_optimized", &"*** Sensitive Data Redacted ***");
-        formatter.field("iam_instance_profile", &"*** Sensitive Data Redacted ***");
-        formatter.field("block_device_mappings", &"*** Sensitive Data Redacted ***");
-        formatter.field("network_interfaces", &"*** Sensitive Data Redacted ***");
-        formatter.field("image_id", &"*** Sensitive Data Redacted ***");
-        formatter.field("instance_type", &"*** Sensitive Data Redacted ***");
-        formatter.field("key_name", &"*** Sensitive Data Redacted ***");
-        formatter.field("monitoring", &"*** Sensitive Data Redacted ***");
-        formatter.field("placement", &"*** Sensitive Data Redacted ***");
-        formatter.field("ram_disk_id", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "disable_api_termination",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("kernel_id", &self.kernel_id);
+        formatter.field("ebs_optimized", &self.ebs_optimized);
+        formatter.field("iam_instance_profile", &self.iam_instance_profile);
+        formatter.field("block_device_mappings", &self.block_device_mappings);
+        formatter.field("network_interfaces", &self.network_interfaces);
+        formatter.field("image_id", &self.image_id);
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("key_name", &self.key_name);
+        formatter.field("monitoring", &self.monitoring);
+        formatter.field("placement", &self.placement);
+        formatter.field("ram_disk_id", &self.ram_disk_id);
+        formatter.field("disable_api_termination", &self.disable_api_termination);
         formatter.field(
             "instance_initiated_shutdown_behavior",
-            &"*** Sensitive Data Redacted ***",
+            &self.instance_initiated_shutdown_behavior,
         );
         formatter.field("user_data", &"*** Sensitive Data Redacted ***");
-        formatter.field("tag_specifications", &"*** Sensitive Data Redacted ***");
+        formatter.field("tag_specifications", &self.tag_specifications);
         formatter.field(
             "elastic_gpu_specifications",
-            &"*** Sensitive Data Redacted ***",
+            &self.elastic_gpu_specifications,
         );
         formatter.field(
             "elastic_inference_accelerators",
-            &"*** Sensitive Data Redacted ***",
+            &self.elastic_inference_accelerators,
         );
-        formatter.field("security_group_ids", &"*** Sensitive Data Redacted ***");
-        formatter.field("security_groups", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "instance_market_options",
-            &"*** Sensitive Data Redacted ***",
-        );
-        formatter.field("credit_specification", &"*** Sensitive Data Redacted ***");
-        formatter.field("cpu_options", &"*** Sensitive Data Redacted ***");
+        formatter.field("security_group_ids", &self.security_group_ids);
+        formatter.field("security_groups", &self.security_groups);
+        formatter.field("instance_market_options", &self.instance_market_options);
+        formatter.field("credit_specification", &self.credit_specification);
+        formatter.field("cpu_options", &self.cpu_options);
         formatter.field(
             "capacity_reservation_specification",
-            &"*** Sensitive Data Redacted ***",
+            &self.capacity_reservation_specification,
         );
-        formatter.field("license_specifications", &"*** Sensitive Data Redacted ***");
-        formatter.field("hibernation_options", &"*** Sensitive Data Redacted ***");
-        formatter.field("metadata_options", &"*** Sensitive Data Redacted ***");
-        formatter.field("enclave_options", &"*** Sensitive Data Redacted ***");
-        formatter.field("instance_requirements", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "private_dns_name_options",
-            &"*** Sensitive Data Redacted ***",
-        );
-        formatter.field("maintenance_options", &"*** Sensitive Data Redacted ***");
-        formatter.field("disable_api_stop", &"*** Sensitive Data Redacted ***");
+        formatter.field("license_specifications", &self.license_specifications);
+        formatter.field("hibernation_options", &self.hibernation_options);
+        formatter.field("metadata_options", &self.metadata_options);
+        formatter.field("enclave_options", &self.enclave_options);
+        formatter.field("instance_requirements", &self.instance_requirements);
+        formatter.field("private_dns_name_options", &self.private_dns_name_options);
+        formatter.field("maintenance_options", &self.maintenance_options);
+        formatter.field("disable_api_stop", &self.disable_api_stop);
         formatter.finish()
     }
 }
@@ -558,8 +555,11 @@ impl RequestLaunchTemplateDataBuilder {
     /// <li> <p> <code>resolve:ssm:parameter-name</code> </p> </li>
     /// <li> <p> <code>resolve:ssm:parameter-name:version-number</code> </p> </li>
     /// <li> <p> <code>resolve:ssm:parameter-name:label</code> </p> </li>
-    /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html#using-systems-manager-parameter-to-find-AMI">Use a Systems Manager parameter to find an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <li> <p> <code>resolve:ssm:public-parameter</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Currently, EC2 Fleet and Spot Fleet do not support specifying a Systems Manager parameter. If the launch template will be used by an EC2 Fleet or Spot Fleet, you must specify the AMI ID.</p>
+    /// </note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.image_id = Some(input.into());
         self
@@ -571,8 +571,11 @@ impl RequestLaunchTemplateDataBuilder {
     /// <li> <p> <code>resolve:ssm:parameter-name</code> </p> </li>
     /// <li> <p> <code>resolve:ssm:parameter-name:version-number</code> </p> </li>
     /// <li> <p> <code>resolve:ssm:parameter-name:label</code> </p> </li>
-    /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html#using-systems-manager-parameter-to-find-AMI">Use a Systems Manager parameter to find an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <li> <p> <code>resolve:ssm:public-parameter</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Currently, EC2 Fleet and Spot Fleet do not support specifying a Systems Manager parameter. If the launch template will be used by an EC2 Fleet or Spot Fleet, you must specify the AMI ID.</p>
+    /// </note>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.image_id = input;
         self
@@ -1050,58 +1053,49 @@ impl RequestLaunchTemplateDataBuilder {
 impl std::fmt::Debug for RequestLaunchTemplateDataBuilder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RequestLaunchTemplateDataBuilder");
-        formatter.field("kernel_id", &"*** Sensitive Data Redacted ***");
-        formatter.field("ebs_optimized", &"*** Sensitive Data Redacted ***");
-        formatter.field("iam_instance_profile", &"*** Sensitive Data Redacted ***");
-        formatter.field("block_device_mappings", &"*** Sensitive Data Redacted ***");
-        formatter.field("network_interfaces", &"*** Sensitive Data Redacted ***");
-        formatter.field("image_id", &"*** Sensitive Data Redacted ***");
-        formatter.field("instance_type", &"*** Sensitive Data Redacted ***");
-        formatter.field("key_name", &"*** Sensitive Data Redacted ***");
-        formatter.field("monitoring", &"*** Sensitive Data Redacted ***");
-        formatter.field("placement", &"*** Sensitive Data Redacted ***");
-        formatter.field("ram_disk_id", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "disable_api_termination",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("kernel_id", &self.kernel_id);
+        formatter.field("ebs_optimized", &self.ebs_optimized);
+        formatter.field("iam_instance_profile", &self.iam_instance_profile);
+        formatter.field("block_device_mappings", &self.block_device_mappings);
+        formatter.field("network_interfaces", &self.network_interfaces);
+        formatter.field("image_id", &self.image_id);
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("key_name", &self.key_name);
+        formatter.field("monitoring", &self.monitoring);
+        formatter.field("placement", &self.placement);
+        formatter.field("ram_disk_id", &self.ram_disk_id);
+        formatter.field("disable_api_termination", &self.disable_api_termination);
         formatter.field(
             "instance_initiated_shutdown_behavior",
-            &"*** Sensitive Data Redacted ***",
+            &self.instance_initiated_shutdown_behavior,
         );
         formatter.field("user_data", &"*** Sensitive Data Redacted ***");
-        formatter.field("tag_specifications", &"*** Sensitive Data Redacted ***");
+        formatter.field("tag_specifications", &self.tag_specifications);
         formatter.field(
             "elastic_gpu_specifications",
-            &"*** Sensitive Data Redacted ***",
+            &self.elastic_gpu_specifications,
         );
         formatter.field(
             "elastic_inference_accelerators",
-            &"*** Sensitive Data Redacted ***",
+            &self.elastic_inference_accelerators,
         );
-        formatter.field("security_group_ids", &"*** Sensitive Data Redacted ***");
-        formatter.field("security_groups", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "instance_market_options",
-            &"*** Sensitive Data Redacted ***",
-        );
-        formatter.field("credit_specification", &"*** Sensitive Data Redacted ***");
-        formatter.field("cpu_options", &"*** Sensitive Data Redacted ***");
+        formatter.field("security_group_ids", &self.security_group_ids);
+        formatter.field("security_groups", &self.security_groups);
+        formatter.field("instance_market_options", &self.instance_market_options);
+        formatter.field("credit_specification", &self.credit_specification);
+        formatter.field("cpu_options", &self.cpu_options);
         formatter.field(
             "capacity_reservation_specification",
-            &"*** Sensitive Data Redacted ***",
+            &self.capacity_reservation_specification,
         );
-        formatter.field("license_specifications", &"*** Sensitive Data Redacted ***");
-        formatter.field("hibernation_options", &"*** Sensitive Data Redacted ***");
-        formatter.field("metadata_options", &"*** Sensitive Data Redacted ***");
-        formatter.field("enclave_options", &"*** Sensitive Data Redacted ***");
-        formatter.field("instance_requirements", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "private_dns_name_options",
-            &"*** Sensitive Data Redacted ***",
-        );
-        formatter.field("maintenance_options", &"*** Sensitive Data Redacted ***");
-        formatter.field("disable_api_stop", &"*** Sensitive Data Redacted ***");
+        formatter.field("license_specifications", &self.license_specifications);
+        formatter.field("hibernation_options", &self.hibernation_options);
+        formatter.field("metadata_options", &self.metadata_options);
+        formatter.field("enclave_options", &self.enclave_options);
+        formatter.field("instance_requirements", &self.instance_requirements);
+        formatter.field("private_dns_name_options", &self.private_dns_name_options);
+        formatter.field("maintenance_options", &self.maintenance_options);
+        formatter.field("disable_api_stop", &self.disable_api_stop);
         formatter.finish()
     }
 }

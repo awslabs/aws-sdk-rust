@@ -8,7 +8,7 @@ pub struct EgressGatewayBridge {
     pub instance_id: std::option::Option<std::string::String>,
     /// The maximum expected bitrate (in bps) of the egress bridge.
     #[doc(hidden)]
-    pub max_bitrate: i32,
+    pub max_bitrate: std::option::Option<i32>,
 }
 impl EgressGatewayBridge {
     /// The ID of the instance running this bridge.
@@ -16,7 +16,7 @@ impl EgressGatewayBridge {
         self.instance_id.as_deref()
     }
     /// The maximum expected bitrate (in bps) of the egress bridge.
-    pub fn max_bitrate(&self) -> i32 {
+    pub fn max_bitrate(&self) -> std::option::Option<i32> {
         self.max_bitrate
     }
 }
@@ -59,7 +59,7 @@ impl EgressGatewayBridgeBuilder {
     pub fn build(self) -> crate::types::EgressGatewayBridge {
         crate::types::EgressGatewayBridge {
             instance_id: self.instance_id,
-            max_bitrate: self.max_bitrate.unwrap_or_default(),
+            max_bitrate: self.max_bitrate,
         }
     }
 }

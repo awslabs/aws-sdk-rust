@@ -210,6 +210,55 @@ impl From<crate::operation::disconnect_participant::DisconnectParticipantError> 
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_participant::GetParticipantError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_participant::GetParticipantError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_participant::GetParticipantError> for Error {
+    fn from(err: crate::operation::get_participant::GetParticipantError) -> Self {
+        match err {
+            crate::operation::get_participant::GetParticipantError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::get_participant::GetParticipantError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_participant::GetParticipantError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_participant::GetParticipantError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_stage::GetStageError, R>>
     for Error
 where
@@ -246,6 +295,133 @@ impl From<crate::operation::get_stage::GetStageError> for Error {
                 Error::ValidationException(inner)
             }
             crate::operation::get_stage::GetStageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_stage_session::GetStageSessionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_stage_session::GetStageSessionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_stage_session::GetStageSessionError> for Error {
+    fn from(err: crate::operation::get_stage_session::GetStageSessionError) -> Self {
+        match err {
+            crate::operation::get_stage_session::GetStageSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_stage_session::GetStageSessionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_stage_session::GetStageSessionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_stage_session::GetStageSessionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_participant_events::ListParticipantEventsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_participant_events::ListParticipantEventsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_participant_events::ListParticipantEventsError> for Error {
+    fn from(err: crate::operation::list_participant_events::ListParticipantEventsError) -> Self {
+        match err {
+            crate::operation::list_participant_events::ListParticipantEventsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_participant_events::ListParticipantEventsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_participant_events::ListParticipantEventsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_participants::ListParticipantsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_participants::ListParticipantsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_participants::ListParticipantsError> for Error {
+    fn from(err: crate::operation::list_participants::ListParticipantsError) -> Self {
+        match err {
+            crate::operation::list_participants::ListParticipantsError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::list_participants::ListParticipantsError::ValidationException(
+                inner,
+            ) => Error::ValidationException(inner),
+            crate::operation::list_participants::ListParticipantsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -287,6 +463,46 @@ impl From<crate::operation::list_stages::ListStagesError> for Error {
             crate::operation::list_stages::ListStagesError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_stage_sessions::ListStageSessionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::list_stage_sessions::ListStageSessionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::list_stage_sessions::ListStageSessionsError> for Error {
+    fn from(err: crate::operation::list_stage_sessions::ListStageSessionsError) -> Self {
+        match err {
+            crate::operation::list_stage_sessions::ListStageSessionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_stage_sessions::ListStageSessionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_stage_sessions::ListStageSessionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -6,16 +6,16 @@ pub fn ser_input_device_configurable_settings(
     if let Some(var_1) = &input.configured_input {
         object.key("configuredInput").string(var_1.as_str());
     }
-    if input.max_bitrate != 0 {
+    if let Some(var_2) = &input.max_bitrate {
         object.key("maxBitrate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_bitrate).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.latency_ms != 0 {
+    if let Some(var_3) = &input.latency_ms {
         object.key("latencyMs").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.latency_ms).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())

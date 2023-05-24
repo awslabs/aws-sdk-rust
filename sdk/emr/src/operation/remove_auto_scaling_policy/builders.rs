@@ -5,7 +5,7 @@ pub use crate::operation::remove_auto_scaling_policy::_remove_auto_scaling_polic
 
 /// Fluent builder constructing a request to `RemoveAutoScalingPolicy`.
 ///
-/// <p>Removes an automatic scaling policy from a specified instance group within an EMR cluster.</p>
+/// <p>Removes an automatic scaling policy from a specified instance group within an Amazon EMR cluster.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveAutoScalingPolicyFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

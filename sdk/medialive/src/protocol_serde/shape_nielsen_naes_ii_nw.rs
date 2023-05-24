@@ -6,14 +6,14 @@ pub fn ser_nielsen_naes_ii_nw(
     if let Some(var_1) = &input.check_digit_string {
         object.key("checkDigitString").string(var_1.as_str());
     }
-    {
+    if let Some(var_2) = &input.sid {
         object.key("sid").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.sid).into()),
+            aws_smithy_types::Number::Float((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.timezone {
-        object.key("timezone").string(var_2.as_str());
+    if let Some(var_3) = &input.timezone {
+        object.key("timezone").string(var_3.as_str());
     }
     Ok(())
 }

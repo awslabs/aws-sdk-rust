@@ -17,49 +17,49 @@ pub fn ser_send_message_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("DelaySeconds");
-    if input.delay_seconds != 0 {
+    if let Some(var_6) = &input.delay_seconds {
         scope_5.number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.delay_seconds).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_6 = writer.prefix("MessageAttribute");
-    if let Some(var_7) = &input.message_attributes {
-        let mut map_8 = scope_6.start_map(true, "Name", "Value");
-        for (key_9, value_10) in var_7 {
+    let mut scope_7 = writer.prefix("MessageAttribute");
+    if let Some(var_8) = &input.message_attributes {
+        let mut map_9 = scope_7.start_map(true, "Name", "Value");
+        for (key_10, value_11) in var_8 {
             #[allow(unused_mut)]
-            let mut entry_11 = map_8.entry(key_9);
+            let mut entry_12 = map_9.entry(key_10);
             {
                 crate::protocol_serde::shape_message_attribute_value::ser_message_attribute_value(
-                    entry_11, value_10,
+                    entry_12, value_11,
                 )?;
             }
         }
-        map_8.finish();
+        map_9.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("MessageSystemAttribute");
-    if let Some(var_13) = &input.message_system_attributes {
-        let mut map_14 = scope_12.start_map(true, "Name", "Value");
-        for (key_15, value_16) in var_13 {
+    let mut scope_13 = writer.prefix("MessageSystemAttribute");
+    if let Some(var_14) = &input.message_system_attributes {
+        let mut map_15 = scope_13.start_map(true, "Name", "Value");
+        for (key_16, value_17) in var_14 {
             #[allow(unused_mut)]
-            let mut entry_17 = map_14.entry(key_15.as_str());
+            let mut entry_18 = map_15.entry(key_16.as_str());
             {
-                crate::protocol_serde::shape_message_system_attribute_value::ser_message_system_attribute_value(entry_17, value_16)?;
+                crate::protocol_serde::shape_message_system_attribute_value::ser_message_system_attribute_value(entry_18, value_17)?;
             }
         }
-        map_14.finish();
+        map_15.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_18 = writer.prefix("MessageDeduplicationId");
-    if let Some(var_19) = &input.message_deduplication_id {
-        scope_18.string(var_19);
+    let mut scope_19 = writer.prefix("MessageDeduplicationId");
+    if let Some(var_20) = &input.message_deduplication_id {
+        scope_19.string(var_20);
     }
     #[allow(unused_mut)]
-    let mut scope_20 = writer.prefix("MessageGroupId");
-    if let Some(var_21) = &input.message_group_id {
-        scope_20.string(var_21);
+    let mut scope_21 = writer.prefix("MessageGroupId");
+    if let Some(var_22) = &input.message_group_id {
+        scope_21.string(var_22);
     }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))

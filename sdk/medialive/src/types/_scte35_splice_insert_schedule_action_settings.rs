@@ -6,18 +6,18 @@
 pub struct Scte35SpliceInsertScheduleActionSettings {
     /// Optional, the duration for the splice_insert, in 90 KHz ticks. To convert seconds to ticks, multiple the seconds by 90,000. If you enter a duration, there is an expectation that the downstream system can read the duration and cue in at that time. If you do not enter a duration, the splice_insert will continue indefinitely and there is an expectation that you will enter a return_to_network to end the splice_insert at the appropriate time.
     #[doc(hidden)]
-    pub duration: i64,
+    pub duration: std::option::Option<i64>,
     /// The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
     #[doc(hidden)]
-    pub splice_event_id: i64,
+    pub splice_event_id: std::option::Option<i64>,
 }
 impl Scte35SpliceInsertScheduleActionSettings {
     /// Optional, the duration for the splice_insert, in 90 KHz ticks. To convert seconds to ticks, multiple the seconds by 90,000. If you enter a duration, there is an expectation that the downstream system can read the duration and cue in at that time. If you do not enter a duration, the splice_insert will continue indefinitely and there is an expectation that you will enter a return_to_network to end the splice_insert at the appropriate time.
-    pub fn duration(&self) -> i64 {
+    pub fn duration(&self) -> std::option::Option<i64> {
         self.duration
     }
     /// The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
-    pub fn splice_event_id(&self) -> i64 {
+    pub fn splice_event_id(&self) -> std::option::Option<i64> {
         self.splice_event_id
     }
 }
@@ -59,8 +59,8 @@ impl Scte35SpliceInsertScheduleActionSettingsBuilder {
     /// Consumes the builder and constructs a [`Scte35SpliceInsertScheduleActionSettings`](crate::types::Scte35SpliceInsertScheduleActionSettings).
     pub fn build(self) -> crate::types::Scte35SpliceInsertScheduleActionSettings {
         crate::types::Scte35SpliceInsertScheduleActionSettings {
-            duration: self.duration.unwrap_or_default(),
-            splice_event_id: self.splice_event_id.unwrap_or_default(),
+            duration: self.duration,
+            splice_event_id: self.splice_event_id,
         }
     }
 }

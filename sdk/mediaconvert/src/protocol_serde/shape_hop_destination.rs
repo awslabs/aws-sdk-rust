@@ -3,19 +3,19 @@ pub fn ser_hop_destination(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HopDestination,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.priority != 0 {
+    if let Some(var_1) = &input.priority {
         object.key("priority").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.priority).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.queue {
-        object.key("queue").string(var_1.as_str());
+    if let Some(var_2) = &input.queue {
+        object.key("queue").string(var_2.as_str());
     }
-    if input.wait_minutes != 0 {
+    if let Some(var_3) = &input.wait_minutes {
         object.key("waitMinutes").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.wait_minutes).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())

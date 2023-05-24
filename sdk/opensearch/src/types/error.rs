@@ -23,11 +23,15 @@ pub use crate::types::error::_invalid_type_exception::InvalidTypeException;
 
 pub use crate::types::error::_invalid_pagination_token_exception::InvalidPaginationTokenException;
 
+pub use crate::types::error::_dependency_failure_exception::DependencyFailureException;
+
 mod _access_denied_exception;
 
 mod _base_exception;
 
 mod _conflict_exception;
+
+mod _dependency_failure_exception;
 
 mod _disabled_operation_exception;
 

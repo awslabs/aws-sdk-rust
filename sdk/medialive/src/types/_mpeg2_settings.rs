@@ -27,19 +27,19 @@ pub struct Mpeg2Settings {
     pub fixed_afd: std::option::Option<crate::types::FixedAfd>,
     /// description": "The framerate denominator. For example, 1001. The framerate is the numerator divided by the denominator. For example, 24000 / 1001 = 23.976 FPS.
     #[doc(hidden)]
-    pub framerate_denominator: i32,
+    pub framerate_denominator: std::option::Option<i32>,
     /// The framerate numerator. For example, 24000. The framerate is the numerator divided by the denominator. For example, 24000 / 1001 = 23.976 FPS.
     #[doc(hidden)]
-    pub framerate_numerator: i32,
+    pub framerate_numerator: std::option::Option<i32>,
     /// MPEG2: default is open GOP.
     #[doc(hidden)]
-    pub gop_closed_cadence: i32,
+    pub gop_closed_cadence: std::option::Option<i32>,
     /// Relates to the GOP structure. The number of B-frames between reference frames. If you do not know what a B-frame is, use the default.
     #[doc(hidden)]
-    pub gop_num_b_frames: i32,
+    pub gop_num_b_frames: std::option::Option<i32>,
     /// Relates to the GOP structure. The GOP size (keyframe interval) in the units specified in gopSizeUnits. If you do not know what GOP is, use the default. If gopSizeUnits is frames, then the gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds, the gopSize must be greater than 0, but does not need to be an integer.
     #[doc(hidden)]
-    pub gop_size: f64,
+    pub gop_size: std::option::Option<f64>,
     /// Relates to the GOP structure. Specifies whether the gopSize is specified in frames or seconds. If you do not plan to change the default gopSize, leave the default. If you specify SECONDS, MediaLive will internally convert the gop size to a frame count.
     #[doc(hidden)]
     pub gop_size_units: std::option::Option<crate::types::Mpeg2GopSizeUnits>,
@@ -88,23 +88,23 @@ impl Mpeg2Settings {
         self.fixed_afd.as_ref()
     }
     /// description": "The framerate denominator. For example, 1001. The framerate is the numerator divided by the denominator. For example, 24000 / 1001 = 23.976 FPS.
-    pub fn framerate_denominator(&self) -> i32 {
+    pub fn framerate_denominator(&self) -> std::option::Option<i32> {
         self.framerate_denominator
     }
     /// The framerate numerator. For example, 24000. The framerate is the numerator divided by the denominator. For example, 24000 / 1001 = 23.976 FPS.
-    pub fn framerate_numerator(&self) -> i32 {
+    pub fn framerate_numerator(&self) -> std::option::Option<i32> {
         self.framerate_numerator
     }
     /// MPEG2: default is open GOP.
-    pub fn gop_closed_cadence(&self) -> i32 {
+    pub fn gop_closed_cadence(&self) -> std::option::Option<i32> {
         self.gop_closed_cadence
     }
     /// Relates to the GOP structure. The number of B-frames between reference frames. If you do not know what a B-frame is, use the default.
-    pub fn gop_num_b_frames(&self) -> i32 {
+    pub fn gop_num_b_frames(&self) -> std::option::Option<i32> {
         self.gop_num_b_frames
     }
     /// Relates to the GOP structure. The GOP size (keyframe interval) in the units specified in gopSizeUnits. If you do not know what GOP is, use the default. If gopSizeUnits is frames, then the gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds, the gopSize must be greater than 0, but does not need to be an integer.
-    pub fn gop_size(&self) -> f64 {
+    pub fn gop_size(&self) -> std::option::Option<f64> {
         self.gop_size
     }
     /// Relates to the GOP structure. Specifies whether the gopSize is specified in frames or seconds. If you do not plan to change the default gopSize, leave the default. If you specify SECONDS, MediaLive will internally convert the gop size to a frame count.
@@ -379,11 +379,11 @@ impl Mpeg2SettingsBuilder {
             display_aspect_ratio: self.display_aspect_ratio,
             filter_settings: self.filter_settings,
             fixed_afd: self.fixed_afd,
-            framerate_denominator: self.framerate_denominator.unwrap_or_default(),
-            framerate_numerator: self.framerate_numerator.unwrap_or_default(),
-            gop_closed_cadence: self.gop_closed_cadence.unwrap_or_default(),
-            gop_num_b_frames: self.gop_num_b_frames.unwrap_or_default(),
-            gop_size: self.gop_size.unwrap_or_default(),
+            framerate_denominator: self.framerate_denominator,
+            framerate_numerator: self.framerate_numerator,
+            gop_closed_cadence: self.gop_closed_cadence,
+            gop_num_b_frames: self.gop_num_b_frames,
+            gop_size: self.gop_size,
             gop_size_units: self.gop_size_units,
             scan_type: self.scan_type,
             subgop_length: self.subgop_length,

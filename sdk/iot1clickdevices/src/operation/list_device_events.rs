@@ -83,19 +83,21 @@ impl ListDeviceEventsInput {
                         aws_smithy_types::date_time::Format::DateTime,
                     )?,
                 );
-                if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
-                }
-                if let Some(inner_3) = &_input.next_token {
-                    {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_3));
+                if let Some(inner_3) = &_input.max_results {
+                    if *inner_3 != 0 {
+                        query.push_kv(
+                            "maxResults",
+                            aws_smithy_types::primitive::Encoder::from(*inner_3).encode(),
+                        );
                     }
                 }
-                let inner_4 = &_input.to_time_stamp;
-                let inner_4 = inner_4.as_ref().ok_or_else(|| {
+                if let Some(inner_4) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_4));
+                    }
+                }
+                let inner_5 = &_input.to_time_stamp;
+                let inner_5 = inner_5.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "to_time_stamp",
                         "cannot be empty or unset",
@@ -104,7 +106,7 @@ impl ListDeviceEventsInput {
                 query.push_kv(
                     "toTimeStamp",
                     &aws_smithy_http::query::fmt_timestamp(
-                        inner_4,
+                        inner_5,
                         aws_smithy_types::date_time::Format::DateTime,
                     )?,
                 );

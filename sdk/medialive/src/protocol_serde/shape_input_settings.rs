@@ -39,43 +39,43 @@ pub fn ser_input_settings(
     if let Some(var_10) = &input.denoise_filter {
         object.key("denoiseFilter").string(var_10.as_str());
     }
-    if input.filter_strength != 0 {
+    if let Some(var_11) = &input.filter_strength {
         object.key("filterStrength").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.filter_strength).into()),
+            aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_11) = &input.input_filter {
-        object.key("inputFilter").string(var_11.as_str());
+    if let Some(var_12) = &input.input_filter {
+        object.key("inputFilter").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.network_input_settings {
+    if let Some(var_13) = &input.network_input_settings {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("networkInputSettings").start_object();
+        let mut object_14 = object.key("networkInputSettings").start_object();
         crate::protocol_serde::shape_network_input_settings::ser_network_input_settings(
-            &mut object_13,
-            var_12,
+            &mut object_14,
+            var_13,
         )?;
-        object_13.finish();
+        object_14.finish();
     }
-    if input.scte35_pid != 0 {
+    if let Some(var_15) = &input.scte35_pid {
         object.key("scte35Pid").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.scte35_pid).into()),
+            aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
-    if let Some(var_14) = &input.smpte2038_data_preference {
+    if let Some(var_16) = &input.smpte2038_data_preference {
         object
             .key("smpte2038DataPreference")
-            .string(var_14.as_str());
+            .string(var_16.as_str());
     }
-    if let Some(var_15) = &input.source_end_behavior {
-        object.key("sourceEndBehavior").string(var_15.as_str());
+    if let Some(var_17) = &input.source_end_behavior {
+        object.key("sourceEndBehavior").string(var_17.as_str());
     }
-    if let Some(var_16) = &input.video_selector {
+    if let Some(var_18) = &input.video_selector {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("videoSelector").start_object();
-        crate::protocol_serde::shape_video_selector::ser_video_selector(&mut object_17, var_16)?;
-        object_17.finish();
+        let mut object_19 = object.key("videoSelector").start_object();
+        crate::protocol_serde::shape_video_selector::ser_video_selector(&mut object_19, var_18)?;
+        object_19.finish();
     }
     Ok(())
 }

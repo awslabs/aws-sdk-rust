@@ -31,6 +31,7 @@ pub struct DescribeSimulationOutput {
     #[doc(hidden)]
     pub schema_s3_location: std::option::Option<crate::types::S3Location>,
     /// <p>An error message that SimSpace Weaver returns only if there is a problem with the simulation schema.</p>
+    #[deprecated(note = "SchemaError is no longer used, check StartError instead.")]
     #[doc(hidden)]
     pub schema_error: std::option::Option<std::string::String>,
     /// <p>Settings that control how SimSpace Weaver handles your simulation log data.</p>
@@ -39,9 +40,15 @@ pub struct DescribeSimulationOutput {
     /// <p>A collection of additional state information, such as domain and clock configuration.</p>
     #[doc(hidden)]
     pub live_simulation_state: std::option::Option<crate::types::LiveSimulationState>,
-    /// <p>The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit.</p>
+    /// <p>The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
     #[doc(hidden)]
     pub maximum_duration: std::option::Option<std::string::String>,
+    /// <p>A location in Amazon Simple Storage Service (Amazon S3) where SimSpace Weaver stores simulation data, such as your app .zip files and schema file. For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+    #[doc(hidden)]
+    pub snapshot_s3_location: std::option::Option<crate::types::S3Location>,
+    /// <p>An error message that SimSpace Weaver returns only if a problem occurs when the simulation is in the <code>STARTING</code> state.</p>
+    #[doc(hidden)]
+    pub start_error: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeSimulationOutput {
@@ -82,6 +89,7 @@ impl DescribeSimulationOutput {
         self.schema_s3_location.as_ref()
     }
     /// <p>An error message that SimSpace Weaver returns only if there is a problem with the simulation schema.</p>
+    #[deprecated(note = "SchemaError is no longer used, check StartError instead.")]
     pub fn schema_error(&self) -> std::option::Option<&str> {
         self.schema_error.as_deref()
     }
@@ -95,9 +103,17 @@ impl DescribeSimulationOutput {
     pub fn live_simulation_state(&self) -> std::option::Option<&crate::types::LiveSimulationState> {
         self.live_simulation_state.as_ref()
     }
-    /// <p>The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit.</p>
+    /// <p>The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
     pub fn maximum_duration(&self) -> std::option::Option<&str> {
         self.maximum_duration.as_deref()
+    }
+    /// <p>A location in Amazon Simple Storage Service (Amazon S3) where SimSpace Weaver stores simulation data, such as your app .zip files and schema file. For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+    pub fn snapshot_s3_location(&self) -> std::option::Option<&crate::types::S3Location> {
+        self.snapshot_s3_location.as_ref()
+    }
+    /// <p>An error message that SimSpace Weaver returns only if a problem occurs when the simulation is in the <code>STARTING</code> state.</p>
+    pub fn start_error(&self) -> std::option::Option<&str> {
+        self.start_error.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeSimulationOutput {
@@ -130,6 +146,8 @@ pub struct DescribeSimulationOutputBuilder {
     pub(crate) logging_configuration: std::option::Option<crate::types::LoggingConfiguration>,
     pub(crate) live_simulation_state: std::option::Option<crate::types::LiveSimulationState>,
     pub(crate) maximum_duration: std::option::Option<std::string::String>,
+    pub(crate) snapshot_s3_location: std::option::Option<crate::types::S3Location>,
+    pub(crate) start_error: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeSimulationOutputBuilder {
@@ -236,11 +254,13 @@ impl DescribeSimulationOutputBuilder {
         self
     }
     /// <p>An error message that SimSpace Weaver returns only if there is a problem with the simulation schema.</p>
+    #[deprecated(note = "SchemaError is no longer used, check StartError instead.")]
     pub fn schema_error(mut self, input: impl Into<std::string::String>) -> Self {
         self.schema_error = Some(input.into());
         self
     }
     /// <p>An error message that SimSpace Weaver returns only if there is a problem with the simulation schema.</p>
+    #[deprecated(note = "SchemaError is no longer used, check StartError instead.")]
     pub fn set_schema_error(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.schema_error = input;
         self
@@ -271,14 +291,37 @@ impl DescribeSimulationOutputBuilder {
         self.live_simulation_state = input;
         self
     }
-    /// <p>The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit.</p>
+    /// <p>The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
     pub fn maximum_duration(mut self, input: impl Into<std::string::String>) -> Self {
         self.maximum_duration = Some(input.into());
         self
     }
-    /// <p>The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit.</p>
+    /// <p>The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
     pub fn set_maximum_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.maximum_duration = input;
+        self
+    }
+    /// <p>A location in Amazon Simple Storage Service (Amazon S3) where SimSpace Weaver stores simulation data, such as your app .zip files and schema file. For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+    pub fn snapshot_s3_location(mut self, input: crate::types::S3Location) -> Self {
+        self.snapshot_s3_location = Some(input);
+        self
+    }
+    /// <p>A location in Amazon Simple Storage Service (Amazon S3) where SimSpace Weaver stores simulation data, such as your app .zip files and schema file. For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+    pub fn set_snapshot_s3_location(
+        mut self,
+        input: std::option::Option<crate::types::S3Location>,
+    ) -> Self {
+        self.snapshot_s3_location = input;
+        self
+    }
+    /// <p>An error message that SimSpace Weaver returns only if a problem occurs when the simulation is in the <code>STARTING</code> state.</p>
+    pub fn start_error(mut self, input: impl Into<std::string::String>) -> Self {
+        self.start_error = Some(input.into());
+        self
+    }
+    /// <p>An error message that SimSpace Weaver returns only if a problem occurs when the simulation is in the <code>STARTING</code> state.</p>
+    pub fn set_start_error(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.start_error = input;
         self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -306,6 +349,8 @@ impl DescribeSimulationOutputBuilder {
             logging_configuration: self.logging_configuration,
             live_simulation_state: self.live_simulation_state,
             maximum_duration: self.maximum_duration,
+            snapshot_s3_location: self.snapshot_s3_location,
+            start_error: self.start_error,
             _request_id: self._request_id,
         }
     }

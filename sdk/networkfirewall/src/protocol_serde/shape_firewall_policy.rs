@@ -83,6 +83,15 @@ pub fn ser_firewall_policy(
             .key("TLSInspectionConfigurationArn")
             .string(var_24.as_str());
     }
+    if let Some(var_25) = &input.policy_variables {
+        #[allow(unused_mut)]
+        let mut object_26 = object.key("PolicyVariables").start_object();
+        crate::protocol_serde::shape_policy_variables::ser_policy_variables(
+            &mut object_26,
+            var_25,
+        )?;
+        object_26.finish();
+    }
     Ok(())
 }
 
@@ -154,6 +163,11 @@ where
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            "PolicyVariables" => {
+                                builder = builder.set_policy_variables(
+                                    crate::protocol_serde::shape_policy_variables::de_policy_variables(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

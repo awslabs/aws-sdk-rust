@@ -26,23 +26,23 @@ pub fn ser_video_selector(
     if let Some(var_7) = &input.pad_video {
         object.key("padVideo").string(var_7.as_str());
     }
-    if input.pid != 0 {
+    if let Some(var_8) = &input.pid {
         object.key("pid").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.pid).into()),
+            aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if input.program_number != 0 {
+    if let Some(var_9) = &input.program_number {
         object.key("programNumber").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.program_number).into()),
+            aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_8) = &input.rotate {
-        object.key("rotate").string(var_8.as_str());
+    if let Some(var_10) = &input.rotate {
+        object.key("rotate").string(var_10.as_str());
     }
-    if let Some(var_9) = &input.sample_range {
-        object.key("sampleRange").string(var_9.as_str());
+    if let Some(var_11) = &input.sample_range {
+        object.key("sampleRange").string(var_11.as_str());
     }
     Ok(())
 }

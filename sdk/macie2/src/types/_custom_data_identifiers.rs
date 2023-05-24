@@ -9,7 +9,7 @@ pub struct CustomDataIdentifiers {
     pub detections: std::option::Option<std::vec::Vec<crate::types::CustomDetection>>,
     /// <p>The total number of occurrences of the data that was detected by the custom data identifiers and produced the finding.</p>
     #[doc(hidden)]
-    pub total_count: i64,
+    pub total_count: std::option::Option<i64>,
 }
 impl CustomDataIdentifiers {
     /// <p>The custom data identifiers that detected the data, and the number of occurrences of the data that each identifier detected.</p>
@@ -17,7 +17,7 @@ impl CustomDataIdentifiers {
         self.detections.as_deref()
     }
     /// <p>The total number of occurrences of the data that was detected by the custom data identifiers and produced the finding.</p>
-    pub fn total_count(&self) -> i64 {
+    pub fn total_count(&self) -> std::option::Option<i64> {
         self.total_count
     }
 }
@@ -69,7 +69,7 @@ impl CustomDataIdentifiersBuilder {
     pub fn build(self) -> crate::types::CustomDataIdentifiers {
         crate::types::CustomDataIdentifiers {
             detections: self.detections,
-            total_count: self.total_count.unwrap_or_default(),
+            total_count: self.total_count,
         }
     }
 }

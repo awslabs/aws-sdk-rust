@@ -21,6 +21,8 @@ pub enum Error {
     DescribeAttachmentLimitExceeded(crate::types::error::DescribeAttachmentLimitExceeded),
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::types::error::InternalServerError),
+    /// <p> You have exceeded the maximum allowed TPS (Transactions Per Second) for the operations. </p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -36,6 +38,7 @@ impl std::fmt::Display for Error {
             Error::CaseIdNotFound(inner) => inner.fmt(f),
             Error::DescribeAttachmentLimitExceeded(inner) => inner.fmt(f),
             Error::InternalServerError(inner) => inner.fmt(f),
+            Error::ThrottlingException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
     }
@@ -295,6 +298,50 @@ impl From<crate::operation::describe_communications::DescribeCommunicationsError
 impl<R>
     From<
         aws_smithy_http::result::SdkError<
+            crate::operation::describe_create_case_options::DescribeCreateCaseOptionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_create_case_options::DescribeCreateCaseOptionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_create_case_options::DescribeCreateCaseOptionsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_create_case_options::DescribeCreateCaseOptionsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_create_case_options::DescribeCreateCaseOptionsError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::describe_create_case_options::DescribeCreateCaseOptionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_create_case_options::DescribeCreateCaseOptionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
             crate::operation::describe_services::DescribeServicesError,
             R,
         >,
@@ -374,6 +421,50 @@ impl From<crate::operation::describe_severity_levels::DescribeSeverityLevelsErro
         }
     }
 }
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_supported_languages::DescribeSupportedLanguagesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_supported_languages::DescribeSupportedLanguagesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_supported_languages::DescribeSupportedLanguagesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_supported_languages::DescribeSupportedLanguagesError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_supported_languages::DescribeSupportedLanguagesError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::describe_supported_languages::DescribeSupportedLanguagesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_supported_languages::DescribeSupportedLanguagesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<aws_smithy_http::result::SdkError<crate::operation::describe_trusted_advisor_check_refresh_statuses::DescribeTrustedAdvisorCheckRefreshStatusesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::operation::describe_trusted_advisor_check_refresh_statuses::DescribeTrustedAdvisorCheckRefreshStatusesError, R>) -> Self {
         match err {
@@ -391,6 +482,7 @@ impl From<crate::operation::describe_trusted_advisor_check_refresh_statuses::Des
     fn from(err: crate::operation::describe_trusted_advisor_check_refresh_statuses::DescribeTrustedAdvisorCheckRefreshStatusesError) -> Self {
         match err {
             crate::operation::describe_trusted_advisor_check_refresh_statuses::DescribeTrustedAdvisorCheckRefreshStatusesError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::describe_trusted_advisor_check_refresh_statuses::DescribeTrustedAdvisorCheckRefreshStatusesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::describe_trusted_advisor_check_refresh_statuses::DescribeTrustedAdvisorCheckRefreshStatusesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -412,6 +504,7 @@ impl From<crate::operation::describe_trusted_advisor_check_result::DescribeTrust
     fn from(err: crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultError) -> Self {
         match err {
             crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -455,6 +548,7 @@ impl From<crate::operation::describe_trusted_advisor_checks::DescribeTrustedAdvi
     ) -> Self {
         match err {
             crate::operation::describe_trusted_advisor_checks::DescribeTrustedAdvisorChecksError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::describe_trusted_advisor_checks::DescribeTrustedAdvisorChecksError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::describe_trusted_advisor_checks::DescribeTrustedAdvisorChecksError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -476,6 +570,7 @@ impl From<crate::operation::describe_trusted_advisor_check_summaries::DescribeTr
     fn from(err: crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesError) -> Self {
         match err {
             crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -573,6 +668,7 @@ impl std::error::Error for Error {
             Error::CaseIdNotFound(inner) => inner.source(),
             Error::DescribeAttachmentLimitExceeded(inner) => inner.source(),
             Error::InternalServerError(inner) => inner.source(),
+            Error::ThrottlingException(inner) => inner.source(),
             Error::Unhandled(inner) => inner.source(),
         }
     }
@@ -589,6 +685,7 @@ impl aws_http::request_id::RequestId for Error {
             Self::CaseIdNotFound(e) => e.request_id(),
             Self::DescribeAttachmentLimitExceeded(e) => e.request_id(),
             Self::InternalServerError(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
             Self::Unhandled(e) => e.request_id(),
         }
     }

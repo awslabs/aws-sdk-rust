@@ -87,7 +87,7 @@ impl TagResourceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags assigned to the resource. A tag is a label that you assign to an AWS resource.</p>
+    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.</p>
     /// <p>Each tag consists of a tag key and a tag value.</p>
     /// <p>You cannot have more than one tag on an Application Auto Scaling scalable target with the same tag key. If you specify an existing tag key with a different tag value, Application Auto Scaling replaces the current tag value with the specified one.</p>
     /// <p>For information about the rules that apply to tag keys and tag values, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-defined tag restrictions</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
@@ -99,7 +99,7 @@ impl TagResourceFluentBuilder {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>The tags assigned to the resource. A tag is a label that you assign to an AWS resource.</p>
+    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.</p>
     /// <p>Each tag consists of a tag key and a tag value.</p>
     /// <p>You cannot have more than one tag on an Application Auto Scaling scalable target with the same tag key. If you specify an existing tag key with a different tag value, Application Auto Scaling replaces the current tag value with the specified one.</p>
     /// <p>For information about the rules that apply to tag keys and tag values, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-defined tag restrictions</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>

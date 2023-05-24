@@ -28,7 +28,7 @@ pub struct NielsenNonLinearWatermarkSettings {
     pub metadata_destination: std::option::Option<std::string::String>,
     /// Use the SID that Nielsen provides to you. This source ID should be unique to your Nielsen account but common to all of your output assets. Required for all Nielsen non-linear watermarking. This ID should be unique to your Nielsen account but common to all of your output assets. Required for all Nielsen non-linear watermarking.
     #[doc(hidden)]
-    pub source_id: i32,
+    pub source_id: std::option::Option<i32>,
     /// Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this value to Watermarked (WATERMARKED), the service fails the job. Nielsen requires that you add non-linear watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
     #[doc(hidden)]
     pub source_watermark_status:
@@ -73,7 +73,7 @@ impl NielsenNonLinearWatermarkSettings {
         self.metadata_destination.as_deref()
     }
     /// Use the SID that Nielsen provides to you. This source ID should be unique to your Nielsen account but common to all of your output assets. Required for all Nielsen non-linear watermarking. This ID should be unique to your Nielsen account but common to all of your output assets. Required for all Nielsen non-linear watermarking.
-    pub fn source_id(&self) -> i32 {
+    pub fn source_id(&self) -> std::option::Option<i32> {
         self.source_id
     }
     /// Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this value to Watermarked (WATERMARKED), the service fails the job. Nielsen requires that you add non-linear watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
@@ -261,7 +261,7 @@ impl NielsenNonLinearWatermarkSettingsBuilder {
             cbet_source_id: self.cbet_source_id,
             episode_id: self.episode_id,
             metadata_destination: self.metadata_destination,
-            source_id: self.source_id.unwrap_or_default(),
+            source_id: self.source_id,
             source_watermark_status: self.source_watermark_status,
             tic_server_url: self.tic_server_url,
             unique_tic_per_audio_track: self.unique_tic_per_audio_track,

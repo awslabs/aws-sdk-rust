@@ -153,7 +153,7 @@ pub struct ModifyCacheClusterInput {
     #[doc(hidden)]
     pub log_delivery_configurations:
         std::option::Option<std::vec::Vec<crate::types::LogDeliveryConfigurationRequest>>,
-    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     #[doc(hidden)]
     pub ip_discovery: std::option::Option<crate::types::IpDiscovery>,
 }
@@ -330,7 +330,7 @@ impl ModifyCacheClusterInput {
     ) -> std::option::Option<&[crate::types::LogDeliveryConfigurationRequest]> {
         self.log_delivery_configurations.as_deref()
     }
-    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn ip_discovery(&self) -> std::option::Option<&crate::types::IpDiscovery> {
         self.ip_discovery.as_ref()
     }
@@ -814,12 +814,12 @@ impl ModifyCacheClusterInputBuilder {
         self.log_delivery_configurations = input;
         self
     }
-    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn ip_discovery(mut self, input: crate::types::IpDiscovery) -> Self {
         self.ip_discovery = Some(input);
         self
     }
-    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn set_ip_discovery(
         mut self,
         input: std::option::Option<crate::types::IpDiscovery>,

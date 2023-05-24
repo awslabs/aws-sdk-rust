@@ -13,6 +13,10 @@ pub struct CreateCustomEntityTypeInput {
     /// <p>If no context words are passed only a regular expression is checked.</p>
     #[doc(hidden)]
     pub context_words: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of tags applied to the custom entity type.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateCustomEntityTypeInput {
     /// <p>A name for the custom pattern that allows it to be retrieved or deleted later. This name must be unique per Amazon Web Services account.</p>
@@ -27,6 +31,13 @@ impl CreateCustomEntityTypeInput {
     /// <p>If no context words are passed only a regular expression is checked.</p>
     pub fn context_words(&self) -> std::option::Option<&[std::string::String]> {
         self.context_words.as_deref()
+    }
+    /// <p>A list of tags applied to the custom entity type.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
     }
 }
 impl CreateCustomEntityTypeInput {
@@ -45,6 +56,8 @@ pub struct CreateCustomEntityTypeInputBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) regex_string: std::option::Option<std::string::String>,
     pub(crate) context_words: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateCustomEntityTypeInputBuilder {
     /// <p>A name for the custom pattern that allows it to be retrieved or deleted later. This name must be unique per Amazon Web Services account.</p>
@@ -88,6 +101,31 @@ impl CreateCustomEntityTypeInputBuilder {
         self.context_words = input;
         self
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A list of tags applied to the custom entity type.</p>
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
+    }
+    /// <p>A list of tags applied to the custom entity type.</p>
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateCustomEntityTypeInput`](crate::operation::create_custom_entity_type::CreateCustomEntityTypeInput).
     pub fn build(
         self,
@@ -100,6 +138,7 @@ impl CreateCustomEntityTypeInputBuilder {
                 name: self.name,
                 regex_string: self.regex_string,
                 context_words: self.context_words,
+                tags: self.tags,
             },
         )
     }

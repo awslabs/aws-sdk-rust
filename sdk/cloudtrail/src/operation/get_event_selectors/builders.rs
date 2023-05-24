@@ -13,8 +13,8 @@ pub use crate::operation::get_event_selectors::_get_event_selectors_input::GetEv
 /// </ul>
 /// <p>For more information about logging management and data events, see the following topics in the <i>CloudTrail User Guide</i>:</p>
 /// <ul>
-/// <li> <p> <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging management events for trails </a> </p> </li>
-/// <li> <p> <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events for trails </a> </p> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging management events</a> </p> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events</a> </p> </li>
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetEventSelectorsFluentBuilder {

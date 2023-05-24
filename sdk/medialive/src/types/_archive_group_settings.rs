@@ -12,7 +12,7 @@ pub struct ArchiveGroupSettings {
     pub destination: std::option::Option<crate::types::OutputLocationRef>,
     /// Number of seconds to write to archive file before closing and starting a new one.
     #[doc(hidden)]
-    pub rollover_interval: i32,
+    pub rollover_interval: std::option::Option<i32>,
 }
 impl ArchiveGroupSettings {
     /// Parameters that control interactions with the CDN.
@@ -24,7 +24,7 @@ impl ArchiveGroupSettings {
         self.destination.as_ref()
     }
     /// Number of seconds to write to archive file before closing and starting a new one.
-    pub fn rollover_interval(&self) -> i32 {
+    pub fn rollover_interval(&self) -> std::option::Option<i32> {
         self.rollover_interval
     }
 }
@@ -85,7 +85,7 @@ impl ArchiveGroupSettingsBuilder {
         crate::types::ArchiveGroupSettings {
             archive_cdn_settings: self.archive_cdn_settings,
             destination: self.destination,
-            rollover_interval: self.rollover_interval.unwrap_or_default(),
+            rollover_interval: self.rollover_interval,
         }
     }
 }

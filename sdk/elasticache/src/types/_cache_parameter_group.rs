@@ -8,7 +8,7 @@ pub struct CacheParameterGroup {
     #[doc(hidden)]
     pub cache_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the cache parameter group family that this cache parameter group is compatible with.</p>
-    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | </p>
+    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis7</code> </p>
     #[doc(hidden)]
     pub cache_parameter_group_family: std::option::Option<std::string::String>,
     /// <p>The description for this cache parameter group.</p>
@@ -27,7 +27,7 @@ impl CacheParameterGroup {
         self.cache_parameter_group_name.as_deref()
     }
     /// <p>The name of the cache parameter group family that this cache parameter group is compatible with.</p>
-    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | </p>
+    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis7</code> </p>
     pub fn cache_parameter_group_family(&self) -> std::option::Option<&str> {
         self.cache_parameter_group_family.as_deref()
     }
@@ -76,13 +76,13 @@ impl CacheParameterGroupBuilder {
         self
     }
     /// <p>The name of the cache parameter group family that this cache parameter group is compatible with.</p>
-    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | </p>
+    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis7</code> </p>
     pub fn cache_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
         self.cache_parameter_group_family = Some(input.into());
         self
     }
     /// <p>The name of the cache parameter group family that this cache parameter group is compatible with.</p>
-    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | </p>
+    /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis7</code> </p>
     pub fn set_cache_parameter_group_family(
         mut self,
         input: std::option::Option<std::string::String>,

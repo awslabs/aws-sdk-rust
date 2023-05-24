@@ -265,7 +265,9 @@ pub enum Error {
     SourceNotFoundFault(crate::types::error::SourceNotFoundFault),
     /// <p>The request would result in the user exceeding the allowed amount of storage available across all DB instances.</p>
     StorageQuotaExceededFault(crate::types::error::StorageQuotaExceededFault),
-    /// <p>Storage of the <code>StorageType</code> specified can't be associated with the DB instance.</p>
+    /// <p>The <code>aurora-iopt1</code> storage type isn't available, because you modified the DB cluster to use this storage type less than one month ago.</p>
+    StorageTypeNotAvailableFault(crate::types::error::StorageTypeNotAvailableFault),
+    /// <p>The specified <code>StorageType</code> can't be associated with the DB instance.</p>
     StorageTypeNotSupportedFault(crate::types::error::StorageTypeNotSupportedFault),
     /// <p>The DB subnet is already in use in the Availability Zone.</p>
     SubnetAlreadyInUse(crate::types::error::SubnetAlreadyInUse),
@@ -401,6 +403,7 @@ impl std::fmt::Display for Error {
             Error::SourceDatabaseNotSupportedFault(inner) => inner.fmt(f),
             Error::SourceNotFoundFault(inner) => inner.fmt(f),
             Error::StorageQuotaExceededFault(inner) => inner.fmt(f),
+            Error::StorageTypeNotAvailableFault(inner) => inner.fmt(f),
             Error::StorageTypeNotSupportedFault(inner) => inner.fmt(f),
             Error::SubnetAlreadyInUse(inner) => inner.fmt(f),
             Error::SubscriptionAlreadyExistFault(inner) => inner.fmt(f),
@@ -4262,6 +4265,7 @@ impl From<crate::operation::modify_db_cluster::ModifyDBClusterError> for Error {
             crate::operation::modify_db_cluster::ModifyDBClusterError::InvalidSubnet(inner) => Error::InvalidSubnet(inner),
             crate::operation::modify_db_cluster::ModifyDBClusterError::InvalidVpcNetworkStateFault(inner) => Error::InvalidVpcNetworkStateFault(inner),
             crate::operation::modify_db_cluster::ModifyDBClusterError::StorageQuotaExceededFault(inner) => Error::StorageQuotaExceededFault(inner),
+            crate::operation::modify_db_cluster::ModifyDBClusterError::StorageTypeNotAvailableFault(inner) => Error::StorageTypeNotAvailableFault(inner),
             crate::operation::modify_db_cluster::ModifyDBClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -5426,6 +5430,7 @@ impl From<crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Er
             crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error::InvalidVpcNetworkStateFault(inner) => Error::InvalidVpcNetworkStateFault(inner),
             crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error::KmsKeyNotAccessibleFault(inner) => Error::KmsKeyNotAccessibleFault(inner),
             crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error::StorageQuotaExceededFault(inner) => Error::StorageQuotaExceededFault(inner),
+            crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error::StorageTypeNotSupportedFault(inner) => Error::StorageTypeNotSupportedFault(inner),
             crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -6294,6 +6299,7 @@ impl std::error::Error for Error {
             Error::SourceDatabaseNotSupportedFault(inner) => inner.source(),
             Error::SourceNotFoundFault(inner) => inner.source(),
             Error::StorageQuotaExceededFault(inner) => inner.source(),
+            Error::StorageTypeNotAvailableFault(inner) => inner.source(),
             Error::StorageTypeNotSupportedFault(inner) => inner.source(),
             Error::SubnetAlreadyInUse(inner) => inner.source(),
             Error::SubscriptionAlreadyExistFault(inner) => inner.source(),
@@ -6426,6 +6432,7 @@ impl aws_http::request_id::RequestId for Error {
             Self::SourceDatabaseNotSupportedFault(e) => e.request_id(),
             Self::SourceNotFoundFault(e) => e.request_id(),
             Self::StorageQuotaExceededFault(e) => e.request_id(),
+            Self::StorageTypeNotAvailableFault(e) => e.request_id(),
             Self::StorageTypeNotSupportedFault(e) => e.request_id(),
             Self::SubnetAlreadyInUse(e) => e.request_id(),
             Self::SubscriptionAlreadyExistFault(e) => e.request_id(),

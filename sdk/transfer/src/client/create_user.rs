@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`user_name(impl Into<String>)`](crate::operation::create_user::builders::CreateUserFluentBuilder::user_name) / [`set_user_name(Option<String>)`](crate::operation::create_user::builders::CreateUserFluentBuilder::set_user_name): <p>A unique string that identifies a user and is associated with a <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen, period, or at sign.</p>
     /// - On success, responds with [`CreateUserOutput`](crate::operation::create_user::CreateUserOutput) with field(s):
     ///   - [`server_id(Option<String>)`](crate::operation::create_user::CreateUserOutput::server_id): <p>The identifier of the server that the user is attached to.</p>
-    ///   - [`user_name(Option<String>)`](crate::operation::create_user::CreateUserOutput::user_name): <p>A unique string that identifies a user account associated with a server.</p>
+    ///   - [`user_name(Option<String>)`](crate::operation::create_user::CreateUserOutput::user_name): <p>A unique string that identifies a Transfer Family user.</p>
     /// - On failure, responds with [`SdkError<CreateUserError>`](crate::operation::create_user::CreateUserError)
     pub fn create_user(&self) -> crate::operation::create_user::builders::CreateUserFluentBuilder {
         crate::operation::create_user::builders::CreateUserFluentBuilder::new(self.handle.clone())

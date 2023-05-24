@@ -9,6 +9,17 @@ pub fn ser_metric_stream_filter(
     if let Some(var_2) = &input.namespace {
         scope_1.string(var_2);
     }
+    #[allow(unused_mut)]
+    let mut scope_3 = writer.prefix("MetricNames");
+    if let Some(var_4) = &input.metric_names {
+        let mut list_6 = scope_3.start_list(false, None);
+        for item_5 in var_4 {
+            #[allow(unused_mut)]
+            let mut entry_7 = list_6.entry();
+            entry_7.string(item_5);
+        }
+        list_6.finish();
+    }
     Ok(())
 }
 
@@ -20,7 +31,7 @@ pub fn de_metric_stream_filter(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Namespace") /* Namespace com.amazonaws.cloudwatch#MetricStreamFilter$Namespace */ =>  {
-                let var_3 =
+                let var_8 =
                     Some(
                         Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -29,7 +40,17 @@ pub fn de_metric_stream_filter(
                         ?
                     )
                 ;
-                builder = builder.set_namespace(var_3);
+                builder = builder.set_namespace(var_8);
+            }
+            ,
+            s if s.matches("MetricNames") /* MetricNames com.amazonaws.cloudwatch#MetricStreamFilter$MetricNames */ =>  {
+                let var_9 =
+                    Some(
+                        crate::protocol_serde::shape_metric_stream_filter_metric_names::de_metric_stream_filter_metric_names(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_metric_names(var_9);
             }
             ,
             _ => {}

@@ -10,6 +10,9 @@ pub struct CpuOptionsRequest {
     /// <p>The number of threads per CPU core. To disable multithreading for the instance, specify a value of <code>1</code>. Otherwise, specify the default value of <code>2</code>.</p>
     #[doc(hidden)]
     pub threads_per_core: std::option::Option<i32>,
+    /// <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a instance types only.</p>
+    #[doc(hidden)]
+    pub amd_sev_snp: std::option::Option<crate::types::AmdSevSnpSpecification>,
 }
 impl CpuOptionsRequest {
     /// <p>The number of CPU cores for the instance.</p>
@@ -19,6 +22,10 @@ impl CpuOptionsRequest {
     /// <p>The number of threads per CPU core. To disable multithreading for the instance, specify a value of <code>1</code>. Otherwise, specify the default value of <code>2</code>.</p>
     pub fn threads_per_core(&self) -> std::option::Option<i32> {
         self.threads_per_core
+    }
+    /// <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a instance types only.</p>
+    pub fn amd_sev_snp(&self) -> std::option::Option<&crate::types::AmdSevSnpSpecification> {
+        self.amd_sev_snp.as_ref()
     }
 }
 impl CpuOptionsRequest {
@@ -34,6 +41,7 @@ impl CpuOptionsRequest {
 pub struct CpuOptionsRequestBuilder {
     pub(crate) core_count: std::option::Option<i32>,
     pub(crate) threads_per_core: std::option::Option<i32>,
+    pub(crate) amd_sev_snp: std::option::Option<crate::types::AmdSevSnpSpecification>,
 }
 impl CpuOptionsRequestBuilder {
     /// <p>The number of CPU cores for the instance.</p>
@@ -56,11 +64,25 @@ impl CpuOptionsRequestBuilder {
         self.threads_per_core = input;
         self
     }
+    /// <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a instance types only.</p>
+    pub fn amd_sev_snp(mut self, input: crate::types::AmdSevSnpSpecification) -> Self {
+        self.amd_sev_snp = Some(input);
+        self
+    }
+    /// <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported with M6a, R6a, and C6a instance types only.</p>
+    pub fn set_amd_sev_snp(
+        mut self,
+        input: std::option::Option<crate::types::AmdSevSnpSpecification>,
+    ) -> Self {
+        self.amd_sev_snp = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CpuOptionsRequest`](crate::types::CpuOptionsRequest).
     pub fn build(self) -> crate::types::CpuOptionsRequest {
         crate::types::CpuOptionsRequest {
             core_count: self.core_count,
             threads_per_core: self.threads_per_core,
+            amd_sev_snp: self.amd_sev_snp,
         }
     }
 }

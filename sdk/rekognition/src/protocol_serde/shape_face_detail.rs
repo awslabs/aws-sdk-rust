@@ -101,6 +101,20 @@ where
                                     .map(|v| v.to_f32_lossy()),
                                 );
                             }
+                            "FaceOccluded" => {
+                                builder = builder.set_face_occluded(
+                                    crate::protocol_serde::shape_face_occluded::de_face_occluded(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            "EyeDirection" => {
+                                builder = builder.set_eye_direction(
+                                    crate::protocol_serde::shape_eye_direction::de_eye_direction(
+                                        tokens,
+                                    )?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

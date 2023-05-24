@@ -3,17 +3,17 @@ pub fn ser_caption_language_mapping(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CaptionLanguageMapping,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    {
+    if let Some(var_1) = &input.caption_channel {
         object.key("captionChannel").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.caption_channel).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.language_code {
-        object.key("languageCode").string(var_1.as_str());
+    if let Some(var_2) = &input.language_code {
+        object.key("languageCode").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.language_description {
-        object.key("languageDescription").string(var_2.as_str());
+    if let Some(var_3) = &input.language_description {
+        object.key("languageDescription").string(var_3.as_str());
     }
     Ok(())
 }

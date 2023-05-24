@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`user_name(impl Into<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::user_name) / [`set_user_name(Option<String>)`](crate::operation::describe_user::builders::DescribeUserFluentBuilder::set_user_name): <p>The name of the user assigned to one or more servers. User names are part of the sign-in credentials to use the Transfer Family service and perform file transfer tasks.</p>
     /// - On success, responds with [`DescribeUserOutput`](crate::operation::describe_user::DescribeUserOutput) with field(s):
     ///   - [`server_id(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::server_id): <p>A system-assigned unique identifier for a server that has this user assigned.</p>
-    ///   - [`user(Option<DescribedUser>)`](crate::operation::describe_user::DescribeUserOutput::user): <p>An array containing the properties of the user account for the <code>ServerID</code> value that you specified.</p>
+    ///   - [`user(Option<DescribedUser>)`](crate::operation::describe_user::DescribeUserOutput::user): <p>An array containing the properties of the Transfer Family user for the <code>ServerID</code> value that you specified.</p>
     /// - On failure, responds with [`SdkError<DescribeUserError>`](crate::operation::describe_user::DescribeUserError)
     pub fn describe_user(
         &self,

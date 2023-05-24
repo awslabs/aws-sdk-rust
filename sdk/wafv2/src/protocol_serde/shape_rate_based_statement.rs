@@ -27,6 +27,18 @@ pub fn ser_rate_based_statement(
         )?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.custom_keys {
+        let mut array_7 = object.key("CustomKeys").start_array();
+        for item_8 in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_rate_based_statement_custom_key::ser_rate_based_statement_custom_key(&mut object_9, item_8)?;
+                object_9.finish();
+            }
+        }
+        array_7.finish();
+    }
     Ok(())
 }
 
@@ -87,6 +99,11 @@ where
                             "ForwardedIPConfig" => {
                                 builder = builder.set_forwarded_ip_config(
                                     crate::protocol_serde::shape_forwarded_ip_config::de_forwarded_ip_config(tokens)?
+                                );
+                            }
+                            "CustomKeys" => {
+                                builder = builder.set_custom_keys(
+                                    crate::protocol_serde::shape_rate_based_statement_custom_keys::de_rate_based_statement_custom_keys(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -3,31 +3,29 @@ pub fn ser_import_job_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImportJobRequest,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.define_segment {
-        object.key("DefineSegment").boolean(input.define_segment);
+    if let Some(var_1) = &input.define_segment {
+        object.key("DefineSegment").boolean(*var_1);
     }
-    if let Some(var_1) = &input.external_id {
-        object.key("ExternalId").string(var_1.as_str());
+    if let Some(var_2) = &input.external_id {
+        object.key("ExternalId").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.format {
-        object.key("Format").string(var_2.as_str());
+    if let Some(var_3) = &input.format {
+        object.key("Format").string(var_3.as_str());
     }
-    if input.register_endpoints {
-        object
-            .key("RegisterEndpoints")
-            .boolean(input.register_endpoints);
+    if let Some(var_4) = &input.register_endpoints {
+        object.key("RegisterEndpoints").boolean(*var_4);
     }
-    if let Some(var_3) = &input.role_arn {
-        object.key("RoleArn").string(var_3.as_str());
+    if let Some(var_5) = &input.role_arn {
+        object.key("RoleArn").string(var_5.as_str());
     }
-    if let Some(var_4) = &input.s3_url {
-        object.key("S3Url").string(var_4.as_str());
+    if let Some(var_6) = &input.s3_url {
+        object.key("S3Url").string(var_6.as_str());
     }
-    if let Some(var_5) = &input.segment_id {
-        object.key("SegmentId").string(var_5.as_str());
+    if let Some(var_7) = &input.segment_id {
+        object.key("SegmentId").string(var_7.as_str());
     }
-    if let Some(var_6) = &input.segment_name {
-        object.key("SegmentName").string(var_6.as_str());
+    if let Some(var_8) = &input.segment_name {
+        object.key("SegmentName").string(var_8.as_str());
     }
     Ok(())
 }

@@ -12,7 +12,7 @@ pub struct BatchGetCustomDataIdentifierSummary {
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether the custom data identifier was deleted. If you delete a custom data identifier, Amazon Macie doesn't delete it permanently. Instead, it soft deletes the identifier.</p>
     #[doc(hidden)]
-    pub deleted: bool,
+    pub deleted: std::option::Option<bool>,
     /// <p>The custom description of the custom data identifier.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -33,7 +33,7 @@ impl BatchGetCustomDataIdentifierSummary {
         self.created_at.as_ref()
     }
     /// <p>Specifies whether the custom data identifier was deleted. If you delete a custom data identifier, Amazon Macie doesn't delete it permanently. Instead, it soft deletes the identifier.</p>
-    pub fn deleted(&self) -> bool {
+    pub fn deleted(&self) -> std::option::Option<bool> {
         self.deleted
     }
     /// <p>The custom description of the custom data identifier.</p>
@@ -136,7 +136,7 @@ impl BatchGetCustomDataIdentifierSummaryBuilder {
         crate::types::BatchGetCustomDataIdentifierSummary {
             arn: self.arn,
             created_at: self.created_at,
-            deleted: self.deleted.unwrap_or_default(),
+            deleted: self.deleted,
             description: self.description,
             id: self.id,
             name: self.name,

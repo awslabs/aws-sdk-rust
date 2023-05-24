@@ -3,6 +3,8 @@ pub use crate::types::error::_internal_server_error::InternalServerErrorBuilder;
 
 pub use crate::types::error::_case_id_not_found::CaseIdNotFoundBuilder;
 
+pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
+
 pub use crate::types::error::_describe_attachment_limit_exceeded::DescribeAttachmentLimitExceededBuilder;
 
 pub use crate::types::error::_attachment_id_not_found::AttachmentIdNotFoundBuilder;

@@ -6,7 +6,7 @@ pub struct CreateEvaluationFormInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>A unique title of the evaluation form.</p>
+    /// <p>A title of the evaluation form.</p>
     #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The description of the evaluation form.</p>
@@ -27,7 +27,7 @@ impl CreateEvaluationFormInput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>A unique title of the evaluation form.</p>
+    /// <p>A title of the evaluation form.</p>
     pub fn title(&self) -> std::option::Option<&str> {
         self.title.as_deref()
     }
@@ -80,12 +80,12 @@ impl CreateEvaluationFormInputBuilder {
         self.instance_id = input;
         self
     }
-    /// <p>A unique title of the evaluation form.</p>
+    /// <p>A title of the evaluation form.</p>
     pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
         self.title = Some(input.into());
         self
     }
-    /// <p>A unique title of the evaluation form.</p>
+    /// <p>A title of the evaluation form.</p>
     pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.title = input;
         self

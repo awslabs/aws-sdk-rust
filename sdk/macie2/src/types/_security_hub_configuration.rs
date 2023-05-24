@@ -6,18 +6,18 @@
 pub struct SecurityHubConfiguration {
     /// <p>Specifies whether to publish sensitive data findings to Security Hub. If you set this value to true, Amazon Macie automatically publishes all sensitive data findings that weren't suppressed by a findings filter. The default value is false.</p>
     #[doc(hidden)]
-    pub publish_classification_findings: bool,
+    pub publish_classification_findings: std::option::Option<bool>,
     /// <p>Specifies whether to publish policy findings to Security Hub. If you set this value to true, Amazon Macie automatically publishes all new and updated policy findings that weren't suppressed by a findings filter. The default value is true.</p>
     #[doc(hidden)]
-    pub publish_policy_findings: bool,
+    pub publish_policy_findings: std::option::Option<bool>,
 }
 impl SecurityHubConfiguration {
     /// <p>Specifies whether to publish sensitive data findings to Security Hub. If you set this value to true, Amazon Macie automatically publishes all sensitive data findings that weren't suppressed by a findings filter. The default value is false.</p>
-    pub fn publish_classification_findings(&self) -> bool {
+    pub fn publish_classification_findings(&self) -> std::option::Option<bool> {
         self.publish_classification_findings
     }
     /// <p>Specifies whether to publish policy findings to Security Hub. If you set this value to true, Amazon Macie automatically publishes all new and updated policy findings that weren't suppressed by a findings filter. The default value is true.</p>
-    pub fn publish_policy_findings(&self) -> bool {
+    pub fn publish_policy_findings(&self) -> std::option::Option<bool> {
         self.publish_policy_findings
     }
 }
@@ -59,10 +59,8 @@ impl SecurityHubConfigurationBuilder {
     /// Consumes the builder and constructs a [`SecurityHubConfiguration`](crate::types::SecurityHubConfiguration).
     pub fn build(self) -> crate::types::SecurityHubConfiguration {
         crate::types::SecurityHubConfiguration {
-            publish_classification_findings: self
-                .publish_classification_findings
-                .unwrap_or_default(),
-            publish_policy_findings: self.publish_policy_findings.unwrap_or_default(),
+            publish_classification_findings: self.publish_classification_findings,
+            publish_policy_findings: self.publish_policy_findings,
         }
     }
 }

@@ -6,25 +6,25 @@
 pub struct Range {
     /// <p>The number of lines from the beginning of the file to the end of the sensitive data.</p>
     #[doc(hidden)]
-    pub end: i64,
+    pub end: std::option::Option<i64>,
     /// <p>The number of lines from the beginning of the file to the beginning of the sensitive data.</p>
     #[doc(hidden)]
-    pub start: i64,
+    pub start: std::option::Option<i64>,
     /// <p>The number of characters, with spaces and starting from 1, from the beginning of the first line that contains the sensitive data (start) to the beginning of the sensitive data.</p>
     #[doc(hidden)]
-    pub start_column: i64,
+    pub start_column: std::option::Option<i64>,
 }
 impl Range {
     /// <p>The number of lines from the beginning of the file to the end of the sensitive data.</p>
-    pub fn end(&self) -> i64 {
+    pub fn end(&self) -> std::option::Option<i64> {
         self.end
     }
     /// <p>The number of lines from the beginning of the file to the beginning of the sensitive data.</p>
-    pub fn start(&self) -> i64 {
+    pub fn start(&self) -> std::option::Option<i64> {
         self.start
     }
     /// <p>The number of characters, with spaces and starting from 1, from the beginning of the first line that contains the sensitive data (start) to the beginning of the sensitive data.</p>
-    pub fn start_column(&self) -> i64 {
+    pub fn start_column(&self) -> std::option::Option<i64> {
         self.start_column
     }
 }
@@ -77,9 +77,9 @@ impl RangeBuilder {
     /// Consumes the builder and constructs a [`Range`](crate::types::Range).
     pub fn build(self) -> crate::types::Range {
         crate::types::Range {
-            end: self.end.unwrap_or_default(),
-            start: self.start.unwrap_or_default(),
-            start_column: self.start_column.unwrap_or_default(),
+            end: self.end,
+            start: self.start,
+            start_column: self.start_column,
         }
     }
 }

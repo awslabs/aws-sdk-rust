@@ -6,25 +6,25 @@
 pub struct NoiseReducerSpatialFilterSettings {
     /// Specify strength of post noise reduction sharpening filter, with 0 disabling the filter and 3 enabling it at maximum strength.
     #[doc(hidden)]
-    pub post_filter_sharpen_strength: i32,
+    pub post_filter_sharpen_strength: std::option::Option<i32>,
     /// The speed of the filter, from -2 (lower speed) to 3 (higher speed), with 0 being the nominal value.
     #[doc(hidden)]
-    pub speed: i32,
+    pub speed: std::option::Option<i32>,
     /// Relative strength of noise reducing filter. Higher values produce stronger filtering.
     #[doc(hidden)]
-    pub strength: i32,
+    pub strength: std::option::Option<i32>,
 }
 impl NoiseReducerSpatialFilterSettings {
     /// Specify strength of post noise reduction sharpening filter, with 0 disabling the filter and 3 enabling it at maximum strength.
-    pub fn post_filter_sharpen_strength(&self) -> i32 {
+    pub fn post_filter_sharpen_strength(&self) -> std::option::Option<i32> {
         self.post_filter_sharpen_strength
     }
     /// The speed of the filter, from -2 (lower speed) to 3 (higher speed), with 0 being the nominal value.
-    pub fn speed(&self) -> i32 {
+    pub fn speed(&self) -> std::option::Option<i32> {
         self.speed
     }
     /// Relative strength of noise reducing filter. Higher values produce stronger filtering.
-    pub fn strength(&self) -> i32 {
+    pub fn strength(&self) -> std::option::Option<i32> {
         self.strength
     }
 }
@@ -77,9 +77,9 @@ impl NoiseReducerSpatialFilterSettingsBuilder {
     /// Consumes the builder and constructs a [`NoiseReducerSpatialFilterSettings`](crate::types::NoiseReducerSpatialFilterSettings).
     pub fn build(self) -> crate::types::NoiseReducerSpatialFilterSettings {
         crate::types::NoiseReducerSpatialFilterSettings {
-            post_filter_sharpen_strength: self.post_filter_sharpen_strength.unwrap_or_default(),
-            speed: self.speed.unwrap_or_default(),
-            strength: self.strength.unwrap_or_default(),
+            post_filter_sharpen_strength: self.post_filter_sharpen_strength,
+            speed: self.speed,
+            strength: self.strength,
         }
     }
 }

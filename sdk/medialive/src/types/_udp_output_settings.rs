@@ -6,7 +6,7 @@
 pub struct UdpOutputSettings {
     /// UDP output buffering in milliseconds. Larger values increase latency through the transcoder but simultaneously assist the transcoder in maintaining a constant, low-jitter UDP/RTP output while accommodating clock recovery, input switching, input disruptions, picture reordering, etc.
     #[doc(hidden)]
-    pub buffer_msec: i32,
+    pub buffer_msec: std::option::Option<i32>,
     /// Udp Container Settings
     #[doc(hidden)]
     pub container_settings: std::option::Option<crate::types::UdpContainerSettings>,
@@ -19,7 +19,7 @@ pub struct UdpOutputSettings {
 }
 impl UdpOutputSettings {
     /// UDP output buffering in milliseconds. Larger values increase latency through the transcoder but simultaneously assist the transcoder in maintaining a constant, low-jitter UDP/RTP output while accommodating clock recovery, input switching, input disruptions, picture reordering, etc.
-    pub fn buffer_msec(&self) -> i32 {
+    pub fn buffer_msec(&self) -> std::option::Option<i32> {
         self.buffer_msec
     }
     /// Udp Container Settings
@@ -104,7 +104,7 @@ impl UdpOutputSettingsBuilder {
     /// Consumes the builder and constructs a [`UdpOutputSettings`](crate::types::UdpOutputSettings).
     pub fn build(self) -> crate::types::UdpOutputSettings {
         crate::types::UdpOutputSettings {
-            buffer_msec: self.buffer_msec.unwrap_or_default(),
+            buffer_msec: self.buffer_msec,
             container_settings: self.container_settings,
             destination: self.destination,
             fec_output_settings: self.fec_output_settings,

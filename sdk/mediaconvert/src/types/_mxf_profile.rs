@@ -16,6 +16,7 @@
 ///     MxfProfile::Op1A => { /* ... */ },
 ///     MxfProfile::Xavc => { /* ... */ },
 ///     MxfProfile::Xdcam => { /* ... */ },
+///     MxfProfile::XdcamRdd9 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -57,6 +58,8 @@ pub enum MxfProfile {
     Xavc,
     #[allow(missing_docs)] // documentation missing in model
     Xdcam,
+    #[allow(missing_docs)] // documentation missing in model
+    XdcamRdd9,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -67,6 +70,7 @@ impl std::convert::From<&str> for MxfProfile {
             "OP1A" => MxfProfile::Op1A,
             "XAVC" => MxfProfile::Xavc,
             "XDCAM" => MxfProfile::Xdcam,
+            "XDCAM_RDD9" => MxfProfile::XdcamRdd9,
             other => MxfProfile::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -86,12 +90,13 @@ impl MxfProfile {
             MxfProfile::Op1A => "OP1A",
             MxfProfile::Xavc => "XAVC",
             MxfProfile::Xdcam => "XDCAM",
+            MxfProfile::XdcamRdd9 => "XDCAM_RDD9",
             MxfProfile::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["D_10", "OP1A", "XAVC", "XDCAM"]
+        &["D_10", "OP1A", "XAVC", "XDCAM", "XDCAM_RDD9"]
     }
 }
 impl AsRef<str> for MxfProfile {

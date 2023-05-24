@@ -6,7 +6,7 @@
 pub struct GlobalConfiguration {
     /// Value to set the initial audio gain for the Live Event.
     #[doc(hidden)]
-    pub initial_audio_gain: i32,
+    pub initial_audio_gain: std::option::Option<i32>,
     /// Indicates the action to take when the current input completes (e.g. end-of-file). When switchAndLoopInputs is configured the encoder will restart at the beginning of the first input. When "none" is configured the encoder will transcode either black, a solid color, or a user specified slate images per the "Input Loss Behavior" configuration until the next input switch occurs (which is controlled through the Channel Schedule API).
     #[doc(hidden)]
     pub input_end_action: std::option::Option<crate::types::GlobalConfigurationInputEndAction>,
@@ -28,7 +28,7 @@ pub struct GlobalConfiguration {
 }
 impl GlobalConfiguration {
     /// Value to set the initial audio gain for the Live Event.
-    pub fn initial_audio_gain(&self) -> i32 {
+    pub fn initial_audio_gain(&self) -> std::option::Option<i32> {
         self.initial_audio_gain
     }
     /// Indicates the action to take when the current input completes (e.g. end-of-file). When switchAndLoopInputs is configured the encoder will restart at the beginning of the first input. When "none" is configured the encoder will transcode either black, a solid color, or a user specified slate images per the "Input Loss Behavior" configuration until the next input switch occurs (which is controlled through the Channel Schedule API).
@@ -173,7 +173,7 @@ impl GlobalConfigurationBuilder {
     /// Consumes the builder and constructs a [`GlobalConfiguration`](crate::types::GlobalConfiguration).
     pub fn build(self) -> crate::types::GlobalConfiguration {
         crate::types::GlobalConfiguration {
-            initial_audio_gain: self.initial_audio_gain.unwrap_or_default(),
+            initial_audio_gain: self.initial_audio_gain,
             input_end_action: self.input_end_action,
             input_loss_behavior: self.input_loss_behavior,
             output_locking_mode: self.output_locking_mode,

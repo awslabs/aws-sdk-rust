@@ -20,5 +20,10 @@ pub fn ser_launch_template_cpu_options_request(
             aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_5 = writer.prefix("AmdSevSnp");
+    if let Some(var_6) = &input.amd_sev_snp {
+        scope_5.string(var_6.as_str());
+    }
     Ok(())
 }

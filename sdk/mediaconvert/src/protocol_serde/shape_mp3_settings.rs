@@ -3,31 +3,31 @@ pub fn ser_mp3_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Mp3Settings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.bitrate != 0 {
+    if let Some(var_1) = &input.bitrate {
         object.key("bitrate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.bitrate).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.channels != 0 {
+    if let Some(var_2) = &input.channels {
         object.key("channels").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.channels).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_1) = &input.rate_control_mode {
-        object.key("rateControlMode").string(var_1.as_str());
+    if let Some(var_3) = &input.rate_control_mode {
+        object.key("rateControlMode").string(var_3.as_str());
     }
-    if input.sample_rate != 0 {
+    if let Some(var_4) = &input.sample_rate {
         object.key("sampleRate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.sample_rate).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if input.vbr_quality != 0 {
+    if let Some(var_5) = &input.vbr_quality {
         object.key("vbrQuality").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.vbr_quality).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
     Ok(())

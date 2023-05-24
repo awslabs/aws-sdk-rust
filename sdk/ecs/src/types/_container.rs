@@ -16,9 +16,7 @@ pub struct Container {
     /// <p>The image used for the container.</p>
     #[doc(hidden)]
     pub image: std::option::Option<std::string::String>,
-    /// <p>The container image manifest digest.</p> <note>
-    /// <p>The <code>imageDigest</code> is only returned if the container is using an image hosted in Amazon ECR, otherwise it is omitted.</p>
-    /// </note>
+    /// <p>The container image manifest digest.</p>
     #[doc(hidden)]
     pub image_digest: std::option::Option<std::string::String>,
     /// <p>The ID of the Docker container.</p>
@@ -75,9 +73,7 @@ impl Container {
     pub fn image(&self) -> std::option::Option<&str> {
         self.image.as_deref()
     }
-    /// <p>The container image manifest digest.</p> <note>
-    /// <p>The <code>imageDigest</code> is only returned if the container is using an image hosted in Amazon ECR, otherwise it is omitted.</p>
-    /// </note>
+    /// <p>The container image manifest digest.</p>
     pub fn image_digest(&self) -> std::option::Option<&str> {
         self.image_digest.as_deref()
     }
@@ -201,16 +197,12 @@ impl ContainerBuilder {
         self.image = input;
         self
     }
-    /// <p>The container image manifest digest.</p> <note>
-    /// <p>The <code>imageDigest</code> is only returned if the container is using an image hosted in Amazon ECR, otherwise it is omitted.</p>
-    /// </note>
+    /// <p>The container image manifest digest.</p>
     pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
         self.image_digest = Some(input.into());
         self
     }
-    /// <p>The container image manifest digest.</p> <note>
-    /// <p>The <code>imageDigest</code> is only returned if the container is using an image hosted in Amazon ECR, otherwise it is omitted.</p>
-    /// </note>
+    /// <p>The container image manifest digest.</p>
     pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.image_digest = input;
         self

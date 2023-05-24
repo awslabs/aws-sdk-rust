@@ -6,32 +6,32 @@
 pub struct BlockPublicAccess {
     /// <p>Specifies whether Amazon S3 blocks public access control lists (ACLs) for the bucket and objects in the bucket.</p>
     #[doc(hidden)]
-    pub block_public_acls: bool,
+    pub block_public_acls: std::option::Option<bool>,
     /// <p>Specifies whether Amazon S3 blocks public bucket policies for the bucket.</p>
     #[doc(hidden)]
-    pub block_public_policy: bool,
+    pub block_public_policy: std::option::Option<bool>,
     /// <p>Specifies whether Amazon S3 ignores public ACLs for the bucket and objects in the bucket.</p>
     #[doc(hidden)]
-    pub ignore_public_acls: bool,
+    pub ignore_public_acls: std::option::Option<bool>,
     /// <p>Specifies whether Amazon S3 restricts public bucket policies for the bucket.</p>
     #[doc(hidden)]
-    pub restrict_public_buckets: bool,
+    pub restrict_public_buckets: std::option::Option<bool>,
 }
 impl BlockPublicAccess {
     /// <p>Specifies whether Amazon S3 blocks public access control lists (ACLs) for the bucket and objects in the bucket.</p>
-    pub fn block_public_acls(&self) -> bool {
+    pub fn block_public_acls(&self) -> std::option::Option<bool> {
         self.block_public_acls
     }
     /// <p>Specifies whether Amazon S3 blocks public bucket policies for the bucket.</p>
-    pub fn block_public_policy(&self) -> bool {
+    pub fn block_public_policy(&self) -> std::option::Option<bool> {
         self.block_public_policy
     }
     /// <p>Specifies whether Amazon S3 ignores public ACLs for the bucket and objects in the bucket.</p>
-    pub fn ignore_public_acls(&self) -> bool {
+    pub fn ignore_public_acls(&self) -> std::option::Option<bool> {
         self.ignore_public_acls
     }
     /// <p>Specifies whether Amazon S3 restricts public bucket policies for the bucket.</p>
-    pub fn restrict_public_buckets(&self) -> bool {
+    pub fn restrict_public_buckets(&self) -> std::option::Option<bool> {
         self.restrict_public_buckets
     }
 }
@@ -95,10 +95,10 @@ impl BlockPublicAccessBuilder {
     /// Consumes the builder and constructs a [`BlockPublicAccess`](crate::types::BlockPublicAccess).
     pub fn build(self) -> crate::types::BlockPublicAccess {
         crate::types::BlockPublicAccess {
-            block_public_acls: self.block_public_acls.unwrap_or_default(),
-            block_public_policy: self.block_public_policy.unwrap_or_default(),
-            ignore_public_acls: self.ignore_public_acls.unwrap_or_default(),
-            restrict_public_buckets: self.restrict_public_buckets.unwrap_or_default(),
+            block_public_acls: self.block_public_acls,
+            block_public_policy: self.block_public_policy,
+            ignore_public_acls: self.ignore_public_acls,
+            restrict_public_buckets: self.restrict_public_buckets,
         }
     }
 }

@@ -6,7 +6,7 @@
 pub struct HlsCaptionLanguageMapping {
     /// Caption channel.
     #[doc(hidden)]
-    pub caption_channel: i32,
+    pub caption_channel: std::option::Option<i32>,
     /// Specify the language for this captions channel, using the ISO 639-2 or ISO 639-3 three-letter language code
     #[doc(hidden)]
     pub custom_language_code: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ pub struct HlsCaptionLanguageMapping {
 }
 impl HlsCaptionLanguageMapping {
     /// Caption channel.
-    pub fn caption_channel(&self) -> i32 {
+    pub fn caption_channel(&self) -> std::option::Option<i32> {
         self.caption_channel
     }
     /// Specify the language for this captions channel, using the ISO 639-2 or ISO 639-3 three-letter language code
@@ -104,7 +104,7 @@ impl HlsCaptionLanguageMappingBuilder {
     /// Consumes the builder and constructs a [`HlsCaptionLanguageMapping`](crate::types::HlsCaptionLanguageMapping).
     pub fn build(self) -> crate::types::HlsCaptionLanguageMapping {
         crate::types::HlsCaptionLanguageMapping {
-            caption_channel: self.caption_channel.unwrap_or_default(),
+            caption_channel: self.caption_channel,
             custom_language_code: self.custom_language_code,
             language_code: self.language_code,
             language_description: self.language_description,

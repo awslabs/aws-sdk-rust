@@ -10,7 +10,7 @@ pub struct ResourceStatus {
     /// <p>The status of Amazon Inspector scanning for Amazon ECR resources.</p>
     #[doc(hidden)]
     pub ecr: std::option::Option<crate::types::Status>,
-    /// <p>The status of Amazon Inspector scanning for AWS Lambda function resources.</p>
+    /// <p>The status of Amazon Inspector scanning for AWS Lambda function.</p>
     #[doc(hidden)]
     pub lambda: std::option::Option<crate::types::Status>,
 }
@@ -23,7 +23,7 @@ impl ResourceStatus {
     pub fn ecr(&self) -> std::option::Option<&crate::types::Status> {
         self.ecr.as_ref()
     }
-    /// <p>The status of Amazon Inspector scanning for AWS Lambda function resources.</p>
+    /// <p>The status of Amazon Inspector scanning for AWS Lambda function.</p>
     pub fn lambda(&self) -> std::option::Option<&crate::types::Status> {
         self.lambda.as_ref()
     }
@@ -64,12 +64,12 @@ impl ResourceStatusBuilder {
         self.ecr = input;
         self
     }
-    /// <p>The status of Amazon Inspector scanning for AWS Lambda function resources.</p>
+    /// <p>The status of Amazon Inspector scanning for AWS Lambda function.</p>
     pub fn lambda(mut self, input: crate::types::Status) -> Self {
         self.lambda = Some(input);
         self
     }
-    /// <p>The status of Amazon Inspector scanning for AWS Lambda function resources.</p>
+    /// <p>The status of Amazon Inspector scanning for AWS Lambda function.</p>
     pub fn set_lambda(mut self, input: std::option::Option<crate::types::Status>) -> Self {
         self.lambda = input;
         self

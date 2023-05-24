@@ -6,7 +6,7 @@ pub struct DescribeServicesInput {
     /// <p>A JSON-formatted list of service codes available for Amazon Web Services services.</p>
     #[doc(hidden)]
     pub service_code_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     #[doc(hidden)]
     pub language: std::option::Option<std::string::String>,
 }
@@ -15,7 +15,7 @@ impl DescribeServicesInput {
     pub fn service_code_list(&self) -> std::option::Option<&[std::string::String]> {
         self.service_code_list.as_deref()
     }
-    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn language(&self) -> std::option::Option<&str> {
         self.language.as_deref()
     }
@@ -55,12 +55,12 @@ impl DescribeServicesInputBuilder {
         self.service_code_list = input;
         self
     }
-    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
         self.language = Some(input.into());
         self
     }
-    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.language = input;
         self

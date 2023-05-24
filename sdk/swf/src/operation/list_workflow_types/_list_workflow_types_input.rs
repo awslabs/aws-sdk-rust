@@ -12,7 +12,7 @@ pub struct ListWorkflowTypesInput {
     /// <p>Specifies the registration status of the workflow types to list.</p>
     #[doc(hidden)]
     pub registration_status: std::option::Option<crate::types::RegistrationStatus>,
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
@@ -36,7 +36,7 @@ impl ListWorkflowTypesInput {
     pub fn registration_status(&self) -> std::option::Option<&crate::types::RegistrationStatus> {
         self.registration_status.as_ref()
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
@@ -103,13 +103,13 @@ impl ListWorkflowTypesInputBuilder {
         self.registration_status = input;
         self
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
     pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_page_token = Some(input.into());
         self
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
     pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.next_page_token = input;

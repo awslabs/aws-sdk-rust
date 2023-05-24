@@ -98,18 +98,21 @@ pub struct ReplicationGroup {
     /// <p>Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data tiering</a>.</p>
     #[doc(hidden)]
     pub data_tiering: std::option::Option<crate::types::DataTieringStatus>,
-    /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
+    /// <p>If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions. </p>
     #[doc(hidden)]
     pub auto_minor_version_upgrade: bool,
-    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     #[doc(hidden)]
     pub network_type: std::option::Option<crate::types::NetworkType>,
-    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     #[doc(hidden)]
     pub ip_discovery: std::option::Option<crate::types::IpDiscovery>,
     /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
     #[doc(hidden)]
     pub transit_encryption_mode: std::option::Option<crate::types::TransitEncryptionMode>,
+    /// <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode configuration and set the cluster mode to Enabled.</p>
+    #[doc(hidden)]
+    pub cluster_mode: std::option::Option<crate::types::ClusterMode>,
 }
 impl ReplicationGroup {
     /// <p>The identifier for the replication group.</p>
@@ -241,15 +244,15 @@ impl ReplicationGroup {
     pub fn data_tiering(&self) -> std::option::Option<&crate::types::DataTieringStatus> {
         self.data_tiering.as_ref()
     }
-    /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
+    /// <p>If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions. </p>
     pub fn auto_minor_version_upgrade(&self) -> bool {
         self.auto_minor_version_upgrade
     }
-    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn network_type(&self) -> std::option::Option<&crate::types::NetworkType> {
         self.network_type.as_ref()
     }
-    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn ip_discovery(&self) -> std::option::Option<&crate::types::IpDiscovery> {
         self.ip_discovery.as_ref()
     }
@@ -258,6 +261,10 @@ impl ReplicationGroup {
         &self,
     ) -> std::option::Option<&crate::types::TransitEncryptionMode> {
         self.transit_encryption_mode.as_ref()
+    }
+    /// <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode configuration and set the cluster mode to Enabled.</p>
+    pub fn cluster_mode(&self) -> std::option::Option<&crate::types::ClusterMode> {
+        self.cluster_mode.as_ref()
     }
 }
 impl ReplicationGroup {
@@ -305,6 +312,7 @@ pub struct ReplicationGroupBuilder {
     pub(crate) network_type: std::option::Option<crate::types::NetworkType>,
     pub(crate) ip_discovery: std::option::Option<crate::types::IpDiscovery>,
     pub(crate) transit_encryption_mode: std::option::Option<crate::types::TransitEncryptionMode>,
+    pub(crate) cluster_mode: std::option::Option<crate::types::ClusterMode>,
 }
 impl ReplicationGroupBuilder {
     /// <p>The identifier for the replication group.</p>
@@ -674,22 +682,22 @@ impl ReplicationGroupBuilder {
         self.data_tiering = input;
         self
     }
-    /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
+    /// <p>If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions. </p>
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
         self.auto_minor_version_upgrade = Some(input);
         self
     }
-    /// <p>&nbsp;If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions.&nbsp; </p>
+    /// <p>If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next auto minor version upgrade campaign. This parameter is disabled for previous versions. </p>
     pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
         self.auto_minor_version_upgrade = input;
         self
     }
-    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
         self.network_type = Some(input);
         self
     }
-    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn set_network_type(
         mut self,
         input: std::option::Option<crate::types::NetworkType>,
@@ -697,12 +705,12 @@ impl ReplicationGroupBuilder {
         self.network_type = input;
         self
     }
-    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn ip_discovery(mut self, input: crate::types::IpDiscovery) -> Self {
         self.ip_discovery = Some(input);
         self
     }
-    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn set_ip_discovery(
         mut self,
         input: std::option::Option<crate::types::IpDiscovery>,
@@ -721,6 +729,19 @@ impl ReplicationGroupBuilder {
         input: std::option::Option<crate::types::TransitEncryptionMode>,
     ) -> Self {
         self.transit_encryption_mode = input;
+        self
+    }
+    /// <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode configuration and set the cluster mode to Enabled.</p>
+    pub fn cluster_mode(mut self, input: crate::types::ClusterMode) -> Self {
+        self.cluster_mode = Some(input);
+        self
+    }
+    /// <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode configuration and set the cluster mode to Enabled.</p>
+    pub fn set_cluster_mode(
+        mut self,
+        input: std::option::Option<crate::types::ClusterMode>,
+    ) -> Self {
+        self.cluster_mode = input;
         self
     }
     /// Consumes the builder and constructs a [`ReplicationGroup`](crate::types::ReplicationGroup).
@@ -756,6 +777,7 @@ impl ReplicationGroupBuilder {
             network_type: self.network_type,
             ip_discovery: self.ip_discovery,
             transit_encryption_mode: self.transit_encryption_mode,
+            cluster_mode: self.cluster_mode,
         }
     }
 }

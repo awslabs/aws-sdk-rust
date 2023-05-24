@@ -103,13 +103,13 @@ impl PollForDecisionTaskFluentBuilder {
         self
     }
     /// <p>Specifies the task list to poll for decision tasks.</p>
-    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     pub fn task_list(mut self, input: crate::types::TaskList) -> Self {
         self.inner = self.inner.task_list(input);
         self
     }
     /// <p>Specifies the task list to poll for decision tasks.</p>
-    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     pub fn set_task_list(mut self, input: std::option::Option<crate::types::TaskList>) -> Self {
         self.inner = self.inner.set_task_list(input);
         self
@@ -124,7 +124,7 @@ impl PollForDecisionTaskFluentBuilder {
         self.inner = self.inner.set_identity(input);
         self
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note>
     /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p>
     /// </note>
@@ -132,7 +132,7 @@ impl PollForDecisionTaskFluentBuilder {
         self.inner = self.inner.next_page_token(input.into());
         self
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note>
     /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p>
     /// </note>
@@ -160,6 +160,16 @@ impl PollForDecisionTaskFluentBuilder {
     /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimestamp</code> of the events.</p>
     pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_reverse_order(input);
+        self
+    }
+    /// <p>When set to <code>true</code>, returns the events with <code>eventTimestamp</code> greater than or equal to <code>eventTimestamp</code> of the most recent <code>DecisionTaskStarted</code> event. By default, this parameter is set to <code>false</code>.</p>
+    pub fn start_at_previous_started_event(mut self, input: bool) -> Self {
+        self.inner = self.inner.start_at_previous_started_event(input);
+        self
+    }
+    /// <p>When set to <code>true</code>, returns the events with <code>eventTimestamp</code> greater than or equal to <code>eventTimestamp</code> of the most recent <code>DecisionTaskStarted</code> event. By default, this parameter is set to <code>false</code>.</p>
+    pub fn set_start_at_previous_started_event(mut self, input: std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_start_at_previous_started_event(input);
         self
     }
 }

@@ -92,8 +92,8 @@ impl BatchGetAssetPropertyAggregatesFluentBuilder {
     }
     /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
     /// <ul>
-    /// <li> <p>The size of the result set is less than 1 MB.</p> </li>
-    /// <li> <p>The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li>
+    /// <li> <p>The size of the result set is equal to 1 MB.</p> </li>
+    /// <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li>
     /// </ul>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -101,8 +101,8 @@ impl BatchGetAssetPropertyAggregatesFluentBuilder {
     }
     /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
     /// <ul>
-    /// <li> <p>The size of the result set is less than 1 MB.</p> </li>
-    /// <li> <p>The number of data points in the result set is less than the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li>
+    /// <li> <p>The size of the result set is equal to 1 MB.</p> </li>
+    /// <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 4000.</p> </li>
     /// </ul>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);

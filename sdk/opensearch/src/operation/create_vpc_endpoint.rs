@@ -173,7 +173,7 @@ pub enum CreateVpcEndpointError {
     BaseException(crate::types::error::BaseException),
     /// <p>An error occurred because the client attempts to remove a resource that is currently in use.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>An error occured because the client wanted to access a not supported operation.</p>
+    /// <p>An error occured because the client wanted to access an unsupported operation.</p>
     DisabledOperationException(crate::types::error::DisabledOperationException),
     /// <p>Request processing failed because of an unknown error, exception, or internal failure.</p>
     InternalException(crate::types::error::InternalException),

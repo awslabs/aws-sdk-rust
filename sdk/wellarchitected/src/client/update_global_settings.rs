@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`organization_sharing_status(OrganizationSharingStatus)`](crate::operation::update_global_settings::builders::UpdateGlobalSettingsFluentBuilder::organization_sharing_status) / [`set_organization_sharing_status(Option<OrganizationSharingStatus>)`](crate::operation::update_global_settings::builders::UpdateGlobalSettingsFluentBuilder::set_organization_sharing_status): <p>The status of organization sharing settings.</p>
+    ///   - [`discovery_integration_status(DiscoveryIntegrationStatus)`](crate::operation::update_global_settings::builders::UpdateGlobalSettingsFluentBuilder::discovery_integration_status) / [`set_discovery_integration_status(Option<DiscoveryIntegrationStatus>)`](crate::operation::update_global_settings::builders::UpdateGlobalSettingsFluentBuilder::set_discovery_integration_status): <p>The status of discovery support settings.</p>
     /// - On success, responds with [`UpdateGlobalSettingsOutput`](crate::operation::update_global_settings::UpdateGlobalSettingsOutput)
     /// - On failure, responds with [`SdkError<UpdateGlobalSettingsError>`](crate::operation::update_global_settings::UpdateGlobalSettingsError)
     pub fn update_global_settings(

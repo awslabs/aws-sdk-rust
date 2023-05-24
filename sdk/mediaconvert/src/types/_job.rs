@@ -27,7 +27,7 @@ pub struct Job {
     pub current_phase: std::option::Option<crate::types::JobPhase>,
     /// Error code for the job
     #[doc(hidden)]
-    pub error_code: i32,
+    pub error_code: std::option::Option<i32>,
     /// Error message of Job
     #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
@@ -39,7 +39,7 @@ pub struct Job {
     pub id: std::option::Option<std::string::String>,
     /// An estimate of how far your job has progressed. This estimate is shown as a percentage of the total time from when your job leaves its queue to when your output files appear in your output Amazon S3 bucket. AWS Elemental MediaConvert provides jobPercentComplete in CloudWatch STATUS_UPDATE events and in the response to GetJob and ListJobs requests. The jobPercentComplete estimate is reliable for the following input containers: Quicktime, Transport Stream, MP4, and MXF. For some jobs, the service can't provide information about job progress. In those cases, jobPercentComplete returns a null value.
     #[doc(hidden)]
-    pub job_percent_complete: i32,
+    pub job_percent_complete: std::option::Option<i32>,
     /// The job template that the job is created from, if it is created from a job template.
     #[doc(hidden)]
     pub job_template: std::option::Option<std::string::String>,
@@ -51,7 +51,7 @@ pub struct Job {
     pub output_group_details: std::option::Option<std::vec::Vec<crate::types::OutputGroupDetail>>,
     /// Relative priority on the job.
     #[doc(hidden)]
-    pub priority: i32,
+    pub priority: std::option::Option<i32>,
     /// When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to the default queue. For more about queues, see the User Guide topic at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
     #[doc(hidden)]
     pub queue: std::option::Option<std::string::String>,
@@ -60,7 +60,7 @@ pub struct Job {
     pub queue_transitions: std::option::Option<std::vec::Vec<crate::types::QueueTransition>>,
     /// The number of times that the service automatically attempted to process your job after encountering an error.
     #[doc(hidden)]
-    pub retry_count: i32,
+    pub retry_count: std::option::Option<i32>,
     /// The IAM role you use for creating this job. For details about permissions, see the User Guide topic at the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
     #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
@@ -119,7 +119,7 @@ impl Job {
         self.current_phase.as_ref()
     }
     /// Error code for the job
-    pub fn error_code(&self) -> i32 {
+    pub fn error_code(&self) -> std::option::Option<i32> {
         self.error_code
     }
     /// Error message of Job
@@ -135,7 +135,7 @@ impl Job {
         self.id.as_deref()
     }
     /// An estimate of how far your job has progressed. This estimate is shown as a percentage of the total time from when your job leaves its queue to when your output files appear in your output Amazon S3 bucket. AWS Elemental MediaConvert provides jobPercentComplete in CloudWatch STATUS_UPDATE events and in the response to GetJob and ListJobs requests. The jobPercentComplete estimate is reliable for the following input containers: Quicktime, Transport Stream, MP4, and MXF. For some jobs, the service can't provide information about job progress. In those cases, jobPercentComplete returns a null value.
-    pub fn job_percent_complete(&self) -> i32 {
+    pub fn job_percent_complete(&self) -> std::option::Option<i32> {
         self.job_percent_complete
     }
     /// The job template that the job is created from, if it is created from a job template.
@@ -151,7 +151,7 @@ impl Job {
         self.output_group_details.as_deref()
     }
     /// Relative priority on the job.
-    pub fn priority(&self) -> i32 {
+    pub fn priority(&self) -> std::option::Option<i32> {
         self.priority
     }
     /// When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to the default queue. For more about queues, see the User Guide topic at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
@@ -163,7 +163,7 @@ impl Job {
         self.queue_transitions.as_deref()
     }
     /// The number of times that the service automatically attempted to process your job after encountering an error.
-    pub fn retry_count(&self) -> i32 {
+    pub fn retry_count(&self) -> std::option::Option<i32> {
         self.retry_count
     }
     /// The IAM role you use for creating this job. For details about permissions, see the User Guide topic at the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
@@ -600,18 +600,18 @@ impl JobBuilder {
             client_request_token: self.client_request_token,
             created_at: self.created_at,
             current_phase: self.current_phase,
-            error_code: self.error_code.unwrap_or_default(),
+            error_code: self.error_code,
             error_message: self.error_message,
             hop_destinations: self.hop_destinations,
             id: self.id,
-            job_percent_complete: self.job_percent_complete.unwrap_or_default(),
+            job_percent_complete: self.job_percent_complete,
             job_template: self.job_template,
             messages: self.messages,
             output_group_details: self.output_group_details,
-            priority: self.priority.unwrap_or_default(),
+            priority: self.priority,
             queue: self.queue,
             queue_transitions: self.queue_transitions,
-            retry_count: self.retry_count.unwrap_or_default(),
+            retry_count: self.retry_count,
             role: self.role,
             settings: self.settings,
             simulate_reserved_queue: self.simulate_reserved_queue,

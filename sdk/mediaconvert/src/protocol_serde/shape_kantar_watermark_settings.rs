@@ -12,41 +12,41 @@ pub fn ser_kantar_watermark_settings(
     if let Some(var_3) = &input.credentials_secret_name {
         object.key("credentialsSecretName").string(var_3.as_str());
     }
-    if input.file_offset != 0.0 {
+    if let Some(var_4) = &input.file_offset {
         object.key("fileOffset").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.file_offset).into()),
+            aws_smithy_types::Number::Float((*var_4).into()),
         );
     }
-    if input.kantar_license_id != 0 {
+    if let Some(var_5) = &input.kantar_license_id {
         object.key("kantarLicenseId").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.kantar_license_id).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_4) = &input.kantar_server_url {
-        object.key("kantarServerUrl").string(var_4.as_str());
+    if let Some(var_6) = &input.kantar_server_url {
+        object.key("kantarServerUrl").string(var_6.as_str());
     }
-    if let Some(var_5) = &input.log_destination {
-        object.key("logDestination").string(var_5.as_str());
+    if let Some(var_7) = &input.log_destination {
+        object.key("logDestination").string(var_7.as_str());
     }
-    if let Some(var_6) = &input.metadata3 {
-        object.key("metadata3").string(var_6.as_str());
+    if let Some(var_8) = &input.metadata3 {
+        object.key("metadata3").string(var_8.as_str());
     }
-    if let Some(var_7) = &input.metadata4 {
-        object.key("metadata4").string(var_7.as_str());
+    if let Some(var_9) = &input.metadata4 {
+        object.key("metadata4").string(var_9.as_str());
     }
-    if let Some(var_8) = &input.metadata5 {
-        object.key("metadata5").string(var_8.as_str());
+    if let Some(var_10) = &input.metadata5 {
+        object.key("metadata5").string(var_10.as_str());
     }
-    if let Some(var_9) = &input.metadata6 {
-        object.key("metadata6").string(var_9.as_str());
+    if let Some(var_11) = &input.metadata6 {
+        object.key("metadata6").string(var_11.as_str());
     }
-    if let Some(var_10) = &input.metadata7 {
-        object.key("metadata7").string(var_10.as_str());
+    if let Some(var_12) = &input.metadata7 {
+        object.key("metadata7").string(var_12.as_str());
     }
-    if let Some(var_11) = &input.metadata8 {
-        object.key("metadata8").string(var_11.as_str());
+    if let Some(var_13) = &input.metadata8 {
+        object.key("metadata8").string(var_13.as_str());
     }
     Ok(())
 }

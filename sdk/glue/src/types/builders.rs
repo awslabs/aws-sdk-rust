@@ -51,6 +51,16 @@ pub use crate::types::_source_control_details::SourceControlDetailsBuilder;
 
 pub use crate::types::_code_gen_configuration_node::CodeGenConfigurationNodeBuilder;
 
+pub use crate::types::_amazon_redshift_target::AmazonRedshiftTargetBuilder;
+
+pub use crate::types::_amazon_redshift_node_data::AmazonRedshiftNodeDataBuilder;
+
+pub use crate::types::_option::OptionBuilder;
+
+pub use crate::types::_amazon_redshift_advanced_option::AmazonRedshiftAdvancedOptionBuilder;
+
+pub use crate::types::_amazon_redshift_source::AmazonRedshiftSourceBuilder;
+
 pub use crate::types::_s3_delta_direct_target::S3DeltaDirectTargetBuilder;
 
 pub use crate::types::_direct_schema_change_policy::DirectSchemaChangePolicyBuilder;

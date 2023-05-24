@@ -28,6 +28,9 @@ pub struct GetRunGroupOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p> The maximum GPUs that can be used by a run group. </p>
+    #[doc(hidden)]
+    pub max_gpus: std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl GetRunGroupOutput {
@@ -66,6 +69,10 @@ impl GetRunGroupOutput {
     {
         self.tags.as_ref()
     }
+    /// <p> The maximum GPUs that can be used by a run group. </p>
+    pub fn max_gpus(&self) -> std::option::Option<i32> {
+        self.max_gpus
+    }
 }
 impl aws_http::request_id::RequestId for GetRunGroupOutput {
     fn request_id(&self) -> Option<&str> {
@@ -92,6 +99,7 @@ pub struct GetRunGroupOutputBuilder {
     pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) max_gpus: std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl GetRunGroupOutputBuilder {
@@ -193,6 +201,16 @@ impl GetRunGroupOutputBuilder {
         self.tags = input;
         self
     }
+    /// <p> The maximum GPUs that can be used by a run group. </p>
+    pub fn max_gpus(mut self, input: i32) -> Self {
+        self.max_gpus = Some(input);
+        self
+    }
+    /// <p> The maximum GPUs that can be used by a run group. </p>
+    pub fn set_max_gpus(mut self, input: std::option::Option<i32>) -> Self {
+        self.max_gpus = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -213,6 +231,7 @@ impl GetRunGroupOutputBuilder {
             max_duration: self.max_duration,
             creation_time: self.creation_time,
             tags: self.tags,
+            max_gpus: self.max_gpus,
             _request_id: self._request_id,
         }
     }

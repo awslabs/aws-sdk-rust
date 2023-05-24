@@ -6,7 +6,7 @@
 pub struct GrantEntitlementRequest {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
     #[doc(hidden)]
-    pub data_transfer_subscriber_fee_percent: i32,
+    pub data_transfer_subscriber_fee_percent: std::option::Option<i32>,
     /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -25,7 +25,7 @@ pub struct GrantEntitlementRequest {
 }
 impl GrantEntitlementRequest {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
-    pub fn data_transfer_subscriber_fee_percent(&self) -> i32 {
+    pub fn data_transfer_subscriber_fee_percent(&self) -> std::option::Option<i32> {
         self.data_transfer_subscriber_fee_percent
     }
     /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
@@ -146,9 +146,7 @@ impl GrantEntitlementRequestBuilder {
     /// Consumes the builder and constructs a [`GrantEntitlementRequest`](crate::types::GrantEntitlementRequest).
     pub fn build(self) -> crate::types::GrantEntitlementRequest {
         crate::types::GrantEntitlementRequest {
-            data_transfer_subscriber_fee_percent: self
-                .data_transfer_subscriber_fee_percent
-                .unwrap_or_default(),
+            data_transfer_subscriber_fee_percent: self.data_transfer_subscriber_fee_percent,
             description: self.description,
             encryption: self.encryption,
             entitlement_status: self.entitlement_status,

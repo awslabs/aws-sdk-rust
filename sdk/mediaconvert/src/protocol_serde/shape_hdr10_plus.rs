@@ -3,16 +3,16 @@ pub fn ser_hdr10_plus(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Hdr10Plus,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.mastering_monitor_nits != 0 {
+    if let Some(var_1) = &input.mastering_monitor_nits {
         object.key("masteringMonitorNits").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.mastering_monitor_nits).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.target_monitor_nits != 0 {
+    if let Some(var_2) = &input.target_monitor_nits {
         object.key("targetMonitorNits").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.target_monitor_nits).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

@@ -35,7 +35,7 @@ pub struct InstanceRecommendation {
     /// <p>Memory utilization is analyzed only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling memory utilization with the Amazon CloudWatch Agent</a> in the <i>Compute Optimizer User Guide</i>. On Linux instances, Compute Optimizer analyses the <code>mem_used_percent</code> metric in the <code>CWAgent</code> namespace, or the legacy <code>MemoryUtilization</code> metric in the <code>System/Linux</code> namespace. On Windows instances, Compute Optimizer analyses the <code>Memory % Committed Bytes In Use</code> metric in the <code>CWAgent</code> namespace.</p>
     /// </note> </li>
     /// <li> <p> <b> <code>EBSThroughputOverprovisioned</code> </b> — The instance’s EBS throughput configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metrics of EBS volumes attached to the current instance during the look-back period.</p> </li>
-    /// <li> <p> <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better EBS throughput performance. This is identified by analyzing the <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code>&gt; metrics of EBS volumes attached to the current instance during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better EBS throughput performance. This is identified by analyzing the <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metrics of EBS volumes attached to the current instance during the look-back period.</p> </li>
     /// <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes attached to the current instance during the look-back period.</p> </li>
     /// <li> <p> <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better EBS IOPS performance. This is identified by analyzing the <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes attached to the current instance during the look-back period.</p> </li>
     /// <li> <p> <b> <code>NetworkBandwidthOverprovisioned</code> </b> — The instance’s network bandwidth configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>NetworkIn</code> and <code>NetworkOut</code> metrics of the current instance during the look-back period.</p> </li>
@@ -87,6 +87,7 @@ pub struct InstanceRecommendation {
     /// <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instance.</p> </li>
     /// <li> <p> <code>Redis</code> - Infers that Redis might be running on the instance.</p> </li>
     /// <li> <p> <code>Kafka</code> - Infers that Kafka might be running on the instance.</p> </li>
+    /// <li> <p> <code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub inferred_workload_types:
@@ -94,6 +95,12 @@ pub struct InstanceRecommendation {
     /// <p> The state of the instance when the recommendation was generated. </p>
     #[doc(hidden)]
     pub instance_state: std::option::Option<crate::types::InstanceState>,
+    /// <p> A list of tags assigned to your Amazon EC2 instance recommendations. </p>
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    /// <p> An object that describes Compute Optimizer's integration status with your external metrics provider. </p>
+    #[doc(hidden)]
+    pub external_metric_status: std::option::Option<crate::types::ExternalMetricStatus>,
 }
 impl InstanceRecommendation {
     /// <p>The Amazon Resource Name (ARN) of the current instance.</p>
@@ -132,7 +139,7 @@ impl InstanceRecommendation {
     /// <p>Memory utilization is analyzed only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling memory utilization with the Amazon CloudWatch Agent</a> in the <i>Compute Optimizer User Guide</i>. On Linux instances, Compute Optimizer analyses the <code>mem_used_percent</code> metric in the <code>CWAgent</code> namespace, or the legacy <code>MemoryUtilization</code> metric in the <code>System/Linux</code> namespace. On Windows instances, Compute Optimizer analyses the <code>Memory % Committed Bytes In Use</code> metric in the <code>CWAgent</code> namespace.</p>
     /// </note> </li>
     /// <li> <p> <b> <code>EBSThroughputOverprovisioned</code> </b> — The instance’s EBS throughput configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metrics of EBS volumes attached to the current instance during the look-back period.</p> </li>
-    /// <li> <p> <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better EBS throughput performance. This is identified by analyzing the <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code>&gt; metrics of EBS volumes attached to the current instance during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better EBS throughput performance. This is identified by analyzing the <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metrics of EBS volumes attached to the current instance during the look-back period.</p> </li>
     /// <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes attached to the current instance during the look-back period.</p> </li>
     /// <li> <p> <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better EBS IOPS performance. This is identified by analyzing the <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes attached to the current instance during the look-back period.</p> </li>
     /// <li> <p> <b> <code>NetworkBandwidthOverprovisioned</code> </b> — The instance’s network bandwidth configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>NetworkIn</code> and <code>NetworkOut</code> metrics of the current instance during the look-back period.</p> </li>
@@ -198,6 +205,7 @@ impl InstanceRecommendation {
     /// <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instance.</p> </li>
     /// <li> <p> <code>Redis</code> - Infers that Redis might be running on the instance.</p> </li>
     /// <li> <p> <code>Kafka</code> - Infers that Kafka might be running on the instance.</p> </li>
+    /// <li> <p> <code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p> </li>
     /// </ul>
     pub fn inferred_workload_types(
         &self,
@@ -207,6 +215,16 @@ impl InstanceRecommendation {
     /// <p> The state of the instance when the recommendation was generated. </p>
     pub fn instance_state(&self) -> std::option::Option<&crate::types::InstanceState> {
         self.instance_state.as_ref()
+    }
+    /// <p> A list of tags assigned to your Amazon EC2 instance recommendations. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+        self.tags.as_deref()
+    }
+    /// <p> An object that describes Compute Optimizer's integration status with your external metrics provider. </p>
+    pub fn external_metric_status(
+        &self,
+    ) -> std::option::Option<&crate::types::ExternalMetricStatus> {
+        self.external_metric_status.as_ref()
     }
 }
 impl InstanceRecommendation {
@@ -241,6 +259,8 @@ pub struct InstanceRecommendationBuilder {
     pub(crate) inferred_workload_types:
         std::option::Option<std::vec::Vec<crate::types::InferredWorkloadType>>,
     pub(crate) instance_state: std::option::Option<crate::types::InstanceState>,
+    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) external_metric_status: std::option::Option<crate::types::ExternalMetricStatus>,
 }
 impl InstanceRecommendationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the current instance.</p>
@@ -322,7 +342,7 @@ impl InstanceRecommendationBuilder {
     /// <p>Memory utilization is analyzed only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling memory utilization with the Amazon CloudWatch Agent</a> in the <i>Compute Optimizer User Guide</i>. On Linux instances, Compute Optimizer analyses the <code>mem_used_percent</code> metric in the <code>CWAgent</code> namespace, or the legacy <code>MemoryUtilization</code> metric in the <code>System/Linux</code> namespace. On Windows instances, Compute Optimizer analyses the <code>Memory % Committed Bytes In Use</code> metric in the <code>CWAgent</code> namespace.</p>
     /// </note> </li>
     /// <li> <p> <b> <code>EBSThroughputOverprovisioned</code> </b> — The instance’s EBS throughput configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metrics of EBS volumes attached to the current instance during the look-back period.</p> </li>
-    /// <li> <p> <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better EBS throughput performance. This is identified by analyzing the <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code>&gt; metrics of EBS volumes attached to the current instance during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better EBS throughput performance. This is identified by analyzing the <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metrics of EBS volumes attached to the current instance during the look-back period.</p> </li>
     /// <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes attached to the current instance during the look-back period.</p> </li>
     /// <li> <p> <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better EBS IOPS performance. This is identified by analyzing the <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes attached to the current instance during the look-back period.</p> </li>
     /// <li> <p> <b> <code>NetworkBandwidthOverprovisioned</code> </b> — The instance’s network bandwidth configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>NetworkIn</code> and <code>NetworkOut</code> metrics of the current instance during the look-back period.</p> </li>
@@ -355,7 +375,7 @@ impl InstanceRecommendationBuilder {
     /// <p>Memory utilization is analyzed only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling memory utilization with the Amazon CloudWatch Agent</a> in the <i>Compute Optimizer User Guide</i>. On Linux instances, Compute Optimizer analyses the <code>mem_used_percent</code> metric in the <code>CWAgent</code> namespace, or the legacy <code>MemoryUtilization</code> metric in the <code>System/Linux</code> namespace. On Windows instances, Compute Optimizer analyses the <code>Memory % Committed Bytes In Use</code> metric in the <code>CWAgent</code> namespace.</p>
     /// </note> </li>
     /// <li> <p> <b> <code>EBSThroughputOverprovisioned</code> </b> — The instance’s EBS throughput configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metrics of EBS volumes attached to the current instance during the look-back period.</p> </li>
-    /// <li> <p> <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better EBS throughput performance. This is identified by analyzing the <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code>&gt; metrics of EBS volumes attached to the current instance during the look-back period.</p> </li>
+    /// <li> <p> <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better EBS throughput performance. This is identified by analyzing the <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metrics of EBS volumes attached to the current instance during the look-back period.</p> </li>
     /// <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes attached to the current instance during the look-back period.</p> </li>
     /// <li> <p> <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better EBS IOPS performance. This is identified by analyzing the <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes attached to the current instance during the look-back period.</p> </li>
     /// <li> <p> <b> <code>NetworkBandwidthOverprovisioned</code> </b> — The instance’s network bandwidth configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>NetworkIn</code> and <code>NetworkOut</code> metrics of the current instance during the look-back period.</p> </li>
@@ -505,6 +525,7 @@ impl InstanceRecommendationBuilder {
     /// <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instance.</p> </li>
     /// <li> <p> <code>Redis</code> - Infers that Redis might be running on the instance.</p> </li>
     /// <li> <p> <code>Kafka</code> - Infers that Kafka might be running on the instance.</p> </li>
+    /// <li> <p> <code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p> </li>
     /// </ul>
     pub fn inferred_workload_types(mut self, input: crate::types::InferredWorkloadType) -> Self {
         let mut v = self.inferred_workload_types.unwrap_or_default();
@@ -523,6 +544,7 @@ impl InstanceRecommendationBuilder {
     /// <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instance.</p> </li>
     /// <li> <p> <code>Redis</code> - Infers that Redis might be running on the instance.</p> </li>
     /// <li> <p> <code>Kafka</code> - Infers that Kafka might be running on the instance.</p> </li>
+    /// <li> <p> <code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p> </li>
     /// </ul>
     pub fn set_inferred_workload_types(
         mut self,
@@ -544,6 +566,38 @@ impl InstanceRecommendationBuilder {
         self.instance_state = input;
         self
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p> A list of tags assigned to your Amazon EC2 instance recommendations. </p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = Some(v);
+        self
+    }
+    /// <p> A list of tags assigned to your Amazon EC2 instance recommendations. </p>
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p> An object that describes Compute Optimizer's integration status with your external metrics provider. </p>
+    pub fn external_metric_status(mut self, input: crate::types::ExternalMetricStatus) -> Self {
+        self.external_metric_status = Some(input);
+        self
+    }
+    /// <p> An object that describes Compute Optimizer's integration status with your external metrics provider. </p>
+    pub fn set_external_metric_status(
+        mut self,
+        input: std::option::Option<crate::types::ExternalMetricStatus>,
+    ) -> Self {
+        self.external_metric_status = input;
+        self
+    }
     /// Consumes the builder and constructs a [`InstanceRecommendation`](crate::types::InstanceRecommendation).
     pub fn build(self) -> crate::types::InstanceRecommendation {
         crate::types::InstanceRecommendation {
@@ -562,6 +616,8 @@ impl InstanceRecommendationBuilder {
             effective_recommendation_preferences: self.effective_recommendation_preferences,
             inferred_workload_types: self.inferred_workload_types,
             instance_state: self.instance_state,
+            tags: self.tags,
+            external_metric_status: self.external_metric_status,
         }
     }
 }

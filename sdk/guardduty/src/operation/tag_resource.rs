@@ -188,6 +188,8 @@ pub type TagResourceErrorKind = TagResourceError;
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceError {
+    /// <p>An access denied exception object.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>A bad request exception object.</p>
     BadRequestException(crate::types::error::BadRequestException),
     /// <p>An internal server error exception object.</p>
@@ -210,6 +212,7 @@ impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::BadRequestException(_inner) => _inner.fmt(f),
             Self::InternalServerErrorException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
@@ -219,6 +222,9 @@ impl std::fmt::Display for TagResourceError {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TagResourceError {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::BadRequestException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
@@ -270,10 +276,15 @@ impl TagResourceError {
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::AccessDeniedException(e) => e.meta(),
             Self::BadRequestException(e) => e.meta(),
             Self::InternalServerErrorException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
+    }
+    /// Returns `true` if the error kind is `TagResourceError::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(self, Self::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `TagResourceError::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
@@ -287,6 +298,7 @@ impl TagResourceError {
 impl std::error::Error for TagResourceError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
+            Self::AccessDeniedException(_inner) => Some(_inner),
             Self::BadRequestException(_inner) => Some(_inner),
             Self::InternalServerErrorException(_inner) => Some(_inner),
             Self::Unhandled(_inner) => Some(_inner),

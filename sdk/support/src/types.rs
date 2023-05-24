@@ -15,11 +15,19 @@ pub use crate::types::_trusted_advisor_check_result::TrustedAdvisorCheckResult;
 
 pub use crate::types::_trusted_advisor_resource_detail::TrustedAdvisorResourceDetail;
 
+pub use crate::types::_supported_language::SupportedLanguage;
+
 pub use crate::types::_severity_level::SeverityLevel;
 
 pub use crate::types::_service::Service;
 
 pub use crate::types::_category::Category;
+
+pub use crate::types::_communication_type_options::CommunicationTypeOptions;
+
+pub use crate::types::_date_interval::DateInterval;
+
+pub use crate::types::_supported_hour::SupportedHour;
 
 pub use crate::types::_communication::Communication;
 
@@ -41,11 +49,19 @@ mod _category;
 
 mod _communication;
 
+mod _communication_type_options;
+
+mod _date_interval;
+
 mod _recent_case_communications;
 
 mod _service;
 
 mod _severity_level;
+
+mod _supported_hour;
+
+mod _supported_language;
 
 mod _trusted_advisor_category_specific_summary;
 

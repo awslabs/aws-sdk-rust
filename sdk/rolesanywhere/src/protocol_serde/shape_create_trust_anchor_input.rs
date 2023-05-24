@@ -9,23 +9,38 @@ pub fn ser_create_trust_anchor_input(
     if let Some(var_2) = &input.name {
         object.key("name").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.source {
-        #[allow(unused_mut)]
-        let mut object_4 = object.key("source").start_object();
-        crate::protocol_serde::shape_source::ser_source(&mut object_4, var_3)?;
-        object_4.finish();
-    }
-    if let Some(var_5) = &input.tags {
-        let mut array_6 = object.key("tags").start_array();
-        for item_7 in var_5 {
+    if let Some(var_3) = &input.notification_settings {
+        let mut array_4 = object.key("notificationSettings").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_notification_setting::ser_notification_setting(
+                    &mut object_6,
+                    item_5,
+                )?;
+                object_6.finish();
             }
         }
-        array_6.finish();
+        array_4.finish();
+    }
+    if let Some(var_7) = &input.source {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("source").start_object();
+        crate::protocol_serde::shape_source::ser_source(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.tags {
+        let mut array_10 = object.key("tags").start_array();
+        for item_11 in var_9 {
+            {
+                #[allow(unused_mut)]
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_12, item_11)?;
+                object_12.finish();
+            }
+        }
+        array_10.finish();
     }
     Ok(())
 }

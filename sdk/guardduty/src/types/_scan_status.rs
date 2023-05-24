@@ -15,6 +15,7 @@
 ///     ScanStatus::Completed => { /* ... */ },
 ///     ScanStatus::Failed => { /* ... */ },
 ///     ScanStatus::Running => { /* ... */ },
+///     ScanStatus::Skipped => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -54,6 +55,8 @@ pub enum ScanStatus {
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
+    Skipped,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -63,6 +66,7 @@ impl std::convert::From<&str> for ScanStatus {
             "COMPLETED" => ScanStatus::Completed,
             "FAILED" => ScanStatus::Failed,
             "RUNNING" => ScanStatus::Running,
+            "SKIPPED" => ScanStatus::Skipped,
             other => ScanStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -81,12 +85,13 @@ impl ScanStatus {
             ScanStatus::Completed => "COMPLETED",
             ScanStatus::Failed => "FAILED",
             ScanStatus::Running => "RUNNING",
+            ScanStatus::Skipped => "SKIPPED",
             ScanStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLETED", "FAILED", "RUNNING"]
+        &["COMPLETED", "FAILED", "RUNNING", "SKIPPED"]
     }
 }
 impl AsRef<str> for ScanStatus {

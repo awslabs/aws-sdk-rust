@@ -6,18 +6,18 @@
 pub struct WarningGroup {
     /// Warning code that identifies a specific warning in the job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
     #[doc(hidden)]
-    pub code: i32,
+    pub code: std::option::Option<i32>,
     /// The number of times this warning occurred in the job.
     #[doc(hidden)]
-    pub count: i32,
+    pub count: std::option::Option<i32>,
 }
 impl WarningGroup {
     /// Warning code that identifies a specific warning in the job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
-    pub fn code(&self) -> i32 {
+    pub fn code(&self) -> std::option::Option<i32> {
         self.code
     }
     /// The number of times this warning occurred in the job.
-    pub fn count(&self) -> i32 {
+    pub fn count(&self) -> std::option::Option<i32> {
         self.count
     }
 }
@@ -59,8 +59,8 @@ impl WarningGroupBuilder {
     /// Consumes the builder and constructs a [`WarningGroup`](crate::types::WarningGroup).
     pub fn build(self) -> crate::types::WarningGroup {
         crate::types::WarningGroup {
-            code: self.code.unwrap_or_default(),
-            count: self.count.unwrap_or_default(),
+            code: self.code,
+            count: self.count,
         }
     }
 }

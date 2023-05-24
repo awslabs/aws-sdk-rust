@@ -3,74 +3,74 @@ pub fn ser_m3u8_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::M3u8Settings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.audio_frames_per_pes != 0 {
+    if let Some(var_1) = &input.audio_frames_per_pes {
         object.key("audioFramesPerPes").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.audio_frames_per_pes).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.audio_pids {
-        object.key("audioPids").string(var_1.as_str());
+    if let Some(var_2) = &input.audio_pids {
+        object.key("audioPids").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.ecm_pid {
-        object.key("ecmPid").string(var_2.as_str());
+    if let Some(var_3) = &input.ecm_pid {
+        object.key("ecmPid").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.nielsen_id3_behavior {
-        object.key("nielsenId3Behavior").string(var_3.as_str());
+    if let Some(var_4) = &input.nielsen_id3_behavior {
+        object.key("nielsenId3Behavior").string(var_4.as_str());
     }
-    if input.pat_interval != 0 {
+    if let Some(var_5) = &input.pat_interval {
         object.key("patInterval").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.pat_interval).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_4) = &input.pcr_control {
-        object.key("pcrControl").string(var_4.as_str());
+    if let Some(var_6) = &input.pcr_control {
+        object.key("pcrControl").string(var_6.as_str());
     }
-    if input.pcr_period != 0 {
+    if let Some(var_7) = &input.pcr_period {
         object.key("pcrPeriod").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.pcr_period).into()),
+            aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_5) = &input.pcr_pid {
-        object.key("pcrPid").string(var_5.as_str());
+    if let Some(var_8) = &input.pcr_pid {
+        object.key("pcrPid").string(var_8.as_str());
     }
-    if input.pmt_interval != 0 {
+    if let Some(var_9) = &input.pmt_interval {
         object.key("pmtInterval").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.pmt_interval).into()),
+            aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_6) = &input.pmt_pid {
-        object.key("pmtPid").string(var_6.as_str());
+    if let Some(var_10) = &input.pmt_pid {
+        object.key("pmtPid").string(var_10.as_str());
     }
-    if input.program_num != 0 {
+    if let Some(var_11) = &input.program_num {
         object.key("programNum").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.program_num).into()),
+            aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_7) = &input.scte35_behavior {
-        object.key("scte35Behavior").string(var_7.as_str());
+    if let Some(var_12) = &input.scte35_behavior {
+        object.key("scte35Behavior").string(var_12.as_str());
     }
-    if let Some(var_8) = &input.scte35_pid {
-        object.key("scte35Pid").string(var_8.as_str());
+    if let Some(var_13) = &input.scte35_pid {
+        object.key("scte35Pid").string(var_13.as_str());
     }
-    if let Some(var_9) = &input.timed_metadata_behavior {
-        object.key("timedMetadataBehavior").string(var_9.as_str());
+    if let Some(var_14) = &input.timed_metadata_behavior {
+        object.key("timedMetadataBehavior").string(var_14.as_str());
     }
-    if let Some(var_10) = &input.timed_metadata_pid {
-        object.key("timedMetadataPid").string(var_10.as_str());
+    if let Some(var_15) = &input.timed_metadata_pid {
+        object.key("timedMetadataPid").string(var_15.as_str());
     }
-    if input.transport_stream_id != 0 {
+    if let Some(var_16) = &input.transport_stream_id {
         object.key("transportStreamId").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.transport_stream_id).into()),
+            aws_smithy_types::Number::NegInt((*var_16).into()),
         );
     }
-    if let Some(var_11) = &input.video_pid {
-        object.key("videoPid").string(var_11.as_str());
+    if let Some(var_17) = &input.video_pid {
+        object.key("videoPid").string(var_17.as_str());
     }
     Ok(())
 }

@@ -10,7 +10,7 @@ pub struct Record {
     pub json_path: std::option::Option<std::string::String>,
     /// <p>For an Avro object container or Parquet file, the record index, starting from 0, for the record that contains the sensitive data. For a JSON Lines file, the line index, starting from 0, for the line that contains the sensitive data. This value is always 0 for JSON files.</p>
     #[doc(hidden)]
-    pub record_index: i64,
+    pub record_index: std::option::Option<i64>,
 }
 impl Record {
     /// <p>The path, as a JSONPath expression, to the sensitive data. For an Avro object container or Parquet file, this is the path to the field in the record (recordIndex) that contains the data. For a JSON or JSON Lines file, this is the path to the field or array that contains the data. If the data is a value in an array, the path also indicates which value contains the data.</p>
@@ -19,7 +19,7 @@ impl Record {
         self.json_path.as_deref()
     }
     /// <p>For an Avro object container or Parquet file, the record index, starting from 0, for the record that contains the sensitive data. For a JSON Lines file, the line index, starting from 0, for the line that contains the sensitive data. This value is always 0 for JSON files.</p>
-    pub fn record_index(&self) -> i64 {
+    pub fn record_index(&self) -> std::option::Option<i64> {
         self.record_index
     }
 }
@@ -64,7 +64,7 @@ impl RecordBuilder {
     pub fn build(self) -> crate::types::Record {
         crate::types::Record {
             json_path: self.json_path,
-            record_index: self.record_index.unwrap_or_default(),
+            record_index: self.record_index,
         }
     }
 }

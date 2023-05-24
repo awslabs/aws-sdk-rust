@@ -83,12 +83,12 @@ impl PutAccountSettingFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code> and <code>disabled</code>.</p>
+    /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and <code>off</code>.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.value(input.into());
         self
     }
-    /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code> and <code>disabled</code>.</p>
+    /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and <code>off</code>.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_value(input);
         self

@@ -15,6 +15,21 @@ pub fn ser_filter_operation_selected_fields_configuration(
     if let Some(var_4) = &input.selected_field_options {
         object.key("SelectedFieldOptions").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.selected_columns {
+        let mut array_6 = object.key("SelectedColumns").start_array();
+        for item_7 in var_5 {
+            {
+                #[allow(unused_mut)]
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_column_identifier::ser_column_identifier(
+                    &mut object_8,
+                    item_7,
+                )?;
+                object_8.finish();
+            }
+        }
+        array_6.finish();
+    }
     Ok(())
 }
 
@@ -60,6 +75,11 @@ where
                                         })
                                     })
                                     .transpose()?,
+                                );
+                            }
+                            "SelectedColumns" => {
+                                builder = builder.set_selected_columns(
+                                    crate::protocol_serde::shape_custom_action_column_list::de_custom_action_column_list(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -501,6 +501,24 @@ pub fn ser_code_gen_configuration_node(
         )?;
         object_126.finish();
     }
+    if let Some(var_127) = &input.amazon_redshift_source {
+        #[allow(unused_mut)]
+        let mut object_128 = object.key("AmazonRedshiftSource").start_object();
+        crate::protocol_serde::shape_amazon_redshift_source::ser_amazon_redshift_source(
+            &mut object_128,
+            var_127,
+        )?;
+        object_128.finish();
+    }
+    if let Some(var_129) = &input.amazon_redshift_target {
+        #[allow(unused_mut)]
+        let mut object_130 = object.key("AmazonRedshiftTarget").start_object();
+        crate::protocol_serde::shape_amazon_redshift_target::ser_amazon_redshift_target(
+            &mut object_130,
+            var_129,
+        )?;
+        object_130.finish();
+    }
     Ok(())
 }
 
@@ -862,6 +880,16 @@ where
                             "S3DeltaDirectTarget" => {
                                 builder = builder.set_s3_delta_direct_target(
                                     crate::protocol_serde::shape_s3_delta_direct_target::de_s3_delta_direct_target(tokens)?
+                                );
+                            }
+                            "AmazonRedshiftSource" => {
+                                builder = builder.set_amazon_redshift_source(
+                                    crate::protocol_serde::shape_amazon_redshift_source::de_amazon_redshift_source(tokens)?
+                                );
+                            }
+                            "AmazonRedshiftTarget" => {
+                                builder = builder.set_amazon_redshift_target(
+                                    crate::protocol_serde::shape_amazon_redshift_target::de_amazon_redshift_target(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

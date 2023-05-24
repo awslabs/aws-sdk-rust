@@ -24,6 +24,18 @@ pub fn ser_string_parameter_declaration(
         crate::protocol_serde::shape_string_value_when_unset_configuration::ser_string_value_when_unset_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.mapped_data_set_parameters {
+        let mut array_8 = object.key("MappedDataSetParameters").start_array();
+        for item_9 in var_7 {
+            {
+                #[allow(unused_mut)]
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_mapped_data_set_parameter::ser_mapped_data_set_parameter(&mut object_10, item_9)?;
+                object_10.finish();
+            }
+        }
+        array_8.finish();
+    }
     Ok(())
 }
 
@@ -81,6 +93,11 @@ where
                             "ValueWhenUnset" => {
                                 builder = builder.set_value_when_unset(
                                     crate::protocol_serde::shape_string_value_when_unset_configuration::de_string_value_when_unset_configuration(tokens)?
+                                );
+                            }
+                            "MappedDataSetParameters" => {
+                                builder = builder.set_mapped_data_set_parameters(
+                                    crate::protocol_serde::shape_mapped_data_set_parameters::de_mapped_data_set_parameters(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

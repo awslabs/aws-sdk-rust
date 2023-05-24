@@ -21,7 +21,7 @@ pub struct DefaultPushNotificationMessage {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies whether the default notification is a silent push notification, which is a push notification that doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating an app's configuration or delivering messages to an in-app notification center.</p>
     #[doc(hidden)]
-    pub silent_push: bool,
+    pub silent_push: std::option::Option<bool>,
     /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
     #[doc(hidden)]
     pub substitutions: std::option::Option<
@@ -56,7 +56,7 @@ impl DefaultPushNotificationMessage {
         self.data.as_ref()
     }
     /// <p>Specifies whether the default notification is a silent push notification, which is a push notification that doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating an app's configuration or delivering messages to an in-app notification center.</p>
-    pub fn silent_push(&self) -> bool {
+    pub fn silent_push(&self) -> std::option::Option<bool> {
         self.silent_push
     }
     /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
@@ -215,7 +215,7 @@ impl DefaultPushNotificationMessageBuilder {
             action: self.action,
             body: self.body,
             data: self.data,
-            silent_push: self.silent_push.unwrap_or_default(),
+            silent_push: self.silent_push,
             substitutions: self.substitutions,
             title: self.title,
             url: self.url,

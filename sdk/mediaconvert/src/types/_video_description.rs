@@ -24,10 +24,10 @@ pub struct VideoDescription {
     pub drop_frame_timecode: std::option::Option<crate::types::DropFrameTimecode>,
     /// Applies only if you set AFD Signaling(AfdSignaling) to Fixed (FIXED). Use Fixed (FixedAfd) to specify a four-bit AFD value which the service will write on all frames of this video output.
     #[doc(hidden)]
-    pub fixed_afd: i32,
-    /// Use the Height (Height) setting to define the video resolution height for this output. Specify in pixels. If you don't provide a value here, the service will use the input height.
+    pub fixed_afd: std::option::Option<i32>,
+    /// Use Height to define the video resolution height, in pixels, for this output. To use the same resolution as your input: Leave both Width and Height blank. To evenly scale from your input resolution: Leave Height blank and enter a value for Width. For example, if your input is 1920x1080 and you set Width to 1280, your output will be 1280x720.
     #[doc(hidden)]
-    pub height: i32,
+    pub height: std::option::Option<i32>,
     /// Use Selection placement (position) to define the video area in your output frame. The area outside of the rectangle that you specify here is black.
     #[doc(hidden)]
     pub position: std::option::Option<crate::types::Rectangle>,
@@ -39,16 +39,16 @@ pub struct VideoDescription {
     pub scaling_behavior: std::option::Option<crate::types::ScalingBehavior>,
     /// Use Sharpness (Sharpness) setting to specify the strength of anti-aliasing. This setting changes the width of the anti-alias filter kernel used for scaling. Sharpness only applies if your output resolution is different from your input resolution. 0 is the softest setting, 100 the sharpest, and 50 recommended for most content.
     #[doc(hidden)]
-    pub sharpness: i32,
+    pub sharpness: std::option::Option<i32>,
     /// Applies only to H.264, H.265, MPEG2, and ProRes outputs. Only enable Timecode insertion when the input frame rate is identical to the output frame rate. To include timecodes in this output, set Timecode insertion (VideoTimecodeInsertion) to PIC_TIMING_SEI. To leave them out, set it to DISABLED. Default is DISABLED. When the service inserts timecodes in an output, by default, it uses any embedded timecodes from the input. If none are present, the service will set the timecode for the first output frame to zero. To change this default behavior, adjust the settings under Timecode configuration (TimecodeConfig). In the console, these settings are located under Job &gt; Job settings &gt; Timecode configuration. Note - Timecode source under input settings (InputTimecodeSource) does not affect the timecodes that are inserted in the output. Source under Job settings &gt; Timecode configuration (TimecodeSource) does.
     #[doc(hidden)]
     pub timecode_insertion: std::option::Option<crate::types::VideoTimecodeInsertion>,
     /// Find additional transcoding features under Preprocessors (VideoPreprocessors). Enable the features at each output individually. These features are disabled by default.
     #[doc(hidden)]
     pub video_preprocessors: std::option::Option<crate::types::VideoPreprocessor>,
-    /// Use Width (Width) to define the video resolution width, in pixels, for this output. If you don't provide a value here, the service will use the input width.
+    /// Use Width to define the video resolution width, in pixels, for this output. To use the same resolution as your input: Leave both Width and Height blank. To evenly scale from your input resolution: Leave Width blank and enter a value for Height. For example, if your input is 1920x1080 and you set Height to 720, your output will be 1280x720.
     #[doc(hidden)]
-    pub width: i32,
+    pub width: std::option::Option<i32>,
 }
 impl VideoDescription {
     /// This setting only applies to H.264, H.265, and MPEG2 outputs. Use Insert AFD signaling (AfdSignaling) to specify whether the service includes AFD values in the output video data and what those values are. * Choose None to remove all AFD values from this output. * Choose Fixed to ignore input AFD values and instead encode the value specified in the job. * Choose Auto to calculate output AFD values based on the input AFD scaler data.
@@ -76,11 +76,11 @@ impl VideoDescription {
         self.drop_frame_timecode.as_ref()
     }
     /// Applies only if you set AFD Signaling(AfdSignaling) to Fixed (FIXED). Use Fixed (FixedAfd) to specify a four-bit AFD value which the service will write on all frames of this video output.
-    pub fn fixed_afd(&self) -> i32 {
+    pub fn fixed_afd(&self) -> std::option::Option<i32> {
         self.fixed_afd
     }
-    /// Use the Height (Height) setting to define the video resolution height for this output. Specify in pixels. If you don't provide a value here, the service will use the input height.
-    pub fn height(&self) -> i32 {
+    /// Use Height to define the video resolution height, in pixels, for this output. To use the same resolution as your input: Leave both Width and Height blank. To evenly scale from your input resolution: Leave Height blank and enter a value for Width. For example, if your input is 1920x1080 and you set Width to 1280, your output will be 1280x720.
+    pub fn height(&self) -> std::option::Option<i32> {
         self.height
     }
     /// Use Selection placement (position) to define the video area in your output frame. The area outside of the rectangle that you specify here is black.
@@ -96,7 +96,7 @@ impl VideoDescription {
         self.scaling_behavior.as_ref()
     }
     /// Use Sharpness (Sharpness) setting to specify the strength of anti-aliasing. This setting changes the width of the anti-alias filter kernel used for scaling. Sharpness only applies if your output resolution is different from your input resolution. 0 is the softest setting, 100 the sharpest, and 50 recommended for most content.
-    pub fn sharpness(&self) -> i32 {
+    pub fn sharpness(&self) -> std::option::Option<i32> {
         self.sharpness
     }
     /// Applies only to H.264, H.265, MPEG2, and ProRes outputs. Only enable Timecode insertion when the input frame rate is identical to the output frame rate. To include timecodes in this output, set Timecode insertion (VideoTimecodeInsertion) to PIC_TIMING_SEI. To leave them out, set it to DISABLED. Default is DISABLED. When the service inserts timecodes in an output, by default, it uses any embedded timecodes from the input. If none are present, the service will set the timecode for the first output frame to zero. To change this default behavior, adjust the settings under Timecode configuration (TimecodeConfig). In the console, these settings are located under Job &gt; Job settings &gt; Timecode configuration. Note - Timecode source under input settings (InputTimecodeSource) does not affect the timecodes that are inserted in the output. Source under Job settings &gt; Timecode configuration (TimecodeSource) does.
@@ -107,8 +107,8 @@ impl VideoDescription {
     pub fn video_preprocessors(&self) -> std::option::Option<&crate::types::VideoPreprocessor> {
         self.video_preprocessors.as_ref()
     }
-    /// Use Width (Width) to define the video resolution width, in pixels, for this output. If you don't provide a value here, the service will use the input width.
-    pub fn width(&self) -> i32 {
+    /// Use Width to define the video resolution width, in pixels, for this output. To use the same resolution as your input: Leave both Width and Height blank. To evenly scale from your input resolution: Leave Width blank and enter a value for Height. For example, if your input is 1920x1080 and you set Height to 720, your output will be 1280x720.
+    pub fn width(&self) -> std::option::Option<i32> {
         self.width
     }
 }
@@ -222,12 +222,12 @@ impl VideoDescriptionBuilder {
         self.fixed_afd = input;
         self
     }
-    /// Use the Height (Height) setting to define the video resolution height for this output. Specify in pixels. If you don't provide a value here, the service will use the input height.
+    /// Use Height to define the video resolution height, in pixels, for this output. To use the same resolution as your input: Leave both Width and Height blank. To evenly scale from your input resolution: Leave Height blank and enter a value for Width. For example, if your input is 1920x1080 and you set Width to 1280, your output will be 1280x720.
     pub fn height(mut self, input: i32) -> Self {
         self.height = Some(input);
         self
     }
-    /// Use the Height (Height) setting to define the video resolution height for this output. Specify in pixels. If you don't provide a value here, the service will use the input height.
+    /// Use Height to define the video resolution height, in pixels, for this output. To use the same resolution as your input: Leave both Width and Height blank. To evenly scale from your input resolution: Leave Height blank and enter a value for Width. For example, if your input is 1920x1080 and you set Width to 1280, your output will be 1280x720.
     pub fn set_height(mut self, input: std::option::Option<i32>) -> Self {
         self.height = input;
         self
@@ -304,12 +304,12 @@ impl VideoDescriptionBuilder {
         self.video_preprocessors = input;
         self
     }
-    /// Use Width (Width) to define the video resolution width, in pixels, for this output. If you don't provide a value here, the service will use the input width.
+    /// Use Width to define the video resolution width, in pixels, for this output. To use the same resolution as your input: Leave both Width and Height blank. To evenly scale from your input resolution: Leave Width blank and enter a value for Height. For example, if your input is 1920x1080 and you set Height to 720, your output will be 1280x720.
     pub fn width(mut self, input: i32) -> Self {
         self.width = Some(input);
         self
     }
-    /// Use Width (Width) to define the video resolution width, in pixels, for this output. If you don't provide a value here, the service will use the input width.
+    /// Use Width to define the video resolution width, in pixels, for this output. To use the same resolution as your input: Leave both Width and Height blank. To evenly scale from your input resolution: Leave Width blank and enter a value for Height. For example, if your input is 1920x1080 and you set Height to 720, your output will be 1280x720.
     pub fn set_width(mut self, input: std::option::Option<i32>) -> Self {
         self.width = input;
         self
@@ -323,15 +323,15 @@ impl VideoDescriptionBuilder {
             color_metadata: self.color_metadata,
             crop: self.crop,
             drop_frame_timecode: self.drop_frame_timecode,
-            fixed_afd: self.fixed_afd.unwrap_or_default(),
-            height: self.height.unwrap_or_default(),
+            fixed_afd: self.fixed_afd,
+            height: self.height,
             position: self.position,
             respond_to_afd: self.respond_to_afd,
             scaling_behavior: self.scaling_behavior,
-            sharpness: self.sharpness.unwrap_or_default(),
+            sharpness: self.sharpness,
             timecode_insertion: self.timecode_insertion,
             video_preprocessors: self.video_preprocessors,
-            width: self.width.unwrap_or_default(),
+            width: self.width,
         }
     }
 }

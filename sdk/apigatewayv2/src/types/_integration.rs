@@ -6,7 +6,7 @@
 pub struct Integration {
     /// <p>Specifies whether an integration is managed by API Gateway. If you created an API using using quick create, the resulting integration is managed by API Gateway. You can update a managed integration, but you can't delete it.</p>
     #[doc(hidden)]
-    pub api_gateway_managed: bool,
+    pub api_gateway_managed: std::option::Option<bool>,
     /// <p>The ID of the VPC link for a private integration. Supported only for HTTP APIs.</p>
     #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
@@ -90,14 +90,14 @@ pub struct Integration {
     pub template_selection_expression: std::option::Option<std::string::String>,
     /// <p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>
     #[doc(hidden)]
-    pub timeout_in_millis: i32,
+    pub timeout_in_millis: std::option::Option<i32>,
     /// <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
     #[doc(hidden)]
     pub tls_config: std::option::Option<crate::types::TlsConfig>,
 }
 impl Integration {
     /// <p>Specifies whether an integration is managed by API Gateway. If you created an API using using quick create, the resulting integration is managed by API Gateway. You can update a managed integration, but you can't delete it.</p>
-    pub fn api_gateway_managed(&self) -> bool {
+    pub fn api_gateway_managed(&self) -> std::option::Option<bool> {
         self.api_gateway_managed
     }
     /// <p>The ID of the VPC link for a private integration. Supported only for HTTP APIs.</p>
@@ -207,7 +207,7 @@ impl Integration {
         self.template_selection_expression.as_deref()
     }
     /// <p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>
-    pub fn timeout_in_millis(&self) -> i32 {
+    pub fn timeout_in_millis(&self) -> std::option::Option<i32> {
         self.timeout_in_millis
     }
     /// <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
@@ -586,7 +586,7 @@ impl IntegrationBuilder {
     /// Consumes the builder and constructs a [`Integration`](crate::types::Integration).
     pub fn build(self) -> crate::types::Integration {
         crate::types::Integration {
-            api_gateway_managed: self.api_gateway_managed.unwrap_or_default(),
+            api_gateway_managed: self.api_gateway_managed,
             connection_id: self.connection_id,
             connection_type: self.connection_type,
             content_handling_strategy: self.content_handling_strategy,
@@ -605,7 +605,7 @@ impl IntegrationBuilder {
             request_templates: self.request_templates,
             response_parameters: self.response_parameters,
             template_selection_expression: self.template_selection_expression,
-            timeout_in_millis: self.timeout_in_millis.unwrap_or_default(),
+            timeout_in_millis: self.timeout_in_millis,
             tls_config: self.tls_config,
         }
     }

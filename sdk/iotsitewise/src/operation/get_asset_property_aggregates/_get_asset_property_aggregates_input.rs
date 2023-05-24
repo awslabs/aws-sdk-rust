@@ -34,8 +34,11 @@ pub struct GetAssetPropertyAggregatesInput {
     /// <p>The token to be used for the next set of paginated results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return for each paginated request.</p>
-    /// <p>Default: 100</p>
+    /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
+    /// <ul>
+    /// <li> <p>The size of the result set is equal to 1 MB.</p> </li>
+    /// <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 250.</p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
@@ -81,8 +84,11 @@ impl GetAssetPropertyAggregatesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return for each paginated request.</p>
-    /// <p>Default: 100</p>
+    /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
+    /// <ul>
+    /// <li> <p>The size of the result set is equal to 1 MB.</p> </li>
+    /// <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 250.</p> </li>
+    /// </ul>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -237,14 +243,20 @@ impl GetAssetPropertyAggregatesInputBuilder {
         self.next_token = input;
         self
     }
-    /// <p>The maximum number of results to return for each paginated request.</p>
-    /// <p>Default: 100</p>
+    /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
+    /// <ul>
+    /// <li> <p>The size of the result set is equal to 1 MB.</p> </li>
+    /// <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 250.</p> </li>
+    /// </ul>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    /// <p>The maximum number of results to return for each paginated request.</p>
-    /// <p>Default: 100</p>
+    /// <p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p>
+    /// <ul>
+    /// <li> <p>The size of the result set is equal to 1 MB.</p> </li>
+    /// <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 250.</p> </li>
+    /// </ul>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
         self.max_results = input;
         self

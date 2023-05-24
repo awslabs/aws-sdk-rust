@@ -5,7 +5,7 @@ pub use crate::operation::update_evaluation_form::_update_evaluation_form_input:
 
 /// Fluent builder constructing a request to `UpdateEvaluationForm`.
 ///
-/// <p>Updates details about a specific evaluation form version in the specified Amazon Connect instance. An evaluation form must have a unique title within an instance. Question and section identifiers cannot be duplicated within the same evaluation form.</p>
+/// <p>Updates details about a specific evaluation form version in the specified Amazon Connect instance. Question and section identifiers cannot be duplicated within the same evaluation form.</p>
 /// <p>This operation does not support partial updates. Instead it does a full update of evaluation form content.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateEvaluationFormFluentBuilder {
@@ -112,12 +112,12 @@ impl UpdateEvaluationFormFluentBuilder {
         self.inner = self.inner.set_create_new_version(input);
         self
     }
-    /// <p>A unique title of the evaluation form.</p>
+    /// <p>A title of the evaluation form.</p>
     pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.title(input.into());
         self
     }
-    /// <p>A unique title of the evaluation form.</p>
+    /// <p>A title of the evaluation form.</p>
     pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_title(input);
         self

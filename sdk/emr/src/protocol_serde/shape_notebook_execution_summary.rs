@@ -79,6 +79,20 @@ where
                                     )?,
                                 );
                             }
+                            "NotebookS3Location" => {
+                                builder = builder.set_notebook_s3_location(
+                                    crate::protocol_serde::shape_notebook_s3_location_for_output::de_notebook_s3_location_for_output(tokens)?
+                                );
+                            }
+                            "ExecutionEngineId" => {
+                                builder = builder.set_execution_engine_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

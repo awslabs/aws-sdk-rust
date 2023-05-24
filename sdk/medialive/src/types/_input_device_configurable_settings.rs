@@ -9,10 +9,10 @@ pub struct InputDeviceConfigurableSettings {
     pub configured_input: std::option::Option<crate::types::InputDeviceConfiguredInput>,
     /// The maximum bitrate in bits per second. Set a value here to throttle the bitrate of the source video.
     #[doc(hidden)]
-    pub max_bitrate: i32,
+    pub max_bitrate: std::option::Option<i32>,
     /// The Link device's buffer size (latency) in milliseconds (ms).
     #[doc(hidden)]
-    pub latency_ms: i32,
+    pub latency_ms: std::option::Option<i32>,
 }
 impl InputDeviceConfigurableSettings {
     /// The input source that you want to use. If the device has a source connected to only one of its input ports, or if you don't care which source the device sends, specify Auto. If the device has sources connected to both its input ports, and you want to use a specific source, specify the source.
@@ -22,11 +22,11 @@ impl InputDeviceConfigurableSettings {
         self.configured_input.as_ref()
     }
     /// The maximum bitrate in bits per second. Set a value here to throttle the bitrate of the source video.
-    pub fn max_bitrate(&self) -> i32 {
+    pub fn max_bitrate(&self) -> std::option::Option<i32> {
         self.max_bitrate
     }
     /// The Link device's buffer size (latency) in milliseconds (ms).
-    pub fn latency_ms(&self) -> i32 {
+    pub fn latency_ms(&self) -> std::option::Option<i32> {
         self.latency_ms
     }
 }
@@ -83,8 +83,8 @@ impl InputDeviceConfigurableSettingsBuilder {
     pub fn build(self) -> crate::types::InputDeviceConfigurableSettings {
         crate::types::InputDeviceConfigurableSettings {
             configured_input: self.configured_input,
-            max_bitrate: self.max_bitrate.unwrap_or_default(),
-            latency_ms: self.latency_ms.unwrap_or_default(),
+            max_bitrate: self.max_bitrate,
+            latency_ms: self.latency_ms,
         }
     }
 }

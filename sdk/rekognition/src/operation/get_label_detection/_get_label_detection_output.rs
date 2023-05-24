@@ -21,6 +21,18 @@ pub struct GetLabelDetectionOutput {
     /// <p>Version number of the label detection model that was used to detect labels.</p>
     #[doc(hidden)]
     pub label_model_version: std::option::Option<std::string::String>,
+    /// <p>Job identifier for the label detection operation for which you want to obtain results. The job identifer is returned by an initial call to StartLabelDetection.</p>
+    #[doc(hidden)]
+    pub job_id: std::option::Option<std::string::String>,
+    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    #[doc(hidden)]
+    pub video: std::option::Option<crate::types::Video>,
+    /// <p>A job identifier specified in the call to StartLabelDetection and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
+    #[doc(hidden)]
+    pub job_tag: std::option::Option<std::string::String>,
+    /// <p>Information about the paramters used when getting a response. Includes information on aggregation and sorting methods.</p>
+    #[doc(hidden)]
+    pub get_request_metadata: std::option::Option<crate::types::GetLabelDetectionRequestMetadata>,
     _request_id: Option<String>,
 }
 impl GetLabelDetectionOutput {
@@ -48,6 +60,24 @@ impl GetLabelDetectionOutput {
     pub fn label_model_version(&self) -> std::option::Option<&str> {
         self.label_model_version.as_deref()
     }
+    /// <p>Job identifier for the label detection operation for which you want to obtain results. The job identifer is returned by an initial call to StartLabelDetection.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    pub fn video(&self) -> std::option::Option<&crate::types::Video> {
+        self.video.as_ref()
+    }
+    /// <p>A job identifier specified in the call to StartLabelDetection and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
+    pub fn job_tag(&self) -> std::option::Option<&str> {
+        self.job_tag.as_deref()
+    }
+    /// <p>Information about the paramters used when getting a response. Includes information on aggregation and sorting methods.</p>
+    pub fn get_request_metadata(
+        &self,
+    ) -> std::option::Option<&crate::types::GetLabelDetectionRequestMetadata> {
+        self.get_request_metadata.as_ref()
+    }
 }
 impl aws_http::request_id::RequestId for GetLabelDetectionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -72,6 +102,11 @@ pub struct GetLabelDetectionOutputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
     pub(crate) labels: std::option::Option<std::vec::Vec<crate::types::LabelDetection>>,
     pub(crate) label_model_version: std::option::Option<std::string::String>,
+    pub(crate) job_id: std::option::Option<std::string::String>,
+    pub(crate) video: std::option::Option<crate::types::Video>,
+    pub(crate) job_tag: std::option::Option<std::string::String>,
+    pub(crate) get_request_metadata:
+        std::option::Option<crate::types::GetLabelDetectionRequestMetadata>,
     _request_id: Option<String>,
 }
 impl GetLabelDetectionOutputBuilder {
@@ -153,6 +188,52 @@ impl GetLabelDetectionOutputBuilder {
         self.label_model_version = input;
         self
     }
+    /// <p>Job identifier for the label detection operation for which you want to obtain results. The job identifer is returned by an initial call to StartLabelDetection.</p>
+    pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.job_id = Some(input.into());
+        self
+    }
+    /// <p>Job identifier for the label detection operation for which you want to obtain results. The job identifer is returned by an initial call to StartLabelDetection.</p>
+    pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.job_id = input;
+        self
+    }
+    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    pub fn video(mut self, input: crate::types::Video) -> Self {
+        self.video = Some(input);
+        self
+    }
+    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    pub fn set_video(mut self, input: std::option::Option<crate::types::Video>) -> Self {
+        self.video = input;
+        self
+    }
+    /// <p>A job identifier specified in the call to StartLabelDetection and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
+    pub fn job_tag(mut self, input: impl Into<std::string::String>) -> Self {
+        self.job_tag = Some(input.into());
+        self
+    }
+    /// <p>A job identifier specified in the call to StartLabelDetection and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
+    pub fn set_job_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.job_tag = input;
+        self
+    }
+    /// <p>Information about the paramters used when getting a response. Includes information on aggregation and sorting methods.</p>
+    pub fn get_request_metadata(
+        mut self,
+        input: crate::types::GetLabelDetectionRequestMetadata,
+    ) -> Self {
+        self.get_request_metadata = Some(input);
+        self
+    }
+    /// <p>Information about the paramters used when getting a response. Includes information on aggregation and sorting methods.</p>
+    pub fn set_get_request_metadata(
+        mut self,
+        input: std::option::Option<crate::types::GetLabelDetectionRequestMetadata>,
+    ) -> Self {
+        self.get_request_metadata = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -171,6 +252,10 @@ impl GetLabelDetectionOutputBuilder {
             next_token: self.next_token,
             labels: self.labels,
             label_model_version: self.label_model_version,
+            job_id: self.job_id,
+            video: self.video,
+            job_tag: self.job_tag,
+            get_request_metadata: self.get_request_metadata,
             _request_id: self._request_id,
         }
     }

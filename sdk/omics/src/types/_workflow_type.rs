@@ -13,6 +13,7 @@
 /// # let workflowtype = unimplemented!();
 /// match workflowtype {
 ///     WorkflowType::Private => { /* ... */ },
+///     WorkflowType::Ready2Run => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,6 +49,8 @@
 pub enum WorkflowType {
     #[allow(missing_docs)] // documentation missing in model
     Private,
+    #[allow(missing_docs)] // documentation missing in model
+    Ready2Run,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -55,6 +58,7 @@ impl std::convert::From<&str> for WorkflowType {
     fn from(s: &str) -> Self {
         match s {
             "PRIVATE" => WorkflowType::Private,
+            "READY2RUN" => WorkflowType::Ready2Run,
             other => {
                 WorkflowType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -73,12 +77,13 @@ impl WorkflowType {
     pub fn as_str(&self) -> &str {
         match self {
             WorkflowType::Private => "PRIVATE",
+            WorkflowType::Ready2Run => "READY2RUN",
             WorkflowType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PRIVATE"]
+        &["PRIVATE", "READY2RUN"]
     }
 }
 impl AsRef<str> for WorkflowType {

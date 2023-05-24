@@ -6,18 +6,18 @@
 pub struct MotionImageInsertionOffset {
     /// Set the distance, in pixels, between the overlay and the left edge of the video frame.
     #[doc(hidden)]
-    pub image_x: i32,
+    pub image_x: std::option::Option<i32>,
     /// Set the distance, in pixels, between the overlay and the top edge of the video frame.
     #[doc(hidden)]
-    pub image_y: i32,
+    pub image_y: std::option::Option<i32>,
 }
 impl MotionImageInsertionOffset {
     /// Set the distance, in pixels, between the overlay and the left edge of the video frame.
-    pub fn image_x(&self) -> i32 {
+    pub fn image_x(&self) -> std::option::Option<i32> {
         self.image_x
     }
     /// Set the distance, in pixels, between the overlay and the top edge of the video frame.
-    pub fn image_y(&self) -> i32 {
+    pub fn image_y(&self) -> std::option::Option<i32> {
         self.image_y
     }
 }
@@ -59,8 +59,8 @@ impl MotionImageInsertionOffsetBuilder {
     /// Consumes the builder and constructs a [`MotionImageInsertionOffset`](crate::types::MotionImageInsertionOffset).
     pub fn build(self) -> crate::types::MotionImageInsertionOffset {
         crate::types::MotionImageInsertionOffset {
-            image_x: self.image_x.unwrap_or_default(),
-            image_y: self.image_y.unwrap_or_default(),
+            image_x: self.image_x,
+            image_y: self.image_y,
         }
     }
 }

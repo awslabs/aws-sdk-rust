@@ -8,10 +8,10 @@ pub struct IngressGatewayBridge {
     pub instance_id: std::option::Option<std::string::String>,
     /// The maximum expected bitrate (in bps) of the ingress bridge.
     #[doc(hidden)]
-    pub max_bitrate: i32,
+    pub max_bitrate: std::option::Option<i32>,
     /// The maximum number of outputs on the ingress bridge.
     #[doc(hidden)]
-    pub max_outputs: i32,
+    pub max_outputs: std::option::Option<i32>,
 }
 impl IngressGatewayBridge {
     /// The ID of the instance running this bridge.
@@ -19,11 +19,11 @@ impl IngressGatewayBridge {
         self.instance_id.as_deref()
     }
     /// The maximum expected bitrate (in bps) of the ingress bridge.
-    pub fn max_bitrate(&self) -> i32 {
+    pub fn max_bitrate(&self) -> std::option::Option<i32> {
         self.max_bitrate
     }
     /// The maximum number of outputs on the ingress bridge.
-    pub fn max_outputs(&self) -> i32 {
+    pub fn max_outputs(&self) -> std::option::Option<i32> {
         self.max_outputs
     }
 }
@@ -77,8 +77,8 @@ impl IngressGatewayBridgeBuilder {
     pub fn build(self) -> crate::types::IngressGatewayBridge {
         crate::types::IngressGatewayBridge {
             instance_id: self.instance_id,
-            max_bitrate: self.max_bitrate.unwrap_or_default(),
-            max_outputs: self.max_outputs.unwrap_or_default(),
+            max_bitrate: self.max_bitrate,
+            max_outputs: self.max_outputs,
         }
     }
 }

@@ -3,107 +3,107 @@ pub fn ser_job_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JobSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.ad_avail_offset != 0 {
+    if let Some(var_1) = &input.ad_avail_offset {
         object.key("adAvailOffset").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.ad_avail_offset).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.avail_blanking {
+    if let Some(var_2) = &input.avail_blanking {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("availBlanking").start_object();
-        crate::protocol_serde::shape_avail_blanking::ser_avail_blanking(&mut object_2, var_1)?;
-        object_2.finish();
+        let mut object_3 = object.key("availBlanking").start_object();
+        crate::protocol_serde::shape_avail_blanking::ser_avail_blanking(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_3) = &input.esam {
+    if let Some(var_4) = &input.esam {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("esam").start_object();
-        crate::protocol_serde::shape_esam_settings::ser_esam_settings(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("esam").start_object();
+        crate::protocol_serde::shape_esam_settings::ser_esam_settings(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_5) = &input.extended_data_services {
+    if let Some(var_6) = &input.extended_data_services {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("extendedDataServices").start_object();
+        let mut object_7 = object.key("extendedDataServices").start_object();
         crate::protocol_serde::shape_extended_data_services::ser_extended_data_services(
-            &mut object_6,
-            var_5,
+            &mut object_7,
+            var_6,
         )?;
-        object_6.finish();
+        object_7.finish();
     }
-    if let Some(var_7) = &input.inputs {
-        let mut array_8 = object.key("inputs").start_array();
-        for item_9 in var_7 {
+    if let Some(var_8) = &input.inputs {
+        let mut array_9 = object.key("inputs").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_input::ser_input(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_input::ser_input(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_8.finish();
+        array_9.finish();
     }
-    if let Some(var_11) = &input.kantar_watermark {
+    if let Some(var_12) = &input.kantar_watermark {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("kantarWatermark").start_object();
+        let mut object_13 = object.key("kantarWatermark").start_object();
         crate::protocol_serde::shape_kantar_watermark_settings::ser_kantar_watermark_settings(
-            &mut object_12,
-            var_11,
+            &mut object_13,
+            var_12,
         )?;
-        object_12.finish();
+        object_13.finish();
     }
-    if let Some(var_13) = &input.motion_image_inserter {
+    if let Some(var_14) = &input.motion_image_inserter {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("motionImageInserter").start_object();
+        let mut object_15 = object.key("motionImageInserter").start_object();
         crate::protocol_serde::shape_motion_image_inserter::ser_motion_image_inserter(
-            &mut object_14,
-            var_13,
+            &mut object_15,
+            var_14,
         )?;
-        object_14.finish();
+        object_15.finish();
     }
-    if let Some(var_15) = &input.nielsen_configuration {
+    if let Some(var_16) = &input.nielsen_configuration {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("nielsenConfiguration").start_object();
+        let mut object_17 = object.key("nielsenConfiguration").start_object();
         crate::protocol_serde::shape_nielsen_configuration::ser_nielsen_configuration(
-            &mut object_16,
-            var_15,
+            &mut object_17,
+            var_16,
         )?;
-        object_16.finish();
+        object_17.finish();
     }
-    if let Some(var_17) = &input.nielsen_non_linear_watermark {
+    if let Some(var_18) = &input.nielsen_non_linear_watermark {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("nielsenNonLinearWatermark").start_object();
-        crate::protocol_serde::shape_nielsen_non_linear_watermark_settings::ser_nielsen_non_linear_watermark_settings(&mut object_18, var_17)?;
-        object_18.finish();
+        let mut object_19 = object.key("nielsenNonLinearWatermark").start_object();
+        crate::protocol_serde::shape_nielsen_non_linear_watermark_settings::ser_nielsen_non_linear_watermark_settings(&mut object_19, var_18)?;
+        object_19.finish();
     }
-    if let Some(var_19) = &input.output_groups {
-        let mut array_20 = object.key("outputGroups").start_array();
-        for item_21 in var_19 {
+    if let Some(var_20) = &input.output_groups {
+        let mut array_21 = object.key("outputGroups").start_array();
+        for item_22 in var_20 {
             {
                 #[allow(unused_mut)]
-                let mut object_22 = array_20.value().start_object();
+                let mut object_23 = array_21.value().start_object();
                 crate::protocol_serde::shape_output_group::ser_output_group(
-                    &mut object_22,
-                    item_21,
+                    &mut object_23,
+                    item_22,
                 )?;
-                object_22.finish();
+                object_23.finish();
             }
         }
-        array_20.finish();
+        array_21.finish();
     }
-    if let Some(var_23) = &input.timecode_config {
+    if let Some(var_24) = &input.timecode_config {
         #[allow(unused_mut)]
-        let mut object_24 = object.key("timecodeConfig").start_object();
-        crate::protocol_serde::shape_timecode_config::ser_timecode_config(&mut object_24, var_23)?;
-        object_24.finish();
+        let mut object_25 = object.key("timecodeConfig").start_object();
+        crate::protocol_serde::shape_timecode_config::ser_timecode_config(&mut object_25, var_24)?;
+        object_25.finish();
     }
-    if let Some(var_25) = &input.timed_metadata_insertion {
+    if let Some(var_26) = &input.timed_metadata_insertion {
         #[allow(unused_mut)]
-        let mut object_26 = object.key("timedMetadataInsertion").start_object();
+        let mut object_27 = object.key("timedMetadataInsertion").start_object();
         crate::protocol_serde::shape_timed_metadata_insertion::ser_timed_metadata_insertion(
-            &mut object_26,
-            var_25,
+            &mut object_27,
+            var_26,
         )?;
-        object_26.finish();
+        object_27.finish();
     }
     Ok(())
 }

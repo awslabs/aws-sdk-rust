@@ -28,7 +28,7 @@ pub struct CampaignResponse {
     pub description: std::option::Option<std::string::String>,
     /// <p>The allocated percentage of users (segment members) who shouldn't receive messages from the campaign.</p>
     #[doc(hidden)]
-    pub holdout_percent: i32,
+    pub holdout_percent: std::option::Option<i32>,
     /// <p>The settings for the AWS Lambda function to use as a code hook for the campaign. You can use this hook to customize the segment that's used by the campaign.</p>
     #[doc(hidden)]
     pub hook: std::option::Option<crate::types::CampaignHook>,
@@ -37,7 +37,7 @@ pub struct CampaignResponse {
     pub id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the campaign is paused. A paused campaign doesn't run unless you resume it by changing this value to false.</p>
     #[doc(hidden)]
-    pub is_paused: bool,
+    pub is_paused: std::option::Option<bool>,
     /// <p>The date, in ISO 8601 format, when the campaign was last modified.</p>
     #[doc(hidden)]
     pub last_modified_date: std::option::Option<std::string::String>,
@@ -58,7 +58,7 @@ pub struct CampaignResponse {
     pub segment_id: std::option::Option<std::string::String>,
     /// <p>The version number of the segment that's associated with the campaign.</p>
     #[doc(hidden)]
-    pub segment_version: i32,
+    pub segment_version: std::option::Option<i32>,
     /// <p>The current status of the campaign.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::CampaignState>,
@@ -77,10 +77,10 @@ pub struct CampaignResponse {
     pub treatment_name: std::option::Option<std::string::String>,
     /// <p>The version number of the campaign.</p>
     #[doc(hidden)]
-    pub version: i32,
+    pub version: std::option::Option<i32>,
     /// <p>Defines the priority of the campaign, used to decide the order of messages displayed to user if there are multiple messages scheduled to be displayed at the same moment.</p>
     #[doc(hidden)]
-    pub priority: i32,
+    pub priority: std::option::Option<i32>,
 }
 impl CampaignResponse {
     /// <p>An array of responses, one for each treatment that you defined for the campaign, in addition to the default treatment.</p>
@@ -114,7 +114,7 @@ impl CampaignResponse {
         self.description.as_deref()
     }
     /// <p>The allocated percentage of users (segment members) who shouldn't receive messages from the campaign.</p>
-    pub fn holdout_percent(&self) -> i32 {
+    pub fn holdout_percent(&self) -> std::option::Option<i32> {
         self.holdout_percent
     }
     /// <p>The settings for the AWS Lambda function to use as a code hook for the campaign. You can use this hook to customize the segment that's used by the campaign.</p>
@@ -126,7 +126,7 @@ impl CampaignResponse {
         self.id.as_deref()
     }
     /// <p>Specifies whether the campaign is paused. A paused campaign doesn't run unless you resume it by changing this value to false.</p>
-    pub fn is_paused(&self) -> bool {
+    pub fn is_paused(&self) -> std::option::Option<bool> {
         self.is_paused
     }
     /// <p>The date, in ISO 8601 format, when the campaign was last modified.</p>
@@ -156,7 +156,7 @@ impl CampaignResponse {
         self.segment_id.as_deref()
     }
     /// <p>The version number of the segment that's associated with the campaign.</p>
-    pub fn segment_version(&self) -> i32 {
+    pub fn segment_version(&self) -> std::option::Option<i32> {
         self.segment_version
     }
     /// <p>The current status of the campaign.</p>
@@ -185,11 +185,11 @@ impl CampaignResponse {
         self.treatment_name.as_deref()
     }
     /// <p>The version number of the campaign.</p>
-    pub fn version(&self) -> i32 {
+    pub fn version(&self) -> std::option::Option<i32> {
         self.version
     }
     /// <p>Defines the priority of the campaign, used to decide the order of messages displayed to user if there are multiple messages scheduled to be displayed at the same moment.</p>
-    pub fn priority(&self) -> i32 {
+    pub fn priority(&self) -> std::option::Option<i32> {
         self.priority
     }
 }
@@ -539,24 +539,24 @@ impl CampaignResponseBuilder {
             custom_delivery_configuration: self.custom_delivery_configuration,
             default_state: self.default_state,
             description: self.description,
-            holdout_percent: self.holdout_percent.unwrap_or_default(),
+            holdout_percent: self.holdout_percent,
             hook: self.hook,
             id: self.id,
-            is_paused: self.is_paused.unwrap_or_default(),
+            is_paused: self.is_paused,
             last_modified_date: self.last_modified_date,
             limits: self.limits,
             message_configuration: self.message_configuration,
             name: self.name,
             schedule: self.schedule,
             segment_id: self.segment_id,
-            segment_version: self.segment_version.unwrap_or_default(),
+            segment_version: self.segment_version,
             state: self.state,
             tags: self.tags,
             template_configuration: self.template_configuration,
             treatment_description: self.treatment_description,
             treatment_name: self.treatment_name,
-            version: self.version.unwrap_or_default(),
-            priority: self.priority.unwrap_or_default(),
+            version: self.version,
+            priority: self.priority,
         }
     }
 }

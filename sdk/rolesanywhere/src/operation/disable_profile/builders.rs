@@ -5,7 +5,7 @@ pub use crate::operation::disable_profile::_disable_profile_input::DisableProfil
 
 /// Fluent builder constructing a request to `DisableProfile`.
 ///
-/// <p>Disables a profile. When disabled, <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> requests with this profile fail.</p>
+/// <p>Disables a profile. When disabled, temporary credential requests with this profile fail.</p>
 /// <p> <b>Required permissions: </b> <code>rolesanywhere:DisableProfile</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisableProfileFluentBuilder {

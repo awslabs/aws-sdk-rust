@@ -12,6 +12,7 @@
 /// ```text
 /// # let datasourcepackage = unimplemented!();
 /// match datasourcepackage {
+///     DatasourcePackage::AsffSecurityhubFinding => { /* ... */ },
 ///     DatasourcePackage::DetectiveCore => { /* ... */ },
 ///     DatasourcePackage::EksAudit => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -48,6 +49,8 @@
 )]
 pub enum DatasourcePackage {
     #[allow(missing_docs)] // documentation missing in model
+    AsffSecurityhubFinding,
+    #[allow(missing_docs)] // documentation missing in model
     DetectiveCore,
     #[allow(missing_docs)] // documentation missing in model
     EksAudit,
@@ -57,6 +60,7 @@ pub enum DatasourcePackage {
 impl std::convert::From<&str> for DatasourcePackage {
     fn from(s: &str) -> Self {
         match s {
+            "ASFF_SECURITYHUB_FINDING" => DatasourcePackage::AsffSecurityhubFinding,
             "DETECTIVE_CORE" => DatasourcePackage::DetectiveCore,
             "EKS_AUDIT" => DatasourcePackage::EksAudit,
             other => {
@@ -76,6 +80,7 @@ impl DatasourcePackage {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            DatasourcePackage::AsffSecurityhubFinding => "ASFF_SECURITYHUB_FINDING",
             DatasourcePackage::DetectiveCore => "DETECTIVE_CORE",
             DatasourcePackage::EksAudit => "EKS_AUDIT",
             DatasourcePackage::Unknown(value) => value.as_str(),
@@ -83,7 +88,7 @@ impl DatasourcePackage {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DETECTIVE_CORE", "EKS_AUDIT"]
+        &["ASFF_SECURITYHUB_FINDING", "DETECTIVE_CORE", "EKS_AUDIT"]
     }
 }
 impl AsRef<str> for DatasourcePackage {

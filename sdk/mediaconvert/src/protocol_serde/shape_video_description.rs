@@ -30,52 +30,52 @@ pub fn ser_video_description(
     if let Some(var_8) = &input.drop_frame_timecode {
         object.key("dropFrameTimecode").string(var_8.as_str());
     }
-    if input.fixed_afd != 0 {
+    if let Some(var_9) = &input.fixed_afd {
         object.key("fixedAfd").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.fixed_afd).into()),
+            aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if input.height != 0 {
+    if let Some(var_10) = &input.height {
         object.key("height").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.height).into()),
+            aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_9) = &input.position {
+    if let Some(var_11) = &input.position {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("position").start_object();
-        crate::protocol_serde::shape_rectangle::ser_rectangle(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_12 = object.key("position").start_object();
+        crate::protocol_serde::shape_rectangle::ser_rectangle(&mut object_12, var_11)?;
+        object_12.finish();
     }
-    if let Some(var_11) = &input.respond_to_afd {
-        object.key("respondToAfd").string(var_11.as_str());
+    if let Some(var_13) = &input.respond_to_afd {
+        object.key("respondToAfd").string(var_13.as_str());
     }
-    if let Some(var_12) = &input.scaling_behavior {
-        object.key("scalingBehavior").string(var_12.as_str());
+    if let Some(var_14) = &input.scaling_behavior {
+        object.key("scalingBehavior").string(var_14.as_str());
     }
-    if input.sharpness != 0 {
+    if let Some(var_15) = &input.sharpness {
         object.key("sharpness").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.sharpness).into()),
+            aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
-    if let Some(var_13) = &input.timecode_insertion {
-        object.key("timecodeInsertion").string(var_13.as_str());
+    if let Some(var_16) = &input.timecode_insertion {
+        object.key("timecodeInsertion").string(var_16.as_str());
     }
-    if let Some(var_14) = &input.video_preprocessors {
+    if let Some(var_17) = &input.video_preprocessors {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("videoPreprocessors").start_object();
+        let mut object_18 = object.key("videoPreprocessors").start_object();
         crate::protocol_serde::shape_video_preprocessor::ser_video_preprocessor(
-            &mut object_15,
-            var_14,
+            &mut object_18,
+            var_17,
         )?;
-        object_15.finish();
+        object_18.finish();
     }
-    if input.width != 0 {
+    if let Some(var_19) = &input.width {
         object.key("width").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.width).into()),
+            aws_smithy_types::Number::NegInt((*var_19).into()),
         );
     }
     Ok(())

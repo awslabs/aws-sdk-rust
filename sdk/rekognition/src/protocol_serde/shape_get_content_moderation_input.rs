@@ -18,5 +18,8 @@ pub fn ser_get_content_moderation_input(
     if let Some(var_4) = &input.sort_by {
         object.key("SortBy").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.aggregate_by {
+        object.key("AggregateBy").string(var_5.as_str());
+    }
     Ok(())
 }

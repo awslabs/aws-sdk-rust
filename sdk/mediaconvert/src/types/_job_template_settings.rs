@@ -6,7 +6,7 @@
 pub struct JobTemplateSettings {
     /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time.
     #[doc(hidden)]
-    pub ad_avail_offset: i32,
+    pub ad_avail_offset: std::option::Option<i32>,
     /// Settings for ad avail blanking. Video can be blanked or overlaid with an image, and audio muted during SCTE-35 triggered ad avails.
     #[doc(hidden)]
     pub avail_blanking: std::option::Option<crate::types::AvailBlanking>,
@@ -44,7 +44,7 @@ pub struct JobTemplateSettings {
 }
 impl JobTemplateSettings {
     /// When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time.
-    pub fn ad_avail_offset(&self) -> i32 {
+    pub fn ad_avail_offset(&self) -> std::option::Option<i32> {
         self.ad_avail_offset
     }
     /// Settings for ad avail blanking. Video can be blanked or overlaid with an image, and audio muted during SCTE-35 triggered ad avails.
@@ -294,7 +294,7 @@ impl JobTemplateSettingsBuilder {
     /// Consumes the builder and constructs a [`JobTemplateSettings`](crate::types::JobTemplateSettings).
     pub fn build(self) -> crate::types::JobTemplateSettings {
         crate::types::JobTemplateSettings {
-            ad_avail_offset: self.ad_avail_offset.unwrap_or_default(),
+            ad_avail_offset: self.ad_avail_offset,
             avail_blanking: self.avail_blanking,
             esam: self.esam,
             extended_data_services: self.extended_data_services,

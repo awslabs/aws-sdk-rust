@@ -212,6 +212,8 @@ impl Client {
     }
 }
 
+mod create_snapshot;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized

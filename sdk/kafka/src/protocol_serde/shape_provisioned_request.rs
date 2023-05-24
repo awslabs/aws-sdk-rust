@@ -57,14 +57,14 @@ pub fn ser_provisioned_request(
         crate::protocol_serde::shape_logging_info::ser_logging_info(&mut object_14, var_13)?;
         object_14.finish();
     }
-    {
+    if let Some(var_15) = &input.number_of_broker_nodes {
         object.key("numberOfBrokerNodes").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.number_of_broker_nodes).into()),
+            aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
-    if let Some(var_15) = &input.storage_mode {
-        object.key("storageMode").string(var_15.as_str());
+    if let Some(var_16) = &input.storage_mode {
+        object.key("storageMode").string(var_16.as_str());
     }
     Ok(())
 }

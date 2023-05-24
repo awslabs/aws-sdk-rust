@@ -9,7 +9,7 @@ pub struct Scte20SourceSettings {
     pub convert608_to708: std::option::Option<crate::types::Scte20Convert608To708>,
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
     #[doc(hidden)]
-    pub source608_channel_number: i32,
+    pub source608_channel_number: std::option::Option<i32>,
 }
 impl Scte20SourceSettings {
     /// If upconvert, 608 data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
@@ -17,7 +17,7 @@ impl Scte20SourceSettings {
         self.convert608_to708.as_ref()
     }
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
-    pub fn source608_channel_number(&self) -> i32 {
+    pub fn source608_channel_number(&self) -> std::option::Option<i32> {
         self.source608_channel_number
     }
 }
@@ -63,7 +63,7 @@ impl Scte20SourceSettingsBuilder {
     pub fn build(self) -> crate::types::Scte20SourceSettings {
         crate::types::Scte20SourceSettings {
             convert608_to708: self.convert608_to708,
-            source608_channel_number: self.source608_channel_number.unwrap_or_default(),
+            source608_channel_number: self.source608_channel_number,
         }
     }
 }

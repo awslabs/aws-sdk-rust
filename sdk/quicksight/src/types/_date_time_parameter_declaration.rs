@@ -16,6 +16,10 @@ pub struct DateTimeParameterDeclaration {
     /// <p>The configuration that defines the default value of a <code>DateTime</code> parameter when a value has not been set.</p>
     #[doc(hidden)]
     pub value_when_unset: std::option::Option<crate::types::DateTimeValueWhenUnsetConfiguration>,
+    /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
+    #[doc(hidden)]
+    pub mapped_data_set_parameters:
+        std::option::Option<std::vec::Vec<crate::types::MappedDataSetParameter>>,
 }
 impl DateTimeParameterDeclaration {
     /// <p>The name of the parameter that is being declared.</p>
@@ -36,6 +40,12 @@ impl DateTimeParameterDeclaration {
     ) -> std::option::Option<&crate::types::DateTimeValueWhenUnsetConfiguration> {
         self.value_when_unset.as_ref()
     }
+    /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
+    pub fn mapped_data_set_parameters(
+        &self,
+    ) -> std::option::Option<&[crate::types::MappedDataSetParameter]> {
+        self.mapped_data_set_parameters.as_deref()
+    }
 }
 impl DateTimeParameterDeclaration {
     /// Creates a new builder-style object to manufacture [`DateTimeParameterDeclaration`](crate::types::DateTimeParameterDeclaration).
@@ -53,6 +63,8 @@ pub struct DateTimeParameterDeclarationBuilder {
     pub(crate) time_granularity: std::option::Option<crate::types::TimeGranularity>,
     pub(crate) value_when_unset:
         std::option::Option<crate::types::DateTimeValueWhenUnsetConfiguration>,
+    pub(crate) mapped_data_set_parameters:
+        std::option::Option<std::vec::Vec<crate::types::MappedDataSetParameter>>,
 }
 impl DateTimeParameterDeclarationBuilder {
     /// <p>The name of the parameter that is being declared.</p>
@@ -107,6 +119,28 @@ impl DateTimeParameterDeclarationBuilder {
         self.value_when_unset = input;
         self
     }
+    /// Appends an item to `mapped_data_set_parameters`.
+    ///
+    /// To override the contents of this collection use [`set_mapped_data_set_parameters`](Self::set_mapped_data_set_parameters).
+    ///
+    /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
+    pub fn mapped_data_set_parameters(
+        mut self,
+        input: crate::types::MappedDataSetParameter,
+    ) -> Self {
+        let mut v = self.mapped_data_set_parameters.unwrap_or_default();
+        v.push(input);
+        self.mapped_data_set_parameters = Some(v);
+        self
+    }
+    /// <p>A list of dataset parameters that are mapped to an analysis parameter.</p>
+    pub fn set_mapped_data_set_parameters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MappedDataSetParameter>>,
+    ) -> Self {
+        self.mapped_data_set_parameters = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DateTimeParameterDeclaration`](crate::types::DateTimeParameterDeclaration).
     pub fn build(self) -> crate::types::DateTimeParameterDeclaration {
         crate::types::DateTimeParameterDeclaration {
@@ -114,6 +148,7 @@ impl DateTimeParameterDeclarationBuilder {
             default_values: self.default_values,
             time_granularity: self.time_granularity,
             value_when_unset: self.value_when_unset,
+            mapped_data_set_parameters: self.mapped_data_set_parameters,
         }
     }
 }

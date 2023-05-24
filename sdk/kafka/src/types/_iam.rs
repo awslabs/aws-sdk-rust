@@ -6,11 +6,11 @@
 pub struct Iam {
     /// <p>Indicates whether IAM access control is enabled.</p>
     #[doc(hidden)]
-    pub enabled: bool,
+    pub enabled: std::option::Option<bool>,
 }
 impl Iam {
     /// <p>Indicates whether IAM access control is enabled.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
 }
@@ -41,7 +41,7 @@ impl IamBuilder {
     /// Consumes the builder and constructs a [`Iam`](crate::types::Iam).
     pub fn build(self) -> crate::types::Iam {
         crate::types::Iam {
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled,
         }
     }
 }

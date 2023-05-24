@@ -227,6 +227,11 @@ pub(crate) fn de_describe_query_suggestions_config(value: &[u8], mut builder: cr
                             .transpose()?,
                         );
                     }
+                    "AttributeSuggestionsConfig" => {
+                        builder = builder.set_attribute_suggestions_config(
+                            crate::protocol_serde::shape_attribute_suggestions_describe_config::de_attribute_suggestions_describe_config(tokens)?
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

@@ -4,10 +4,10 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ParticipantTokenConfiguration {
-    /// <p>Duration (in minutes), after which the corresponding participant token expires. Default: 60 (1 hour).</p>
+    /// <p>Duration (in minutes), after which the corresponding participant token expires. Default: 720 (12 hours).</p>
     #[doc(hidden)]
     pub duration: i32,
-    /// <p>Name that can be specified to help identify the corresponding participant token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
+    /// <p>Customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
     /// <p>Application-provided attributes to encode into the corresponding participant token and attach to a stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
@@ -19,11 +19,11 @@ pub struct ParticipantTokenConfiguration {
     pub capabilities: std::option::Option<std::vec::Vec<crate::types::ParticipantTokenCapability>>,
 }
 impl ParticipantTokenConfiguration {
-    /// <p>Duration (in minutes), after which the corresponding participant token expires. Default: 60 (1 hour).</p>
+    /// <p>Duration (in minutes), after which the corresponding participant token expires. Default: 720 (12 hours).</p>
     pub fn duration(&self) -> i32 {
         self.duration
     }
-    /// <p>Name that can be specified to help identify the corresponding participant token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
+    /// <p>Customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
     pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
@@ -58,22 +58,22 @@ pub struct ParticipantTokenConfigurationBuilder {
         std::option::Option<std::vec::Vec<crate::types::ParticipantTokenCapability>>,
 }
 impl ParticipantTokenConfigurationBuilder {
-    /// <p>Duration (in minutes), after which the corresponding participant token expires. Default: 60 (1 hour).</p>
+    /// <p>Duration (in minutes), after which the corresponding participant token expires. Default: 720 (12 hours).</p>
     pub fn duration(mut self, input: i32) -> Self {
         self.duration = Some(input);
         self
     }
-    /// <p>Duration (in minutes), after which the corresponding participant token expires. Default: 60 (1 hour).</p>
+    /// <p>Duration (in minutes), after which the corresponding participant token expires. Default: 720 (12 hours).</p>
     pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
         self.duration = input;
         self
     }
-    /// <p>Name that can be specified to help identify the corresponding participant token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
+    /// <p>Customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
     pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.user_id = Some(input.into());
         self
     }
-    /// <p>Name that can be specified to help identify the corresponding participant token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
+    /// <p>Customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> </p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.user_id = input;
         self

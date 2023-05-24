@@ -184,11 +184,7 @@ pub struct DbInstance {
     #[doc(hidden)]
     pub timezone: std::option::Option<std::string::String>,
     /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
-    /// <p>IAM database authentication can be enabled for the following database engines:</p>
-    /// <ul>
-    /// <li> <p>For MySQL 5.7, minor version 5.7.16 or higher.</p> </li>
-    /// <li> <p>For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.</p> </li>
-    /// </ul>
+    /// <p>For a list of engine versions that support IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RDS_Fea_Regions_DB-eng.Feature.IamDatabaseAuthentication.html">IAM database authentication</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.Aurora_Fea_Regions_DB-eng.Feature.IAMdbauth.html">IAM database authentication in Aurora</a> in the <i>Amazon Aurora User Guide</i>.</p>
     #[doc(hidden)]
     pub iam_database_authentication_enabled: bool,
     /// <p>True if Performance Insights is enabled for the DB instance, and otherwise false.</p>
@@ -552,11 +548,7 @@ impl DbInstance {
         self.timezone.as_deref()
     }
     /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
-    /// <p>IAM database authentication can be enabled for the following database engines:</p>
-    /// <ul>
-    /// <li> <p>For MySQL 5.7, minor version 5.7.16 or higher.</p> </li>
-    /// <li> <p>For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.</p> </li>
-    /// </ul>
+    /// <p>For a list of engine versions that support IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RDS_Fea_Regions_DB-eng.Feature.IamDatabaseAuthentication.html">IAM database authentication</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.Aurora_Fea_Regions_DB-eng.Feature.IAMdbauth.html">IAM database authentication in Aurora</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn iam_database_authentication_enabled(&self) -> bool {
         self.iam_database_authentication_enabled
     }
@@ -1520,21 +1512,13 @@ impl DbInstanceBuilder {
         self
     }
     /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
-    /// <p>IAM database authentication can be enabled for the following database engines:</p>
-    /// <ul>
-    /// <li> <p>For MySQL 5.7, minor version 5.7.16 or higher.</p> </li>
-    /// <li> <p>For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.</p> </li>
-    /// </ul>
+    /// <p>For a list of engine versions that support IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RDS_Fea_Regions_DB-eng.Feature.IamDatabaseAuthentication.html">IAM database authentication</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.Aurora_Fea_Regions_DB-eng.Feature.IAMdbauth.html">IAM database authentication in Aurora</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
         self.iam_database_authentication_enabled = Some(input);
         self
     }
     /// <p>True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
-    /// <p>IAM database authentication can be enabled for the following database engines:</p>
-    /// <ul>
-    /// <li> <p>For MySQL 5.7, minor version 5.7.16 or higher.</p> </li>
-    /// <li> <p>For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.</p> </li>
-    /// </ul>
+    /// <p>For a list of engine versions that support IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RDS_Fea_Regions_DB-eng.Feature.IamDatabaseAuthentication.html">IAM database authentication</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.Aurora_Fea_Regions_DB-eng.Feature.IAMdbauth.html">IAM database authentication in Aurora</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn set_iam_database_authentication_enabled(
         mut self,
         input: std::option::Option<bool>,

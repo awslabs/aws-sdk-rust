@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput::arn): <p>The Amazon Resource Name (ARN) of the configuration.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput::creation_time): <p>The time when the configuration was created.</p>
     ///   - [`description(Option<String>)`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput::description): <p>The description of the configuration.</p>
-    ///   - [`revision(i64)`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput::revision): <p>The revision number.</p>
+    ///   - [`revision(Option<i64>)`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput::revision): <p>The revision number.</p>
     ///   - [`server_properties(Option<Blob>)`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput::server_properties): <p>Contents of the <filename>   server.properties  </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>   server.properties  </filename> can be in plaintext.</p>
     /// - On failure, responds with [`SdkError<DescribeConfigurationRevisionError>`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionError)
     pub fn describe_configuration_revision(&self) -> crate::operation::describe_configuration_revision::builders::DescribeConfigurationRevisionFluentBuilder{

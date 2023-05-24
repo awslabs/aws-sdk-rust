@@ -18,8 +18,8 @@ pub struct DescribeLedgerOutput {
     /// <p>The permissions mode of the ledger.</p>
     #[doc(hidden)]
     pub permissions_mode: std::option::Option<crate::types::PermissionsMode>,
-    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
-    /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+    /// <p>Specifies whether the ledger is protected from being deleted by any user. If not defined during ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+    /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.</p>
     #[doc(hidden)]
     pub deletion_protection: std::option::Option<bool>,
     /// <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error).</p>
@@ -48,8 +48,8 @@ impl DescribeLedgerOutput {
     pub fn permissions_mode(&self) -> std::option::Option<&crate::types::PermissionsMode> {
         self.permissions_mode.as_ref()
     }
-    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
-    /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+    /// <p>Specifies whether the ledger is protected from being deleted by any user. If not defined during ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+    /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.</p>
     pub fn deletion_protection(&self) -> std::option::Option<bool> {
         self.deletion_protection
     }
@@ -143,14 +143,14 @@ impl DescribeLedgerOutputBuilder {
         self.permissions_mode = input;
         self
     }
-    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
-    /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+    /// <p>Specifies whether the ledger is protected from being deleted by any user. If not defined during ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+    /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.deletion_protection = Some(input);
         self
     }
-    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
-    /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+    /// <p>Specifies whether the ledger is protected from being deleted by any user. If not defined during ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+    /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.</p>
     pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
         self.deletion_protection = input;
         self

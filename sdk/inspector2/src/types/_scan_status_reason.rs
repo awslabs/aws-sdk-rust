@@ -13,6 +13,10 @@
 /// # let scanstatusreason = unimplemented!();
 /// match scanstatusreason {
 ///     ScanStatusReason::AccessDenied => { /* ... */ },
+///     ScanStatusReason::DeepInspectionCollectionTimeLimitExceeded => { /* ... */ },
+///     ScanStatusReason::DeepInspectionDailySsmInventoryLimitExceeded => { /* ... */ },
+///     ScanStatusReason::DeepInspectionNoInventory => { /* ... */ },
+///     ScanStatusReason::DeepInspectionPackageCollectionLimitExceeded => { /* ... */ },
 ///     ScanStatusReason::Ec2InstanceStopped => { /* ... */ },
 ///     ScanStatusReason::ExcludedByTag => { /* ... */ },
 ///     ScanStatusReason::ImageSizeExceeded => { /* ... */ },
@@ -28,6 +32,8 @@
 ///     ScanStatusReason::StaleInventory => { /* ... */ },
 ///     ScanStatusReason::Successful => { /* ... */ },
 ///     ScanStatusReason::UnmanagedEc2Instance => { /* ... */ },
+///     ScanStatusReason::UnsupportedConfigFile => { /* ... */ },
+///     ScanStatusReason::UnsupportedMediaType => { /* ... */ },
 ///     ScanStatusReason::UnsupportedOs => { /* ... */ },
 ///     ScanStatusReason::UnsupportedRuntime => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -66,6 +72,14 @@ pub enum ScanStatusReason {
     #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
     #[allow(missing_docs)] // documentation missing in model
+    DeepInspectionCollectionTimeLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
+    DeepInspectionDailySsmInventoryLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
+    DeepInspectionNoInventory,
+    #[allow(missing_docs)] // documentation missing in model
+    DeepInspectionPackageCollectionLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2InstanceStopped,
     #[allow(missing_docs)] // documentation missing in model
     ExcludedByTag,
@@ -96,6 +110,10 @@ pub enum ScanStatusReason {
     #[allow(missing_docs)] // documentation missing in model
     UnmanagedEc2Instance,
     #[allow(missing_docs)] // documentation missing in model
+    UnsupportedConfigFile,
+    #[allow(missing_docs)] // documentation missing in model
+    UnsupportedMediaType,
+    #[allow(missing_docs)] // documentation missing in model
     UnsupportedOs,
     #[allow(missing_docs)] // documentation missing in model
     UnsupportedRuntime,
@@ -106,6 +124,16 @@ impl std::convert::From<&str> for ScanStatusReason {
     fn from(s: &str) -> Self {
         match s {
             "ACCESS_DENIED" => ScanStatusReason::AccessDenied,
+            "DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED" => {
+                ScanStatusReason::DeepInspectionCollectionTimeLimitExceeded
+            }
+            "DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED" => {
+                ScanStatusReason::DeepInspectionDailySsmInventoryLimitExceeded
+            }
+            "DEEP_INSPECTION_NO_INVENTORY" => ScanStatusReason::DeepInspectionNoInventory,
+            "DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED" => {
+                ScanStatusReason::DeepInspectionPackageCollectionLimitExceeded
+            }
             "EC2_INSTANCE_STOPPED" => ScanStatusReason::Ec2InstanceStopped,
             "EXCLUDED_BY_TAG" => ScanStatusReason::ExcludedByTag,
             "IMAGE_SIZE_EXCEEDED" => ScanStatusReason::ImageSizeExceeded,
@@ -121,6 +149,8 @@ impl std::convert::From<&str> for ScanStatusReason {
             "STALE_INVENTORY" => ScanStatusReason::StaleInventory,
             "SUCCESSFUL" => ScanStatusReason::Successful,
             "UNMANAGED_EC2_INSTANCE" => ScanStatusReason::UnmanagedEc2Instance,
+            "UNSUPPORTED_CONFIG_FILE" => ScanStatusReason::UnsupportedConfigFile,
+            "UNSUPPORTED_MEDIA_TYPE" => ScanStatusReason::UnsupportedMediaType,
             "UNSUPPORTED_OS" => ScanStatusReason::UnsupportedOs,
             "UNSUPPORTED_RUNTIME" => ScanStatusReason::UnsupportedRuntime,
             other => {
@@ -141,6 +171,16 @@ impl ScanStatusReason {
     pub fn as_str(&self) -> &str {
         match self {
             ScanStatusReason::AccessDenied => "ACCESS_DENIED",
+            ScanStatusReason::DeepInspectionCollectionTimeLimitExceeded => {
+                "DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED"
+            }
+            ScanStatusReason::DeepInspectionDailySsmInventoryLimitExceeded => {
+                "DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED"
+            }
+            ScanStatusReason::DeepInspectionNoInventory => "DEEP_INSPECTION_NO_INVENTORY",
+            ScanStatusReason::DeepInspectionPackageCollectionLimitExceeded => {
+                "DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED"
+            }
             ScanStatusReason::Ec2InstanceStopped => "EC2_INSTANCE_STOPPED",
             ScanStatusReason::ExcludedByTag => "EXCLUDED_BY_TAG",
             ScanStatusReason::ImageSizeExceeded => "IMAGE_SIZE_EXCEEDED",
@@ -156,6 +196,8 @@ impl ScanStatusReason {
             ScanStatusReason::StaleInventory => "STALE_INVENTORY",
             ScanStatusReason::Successful => "SUCCESSFUL",
             ScanStatusReason::UnmanagedEc2Instance => "UNMANAGED_EC2_INSTANCE",
+            ScanStatusReason::UnsupportedConfigFile => "UNSUPPORTED_CONFIG_FILE",
+            ScanStatusReason::UnsupportedMediaType => "UNSUPPORTED_MEDIA_TYPE",
             ScanStatusReason::UnsupportedOs => "UNSUPPORTED_OS",
             ScanStatusReason::UnsupportedRuntime => "UNSUPPORTED_RUNTIME",
             ScanStatusReason::Unknown(value) => value.as_str(),
@@ -165,6 +207,10 @@ impl ScanStatusReason {
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_DENIED",
+            "DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED",
+            "DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED",
+            "DEEP_INSPECTION_NO_INVENTORY",
+            "DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED",
             "EC2_INSTANCE_STOPPED",
             "EXCLUDED_BY_TAG",
             "IMAGE_SIZE_EXCEEDED",
@@ -180,6 +226,8 @@ impl ScanStatusReason {
             "STALE_INVENTORY",
             "SUCCESSFUL",
             "UNMANAGED_EC2_INSTANCE",
+            "UNSUPPORTED_CONFIG_FILE",
+            "UNSUPPORTED_MEDIA_TYPE",
             "UNSUPPORTED_OS",
             "UNSUPPORTED_RUNTIME",
         ]

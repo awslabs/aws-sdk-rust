@@ -13,8 +13,9 @@ pub struct TagResourceInput {
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
-    /// <p>One or more tags. </p>
-    /// <p>Each tag consists of a tag key and a tag value. The tag value can be an empty (null) string. </p>
+    /// <p>One or more tags. Each tag consists of a tag key and a tag value. The tag value can be an empty (null) string. </p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
     /// <p>You cannot have more than one tag on a KMS key with the same tag key. If you specify an existing tag key with a different tag value, KMS replaces the current tag value with the specified one.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
@@ -31,8 +32,9 @@ impl TagResourceInput {
     pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
     }
-    /// <p>One or more tags. </p>
-    /// <p>Each tag consists of a tag key and a tag value. The tag value can be an empty (null) string. </p>
+    /// <p>One or more tags. Each tag consists of a tag key and a tag value. The tag value can be an empty (null) string. </p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
     /// <p>You cannot have more than one tag on a KMS key with the same tag key. If you specify an existing tag key with a different tag value, KMS replaces the current tag value with the specified one.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
@@ -81,8 +83,9 @@ impl TagResourceInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>One or more tags. </p>
-    /// <p>Each tag consists of a tag key and a tag value. The tag value can be an empty (null) string. </p>
+    /// <p>One or more tags. Each tag consists of a tag key and a tag value. The tag value can be an empty (null) string. </p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
     /// <p>You cannot have more than one tag on a KMS key with the same tag key. If you specify an existing tag key with a different tag value, KMS replaces the current tag value with the specified one.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
@@ -90,8 +93,9 @@ impl TagResourceInputBuilder {
         self.tags = Some(v);
         self
     }
-    /// <p>One or more tags. </p>
-    /// <p>Each tag consists of a tag key and a tag value. The tag value can be an empty (null) string. </p>
+    /// <p>One or more tags. Each tag consists of a tag key and a tag value. The tag value can be an empty (null) string. </p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
     /// <p>You cannot have more than one tag on a KMS key with the same tag key. If you specify an existing tag key with a different tag value, KMS replaces the current tag value with the specified one.</p>
     pub fn set_tags(
         mut self,

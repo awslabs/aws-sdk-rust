@@ -16,8 +16,6 @@ pub struct DescribeInstancesInput {
     /// <li> <p> <code>capacity-reservation-id</code> - The ID of the Capacity Reservation into which the instance was launched.</p> </li>
     /// <li> <p> <code>client-token</code> - The idempotency token you provided when you launched the instance.</p> </li>
     /// <li> <p> <code>dns-name</code> - The public DNS name of the instance.</p> </li>
-    /// <li> <p> <code>group-id</code> - The ID of the security group for the instance. EC2-Classic only.</p> </li>
-    /// <li> <p> <code>group-name</code> - The name of the security group for the instance. EC2-Classic only.</p> </li>
     /// <li> <p> <code>hibernation-options.configured</code> - A Boolean that indicates whether the instance is enabled for hibernation. A value of <code>true</code> means that the instance is enabled for hibernation. </p> </li>
     /// <li> <p> <code>host-id</code> - The ID of the Dedicated Host on which the instance is running, if applicable.</p> </li>
     /// <li> <p> <code>hypervisor</code> - The hypervisor type of the instance (<code>ovm</code> | <code>xen</code>). The value <code>xen</code> is used for both Xen and Nitro hypervisors.</p> </li>
@@ -128,8 +126,6 @@ impl DescribeInstancesInput {
     /// <li> <p> <code>capacity-reservation-id</code> - The ID of the Capacity Reservation into which the instance was launched.</p> </li>
     /// <li> <p> <code>client-token</code> - The idempotency token you provided when you launched the instance.</p> </li>
     /// <li> <p> <code>dns-name</code> - The public DNS name of the instance.</p> </li>
-    /// <li> <p> <code>group-id</code> - The ID of the security group for the instance. EC2-Classic only.</p> </li>
-    /// <li> <p> <code>group-name</code> - The name of the security group for the instance. EC2-Classic only.</p> </li>
     /// <li> <p> <code>hibernation-options.configured</code> - A Boolean that indicates whether the instance is enabled for hibernation. A value of <code>true</code> means that the instance is enabled for hibernation. </p> </li>
     /// <li> <p> <code>host-id</code> - The ID of the Dedicated Host on which the instance is running, if applicable.</p> </li>
     /// <li> <p> <code>hypervisor</code> - The hypervisor type of the instance (<code>ovm</code> | <code>xen</code>). The value <code>xen</code> is used for both Xen and Nitro hypervisors.</p> </li>
@@ -267,8 +263,6 @@ impl DescribeInstancesInputBuilder {
     /// <li> <p> <code>capacity-reservation-id</code> - The ID of the Capacity Reservation into which the instance was launched.</p> </li>
     /// <li> <p> <code>client-token</code> - The idempotency token you provided when you launched the instance.</p> </li>
     /// <li> <p> <code>dns-name</code> - The public DNS name of the instance.</p> </li>
-    /// <li> <p> <code>group-id</code> - The ID of the security group for the instance. EC2-Classic only.</p> </li>
-    /// <li> <p> <code>group-name</code> - The name of the security group for the instance. EC2-Classic only.</p> </li>
     /// <li> <p> <code>hibernation-options.configured</code> - A Boolean that indicates whether the instance is enabled for hibernation. A value of <code>true</code> means that the instance is enabled for hibernation. </p> </li>
     /// <li> <p> <code>host-id</code> - The ID of the Dedicated Host on which the instance is running, if applicable.</p> </li>
     /// <li> <p> <code>hypervisor</code> - The hypervisor type of the instance (<code>ovm</code> | <code>xen</code>). The value <code>xen</code> is used for both Xen and Nitro hypervisors.</p> </li>
@@ -367,8 +361,6 @@ impl DescribeInstancesInputBuilder {
     /// <li> <p> <code>capacity-reservation-id</code> - The ID of the Capacity Reservation into which the instance was launched.</p> </li>
     /// <li> <p> <code>client-token</code> - The idempotency token you provided when you launched the instance.</p> </li>
     /// <li> <p> <code>dns-name</code> - The public DNS name of the instance.</p> </li>
-    /// <li> <p> <code>group-id</code> - The ID of the security group for the instance. EC2-Classic only.</p> </li>
-    /// <li> <p> <code>group-name</code> - The name of the security group for the instance. EC2-Classic only.</p> </li>
     /// <li> <p> <code>hibernation-options.configured</code> - A Boolean that indicates whether the instance is enabled for hibernation. A value of <code>true</code> means that the instance is enabled for hibernation. </p> </li>
     /// <li> <p> <code>host-id</code> - The ID of the Dedicated Host on which the instance is running, if applicable.</p> </li>
     /// <li> <p> <code>hypervisor</code> - The hypervisor type of the instance (<code>ovm</code> | <code>xen</code>). The value <code>xen</code> is used for both Xen and Nitro hypervisors.</p> </li>

@@ -9,81 +9,81 @@ pub fn ser_apns_message(
     if let Some(var_2) = &input.action {
         object.key("Action").string(var_2.as_str());
     }
-    if input.badge != 0 {
+    if let Some(var_3) = &input.badge {
         object.key("Badge").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.badge).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.body {
-        object.key("Body").string(var_3.as_str());
+    if let Some(var_4) = &input.body {
+        object.key("Body").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.category {
-        object.key("Category").string(var_4.as_str());
+    if let Some(var_5) = &input.category {
+        object.key("Category").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.collapse_id {
-        object.key("CollapseId").string(var_5.as_str());
+    if let Some(var_6) = &input.collapse_id {
+        object.key("CollapseId").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.data {
+    if let Some(var_7) = &input.data {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("Data").start_object();
-        for (key_8, value_9) in var_6 {
+        let mut object_8 = object.key("Data").start_object();
+        for (key_9, value_10) in var_7 {
             {
-                object_7.key(key_8.as_str()).string(value_9.as_str());
+                object_8.key(key_9.as_str()).string(value_10.as_str());
             }
         }
-        object_7.finish();
+        object_8.finish();
     }
-    if let Some(var_10) = &input.media_url {
-        object.key("MediaUrl").string(var_10.as_str());
+    if let Some(var_11) = &input.media_url {
+        object.key("MediaUrl").string(var_11.as_str());
     }
-    if let Some(var_11) = &input.preferred_authentication_method {
+    if let Some(var_12) = &input.preferred_authentication_method {
         object
             .key("PreferredAuthenticationMethod")
-            .string(var_11.as_str());
+            .string(var_12.as_str());
     }
-    if let Some(var_12) = &input.priority {
-        object.key("Priority").string(var_12.as_str());
+    if let Some(var_13) = &input.priority {
+        object.key("Priority").string(var_13.as_str());
     }
-    if let Some(var_13) = &input.raw_content {
-        object.key("RawContent").string(var_13.as_str());
+    if let Some(var_14) = &input.raw_content {
+        object.key("RawContent").string(var_14.as_str());
     }
-    if input.silent_push {
-        object.key("SilentPush").boolean(input.silent_push);
+    if let Some(var_15) = &input.silent_push {
+        object.key("SilentPush").boolean(*var_15);
     }
-    if let Some(var_14) = &input.sound {
-        object.key("Sound").string(var_14.as_str());
+    if let Some(var_16) = &input.sound {
+        object.key("Sound").string(var_16.as_str());
     }
-    if let Some(var_15) = &input.substitutions {
+    if let Some(var_17) = &input.substitutions {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("Substitutions").start_object();
-        for (key_17, value_18) in var_15 {
+        let mut object_18 = object.key("Substitutions").start_object();
+        for (key_19, value_20) in var_17 {
             {
-                let mut array_19 = object_16.key(key_17.as_str()).start_array();
-                for item_20 in value_18 {
+                let mut array_21 = object_18.key(key_19.as_str()).start_array();
+                for item_22 in value_20 {
                     {
-                        array_19.value().string(item_20.as_str());
+                        array_21.value().string(item_22.as_str());
                     }
                 }
-                array_19.finish();
+                array_21.finish();
             }
         }
-        object_16.finish();
+        object_18.finish();
     }
-    if let Some(var_21) = &input.thread_id {
-        object.key("ThreadId").string(var_21.as_str());
+    if let Some(var_23) = &input.thread_id {
+        object.key("ThreadId").string(var_23.as_str());
     }
-    if input.time_to_live != 0 {
+    if let Some(var_24) = &input.time_to_live {
         object.key("TimeToLive").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.time_to_live).into()),
+            aws_smithy_types::Number::NegInt((*var_24).into()),
         );
     }
-    if let Some(var_22) = &input.title {
-        object.key("Title").string(var_22.as_str());
+    if let Some(var_25) = &input.title {
+        object.key("Title").string(var_25.as_str());
     }
-    if let Some(var_23) = &input.url {
-        object.key("Url").string(var_23.as_str());
+    if let Some(var_26) = &input.url {
+        object.key("Url").string(var_26.as_str());
     }
     Ok(())
 }

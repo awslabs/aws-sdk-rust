@@ -17,24 +17,29 @@ pub use crate::operation::put_bucket_intelligent_tiering_configuration::_put_buc
 /// </ul> <note>
 /// <p>You only need S3 Intelligent-Tiering enabled on a bucket if you want to automatically move objects stored in the S3 Intelligent-Tiering storage class to the Archive Access or Deep Archive Access tier.</p>
 /// </note>
-/// <p class="title"> <b>Special Errors</b> </p>
-/// <ul>
-/// <li> <p class="title"> <b>HTTP 400 Bad Request Error</b> </p>
-/// <ul>
-/// <li> <p> <i>Code:</i> InvalidArgument</p> </li>
-/// <li> <p> <i>Cause:</i> Invalid Argument</p> </li>
-/// </ul> </li>
-/// <li> <p class="title"> <b>HTTP 400 Bad Request Error</b> </p>
-/// <ul>
-/// <li> <p> <i>Code:</i> TooManyConfigurations</p> </li>
-/// <li> <p> <i>Cause:</i> You are attempting to create a new configuration but have already reached the 1,000-configuration limit. </p> </li>
-/// </ul> </li>
-/// <li> <p class="title"> <b>HTTP 403 Forbidden Error</b> </p>
-/// <ul>
-/// <li> <p> <i>Code:</i> AccessDenied</p> </li>
-/// <li> <p> <i>Cause:</i> You are not the owner of the specified bucket, or you do not have the <code>s3:PutIntelligentTieringConfiguration</code> bucket permission to set the configuration on the bucket. </p> </li>
-/// </ul> </li>
-/// </ul>
+/// <p> <code>PutBucketIntelligentTieringConfiguration</code> has the following special errors:</p>
+/// <dl>
+/// <dt>
+/// HTTP 400 Bad Request Error
+/// </dt>
+/// <dd>
+/// <p> <i>Code:</i> InvalidArgument</p>
+/// <p> <i>Cause:</i> Invalid Argument</p>
+/// </dd>
+/// <dt>
+/// HTTP 400 Bad Request Error
+/// </dt>
+/// <dd>
+/// <p> <i>Code:</i> TooManyConfigurations</p>
+/// <p> <i>Cause:</i> You are attempting to create a new configuration but have already reached the 1,000-configuration limit. </p>
+/// </dd>
+/// <dt>
+/// HTTP 403 Forbidden Error
+/// </dt>
+/// <dd>
+/// <p> <i>Cause:</i> You are not the owner of the specified bucket, or you do not have the <code>s3:PutIntelligentTieringConfiguration</code> bucket permission to set the configuration on the bucket. </p>
+/// </dd>
+/// </dl>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutBucketIntelligentTieringConfigurationFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

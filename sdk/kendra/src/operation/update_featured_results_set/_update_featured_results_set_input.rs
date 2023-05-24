@@ -6,7 +6,7 @@ pub struct UpdateFeaturedResultsSetInput {
     /// <p>The identifier of the index used for featuring results.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the index used for featuring results.</p>
+    /// <p>The identifier of the set of featured results that you want to update.</p>
     #[doc(hidden)]
     pub featured_results_set_id: std::option::Option<std::string::String>,
     /// <p>A new name for the set of featured results.</p>
@@ -30,7 +30,7 @@ impl UpdateFeaturedResultsSetInput {
     pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
-    /// <p>The identifier of the index used for featuring results.</p>
+    /// <p>The identifier of the set of featured results that you want to update.</p>
     pub fn featured_results_set_id(&self) -> std::option::Option<&str> {
         self.featured_results_set_id.as_deref()
     }
@@ -88,12 +88,12 @@ impl UpdateFeaturedResultsSetInputBuilder {
         self.index_id = input;
         self
     }
-    /// <p>The identifier of the index used for featuring results.</p>
+    /// <p>The identifier of the set of featured results that you want to update.</p>
     pub fn featured_results_set_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.featured_results_set_id = Some(input.into());
         self
     }
-    /// <p>The identifier of the index used for featuring results.</p>
+    /// <p>The identifier of the set of featured results that you want to update.</p>
     pub fn set_featured_results_set_id(
         mut self,
         input: std::option::Option<std::string::String>,

@@ -163,13 +163,13 @@ impl CreateServiceFluentBuilder {
         self.inner = self.inner.set_service_registries(input);
         self
     }
-    /// <p>The number of instantiations of the specified task definition to place and keep running on your cluster.</p>
+    /// <p>The number of instantiations of the specified task definition to place and keep running in your service.</p>
     /// <p>This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't specified. If <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't required.</p>
     pub fn desired_count(mut self, input: i32) -> Self {
         self.inner = self.inner.desired_count(input);
         self
     }
-    /// <p>The number of instantiations of the specified task definition to place and keep running on your cluster.</p>
+    /// <p>The number of instantiations of the specified task definition to place and keep running in your service.</p>
     /// <p>This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't specified. If <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't required.</p>
     pub fn set_desired_count(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_desired_count(input);

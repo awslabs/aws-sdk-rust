@@ -12,10 +12,10 @@ pub struct HlsEncryption {
     pub encryption_method: std::option::Option<crate::types::EncryptionMethod>,
     /// Interval (in seconds) between each encryption key rotation.
     #[doc(hidden)]
-    pub key_rotation_interval_seconds: i32,
+    pub key_rotation_interval_seconds: std::option::Option<i32>,
     /// When enabled, the EXT-X-KEY tag will be repeated in output manifests.
     #[doc(hidden)]
-    pub repeat_ext_x_key: bool,
+    pub repeat_ext_x_key: std::option::Option<bool>,
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     #[doc(hidden)]
     pub speke_key_provider: std::option::Option<crate::types::SpekeKeyProvider>,
@@ -30,11 +30,11 @@ impl HlsEncryption {
         self.encryption_method.as_ref()
     }
     /// Interval (in seconds) between each encryption key rotation.
-    pub fn key_rotation_interval_seconds(&self) -> i32 {
+    pub fn key_rotation_interval_seconds(&self) -> std::option::Option<i32> {
         self.key_rotation_interval_seconds
     }
     /// When enabled, the EXT-X-KEY tag will be repeated in output manifests.
-    pub fn repeat_ext_x_key(&self) -> bool {
+    pub fn repeat_ext_x_key(&self) -> std::option::Option<bool> {
         self.repeat_ext_x_key
     }
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
@@ -124,8 +124,8 @@ impl HlsEncryptionBuilder {
         crate::types::HlsEncryption {
             constant_initialization_vector: self.constant_initialization_vector,
             encryption_method: self.encryption_method,
-            key_rotation_interval_seconds: self.key_rotation_interval_seconds.unwrap_or_default(),
-            repeat_ext_x_key: self.repeat_ext_x_key.unwrap_or_default(),
+            key_rotation_interval_seconds: self.key_rotation_interval_seconds,
+            repeat_ext_x_key: self.repeat_ext_x_key,
             speke_key_provider: self.speke_key_provider,
         }
     }

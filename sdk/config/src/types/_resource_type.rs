@@ -21,11 +21,14 @@
 ///     ResourceType::StageV2 => { /* ... */ },
 ///     ResourceType::AppConfigApplication => { /* ... */ },
 ///     ResourceType::AppConfigConfigurationProfile => { /* ... */ },
+///     ResourceType::AppConfigDeploymentStrategy => { /* ... */ },
 ///     ResourceType::AppConfigEnvironment => { /* ... */ },
+///     ResourceType::AppFlowFlow => { /* ... */ },
 ///     ResourceType::AppStreamDirectoryConfig => { /* ... */ },
 ///     ResourceType::AppSyncGraphQlApi => { /* ... */ },
 ///     ResourceType::AthenaDataCatalog => { /* ... */ },
 ///     ResourceType::AthenaWorkGroup => { /* ... */ },
+///     ResourceType::AuditManagerAssessment => { /* ... */ },
 ///     ResourceType::AutoScalingGroup => { /* ... */ },
 ///     ResourceType::LaunchConfiguration => { /* ... */ },
 ///     ResourceType::ScalingPolicy => { /* ... */ },
@@ -45,6 +48,7 @@
 ///     ResourceType::StreamingDistribution => { /* ... */ },
 ///     ResourceType::Trail => { /* ... */ },
 ///     ResourceType::Alarm => { /* ... */ },
+///     ResourceType::CloudWatchMetricStream => { /* ... */ },
 ///     ResourceType::Project => { /* ... */ },
 ///     ResourceType::CodeDeployApplication => { /* ... */ },
 ///     ResourceType::CodeDeployDeploymentConfig => { /* ... */ },
@@ -68,10 +72,13 @@
 ///     ResourceType::DataSyncLocationSmb => { /* ... */ },
 ///     ResourceType::DataSyncTask => { /* ... */ },
 ///     ResourceType::DetectiveGraph => { /* ... */ },
+///     ResourceType::DeviceFarmInstanceProfile => { /* ... */ },
+///     ResourceType::DeviceFarmProject => { /* ... */ },
 ///     ResourceType::DeviceFarmTestGridProject => { /* ... */ },
 ///     ResourceType::Table => { /* ... */ },
 ///     ResourceType::CustomerGateway => { /* ... */ },
 ///     ResourceType::Ec2DhcpOptions => { /* ... */ },
+///     ResourceType::Ec2Ec2Fleet => { /* ... */ },
 ///     ResourceType::Eip => { /* ... */ },
 ///     ResourceType::EgressOnlyInternetGateway => { /* ... */ },
 ///     ResourceType::FlowLog => { /* ... */ },
@@ -89,6 +96,7 @@
 ///     ResourceType::RouteTable => { /* ... */ },
 ///     ResourceType::SecurityGroup => { /* ... */ },
 ///     ResourceType::Subnet => { /* ... */ },
+///     ResourceType::Ec2SubnetRouteTableAssociation => { /* ... */ },
 ///     ResourceType::Ec2TrafficMirrorFilter => { /* ... */ },
 ///     ResourceType::Ec2TrafficMirrorSession => { /* ... */ },
 ///     ResourceType::Ec2TrafficMirrorTarget => { /* ... */ },
@@ -103,6 +111,7 @@
 ///     ResourceType::VpnGateway => { /* ... */ },
 ///     ResourceType::Volume => { /* ... */ },
 ///     ResourceType::EcrPublicRepository => { /* ... */ },
+///     ResourceType::EcrPullThroughCacheRule => { /* ... */ },
 ///     ResourceType::EcrRegistryPolicy => { /* ... */ },
 ///     ResourceType::EcrRepository => { /* ... */ },
 ///     ResourceType::EcsCluster => { /* ... */ },
@@ -143,6 +152,7 @@
 ///     ResourceType::GlueClassifier => { /* ... */ },
 ///     ResourceType::GlueJob => { /* ... */ },
 ///     ResourceType::GlueMlTransform => { /* ... */ },
+///     ResourceType::GroundStationConfig => { /* ... */ },
 ///     ResourceType::GuardDutyDetector => { /* ... */ },
 ///     ResourceType::GuardDutyFilter => { /* ... */ },
 ///     ResourceType::GuardDutyIpSet => { /* ... */ },
@@ -157,11 +167,13 @@
 ///     ResourceType::IvsRecordingConfiguration => { /* ... */ },
 ///     ResourceType::ImageBuilderContainerRecipe => { /* ... */ },
 ///     ResourceType::ImageBuilderDistributionConfiguration => { /* ... */ },
+///     ResourceType::ImageBuilderImagePipeline => { /* ... */ },
 ///     ResourceType::ImageBuilderInfrastructureConfiguration => { /* ... */ },
 ///     ResourceType::IoTAccountAuditConfiguration => { /* ... */ },
 ///     ResourceType::IoTAuthorizer => { /* ... */ },
 ///     ResourceType::IoTCustomMetric => { /* ... */ },
 ///     ResourceType::IoTDimension => { /* ... */ },
+///     ResourceType::IoTFleetMetric => { /* ... */ },
 ///     ResourceType::IoTMitigationAction => { /* ... */ },
 ///     ResourceType::IoTPolicy => { /* ... */ },
 ///     ResourceType::IoTRoleAlias => { /* ... */ },
@@ -182,6 +194,7 @@
 ///     ResourceType::IoTTwinMakerEntity => { /* ... */ },
 ///     ResourceType::IoTTwinMakerScene => { /* ... */ },
 ///     ResourceType::IoTTwinMakerWorkspace => { /* ... */ },
+///     ResourceType::IoTWirelessServiceProfile => { /* ... */ },
 ///     ResourceType::Key => { /* ... */ },
 ///     ResourceType::KinesisStream => { /* ... */ },
 ///     ResourceType::KinesisStreamConsumer => { /* ... */ },
@@ -202,8 +215,14 @@
 ///     ResourceType::NetworkFirewallFirewall => { /* ... */ },
 ///     ResourceType::NetworkFirewallFirewallPolicy => { /* ... */ },
 ///     ResourceType::NetworkFirewallRuleGroup => { /* ... */ },
+///     ResourceType::NetworkManagerDevice => { /* ... */ },
+///     ResourceType::NetworkManagerGlobalNetwork => { /* ... */ },
+///     ResourceType::NetworkManagerLink => { /* ... */ },
+///     ResourceType::NetworkManagerSite => { /* ... */ },
 ///     ResourceType::NetworkManagerTransitGatewayRegistration => { /* ... */ },
 ///     ResourceType::OpenSearchDomain => { /* ... */ },
+///     ResourceType::PanoramaPackage => { /* ... */ },
+///     ResourceType::PinpointApp => { /* ... */ },
 ///     ResourceType::PinpointApplicationSettings => { /* ... */ },
 ///     ResourceType::PinpointSegment => { /* ... */ },
 ///     ResourceType::QldbLedger => { /* ... */ },
@@ -222,6 +241,7 @@
 ///     ResourceType::ClusterSnapshot => { /* ... */ },
 ///     ResourceType::ClusterSubnetGroup => { /* ... */ },
 ///     ResourceType::RedshiftEventSubscription => { /* ... */ },
+///     ResourceType::RedshiftScheduledAction => { /* ... */ },
 ///     ResourceType::ResilienceHubResiliencyPolicy => { /* ... */ },
 ///     ResourceType::RoboMakerRobotApplication => { /* ... */ },
 ///     ResourceType::RoboMakerRobotApplicationVersion => { /* ... */ },
@@ -236,6 +256,7 @@
 ///     ResourceType::Route53RecoveryReadinessRecoveryGroup => { /* ... */ },
 ///     ResourceType::Route53RecoveryReadinessResourceSet => { /* ... */ },
 ///     ResourceType::Route53ResolverFirewallDomainList => { /* ... */ },
+///     ResourceType::Route53ResolverFirewallRuleGroupAssociation => { /* ... */ },
 ///     ResourceType::Route53ResolverResolverEndpoint => { /* ... */ },
 ///     ResourceType::Route53ResolverResolverRule => { /* ... */ },
 ///     ResourceType::Route53ResolverResolverRuleAssociation => { /* ... */ },
@@ -254,7 +275,9 @@
 ///     ResourceType::FileData => { /* ... */ },
 ///     ResourceType::ManagedInstanceInventory => { /* ... */ },
 ///     ResourceType::PatchCompliance => { /* ... */ },
+///     ResourceType::SageMakerAppImageConfig => { /* ... */ },
 ///     ResourceType::SageMakerCodeRepository => { /* ... */ },
+///     ResourceType::SageMakerImage => { /* ... */ },
 ///     ResourceType::SageMakerModel => { /* ... */ },
 ///     ResourceType::SageMakerNotebookInstanceLifecycleConfig => { /* ... */ },
 ///     ResourceType::SageMakerWorkteam => { /* ... */ },
@@ -338,7 +361,11 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AppConfigConfigurationProfile,
     #[allow(missing_docs)] // documentation missing in model
+    AppConfigDeploymentStrategy,
+    #[allow(missing_docs)] // documentation missing in model
     AppConfigEnvironment,
+    #[allow(missing_docs)] // documentation missing in model
+    AppFlowFlow,
     #[allow(missing_docs)] // documentation missing in model
     AppStreamDirectoryConfig,
     #[allow(missing_docs)] // documentation missing in model
@@ -347,6 +374,8 @@ pub enum ResourceType {
     AthenaDataCatalog,
     #[allow(missing_docs)] // documentation missing in model
     AthenaWorkGroup,
+    #[allow(missing_docs)] // documentation missing in model
+    AuditManagerAssessment,
     #[allow(missing_docs)] // documentation missing in model
     AutoScalingGroup,
     #[allow(missing_docs)] // documentation missing in model
@@ -385,6 +414,8 @@ pub enum ResourceType {
     Trail,
     #[allow(missing_docs)] // documentation missing in model
     Alarm,
+    #[allow(missing_docs)] // documentation missing in model
+    CloudWatchMetricStream,
     #[allow(missing_docs)] // documentation missing in model
     Project,
     #[allow(missing_docs)] // documentation missing in model
@@ -432,6 +463,10 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     DetectiveGraph,
     #[allow(missing_docs)] // documentation missing in model
+    DeviceFarmInstanceProfile,
+    #[allow(missing_docs)] // documentation missing in model
+    DeviceFarmProject,
+    #[allow(missing_docs)] // documentation missing in model
     DeviceFarmTestGridProject,
     #[allow(missing_docs)] // documentation missing in model
     Table,
@@ -439,6 +474,8 @@ pub enum ResourceType {
     CustomerGateway,
     #[allow(missing_docs)] // documentation missing in model
     Ec2DhcpOptions,
+    #[allow(missing_docs)] // documentation missing in model
+    Ec2Ec2Fleet,
     #[allow(missing_docs)] // documentation missing in model
     Eip,
     #[allow(missing_docs)] // documentation missing in model
@@ -474,6 +511,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Subnet,
     #[allow(missing_docs)] // documentation missing in model
+    Ec2SubnetRouteTableAssociation,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2TrafficMirrorFilter,
     #[allow(missing_docs)] // documentation missing in model
     Ec2TrafficMirrorSession,
@@ -501,6 +540,8 @@ pub enum ResourceType {
     Volume,
     #[allow(missing_docs)] // documentation missing in model
     EcrPublicRepository,
+    #[allow(missing_docs)] // documentation missing in model
+    EcrPullThroughCacheRule,
     #[allow(missing_docs)] // documentation missing in model
     EcrRegistryPolicy,
     #[allow(missing_docs)] // documentation missing in model
@@ -582,6 +623,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     GlueMlTransform,
     #[allow(missing_docs)] // documentation missing in model
+    GroundStationConfig,
+    #[allow(missing_docs)] // documentation missing in model
     GuardDutyDetector,
     #[allow(missing_docs)] // documentation missing in model
     GuardDutyFilter,
@@ -610,6 +653,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     ImageBuilderDistributionConfiguration,
     #[allow(missing_docs)] // documentation missing in model
+    ImageBuilderImagePipeline,
+    #[allow(missing_docs)] // documentation missing in model
     ImageBuilderInfrastructureConfiguration,
     #[allow(missing_docs)] // documentation missing in model
     IoTAccountAuditConfiguration,
@@ -619,6 +664,8 @@ pub enum ResourceType {
     IoTCustomMetric,
     #[allow(missing_docs)] // documentation missing in model
     IoTDimension,
+    #[allow(missing_docs)] // documentation missing in model
+    IoTFleetMetric,
     #[allow(missing_docs)] // documentation missing in model
     IoTMitigationAction,
     #[allow(missing_docs)] // documentation missing in model
@@ -660,6 +707,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     IoTTwinMakerWorkspace,
     #[allow(missing_docs)] // documentation missing in model
+    IoTWirelessServiceProfile,
+    #[allow(missing_docs)] // documentation missing in model
     Key,
     #[allow(missing_docs)] // documentation missing in model
     KinesisStream,
@@ -700,9 +749,21 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     NetworkFirewallRuleGroup,
     #[allow(missing_docs)] // documentation missing in model
+    NetworkManagerDevice,
+    #[allow(missing_docs)] // documentation missing in model
+    NetworkManagerGlobalNetwork,
+    #[allow(missing_docs)] // documentation missing in model
+    NetworkManagerLink,
+    #[allow(missing_docs)] // documentation missing in model
+    NetworkManagerSite,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkManagerTransitGatewayRegistration,
     #[allow(missing_docs)] // documentation missing in model
     OpenSearchDomain,
+    #[allow(missing_docs)] // documentation missing in model
+    PanoramaPackage,
+    #[allow(missing_docs)] // documentation missing in model
+    PinpointApp,
     #[allow(missing_docs)] // documentation missing in model
     PinpointApplicationSettings,
     #[allow(missing_docs)] // documentation missing in model
@@ -740,6 +801,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     RedshiftEventSubscription,
     #[allow(missing_docs)] // documentation missing in model
+    RedshiftScheduledAction,
+    #[allow(missing_docs)] // documentation missing in model
     ResilienceHubResiliencyPolicy,
     #[allow(missing_docs)] // documentation missing in model
     RoboMakerRobotApplication,
@@ -767,6 +830,8 @@ pub enum ResourceType {
     Route53RecoveryReadinessResourceSet,
     #[allow(missing_docs)] // documentation missing in model
     Route53ResolverFirewallDomainList,
+    #[allow(missing_docs)] // documentation missing in model
+    Route53ResolverFirewallRuleGroupAssociation,
     #[allow(missing_docs)] // documentation missing in model
     Route53ResolverResolverEndpoint,
     #[allow(missing_docs)] // documentation missing in model
@@ -804,7 +869,11 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     PatchCompliance,
     #[allow(missing_docs)] // documentation missing in model
+    SageMakerAppImageConfig,
+    #[allow(missing_docs)] // documentation missing in model
     SageMakerCodeRepository,
+    #[allow(missing_docs)] // documentation missing in model
+    SageMakerImage,
     #[allow(missing_docs)] // documentation missing in model
     SageMakerModel,
     #[allow(missing_docs)] // documentation missing in model
@@ -882,11 +951,14 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::ApiGatewayV2::Stage" => ResourceType::StageV2,
             "AWS::AppConfig::Application" => ResourceType::AppConfigApplication,
             "AWS::AppConfig::ConfigurationProfile" => ResourceType::AppConfigConfigurationProfile,
+            "AWS::AppConfig::DeploymentStrategy" => ResourceType::AppConfigDeploymentStrategy,
             "AWS::AppConfig::Environment" => ResourceType::AppConfigEnvironment,
+            "AWS::AppFlow::Flow" => ResourceType::AppFlowFlow,
             "AWS::AppStream::DirectoryConfig" => ResourceType::AppStreamDirectoryConfig,
             "AWS::AppSync::GraphQLApi" => ResourceType::AppSyncGraphQlApi,
             "AWS::Athena::DataCatalog" => ResourceType::AthenaDataCatalog,
             "AWS::Athena::WorkGroup" => ResourceType::AthenaWorkGroup,
+            "AWS::AuditManager::Assessment" => ResourceType::AuditManagerAssessment,
             "AWS::AutoScaling::AutoScalingGroup" => ResourceType::AutoScalingGroup,
             "AWS::AutoScaling::LaunchConfiguration" => ResourceType::LaunchConfiguration,
             "AWS::AutoScaling::ScalingPolicy" => ResourceType::ScalingPolicy,
@@ -906,6 +978,7 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::CloudFront::StreamingDistribution" => ResourceType::StreamingDistribution,
             "AWS::CloudTrail::Trail" => ResourceType::Trail,
             "AWS::CloudWatch::Alarm" => ResourceType::Alarm,
+            "AWS::CloudWatch::MetricStream" => ResourceType::CloudWatchMetricStream,
             "AWS::CodeBuild::Project" => ResourceType::Project,
             "AWS::CodeDeploy::Application" => ResourceType::CodeDeployApplication,
             "AWS::CodeDeploy::DeploymentConfig" => ResourceType::CodeDeployDeploymentConfig,
@@ -931,10 +1004,13 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::DataSync::LocationSMB" => ResourceType::DataSyncLocationSmb,
             "AWS::DataSync::Task" => ResourceType::DataSyncTask,
             "AWS::Detective::Graph" => ResourceType::DetectiveGraph,
+            "AWS::DeviceFarm::InstanceProfile" => ResourceType::DeviceFarmInstanceProfile,
+            "AWS::DeviceFarm::Project" => ResourceType::DeviceFarmProject,
             "AWS::DeviceFarm::TestGridProject" => ResourceType::DeviceFarmTestGridProject,
             "AWS::DynamoDB::Table" => ResourceType::Table,
             "AWS::EC2::CustomerGateway" => ResourceType::CustomerGateway,
             "AWS::EC2::DHCPOptions" => ResourceType::Ec2DhcpOptions,
+            "AWS::EC2::EC2Fleet" => ResourceType::Ec2Ec2Fleet,
             "AWS::EC2::EIP" => ResourceType::Eip,
             "AWS::EC2::EgressOnlyInternetGateway" => ResourceType::EgressOnlyInternetGateway,
             "AWS::EC2::FlowLog" => ResourceType::FlowLog,
@@ -954,6 +1030,7 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::EC2::RouteTable" => ResourceType::RouteTable,
             "AWS::EC2::SecurityGroup" => ResourceType::SecurityGroup,
             "AWS::EC2::Subnet" => ResourceType::Subnet,
+            "AWS::EC2::SubnetRouteTableAssociation" => ResourceType::Ec2SubnetRouteTableAssociation,
             "AWS::EC2::TrafficMirrorFilter" => ResourceType::Ec2TrafficMirrorFilter,
             "AWS::EC2::TrafficMirrorSession" => ResourceType::Ec2TrafficMirrorSession,
             "AWS::EC2::TrafficMirrorTarget" => ResourceType::Ec2TrafficMirrorTarget,
@@ -968,6 +1045,7 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::EC2::VPNGateway" => ResourceType::VpnGateway,
             "AWS::EC2::Volume" => ResourceType::Volume,
             "AWS::ECR::PublicRepository" => ResourceType::EcrPublicRepository,
+            "AWS::ECR::PullThroughCacheRule" => ResourceType::EcrPullThroughCacheRule,
             "AWS::ECR::RegistryPolicy" => ResourceType::EcrRegistryPolicy,
             "AWS::ECR::Repository" => ResourceType::EcrRepository,
             "AWS::ECS::Cluster" => ResourceType::EcsCluster,
@@ -1008,6 +1086,7 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::Glue::Classifier" => ResourceType::GlueClassifier,
             "AWS::Glue::Job" => ResourceType::GlueJob,
             "AWS::Glue::MLTransform" => ResourceType::GlueMlTransform,
+            "AWS::GroundStation::Config" => ResourceType::GroundStationConfig,
             "AWS::GuardDuty::Detector" => ResourceType::GuardDutyDetector,
             "AWS::GuardDuty::Filter" => ResourceType::GuardDutyFilter,
             "AWS::GuardDuty::IPSet" => ResourceType::GuardDutyIpSet,
@@ -1024,6 +1103,7 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::ImageBuilder::DistributionConfiguration" => {
                 ResourceType::ImageBuilderDistributionConfiguration
             }
+            "AWS::ImageBuilder::ImagePipeline" => ResourceType::ImageBuilderImagePipeline,
             "AWS::ImageBuilder::InfrastructureConfiguration" => {
                 ResourceType::ImageBuilderInfrastructureConfiguration
             }
@@ -1031,6 +1111,7 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::IoT::Authorizer" => ResourceType::IoTAuthorizer,
             "AWS::IoT::CustomMetric" => ResourceType::IoTCustomMetric,
             "AWS::IoT::Dimension" => ResourceType::IoTDimension,
+            "AWS::IoT::FleetMetric" => ResourceType::IoTFleetMetric,
             "AWS::IoT::MitigationAction" => ResourceType::IoTMitigationAction,
             "AWS::IoT::Policy" => ResourceType::IoTPolicy,
             "AWS::IoT::RoleAlias" => ResourceType::IoTRoleAlias,
@@ -1051,6 +1132,7 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::IoTTwinMaker::Entity" => ResourceType::IoTTwinMakerEntity,
             "AWS::IoTTwinMaker::Scene" => ResourceType::IoTTwinMakerScene,
             "AWS::IoTTwinMaker::Workspace" => ResourceType::IoTTwinMakerWorkspace,
+            "AWS::IoTWireless::ServiceProfile" => ResourceType::IoTWirelessServiceProfile,
             "AWS::KMS::Key" => ResourceType::Key,
             "AWS::Kinesis::Stream" => ResourceType::KinesisStream,
             "AWS::Kinesis::StreamConsumer" => ResourceType::KinesisStreamConsumer,
@@ -1073,10 +1155,16 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::NetworkFirewall::Firewall" => ResourceType::NetworkFirewallFirewall,
             "AWS::NetworkFirewall::FirewallPolicy" => ResourceType::NetworkFirewallFirewallPolicy,
             "AWS::NetworkFirewall::RuleGroup" => ResourceType::NetworkFirewallRuleGroup,
+            "AWS::NetworkManager::Device" => ResourceType::NetworkManagerDevice,
+            "AWS::NetworkManager::GlobalNetwork" => ResourceType::NetworkManagerGlobalNetwork,
+            "AWS::NetworkManager::Link" => ResourceType::NetworkManagerLink,
+            "AWS::NetworkManager::Site" => ResourceType::NetworkManagerSite,
             "AWS::NetworkManager::TransitGatewayRegistration" => {
                 ResourceType::NetworkManagerTransitGatewayRegistration
             }
             "AWS::OpenSearch::Domain" => ResourceType::OpenSearchDomain,
+            "AWS::Panorama::Package" => ResourceType::PanoramaPackage,
+            "AWS::Pinpoint::App" => ResourceType::PinpointApp,
             "AWS::Pinpoint::ApplicationSettings" => ResourceType::PinpointApplicationSettings,
             "AWS::Pinpoint::Segment" => ResourceType::PinpointSegment,
             "AWS::QLDB::Ledger" => ResourceType::QldbLedger,
@@ -1095,6 +1183,7 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::Redshift::ClusterSnapshot" => ResourceType::ClusterSnapshot,
             "AWS::Redshift::ClusterSubnetGroup" => ResourceType::ClusterSubnetGroup,
             "AWS::Redshift::EventSubscription" => ResourceType::RedshiftEventSubscription,
+            "AWS::Redshift::ScheduledAction" => ResourceType::RedshiftScheduledAction,
             "AWS::ResilienceHub::ResiliencyPolicy" => ResourceType::ResilienceHubResiliencyPolicy,
             "AWS::RoboMaker::RobotApplication" => ResourceType::RoboMakerRobotApplication,
             "AWS::RoboMaker::RobotApplicationVersion" => {
@@ -1125,6 +1214,9 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::Route53Resolver::FirewallDomainList" => {
                 ResourceType::Route53ResolverFirewallDomainList
             }
+            "AWS::Route53Resolver::FirewallRuleGroupAssociation" => {
+                ResourceType::Route53ResolverFirewallRuleGroupAssociation
+            }
             "AWS::Route53Resolver::ResolverEndpoint" => {
                 ResourceType::Route53ResolverResolverEndpoint
             }
@@ -1147,7 +1239,9 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::SSM::FileData" => ResourceType::FileData,
             "AWS::SSM::ManagedInstanceInventory" => ResourceType::ManagedInstanceInventory,
             "AWS::SSM::PatchCompliance" => ResourceType::PatchCompliance,
+            "AWS::SageMaker::AppImageConfig" => ResourceType::SageMakerAppImageConfig,
             "AWS::SageMaker::CodeRepository" => ResourceType::SageMakerCodeRepository,
+            "AWS::SageMaker::Image" => ResourceType::SageMakerImage,
             "AWS::SageMaker::Model" => ResourceType::SageMakerModel,
             "AWS::SageMaker::NotebookInstanceLifecycleConfig" => {
                 ResourceType::SageMakerNotebookInstanceLifecycleConfig
@@ -1211,11 +1305,14 @@ impl ResourceType {
             ResourceType::StageV2 => "AWS::ApiGatewayV2::Stage",
             ResourceType::AppConfigApplication => "AWS::AppConfig::Application",
             ResourceType::AppConfigConfigurationProfile => "AWS::AppConfig::ConfigurationProfile",
+            ResourceType::AppConfigDeploymentStrategy => "AWS::AppConfig::DeploymentStrategy",
             ResourceType::AppConfigEnvironment => "AWS::AppConfig::Environment",
+            ResourceType::AppFlowFlow => "AWS::AppFlow::Flow",
             ResourceType::AppStreamDirectoryConfig => "AWS::AppStream::DirectoryConfig",
             ResourceType::AppSyncGraphQlApi => "AWS::AppSync::GraphQLApi",
             ResourceType::AthenaDataCatalog => "AWS::Athena::DataCatalog",
             ResourceType::AthenaWorkGroup => "AWS::Athena::WorkGroup",
+            ResourceType::AuditManagerAssessment => "AWS::AuditManager::Assessment",
             ResourceType::AutoScalingGroup => "AWS::AutoScaling::AutoScalingGroup",
             ResourceType::LaunchConfiguration => "AWS::AutoScaling::LaunchConfiguration",
             ResourceType::ScalingPolicy => "AWS::AutoScaling::ScalingPolicy",
@@ -1235,6 +1332,7 @@ impl ResourceType {
             ResourceType::StreamingDistribution => "AWS::CloudFront::StreamingDistribution",
             ResourceType::Trail => "AWS::CloudTrail::Trail",
             ResourceType::Alarm => "AWS::CloudWatch::Alarm",
+            ResourceType::CloudWatchMetricStream => "AWS::CloudWatch::MetricStream",
             ResourceType::Project => "AWS::CodeBuild::Project",
             ResourceType::CodeDeployApplication => "AWS::CodeDeploy::Application",
             ResourceType::CodeDeployDeploymentConfig => "AWS::CodeDeploy::DeploymentConfig",
@@ -1260,10 +1358,13 @@ impl ResourceType {
             ResourceType::DataSyncLocationSmb => "AWS::DataSync::LocationSMB",
             ResourceType::DataSyncTask => "AWS::DataSync::Task",
             ResourceType::DetectiveGraph => "AWS::Detective::Graph",
+            ResourceType::DeviceFarmInstanceProfile => "AWS::DeviceFarm::InstanceProfile",
+            ResourceType::DeviceFarmProject => "AWS::DeviceFarm::Project",
             ResourceType::DeviceFarmTestGridProject => "AWS::DeviceFarm::TestGridProject",
             ResourceType::Table => "AWS::DynamoDB::Table",
             ResourceType::CustomerGateway => "AWS::EC2::CustomerGateway",
             ResourceType::Ec2DhcpOptions => "AWS::EC2::DHCPOptions",
+            ResourceType::Ec2Ec2Fleet => "AWS::EC2::EC2Fleet",
             ResourceType::Eip => "AWS::EC2::EIP",
             ResourceType::EgressOnlyInternetGateway => "AWS::EC2::EgressOnlyInternetGateway",
             ResourceType::FlowLog => "AWS::EC2::FlowLog",
@@ -1283,6 +1384,7 @@ impl ResourceType {
             ResourceType::RouteTable => "AWS::EC2::RouteTable",
             ResourceType::SecurityGroup => "AWS::EC2::SecurityGroup",
             ResourceType::Subnet => "AWS::EC2::Subnet",
+            ResourceType::Ec2SubnetRouteTableAssociation => "AWS::EC2::SubnetRouteTableAssociation",
             ResourceType::Ec2TrafficMirrorFilter => "AWS::EC2::TrafficMirrorFilter",
             ResourceType::Ec2TrafficMirrorSession => "AWS::EC2::TrafficMirrorSession",
             ResourceType::Ec2TrafficMirrorTarget => "AWS::EC2::TrafficMirrorTarget",
@@ -1297,6 +1399,7 @@ impl ResourceType {
             ResourceType::VpnGateway => "AWS::EC2::VPNGateway",
             ResourceType::Volume => "AWS::EC2::Volume",
             ResourceType::EcrPublicRepository => "AWS::ECR::PublicRepository",
+            ResourceType::EcrPullThroughCacheRule => "AWS::ECR::PullThroughCacheRule",
             ResourceType::EcrRegistryPolicy => "AWS::ECR::RegistryPolicy",
             ResourceType::EcrRepository => "AWS::ECR::Repository",
             ResourceType::EcsCluster => "AWS::ECS::Cluster",
@@ -1337,6 +1440,7 @@ impl ResourceType {
             ResourceType::GlueClassifier => "AWS::Glue::Classifier",
             ResourceType::GlueJob => "AWS::Glue::Job",
             ResourceType::GlueMlTransform => "AWS::Glue::MLTransform",
+            ResourceType::GroundStationConfig => "AWS::GroundStation::Config",
             ResourceType::GuardDutyDetector => "AWS::GuardDuty::Detector",
             ResourceType::GuardDutyFilter => "AWS::GuardDuty::Filter",
             ResourceType::GuardDutyIpSet => "AWS::GuardDuty::IPSet",
@@ -1353,6 +1457,7 @@ impl ResourceType {
             ResourceType::ImageBuilderDistributionConfiguration => {
                 "AWS::ImageBuilder::DistributionConfiguration"
             }
+            ResourceType::ImageBuilderImagePipeline => "AWS::ImageBuilder::ImagePipeline",
             ResourceType::ImageBuilderInfrastructureConfiguration => {
                 "AWS::ImageBuilder::InfrastructureConfiguration"
             }
@@ -1360,6 +1465,7 @@ impl ResourceType {
             ResourceType::IoTAuthorizer => "AWS::IoT::Authorizer",
             ResourceType::IoTCustomMetric => "AWS::IoT::CustomMetric",
             ResourceType::IoTDimension => "AWS::IoT::Dimension",
+            ResourceType::IoTFleetMetric => "AWS::IoT::FleetMetric",
             ResourceType::IoTMitigationAction => "AWS::IoT::MitigationAction",
             ResourceType::IoTPolicy => "AWS::IoT::Policy",
             ResourceType::IoTRoleAlias => "AWS::IoT::RoleAlias",
@@ -1380,6 +1486,7 @@ impl ResourceType {
             ResourceType::IoTTwinMakerEntity => "AWS::IoTTwinMaker::Entity",
             ResourceType::IoTTwinMakerScene => "AWS::IoTTwinMaker::Scene",
             ResourceType::IoTTwinMakerWorkspace => "AWS::IoTTwinMaker::Workspace",
+            ResourceType::IoTWirelessServiceProfile => "AWS::IoTWireless::ServiceProfile",
             ResourceType::Key => "AWS::KMS::Key",
             ResourceType::KinesisStream => "AWS::Kinesis::Stream",
             ResourceType::KinesisStreamConsumer => "AWS::Kinesis::StreamConsumer",
@@ -1402,10 +1509,16 @@ impl ResourceType {
             ResourceType::NetworkFirewallFirewall => "AWS::NetworkFirewall::Firewall",
             ResourceType::NetworkFirewallFirewallPolicy => "AWS::NetworkFirewall::FirewallPolicy",
             ResourceType::NetworkFirewallRuleGroup => "AWS::NetworkFirewall::RuleGroup",
+            ResourceType::NetworkManagerDevice => "AWS::NetworkManager::Device",
+            ResourceType::NetworkManagerGlobalNetwork => "AWS::NetworkManager::GlobalNetwork",
+            ResourceType::NetworkManagerLink => "AWS::NetworkManager::Link",
+            ResourceType::NetworkManagerSite => "AWS::NetworkManager::Site",
             ResourceType::NetworkManagerTransitGatewayRegistration => {
                 "AWS::NetworkManager::TransitGatewayRegistration"
             }
             ResourceType::OpenSearchDomain => "AWS::OpenSearch::Domain",
+            ResourceType::PanoramaPackage => "AWS::Panorama::Package",
+            ResourceType::PinpointApp => "AWS::Pinpoint::App",
             ResourceType::PinpointApplicationSettings => "AWS::Pinpoint::ApplicationSettings",
             ResourceType::PinpointSegment => "AWS::Pinpoint::Segment",
             ResourceType::QldbLedger => "AWS::QLDB::Ledger",
@@ -1424,6 +1537,7 @@ impl ResourceType {
             ResourceType::ClusterSnapshot => "AWS::Redshift::ClusterSnapshot",
             ResourceType::ClusterSubnetGroup => "AWS::Redshift::ClusterSubnetGroup",
             ResourceType::RedshiftEventSubscription => "AWS::Redshift::EventSubscription",
+            ResourceType::RedshiftScheduledAction => "AWS::Redshift::ScheduledAction",
             ResourceType::ResilienceHubResiliencyPolicy => "AWS::ResilienceHub::ResiliencyPolicy",
             ResourceType::RoboMakerRobotApplication => "AWS::RoboMaker::RobotApplication",
             ResourceType::RoboMakerRobotApplicationVersion => {
@@ -1454,6 +1568,9 @@ impl ResourceType {
             ResourceType::Route53ResolverFirewallDomainList => {
                 "AWS::Route53Resolver::FirewallDomainList"
             }
+            ResourceType::Route53ResolverFirewallRuleGroupAssociation => {
+                "AWS::Route53Resolver::FirewallRuleGroupAssociation"
+            }
             ResourceType::Route53ResolverResolverEndpoint => {
                 "AWS::Route53Resolver::ResolverEndpoint"
             }
@@ -1476,7 +1593,9 @@ impl ResourceType {
             ResourceType::FileData => "AWS::SSM::FileData",
             ResourceType::ManagedInstanceInventory => "AWS::SSM::ManagedInstanceInventory",
             ResourceType::PatchCompliance => "AWS::SSM::PatchCompliance",
+            ResourceType::SageMakerAppImageConfig => "AWS::SageMaker::AppImageConfig",
             ResourceType::SageMakerCodeRepository => "AWS::SageMaker::CodeRepository",
+            ResourceType::SageMakerImage => "AWS::SageMaker::Image",
             ResourceType::SageMakerModel => "AWS::SageMaker::Model",
             ResourceType::SageMakerNotebookInstanceLifecycleConfig => {
                 "AWS::SageMaker::NotebookInstanceLifecycleConfig"
@@ -1529,11 +1648,14 @@ impl ResourceType {
             "AWS::ApiGatewayV2::Stage",
             "AWS::AppConfig::Application",
             "AWS::AppConfig::ConfigurationProfile",
+            "AWS::AppConfig::DeploymentStrategy",
             "AWS::AppConfig::Environment",
+            "AWS::AppFlow::Flow",
             "AWS::AppStream::DirectoryConfig",
             "AWS::AppSync::GraphQLApi",
             "AWS::Athena::DataCatalog",
             "AWS::Athena::WorkGroup",
+            "AWS::AuditManager::Assessment",
             "AWS::AutoScaling::AutoScalingGroup",
             "AWS::AutoScaling::LaunchConfiguration",
             "AWS::AutoScaling::ScalingPolicy",
@@ -1553,6 +1675,7 @@ impl ResourceType {
             "AWS::CloudFront::StreamingDistribution",
             "AWS::CloudTrail::Trail",
             "AWS::CloudWatch::Alarm",
+            "AWS::CloudWatch::MetricStream",
             "AWS::CodeBuild::Project",
             "AWS::CodeDeploy::Application",
             "AWS::CodeDeploy::DeploymentConfig",
@@ -1576,10 +1699,13 @@ impl ResourceType {
             "AWS::DataSync::LocationSMB",
             "AWS::DataSync::Task",
             "AWS::Detective::Graph",
+            "AWS::DeviceFarm::InstanceProfile",
+            "AWS::DeviceFarm::Project",
             "AWS::DeviceFarm::TestGridProject",
             "AWS::DynamoDB::Table",
             "AWS::EC2::CustomerGateway",
             "AWS::EC2::DHCPOptions",
+            "AWS::EC2::EC2Fleet",
             "AWS::EC2::EIP",
             "AWS::EC2::EgressOnlyInternetGateway",
             "AWS::EC2::FlowLog",
@@ -1597,6 +1723,7 @@ impl ResourceType {
             "AWS::EC2::RouteTable",
             "AWS::EC2::SecurityGroup",
             "AWS::EC2::Subnet",
+            "AWS::EC2::SubnetRouteTableAssociation",
             "AWS::EC2::TrafficMirrorFilter",
             "AWS::EC2::TrafficMirrorSession",
             "AWS::EC2::TrafficMirrorTarget",
@@ -1611,6 +1738,7 @@ impl ResourceType {
             "AWS::EC2::VPNGateway",
             "AWS::EC2::Volume",
             "AWS::ECR::PublicRepository",
+            "AWS::ECR::PullThroughCacheRule",
             "AWS::ECR::RegistryPolicy",
             "AWS::ECR::Repository",
             "AWS::ECS::Cluster",
@@ -1651,6 +1779,7 @@ impl ResourceType {
             "AWS::Glue::Classifier",
             "AWS::Glue::Job",
             "AWS::Glue::MLTransform",
+            "AWS::GroundStation::Config",
             "AWS::GuardDuty::Detector",
             "AWS::GuardDuty::Filter",
             "AWS::GuardDuty::IPSet",
@@ -1665,11 +1794,13 @@ impl ResourceType {
             "AWS::IVS::RecordingConfiguration",
             "AWS::ImageBuilder::ContainerRecipe",
             "AWS::ImageBuilder::DistributionConfiguration",
+            "AWS::ImageBuilder::ImagePipeline",
             "AWS::ImageBuilder::InfrastructureConfiguration",
             "AWS::IoT::AccountAuditConfiguration",
             "AWS::IoT::Authorizer",
             "AWS::IoT::CustomMetric",
             "AWS::IoT::Dimension",
+            "AWS::IoT::FleetMetric",
             "AWS::IoT::MitigationAction",
             "AWS::IoT::Policy",
             "AWS::IoT::RoleAlias",
@@ -1690,6 +1821,7 @@ impl ResourceType {
             "AWS::IoTTwinMaker::Entity",
             "AWS::IoTTwinMaker::Scene",
             "AWS::IoTTwinMaker::Workspace",
+            "AWS::IoTWireless::ServiceProfile",
             "AWS::KMS::Key",
             "AWS::Kinesis::Stream",
             "AWS::Kinesis::StreamConsumer",
@@ -1710,8 +1842,14 @@ impl ResourceType {
             "AWS::NetworkFirewall::Firewall",
             "AWS::NetworkFirewall::FirewallPolicy",
             "AWS::NetworkFirewall::RuleGroup",
+            "AWS::NetworkManager::Device",
+            "AWS::NetworkManager::GlobalNetwork",
+            "AWS::NetworkManager::Link",
+            "AWS::NetworkManager::Site",
             "AWS::NetworkManager::TransitGatewayRegistration",
             "AWS::OpenSearch::Domain",
+            "AWS::Panorama::Package",
+            "AWS::Pinpoint::App",
             "AWS::Pinpoint::ApplicationSettings",
             "AWS::Pinpoint::Segment",
             "AWS::QLDB::Ledger",
@@ -1730,6 +1868,7 @@ impl ResourceType {
             "AWS::Redshift::ClusterSnapshot",
             "AWS::Redshift::ClusterSubnetGroup",
             "AWS::Redshift::EventSubscription",
+            "AWS::Redshift::ScheduledAction",
             "AWS::ResilienceHub::ResiliencyPolicy",
             "AWS::RoboMaker::RobotApplication",
             "AWS::RoboMaker::RobotApplicationVersion",
@@ -1744,6 +1883,7 @@ impl ResourceType {
             "AWS::Route53RecoveryReadiness::RecoveryGroup",
             "AWS::Route53RecoveryReadiness::ResourceSet",
             "AWS::Route53Resolver::FirewallDomainList",
+            "AWS::Route53Resolver::FirewallRuleGroupAssociation",
             "AWS::Route53Resolver::ResolverEndpoint",
             "AWS::Route53Resolver::ResolverRule",
             "AWS::Route53Resolver::ResolverRuleAssociation",
@@ -1762,7 +1902,9 @@ impl ResourceType {
             "AWS::SSM::FileData",
             "AWS::SSM::ManagedInstanceInventory",
             "AWS::SSM::PatchCompliance",
+            "AWS::SageMaker::AppImageConfig",
             "AWS::SageMaker::CodeRepository",
+            "AWS::SageMaker::Image",
             "AWS::SageMaker::Model",
             "AWS::SageMaker::NotebookInstanceLifecycleConfig",
             "AWS::SageMaker::Workteam",

@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_resource_sets::builders::ListResourceSetsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::operation::list_resource_sets::builders::ListResourceSetsFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_resource_sets::builders::ListResourceSetsFluentBuilder::set_max_results): <p>The number of objects that you want to return with this call.</p>
+    ///   - [`max_results(i32)`](crate::operation::list_resource_sets::builders::ListResourceSetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_resource_sets::builders::ListResourceSetsFluentBuilder::set_max_results): <p>The number of objects that you want to return with this call.</p>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_resource_sets::builders::ListResourceSetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_resource_sets::builders::ListResourceSetsFluentBuilder::set_next_token): <p>The token that identifies which batch of results you want to see.</p>
     /// - On success, responds with [`ListResourceSetsOutput`](crate::operation::list_resource_sets::ListResourceSetsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_resource_sets::ListResourceSetsOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>

@@ -45,6 +45,22 @@ pub fn de_describe_trusted_advisor_checks_http_error(
                                                     }
             tmp
         }),
+        "ThrottlingException" => crate::operation::describe_trusted_advisor_checks::DescribeTrustedAdvisorChecksError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::describe_trusted_advisor_checks::DescribeTrustedAdvisorChecksError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
         _ => crate::operation::describe_trusted_advisor_checks::DescribeTrustedAdvisorChecksError::generic(generic)
     })
 }

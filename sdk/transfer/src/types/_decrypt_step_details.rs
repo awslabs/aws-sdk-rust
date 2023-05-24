@@ -18,9 +18,20 @@ pub struct DecryptStepDetails {
     #[doc(hidden)]
     pub source_file_location: std::option::Option<std::string::String>,
     /// <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p>
+    /// <p>If the workflow is processing a file that has the same name as an existing file, the behavior is as follows:</p>
+    /// <ul>
+    /// <li> <p>If <code>OverwriteExisting</code> is <code>TRUE</code>, the existing file is replaced with the file being processed.</p> </li>
+    /// <li> <p>If <code>OverwriteExisting</code> is <code>FALSE</code>, nothing happens, and the workflow processing stops.</p> </li>
+    /// </ul>
     #[doc(hidden)]
     pub overwrite_existing: std::option::Option<crate::types::OverwriteExisting>,
-    /// <p>Specifies the location for the file that's being processed.</p>
+    /// <p>Specifies the location for the file being decrypted. Use <code>${Transfer:UserName}</code> or <code>${Transfer:UploadDate}</code> in this field to parametrize the destination prefix by username or uploaded date.</p>
+    /// <ul>
+    /// <li> <p>Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:UserName}</code> to decrypt uploaded files to an Amazon S3 bucket that is prefixed with the name of the Transfer Family user that uploaded the file.</p> </li>
+    /// <li> <p>Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:UploadDate}</code> to decrypt uploaded files to an Amazon S3 bucket that is prefixed with the date of the upload.</p> <note>
+    /// <p>The system resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on the date the file is uploaded in UTC.</p>
+    /// </note> </li>
+    /// </ul>
     #[doc(hidden)]
     pub destination_file_location: std::option::Option<crate::types::InputFileLocation>,
 }
@@ -42,10 +53,21 @@ impl DecryptStepDetails {
         self.source_file_location.as_deref()
     }
     /// <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p>
+    /// <p>If the workflow is processing a file that has the same name as an existing file, the behavior is as follows:</p>
+    /// <ul>
+    /// <li> <p>If <code>OverwriteExisting</code> is <code>TRUE</code>, the existing file is replaced with the file being processed.</p> </li>
+    /// <li> <p>If <code>OverwriteExisting</code> is <code>FALSE</code>, nothing happens, and the workflow processing stops.</p> </li>
+    /// </ul>
     pub fn overwrite_existing(&self) -> std::option::Option<&crate::types::OverwriteExisting> {
         self.overwrite_existing.as_ref()
     }
-    /// <p>Specifies the location for the file that's being processed.</p>
+    /// <p>Specifies the location for the file being decrypted. Use <code>${Transfer:UserName}</code> or <code>${Transfer:UploadDate}</code> in this field to parametrize the destination prefix by username or uploaded date.</p>
+    /// <ul>
+    /// <li> <p>Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:UserName}</code> to decrypt uploaded files to an Amazon S3 bucket that is prefixed with the name of the Transfer Family user that uploaded the file.</p> </li>
+    /// <li> <p>Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:UploadDate}</code> to decrypt uploaded files to an Amazon S3 bucket that is prefixed with the date of the upload.</p> <note>
+    /// <p>The system resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on the date the file is uploaded in UTC.</p>
+    /// </note> </li>
+    /// </ul>
     pub fn destination_file_location(
         &self,
     ) -> std::option::Option<&crate::types::InputFileLocation> {
@@ -112,11 +134,21 @@ impl DecryptStepDetailsBuilder {
         self
     }
     /// <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p>
+    /// <p>If the workflow is processing a file that has the same name as an existing file, the behavior is as follows:</p>
+    /// <ul>
+    /// <li> <p>If <code>OverwriteExisting</code> is <code>TRUE</code>, the existing file is replaced with the file being processed.</p> </li>
+    /// <li> <p>If <code>OverwriteExisting</code> is <code>FALSE</code>, nothing happens, and the workflow processing stops.</p> </li>
+    /// </ul>
     pub fn overwrite_existing(mut self, input: crate::types::OverwriteExisting) -> Self {
         self.overwrite_existing = Some(input);
         self
     }
     /// <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p>
+    /// <p>If the workflow is processing a file that has the same name as an existing file, the behavior is as follows:</p>
+    /// <ul>
+    /// <li> <p>If <code>OverwriteExisting</code> is <code>TRUE</code>, the existing file is replaced with the file being processed.</p> </li>
+    /// <li> <p>If <code>OverwriteExisting</code> is <code>FALSE</code>, nothing happens, and the workflow processing stops.</p> </li>
+    /// </ul>
     pub fn set_overwrite_existing(
         mut self,
         input: std::option::Option<crate::types::OverwriteExisting>,
@@ -124,12 +156,24 @@ impl DecryptStepDetailsBuilder {
         self.overwrite_existing = input;
         self
     }
-    /// <p>Specifies the location for the file that's being processed.</p>
+    /// <p>Specifies the location for the file being decrypted. Use <code>${Transfer:UserName}</code> or <code>${Transfer:UploadDate}</code> in this field to parametrize the destination prefix by username or uploaded date.</p>
+    /// <ul>
+    /// <li> <p>Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:UserName}</code> to decrypt uploaded files to an Amazon S3 bucket that is prefixed with the name of the Transfer Family user that uploaded the file.</p> </li>
+    /// <li> <p>Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:UploadDate}</code> to decrypt uploaded files to an Amazon S3 bucket that is prefixed with the date of the upload.</p> <note>
+    /// <p>The system resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on the date the file is uploaded in UTC.</p>
+    /// </note> </li>
+    /// </ul>
     pub fn destination_file_location(mut self, input: crate::types::InputFileLocation) -> Self {
         self.destination_file_location = Some(input);
         self
     }
-    /// <p>Specifies the location for the file that's being processed.</p>
+    /// <p>Specifies the location for the file being decrypted. Use <code>${Transfer:UserName}</code> or <code>${Transfer:UploadDate}</code> in this field to parametrize the destination prefix by username or uploaded date.</p>
+    /// <ul>
+    /// <li> <p>Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:UserName}</code> to decrypt uploaded files to an Amazon S3 bucket that is prefixed with the name of the Transfer Family user that uploaded the file.</p> </li>
+    /// <li> <p>Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:UploadDate}</code> to decrypt uploaded files to an Amazon S3 bucket that is prefixed with the date of the upload.</p> <note>
+    /// <p>The system resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on the date the file is uploaded in UTC.</p>
+    /// </note> </li>
+    /// </ul>
     pub fn set_destination_file_location(
         mut self,
         input: std::option::Option<crate::types::InputFileLocation>,

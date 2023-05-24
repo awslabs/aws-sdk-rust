@@ -7,6 +7,8 @@ pub use crate::types::_simulation_app_endpoint_info::SimulationAppEndpointInfoBu
 
 pub use crate::types::_simulation_app_port_mapping::SimulationAppPortMappingBuilder;
 
+pub use crate::types::_s3_destination::S3DestinationBuilder;
+
 pub use crate::types::_simulation_metadata::SimulationMetadataBuilder;
 
 pub use crate::types::_s3_location::S3LocationBuilder;

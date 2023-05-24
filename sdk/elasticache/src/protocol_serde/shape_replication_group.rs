@@ -392,6 +392,20 @@ pub fn de_replication_group(
                 builder = builder.set_transit_encryption_mode(var_30);
             }
             ,
+            s if s.matches("ClusterMode") /* ClusterMode com.amazonaws.elasticache#ReplicationGroup$ClusterMode */ =>  {
+                let var_31 =
+                    Some(
+                        Result::<crate::types::ClusterMode, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ClusterMode::from(
+                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_cluster_mode(var_31);
+            }
+            ,
             _ => {}
         }
     }

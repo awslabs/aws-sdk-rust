@@ -8,7 +8,7 @@ pub struct UpdateBrokerOutput {
     pub authentication_strategy: std::option::Option<crate::types::AuthenticationStrategy>,
     /// <p>The new boolean value that specifies whether broker engines automatically upgrade to new minor versions as new versions are released and supported by Amazon MQ.</p>
     #[doc(hidden)]
-    pub auto_minor_version_upgrade: bool,
+    pub auto_minor_version_upgrade: std::option::Option<bool>,
     /// <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
     #[doc(hidden)]
     pub broker_id: std::option::Option<std::string::String>,
@@ -43,7 +43,7 @@ impl UpdateBrokerOutput {
         self.authentication_strategy.as_ref()
     }
     /// <p>The new boolean value that specifies whether broker engines automatically upgrade to new minor versions as new versions are released and supported by Amazon MQ.</p>
-    pub fn auto_minor_version_upgrade(&self) -> bool {
+    pub fn auto_minor_version_upgrade(&self) -> std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
     /// <p>Required. The unique ID that Amazon MQ generates for the broker.</p>
@@ -249,7 +249,7 @@ impl UpdateBrokerOutputBuilder {
     pub fn build(self) -> crate::operation::update_broker::UpdateBrokerOutput {
         crate::operation::update_broker::UpdateBrokerOutput {
             authentication_strategy: self.authentication_strategy,
-            auto_minor_version_upgrade: self.auto_minor_version_upgrade.unwrap_or_default(),
+            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
             broker_id: self.broker_id,
             configuration: self.configuration,
             engine_version: self.engine_version,

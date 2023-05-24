@@ -5,7 +5,7 @@ pub use crate::operation::put_managed_scaling_policy::_put_managed_scaling_polic
 
 /// Fluent builder constructing a request to `PutManagedScalingPolicy`.
 ///
-/// <p>Creates or updates a managed scaling policy for an Amazon EMR cluster. The managed scaling policy defines the limits for resources, such as EC2 instances that can be added or terminated from a cluster. The policy only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
+/// <p>Creates or updates a managed scaling policy for an Amazon EMR cluster. The managed scaling policy defines the limits for resources, such as Amazon EC2 instances that can be added or terminated from a cluster. The policy only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutManagedScalingPolicyFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -69,12 +69,12 @@ impl PutManagedScalingPolicyFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>Specifies the ID of an EMR cluster where the managed scaling policy is attached. </p>
+    /// <p>Specifies the ID of an Amazon EMR cluster where the managed scaling policy is attached. </p>
     pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cluster_id(input.into());
         self
     }
-    /// <p>Specifies the ID of an EMR cluster where the managed scaling policy is attached. </p>
+    /// <p>Specifies the ID of an Amazon EMR cluster where the managed scaling policy is attached. </p>
     pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_id(input);
         self

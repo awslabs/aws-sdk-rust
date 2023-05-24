@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`authorization(Authorization)`](crate::operation::update_packaging_group::builders::UpdatePackagingGroupFluentBuilder::authorization) / [`set_authorization(Option<Authorization>)`](crate::operation::update_packaging_group::builders::UpdatePackagingGroupFluentBuilder::set_authorization): CDN Authorization credentials
     ///   - [`id(impl Into<String>)`](crate::operation::update_packaging_group::builders::UpdatePackagingGroupFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_packaging_group::builders::UpdatePackagingGroupFluentBuilder::set_id): The ID of a MediaPackage VOD PackagingGroup resource.
     /// - On success, responds with [`UpdatePackagingGroupOutput`](crate::operation::update_packaging_group::UpdatePackagingGroupOutput) with field(s):
-    ///   - [`approximate_asset_count(i32)`](crate::operation::update_packaging_group::UpdatePackagingGroupOutput::approximate_asset_count): The approximate asset count of the PackagingGroup.
+    ///   - [`approximate_asset_count(Option<i32>)`](crate::operation::update_packaging_group::UpdatePackagingGroupOutput::approximate_asset_count): The approximate asset count of the PackagingGroup.
     ///   - [`arn(Option<String>)`](crate::operation::update_packaging_group::UpdatePackagingGroupOutput::arn): The ARN of the PackagingGroup.
     ///   - [`authorization(Option<Authorization>)`](crate::operation::update_packaging_group::UpdatePackagingGroupOutput::authorization): CDN Authorization credentials
     ///   - [`created_at(Option<String>)`](crate::operation::update_packaging_group::UpdatePackagingGroupOutput::created_at): The time the PackagingGroup was created.

@@ -60,6 +60,9 @@ pub struct DataSet {
     /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
     #[doc(hidden)]
     pub data_set_usage_configuration: std::option::Option<crate::types::DataSetUsageConfiguration>,
+    /// <p>The parameters that are declared in a dataset.</p>
+    #[doc(hidden)]
+    pub dataset_parameters: std::option::Option<std::vec::Vec<crate::types::DatasetParameter>>,
 }
 impl DataSet {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -146,6 +149,10 @@ impl DataSet {
     ) -> std::option::Option<&crate::types::DataSetUsageConfiguration> {
         self.data_set_usage_configuration.as_ref()
     }
+    /// <p>The parameters that are declared in a dataset.</p>
+    pub fn dataset_parameters(&self) -> std::option::Option<&[crate::types::DatasetParameter]> {
+        self.dataset_parameters.as_deref()
+    }
 }
 impl DataSet {
     /// Creates a new builder-style object to manufacture [`DataSet`](crate::types::DataSet).
@@ -184,6 +191,8 @@ pub struct DataSetBuilder {
         std::option::Option<std::vec::Vec<crate::types::ColumnLevelPermissionRule>>,
     pub(crate) data_set_usage_configuration:
         std::option::Option<crate::types::DataSetUsageConfiguration>,
+    pub(crate) dataset_parameters:
+        std::option::Option<std::vec::Vec<crate::types::DatasetParameter>>,
 }
 impl DataSetBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -448,6 +457,25 @@ impl DataSetBuilder {
         self.data_set_usage_configuration = input;
         self
     }
+    /// Appends an item to `dataset_parameters`.
+    ///
+    /// To override the contents of this collection use [`set_dataset_parameters`](Self::set_dataset_parameters).
+    ///
+    /// <p>The parameters that are declared in a dataset.</p>
+    pub fn dataset_parameters(mut self, input: crate::types::DatasetParameter) -> Self {
+        let mut v = self.dataset_parameters.unwrap_or_default();
+        v.push(input);
+        self.dataset_parameters = Some(v);
+        self
+    }
+    /// <p>The parameters that are declared in a dataset.</p>
+    pub fn set_dataset_parameters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DatasetParameter>>,
+    ) -> Self {
+        self.dataset_parameters = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DataSet`](crate::types::DataSet).
     pub fn build(self) -> crate::types::DataSet {
         crate::types::DataSet {
@@ -469,6 +497,7 @@ impl DataSetBuilder {
             row_level_permission_tag_configuration: self.row_level_permission_tag_configuration,
             column_level_permission_rules: self.column_level_permission_rules,
             data_set_usage_configuration: self.data_set_usage_configuration,
+            dataset_parameters: self.dataset_parameters,
         }
     }
 }

@@ -6,27 +6,27 @@
 pub struct Mp3Settings {
     /// Specify the average bitrate in bits per second.
     #[doc(hidden)]
-    pub bitrate: i32,
+    pub bitrate: std::option::Option<i32>,
     /// Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2.
     #[doc(hidden)]
-    pub channels: i32,
+    pub channels: std::option::Option<i32>,
     /// Specify whether the service encodes this MP3 audio output with a constant bitrate (CBR) or a variable bitrate (VBR).
     #[doc(hidden)]
     pub rate_control_mode: std::option::Option<crate::types::Mp3RateControlMode>,
     /// Sample rate in hz.
     #[doc(hidden)]
-    pub sample_rate: i32,
+    pub sample_rate: std::option::Option<i32>,
     /// Required when you set Bitrate control mode (rateControlMode) to VBR. Specify the audio quality of this MP3 output from 0 (highest quality) to 9 (lowest quality).
     #[doc(hidden)]
-    pub vbr_quality: i32,
+    pub vbr_quality: std::option::Option<i32>,
 }
 impl Mp3Settings {
     /// Specify the average bitrate in bits per second.
-    pub fn bitrate(&self) -> i32 {
+    pub fn bitrate(&self) -> std::option::Option<i32> {
         self.bitrate
     }
     /// Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2.
-    pub fn channels(&self) -> i32 {
+    pub fn channels(&self) -> std::option::Option<i32> {
         self.channels
     }
     /// Specify whether the service encodes this MP3 audio output with a constant bitrate (CBR) or a variable bitrate (VBR).
@@ -34,11 +34,11 @@ impl Mp3Settings {
         self.rate_control_mode.as_ref()
     }
     /// Sample rate in hz.
-    pub fn sample_rate(&self) -> i32 {
+    pub fn sample_rate(&self) -> std::option::Option<i32> {
         self.sample_rate
     }
     /// Required when you set Bitrate control mode (rateControlMode) to VBR. Specify the audio quality of this MP3 output from 0 (highest quality) to 9 (lowest quality).
-    pub fn vbr_quality(&self) -> i32 {
+    pub fn vbr_quality(&self) -> std::option::Option<i32> {
         self.vbr_quality
     }
 }
@@ -116,11 +116,11 @@ impl Mp3SettingsBuilder {
     /// Consumes the builder and constructs a [`Mp3Settings`](crate::types::Mp3Settings).
     pub fn build(self) -> crate::types::Mp3Settings {
         crate::types::Mp3Settings {
-            bitrate: self.bitrate.unwrap_or_default(),
-            channels: self.channels.unwrap_or_default(),
+            bitrate: self.bitrate,
+            channels: self.channels,
             rate_control_mode: self.rate_control_mode,
-            sample_rate: self.sample_rate.unwrap_or_default(),
-            vbr_quality: self.vbr_quality.unwrap_or_default(),
+            sample_rate: self.sample_rate,
+            vbr_quality: self.vbr_quality,
         }
     }
 }

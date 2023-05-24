@@ -21,38 +21,38 @@ pub fn ser_criterion_additional_properties(
         }
         array_5.finish();
     }
-    if input.gt != 0 {
+    if let Some(var_7) = &input.gt {
         object.key("gt").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.gt).into()),
+            aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if input.gte != 0 {
+    if let Some(var_8) = &input.gte {
         object.key("gte").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.gte).into()),
+            aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if input.lt != 0 {
+    if let Some(var_9) = &input.lt {
         object.key("lt").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.lt).into()),
+            aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if input.lte != 0 {
+    if let Some(var_10) = &input.lte {
         object.key("lte").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.lte).into()),
+            aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_7) = &input.neq {
-        let mut array_8 = object.key("neq").start_array();
-        for item_9 in var_7 {
+    if let Some(var_11) = &input.neq {
+        let mut array_12 = object.key("neq").start_array();
+        for item_13 in var_11 {
             {
-                array_8.value().string(item_9.as_str());
+                array_12.value().string(item_13.as_str());
             }
         }
-        array_8.finish();
+        array_12.finish();
     }
     Ok(())
 }

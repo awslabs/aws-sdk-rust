@@ -14,6 +14,7 @@
 /// match streamexceptionpolicy {
 ///     StreamExceptionPolicy::Continue => { /* ... */ },
 ///     StreamExceptionPolicy::Drop => { /* ... */ },
+///     StreamExceptionPolicy::Reject => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -51,6 +52,8 @@ pub enum StreamExceptionPolicy {
     Continue,
     #[allow(missing_docs)] // documentation missing in model
     Drop,
+    #[allow(missing_docs)] // documentation missing in model
+    Reject,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -59,6 +62,7 @@ impl std::convert::From<&str> for StreamExceptionPolicy {
         match s {
             "CONTINUE" => StreamExceptionPolicy::Continue,
             "DROP" => StreamExceptionPolicy::Drop,
+            "REJECT" => StreamExceptionPolicy::Reject,
             other => StreamExceptionPolicy::Unknown(crate::primitives::UnknownVariantValue(
                 other.to_owned(),
             )),
@@ -78,12 +82,13 @@ impl StreamExceptionPolicy {
         match self {
             StreamExceptionPolicy::Continue => "CONTINUE",
             StreamExceptionPolicy::Drop => "DROP",
+            StreamExceptionPolicy::Reject => "REJECT",
             StreamExceptionPolicy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONTINUE", "DROP"]
+        &["CONTINUE", "DROP", "REJECT"]
     }
 }
 impl AsRef<str> for StreamExceptionPolicy {

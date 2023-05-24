@@ -3,38 +3,38 @@ pub fn ser_hls_akamai_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HlsAkamaiSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.connection_retry_interval != 0 {
+    if let Some(var_1) = &input.connection_retry_interval {
         object.key("connectionRetryInterval").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.connection_retry_interval).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.filecache_duration != 0 {
+    if let Some(var_2) = &input.filecache_duration {
         object.key("filecacheDuration").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.filecache_duration).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_1) = &input.http_transfer_mode {
-        object.key("httpTransferMode").string(var_1.as_str());
+    if let Some(var_3) = &input.http_transfer_mode {
+        object.key("httpTransferMode").string(var_3.as_str());
     }
-    if input.num_retries != 0 {
+    if let Some(var_4) = &input.num_retries {
         object.key("numRetries").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.num_retries).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if input.restart_delay != 0 {
+    if let Some(var_5) = &input.restart_delay {
         object.key("restartDelay").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.restart_delay).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_2) = &input.salt {
-        object.key("salt").string(var_2.as_str());
+    if let Some(var_6) = &input.salt {
+        object.key("salt").string(var_6.as_str());
     }
-    if let Some(var_3) = &input.token {
-        object.key("token").string(var_3.as_str());
+    if let Some(var_7) = &input.token {
+        object.key("token").string(var_7.as_str());
     }
     Ok(())
 }

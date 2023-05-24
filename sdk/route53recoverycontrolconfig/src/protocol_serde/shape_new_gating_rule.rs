@@ -33,10 +33,10 @@ pub fn ser_new_gating_rule(
         }
         array_9.finish();
     }
-    {
+    if let Some(var_11) = &input.wait_period_ms {
         object.key("WaitPeriodMs").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.wait_period_ms).into()),
+            aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
     Ok(())

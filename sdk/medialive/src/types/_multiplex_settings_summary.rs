@@ -6,11 +6,11 @@
 pub struct MultiplexSettingsSummary {
     /// Transport stream bit rate.
     #[doc(hidden)]
-    pub transport_stream_bitrate: i32,
+    pub transport_stream_bitrate: std::option::Option<i32>,
 }
 impl MultiplexSettingsSummary {
     /// Transport stream bit rate.
-    pub fn transport_stream_bitrate(&self) -> i32 {
+    pub fn transport_stream_bitrate(&self) -> std::option::Option<i32> {
         self.transport_stream_bitrate
     }
 }
@@ -41,7 +41,7 @@ impl MultiplexSettingsSummaryBuilder {
     /// Consumes the builder and constructs a [`MultiplexSettingsSummary`](crate::types::MultiplexSettingsSummary).
     pub fn build(self) -> crate::types::MultiplexSettingsSummary {
         crate::types::MultiplexSettingsSummary {
-            transport_stream_bitrate: self.transport_stream_bitrate.unwrap_or_default(),
+            transport_stream_bitrate: self.transport_stream_bitrate,
         }
     }
 }

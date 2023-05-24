@@ -7,7 +7,7 @@ pub struct CreatePackageInput {
     /// <p>Unique name for the package.</p>
     #[doc(hidden)]
     pub package_name: std::option::Option<std::string::String>,
-    /// <p>Type of package.</p>
+    /// <p>The type of package.</p>
     #[doc(hidden)]
     pub package_type: std::option::Option<crate::types::PackageType>,
     /// <p>Description of the package.</p>
@@ -22,7 +22,7 @@ impl CreatePackageInput {
     pub fn package_name(&self) -> std::option::Option<&str> {
         self.package_name.as_deref()
     }
-    /// <p>Type of package.</p>
+    /// <p>The type of package.</p>
     pub fn package_type(&self) -> std::option::Option<&crate::types::PackageType> {
         self.package_type.as_ref()
     }
@@ -62,12 +62,12 @@ impl CreatePackageInputBuilder {
         self.package_name = input;
         self
     }
-    /// <p>Type of package.</p>
+    /// <p>The type of package.</p>
     pub fn package_type(mut self, input: crate::types::PackageType) -> Self {
         self.package_type = Some(input);
         self
     }
-    /// <p>Type of package.</p>
+    /// <p>The type of package.</p>
     pub fn set_package_type(
         mut self,
         input: std::option::Option<crate::types::PackageType>,

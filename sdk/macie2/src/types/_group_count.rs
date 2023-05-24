@@ -6,14 +6,14 @@
 pub struct GroupCount {
     /// <p>The total number of findings in the group of query results.</p>
     #[doc(hidden)]
-    pub count: i64,
+    pub count: std::option::Option<i64>,
     /// <p>The name of the property that defines the group in the query results, as specified by the groupBy property in the query request.</p>
     #[doc(hidden)]
     pub group_key: std::option::Option<std::string::String>,
 }
 impl GroupCount {
     /// <p>The total number of findings in the group of query results.</p>
-    pub fn count(&self) -> i64 {
+    pub fn count(&self) -> std::option::Option<i64> {
         self.count
     }
     /// <p>The name of the property that defines the group in the query results, as specified by the groupBy property in the query request.</p>
@@ -59,7 +59,7 @@ impl GroupCountBuilder {
     /// Consumes the builder and constructs a [`GroupCount`](crate::types::GroupCount).
     pub fn build(self) -> crate::types::GroupCount {
         crate::types::GroupCount {
-            count: self.count.unwrap_or_default(),
+            count: self.count,
             group_key: self.group_key,
         }
     }

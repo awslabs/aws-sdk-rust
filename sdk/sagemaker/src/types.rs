@@ -197,6 +197,8 @@ pub use crate::types::_feature_type::FeatureType;
 
 pub use crate::types::_desired_weight_and_capacity::DesiredWeightAndCapacity;
 
+pub use crate::types::_production_variant_serverless_update_config::ProductionVariantServerlessUpdateConfig;
+
 pub use crate::types::_deployment_config::DeploymentConfig;
 
 pub use crate::types::_auto_rollback_config::AutoRollbackConfig;
@@ -2476,6 +2478,8 @@ mod _production_variant_core_dump_config;
 mod _production_variant_instance_type;
 
 mod _production_variant_serverless_config;
+
+mod _production_variant_serverless_update_config;
 
 mod _production_variant_status;
 

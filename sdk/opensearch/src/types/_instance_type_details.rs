@@ -25,6 +25,9 @@ pub struct InstanceTypeDetails {
     /// <p>Whether the instance acts as a data node, a dedicated master node, or an UltraWarm node.</p>
     #[doc(hidden)]
     pub instance_role: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The supported Availability Zones for the instance type.</p>
+    #[doc(hidden)]
+    pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl InstanceTypeDetails {
     /// <p>The instance type.</p>
@@ -57,6 +60,10 @@ impl InstanceTypeDetails {
     pub fn instance_role(&self) -> std::option::Option<&[std::string::String]> {
         self.instance_role.as_deref()
     }
+    /// <p>The supported Availability Zones for the instance type.</p>
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+        self.availability_zones.as_deref()
+    }
 }
 impl InstanceTypeDetails {
     /// Creates a new builder-style object to manufacture [`InstanceTypeDetails`](crate::types::InstanceTypeDetails).
@@ -76,6 +83,7 @@ pub struct InstanceTypeDetailsBuilder {
     pub(crate) advanced_security_enabled: std::option::Option<bool>,
     pub(crate) warm_enabled: std::option::Option<bool>,
     pub(crate) instance_role: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl InstanceTypeDetailsBuilder {
     /// <p>The instance type.</p>
@@ -160,6 +168,25 @@ impl InstanceTypeDetailsBuilder {
         self.instance_role = input;
         self
     }
+    /// Appends an item to `availability_zones`.
+    ///
+    /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
+    ///
+    /// <p>The supported Availability Zones for the instance type.</p>
+    pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
+        let mut v = self.availability_zones.unwrap_or_default();
+        v.push(input.into());
+        self.availability_zones = Some(v);
+        self
+    }
+    /// <p>The supported Availability Zones for the instance type.</p>
+    pub fn set_availability_zones(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.availability_zones = input;
+        self
+    }
     /// Consumes the builder and constructs a [`InstanceTypeDetails`](crate::types::InstanceTypeDetails).
     pub fn build(self) -> crate::types::InstanceTypeDetails {
         crate::types::InstanceTypeDetails {
@@ -170,6 +197,7 @@ impl InstanceTypeDetailsBuilder {
             advanced_security_enabled: self.advanced_security_enabled,
             warm_enabled: self.warm_enabled,
             instance_role: self.instance_role,
+            availability_zones: self.availability_zones,
         }
     }
 }

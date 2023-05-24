@@ -5,11 +5,13 @@ pub use crate::types::_scope::ScopeBuilder;
 
 pub use crate::types::_recommendation_summary::RecommendationSummaryBuilder;
 
+pub use crate::types::_inferred_workload_saving::InferredWorkloadSavingBuilder;
+
+pub use crate::types::_estimated_monthly_savings::EstimatedMonthlySavingsBuilder;
+
 pub use crate::types::_current_performance_risk_ratings::CurrentPerformanceRiskRatingsBuilder;
 
 pub use crate::types::_savings_opportunity::SavingsOpportunityBuilder;
-
-pub use crate::types::_estimated_monthly_savings::EstimatedMonthlySavingsBuilder;
 
 pub use crate::types::_summary::SummaryBuilder;
 
@@ -18,6 +20,8 @@ pub use crate::types::_reason_code_summary::ReasonCodeSummaryBuilder;
 pub use crate::types::_recommendation_preferences_detail::RecommendationPreferencesDetailBuilder;
 
 pub use crate::types::_lambda_function_recommendation::LambdaFunctionRecommendationBuilder;
+
+pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_lambda_function_memory_recommendation_option::LambdaFunctionMemoryRecommendationOptionBuilder;
 
@@ -62,6 +66,8 @@ pub use crate::types::_projected_metric::ProjectedMetricBuilder;
 pub use crate::types::_recommendation_preferences::RecommendationPreferencesBuilder;
 
 pub use crate::types::_instance_recommendation::InstanceRecommendationBuilder;
+
+pub use crate::types::_external_metric_status::ExternalMetricStatusBuilder;
 
 pub use crate::types::_effective_recommendation_preferences::EffectiveRecommendationPreferencesBuilder;
 

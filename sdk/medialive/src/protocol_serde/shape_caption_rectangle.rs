@@ -3,28 +3,28 @@ pub fn ser_caption_rectangle(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CaptionRectangle,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    {
+    if let Some(var_1) = &input.height {
         object.key("height").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.height).into()),
+            aws_smithy_types::Number::Float((*var_1).into()),
         );
     }
-    {
+    if let Some(var_2) = &input.left_offset {
         object.key("leftOffset").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.left_offset).into()),
+            aws_smithy_types::Number::Float((*var_2).into()),
         );
     }
-    {
+    if let Some(var_3) = &input.top_offset {
         object.key("topOffset").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.top_offset).into()),
+            aws_smithy_types::Number::Float((*var_3).into()),
         );
     }
-    {
+    if let Some(var_4) = &input.width {
         object.key("width").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.width).into()),
+            aws_smithy_types::Number::Float((*var_4).into()),
         );
     }
     Ok(())

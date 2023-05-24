@@ -6,7 +6,7 @@
 pub struct NoiseReducerTemporalFilterSettings {
     /// Use Aggressive mode for content that has complex motion. Higher values produce stronger temporal filtering. This filters highly complex scenes more aggressively and creates better VQ for low bitrate outputs.
     #[doc(hidden)]
-    pub aggressive_mode: i32,
+    pub aggressive_mode: std::option::Option<i32>,
     /// When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the bandwidth and sharpness of your output is reduced. You can optionally use Post temporal sharpening (postTemporalSharpening) to apply sharpening to the edges of your output. Note that Post temporal sharpening will also make the bandwidth reduction from the Noise reducer smaller. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled (ENABLED), specify how much sharpening is applied using Post temporal sharpening strength (postTemporalSharpeningStrength). Set Post temporal sharpening to Disabled (DISABLED) to not apply sharpening.
     #[doc(hidden)]
     pub post_temporal_sharpening:
@@ -17,14 +17,14 @@ pub struct NoiseReducerTemporalFilterSettings {
         std::option::Option<crate::types::NoiseFilterPostTemporalSharpeningStrength>,
     /// The speed of the filter (higher number is faster). Low setting reduces bit rate at the cost of transcode time, high setting improves transcode time at the cost of bit rate.
     #[doc(hidden)]
-    pub speed: i32,
+    pub speed: std::option::Option<i32>,
     /// Specify the strength of the noise reducing filter on this output. Higher values produce stronger filtering. We recommend the following value ranges, depending on the result that you want: * 0-2 for complexity reduction with minimal sharpness loss * 2-8 for complexity reduction with image preservation * 8-16 for a high level of complexity reduction
     #[doc(hidden)]
-    pub strength: i32,
+    pub strength: std::option::Option<i32>,
 }
 impl NoiseReducerTemporalFilterSettings {
     /// Use Aggressive mode for content that has complex motion. Higher values produce stronger temporal filtering. This filters highly complex scenes more aggressively and creates better VQ for low bitrate outputs.
-    pub fn aggressive_mode(&self) -> i32 {
+    pub fn aggressive_mode(&self) -> std::option::Option<i32> {
         self.aggressive_mode
     }
     /// When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the bandwidth and sharpness of your output is reduced. You can optionally use Post temporal sharpening (postTemporalSharpening) to apply sharpening to the edges of your output. Note that Post temporal sharpening will also make the bandwidth reduction from the Noise reducer smaller. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled (ENABLED), specify how much sharpening is applied using Post temporal sharpening strength (postTemporalSharpeningStrength). Set Post temporal sharpening to Disabled (DISABLED) to not apply sharpening.
@@ -40,11 +40,11 @@ impl NoiseReducerTemporalFilterSettings {
         self.post_temporal_sharpening_strength.as_ref()
     }
     /// The speed of the filter (higher number is faster). Low setting reduces bit rate at the cost of transcode time, high setting improves transcode time at the cost of bit rate.
-    pub fn speed(&self) -> i32 {
+    pub fn speed(&self) -> std::option::Option<i32> {
         self.speed
     }
     /// Specify the strength of the noise reducing filter on this output. Higher values produce stronger filtering. We recommend the following value ranges, depending on the result that you want: * 0-2 for complexity reduction with minimal sharpness loss * 2-8 for complexity reduction with image preservation * 8-16 for a high level of complexity reduction
-    pub fn strength(&self) -> i32 {
+    pub fn strength(&self) -> std::option::Option<i32> {
         self.strength
     }
 }
@@ -133,11 +133,11 @@ impl NoiseReducerTemporalFilterSettingsBuilder {
     /// Consumes the builder and constructs a [`NoiseReducerTemporalFilterSettings`](crate::types::NoiseReducerTemporalFilterSettings).
     pub fn build(self) -> crate::types::NoiseReducerTemporalFilterSettings {
         crate::types::NoiseReducerTemporalFilterSettings {
-            aggressive_mode: self.aggressive_mode.unwrap_or_default(),
+            aggressive_mode: self.aggressive_mode,
             post_temporal_sharpening: self.post_temporal_sharpening,
             post_temporal_sharpening_strength: self.post_temporal_sharpening_strength,
-            speed: self.speed.unwrap_or_default(),
-            strength: self.strength.unwrap_or_default(),
+            speed: self.speed,
+            strength: self.strength,
         }
     }
 }

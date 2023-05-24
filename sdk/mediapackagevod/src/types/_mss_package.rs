@@ -12,7 +12,7 @@ pub struct MssPackage {
     pub mss_manifests: std::option::Option<std::vec::Vec<crate::types::MssManifest>>,
     /// The duration (in seconds) of each segment.
     #[doc(hidden)]
-    pub segment_duration_seconds: i32,
+    pub segment_duration_seconds: std::option::Option<i32>,
 }
 impl MssPackage {
     /// A Microsoft Smooth Streaming (MSS) encryption configuration.
@@ -24,7 +24,7 @@ impl MssPackage {
         self.mss_manifests.as_deref()
     }
     /// The duration (in seconds) of each segment.
-    pub fn segment_duration_seconds(&self) -> i32 {
+    pub fn segment_duration_seconds(&self) -> std::option::Option<i32> {
         self.segment_duration_seconds
     }
 }
@@ -91,7 +91,7 @@ impl MssPackageBuilder {
         crate::types::MssPackage {
             encryption: self.encryption,
             mss_manifests: self.mss_manifests,
-            segment_duration_seconds: self.segment_duration_seconds.unwrap_or_default(),
+            segment_duration_seconds: self.segment_duration_seconds,
         }
     }
 }

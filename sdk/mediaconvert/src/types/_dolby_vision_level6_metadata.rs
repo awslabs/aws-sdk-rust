@@ -6,18 +6,18 @@
 pub struct DolbyVisionLevel6Metadata {
     /// Maximum Content Light Level. Static HDR metadata that corresponds to the brightest pixel in the entire stream. Measured in nits.
     #[doc(hidden)]
-    pub max_cll: i32,
+    pub max_cll: std::option::Option<i32>,
     /// Maximum Frame-Average Light Level. Static HDR metadata that corresponds to the highest frame-average brightness in the entire stream. Measured in nits.
     #[doc(hidden)]
-    pub max_fall: i32,
+    pub max_fall: std::option::Option<i32>,
 }
 impl DolbyVisionLevel6Metadata {
     /// Maximum Content Light Level. Static HDR metadata that corresponds to the brightest pixel in the entire stream. Measured in nits.
-    pub fn max_cll(&self) -> i32 {
+    pub fn max_cll(&self) -> std::option::Option<i32> {
         self.max_cll
     }
     /// Maximum Frame-Average Light Level. Static HDR metadata that corresponds to the highest frame-average brightness in the entire stream. Measured in nits.
-    pub fn max_fall(&self) -> i32 {
+    pub fn max_fall(&self) -> std::option::Option<i32> {
         self.max_fall
     }
 }
@@ -59,8 +59,8 @@ impl DolbyVisionLevel6MetadataBuilder {
     /// Consumes the builder and constructs a [`DolbyVisionLevel6Metadata`](crate::types::DolbyVisionLevel6Metadata).
     pub fn build(self) -> crate::types::DolbyVisionLevel6Metadata {
         crate::types::DolbyVisionLevel6Metadata {
-            max_cll: self.max_cll.unwrap_or_default(),
-            max_fall: self.max_fall.unwrap_or_default(),
+            max_cll: self.max_cll,
+            max_fall: self.max_fall,
         }
     }
 }

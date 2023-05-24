@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListJournalKinesisStreamsForLedgerOutput {
-    /// <p>The array of QLDB journal stream descriptors that are associated with the given ledger.</p>
+    /// <p>The QLDB journal streams that are currently associated with the given ledger.</p>
     #[doc(hidden)]
     pub streams: std::option::Option<std::vec::Vec<crate::types::JournalKinesisStreamDescription>>,
     /// <ul>
@@ -15,7 +15,7 @@ pub struct ListJournalKinesisStreamsForLedgerOutput {
     _request_id: Option<String>,
 }
 impl ListJournalKinesisStreamsForLedgerOutput {
-    /// <p>The array of QLDB journal stream descriptors that are associated with the given ledger.</p>
+    /// <p>The QLDB journal streams that are currently associated with the given ledger.</p>
     pub fn streams(&self) -> std::option::Option<&[crate::types::JournalKinesisStreamDescription]> {
         self.streams.as_deref()
     }
@@ -53,14 +53,14 @@ impl ListJournalKinesisStreamsForLedgerOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_streams`](Self::set_streams).
     ///
-    /// <p>The array of QLDB journal stream descriptors that are associated with the given ledger.</p>
+    /// <p>The QLDB journal streams that are currently associated with the given ledger.</p>
     pub fn streams(mut self, input: crate::types::JournalKinesisStreamDescription) -> Self {
         let mut v = self.streams.unwrap_or_default();
         v.push(input);
         self.streams = Some(v);
         self
     }
-    /// <p>The array of QLDB journal stream descriptors that are associated with the given ledger.</p>
+    /// <p>The QLDB journal streams that are currently associated with the given ledger.</p>
     pub fn set_streams(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::JournalKinesisStreamDescription>>,

@@ -6,7 +6,7 @@
 pub struct Output {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
     #[doc(hidden)]
-    pub data_transfer_subscriber_fee_percent: i32,
+    pub data_transfer_subscriber_fee_percent: std::option::Option<i32>,
     /// A description of the output.
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -37,7 +37,7 @@ pub struct Output {
     pub output_arn: std::option::Option<std::string::String>,
     /// The port to use when content is distributed to this output.
     #[doc(hidden)]
-    pub port: i32,
+    pub port: std::option::Option<i32>,
     /// Attributes related to the transport stream that are used in the output.
     #[doc(hidden)]
     pub transport: std::option::Option<crate::types::Transport>,
@@ -53,7 +53,7 @@ pub struct Output {
 }
 impl Output {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
-    pub fn data_transfer_subscriber_fee_percent(&self) -> i32 {
+    pub fn data_transfer_subscriber_fee_percent(&self) -> std::option::Option<i32> {
         self.data_transfer_subscriber_fee_percent
     }
     /// A description of the output.
@@ -95,7 +95,7 @@ impl Output {
         self.output_arn.as_deref()
     }
     /// The port to use when content is distributed to this output.
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> std::option::Option<i32> {
         self.port
     }
     /// Attributes related to the transport stream that are used in the output.
@@ -326,9 +326,7 @@ impl OutputBuilder {
     /// Consumes the builder and constructs a [`Output`](crate::types::Output).
     pub fn build(self) -> crate::types::Output {
         crate::types::Output {
-            data_transfer_subscriber_fee_percent: self
-                .data_transfer_subscriber_fee_percent
-                .unwrap_or_default(),
+            data_transfer_subscriber_fee_percent: self.data_transfer_subscriber_fee_percent,
             description: self.description,
             destination: self.destination,
             encryption: self.encryption,
@@ -338,7 +336,7 @@ impl OutputBuilder {
             media_stream_output_configurations: self.media_stream_output_configurations,
             name: self.name,
             output_arn: self.output_arn,
-            port: self.port.unwrap_or_default(),
+            port: self.port,
             transport: self.transport,
             vpc_interface_attachment: self.vpc_interface_attachment,
             bridge_arn: self.bridge_arn,

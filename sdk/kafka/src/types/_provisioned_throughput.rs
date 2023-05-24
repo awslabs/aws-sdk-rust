@@ -6,18 +6,18 @@
 pub struct ProvisionedThroughput {
     /// <p>Provisioned throughput is enabled or not.</p>
     #[doc(hidden)]
-    pub enabled: bool,
+    pub enabled: std::option::Option<bool>,
     /// <p>Throughput value of the EBS volumes for the data drive on each kafka broker node in MiB per second.</p>
     #[doc(hidden)]
-    pub volume_throughput: i32,
+    pub volume_throughput: std::option::Option<i32>,
 }
 impl ProvisionedThroughput {
     /// <p>Provisioned throughput is enabled or not.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
     /// <p>Throughput value of the EBS volumes for the data drive on each kafka broker node in MiB per second.</p>
-    pub fn volume_throughput(&self) -> i32 {
+    pub fn volume_throughput(&self) -> std::option::Option<i32> {
         self.volume_throughput
     }
 }
@@ -59,8 +59,8 @@ impl ProvisionedThroughputBuilder {
     /// Consumes the builder and constructs a [`ProvisionedThroughput`](crate::types::ProvisionedThroughput).
     pub fn build(self) -> crate::types::ProvisionedThroughput {
         crate::types::ProvisionedThroughput {
-            enabled: self.enabled.unwrap_or_default(),
-            volume_throughput: self.volume_throughput.unwrap_or_default(),
+            enabled: self.enabled,
+            volume_throughput: self.volume_throughput,
         }
     }
 }

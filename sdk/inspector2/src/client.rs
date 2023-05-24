@@ -218,6 +218,10 @@ mod batch_get_account_status;
 
 mod batch_get_free_trial_info;
 
+mod batch_get_member_ec2_deep_inspection_status;
+
+mod batch_update_member_ec2_deep_inspection_status;
+
 mod cancel_findings_report;
 
 mod create_filter;
@@ -270,6 +274,8 @@ mod get_configuration;
 
 mod get_delegated_admin_account;
 
+mod get_ec2_deep_inspection_configuration;
+
 mod get_findings_report_status;
 
 mod get_member;
@@ -294,12 +300,18 @@ mod list_tags_for_resource;
 
 mod list_usage_totals;
 
+mod search_vulnerabilities;
+
 mod tag_resource;
 
 mod untag_resource;
 
 mod update_configuration;
 
+mod update_ec2_deep_inspection_configuration;
+
 mod update_filter;
+
+mod update_org_ec2_deep_inspection_configuration;
 
 mod update_organization_configuration;

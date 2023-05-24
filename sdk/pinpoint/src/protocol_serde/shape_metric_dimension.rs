@@ -6,10 +6,10 @@ pub fn ser_metric_dimension(
     if let Some(var_1) = &input.comparison_operator {
         object.key("ComparisonOperator").string(var_1.as_str());
     }
-    {
+    if let Some(var_2) = &input.value {
         object.key("Value").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.value).into()),
+            aws_smithy_types::Number::Float((*var_2).into()),
         );
     }
     Ok(())

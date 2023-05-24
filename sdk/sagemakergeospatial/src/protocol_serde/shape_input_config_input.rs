@@ -8,17 +8,11 @@ pub fn ser_input_config_input(
             .key("PreviousEarthObservationJobArn")
             .string(var_1.as_str());
     }
-    if let Some(var_2) = &input.data_source_config {
+    if let Some(var_2) = &input.raster_data_collection_query {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("DataSourceConfig").start_object();
-        crate::protocol_serde::shape_eoj_data_source_config_input::ser_eoj_data_source_config_input(&mut object_3, var_2)?;
+        let mut object_3 = object.key("RasterDataCollectionQuery").start_object();
+        crate::protocol_serde::shape_raster_data_collection_query_input::ser_raster_data_collection_query_input(&mut object_3, var_2)?;
         object_3.finish();
-    }
-    if let Some(var_4) = &input.raster_data_collection_query {
-        #[allow(unused_mut)]
-        let mut object_5 = object.key("RasterDataCollectionQuery").start_object();
-        crate::protocol_serde::shape_raster_data_collection_query_input::ser_raster_data_collection_query_input(&mut object_5, var_4)?;
-        object_5.finish();
     }
     Ok(())
 }

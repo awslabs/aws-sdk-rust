@@ -6,27 +6,27 @@
 pub struct RouteSettings {
     /// <p>Specifies whether (true) or not (false) data trace logging is enabled for this route. This property affects the log entries pushed to Amazon CloudWatch Logs. Supported only for WebSocket APIs.</p>
     #[doc(hidden)]
-    pub data_trace_enabled: bool,
+    pub data_trace_enabled: std::option::Option<bool>,
     /// <p>Specifies whether detailed metrics are enabled.</p>
     #[doc(hidden)]
-    pub detailed_metrics_enabled: bool,
+    pub detailed_metrics_enabled: std::option::Option<bool>,
     /// <p>Specifies the logging level for this route: INFO, ERROR, or OFF. This property affects the log entries pushed to Amazon CloudWatch Logs. Supported only for WebSocket APIs.</p>
     #[doc(hidden)]
     pub logging_level: std::option::Option<crate::types::LoggingLevel>,
     /// <p>Specifies the throttling burst limit.</p>
     #[doc(hidden)]
-    pub throttling_burst_limit: i32,
+    pub throttling_burst_limit: std::option::Option<i32>,
     /// <p>Specifies the throttling rate limit.</p>
     #[doc(hidden)]
-    pub throttling_rate_limit: f64,
+    pub throttling_rate_limit: std::option::Option<f64>,
 }
 impl RouteSettings {
     /// <p>Specifies whether (true) or not (false) data trace logging is enabled for this route. This property affects the log entries pushed to Amazon CloudWatch Logs. Supported only for WebSocket APIs.</p>
-    pub fn data_trace_enabled(&self) -> bool {
+    pub fn data_trace_enabled(&self) -> std::option::Option<bool> {
         self.data_trace_enabled
     }
     /// <p>Specifies whether detailed metrics are enabled.</p>
-    pub fn detailed_metrics_enabled(&self) -> bool {
+    pub fn detailed_metrics_enabled(&self) -> std::option::Option<bool> {
         self.detailed_metrics_enabled
     }
     /// <p>Specifies the logging level for this route: INFO, ERROR, or OFF. This property affects the log entries pushed to Amazon CloudWatch Logs. Supported only for WebSocket APIs.</p>
@@ -34,11 +34,11 @@ impl RouteSettings {
         self.logging_level.as_ref()
     }
     /// <p>Specifies the throttling burst limit.</p>
-    pub fn throttling_burst_limit(&self) -> i32 {
+    pub fn throttling_burst_limit(&self) -> std::option::Option<i32> {
         self.throttling_burst_limit
     }
     /// <p>Specifies the throttling rate limit.</p>
-    pub fn throttling_rate_limit(&self) -> f64 {
+    pub fn throttling_rate_limit(&self) -> std::option::Option<f64> {
         self.throttling_rate_limit
     }
 }
@@ -116,11 +116,11 @@ impl RouteSettingsBuilder {
     /// Consumes the builder and constructs a [`RouteSettings`](crate::types::RouteSettings).
     pub fn build(self) -> crate::types::RouteSettings {
         crate::types::RouteSettings {
-            data_trace_enabled: self.data_trace_enabled.unwrap_or_default(),
-            detailed_metrics_enabled: self.detailed_metrics_enabled.unwrap_or_default(),
+            data_trace_enabled: self.data_trace_enabled,
+            detailed_metrics_enabled: self.detailed_metrics_enabled,
             logging_level: self.logging_level,
-            throttling_burst_limit: self.throttling_burst_limit.unwrap_or_default(),
-            throttling_rate_limit: self.throttling_rate_limit.unwrap_or_default(),
+            throttling_burst_limit: self.throttling_burst_limit,
+            throttling_rate_limit: self.throttling_rate_limit,
         }
     }
 }

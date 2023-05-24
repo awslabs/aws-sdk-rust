@@ -6,14 +6,14 @@
 pub struct OutputDetail {
     /// Duration in milliseconds
     #[doc(hidden)]
-    pub duration_in_ms: i32,
+    pub duration_in_ms: std::option::Option<i32>,
     /// Contains details about the output's video stream
     #[doc(hidden)]
     pub video_details: std::option::Option<crate::types::VideoDetail>,
 }
 impl OutputDetail {
     /// Duration in milliseconds
-    pub fn duration_in_ms(&self) -> i32 {
+    pub fn duration_in_ms(&self) -> std::option::Option<i32> {
         self.duration_in_ms
     }
     /// Contains details about the output's video stream
@@ -62,7 +62,7 @@ impl OutputDetailBuilder {
     /// Consumes the builder and constructs a [`OutputDetail`](crate::types::OutputDetail).
     pub fn build(self) -> crate::types::OutputDetail {
         crate::types::OutputDetail {
-            duration_in_ms: self.duration_in_ms.unwrap_or_default(),
+            duration_in_ms: self.duration_in_ms,
             video_details: self.video_details,
         }
     }

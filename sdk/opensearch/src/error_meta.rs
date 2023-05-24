@@ -9,11 +9,13 @@ pub enum Error {
     BaseException(crate::types::error::BaseException),
     /// <p>An error occurred because the client attempts to remove a resource that is currently in use.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>An error occured because the client wanted to access a not supported operation.</p>
+    /// <p>An exception for when a failure in one of the dependencies results in the service being unable to fetch details about the resource.</p>
+    DependencyFailureException(crate::types::error::DependencyFailureException),
+    /// <p>An error occured because the client wanted to access an unsupported operation.</p>
     DisabledOperationException(crate::types::error::DisabledOperationException),
     /// <p>Request processing failed because of an unknown error, exception, or internal failure.</p>
     InternalException(crate::types::error::InternalException),
-    /// <p>The request processing has failed because you provided an invalid pagination token.</p>
+    /// <p>Request processing failed because you provided an invalid pagination token.</p>
     InvalidPaginationTokenException(crate::types::error::InvalidPaginationTokenException),
     /// <p>An exception for trying to create or access a sub-resource that's either invalid or not supported.</p>
     InvalidTypeException(crate::types::error::InvalidTypeException),
@@ -21,7 +23,7 @@ pub enum Error {
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>An exception for creating a resource that already exists.</p>
     ResourceAlreadyExistsException(crate::types::error::ResourceAlreadyExistsException),
-    /// <p>An exception for accessing or deleting a resource that does not exist..</p>
+    /// <p>An exception for accessing or deleting a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>An exception for attempting to schedule a domain action during an unavailable time slot.</p>
     SlotNotAvailableException(crate::types::error::SlotNotAvailableException),
@@ -36,6 +38,7 @@ impl std::fmt::Display for Error {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::BaseException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
+            Error::DependencyFailureException(inner) => inner.fmt(f),
             Error::DisabledOperationException(inner) => inner.fmt(f),
             Error::InternalException(inner) => inner.fmt(f),
             Error::InvalidPaginationTokenException(inner) => inner.fmt(f),
@@ -867,6 +870,93 @@ impl From<crate::operation::describe_domain_config::DescribeDomainConfigError> f
             crate::operation::describe_domain_config::DescribeDomainConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::describe_domain_config::DescribeDomainConfigError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::describe_domain_config::DescribeDomainConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_domain_health::DescribeDomainHealthError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_domain_health::DescribeDomainHealthError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_domain_health::DescribeDomainHealthError> for Error {
+    fn from(err: crate::operation::describe_domain_health::DescribeDomainHealthError) -> Self {
+        match err {
+            crate::operation::describe_domain_health::DescribeDomainHealthError::BaseException(inner) => Error::BaseException(inner),
+            crate::operation::describe_domain_health::DescribeDomainHealthError::DisabledOperationException(inner) => Error::DisabledOperationException(inner),
+            crate::operation::describe_domain_health::DescribeDomainHealthError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::describe_domain_health::DescribeDomainHealthError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_domain_health::DescribeDomainHealthError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_domain_health::DescribeDomainHealthError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_domain_nodes::DescribeDomainNodesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_domain_nodes::DescribeDomainNodesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_domain_nodes::DescribeDomainNodesError> for Error {
+    fn from(err: crate::operation::describe_domain_nodes::DescribeDomainNodesError) -> Self {
+        match err {
+            crate::operation::describe_domain_nodes::DescribeDomainNodesError::BaseException(inner) => Error::BaseException(inner),
+            crate::operation::describe_domain_nodes::DescribeDomainNodesError::DependencyFailureException(inner) => Error::DependencyFailureException(inner),
+            crate::operation::describe_domain_nodes::DescribeDomainNodesError::DisabledOperationException(inner) => Error::DisabledOperationException(inner),
+            crate::operation::describe_domain_nodes::DescribeDomainNodesError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::describe_domain_nodes::DescribeDomainNodesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_domain_nodes::DescribeDomainNodesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_domain_nodes::DescribeDomainNodesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2340,6 +2430,7 @@ impl std::error::Error for Error {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::BaseException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
+            Error::DependencyFailureException(inner) => inner.source(),
             Error::DisabledOperationException(inner) => inner.source(),
             Error::InternalException(inner) => inner.source(),
             Error::InvalidPaginationTokenException(inner) => inner.source(),
@@ -2359,6 +2450,7 @@ impl aws_http::request_id::RequestId for Error {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::BaseException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
+            Self::DependencyFailureException(e) => e.request_id(),
             Self::DisabledOperationException(e) => e.request_id(),
             Self::InternalException(e) => e.request_id(),
             Self::InvalidPaginationTokenException(e) => e.request_id(),

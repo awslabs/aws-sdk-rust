@@ -9,7 +9,7 @@ pub struct GetUpgradeHistoryInput {
     pub domain_name: std::option::Option<std::string::String>,
     /// <p> Set this value to limit the number of results returned. </p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -20,7 +20,7 @@ impl GetUpgradeHistoryInput {
         self.domain_name.as_deref()
     }
     /// <p> Set this value to limit the number of results returned. </p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
@@ -85,7 +85,7 @@ impl GetUpgradeHistoryInputBuilder {
         Ok(
             crate::operation::get_upgrade_history::GetUpgradeHistoryInput {
                 domain_name: self.domain_name,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
                 next_token: self.next_token,
             },
         )

@@ -3,8 +3,8 @@ pub fn ser_update_device_state_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_device_state::UpdateDeviceStateInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.enabled {
-        object.key("enabled").boolean(input.enabled);
+    if let Some(var_1) = &input.enabled {
+        object.key("enabled").boolean(*var_1);
     }
     Ok(())
 }

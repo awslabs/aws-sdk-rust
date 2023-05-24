@@ -62,7 +62,7 @@ pub struct HlsGroupSettings {
         std::option::Option<crate::types::HlsIncompleteSegmentBehavior>,
     /// Applies only if Mode field is LIVE. Specifies the maximum number of segments in the media manifest file. After this maximum, older segments are removed from the media manifest. This number must be smaller than the number in the Keep Segments field.
     #[doc(hidden)]
-    pub index_n_segments: i32,
+    pub index_n_segments: std::option::Option<i32>,
     /// Parameter that control output group behavior on input loss.
     #[doc(hidden)]
     pub input_loss_action: std::option::Option<crate::types::InputLossActionForHlsOut>,
@@ -74,7 +74,7 @@ pub struct HlsGroupSettings {
     pub iv_source: std::option::Option<crate::types::HlsIvSource>,
     /// Applies only if Mode field is LIVE. Specifies the number of media segments to retain in the destination directory. This number should be bigger than indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1). If this "keep segments" number is too low, the following might happen: the player is still reading a media manifest file that lists this segment, but that segment has been removed from the destination directory (as directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
     #[doc(hidden)]
-    pub keep_segments: i32,
+    pub keep_segments: std::option::Option<i32>,
     /// The value specifies how the key is represented in the resource identified by the URI. If parameter is absent, an implicit value of "identity" is used. A reverse DNS string can also be given.
     #[doc(hidden)]
     pub key_format: std::option::Option<std::string::String>,
@@ -92,7 +92,7 @@ pub struct HlsGroupSettings {
     pub manifest_duration_format: std::option::Option<crate::types::HlsManifestDurationFormat>,
     /// Minimum length of MPEG-2 Transport Stream segments in seconds. When set, minimum segment length is enforced by looking ahead and back within the specified range for a nearby avail and extending the segment size if needed.
     #[doc(hidden)]
-    pub min_segment_length: i32,
+    pub min_segment_length: std::option::Option<i32>,
     /// If "vod", all segments are indexed and kept permanently in the destination and manifest. If "live", only the number segments specified in keepSegments and indexNSegments are kept; newer segments replace older segments, which may prevent players from rewinding all the way to the beginning of the event. VOD mode uses HLS EXT-X-PLAYLIST-TYPE of EVENT while the channel is running, converting it to a "VOD" type manifest on completion of the stream.
     #[doc(hidden)]
     pub mode: std::option::Option<crate::types::HlsMode>,
@@ -107,19 +107,19 @@ pub struct HlsGroupSettings {
     pub program_date_time_clock: std::option::Option<crate::types::HlsProgramDateTimeClock>,
     /// Period of insertion of EXT-X-PROGRAM-DATE-TIME entry, in seconds.
     #[doc(hidden)]
-    pub program_date_time_period: i32,
+    pub program_date_time_period: std::option::Option<i32>,
     /// ENABLED: The master manifest (.m3u8 file) for each pipeline includes information about both pipelines: first its own media files, then the media files of the other pipeline. This feature allows playout device that support stale manifest detection to switch from one manifest to the other, when the current manifest seems to be stale. There are still two destinations and two master manifests, but both master manifests reference the media files from both pipelines. DISABLED: The master manifest (.m3u8 file) for each pipeline includes information about its own pipeline only. For an HLS output group with MediaPackage as the destination, the DISABLED behavior is always followed. MediaPackage regenerates the manifests it serves to players so a redundant manifest from MediaLive is irrelevant.
     #[doc(hidden)]
     pub redundant_manifest: std::option::Option<crate::types::HlsRedundantManifest>,
     /// Length of MPEG-2 Transport Stream segments to create in seconds. Note that segments will end on the next keyframe after this duration, so actual segment length may be longer.
     #[doc(hidden)]
-    pub segment_length: i32,
+    pub segment_length: std::option::Option<i32>,
     /// useInputSegmentation has been deprecated. The configured segment size is always used.
     #[doc(hidden)]
     pub segmentation_mode: std::option::Option<crate::types::HlsSegmentationMode>,
     /// Number of segments to write to a subdirectory before starting a new one. directoryStructure must be subdirectoryPerStream for this setting to have an effect.
     #[doc(hidden)]
-    pub segments_per_subdirectory: i32,
+    pub segments_per_subdirectory: std::option::Option<i32>,
     /// Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
     #[doc(hidden)]
     pub stream_inf_resolution: std::option::Option<crate::types::HlsStreamInfResolution>,
@@ -128,10 +128,10 @@ pub struct HlsGroupSettings {
     pub timed_metadata_id3_frame: std::option::Option<crate::types::HlsTimedMetadataId3Frame>,
     /// Timed Metadata interval in seconds.
     #[doc(hidden)]
-    pub timed_metadata_id3_period: i32,
+    pub timed_metadata_id3_period: std::option::Option<i32>,
     /// Provides an extra millisecond delta offset to fine tune the timestamps.
     #[doc(hidden)]
-    pub timestamp_delta_milliseconds: i32,
+    pub timestamp_delta_milliseconds: std::option::Option<i32>,
     /// SEGMENTED_FILES: Emit the program as segments - multiple .ts media files. SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is running is not guaranteed due to HTTP server caching.
     #[doc(hidden)]
     pub ts_file_mode: std::option::Option<crate::types::HlsTsFileMode>,
@@ -220,7 +220,7 @@ impl HlsGroupSettings {
         self.incomplete_segment_behavior.as_ref()
     }
     /// Applies only if Mode field is LIVE. Specifies the maximum number of segments in the media manifest file. After this maximum, older segments are removed from the media manifest. This number must be smaller than the number in the Keep Segments field.
-    pub fn index_n_segments(&self) -> i32 {
+    pub fn index_n_segments(&self) -> std::option::Option<i32> {
         self.index_n_segments
     }
     /// Parameter that control output group behavior on input loss.
@@ -238,7 +238,7 @@ impl HlsGroupSettings {
         self.iv_source.as_ref()
     }
     /// Applies only if Mode field is LIVE. Specifies the number of media segments to retain in the destination directory. This number should be bigger than indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1). If this "keep segments" number is too low, the following might happen: the player is still reading a media manifest file that lists this segment, but that segment has been removed from the destination directory (as directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
-    pub fn keep_segments(&self) -> i32 {
+    pub fn keep_segments(&self) -> std::option::Option<i32> {
         self.keep_segments
     }
     /// The value specifies how the key is represented in the resource identified by the URI. If parameter is absent, an implicit value of "identity" is used. A reverse DNS string can also be given.
@@ -266,7 +266,7 @@ impl HlsGroupSettings {
         self.manifest_duration_format.as_ref()
     }
     /// Minimum length of MPEG-2 Transport Stream segments in seconds. When set, minimum segment length is enforced by looking ahead and back within the specified range for a nearby avail and extending the segment size if needed.
-    pub fn min_segment_length(&self) -> i32 {
+    pub fn min_segment_length(&self) -> std::option::Option<i32> {
         self.min_segment_length
     }
     /// If "vod", all segments are indexed and kept permanently in the destination and manifest. If "live", only the number segments specified in keepSegments and indexNSegments are kept; newer segments replace older segments, which may prevent players from rewinding all the way to the beginning of the event. VOD mode uses HLS EXT-X-PLAYLIST-TYPE of EVENT while the channel is running, converting it to a "VOD" type manifest on completion of the stream.
@@ -288,7 +288,7 @@ impl HlsGroupSettings {
         self.program_date_time_clock.as_ref()
     }
     /// Period of insertion of EXT-X-PROGRAM-DATE-TIME entry, in seconds.
-    pub fn program_date_time_period(&self) -> i32 {
+    pub fn program_date_time_period(&self) -> std::option::Option<i32> {
         self.program_date_time_period
     }
     /// ENABLED: The master manifest (.m3u8 file) for each pipeline includes information about both pipelines: first its own media files, then the media files of the other pipeline. This feature allows playout device that support stale manifest detection to switch from one manifest to the other, when the current manifest seems to be stale. There are still two destinations and two master manifests, but both master manifests reference the media files from both pipelines. DISABLED: The master manifest (.m3u8 file) for each pipeline includes information about its own pipeline only. For an HLS output group with MediaPackage as the destination, the DISABLED behavior is always followed. MediaPackage regenerates the manifests it serves to players so a redundant manifest from MediaLive is irrelevant.
@@ -296,7 +296,7 @@ impl HlsGroupSettings {
         self.redundant_manifest.as_ref()
     }
     /// Length of MPEG-2 Transport Stream segments to create in seconds. Note that segments will end on the next keyframe after this duration, so actual segment length may be longer.
-    pub fn segment_length(&self) -> i32 {
+    pub fn segment_length(&self) -> std::option::Option<i32> {
         self.segment_length
     }
     /// useInputSegmentation has been deprecated. The configured segment size is always used.
@@ -304,7 +304,7 @@ impl HlsGroupSettings {
         self.segmentation_mode.as_ref()
     }
     /// Number of segments to write to a subdirectory before starting a new one. directoryStructure must be subdirectoryPerStream for this setting to have an effect.
-    pub fn segments_per_subdirectory(&self) -> i32 {
+    pub fn segments_per_subdirectory(&self) -> std::option::Option<i32> {
         self.segments_per_subdirectory
     }
     /// Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
@@ -320,11 +320,11 @@ impl HlsGroupSettings {
         self.timed_metadata_id3_frame.as_ref()
     }
     /// Timed Metadata interval in seconds.
-    pub fn timed_metadata_id3_period(&self) -> i32 {
+    pub fn timed_metadata_id3_period(&self) -> std::option::Option<i32> {
         self.timed_metadata_id3_period
     }
     /// Provides an extra millisecond delta offset to fine tune the timestamps.
-    pub fn timestamp_delta_milliseconds(&self) -> i32 {
+    pub fn timestamp_delta_milliseconds(&self) -> std::option::Option<i32> {
         self.timestamp_delta_milliseconds
     }
     /// SEGMENTED_FILES: Emit the program as segments - multiple .ts media files. SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to index segments for playback. A typical use for this value is when sending the output to AWS Elemental MediaConvert, which can accept only a single media file. Playback while the channel is running is not guaranteed due to HTTP server caching.
@@ -965,30 +965,30 @@ impl HlsGroupSettingsBuilder {
             hls_id3_segment_tagging: self.hls_id3_segment_tagging,
             i_frame_only_playlists: self.i_frame_only_playlists,
             incomplete_segment_behavior: self.incomplete_segment_behavior,
-            index_n_segments: self.index_n_segments.unwrap_or_default(),
+            index_n_segments: self.index_n_segments,
             input_loss_action: self.input_loss_action,
             iv_in_manifest: self.iv_in_manifest,
             iv_source: self.iv_source,
-            keep_segments: self.keep_segments.unwrap_or_default(),
+            keep_segments: self.keep_segments,
             key_format: self.key_format,
             key_format_versions: self.key_format_versions,
             key_provider_settings: self.key_provider_settings,
             manifest_compression: self.manifest_compression,
             manifest_duration_format: self.manifest_duration_format,
-            min_segment_length: self.min_segment_length.unwrap_or_default(),
+            min_segment_length: self.min_segment_length,
             mode: self.mode,
             output_selection: self.output_selection,
             program_date_time: self.program_date_time,
             program_date_time_clock: self.program_date_time_clock,
-            program_date_time_period: self.program_date_time_period.unwrap_or_default(),
+            program_date_time_period: self.program_date_time_period,
             redundant_manifest: self.redundant_manifest,
-            segment_length: self.segment_length.unwrap_or_default(),
+            segment_length: self.segment_length,
             segmentation_mode: self.segmentation_mode,
-            segments_per_subdirectory: self.segments_per_subdirectory.unwrap_or_default(),
+            segments_per_subdirectory: self.segments_per_subdirectory,
             stream_inf_resolution: self.stream_inf_resolution,
             timed_metadata_id3_frame: self.timed_metadata_id3_frame,
-            timed_metadata_id3_period: self.timed_metadata_id3_period.unwrap_or_default(),
-            timestamp_delta_milliseconds: self.timestamp_delta_milliseconds.unwrap_or_default(),
+            timed_metadata_id3_period: self.timed_metadata_id3_period,
+            timestamp_delta_milliseconds: self.timestamp_delta_milliseconds,
             ts_file_mode: self.ts_file_mode,
         }
     }

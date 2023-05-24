@@ -18,20 +18,20 @@ pub struct AddOutputRequest {
     pub encryption: std::option::Option<crate::types::Encryption>,
     /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
     #[doc(hidden)]
-    pub max_latency: i32,
+    pub max_latency: std::option::Option<i32>,
     /// The media streams that are associated with the output, and the parameters for those associations.
     #[doc(hidden)]
     pub media_stream_output_configurations:
         std::option::Option<std::vec::Vec<crate::types::MediaStreamOutputConfigurationRequest>>,
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
     #[doc(hidden)]
-    pub min_latency: i32,
+    pub min_latency: std::option::Option<i32>,
     /// The name of the output. This value must be unique within the current flow.
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// The port to use when content is distributed to this output.
     #[doc(hidden)]
-    pub port: i32,
+    pub port: std::option::Option<i32>,
     /// The protocol to use for the output.
     #[doc(hidden)]
     pub protocol: std::option::Option<crate::types::Protocol>,
@@ -40,10 +40,10 @@ pub struct AddOutputRequest {
     pub remote_id: std::option::Option<std::string::String>,
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
     #[doc(hidden)]
-    pub sender_control_port: i32,
+    pub sender_control_port: std::option::Option<i32>,
     /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
     #[doc(hidden)]
-    pub smoothing_latency: i32,
+    pub smoothing_latency: std::option::Option<i32>,
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.
     #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
@@ -69,7 +69,7 @@ impl AddOutputRequest {
         self.encryption.as_ref()
     }
     /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
-    pub fn max_latency(&self) -> i32 {
+    pub fn max_latency(&self) -> std::option::Option<i32> {
         self.max_latency
     }
     /// The media streams that are associated with the output, and the parameters for those associations.
@@ -79,7 +79,7 @@ impl AddOutputRequest {
         self.media_stream_output_configurations.as_deref()
     }
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
-    pub fn min_latency(&self) -> i32 {
+    pub fn min_latency(&self) -> std::option::Option<i32> {
         self.min_latency
     }
     /// The name of the output. This value must be unique within the current flow.
@@ -87,7 +87,7 @@ impl AddOutputRequest {
         self.name.as_deref()
     }
     /// The port to use when content is distributed to this output.
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> std::option::Option<i32> {
         self.port
     }
     /// The protocol to use for the output.
@@ -99,11 +99,11 @@ impl AddOutputRequest {
         self.remote_id.as_deref()
     }
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
-    pub fn sender_control_port(&self) -> i32 {
+    pub fn sender_control_port(&self) -> std::option::Option<i32> {
         self.sender_control_port
     }
     /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
-    pub fn smoothing_latency(&self) -> i32 {
+    pub fn smoothing_latency(&self) -> std::option::Option<i32> {
         self.smoothing_latency
     }
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.
@@ -329,15 +329,15 @@ impl AddOutputRequestBuilder {
             description: self.description,
             destination: self.destination,
             encryption: self.encryption,
-            max_latency: self.max_latency.unwrap_or_default(),
+            max_latency: self.max_latency,
             media_stream_output_configurations: self.media_stream_output_configurations,
-            min_latency: self.min_latency.unwrap_or_default(),
+            min_latency: self.min_latency,
             name: self.name,
-            port: self.port.unwrap_or_default(),
+            port: self.port,
             protocol: self.protocol,
             remote_id: self.remote_id,
-            sender_control_port: self.sender_control_port.unwrap_or_default(),
-            smoothing_latency: self.smoothing_latency.unwrap_or_default(),
+            sender_control_port: self.sender_control_port,
+            smoothing_latency: self.smoothing_latency,
             stream_id: self.stream_id,
             vpc_interface_attachment: self.vpc_interface_attachment,
         }

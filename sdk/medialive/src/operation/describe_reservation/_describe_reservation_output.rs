@@ -9,13 +9,13 @@ pub struct DescribeReservationOutput {
     pub arn: std::option::Option<std::string::String>,
     /// Number of reserved resources
     #[doc(hidden)]
-    pub count: i32,
+    pub count: std::option::Option<i32>,
     /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
     #[doc(hidden)]
     pub currency_code: std::option::Option<std::string::String>,
     /// Lease duration, e.g. '12'
     #[doc(hidden)]
-    pub duration: i32,
+    pub duration: std::option::Option<i32>,
     /// Units for duration, e.g. 'MONTHS'
     #[doc(hidden)]
     pub duration_units: std::option::Option<crate::types::OfferingDurationUnits>,
@@ -24,7 +24,7 @@ pub struct DescribeReservationOutput {
     pub end: std::option::Option<std::string::String>,
     /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
     #[doc(hidden)]
-    pub fixed_price: f64,
+    pub fixed_price: std::option::Option<f64>,
     /// User specified reservation name
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -61,7 +61,7 @@ pub struct DescribeReservationOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
     #[doc(hidden)]
-    pub usage_price: f64,
+    pub usage_price: std::option::Option<f64>,
     _request_id: Option<String>,
 }
 impl DescribeReservationOutput {
@@ -70,7 +70,7 @@ impl DescribeReservationOutput {
         self.arn.as_deref()
     }
     /// Number of reserved resources
-    pub fn count(&self) -> i32 {
+    pub fn count(&self) -> std::option::Option<i32> {
         self.count
     }
     /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
@@ -78,7 +78,7 @@ impl DescribeReservationOutput {
         self.currency_code.as_deref()
     }
     /// Lease duration, e.g. '12'
-    pub fn duration(&self) -> i32 {
+    pub fn duration(&self) -> std::option::Option<i32> {
         self.duration
     }
     /// Units for duration, e.g. 'MONTHS'
@@ -90,7 +90,7 @@ impl DescribeReservationOutput {
         self.end.as_deref()
     }
     /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
-    pub fn fixed_price(&self) -> f64 {
+    pub fn fixed_price(&self) -> std::option::Option<f64> {
         self.fixed_price
     }
     /// User specified reservation name
@@ -143,7 +143,7 @@ impl DescribeReservationOutput {
         self.tags.as_ref()
     }
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
-    pub fn usage_price(&self) -> f64 {
+    pub fn usage_price(&self) -> std::option::Option<f64> {
         self.usage_price
     }
 }
@@ -425,12 +425,12 @@ impl DescribeReservationOutputBuilder {
     pub fn build(self) -> crate::operation::describe_reservation::DescribeReservationOutput {
         crate::operation::describe_reservation::DescribeReservationOutput {
             arn: self.arn,
-            count: self.count.unwrap_or_default(),
+            count: self.count,
             currency_code: self.currency_code,
-            duration: self.duration.unwrap_or_default(),
+            duration: self.duration,
             duration_units: self.duration_units,
             end: self.end,
-            fixed_price: self.fixed_price.unwrap_or_default(),
+            fixed_price: self.fixed_price,
             name: self.name,
             offering_description: self.offering_description,
             offering_id: self.offering_id,
@@ -442,7 +442,7 @@ impl DescribeReservationOutputBuilder {
             start: self.start,
             state: self.state,
             tags: self.tags,
-            usage_price: self.usage_price.unwrap_or_default(),
+            usage_price: self.usage_price,
             _request_id: self._request_id,
         }
     }

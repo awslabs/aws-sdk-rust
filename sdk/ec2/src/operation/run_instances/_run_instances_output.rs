@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct RunInstancesOutput {
-    /// <p>[EC2-Classic only] The security groups.</p>
+    /// <p>Not supported.</p>
     #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::types::GroupIdentifier>>,
     /// <p>The instances.</p>
@@ -22,7 +22,7 @@ pub struct RunInstancesOutput {
     _request_id: Option<String>,
 }
 impl RunInstancesOutput {
-    /// <p>[EC2-Classic only] The security groups.</p>
+    /// <p>Not supported.</p>
     pub fn groups(&self) -> std::option::Option<&[crate::types::GroupIdentifier]> {
         self.groups.as_deref()
     }
@@ -71,14 +71,14 @@ impl RunInstancesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
     ///
-    /// <p>[EC2-Classic only] The security groups.</p>
+    /// <p>Not supported.</p>
     pub fn groups(mut self, input: crate::types::GroupIdentifier) -> Self {
         let mut v = self.groups.unwrap_or_default();
         v.push(input);
         self.groups = Some(v);
         self
     }
-    /// <p>[EC2-Classic only] The security groups.</p>
+    /// <p>Not supported.</p>
     pub fn set_groups(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::GroupIdentifier>>,

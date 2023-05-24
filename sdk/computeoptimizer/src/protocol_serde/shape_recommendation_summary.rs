@@ -60,6 +60,11 @@ where
                                     crate::protocol_serde::shape_current_performance_risk_ratings::de_current_performance_risk_ratings(tokens)?
                                 );
                             }
+                            "inferredWorkloadSavings" => {
+                                builder = builder.set_inferred_workload_savings(
+                                    crate::protocol_serde::shape_inferred_workload_savings::de_inferred_workload_savings(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

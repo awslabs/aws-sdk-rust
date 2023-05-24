@@ -30,56 +30,56 @@ pub fn ser_mpeg2_settings(
     if let Some(var_8) = &input.fixed_afd {
         object.key("fixedAfd").string(var_8.as_str());
     }
-    {
+    if let Some(var_9) = &input.framerate_denominator {
         object.key("framerateDenominator").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.framerate_denominator).into()),
+            aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    {
+    if let Some(var_10) = &input.framerate_numerator {
         object.key("framerateNumerator").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.framerate_numerator).into()),
+            aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if input.gop_closed_cadence != 0 {
+    if let Some(var_11) = &input.gop_closed_cadence {
         object.key("gopClosedCadence").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.gop_closed_cadence).into()),
+            aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if input.gop_num_b_frames != 0 {
+    if let Some(var_12) = &input.gop_num_b_frames {
         object.key("gopNumBFrames").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.gop_num_b_frames).into()),
+            aws_smithy_types::Number::NegInt((*var_12).into()),
         );
     }
-    if input.gop_size != 0.0 {
+    if let Some(var_13) = &input.gop_size {
         object.key("gopSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.gop_size).into()),
+            aws_smithy_types::Number::Float((*var_13).into()),
         );
     }
-    if let Some(var_9) = &input.gop_size_units {
-        object.key("gopSizeUnits").string(var_9.as_str());
+    if let Some(var_14) = &input.gop_size_units {
+        object.key("gopSizeUnits").string(var_14.as_str());
     }
-    if let Some(var_10) = &input.scan_type {
-        object.key("scanType").string(var_10.as_str());
+    if let Some(var_15) = &input.scan_type {
+        object.key("scanType").string(var_15.as_str());
     }
-    if let Some(var_11) = &input.subgop_length {
-        object.key("subgopLength").string(var_11.as_str());
+    if let Some(var_16) = &input.subgop_length {
+        object.key("subgopLength").string(var_16.as_str());
     }
-    if let Some(var_12) = &input.timecode_insertion {
-        object.key("timecodeInsertion").string(var_12.as_str());
+    if let Some(var_17) = &input.timecode_insertion {
+        object.key("timecodeInsertion").string(var_17.as_str());
     }
-    if let Some(var_13) = &input.timecode_burnin_settings {
+    if let Some(var_18) = &input.timecode_burnin_settings {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("timecodeBurninSettings").start_object();
+        let mut object_19 = object.key("timecodeBurninSettings").start_object();
         crate::protocol_serde::shape_timecode_burnin_settings::ser_timecode_burnin_settings(
-            &mut object_14,
-            var_13,
+            &mut object_19,
+            var_18,
         )?;
-        object_14.finish();
+        object_19.finish();
     }
     Ok(())
 }

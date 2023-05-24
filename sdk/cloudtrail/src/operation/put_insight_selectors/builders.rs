@@ -6,6 +6,7 @@ pub use crate::operation::put_insight_selectors::_put_insight_selectors_input::P
 /// Fluent builder constructing a request to `PutInsightSelectors`.
 ///
 /// <p>Lets you enable Insights event logging by specifying the Insights selectors that you want to enable on an existing trail. You also use <code>PutInsightSelectors</code> to turn off Insights event logging, by passing an empty list of insight types. The valid Insights event types in this release are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
+/// <p>To log CloudTrail Insights events on API call volume, the trail must log <code>write</code> management events. To log CloudTrail Insights events on API error rate, the trail must log <code>read</code> or <code>write</code> management events. You can call <code>GetEventSelectors</code> on a trail to check whether the trail logs management events.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutInsightSelectorsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -82,12 +83,16 @@ impl PutInsightSelectorsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_insight_selectors`](Self::set_insight_selectors).
     ///
-    /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid insight types.</p>
+    /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
+    /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume.</p>
+    /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
     pub fn insight_selectors(mut self, input: crate::types::InsightSelector) -> Self {
         self.inner = self.inner.insight_selectors(input);
         self
     }
-    /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid insight types.</p>
+    /// <p>A JSON string that contains the insight types you want to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid Insight types.</p>
+    /// <p>The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated per minute against a baseline API call volume.</p>
+    /// <p>The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The error is shown if the API call is unsuccessful.</p>
     pub fn set_insight_selectors(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::InsightSelector>>,

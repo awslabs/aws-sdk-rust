@@ -20,7 +20,7 @@ pub struct UpdateDiscovererOutput {
     pub state: std::option::Option<crate::types::DiscovererState>,
     /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
     #[doc(hidden)]
-    pub cross_account: bool,
+    pub cross_account: std::option::Option<bool>,
     /// <p>Tags associated with the resource.</p>
     #[doc(hidden)]
     pub tags:
@@ -49,7 +49,7 @@ impl UpdateDiscovererOutput {
         self.state.as_ref()
     }
     /// <p>The Status if the discoverer will discover schemas from events sent from another account.</p>
-    pub fn cross_account(&self) -> bool {
+    pub fn cross_account(&self) -> std::option::Option<bool> {
         self.cross_account
     }
     /// <p>Tags associated with the resource.</p>
@@ -190,7 +190,7 @@ impl UpdateDiscovererOutputBuilder {
             discoverer_id: self.discoverer_id,
             source_arn: self.source_arn,
             state: self.state,
-            cross_account: self.cross_account.unwrap_or_default(),
+            cross_account: self.cross_account,
             tags: self.tags,
             _request_id: self._request_id,
         }

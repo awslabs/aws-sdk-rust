@@ -7,7 +7,7 @@ pub struct SqliMatchStatement {
     /// <p>The part of the web request that you want WAF to inspect. </p>
     #[doc(hidden)]
     pub field_to_match: std::option::Option<crate::types::FieldToMatch>,
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the component contents. </p>
     #[doc(hidden)]
     pub text_transformations: std::option::Option<std::vec::Vec<crate::types::TextTransformation>>,
     /// <p>The sensitivity that you want WAF to use to inspect for SQL injection attacks. </p>
@@ -22,7 +22,7 @@ impl SqliMatchStatement {
     pub fn field_to_match(&self) -> std::option::Option<&crate::types::FieldToMatch> {
         self.field_to_match.as_ref()
     }
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the component contents. </p>
     pub fn text_transformations(&self) -> std::option::Option<&[crate::types::TextTransformation]> {
         self.text_transformations.as_deref()
     }
@@ -68,14 +68,14 @@ impl SqliMatchStatementBuilder {
     ///
     /// To override the contents of this collection use [`set_text_transformations`](Self::set_text_transformations).
     ///
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the component contents. </p>
     pub fn text_transformations(mut self, input: crate::types::TextTransformation) -> Self {
         let mut v = self.text_transformations.unwrap_or_default();
         v.push(input);
         self.text_transformations = Some(v);
         self
     }
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the component contents. </p>
     pub fn set_text_transformations(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::TextTransformation>>,

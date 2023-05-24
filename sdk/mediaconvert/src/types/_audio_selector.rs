@@ -24,13 +24,13 @@ pub struct AudioSelector {
     pub language_code: std::option::Option<crate::types::LanguageCode>,
     /// Specifies a time delta in milliseconds to offset the audio from the input video.
     #[doc(hidden)]
-    pub offset: i32,
+    pub offset: std::option::Option<i32>,
     /// Selects a specific PID from within an audio source (e.g. 257 selects PID 0x101).
     #[doc(hidden)]
     pub pids: std::option::Option<std::vec::Vec<i32>>,
     /// Use this setting for input streams that contain Dolby E, to have the service extract specific program data from the track. To select multiple programs, create multiple selectors with the same Track and different Program numbers. In the console, this setting is visible when you set Selector type to Track. Choose the program number from the dropdown list. If you are sending a JSON file, provide the program ID, which is part of the audio metadata. If your input file has incorrect metadata, you can choose All channels instead of a program number to have the service ignore the program IDs and include all the programs in the track.
     #[doc(hidden)]
-    pub program_selection: i32,
+    pub program_selection: std::option::Option<i32>,
     /// Use these settings to reorder the audio channels of one input to match those of another input. This allows you to combine the two files into a single output, one after the other.
     #[doc(hidden)]
     pub remix_settings: std::option::Option<crate::types::RemixSettings>,
@@ -71,7 +71,7 @@ impl AudioSelector {
         self.language_code.as_ref()
     }
     /// Specifies a time delta in milliseconds to offset the audio from the input video.
-    pub fn offset(&self) -> i32 {
+    pub fn offset(&self) -> std::option::Option<i32> {
         self.offset
     }
     /// Selects a specific PID from within an audio source (e.g. 257 selects PID 0x101).
@@ -79,7 +79,7 @@ impl AudioSelector {
         self.pids.as_deref()
     }
     /// Use this setting for input streams that contain Dolby E, to have the service extract specific program data from the track. To select multiple programs, create multiple selectors with the same Track and different Program numbers. In the console, this setting is visible when you set Selector type to Track. Choose the program number from the dropdown list. If you are sending a JSON file, provide the program ID, which is part of the audio metadata. If your input file has incorrect metadata, you can choose All channels instead of a program number to have the service ignore the program IDs and include all the programs in the track.
-    pub fn program_selection(&self) -> i32 {
+    pub fn program_selection(&self) -> std::option::Option<i32> {
         self.program_selection
     }
     /// Use these settings to reorder the audio channels of one input to match those of another input. This allows you to combine the two files into a single output, one after the other.
@@ -293,9 +293,9 @@ impl AudioSelectorBuilder {
             external_audio_file_input: self.external_audio_file_input,
             hls_rendition_group_settings: self.hls_rendition_group_settings,
             language_code: self.language_code,
-            offset: self.offset.unwrap_or_default(),
+            offset: self.offset,
             pids: self.pids,
-            program_selection: self.program_selection.unwrap_or_default(),
+            program_selection: self.program_selection,
             remix_settings: self.remix_settings,
             selector_type: self.selector_type,
             tracks: self.tracks,

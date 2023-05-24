@@ -6,80 +6,80 @@ pub fn ser_eac3_settings(
     if let Some(var_1) = &input.attenuation_control {
         object.key("attenuationControl").string(var_1.as_str());
     }
-    if input.bitrate != 0.0 {
+    if let Some(var_2) = &input.bitrate {
         object.key("bitrate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.bitrate).into()),
+            aws_smithy_types::Number::Float((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.bitstream_mode {
-        object.key("bitstreamMode").string(var_2.as_str());
+    if let Some(var_3) = &input.bitstream_mode {
+        object.key("bitstreamMode").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.coding_mode {
-        object.key("codingMode").string(var_3.as_str());
+    if let Some(var_4) = &input.coding_mode {
+        object.key("codingMode").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.dc_filter {
-        object.key("dcFilter").string(var_4.as_str());
+    if let Some(var_5) = &input.dc_filter {
+        object.key("dcFilter").string(var_5.as_str());
     }
-    if input.dialnorm != 0 {
+    if let Some(var_6) = &input.dialnorm {
         object.key("dialnorm").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.dialnorm).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_5) = &input.drc_line {
-        object.key("drcLine").string(var_5.as_str());
+    if let Some(var_7) = &input.drc_line {
+        object.key("drcLine").string(var_7.as_str());
     }
-    if let Some(var_6) = &input.drc_rf {
-        object.key("drcRf").string(var_6.as_str());
+    if let Some(var_8) = &input.drc_rf {
+        object.key("drcRf").string(var_8.as_str());
     }
-    if let Some(var_7) = &input.lfe_control {
-        object.key("lfeControl").string(var_7.as_str());
+    if let Some(var_9) = &input.lfe_control {
+        object.key("lfeControl").string(var_9.as_str());
     }
-    if let Some(var_8) = &input.lfe_filter {
-        object.key("lfeFilter").string(var_8.as_str());
+    if let Some(var_10) = &input.lfe_filter {
+        object.key("lfeFilter").string(var_10.as_str());
     }
-    if input.lo_ro_center_mix_level != 0.0 {
+    if let Some(var_11) = &input.lo_ro_center_mix_level {
         object.key("loRoCenterMixLevel").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.lo_ro_center_mix_level).into()),
+            aws_smithy_types::Number::Float((*var_11).into()),
         );
     }
-    if input.lo_ro_surround_mix_level != 0.0 {
+    if let Some(var_12) = &input.lo_ro_surround_mix_level {
         object.key("loRoSurroundMixLevel").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.lo_ro_surround_mix_level).into()),
+            aws_smithy_types::Number::Float((*var_12).into()),
         );
     }
-    if input.lt_rt_center_mix_level != 0.0 {
+    if let Some(var_13) = &input.lt_rt_center_mix_level {
         object.key("ltRtCenterMixLevel").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.lt_rt_center_mix_level).into()),
+            aws_smithy_types::Number::Float((*var_13).into()),
         );
     }
-    if input.lt_rt_surround_mix_level != 0.0 {
+    if let Some(var_14) = &input.lt_rt_surround_mix_level {
         object.key("ltRtSurroundMixLevel").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.lt_rt_surround_mix_level).into()),
+            aws_smithy_types::Number::Float((*var_14).into()),
         );
     }
-    if let Some(var_9) = &input.metadata_control {
-        object.key("metadataControl").string(var_9.as_str());
+    if let Some(var_15) = &input.metadata_control {
+        object.key("metadataControl").string(var_15.as_str());
     }
-    if let Some(var_10) = &input.passthrough_control {
-        object.key("passthroughControl").string(var_10.as_str());
+    if let Some(var_16) = &input.passthrough_control {
+        object.key("passthroughControl").string(var_16.as_str());
     }
-    if let Some(var_11) = &input.phase_control {
-        object.key("phaseControl").string(var_11.as_str());
+    if let Some(var_17) = &input.phase_control {
+        object.key("phaseControl").string(var_17.as_str());
     }
-    if let Some(var_12) = &input.stereo_downmix {
-        object.key("stereoDownmix").string(var_12.as_str());
+    if let Some(var_18) = &input.stereo_downmix {
+        object.key("stereoDownmix").string(var_18.as_str());
     }
-    if let Some(var_13) = &input.surround_ex_mode {
-        object.key("surroundExMode").string(var_13.as_str());
+    if let Some(var_19) = &input.surround_ex_mode {
+        object.key("surroundExMode").string(var_19.as_str());
     }
-    if let Some(var_14) = &input.surround_mode {
-        object.key("surroundMode").string(var_14.as_str());
+    if let Some(var_20) = &input.surround_mode {
+        object.key("surroundMode").string(var_20.as_str());
     }
     Ok(())
 }

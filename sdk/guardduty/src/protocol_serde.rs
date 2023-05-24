@@ -116,6 +116,8 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_threat_intel_sets;
 
+pub(crate) mod shape_start_malware_scan;
+
 pub(crate) mod shape_start_monitoring_members;
 
 pub(crate) mod shape_stop_monitoring_members;
@@ -148,8 +150,6 @@ pub(crate) mod shape_accept_administrator_invitation_input;
 
 pub(crate) mod shape_accept_invitation_input;
 
-pub(crate) mod shape_archive_findings_input;
-
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -158,7 +158,13 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
+pub(crate) mod shape_access_denied_exception;
+
+pub(crate) mod shape_archive_findings_input;
+
 pub(crate) mod shape_bad_request_exception;
+
+pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_detector_input;
 
@@ -209,6 +215,8 @@ pub(crate) mod shape_invite_members_input;
 pub(crate) mod shape_list_coverage_input;
 
 pub(crate) mod shape_list_findings_input;
+
+pub(crate) mod shape_start_malware_scan_input;
 
 pub(crate) mod shape_start_monitoring_members_input;
 

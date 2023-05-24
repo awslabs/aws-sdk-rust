@@ -6,25 +6,25 @@
 pub struct MultiplexStatmuxVideoSettings {
     /// Maximum statmux bitrate.
     #[doc(hidden)]
-    pub maximum_bitrate: i32,
+    pub maximum_bitrate: std::option::Option<i32>,
     /// Minimum statmux bitrate.
     #[doc(hidden)]
-    pub minimum_bitrate: i32,
+    pub minimum_bitrate: std::option::Option<i32>,
     /// The purpose of the priority is to use a combination of the\nmultiplex rate control algorithm and the QVBR capability of the\nencoder to prioritize the video quality of some channels in a\nmultiplex over others. Channels that have a higher priority will\nget higher video quality at the expense of the video quality of\nother channels in the multiplex with lower priority.
     #[doc(hidden)]
-    pub priority: i32,
+    pub priority: std::option::Option<i32>,
 }
 impl MultiplexStatmuxVideoSettings {
     /// Maximum statmux bitrate.
-    pub fn maximum_bitrate(&self) -> i32 {
+    pub fn maximum_bitrate(&self) -> std::option::Option<i32> {
         self.maximum_bitrate
     }
     /// Minimum statmux bitrate.
-    pub fn minimum_bitrate(&self) -> i32 {
+    pub fn minimum_bitrate(&self) -> std::option::Option<i32> {
         self.minimum_bitrate
     }
     /// The purpose of the priority is to use a combination of the\nmultiplex rate control algorithm and the QVBR capability of the\nencoder to prioritize the video quality of some channels in a\nmultiplex over others. Channels that have a higher priority will\nget higher video quality at the expense of the video quality of\nother channels in the multiplex with lower priority.
-    pub fn priority(&self) -> i32 {
+    pub fn priority(&self) -> std::option::Option<i32> {
         self.priority
     }
 }
@@ -77,9 +77,9 @@ impl MultiplexStatmuxVideoSettingsBuilder {
     /// Consumes the builder and constructs a [`MultiplexStatmuxVideoSettings`](crate::types::MultiplexStatmuxVideoSettings).
     pub fn build(self) -> crate::types::MultiplexStatmuxVideoSettings {
         crate::types::MultiplexStatmuxVideoSettings {
-            maximum_bitrate: self.maximum_bitrate.unwrap_or_default(),
-            minimum_bitrate: self.minimum_bitrate.unwrap_or_default(),
-            priority: self.priority.unwrap_or_default(),
+            maximum_bitrate: self.maximum_bitrate,
+            minimum_bitrate: self.minimum_bitrate,
+            priority: self.priority,
         }
     }
 }

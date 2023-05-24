@@ -8,9 +8,7 @@ publish = false
 
 [dependencies]
 aws-config= { version = "0.55.2", path = "../../sdk/aws-config" }
-aws-sdk-rds= { version = "0.27.0", path = "../../sdk/rds" }
-
-[workspace]
+aws-sdk-rds= { version = "0.28.0", path = "../../sdk/rds" }
 
 [dependencies.tokio]
 version = "1.20.1"
@@ -23,3 +21,5 @@ features = ["derive"]
 [dependencies.tracing-subscriber]
 version = "0.3.15"
 features = ["env-filter"]
+
+[workspace]

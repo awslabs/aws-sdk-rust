@@ -29,7 +29,7 @@ pub struct AwsSecurityFinding {
     /// <p>Security Hub populates this attribute automatically for each finding. You cannot update it using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.</p>
     #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
-    /// <p>The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a plugin, etc. </p>
+    /// <p>The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In various security findings providers' solutions, this generator can be called a rule, a check, a detector, a plugin, etc. </p>
     #[doc(hidden)]
     pub generator_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID that a finding is generated in.</p>
@@ -39,19 +39,19 @@ pub struct AwsSecurityFinding {
     /// <p>Valid namespace values are: Software and Configuration Checks | TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
     #[doc(hidden)]
     pub types: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Indicates when the security-findings provider first observed the potential security issue that a finding captured.</p>
+    /// <p>Indicates when the security findings provider first observed the potential security issue that a finding captured.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
     pub first_observed_at: std::option::Option<std::string::String>,
-    /// <p>Indicates when the security-findings provider most recently observed the potential security issue that a finding captured.</p>
+    /// <p>Indicates when the security findings provider most recently observed the potential security issue that a finding captured.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
     pub last_observed_at: std::option::Option<std::string::String>,
-    /// <p>Indicates when the security-findings provider created the potential security issue that a finding captured.</p>
+    /// <p>Indicates when the security findings provider created the potential security issue that a finding captured.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<std::string::String>,
-    /// <p>Indicates when the security-findings provider last updated the finding record.</p>
+    /// <p>Indicates when the security findings provider last updated the finding record.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<std::string::String>,
@@ -79,10 +79,10 @@ pub struct AwsSecurityFinding {
     /// <p>A data type that describes the remediation options for a finding.</p>
     #[doc(hidden)]
     pub remediation: std::option::Option<crate::types::Remediation>,
-    /// <p>A URL that links to a page about the current finding in the security-findings provider's solution.</p>
+    /// <p>A URL that links to a page about the current finding in the security findings provider's solution.</p>
     #[doc(hidden)]
     pub source_url: std::option::Option<std::string::String>,
-    /// <p>A data type where security-findings providers can include additional solution-specific details that aren't part of the defined <code>AwsSecurityFinding</code> format.</p>
+    /// <p>A data type where security findings providers can include additional solution-specific details that aren't part of the defined <code>AwsSecurityFinding</code> format.</p>
     /// <p>Can contain up to 50 key-value pairs. For each key-value pair, the key can contain up to 128 characters, and the value can contain up to 2048 characters.</p>
     #[doc(hidden)]
     pub product_fields:
@@ -180,7 +180,7 @@ impl AwsSecurityFinding {
     pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
     }
-    /// <p>The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a plugin, etc. </p>
+    /// <p>The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In various security findings providers' solutions, this generator can be called a rule, a check, a detector, a plugin, etc. </p>
     pub fn generator_id(&self) -> std::option::Option<&str> {
         self.generator_id.as_deref()
     }
@@ -193,22 +193,22 @@ impl AwsSecurityFinding {
     pub fn types(&self) -> std::option::Option<&[std::string::String]> {
         self.types.as_deref()
     }
-    /// <p>Indicates when the security-findings provider first observed the potential security issue that a finding captured.</p>
+    /// <p>Indicates when the security findings provider first observed the potential security issue that a finding captured.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn first_observed_at(&self) -> std::option::Option<&str> {
         self.first_observed_at.as_deref()
     }
-    /// <p>Indicates when the security-findings provider most recently observed the potential security issue that a finding captured.</p>
+    /// <p>Indicates when the security findings provider most recently observed the potential security issue that a finding captured.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn last_observed_at(&self) -> std::option::Option<&str> {
         self.last_observed_at.as_deref()
     }
-    /// <p>Indicates when the security-findings provider created the potential security issue that a finding captured.</p>
+    /// <p>Indicates when the security findings provider created the potential security issue that a finding captured.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn created_at(&self) -> std::option::Option<&str> {
         self.created_at.as_deref()
     }
-    /// <p>Indicates when the security-findings provider last updated the finding record.</p>
+    /// <p>Indicates when the security findings provider last updated the finding record.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn updated_at(&self) -> std::option::Option<&str> {
         self.updated_at.as_deref()
@@ -243,11 +243,11 @@ impl AwsSecurityFinding {
     pub fn remediation(&self) -> std::option::Option<&crate::types::Remediation> {
         self.remediation.as_ref()
     }
-    /// <p>A URL that links to a page about the current finding in the security-findings provider's solution.</p>
+    /// <p>A URL that links to a page about the current finding in the security findings provider's solution.</p>
     pub fn source_url(&self) -> std::option::Option<&str> {
         self.source_url.as_deref()
     }
-    /// <p>A data type where security-findings providers can include additional solution-specific details that aren't part of the defined <code>AwsSecurityFinding</code> format.</p>
+    /// <p>A data type where security findings providers can include additional solution-specific details that aren't part of the defined <code>AwsSecurityFinding</code> format.</p>
     /// <p>Can contain up to 50 key-value pairs. For each key-value pair, the key can contain up to 128 characters, and the value can contain up to 2048 characters.</p>
     pub fn product_fields(
         &self,
@@ -470,12 +470,12 @@ impl AwsSecurityFindingBuilder {
         self.region = input;
         self
     }
-    /// <p>The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a plugin, etc. </p>
+    /// <p>The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In various security findings providers' solutions, this generator can be called a rule, a check, a detector, a plugin, etc. </p>
     pub fn generator_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.generator_id = Some(input.into());
         self
     }
-    /// <p>The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a plugin, etc. </p>
+    /// <p>The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In various security findings providers' solutions, this generator can be called a rule, a check, a detector, a plugin, etc. </p>
     pub fn set_generator_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.generator_id = input;
         self
@@ -511,13 +511,13 @@ impl AwsSecurityFindingBuilder {
         self.types = input;
         self
     }
-    /// <p>Indicates when the security-findings provider first observed the potential security issue that a finding captured.</p>
+    /// <p>Indicates when the security findings provider first observed the potential security issue that a finding captured.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn first_observed_at(mut self, input: impl Into<std::string::String>) -> Self {
         self.first_observed_at = Some(input.into());
         self
     }
-    /// <p>Indicates when the security-findings provider first observed the potential security issue that a finding captured.</p>
+    /// <p>Indicates when the security findings provider first observed the potential security issue that a finding captured.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_first_observed_at(
         mut self,
@@ -526,37 +526,37 @@ impl AwsSecurityFindingBuilder {
         self.first_observed_at = input;
         self
     }
-    /// <p>Indicates when the security-findings provider most recently observed the potential security issue that a finding captured.</p>
+    /// <p>Indicates when the security findings provider most recently observed the potential security issue that a finding captured.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn last_observed_at(mut self, input: impl Into<std::string::String>) -> Self {
         self.last_observed_at = Some(input.into());
         self
     }
-    /// <p>Indicates when the security-findings provider most recently observed the potential security issue that a finding captured.</p>
+    /// <p>Indicates when the security findings provider most recently observed the potential security issue that a finding captured.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_last_observed_at(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.last_observed_at = input;
         self
     }
-    /// <p>Indicates when the security-findings provider created the potential security issue that a finding captured.</p>
+    /// <p>Indicates when the security findings provider created the potential security issue that a finding captured.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
         self.created_at = Some(input.into());
         self
     }
-    /// <p>Indicates when the security-findings provider created the potential security issue that a finding captured.</p>
+    /// <p>Indicates when the security findings provider created the potential security issue that a finding captured.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>Indicates when the security-findings provider last updated the finding record.</p>
+    /// <p>Indicates when the security findings provider last updated the finding record.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn updated_at(mut self, input: impl Into<std::string::String>) -> Self {
         self.updated_at = Some(input.into());
         self
     }
-    /// <p>Indicates when the security-findings provider last updated the finding record.</p>
+    /// <p>Indicates when the security findings provider last updated the finding record.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_updated_at(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.updated_at = input;
@@ -637,12 +637,12 @@ impl AwsSecurityFindingBuilder {
         self.remediation = input;
         self
     }
-    /// <p>A URL that links to a page about the current finding in the security-findings provider's solution.</p>
+    /// <p>A URL that links to a page about the current finding in the security findings provider's solution.</p>
     pub fn source_url(mut self, input: impl Into<std::string::String>) -> Self {
         self.source_url = Some(input.into());
         self
     }
-    /// <p>A URL that links to a page about the current finding in the security-findings provider's solution.</p>
+    /// <p>A URL that links to a page about the current finding in the security findings provider's solution.</p>
     pub fn set_source_url(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.source_url = input;
         self
@@ -651,7 +651,7 @@ impl AwsSecurityFindingBuilder {
     ///
     /// To override the contents of this collection use [`set_product_fields`](Self::set_product_fields).
     ///
-    /// <p>A data type where security-findings providers can include additional solution-specific details that aren't part of the defined <code>AwsSecurityFinding</code> format.</p>
+    /// <p>A data type where security findings providers can include additional solution-specific details that aren't part of the defined <code>AwsSecurityFinding</code> format.</p>
     /// <p>Can contain up to 50 key-value pairs. For each key-value pair, the key can contain up to 128 characters, and the value can contain up to 2048 characters.</p>
     pub fn product_fields(
         mut self,
@@ -663,7 +663,7 @@ impl AwsSecurityFindingBuilder {
         self.product_fields = Some(hash_map);
         self
     }
-    /// <p>A data type where security-findings providers can include additional solution-specific details that aren't part of the defined <code>AwsSecurityFinding</code> format.</p>
+    /// <p>A data type where security findings providers can include additional solution-specific details that aren't part of the defined <code>AwsSecurityFinding</code> format.</p>
     /// <p>Can contain up to 50 key-value pairs. For each key-value pair, the key can contain up to 128 characters, and the value can contain up to 2048 characters.</p>
     pub fn set_product_fields(
         mut self,

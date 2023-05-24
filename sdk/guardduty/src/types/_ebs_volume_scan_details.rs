@@ -22,6 +22,9 @@ pub struct EbsVolumeScanDetails {
     /// <p>Contains a complete view providing malware scan result details.</p>
     #[doc(hidden)]
     pub scan_detections: std::option::Option<crate::types::ScanDetections>,
+    /// <p>Specifies the scan type that invoked the malware scan.</p>
+    #[doc(hidden)]
+    pub scan_type: std::option::Option<crate::types::ScanType>,
 }
 impl EbsVolumeScanDetails {
     /// <p>Unique Id of the malware scan that generated the finding.</p>
@@ -48,6 +51,10 @@ impl EbsVolumeScanDetails {
     pub fn scan_detections(&self) -> std::option::Option<&crate::types::ScanDetections> {
         self.scan_detections.as_ref()
     }
+    /// <p>Specifies the scan type that invoked the malware scan.</p>
+    pub fn scan_type(&self) -> std::option::Option<&crate::types::ScanType> {
+        self.scan_type.as_ref()
+    }
 }
 impl EbsVolumeScanDetails {
     /// Creates a new builder-style object to manufacture [`EbsVolumeScanDetails`](crate::types::EbsVolumeScanDetails).
@@ -66,6 +73,7 @@ pub struct EbsVolumeScanDetailsBuilder {
     pub(crate) trigger_finding_id: std::option::Option<std::string::String>,
     pub(crate) sources: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) scan_detections: std::option::Option<crate::types::ScanDetections>,
+    pub(crate) scan_type: std::option::Option<crate::types::ScanType>,
 }
 impl EbsVolumeScanDetailsBuilder {
     /// <p>Unique Id of the malware scan that generated the finding.</p>
@@ -149,6 +157,16 @@ impl EbsVolumeScanDetailsBuilder {
         self.scan_detections = input;
         self
     }
+    /// <p>Specifies the scan type that invoked the malware scan.</p>
+    pub fn scan_type(mut self, input: crate::types::ScanType) -> Self {
+        self.scan_type = Some(input);
+        self
+    }
+    /// <p>Specifies the scan type that invoked the malware scan.</p>
+    pub fn set_scan_type(mut self, input: std::option::Option<crate::types::ScanType>) -> Self {
+        self.scan_type = input;
+        self
+    }
     /// Consumes the builder and constructs a [`EbsVolumeScanDetails`](crate::types::EbsVolumeScanDetails).
     pub fn build(self) -> crate::types::EbsVolumeScanDetails {
         crate::types::EbsVolumeScanDetails {
@@ -158,6 +176,7 @@ impl EbsVolumeScanDetailsBuilder {
             trigger_finding_id: self.trigger_finding_id,
             sources: self.sources,
             scan_detections: self.scan_detections,
+            scan_type: self.scan_type,
         }
     }
 }

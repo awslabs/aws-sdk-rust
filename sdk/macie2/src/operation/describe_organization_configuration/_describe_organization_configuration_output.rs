@@ -5,19 +5,19 @@
 pub struct DescribeOrganizationConfigurationOutput {
     /// <p>Specifies whether Amazon Macie is enabled automatically for accounts that are added to the organization.</p>
     #[doc(hidden)]
-    pub auto_enable: bool,
+    pub auto_enable: std::option::Option<bool>,
     /// <p>Specifies whether the maximum number of Amazon Macie member accounts are part of the organization.</p>
     #[doc(hidden)]
-    pub max_account_limit_reached: bool,
+    pub max_account_limit_reached: std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DescribeOrganizationConfigurationOutput {
     /// <p>Specifies whether Amazon Macie is enabled automatically for accounts that are added to the organization.</p>
-    pub fn auto_enable(&self) -> bool {
+    pub fn auto_enable(&self) -> std::option::Option<bool> {
         self.auto_enable
     }
     /// <p>Specifies whether the maximum number of Amazon Macie member accounts are part of the organization.</p>
-    pub fn max_account_limit_reached(&self) -> bool {
+    pub fn max_account_limit_reached(&self) -> std::option::Option<bool> {
         self.max_account_limit_reached
     }
 }
@@ -75,10 +75,8 @@ impl DescribeOrganizationConfigurationOutputBuilder {
     pub fn build(self) -> crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput{
         crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput {
             auto_enable: self.auto_enable
-                .unwrap_or_default()
             ,
             max_account_limit_reached: self.max_account_limit_reached
-                .unwrap_or_default()
             ,
             _request_id: self._request_id,
         }

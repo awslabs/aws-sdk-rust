@@ -12,7 +12,7 @@ pub struct Page {
     pub offset_range: std::option::Option<crate::types::Range>,
     /// <p>The page number of the page that contains the sensitive data.</p>
     #[doc(hidden)]
-    pub page_number: i64,
+    pub page_number: std::option::Option<i64>,
 }
 impl Page {
     /// <p>Reserved for future use.</p>
@@ -24,7 +24,7 @@ impl Page {
         self.offset_range.as_ref()
     }
     /// <p>The page number of the page that contains the sensitive data.</p>
-    pub fn page_number(&self) -> i64 {
+    pub fn page_number(&self) -> std::option::Option<i64> {
         self.page_number
     }
 }
@@ -79,7 +79,7 @@ impl PageBuilder {
         crate::types::Page {
             line_range: self.line_range,
             offset_range: self.offset_range,
-            page_number: self.page_number.unwrap_or_default(),
+            page_number: self.page_number,
         }
     }
 }

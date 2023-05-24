@@ -6,25 +6,25 @@
 pub struct Mp2Settings {
     /// Specify the average bitrate in bits per second.
     #[doc(hidden)]
-    pub bitrate: i32,
+    pub bitrate: std::option::Option<i32>,
     /// Set Channels to specify the number of channels in this output audio track. Choosing Mono in the console will give you 1 output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
     #[doc(hidden)]
-    pub channels: i32,
+    pub channels: std::option::Option<i32>,
     /// Sample rate in hz.
     #[doc(hidden)]
-    pub sample_rate: i32,
+    pub sample_rate: std::option::Option<i32>,
 }
 impl Mp2Settings {
     /// Specify the average bitrate in bits per second.
-    pub fn bitrate(&self) -> i32 {
+    pub fn bitrate(&self) -> std::option::Option<i32> {
         self.bitrate
     }
     /// Set Channels to specify the number of channels in this output audio track. Choosing Mono in the console will give you 1 output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
-    pub fn channels(&self) -> i32 {
+    pub fn channels(&self) -> std::option::Option<i32> {
         self.channels
     }
     /// Sample rate in hz.
-    pub fn sample_rate(&self) -> i32 {
+    pub fn sample_rate(&self) -> std::option::Option<i32> {
         self.sample_rate
     }
 }
@@ -77,9 +77,9 @@ impl Mp2SettingsBuilder {
     /// Consumes the builder and constructs a [`Mp2Settings`](crate::types::Mp2Settings).
     pub fn build(self) -> crate::types::Mp2Settings {
         crate::types::Mp2Settings {
-            bitrate: self.bitrate.unwrap_or_default(),
-            channels: self.channels.unwrap_or_default(),
-            sample_rate: self.sample_rate.unwrap_or_default(),
+            bitrate: self.bitrate,
+            channels: self.channels,
+            sample_rate: self.sample_rate,
         }
     }
 }

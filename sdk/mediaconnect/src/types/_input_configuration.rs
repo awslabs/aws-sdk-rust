@@ -9,7 +9,7 @@ pub struct InputConfiguration {
     pub input_ip: std::option::Option<std::string::String>,
     /// The port that the flow listens on for an incoming media stream.
     #[doc(hidden)]
-    pub input_port: i32,
+    pub input_port: std::option::Option<i32>,
     /// The VPC interface where the media stream comes in from.
     #[doc(hidden)]
     pub interface: std::option::Option<crate::types::Interface>,
@@ -20,7 +20,7 @@ impl InputConfiguration {
         self.input_ip.as_deref()
     }
     /// The port that the flow listens on for an incoming media stream.
-    pub fn input_port(&self) -> i32 {
+    pub fn input_port(&self) -> std::option::Option<i32> {
         self.input_port
     }
     /// The VPC interface where the media stream comes in from.
@@ -78,7 +78,7 @@ impl InputConfigurationBuilder {
     pub fn build(self) -> crate::types::InputConfiguration {
         crate::types::InputConfiguration {
             input_ip: self.input_ip,
-            input_port: self.input_port.unwrap_or_default(),
+            input_port: self.input_port,
             interface: self.interface,
         }
     }

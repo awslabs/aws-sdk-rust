@@ -49,6 +49,16 @@ pub(crate) fn reflens_get_enabled_standards_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_get_finding_history_output_next_token(
+    input: &crate::operation::get_finding_history::GetFindingHistoryOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_get_findings_output_next_token(
     input: &crate::operation::get_findings::GetFindingsOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -183,6 +193,16 @@ pub(crate) fn lens_get_enabled_standards_output_standards_subscriptions(
     input: crate::operation::get_enabled_standards::GetEnabledStandardsOutput,
 ) -> std::option::Option<std::vec::Vec<crate::types::StandardsSubscription>> {
     let input = match input.standards_subscriptions {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_get_finding_history_output_records(
+    input: crate::operation::get_finding_history::GetFindingHistoryOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::FindingHistoryRecord>> {
+    let input = match input.records {
         None => return None,
         Some(t) => t,
     };

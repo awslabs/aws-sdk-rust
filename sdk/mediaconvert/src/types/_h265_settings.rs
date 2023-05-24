@@ -13,7 +13,7 @@ pub struct H265Settings {
         std::option::Option<crate::types::H265AlternateTransferFunctionSei>,
     /// Specify the average bitrate in bits per second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique when rounded down to the nearest multiple of 1000.
     #[doc(hidden)]
-    pub bitrate: i32,
+    pub bitrate: std::option::Option<i32>,
     /// H.265 Level.
     #[doc(hidden)]
     pub codec_level: std::option::Option<crate::types::H265CodecLevel>,
@@ -36,55 +36,55 @@ pub struct H265Settings {
         std::option::Option<crate::types::H265FramerateConversionAlgorithm>,
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     #[doc(hidden)]
-    pub framerate_denominator: i32,
+    pub framerate_denominator: std::option::Option<i32>,
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     #[doc(hidden)]
-    pub framerate_numerator: i32,
+    pub framerate_numerator: std::option::Option<i32>,
     /// Specify whether to allow B-frames to be referenced by other frame types. To use reference B-frames when your GOP structure has 1 or more B-frames: Leave blank or keep the default value Enabled. We recommend that you choose Enabled to help improve the video quality of your output relative to its bitrate. To not use reference B-frames: Choose Disabled.
     #[doc(hidden)]
     pub gop_b_reference: std::option::Option<crate::types::H265GopBReference>,
     /// Specify the relative frequency of open to closed GOPs in this output. For example, if you want to allow four open GOPs and then require a closed GOP, set this value to 5. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, keep the default value by leaving this setting out of your JSON job specification. In the console, do this by keeping the default empty value. If you do explicitly specify a value, for segmented outputs, don't set this value to 0.
     #[doc(hidden)]
-    pub gop_closed_cadence: i32,
+    pub gop_closed_cadence: std::option::Option<i32>,
     /// Use this setting only when you set GOP mode control (GopSizeUnits) to Specified, frames (FRAMES) or Specified, seconds (SECONDS). Specify the GOP length using a whole number of frames or a decimal value of seconds. MediaConvert will interpret this value as frames or seconds depending on the value you choose for GOP mode control (GopSizeUnits). If you want to allow MediaConvert to automatically determine GOP size, leave GOP size blank and set GOP mode control to Auto (AUTO). If your output group specifies HLS, DASH, or CMAF, leave GOP size blank and set GOP mode control to Auto in each output in your output group.
     #[doc(hidden)]
-    pub gop_size: f64,
+    pub gop_size: std::option::Option<f64>,
     /// Specify how the transcoder determines GOP size for this output. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, choose Auto (AUTO) and and leave GOP size (GopSize) blank. By default, if you don't specify GOP mode control (GopSizeUnits), MediaConvert will use automatic behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode control to Auto and leave GOP size blank in each output in your output group. To explicitly specify the GOP length, choose Specified, frames (FRAMES) or Specified, seconds (SECONDS) and then provide the GOP length in the related setting GOP size (GopSize).
     #[doc(hidden)]
     pub gop_size_units: std::option::Option<crate::types::H265GopSizeUnits>,
     /// If your downstream systems have strict buffer requirements: Specify the minimum percentage of the HRD buffer that's available at the end of each encoded video segment. For the best video quality: Set to 0 or leave blank to automatically determine the final buffer fill percentage.
     #[doc(hidden)]
-    pub hrd_buffer_final_fill_percentage: i32,
+    pub hrd_buffer_final_fill_percentage: std::option::Option<i32>,
     /// Percentage of the buffer that should initially be filled (HRD buffer model).
     #[doc(hidden)]
-    pub hrd_buffer_initial_fill_percentage: i32,
+    pub hrd_buffer_initial_fill_percentage: std::option::Option<i32>,
     /// Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000.
     #[doc(hidden)]
-    pub hrd_buffer_size: i32,
+    pub hrd_buffer_size: std::option::Option<i32>,
     /// Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
     #[doc(hidden)]
     pub interlace_mode: std::option::Option<crate::types::H265InterlaceMode>,
     /// Maximum bitrate in bits/second. For example, enter five megabits per second as 5000000. Required when Rate control mode is QVBR.
     #[doc(hidden)]
-    pub max_bitrate: i32,
+    pub max_bitrate: std::option::Option<i32>,
     /// Use this setting only when you also enable Scene change detection (SceneChangeDetect). This setting determines how the encoder manages the spacing between I-frames that it inserts as part of the I-frame cadence and the I-frames that it inserts for Scene change detection. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, keep the default value by leaving this setting out of your JSON job specification. In the console, do this by keeping the default empty value. When you explicitly specify a value for this setting, the encoder determines whether to skip a cadence-driven I-frame by the value you set. For example, if you set Min I interval (minIInterval) to 5 and a cadence-driven I-frame would fall within 5 frames of a scene-change I-frame, then the encoder skips the cadence-driven I-frame. In this way, one GOP is shrunk slightly and one GOP is stretched slightly. When the cadence-driven I-frames are farther from the scene-change I-frame than the value you set, then the encoder leaves all I-frames in place and the GOPs surrounding the scene change are smaller than the usual cadence GOPs.
     #[doc(hidden)]
-    pub min_i_interval: i32,
+    pub min_i_interval: std::option::Option<i32>,
     /// Specify the number of B-frames between reference frames in this output. For the best video quality: Leave blank. MediaConvert automatically determines the number of B-frames to use based on the characteristics of your input video. To manually specify the number of B-frames between reference frames: Enter an integer from 0 to 7.
     #[doc(hidden)]
-    pub number_b_frames_between_reference_frames: i32,
+    pub number_b_frames_between_reference_frames: std::option::Option<i32>,
     /// Number of reference frames to use. The encoder may use more than requested if using B-frames and/or interlaced encoding.
     #[doc(hidden)]
-    pub number_reference_frames: i32,
+    pub number_reference_frames: std::option::Option<i32>,
     /// Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
     #[doc(hidden)]
     pub par_control: std::option::Option<crate::types::H265ParControl>,
     /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parDenominator is 33.
     #[doc(hidden)]
-    pub par_denominator: i32,
+    pub par_denominator: std::option::Option<i32>,
     /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parNumerator is 40.
     #[doc(hidden)]
-    pub par_numerator: i32,
+    pub par_numerator: std::option::Option<i32>,
     /// Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
     #[doc(hidden)]
     pub quality_tuning_level: std::option::Option<crate::types::H265QualityTuningLevel>,
@@ -106,7 +106,7 @@ pub struct H265Settings {
     pub scene_change_detect: std::option::Option<crate::types::H265SceneChangeDetect>,
     /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
     #[doc(hidden)]
-    pub slices: i32,
+    pub slices: std::option::Option<i32>,
     /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25. In your JSON job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
     #[doc(hidden)]
     pub slow_pal: std::option::Option<crate::types::H265SlowPal>,
@@ -148,7 +148,7 @@ impl H265Settings {
         self.alternate_transfer_function_sei.as_ref()
     }
     /// Specify the average bitrate in bits per second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique when rounded down to the nearest multiple of 1000.
-    pub fn bitrate(&self) -> i32 {
+    pub fn bitrate(&self) -> std::option::Option<i32> {
         self.bitrate
     }
     /// H.265 Level.
@@ -180,11 +180,11 @@ impl H265Settings {
         self.framerate_conversion_algorithm.as_ref()
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
-    pub fn framerate_denominator(&self) -> i32 {
+    pub fn framerate_denominator(&self) -> std::option::Option<i32> {
         self.framerate_denominator
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
-    pub fn framerate_numerator(&self) -> i32 {
+    pub fn framerate_numerator(&self) -> std::option::Option<i32> {
         self.framerate_numerator
     }
     /// Specify whether to allow B-frames to be referenced by other frame types. To use reference B-frames when your GOP structure has 1 or more B-frames: Leave blank or keep the default value Enabled. We recommend that you choose Enabled to help improve the video quality of your output relative to its bitrate. To not use reference B-frames: Choose Disabled.
@@ -192,11 +192,11 @@ impl H265Settings {
         self.gop_b_reference.as_ref()
     }
     /// Specify the relative frequency of open to closed GOPs in this output. For example, if you want to allow four open GOPs and then require a closed GOP, set this value to 5. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, keep the default value by leaving this setting out of your JSON job specification. In the console, do this by keeping the default empty value. If you do explicitly specify a value, for segmented outputs, don't set this value to 0.
-    pub fn gop_closed_cadence(&self) -> i32 {
+    pub fn gop_closed_cadence(&self) -> std::option::Option<i32> {
         self.gop_closed_cadence
     }
     /// Use this setting only when you set GOP mode control (GopSizeUnits) to Specified, frames (FRAMES) or Specified, seconds (SECONDS). Specify the GOP length using a whole number of frames or a decimal value of seconds. MediaConvert will interpret this value as frames or seconds depending on the value you choose for GOP mode control (GopSizeUnits). If you want to allow MediaConvert to automatically determine GOP size, leave GOP size blank and set GOP mode control to Auto (AUTO). If your output group specifies HLS, DASH, or CMAF, leave GOP size blank and set GOP mode control to Auto in each output in your output group.
-    pub fn gop_size(&self) -> f64 {
+    pub fn gop_size(&self) -> std::option::Option<f64> {
         self.gop_size
     }
     /// Specify how the transcoder determines GOP size for this output. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, choose Auto (AUTO) and and leave GOP size (GopSize) blank. By default, if you don't specify GOP mode control (GopSizeUnits), MediaConvert will use automatic behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode control to Auto and leave GOP size blank in each output in your output group. To explicitly specify the GOP length, choose Specified, frames (FRAMES) or Specified, seconds (SECONDS) and then provide the GOP length in the related setting GOP size (GopSize).
@@ -204,15 +204,15 @@ impl H265Settings {
         self.gop_size_units.as_ref()
     }
     /// If your downstream systems have strict buffer requirements: Specify the minimum percentage of the HRD buffer that's available at the end of each encoded video segment. For the best video quality: Set to 0 or leave blank to automatically determine the final buffer fill percentage.
-    pub fn hrd_buffer_final_fill_percentage(&self) -> i32 {
+    pub fn hrd_buffer_final_fill_percentage(&self) -> std::option::Option<i32> {
         self.hrd_buffer_final_fill_percentage
     }
     /// Percentage of the buffer that should initially be filled (HRD buffer model).
-    pub fn hrd_buffer_initial_fill_percentage(&self) -> i32 {
+    pub fn hrd_buffer_initial_fill_percentage(&self) -> std::option::Option<i32> {
         self.hrd_buffer_initial_fill_percentage
     }
     /// Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000.
-    pub fn hrd_buffer_size(&self) -> i32 {
+    pub fn hrd_buffer_size(&self) -> std::option::Option<i32> {
         self.hrd_buffer_size
     }
     /// Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
@@ -220,19 +220,19 @@ impl H265Settings {
         self.interlace_mode.as_ref()
     }
     /// Maximum bitrate in bits/second. For example, enter five megabits per second as 5000000. Required when Rate control mode is QVBR.
-    pub fn max_bitrate(&self) -> i32 {
+    pub fn max_bitrate(&self) -> std::option::Option<i32> {
         self.max_bitrate
     }
     /// Use this setting only when you also enable Scene change detection (SceneChangeDetect). This setting determines how the encoder manages the spacing between I-frames that it inserts as part of the I-frame cadence and the I-frames that it inserts for Scene change detection. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, keep the default value by leaving this setting out of your JSON job specification. In the console, do this by keeping the default empty value. When you explicitly specify a value for this setting, the encoder determines whether to skip a cadence-driven I-frame by the value you set. For example, if you set Min I interval (minIInterval) to 5 and a cadence-driven I-frame would fall within 5 frames of a scene-change I-frame, then the encoder skips the cadence-driven I-frame. In this way, one GOP is shrunk slightly and one GOP is stretched slightly. When the cadence-driven I-frames are farther from the scene-change I-frame than the value you set, then the encoder leaves all I-frames in place and the GOPs surrounding the scene change are smaller than the usual cadence GOPs.
-    pub fn min_i_interval(&self) -> i32 {
+    pub fn min_i_interval(&self) -> std::option::Option<i32> {
         self.min_i_interval
     }
     /// Specify the number of B-frames between reference frames in this output. For the best video quality: Leave blank. MediaConvert automatically determines the number of B-frames to use based on the characteristics of your input video. To manually specify the number of B-frames between reference frames: Enter an integer from 0 to 7.
-    pub fn number_b_frames_between_reference_frames(&self) -> i32 {
+    pub fn number_b_frames_between_reference_frames(&self) -> std::option::Option<i32> {
         self.number_b_frames_between_reference_frames
     }
     /// Number of reference frames to use. The encoder may use more than requested if using B-frames and/or interlaced encoding.
-    pub fn number_reference_frames(&self) -> i32 {
+    pub fn number_reference_frames(&self) -> std::option::Option<i32> {
         self.number_reference_frames
     }
     /// Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
@@ -240,11 +240,11 @@ impl H265Settings {
         self.par_control.as_ref()
     }
     /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parDenominator is 33.
-    pub fn par_denominator(&self) -> i32 {
+    pub fn par_denominator(&self) -> std::option::Option<i32> {
         self.par_denominator
     }
     /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parNumerator is 40.
-    pub fn par_numerator(&self) -> i32 {
+    pub fn par_numerator(&self) -> std::option::Option<i32> {
         self.par_numerator
     }
     /// Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
@@ -278,7 +278,7 @@ impl H265Settings {
         self.scene_change_detect.as_ref()
     }
     /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
-    pub fn slices(&self) -> i32 {
+    pub fn slices(&self) -> std::option::Option<i32> {
         self.slices
     }
     /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25. In your JSON job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
@@ -902,43 +902,37 @@ impl H265SettingsBuilder {
         crate::types::H265Settings {
             adaptive_quantization: self.adaptive_quantization,
             alternate_transfer_function_sei: self.alternate_transfer_function_sei,
-            bitrate: self.bitrate.unwrap_or_default(),
+            bitrate: self.bitrate,
             codec_level: self.codec_level,
             codec_profile: self.codec_profile,
             dynamic_sub_gop: self.dynamic_sub_gop,
             flicker_adaptive_quantization: self.flicker_adaptive_quantization,
             framerate_control: self.framerate_control,
             framerate_conversion_algorithm: self.framerate_conversion_algorithm,
-            framerate_denominator: self.framerate_denominator.unwrap_or_default(),
-            framerate_numerator: self.framerate_numerator.unwrap_or_default(),
+            framerate_denominator: self.framerate_denominator,
+            framerate_numerator: self.framerate_numerator,
             gop_b_reference: self.gop_b_reference,
-            gop_closed_cadence: self.gop_closed_cadence.unwrap_or_default(),
-            gop_size: self.gop_size.unwrap_or_default(),
+            gop_closed_cadence: self.gop_closed_cadence,
+            gop_size: self.gop_size,
             gop_size_units: self.gop_size_units,
-            hrd_buffer_final_fill_percentage: self
-                .hrd_buffer_final_fill_percentage
-                .unwrap_or_default(),
-            hrd_buffer_initial_fill_percentage: self
-                .hrd_buffer_initial_fill_percentage
-                .unwrap_or_default(),
-            hrd_buffer_size: self.hrd_buffer_size.unwrap_or_default(),
+            hrd_buffer_final_fill_percentage: self.hrd_buffer_final_fill_percentage,
+            hrd_buffer_initial_fill_percentage: self.hrd_buffer_initial_fill_percentage,
+            hrd_buffer_size: self.hrd_buffer_size,
             interlace_mode: self.interlace_mode,
-            max_bitrate: self.max_bitrate.unwrap_or_default(),
-            min_i_interval: self.min_i_interval.unwrap_or_default(),
-            number_b_frames_between_reference_frames: self
-                .number_b_frames_between_reference_frames
-                .unwrap_or_default(),
-            number_reference_frames: self.number_reference_frames.unwrap_or_default(),
+            max_bitrate: self.max_bitrate,
+            min_i_interval: self.min_i_interval,
+            number_b_frames_between_reference_frames: self.number_b_frames_between_reference_frames,
+            number_reference_frames: self.number_reference_frames,
             par_control: self.par_control,
-            par_denominator: self.par_denominator.unwrap_or_default(),
-            par_numerator: self.par_numerator.unwrap_or_default(),
+            par_denominator: self.par_denominator,
+            par_numerator: self.par_numerator,
             quality_tuning_level: self.quality_tuning_level,
             qvbr_settings: self.qvbr_settings,
             rate_control_mode: self.rate_control_mode,
             sample_adaptive_offset_filter_mode: self.sample_adaptive_offset_filter_mode,
             scan_type_conversion_mode: self.scan_type_conversion_mode,
             scene_change_detect: self.scene_change_detect,
-            slices: self.slices.unwrap_or_default(),
+            slices: self.slices,
             slow_pal: self.slow_pal,
             spatial_adaptive_quantization: self.spatial_adaptive_quantization,
             telecine: self.telecine,

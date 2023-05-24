@@ -218,6 +218,10 @@ mod batch_get_prepared_statement;
 
 mod batch_get_query_execution;
 
+mod cancel_capacity_reservation;
+
+mod create_capacity_reservation;
+
 mod create_data_catalog;
 
 mod create_named_query;
@@ -276,6 +280,10 @@ mod get_calculation_execution_code;
 
 mod get_calculation_execution_status;
 
+mod get_capacity_assignment_configuration;
+
+mod get_capacity_reservation;
+
 mod get_data_catalog;
 
 mod get_database;
@@ -306,6 +314,8 @@ mod list_application_dpu_sizes;
 
 mod list_calculation_executions;
 
+mod list_capacity_reservations;
+
 mod list_data_catalogs;
 
 mod list_databases;
@@ -332,6 +342,8 @@ mod list_tags_for_resource;
 
 mod list_work_groups;
 
+mod put_capacity_assignment_configuration;
+
 mod start_calculation_execution;
 
 mod start_query_execution;
@@ -347,6 +359,8 @@ mod tag_resource;
 mod terminate_session;
 
 mod untag_resource;
+
+mod update_capacity_reservation;
 
 mod update_data_catalog;
 

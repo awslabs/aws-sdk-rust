@@ -10,7 +10,7 @@ pub struct InstanceGroupDetail {
     /// <p>Friendly name for the instance group.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>Market type of the EC2 instances used to create a cluster node.</p>
+    /// <p>Market type of the Amazon EC2 instances used to create a cluster node.</p>
     #[doc(hidden)]
     pub market: std::option::Option<crate::types::MarketType>,
     /// <p>Instance group role in the cluster</p>
@@ -19,7 +19,7 @@ pub struct InstanceGroupDetail {
     /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
     #[doc(hidden)]
     pub bid_price: std::option::Option<std::string::String>,
-    /// <p>EC2 instance type.</p>
+    /// <p>Amazon EC2 instance type.</p>
     #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>Target number of instances to run in the instance group.</p>
@@ -59,7 +59,7 @@ impl InstanceGroupDetail {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Market type of the EC2 instances used to create a cluster node.</p>
+    /// <p>Market type of the Amazon EC2 instances used to create a cluster node.</p>
     pub fn market(&self) -> std::option::Option<&crate::types::MarketType> {
         self.market.as_ref()
     }
@@ -71,7 +71,7 @@ impl InstanceGroupDetail {
     pub fn bid_price(&self) -> std::option::Option<&str> {
         self.bid_price.as_deref()
     }
-    /// <p>EC2 instance type.</p>
+    /// <p>Amazon EC2 instance type.</p>
     pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
     }
@@ -163,12 +163,12 @@ impl InstanceGroupDetailBuilder {
         self.name = input;
         self
     }
-    /// <p>Market type of the EC2 instances used to create a cluster node.</p>
+    /// <p>Market type of the Amazon EC2 instances used to create a cluster node.</p>
     pub fn market(mut self, input: crate::types::MarketType) -> Self {
         self.market = Some(input);
         self
     }
-    /// <p>Market type of the EC2 instances used to create a cluster node.</p>
+    /// <p>Market type of the Amazon EC2 instances used to create a cluster node.</p>
     pub fn set_market(mut self, input: std::option::Option<crate::types::MarketType>) -> Self {
         self.market = input;
         self
@@ -196,12 +196,12 @@ impl InstanceGroupDetailBuilder {
         self.bid_price = input;
         self
     }
-    /// <p>EC2 instance type.</p>
+    /// <p>Amazon EC2 instance type.</p>
     pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.instance_type = Some(input.into());
         self
     }
-    /// <p>EC2 instance type.</p>
+    /// <p>Amazon EC2 instance type.</p>
     pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.instance_type = input;
         self

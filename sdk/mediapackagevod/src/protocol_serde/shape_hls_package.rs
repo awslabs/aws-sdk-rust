@@ -100,21 +100,17 @@ pub fn ser_hls_package(
         }
         array_4.finish();
     }
-    if input.include_dvb_subtitles {
-        object
-            .key("includeDvbSubtitles")
-            .boolean(input.include_dvb_subtitles);
+    if let Some(var_7) = &input.include_dvb_subtitles {
+        object.key("includeDvbSubtitles").boolean(*var_7);
     }
-    if input.segment_duration_seconds != 0 {
+    if let Some(var_8) = &input.segment_duration_seconds {
         object.key("segmentDurationSeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.segment_duration_seconds).into()),
+            aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if input.use_audio_rendition_group {
-        object
-            .key("useAudioRenditionGroup")
-            .boolean(input.use_audio_rendition_group);
+    if let Some(var_9) = &input.use_audio_rendition_group {
+        object.key("useAudioRenditionGroup").boolean(*var_9);
     }
     Ok(())
 }

@@ -57,6 +57,9 @@ pub struct EcsServiceRecommendation {
     /// <p> The risk of the current Amazon ECS service not meeting the performance needs of its workloads. The higher the risk, the more likely the current service can't meet the performance requirements of its workload. </p>
     #[doc(hidden)]
     pub current_performance_risk: std::option::Option<crate::types::CurrentPerformanceRisk>,
+    /// <p> A list of tags assigned to your Amazon ECS service recommendations. </p>
+    #[doc(hidden)]
+    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl EcsServiceRecommendation {
     /// <p> The Amazon Resource Name (ARN) of the current Amazon ECS service. </p>
@@ -130,6 +133,10 @@ impl EcsServiceRecommendation {
     ) -> std::option::Option<&crate::types::CurrentPerformanceRisk> {
         self.current_performance_risk.as_ref()
     }
+    /// <p> A list of tags assigned to your Amazon ECS service recommendations. </p>
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+        self.tags.as_deref()
+    }
 }
 impl EcsServiceRecommendation {
     /// Creates a new builder-style object to manufacture [`EcsServiceRecommendation`](crate::types::EcsServiceRecommendation).
@@ -157,6 +164,7 @@ pub struct EcsServiceRecommendationBuilder {
     pub(crate) service_recommendation_options:
         std::option::Option<std::vec::Vec<crate::types::EcsServiceRecommendationOption>>,
     pub(crate) current_performance_risk: std::option::Option<crate::types::CurrentPerformanceRisk>,
+    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl EcsServiceRecommendationBuilder {
     /// <p> The Amazon Resource Name (ARN) of the current Amazon ECS service. </p>
@@ -356,6 +364,25 @@ impl EcsServiceRecommendationBuilder {
         self.current_performance_risk = input;
         self
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p> A list of tags assigned to your Amazon ECS service recommendations. </p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = Some(v);
+        self
+    }
+    /// <p> A list of tags assigned to your Amazon ECS service recommendations. </p>
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
+    }
     /// Consumes the builder and constructs a [`EcsServiceRecommendation`](crate::types::EcsServiceRecommendation).
     pub fn build(self) -> crate::types::EcsServiceRecommendation {
         crate::types::EcsServiceRecommendation {
@@ -370,6 +397,7 @@ impl EcsServiceRecommendationBuilder {
             finding_reason_codes: self.finding_reason_codes,
             service_recommendation_options: self.service_recommendation_options,
             current_performance_risk: self.current_performance_risk,
+            tags: self.tags,
         }
     }
 }

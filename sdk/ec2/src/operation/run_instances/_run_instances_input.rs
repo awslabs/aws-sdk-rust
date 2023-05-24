@@ -13,11 +13,11 @@ pub struct RunInstancesInput {
     /// <p>Default: <code>m1.small</code> </p>
     #[doc(hidden)]
     pub instance_type: std::option::Option<crate::types::InstanceType>,
-    /// <p>[EC2-VPC] The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of instances to launch.</p>
+    /// <p>The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of instances to launch.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
     #[doc(hidden)]
     pub ipv6_address_count: std::option::Option<i32>,
-    /// <p>[EC2-VPC] The IPv6 addresses from the range of the subnet to associate with the primary network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify this option if you've specified a minimum number of instances to launch.</p>
+    /// <p>The IPv6 addresses from the range of the subnet to associate with the primary network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify this option if you've specified a minimum number of instances to launch.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
     #[doc(hidden)]
     pub ipv6_addresses: std::option::Option<std::vec::Vec<crate::types::InstanceIpv6Address>>,
@@ -54,12 +54,12 @@ pub struct RunInstancesInput {
     /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
     #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>[EC2-Classic, default VPC] The names of the security groups.</p>
+    /// <p>[Default VPC] The names of the security groups.</p>
     /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
     /// <p>Default: Amazon EC2 uses the default security group.</p>
     #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
+    /// <p>The ID of the subnet to launch the instance into.</p>
     /// <p>If you specify a network interface, you must specify any subnets as part of the network interface.</p>
     #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
@@ -96,7 +96,7 @@ pub struct RunInstancesInput {
     #[doc(hidden)]
     pub network_interfaces:
         std::option::Option<std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
-    /// <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.</p>
+    /// <p>The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.</p>
     /// <p>Only one private IP address can be designated as primary. You can't specify this option if you've specified the option to designate a private IP address as the primary IP address in a network interface specification. You cannot specify this option if you're launching more than one instance in the request.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
     #[doc(hidden)]
@@ -184,12 +184,12 @@ impl RunInstancesInput {
     pub fn instance_type(&self) -> std::option::Option<&crate::types::InstanceType> {
         self.instance_type.as_ref()
     }
-    /// <p>[EC2-VPC] The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of instances to launch.</p>
+    /// <p>The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of instances to launch.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
     pub fn ipv6_address_count(&self) -> std::option::Option<i32> {
         self.ipv6_address_count
     }
-    /// <p>[EC2-VPC] The IPv6 addresses from the range of the subnet to associate with the primary network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify this option if you've specified a minimum number of instances to launch.</p>
+    /// <p>The IPv6 addresses from the range of the subnet to associate with the primary network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify this option if you've specified a minimum number of instances to launch.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
     pub fn ipv6_addresses(&self) -> std::option::Option<&[crate::types::InstanceIpv6Address]> {
         self.ipv6_addresses.as_deref()
@@ -235,13 +235,13 @@ impl RunInstancesInput {
     pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
-    /// <p>[EC2-Classic, default VPC] The names of the security groups.</p>
+    /// <p>[Default VPC] The names of the security groups.</p>
     /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
     /// <p>Default: Amazon EC2 uses the default security group.</p>
     pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.security_groups.as_deref()
     }
-    /// <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
+    /// <p>The ID of the subnet to launch the instance into.</p>
     /// <p>If you specify a network interface, you must specify any subnets as part of the network interface.</p>
     pub fn subnet_id(&self) -> std::option::Option<&str> {
         self.subnet_id.as_deref()
@@ -293,7 +293,7 @@ impl RunInstancesInput {
     ) -> std::option::Option<&[crate::types::InstanceNetworkInterfaceSpecification]> {
         self.network_interfaces.as_deref()
     }
-    /// <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.</p>
+    /// <p>The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.</p>
     /// <p>Only one private IP address can be designated as primary. You can't specify this option if you've specified the option to designate a private IP address as the primary IP address in a network interface specification. You cannot specify this option if you're launching more than one instance in the request.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
     pub fn private_ip_address(&self) -> std::option::Option<&str> {
@@ -564,13 +564,13 @@ impl RunInstancesInputBuilder {
         self.instance_type = input;
         self
     }
-    /// <p>[EC2-VPC] The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of instances to launch.</p>
+    /// <p>The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of instances to launch.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
     pub fn ipv6_address_count(mut self, input: i32) -> Self {
         self.ipv6_address_count = Some(input);
         self
     }
-    /// <p>[EC2-VPC] The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of instances to launch.</p>
+    /// <p>The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of instances to launch.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
     pub fn set_ipv6_address_count(mut self, input: std::option::Option<i32>) -> Self {
         self.ipv6_address_count = input;
@@ -580,7 +580,7 @@ impl RunInstancesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_ipv6_addresses`](Self::set_ipv6_addresses).
     ///
-    /// <p>[EC2-VPC] The IPv6 addresses from the range of the subnet to associate with the primary network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify this option if you've specified a minimum number of instances to launch.</p>
+    /// <p>The IPv6 addresses from the range of the subnet to associate with the primary network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify this option if you've specified a minimum number of instances to launch.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
     pub fn ipv6_addresses(mut self, input: crate::types::InstanceIpv6Address) -> Self {
         let mut v = self.ipv6_addresses.unwrap_or_default();
@@ -588,7 +588,7 @@ impl RunInstancesInputBuilder {
         self.ipv6_addresses = Some(v);
         self
     }
-    /// <p>[EC2-VPC] The IPv6 addresses from the range of the subnet to associate with the primary network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify this option if you've specified a minimum number of instances to launch.</p>
+    /// <p>The IPv6 addresses from the range of the subnet to associate with the primary network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify this option if you've specified a minimum number of instances to launch.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
     pub fn set_ipv6_addresses(
         mut self,
@@ -711,7 +711,7 @@ impl RunInstancesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
-    /// <p>[EC2-Classic, default VPC] The names of the security groups.</p>
+    /// <p>[Default VPC] The names of the security groups.</p>
     /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
     /// <p>Default: Amazon EC2 uses the default security group.</p>
     pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
@@ -720,7 +720,7 @@ impl RunInstancesInputBuilder {
         self.security_groups = Some(v);
         self
     }
-    /// <p>[EC2-Classic, default VPC] The names of the security groups.</p>
+    /// <p>[Default VPC] The names of the security groups.</p>
     /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
     /// <p>Default: Amazon EC2 uses the default security group.</p>
     pub fn set_security_groups(
@@ -730,13 +730,13 @@ impl RunInstancesInputBuilder {
         self.security_groups = input;
         self
     }
-    /// <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
+    /// <p>The ID of the subnet to launch the instance into.</p>
     /// <p>If you specify a network interface, you must specify any subnets as part of the network interface.</p>
     pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.subnet_id = Some(input.into());
         self
     }
-    /// <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
+    /// <p>The ID of the subnet to launch the instance into.</p>
     /// <p>If you specify a network interface, you must specify any subnets as part of the network interface.</p>
     pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.subnet_id = input;
@@ -868,14 +868,14 @@ impl RunInstancesInputBuilder {
         self.network_interfaces = input;
         self
     }
-    /// <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.</p>
+    /// <p>The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.</p>
     /// <p>Only one private IP address can be designated as primary. You can't specify this option if you've specified the option to designate a private IP address as the primary IP address in a network interface specification. You cannot specify this option if you're launching more than one instance in the request.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
     pub fn private_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
         self.private_ip_address = Some(input.into());
         self
     }
-    /// <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.</p>
+    /// <p>The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.</p>
     /// <p>Only one private IP address can be designated as primary. You can't specify this option if you've specified the option to designate a private IP address as the primary IP address in a network interface specification. You cannot specify this option if you're launching more than one instance in the request.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
     pub fn set_private_ip_address(

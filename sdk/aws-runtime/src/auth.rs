@@ -12,10 +12,9 @@ pub mod sigv4 {
         UriPathNormalizationMode,
     };
     use aws_smithy_http::property_bag::PropertyBag;
-    use aws_smithy_runtime_api::client::identity::Identity;
+    use aws_smithy_runtime_api::client::identity::{Identity, IdentityResolver, IdentityResolvers};
     use aws_smithy_runtime_api::client::orchestrator::{
-        BoxError, HttpAuthScheme, HttpRequest, HttpRequestSigner, IdentityResolver,
-        IdentityResolvers,
+        BoxError, HttpAuthScheme, HttpRequest, HttpRequestSigner,
     };
     use aws_types::region::SigningRegion;
     use aws_types::SigningService;

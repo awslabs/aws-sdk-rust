@@ -14,6 +14,7 @@
 /// match oauth2granttype {
 ///     OAuth2GrantType::AuthorizationCode => { /* ... */ },
 ///     OAuth2GrantType::ClientCredentials => { /* ... */ },
+///     OAuth2GrantType::JwtBearer => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -51,6 +52,8 @@ pub enum OAuth2GrantType {
     AuthorizationCode,
     #[allow(missing_docs)] // documentation missing in model
     ClientCredentials,
+    #[allow(missing_docs)] // documentation missing in model
+    JwtBearer,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -59,6 +62,7 @@ impl std::convert::From<&str> for OAuth2GrantType {
         match s {
             "AUTHORIZATION_CODE" => OAuth2GrantType::AuthorizationCode,
             "CLIENT_CREDENTIALS" => OAuth2GrantType::ClientCredentials,
+            "JWT_BEARER" => OAuth2GrantType::JwtBearer,
             other => {
                 OAuth2GrantType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -78,12 +82,13 @@ impl OAuth2GrantType {
         match self {
             OAuth2GrantType::AuthorizationCode => "AUTHORIZATION_CODE",
             OAuth2GrantType::ClientCredentials => "CLIENT_CREDENTIALS",
+            OAuth2GrantType::JwtBearer => "JWT_BEARER",
             OAuth2GrantType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AUTHORIZATION_CODE", "CLIENT_CREDENTIALS"]
+        &["AUTHORIZATION_CODE", "CLIENT_CREDENTIALS", "JWT_BEARER"]
     }
 }
 impl AsRef<str> for OAuth2GrantType {

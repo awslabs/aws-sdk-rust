@@ -33,4 +33,6 @@ pub use crate::types::error::_waf_service_linked_role_error_exception::WafServic
 
 pub use crate::types::error::_waf_log_destination_permission_issue_exception::WafLogDestinationPermissionIssueExceptionBuilder;
 
+pub use crate::types::error::_waf_unsupported_aggregate_key_type_exception::WafUnsupportedAggregateKeyTypeExceptionBuilder;
+
 pub use crate::types::error::_waf_associated_item_exception::WafAssociatedItemExceptionBuilder;

@@ -15,7 +15,9 @@ pub struct GenerateDataKeyInput {
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>. To get the alias name and alias ARN, use <code>ListAliases</code>.</p>
     #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the encryption context that will be used when encrypting the data key.</p>
+    /// <p>Specifies the encryption context that will be used when encrypting the data key.</p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
     /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is supported only on operations with symmetric encryption KMS keys. On operations with symmetric encryption KMS keys, an encryption context is optional, but it is strongly recommended.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption context</a> in the <i>Key Management Service Developer Guide</i>.</p>
     #[doc(hidden)]
@@ -33,6 +35,12 @@ pub struct GenerateDataKeyInput {
     /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
     #[doc(hidden)]
     pub grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A signed <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave-how.html#term-attestdoc">attestation document</a> from an Amazon Web Services Nitro enclave and the encryption algorithm to use with the enclave's public key. The only valid encryption algorithm is <code>RSAES_OAEP_SHA_256</code>. </p>
+    /// <p>This parameter only supports attestation documents for Amazon Web Services Nitro Enclaves. To include this parameter, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK.</p>
+    /// <p>When you use this parameter, instead of returning the plaintext data key, KMS encrypts the plaintext data key under the public key in the attestation document, and returns the resulting ciphertext in the <code>CiphertextForRecipient</code> field in the response. This ciphertext can be decrypted only with the private key in the enclave. The <code>CiphertextBlob</code> field in the response contains a copy of the data key encrypted under the KMS key specified by the <code>KeyId</code> parameter. The <code>Plaintext</code> field in the response is null or empty.</p>
+    /// <p>For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    #[doc(hidden)]
+    pub recipient: std::option::Option<crate::types::RecipientInfo>,
 }
 impl GenerateDataKeyInput {
     /// <p>Specifies the symmetric encryption KMS key that encrypts the data key. You cannot specify an asymmetric KMS key or a KMS key in a custom key store. To get the type and origin of your KMS key, use the <code>DescribeKey</code> operation.</p>
@@ -48,7 +56,9 @@ impl GenerateDataKeyInput {
     pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
     }
-    /// <p>Specifies the encryption context that will be used when encrypting the data key.</p>
+    /// <p>Specifies the encryption context that will be used when encrypting the data key.</p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
     /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is supported only on operations with symmetric encryption KMS keys. On operations with symmetric encryption KMS keys, an encryption context is optional, but it is strongly recommended.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption context</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn encryption_context(
@@ -72,6 +82,13 @@ impl GenerateDataKeyInput {
     pub fn grant_tokens(&self) -> std::option::Option<&[std::string::String]> {
         self.grant_tokens.as_deref()
     }
+    /// <p>A signed <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave-how.html#term-attestdoc">attestation document</a> from an Amazon Web Services Nitro enclave and the encryption algorithm to use with the enclave's public key. The only valid encryption algorithm is <code>RSAES_OAEP_SHA_256</code>. </p>
+    /// <p>This parameter only supports attestation documents for Amazon Web Services Nitro Enclaves. To include this parameter, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK.</p>
+    /// <p>When you use this parameter, instead of returning the plaintext data key, KMS encrypts the plaintext data key under the public key in the attestation document, and returns the resulting ciphertext in the <code>CiphertextForRecipient</code> field in the response. This ciphertext can be decrypted only with the private key in the enclave. The <code>CiphertextBlob</code> field in the response contains a copy of the data key encrypted under the KMS key specified by the <code>KeyId</code> parameter. The <code>Plaintext</code> field in the response is null or empty.</p>
+    /// <p>For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn recipient(&self) -> std::option::Option<&crate::types::RecipientInfo> {
+        self.recipient.as_ref()
+    }
 }
 impl GenerateDataKeyInput {
     /// Creates a new builder-style object to manufacture [`GenerateDataKeyInput`](crate::operation::generate_data_key::GenerateDataKeyInput).
@@ -90,6 +107,7 @@ pub struct GenerateDataKeyInputBuilder {
     pub(crate) number_of_bytes: std::option::Option<i32>,
     pub(crate) key_spec: std::option::Option<crate::types::DataKeySpec>,
     pub(crate) grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) recipient: std::option::Option<crate::types::RecipientInfo>,
 }
 impl GenerateDataKeyInputBuilder {
     /// <p>Specifies the symmetric encryption KMS key that encrypts the data key. You cannot specify an asymmetric KMS key or a KMS key in a custom key store. To get the type and origin of your KMS key, use the <code>DescribeKey</code> operation.</p>
@@ -124,7 +142,9 @@ impl GenerateDataKeyInputBuilder {
     ///
     /// To override the contents of this collection use [`set_encryption_context`](Self::set_encryption_context).
     ///
-    /// <p>Specifies the encryption context that will be used when encrypting the data key.</p>
+    /// <p>Specifies the encryption context that will be used when encrypting the data key.</p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
     /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is supported only on operations with symmetric encryption KMS keys. On operations with symmetric encryption KMS keys, an encryption context is optional, but it is strongly recommended.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption context</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn encryption_context(
@@ -137,7 +157,9 @@ impl GenerateDataKeyInputBuilder {
         self.encryption_context = Some(hash_map);
         self
     }
-    /// <p>Specifies the encryption context that will be used when encrypting the data key.</p>
+    /// <p>Specifies the encryption context that will be used when encrypting the data key.</p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
     /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is supported only on operations with symmetric encryption KMS keys. On operations with symmetric encryption KMS keys, an encryption context is optional, but it is strongly recommended.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption context</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn set_encryption_context(
@@ -194,6 +216,25 @@ impl GenerateDataKeyInputBuilder {
         self.grant_tokens = input;
         self
     }
+    /// <p>A signed <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave-how.html#term-attestdoc">attestation document</a> from an Amazon Web Services Nitro enclave and the encryption algorithm to use with the enclave's public key. The only valid encryption algorithm is <code>RSAES_OAEP_SHA_256</code>. </p>
+    /// <p>This parameter only supports attestation documents for Amazon Web Services Nitro Enclaves. To include this parameter, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK.</p>
+    /// <p>When you use this parameter, instead of returning the plaintext data key, KMS encrypts the plaintext data key under the public key in the attestation document, and returns the resulting ciphertext in the <code>CiphertextForRecipient</code> field in the response. This ciphertext can be decrypted only with the private key in the enclave. The <code>CiphertextBlob</code> field in the response contains a copy of the data key encrypted under the KMS key specified by the <code>KeyId</code> parameter. The <code>Plaintext</code> field in the response is null or empty.</p>
+    /// <p>For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn recipient(mut self, input: crate::types::RecipientInfo) -> Self {
+        self.recipient = Some(input);
+        self
+    }
+    /// <p>A signed <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave-how.html#term-attestdoc">attestation document</a> from an Amazon Web Services Nitro enclave and the encryption algorithm to use with the enclave's public key. The only valid encryption algorithm is <code>RSAES_OAEP_SHA_256</code>. </p>
+    /// <p>This parameter only supports attestation documents for Amazon Web Services Nitro Enclaves. To include this parameter, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK.</p>
+    /// <p>When you use this parameter, instead of returning the plaintext data key, KMS encrypts the plaintext data key under the public key in the attestation document, and returns the resulting ciphertext in the <code>CiphertextForRecipient</code> field in the response. This ciphertext can be decrypted only with the private key in the enclave. The <code>CiphertextBlob</code> field in the response contains a copy of the data key encrypted under the KMS key specified by the <code>KeyId</code> parameter. The <code>Plaintext</code> field in the response is null or empty.</p>
+    /// <p>For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    pub fn set_recipient(
+        mut self,
+        input: std::option::Option<crate::types::RecipientInfo>,
+    ) -> Self {
+        self.recipient = input;
+        self
+    }
     /// Consumes the builder and constructs a [`GenerateDataKeyInput`](crate::operation::generate_data_key::GenerateDataKeyInput).
     pub fn build(
         self,
@@ -207,6 +248,7 @@ impl GenerateDataKeyInputBuilder {
             number_of_bytes: self.number_of_bytes,
             key_spec: self.key_spec,
             grant_tokens: self.grant_tokens,
+            recipient: self.recipient,
         })
     }
 }

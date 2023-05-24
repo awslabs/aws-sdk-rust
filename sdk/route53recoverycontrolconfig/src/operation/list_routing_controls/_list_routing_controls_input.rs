@@ -8,7 +8,7 @@ pub struct ListRoutingControlsInput {
     pub control_panel_arn: std::option::Option<std::string::String>,
     /// <p>The number of objects that you want to return with this call.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>The token that identifies which batch of results you want to see.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ impl ListRoutingControlsInput {
         self.control_panel_arn.as_deref()
     }
     /// <p>The number of objects that you want to return with this call.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
@@ -88,7 +88,7 @@ impl ListRoutingControlsInputBuilder {
         Ok(
             crate::operation::list_routing_controls::ListRoutingControlsInput {
                 control_panel_arn: self.control_panel_arn,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
                 next_token: self.next_token,
             },
         )

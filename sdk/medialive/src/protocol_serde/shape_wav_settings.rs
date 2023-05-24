@@ -3,19 +3,19 @@ pub fn ser_wav_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WavSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.bit_depth != 0.0 {
+    if let Some(var_1) = &input.bit_depth {
         object.key("bitDepth").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.bit_depth).into()),
+            aws_smithy_types::Number::Float((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.coding_mode {
-        object.key("codingMode").string(var_1.as_str());
+    if let Some(var_2) = &input.coding_mode {
+        object.key("codingMode").string(var_2.as_str());
     }
-    if input.sample_rate != 0.0 {
+    if let Some(var_3) = &input.sample_rate {
         object.key("sampleRate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.sample_rate).into()),
+            aws_smithy_types::Number::Float((*var_3).into()),
         );
     }
     Ok(())

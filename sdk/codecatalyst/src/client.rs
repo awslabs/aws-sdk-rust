@@ -266,6 +266,8 @@ mod get_user_details;
 
 mod list_access_tokens;
 
+mod list_dev_environment_sessions;
+
 mod list_dev_environments;
 
 mod list_event_logs;

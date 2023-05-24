@@ -276,6 +276,10 @@ mod describe_domain_change_progress;
 
 mod describe_domain_config;
 
+mod describe_domain_health;
+
+mod describe_domain_nodes;
+
 mod describe_domains;
 
 mod describe_dry_run_progress;

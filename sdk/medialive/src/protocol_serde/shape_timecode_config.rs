@@ -6,10 +6,10 @@ pub fn ser_timecode_config(
     if let Some(var_1) = &input.source {
         object.key("source").string(var_1.as_str());
     }
-    if input.sync_threshold != 0 {
+    if let Some(var_2) = &input.sync_threshold {
         object.key("syncThreshold").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.sync_threshold).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

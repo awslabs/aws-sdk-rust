@@ -6,10 +6,10 @@ pub fn ser_dvb_sub_source_settings(
     if let Some(var_1) = &input.ocr_language {
         object.key("ocrLanguage").string(var_1.as_str());
     }
-    if input.pid != 0 {
+    if let Some(var_2) = &input.pid {
         object.key("pid").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.pid).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

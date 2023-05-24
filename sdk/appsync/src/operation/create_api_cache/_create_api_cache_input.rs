@@ -10,13 +10,13 @@ pub struct CreateApiCacheInput {
     /// <p>TTL in seconds for cache entries.</p>
     /// <p>Valid values are 1–3,600 seconds.</p>
     #[doc(hidden)]
-    pub ttl: i64,
+    pub ttl: std::option::Option<i64>,
     /// <p>Transit encryption flag when connecting to cache. You cannot update this setting after creation.</p>
     #[doc(hidden)]
-    pub transit_encryption_enabled: bool,
+    pub transit_encryption_enabled: std::option::Option<bool>,
     /// <p>At-rest encryption flag for cache. You cannot update this setting after creation.</p>
     #[doc(hidden)]
-    pub at_rest_encryption_enabled: bool,
+    pub at_rest_encryption_enabled: std::option::Option<bool>,
     /// <p>Caching behavior.</p>
     /// <ul>
     /// <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li>
@@ -56,15 +56,15 @@ impl CreateApiCacheInput {
     }
     /// <p>TTL in seconds for cache entries.</p>
     /// <p>Valid values are 1–3,600 seconds.</p>
-    pub fn ttl(&self) -> i64 {
+    pub fn ttl(&self) -> std::option::Option<i64> {
         self.ttl
     }
     /// <p>Transit encryption flag when connecting to cache. You cannot update this setting after creation.</p>
-    pub fn transit_encryption_enabled(&self) -> bool {
+    pub fn transit_encryption_enabled(&self) -> std::option::Option<bool> {
         self.transit_encryption_enabled
     }
     /// <p>At-rest encryption flag for cache. You cannot update this setting after creation.</p>
-    pub fn at_rest_encryption_enabled(&self) -> bool {
+    pub fn at_rest_encryption_enabled(&self) -> std::option::Option<bool> {
         self.at_rest_encryption_enabled
     }
     /// <p>Caching behavior.</p>
@@ -244,9 +244,9 @@ impl CreateApiCacheInputBuilder {
     > {
         Ok(crate::operation::create_api_cache::CreateApiCacheInput {
             api_id: self.api_id,
-            ttl: self.ttl.unwrap_or_default(),
-            transit_encryption_enabled: self.transit_encryption_enabled.unwrap_or_default(),
-            at_rest_encryption_enabled: self.at_rest_encryption_enabled.unwrap_or_default(),
+            ttl: self.ttl,
+            transit_encryption_enabled: self.transit_encryption_enabled,
+            at_rest_encryption_enabled: self.at_rest_encryption_enabled,
             api_caching_behavior: self.api_caching_behavior,
             r#type: self.r#type,
         })

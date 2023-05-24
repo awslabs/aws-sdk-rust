@@ -9,13 +9,7 @@ pub struct ListExecutionsOutput {
     /// <p>A unique identifier for the workflow.</p>
     #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
-    /// <p>Returns the details for each execution.</p>
-    /// <ul>
-    /// <li> <p> <b>NextToken</b>: returned from a call to several APIs, you can use pass it to a subsequent command to continue listing additional executions.</p> </li>
-    /// <li> <p> <b>StartTime</b>: timestamp indicating when the execution began.</p> </li>
-    /// <li> <p> <b>Executions</b>: details of the execution, including the execution ID, initial file location, and Service metadata.</p> </li>
-    /// <li> <p> <b>Status</b>: one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>, <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>. </p> </li>
-    /// </ul>
+    /// <p>Returns the details for each execution, in a <code>ListedExecution</code> array.</p>
     #[doc(hidden)]
     pub executions: std::option::Option<std::vec::Vec<crate::types::ListedExecution>>,
     _request_id: Option<String>,
@@ -29,13 +23,7 @@ impl ListExecutionsOutput {
     pub fn workflow_id(&self) -> std::option::Option<&str> {
         self.workflow_id.as_deref()
     }
-    /// <p>Returns the details for each execution.</p>
-    /// <ul>
-    /// <li> <p> <b>NextToken</b>: returned from a call to several APIs, you can use pass it to a subsequent command to continue listing additional executions.</p> </li>
-    /// <li> <p> <b>StartTime</b>: timestamp indicating when the execution began.</p> </li>
-    /// <li> <p> <b>Executions</b>: details of the execution, including the execution ID, initial file location, and Service metadata.</p> </li>
-    /// <li> <p> <b>Status</b>: one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>, <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>. </p> </li>
-    /// </ul>
+    /// <p>Returns the details for each execution, in a <code>ListedExecution</code> array.</p>
     pub fn executions(&self) -> std::option::Option<&[crate::types::ListedExecution]> {
         self.executions.as_deref()
     }
@@ -86,26 +74,14 @@ impl ListExecutionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_executions`](Self::set_executions).
     ///
-    /// <p>Returns the details for each execution.</p>
-    /// <ul>
-    /// <li> <p> <b>NextToken</b>: returned from a call to several APIs, you can use pass it to a subsequent command to continue listing additional executions.</p> </li>
-    /// <li> <p> <b>StartTime</b>: timestamp indicating when the execution began.</p> </li>
-    /// <li> <p> <b>Executions</b>: details of the execution, including the execution ID, initial file location, and Service metadata.</p> </li>
-    /// <li> <p> <b>Status</b>: one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>, <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>. </p> </li>
-    /// </ul>
+    /// <p>Returns the details for each execution, in a <code>ListedExecution</code> array.</p>
     pub fn executions(mut self, input: crate::types::ListedExecution) -> Self {
         let mut v = self.executions.unwrap_or_default();
         v.push(input);
         self.executions = Some(v);
         self
     }
-    /// <p>Returns the details for each execution.</p>
-    /// <ul>
-    /// <li> <p> <b>NextToken</b>: returned from a call to several APIs, you can use pass it to a subsequent command to continue listing additional executions.</p> </li>
-    /// <li> <p> <b>StartTime</b>: timestamp indicating when the execution began.</p> </li>
-    /// <li> <p> <b>Executions</b>: details of the execution, including the execution ID, initial file location, and Service metadata.</p> </li>
-    /// <li> <p> <b>Status</b>: one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>, <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>. </p> </li>
-    /// </ul>
+    /// <p>Returns the details for each execution, in a <code>ListedExecution</code> array.</p>
     pub fn set_executions(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::ListedExecution>>,

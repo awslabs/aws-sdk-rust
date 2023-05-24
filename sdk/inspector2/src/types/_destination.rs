@@ -7,7 +7,7 @@ pub struct Destination {
     /// <p>The name of the Amazon S3 bucket to export findings to.</p>
     #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
-    /// <p>The prefix of the KMS key used to export findings.</p>
+    /// <p>The prefix of the Amazon S3 bucket used to export findings.</p>
     #[doc(hidden)]
     pub key_prefix: std::option::Option<std::string::String>,
     /// <p>The ARN of the KMS key used to encrypt data when exporting findings.</p>
@@ -19,7 +19,7 @@ impl Destination {
     pub fn bucket_name(&self) -> std::option::Option<&str> {
         self.bucket_name.as_deref()
     }
-    /// <p>The prefix of the KMS key used to export findings.</p>
+    /// <p>The prefix of the Amazon S3 bucket used to export findings.</p>
     pub fn key_prefix(&self) -> std::option::Option<&str> {
         self.key_prefix.as_deref()
     }
@@ -54,12 +54,12 @@ impl DestinationBuilder {
         self.bucket_name = input;
         self
     }
-    /// <p>The prefix of the KMS key used to export findings.</p>
+    /// <p>The prefix of the Amazon S3 bucket used to export findings.</p>
     pub fn key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
         self.key_prefix = Some(input.into());
         self
     }
-    /// <p>The prefix of the KMS key used to export findings.</p>
+    /// <p>The prefix of the Amazon S3 bucket used to export findings.</p>
     pub fn set_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.key_prefix = input;
         self

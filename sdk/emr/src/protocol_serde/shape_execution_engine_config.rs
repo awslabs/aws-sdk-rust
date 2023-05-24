@@ -14,6 +14,9 @@ pub fn ser_execution_engine_config(
             .key("MasterInstanceSecurityGroupId")
             .string(var_3.as_str());
     }
+    if let Some(var_4) = &input.execution_role_arn {
+        object.key("ExecutionRoleArn").string(var_4.as_str());
+    }
     Ok(())
 }
 
@@ -65,6 +68,15 @@ where
                             }
                             "MasterInstanceSecurityGroupId" => {
                                 builder = builder.set_master_instance_security_group_id(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "ExecutionRoleArn" => {
+                                builder = builder.set_execution_role_arn(
                                     aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSpotPriceHistoryInput {
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>availability-zone</code> - The Availability Zone for which prices should be returned.</p> </li>
     /// <li> <p> <code>instance-type</code> - The type of instance (for example, <code>m3.medium</code>).</p> </li>
@@ -40,7 +40,7 @@ pub struct DescribeSpotPriceHistoryInput {
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeSpotPriceHistoryInput {
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>availability-zone</code> - The Availability Zone for which prices should be returned.</p> </li>
     /// <li> <p> <code>instance-type</code> - The type of instance (for example, <code>m3.medium</code>).</p> </li>
@@ -112,7 +112,7 @@ impl DescribeSpotPriceHistoryInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>availability-zone</code> - The Availability Zone for which prices should be returned.</p> </li>
     /// <li> <p> <code>instance-type</code> - The type of instance (for example, <code>m3.medium</code>).</p> </li>
@@ -126,7 +126,7 @@ impl DescribeSpotPriceHistoryInputBuilder {
         self.filters = Some(v);
         self
     }
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>availability-zone</code> - The Availability Zone for which prices should be returned.</p> </li>
     /// <li> <p> <code>instance-type</code> - The type of instance (for example, <code>m3.medium</code>).</p> </li>

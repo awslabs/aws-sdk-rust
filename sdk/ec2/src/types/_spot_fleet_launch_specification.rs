@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SpotFleetLaunchSpecification {
-    /// <p>One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+    /// <p>The security groups.</p>
     #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<crate::types::GroupIdentifier>>,
     /// <p>Deprecated.</p>
@@ -73,7 +73,7 @@ pub struct SpotFleetLaunchSpecification {
     pub instance_requirements: std::option::Option<crate::types::InstanceRequirements>,
 }
 impl SpotFleetLaunchSpecification {
-    /// <p>One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+    /// <p>The security groups.</p>
     pub fn security_groups(&self) -> std::option::Option<&[crate::types::GroupIdentifier]> {
         self.security_groups.as_deref()
     }
@@ -233,14 +233,14 @@ impl SpotFleetLaunchSpecificationBuilder {
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
-    /// <p>One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+    /// <p>The security groups.</p>
     pub fn security_groups(mut self, input: crate::types::GroupIdentifier) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input);
         self.security_groups = Some(v);
         self
     }
-    /// <p>One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+    /// <p>The security groups.</p>
     pub fn set_security_groups(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::GroupIdentifier>>,

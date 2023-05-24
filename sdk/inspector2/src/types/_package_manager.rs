@@ -15,6 +15,7 @@
 ///     PackageManager::Bundler => { /* ... */ },
 ///     PackageManager::Cargo => { /* ... */ },
 ///     PackageManager::Composer => { /* ... */ },
+///     PackageManager::Gemspec => { /* ... */ },
 ///     PackageManager::Gobinary => { /* ... */ },
 ///     PackageManager::Gomod => { /* ... */ },
 ///     PackageManager::Jar => { /* ... */ },
@@ -68,6 +69,8 @@ pub enum PackageManager {
     #[allow(missing_docs)] // documentation missing in model
     Composer,
     #[allow(missing_docs)] // documentation missing in model
+    Gemspec,
+    #[allow(missing_docs)] // documentation missing in model
     Gobinary,
     #[allow(missing_docs)] // documentation missing in model
     Gomod,
@@ -102,6 +105,7 @@ impl std::convert::From<&str> for PackageManager {
             "BUNDLER" => PackageManager::Bundler,
             "CARGO" => PackageManager::Cargo,
             "COMPOSER" => PackageManager::Composer,
+            "GEMSPEC" => PackageManager::Gemspec,
             "GOBINARY" => PackageManager::Gobinary,
             "GOMOD" => PackageManager::Gomod,
             "JAR" => PackageManager::Jar,
@@ -135,6 +139,7 @@ impl PackageManager {
             PackageManager::Bundler => "BUNDLER",
             PackageManager::Cargo => "CARGO",
             PackageManager::Composer => "COMPOSER",
+            PackageManager::Gemspec => "GEMSPEC",
             PackageManager::Gobinary => "GOBINARY",
             PackageManager::Gomod => "GOMOD",
             PackageManager::Jar => "JAR",
@@ -157,6 +162,7 @@ impl PackageManager {
             "BUNDLER",
             "CARGO",
             "COMPOSER",
+            "GEMSPEC",
             "GOBINARY",
             "GOMOD",
             "JAR",

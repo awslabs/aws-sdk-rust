@@ -19,6 +19,8 @@ pub use crate::types::_key_list_entry::KeyListEntryBuilder;
 
 pub use crate::types::_alias_list_entry::AliasListEntryBuilder;
 
+pub use crate::types::_recipient_info::RecipientInfoBuilder;
+
 pub use crate::types::_custom_key_stores_list_entry::CustomKeyStoresListEntryBuilder;
 
 pub use crate::types::_xks_proxy_configuration_type::XksProxyConfigurationTypeBuilder;

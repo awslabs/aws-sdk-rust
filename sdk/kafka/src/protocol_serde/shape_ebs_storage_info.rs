@@ -12,10 +12,10 @@ pub fn ser_ebs_storage_info(
         )?;
         object_2.finish();
     }
-    if input.volume_size != 0 {
+    if let Some(var_3) = &input.volume_size {
         object.key("volumeSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.volume_size).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())

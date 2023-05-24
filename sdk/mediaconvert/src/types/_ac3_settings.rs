@@ -6,7 +6,7 @@
 pub struct Ac3Settings {
     /// Specify the average bitrate in bits per second. The bitrate that you specify must be a multiple of 8000 within the allowed minimum and maximum values. Leave blank to use the default bitrate for the coding mode you select according ETSI TS 102 366. Valid bitrates for coding mode 1/0: Default: 96000. Minimum: 64000. Maximum: 128000. Valid bitrates for coding mode 1/1: Default: 192000. Minimum: 128000. Maximum: 384000. Valid bitrates for coding mode 2/0: Default: 192000. Minimum: 128000. Maximum: 384000. Valid bitrates for coding mode 3/2 with FLE: Default: 384000. Minimum: 384000. Maximum: 640000.
     #[doc(hidden)]
-    pub bitrate: i32,
+    pub bitrate: std::option::Option<i32>,
     /// Specify the bitstream mode for the AC-3 stream that the encoder emits. For more information about the AC3 bitstream mode, see ATSC A/52-2012 (Annex E).
     #[doc(hidden)]
     pub bitstream_mode: std::option::Option<crate::types::Ac3BitstreamMode>,
@@ -15,7 +15,7 @@ pub struct Ac3Settings {
     pub coding_mode: std::option::Option<crate::types::Ac3CodingMode>,
     /// Sets the dialnorm for the output. If blank and input audio is Dolby Digital, dialnorm will be passed through.
     #[doc(hidden)]
-    pub dialnorm: i32,
+    pub dialnorm: std::option::Option<i32>,
     /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
     #[doc(hidden)]
     pub dynamic_range_compression_line:
@@ -36,11 +36,11 @@ pub struct Ac3Settings {
     pub metadata_control: std::option::Option<crate::types::Ac3MetadataControl>,
     /// This value is always 48000. It represents the sample rate in Hz.
     #[doc(hidden)]
-    pub sample_rate: i32,
+    pub sample_rate: std::option::Option<i32>,
 }
 impl Ac3Settings {
     /// Specify the average bitrate in bits per second. The bitrate that you specify must be a multiple of 8000 within the allowed minimum and maximum values. Leave blank to use the default bitrate for the coding mode you select according ETSI TS 102 366. Valid bitrates for coding mode 1/0: Default: 96000. Minimum: 64000. Maximum: 128000. Valid bitrates for coding mode 1/1: Default: 192000. Minimum: 128000. Maximum: 384000. Valid bitrates for coding mode 2/0: Default: 192000. Minimum: 128000. Maximum: 384000. Valid bitrates for coding mode 3/2 with FLE: Default: 384000. Minimum: 384000. Maximum: 640000.
-    pub fn bitrate(&self) -> i32 {
+    pub fn bitrate(&self) -> std::option::Option<i32> {
         self.bitrate
     }
     /// Specify the bitstream mode for the AC-3 stream that the encoder emits. For more information about the AC3 bitstream mode, see ATSC A/52-2012 (Annex E).
@@ -52,7 +52,7 @@ impl Ac3Settings {
         self.coding_mode.as_ref()
     }
     /// Sets the dialnorm for the output. If blank and input audio is Dolby Digital, dialnorm will be passed through.
-    pub fn dialnorm(&self) -> i32 {
+    pub fn dialnorm(&self) -> std::option::Option<i32> {
         self.dialnorm
     }
     /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
@@ -82,7 +82,7 @@ impl Ac3Settings {
         self.metadata_control.as_ref()
     }
     /// This value is always 48000. It represents the sample rate in Hz.
-    pub fn sample_rate(&self) -> i32 {
+    pub fn sample_rate(&self) -> std::option::Option<i32> {
         self.sample_rate
     }
 }
@@ -245,16 +245,16 @@ impl Ac3SettingsBuilder {
     /// Consumes the builder and constructs a [`Ac3Settings`](crate::types::Ac3Settings).
     pub fn build(self) -> crate::types::Ac3Settings {
         crate::types::Ac3Settings {
-            bitrate: self.bitrate.unwrap_or_default(),
+            bitrate: self.bitrate,
             bitstream_mode: self.bitstream_mode,
             coding_mode: self.coding_mode,
-            dialnorm: self.dialnorm.unwrap_or_default(),
+            dialnorm: self.dialnorm,
             dynamic_range_compression_line: self.dynamic_range_compression_line,
             dynamic_range_compression_profile: self.dynamic_range_compression_profile,
             dynamic_range_compression_rf: self.dynamic_range_compression_rf,
             lfe_filter: self.lfe_filter,
             metadata_control: self.metadata_control,
-            sample_rate: self.sample_rate.unwrap_or_default(),
+            sample_rate: self.sample_rate,
         }
     }
 }

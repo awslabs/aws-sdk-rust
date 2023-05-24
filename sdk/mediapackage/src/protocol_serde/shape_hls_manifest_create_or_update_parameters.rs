@@ -23,27 +23,25 @@ pub fn ser_hls_manifest_create_or_update_parameters(
     if let Some(var_6) = &input.id {
         object.key("id").string(var_6.as_str());
     }
-    if input.include_iframe_only_stream {
-        object
-            .key("includeIframeOnlyStream")
-            .boolean(input.include_iframe_only_stream);
+    if let Some(var_7) = &input.include_iframe_only_stream {
+        object.key("includeIframeOnlyStream").boolean(*var_7);
     }
-    if let Some(var_7) = &input.manifest_name {
-        object.key("manifestName").string(var_7.as_str());
+    if let Some(var_8) = &input.manifest_name {
+        object.key("manifestName").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.playlist_type {
-        object.key("playlistType").string(var_8.as_str());
+    if let Some(var_9) = &input.playlist_type {
+        object.key("playlistType").string(var_9.as_str());
     }
-    if input.playlist_window_seconds != 0 {
+    if let Some(var_10) = &input.playlist_window_seconds {
         object.key("playlistWindowSeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.playlist_window_seconds).into()),
+            aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if input.program_date_time_interval_seconds != 0 {
+    if let Some(var_11) = &input.program_date_time_interval_seconds {
         object.key("programDateTimeIntervalSeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.program_date_time_interval_seconds).into()),
+            aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
     Ok(())

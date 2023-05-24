@@ -85,6 +85,10 @@ pub use crate::types::_component_type_summary::ComponentTypeSummary;
 
 pub use crate::types::_list_component_types_filter::ListComponentTypesFilter;
 
+pub use crate::types::_scene_error::SceneError;
+
+pub use crate::types::_scene_error_code::SceneErrorCode;
+
 pub use crate::types::_property_value_history::PropertyValueHistory;
 
 pub use crate::types::_property_value::PropertyValue;
@@ -234,6 +238,10 @@ mod _relationship;
 mod _relationship_value;
 
 mod _row;
+
+mod _scene_error;
+
+mod _scene_error_code;
 
 mod _scene_summary;
 

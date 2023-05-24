@@ -9,10 +9,10 @@ pub fn ser_assertion_rule_update(
     if let Some(var_2) = &input.safety_rule_arn {
         object.key("SafetyRuleArn").string(var_2.as_str());
     }
-    {
+    if let Some(var_3) = &input.wait_period_ms {
         object.key("WaitPeriodMs").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.wait_period_ms).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())

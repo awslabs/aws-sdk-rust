@@ -5,7 +5,7 @@ pub use crate::operation::describe_release_label::_describe_release_label_input:
 
 /// Fluent builder constructing a request to `DescribeReleaseLabel`.
 ///
-/// <p>Provides EMR release label details, such as releases available the region where the API request is run, and the available applications for a specific EMR release label. Can also list EMR release versions that support a specified version of Spark.</p>
+/// <p>Provides Amazon EMR release label details, such as the releases available the Region where the API request is run, and the available applications for a specific Amazon EMR release label. Can also list Amazon EMR releases that support a specified version of Spark.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeReleaseLabelFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

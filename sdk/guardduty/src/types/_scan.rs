@@ -46,6 +46,9 @@ pub struct Scan {
     /// <p>List of volumes that were attached to the original instance to be scanned.</p>
     #[doc(hidden)]
     pub attached_volumes: std::option::Option<std::vec::Vec<crate::types::VolumeDetail>>,
+    /// <p>Specifies the scan type that invoked the malware scan.</p>
+    #[doc(hidden)]
+    pub scan_type: std::option::Option<crate::types::ScanType>,
 }
 impl Scan {
     /// <p>The unique ID of the detector that the request is associated with.</p>
@@ -104,6 +107,10 @@ impl Scan {
     pub fn attached_volumes(&self) -> std::option::Option<&[crate::types::VolumeDetail]> {
         self.attached_volumes.as_deref()
     }
+    /// <p>Specifies the scan type that invoked the malware scan.</p>
+    pub fn scan_type(&self) -> std::option::Option<&crate::types::ScanType> {
+        self.scan_type.as_ref()
+    }
 }
 impl Scan {
     /// Creates a new builder-style object to manufacture [`Scan`](crate::types::Scan).
@@ -130,6 +137,7 @@ pub struct ScanBuilder {
     pub(crate) total_bytes: std::option::Option<i64>,
     pub(crate) file_count: std::option::Option<i64>,
     pub(crate) attached_volumes: std::option::Option<std::vec::Vec<crate::types::VolumeDetail>>,
+    pub(crate) scan_type: std::option::Option<crate::types::ScanType>,
 }
 impl ScanBuilder {
     /// <p>The unique ID of the detector that the request is associated with.</p>
@@ -299,6 +307,16 @@ impl ScanBuilder {
         self.attached_volumes = input;
         self
     }
+    /// <p>Specifies the scan type that invoked the malware scan.</p>
+    pub fn scan_type(mut self, input: crate::types::ScanType) -> Self {
+        self.scan_type = Some(input);
+        self
+    }
+    /// <p>Specifies the scan type that invoked the malware scan.</p>
+    pub fn set_scan_type(mut self, input: std::option::Option<crate::types::ScanType>) -> Self {
+        self.scan_type = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Scan`](crate::types::Scan).
     pub fn build(self) -> crate::types::Scan {
         crate::types::Scan {
@@ -316,6 +334,7 @@ impl ScanBuilder {
             total_bytes: self.total_bytes.unwrap_or_default(),
             file_count: self.file_count.unwrap_or_default(),
             attached_volumes: self.attached_volumes,
+            scan_type: self.scan_type,
         }
     }
 }

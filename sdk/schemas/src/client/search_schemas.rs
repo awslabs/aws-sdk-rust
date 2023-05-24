@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`keywords(impl Into<String>)`](crate::operation::search_schemas::builders::SearchSchemasFluentBuilder::keywords) / [`set_keywords(Option<String>)`](crate::operation::search_schemas::builders::SearchSchemasFluentBuilder::set_keywords): <p>Specifying this limits the results to only schemas that include the provided keywords.</p>
-    ///   - [`limit(i32)`](crate::operation::search_schemas::builders::SearchSchemasFluentBuilder::limit) / [`set_limit(i32)`](crate::operation::search_schemas::builders::SearchSchemasFluentBuilder::set_limit): (undocumented)
+    ///   - [`limit(i32)`](crate::operation::search_schemas::builders::SearchSchemasFluentBuilder::limit) / [`set_limit(Option<i32>)`](crate::operation::search_schemas::builders::SearchSchemasFluentBuilder::set_limit): (undocumented)
     ///   - [`next_token(impl Into<String>)`](crate::operation::search_schemas::builders::SearchSchemasFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::search_schemas::builders::SearchSchemasFluentBuilder::set_next_token): <p>The token that specifies the next page of results to return. To request the first page, leave NextToken empty. The token will expire in 24 hours, and cannot be shared with other accounts.</p>
     ///   - [`registry_name(impl Into<String>)`](crate::operation::search_schemas::builders::SearchSchemasFluentBuilder::registry_name) / [`set_registry_name(Option<String>)`](crate::operation::search_schemas::builders::SearchSchemasFluentBuilder::set_registry_name): <p>The name of the registry.</p>
     /// - On success, responds with [`SearchSchemasOutput`](crate::operation::search_schemas::SearchSchemasOutput) with field(s):

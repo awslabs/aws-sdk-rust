@@ -18,16 +18,16 @@ pub fn ser_remix_settings(
         }
         array_2.finish();
     }
-    if input.channels_in != 0 {
+    if let Some(var_5) = &input.channels_in {
         object.key("channelsIn").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.channels_in).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if input.channels_out != 0 {
+    if let Some(var_6) = &input.channels_out {
         object.key("channelsOut").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.channels_out).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
     Ok(())

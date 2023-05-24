@@ -9,7 +9,7 @@ pub struct Severity {
     pub description: std::option::Option<crate::types::SeverityDescription>,
     /// <p>The numerical representation of the finding's severity, ranging from 1 (least severe) to 3 (most severe).</p>
     #[doc(hidden)]
-    pub score: i64,
+    pub score: std::option::Option<i64>,
 }
 impl Severity {
     /// <p>The qualitative representation of the finding's severity, ranging from Low (least severe) to High (most severe).</p>
@@ -17,7 +17,7 @@ impl Severity {
         self.description.as_ref()
     }
     /// <p>The numerical representation of the finding's severity, ranging from 1 (least severe) to 3 (most severe).</p>
-    pub fn score(&self) -> i64 {
+    pub fn score(&self) -> std::option::Option<i64> {
         self.score
     }
 }
@@ -63,7 +63,7 @@ impl SeverityBuilder {
     pub fn build(self) -> crate::types::Severity {
         crate::types::Severity {
             description: self.description,
-            score: self.score.unwrap_or_default(),
+            score: self.score,
         }
     }
 }

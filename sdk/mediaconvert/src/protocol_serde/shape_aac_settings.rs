@@ -8,35 +8,35 @@ pub fn ser_aac_settings(
             .key("audioDescriptionBroadcasterMix")
             .string(var_1.as_str());
     }
-    if input.bitrate != 0 {
+    if let Some(var_2) = &input.bitrate {
         object.key("bitrate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.bitrate).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.codec_profile {
-        object.key("codecProfile").string(var_2.as_str());
+    if let Some(var_3) = &input.codec_profile {
+        object.key("codecProfile").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.coding_mode {
-        object.key("codingMode").string(var_3.as_str());
+    if let Some(var_4) = &input.coding_mode {
+        object.key("codingMode").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.rate_control_mode {
-        object.key("rateControlMode").string(var_4.as_str());
+    if let Some(var_5) = &input.rate_control_mode {
+        object.key("rateControlMode").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.raw_format {
-        object.key("rawFormat").string(var_5.as_str());
+    if let Some(var_6) = &input.raw_format {
+        object.key("rawFormat").string(var_6.as_str());
     }
-    if input.sample_rate != 0 {
+    if let Some(var_7) = &input.sample_rate {
         object.key("sampleRate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.sample_rate).into()),
+            aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_6) = &input.specification {
-        object.key("specification").string(var_6.as_str());
+    if let Some(var_8) = &input.specification {
+        object.key("specification").string(var_8.as_str());
     }
-    if let Some(var_7) = &input.vbr_quality {
-        object.key("vbrQuality").string(var_7.as_str());
+    if let Some(var_9) = &input.vbr_quality {
+        object.key("vbrQuality").string(var_9.as_str());
     }
     Ok(())
 }

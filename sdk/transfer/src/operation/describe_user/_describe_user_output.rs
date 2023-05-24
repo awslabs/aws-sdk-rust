@@ -6,7 +6,7 @@ pub struct DescribeUserOutput {
     /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>An array containing the properties of the user account for the <code>ServerID</code> value that you specified.</p>
+    /// <p>An array containing the properties of the Transfer Family user for the <code>ServerID</code> value that you specified.</p>
     #[doc(hidden)]
     pub user: std::option::Option<crate::types::DescribedUser>,
     _request_id: Option<String>,
@@ -16,7 +16,7 @@ impl DescribeUserOutput {
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>An array containing the properties of the user account for the <code>ServerID</code> value that you specified.</p>
+    /// <p>An array containing the properties of the Transfer Family user for the <code>ServerID</code> value that you specified.</p>
     pub fn user(&self) -> std::option::Option<&crate::types::DescribedUser> {
         self.user.as_ref()
     }
@@ -52,12 +52,12 @@ impl DescribeUserOutputBuilder {
         self.server_id = input;
         self
     }
-    /// <p>An array containing the properties of the user account for the <code>ServerID</code> value that you specified.</p>
+    /// <p>An array containing the properties of the Transfer Family user for the <code>ServerID</code> value that you specified.</p>
     pub fn user(mut self, input: crate::types::DescribedUser) -> Self {
         self.user = Some(input);
         self
     }
-    /// <p>An array containing the properties of the user account for the <code>ServerID</code> value that you specified.</p>
+    /// <p>An array containing the properties of the Transfer Family user for the <code>ServerID</code> value that you specified.</p>
     pub fn set_user(mut self, input: std::option::Option<crate::types::DescribedUser>) -> Self {
         self.user = input;
         self

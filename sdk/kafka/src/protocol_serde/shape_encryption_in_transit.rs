@@ -6,8 +6,8 @@ pub fn ser_encryption_in_transit(
     if let Some(var_1) = &input.client_broker {
         object.key("clientBroker").string(var_1.as_str());
     }
-    if input.in_cluster {
-        object.key("inCluster").boolean(input.in_cluster);
+    if let Some(var_2) = &input.in_cluster {
+        object.key("inCluster").boolean(*var_2);
     }
     Ok(())
 }

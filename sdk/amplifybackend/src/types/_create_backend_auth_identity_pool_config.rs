@@ -9,7 +9,7 @@ pub struct CreateBackendAuthIdentityPoolConfig {
     pub identity_pool_name: std::option::Option<std::string::String>,
     /// <p>Set to true or false based on whether you want to enable guest authorization to your Amplify app.</p>
     #[doc(hidden)]
-    pub unauthenticated_login: bool,
+    pub unauthenticated_login: std::option::Option<bool>,
 }
 impl CreateBackendAuthIdentityPoolConfig {
     /// <p>Name of the Amazon Cognito identity pool used for authorization.</p>
@@ -17,7 +17,7 @@ impl CreateBackendAuthIdentityPoolConfig {
         self.identity_pool_name.as_deref()
     }
     /// <p>Set to true or false based on whether you want to enable guest authorization to your Amplify app.</p>
-    pub fn unauthenticated_login(&self) -> bool {
+    pub fn unauthenticated_login(&self) -> std::option::Option<bool> {
         self.unauthenticated_login
     }
 }
@@ -63,7 +63,7 @@ impl CreateBackendAuthIdentityPoolConfigBuilder {
     pub fn build(self) -> crate::types::CreateBackendAuthIdentityPoolConfig {
         crate::types::CreateBackendAuthIdentityPoolConfig {
             identity_pool_name: self.identity_pool_name,
-            unauthenticated_login: self.unauthenticated_login.unwrap_or_default(),
+            unauthenticated_login: self.unauthenticated_login,
         }
     }
 }

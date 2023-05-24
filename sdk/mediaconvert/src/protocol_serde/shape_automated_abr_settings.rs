@@ -3,38 +3,38 @@ pub fn ser_automated_abr_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutomatedAbrSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.max_abr_bitrate != 0 {
+    if let Some(var_1) = &input.max_abr_bitrate {
         object.key("maxAbrBitrate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_abr_bitrate).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.max_renditions != 0 {
+    if let Some(var_2) = &input.max_renditions {
         object.key("maxRenditions").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_renditions).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.min_abr_bitrate != 0 {
+    if let Some(var_3) = &input.min_abr_bitrate {
         object.key("minAbrBitrate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.min_abr_bitrate).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_1) = &input.rules {
-        let mut array_2 = object.key("rules").start_array();
-        for item_3 in var_1 {
+    if let Some(var_4) = &input.rules {
+        let mut array_5 = object.key("rules").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
+                let mut object_7 = array_5.value().start_object();
                 crate::protocol_serde::shape_automated_abr_rule::ser_automated_abr_rule(
-                    &mut object_4,
-                    item_3,
+                    &mut object_7,
+                    item_6,
                 )?;
-                object_4.finish();
+                object_7.finish();
             }
         }
-        array_2.finish();
+        array_5.finish();
     }
     Ok(())
 }

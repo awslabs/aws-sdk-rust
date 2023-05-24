@@ -6,14 +6,14 @@
 pub struct ResourceSpecification {
     /// The amount of outbound bandwidth that is discounted in the offering.
     #[doc(hidden)]
-    pub reserved_bitrate: i32,
+    pub reserved_bitrate: std::option::Option<i32>,
     /// The type of resource and the unit that is being billed for.
     #[doc(hidden)]
     pub resource_type: std::option::Option<crate::types::ResourceType>,
 }
 impl ResourceSpecification {
     /// The amount of outbound bandwidth that is discounted in the offering.
-    pub fn reserved_bitrate(&self) -> i32 {
+    pub fn reserved_bitrate(&self) -> std::option::Option<i32> {
         self.reserved_bitrate
     }
     /// The type of resource and the unit that is being billed for.
@@ -62,7 +62,7 @@ impl ResourceSpecificationBuilder {
     /// Consumes the builder and constructs a [`ResourceSpecification`](crate::types::ResourceSpecification).
     pub fn build(self) -> crate::types::ResourceSpecification {
         crate::types::ResourceSpecification {
-            reserved_bitrate: self.reserved_bitrate.unwrap_or_default(),
+            reserved_bitrate: self.reserved_bitrate,
             resource_type: self.resource_type,
         }
     }

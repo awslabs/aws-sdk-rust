@@ -5,7 +5,7 @@ pub use crate::operation::disable_trust_anchor::_disable_trust_anchor_input::Dis
 
 /// Fluent builder constructing a request to `DisableTrustAnchor`.
 ///
-/// <p>Disables a trust anchor. When disabled, <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> requests specifying this trust anchor are unauthorized.</p>
+/// <p>Disables a trust anchor. When disabled, temporary credential requests specifying this trust anchor are unauthorized.</p>
 /// <p> <b>Required permissions: </b> <code>rolesanywhere:DisableTrustAnchor</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisableTrustAnchorFluentBuilder {

@@ -18,5 +18,15 @@ pub fn ser_create_custom_entity_type_input(
         }
         array_4.finish();
     }
+    if let Some(var_6) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("Tags").start_object();
+        for (key_8, value_9) in var_6 {
+            {
+                object_7.key(key_8.as_str()).string(value_9.as_str());
+            }
+        }
+        object_7.finish();
+    }
     Ok(())
 }

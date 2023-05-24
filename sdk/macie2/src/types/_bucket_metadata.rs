@@ -29,11 +29,11 @@ pub struct BucketMetadata {
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The total number of objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     #[doc(hidden)]
-    pub classifiable_object_count: i64,
+    pub classifiable_object_count: std::option::Option<i64>,
     /// <p>The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     /// <p>If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
     #[doc(hidden)]
-    pub classifiable_size_in_bytes: i64,
+    pub classifiable_size_in_bytes: std::option::Option<i64>,
     /// <p>The error code for an error that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this value is null, Macie was able to retrieve and process the information.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<crate::types::BucketMetadataErrorCode>,
@@ -51,7 +51,7 @@ pub struct BucketMetadata {
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The total number of objects in the bucket.</p>
     #[doc(hidden)]
-    pub object_count: i64,
+    pub object_count: std::option::Option<i64>,
     /// <p>The total number of objects in the bucket, grouped by server-side encryption type. This includes a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.</p>
     #[doc(hidden)]
     pub object_count_by_encryption_type:
@@ -67,7 +67,7 @@ pub struct BucketMetadata {
     pub replication_details: std::option::Option<crate::types::ReplicationDetails>,
     /// <p>The sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This value is null if automated sensitive data discovery is currently disabled for your account.</p>
     #[doc(hidden)]
-    pub sensitivity_score: i32,
+    pub sensitivity_score: std::option::Option<i32>,
     /// <p>The default server-side encryption settings for the bucket.</p>
     #[doc(hidden)]
     pub server_side_encryption: std::option::Option<crate::types::BucketServerSideEncryption>,
@@ -84,11 +84,11 @@ pub struct BucketMetadata {
     /// <p>The total storage size, in bytes, of the bucket.</p>
     /// <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each object in the bucket. This value doesn't reflect the storage size of all versions of each object in the bucket.</p>
     #[doc(hidden)]
-    pub size_in_bytes: i64,
+    pub size_in_bytes: std::option::Option<i64>,
     /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the bucket.</p>
     /// <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
     #[doc(hidden)]
-    pub size_in_bytes_compressed: i64,
+    pub size_in_bytes_compressed: std::option::Option<i64>,
     /// <p>An array that specifies the tags (keys and values) that are associated with the bucket.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::KeyValuePair>>,
@@ -101,7 +101,7 @@ pub struct BucketMetadata {
         std::option::Option<crate::types::ObjectLevelStatistics>,
     /// <p>Specifies whether versioning is enabled for the bucket.</p>
     #[doc(hidden)]
-    pub versioning: bool,
+    pub versioning: std::option::Option<bool>,
 }
 impl BucketMetadata {
     /// <p>The unique identifier for the Amazon Web Services account that owns the bucket.</p>
@@ -133,12 +133,12 @@ impl BucketMetadata {
         self.bucket_name.as_deref()
     }
     /// <p>The total number of objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
-    pub fn classifiable_object_count(&self) -> i64 {
+    pub fn classifiable_object_count(&self) -> std::option::Option<i64> {
         self.classifiable_object_count
     }
     /// <p>The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
     /// <p>If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
-    pub fn classifiable_size_in_bytes(&self) -> i64 {
+    pub fn classifiable_size_in_bytes(&self) -> std::option::Option<i64> {
         self.classifiable_size_in_bytes
     }
     /// <p>The error code for an error that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this value is null, Macie was able to retrieve and process the information.</p>
@@ -164,7 +164,7 @@ impl BucketMetadata {
         self.last_updated.as_ref()
     }
     /// <p>The total number of objects in the bucket.</p>
-    pub fn object_count(&self) -> i64 {
+    pub fn object_count(&self) -> std::option::Option<i64> {
         self.object_count
     }
     /// <p>The total number of objects in the bucket, grouped by server-side encryption type. This includes a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.</p>
@@ -186,7 +186,7 @@ impl BucketMetadata {
         self.replication_details.as_ref()
     }
     /// <p>The sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This value is null if automated sensitive data discovery is currently disabled for your account.</p>
-    pub fn sensitivity_score(&self) -> i32 {
+    pub fn sensitivity_score(&self) -> std::option::Option<i32> {
         self.sensitivity_score
     }
     /// <p>The default server-side encryption settings for the bucket.</p>
@@ -208,12 +208,12 @@ impl BucketMetadata {
     }
     /// <p>The total storage size, in bytes, of the bucket.</p>
     /// <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each object in the bucket. This value doesn't reflect the storage size of all versions of each object in the bucket.</p>
-    pub fn size_in_bytes(&self) -> i64 {
+    pub fn size_in_bytes(&self) -> std::option::Option<i64> {
         self.size_in_bytes
     }
     /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the bucket.</p>
     /// <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
-    pub fn size_in_bytes_compressed(&self) -> i64 {
+    pub fn size_in_bytes_compressed(&self) -> std::option::Option<i64> {
         self.size_in_bytes_compressed
     }
     /// <p>An array that specifies the tags (keys and values) that are associated with the bucket.</p>
@@ -233,7 +233,7 @@ impl BucketMetadata {
         self.unclassifiable_object_size_in_bytes.as_ref()
     }
     /// <p>Specifies whether versioning is enabled for the bucket.</p>
-    pub fn versioning(&self) -> bool {
+    pub fn versioning(&self) -> std::option::Option<bool> {
         self.versioning
     }
 }
@@ -641,27 +641,27 @@ impl BucketMetadataBuilder {
             bucket_arn: self.bucket_arn,
             bucket_created_at: self.bucket_created_at,
             bucket_name: self.bucket_name,
-            classifiable_object_count: self.classifiable_object_count.unwrap_or_default(),
-            classifiable_size_in_bytes: self.classifiable_size_in_bytes.unwrap_or_default(),
+            classifiable_object_count: self.classifiable_object_count,
+            classifiable_size_in_bytes: self.classifiable_size_in_bytes,
             error_code: self.error_code,
             error_message: self.error_message,
             job_details: self.job_details,
             last_automated_discovery_time: self.last_automated_discovery_time,
             last_updated: self.last_updated,
-            object_count: self.object_count.unwrap_or_default(),
+            object_count: self.object_count,
             object_count_by_encryption_type: self.object_count_by_encryption_type,
             public_access: self.public_access,
             region: self.region,
             replication_details: self.replication_details,
-            sensitivity_score: self.sensitivity_score.unwrap_or_default(),
+            sensitivity_score: self.sensitivity_score,
             server_side_encryption: self.server_side_encryption,
             shared_access: self.shared_access,
-            size_in_bytes: self.size_in_bytes.unwrap_or_default(),
-            size_in_bytes_compressed: self.size_in_bytes_compressed.unwrap_or_default(),
+            size_in_bytes: self.size_in_bytes,
+            size_in_bytes_compressed: self.size_in_bytes_compressed,
             tags: self.tags,
             unclassifiable_object_count: self.unclassifiable_object_count,
             unclassifiable_object_size_in_bytes: self.unclassifiable_object_size_in_bytes,
-            versioning: self.versioning.unwrap_or_default(),
+            versioning: self.versioning,
         }
     }
 }

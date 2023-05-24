@@ -3,37 +3,37 @@ pub fn ser_eac3_atmos_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Eac3AtmosSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.bitrate != 0.0 {
+    if let Some(var_1) = &input.bitrate {
         object.key("bitrate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.bitrate).into()),
+            aws_smithy_types::Number::Float((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.coding_mode {
-        object.key("codingMode").string(var_1.as_str());
+    if let Some(var_2) = &input.coding_mode {
+        object.key("codingMode").string(var_2.as_str());
     }
-    if input.dialnorm != 0 {
+    if let Some(var_3) = &input.dialnorm {
         object.key("dialnorm").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.dialnorm).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_2) = &input.drc_line {
-        object.key("drcLine").string(var_2.as_str());
+    if let Some(var_4) = &input.drc_line {
+        object.key("drcLine").string(var_4.as_str());
     }
-    if let Some(var_3) = &input.drc_rf {
-        object.key("drcRf").string(var_3.as_str());
+    if let Some(var_5) = &input.drc_rf {
+        object.key("drcRf").string(var_5.as_str());
     }
-    if input.height_trim != 0.0 {
+    if let Some(var_6) = &input.height_trim {
         object.key("heightTrim").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.height_trim).into()),
+            aws_smithy_types::Number::Float((*var_6).into()),
         );
     }
-    if input.surround_trim != 0.0 {
+    if let Some(var_7) = &input.surround_trim {
         object.key("surroundTrim").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.surround_trim).into()),
+            aws_smithy_types::Number::Float((*var_7).into()),
         );
     }
     Ok(())

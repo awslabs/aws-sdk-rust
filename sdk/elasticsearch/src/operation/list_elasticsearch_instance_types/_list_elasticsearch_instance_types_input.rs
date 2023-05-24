@@ -12,7 +12,7 @@ pub struct ListElasticsearchInstanceTypesInput {
     pub domain_name: std::option::Option<std::string::String>,
     /// <p> Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored. </p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -27,7 +27,7 @@ impl ListElasticsearchInstanceTypesInput {
         self.domain_name.as_deref()
     }
     /// <p> Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored. </p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination. </p>
@@ -109,7 +109,6 @@ impl ListElasticsearchInstanceTypesInputBuilder {
                 domain_name: self.domain_name
                 ,
                 max_results: self.max_results
-                    .unwrap_or_default()
                 ,
                 next_token: self.next_token
                 ,

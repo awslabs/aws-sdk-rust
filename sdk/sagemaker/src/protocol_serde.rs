@@ -2180,6 +2180,8 @@ pub(crate) mod shape_production_variant_core_dump_config;
 
 pub(crate) mod shape_production_variant_serverless_config;
 
+pub(crate) mod shape_production_variant_serverless_update_config;
+
 pub(crate) mod shape_production_variant_summary;
 
 pub(crate) mod shape_profiler_rule_evaluation_status;

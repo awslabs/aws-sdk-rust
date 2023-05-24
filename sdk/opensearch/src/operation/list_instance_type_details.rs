@@ -91,6 +91,22 @@ impl ListInstanceTypeDetailsInput {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_4));
                     }
                 }
+                if let Some(inner_5) = &_input.retrieve_a_zs {
+                    if *inner_5 {
+                        query.push_kv(
+                            "retrieveAZs",
+                            aws_smithy_types::primitive::Encoder::from(*inner_5).encode(),
+                        );
+                    }
+                }
+                if let Some(inner_6) = &_input.instance_type {
+                    {
+                        query.push_kv(
+                            "instanceType",
+                            &aws_smithy_http::query::fmt_string(&inner_6),
+                        );
+                    }
+                }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -204,7 +220,7 @@ pub enum ListInstanceTypeDetailsError {
     BaseException(crate::types::error::BaseException),
     /// <p>Request processing failed because of an unknown error, exception, or internal failure.</p>
     InternalException(crate::types::error::InternalException),
-    /// <p>An exception for accessing or deleting a resource that does not exist..</p>
+    /// <p>An exception for accessing or deleting a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>An exception for accessing or deleting a resource that doesn't exist.</p>
     ValidationException(crate::types::error::ValidationException),

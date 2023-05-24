@@ -9,7 +9,7 @@ pub struct DvbSubSourceSettings {
     pub ocr_language: std::option::Option<crate::types::DvbSubOcrLanguage>,
     /// When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source content. Unused for DVB-Sub passthrough. All DVB-Sub content is passed through, regardless of selectors.
     #[doc(hidden)]
-    pub pid: i32,
+    pub pid: std::option::Option<i32>,
 }
 impl DvbSubSourceSettings {
     /// If you will configure a WebVTT caption description that references this caption selector, use this field to provide the language to consider when translating the image-based source to text.
@@ -17,7 +17,7 @@ impl DvbSubSourceSettings {
         self.ocr_language.as_ref()
     }
     /// When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source content. Unused for DVB-Sub passthrough. All DVB-Sub content is passed through, regardless of selectors.
-    pub fn pid(&self) -> i32 {
+    pub fn pid(&self) -> std::option::Option<i32> {
         self.pid
     }
 }
@@ -63,7 +63,7 @@ impl DvbSubSourceSettingsBuilder {
     pub fn build(self) -> crate::types::DvbSubSourceSettings {
         crate::types::DvbSubSourceSettings {
             ocr_language: self.ocr_language,
-            pid: self.pid.unwrap_or_default(),
+            pid: self.pid,
         }
     }
 }

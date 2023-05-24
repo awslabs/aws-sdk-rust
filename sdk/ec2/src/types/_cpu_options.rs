@@ -10,6 +10,9 @@ pub struct CpuOptions {
     /// <p>The number of threads per CPU core.</p>
     #[doc(hidden)]
     pub threads_per_core: std::option::Option<i32>,
+    /// <p>Indicates whether the instance is enabled for AMD SEV-SNP.</p>
+    #[doc(hidden)]
+    pub amd_sev_snp: std::option::Option<crate::types::AmdSevSnpSpecification>,
 }
 impl CpuOptions {
     /// <p>The number of CPU cores for the instance.</p>
@@ -19,6 +22,10 @@ impl CpuOptions {
     /// <p>The number of threads per CPU core.</p>
     pub fn threads_per_core(&self) -> std::option::Option<i32> {
         self.threads_per_core
+    }
+    /// <p>Indicates whether the instance is enabled for AMD SEV-SNP.</p>
+    pub fn amd_sev_snp(&self) -> std::option::Option<&crate::types::AmdSevSnpSpecification> {
+        self.amd_sev_snp.as_ref()
     }
 }
 impl CpuOptions {
@@ -34,6 +41,7 @@ impl CpuOptions {
 pub struct CpuOptionsBuilder {
     pub(crate) core_count: std::option::Option<i32>,
     pub(crate) threads_per_core: std::option::Option<i32>,
+    pub(crate) amd_sev_snp: std::option::Option<crate::types::AmdSevSnpSpecification>,
 }
 impl CpuOptionsBuilder {
     /// <p>The number of CPU cores for the instance.</p>
@@ -56,11 +64,25 @@ impl CpuOptionsBuilder {
         self.threads_per_core = input;
         self
     }
+    /// <p>Indicates whether the instance is enabled for AMD SEV-SNP.</p>
+    pub fn amd_sev_snp(mut self, input: crate::types::AmdSevSnpSpecification) -> Self {
+        self.amd_sev_snp = Some(input);
+        self
+    }
+    /// <p>Indicates whether the instance is enabled for AMD SEV-SNP.</p>
+    pub fn set_amd_sev_snp(
+        mut self,
+        input: std::option::Option<crate::types::AmdSevSnpSpecification>,
+    ) -> Self {
+        self.amd_sev_snp = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CpuOptions`](crate::types::CpuOptions).
     pub fn build(self) -> crate::types::CpuOptions {
         crate::types::CpuOptions {
             core_count: self.core_count,
             threads_per_core: self.threads_per_core,
+            amd_sev_snp: self.amd_sev_snp,
         }
     }
 }

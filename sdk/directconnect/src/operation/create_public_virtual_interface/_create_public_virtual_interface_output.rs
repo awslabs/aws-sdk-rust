@@ -61,7 +61,7 @@ pub struct CreatePublicVirtualInterfaceOutput {
     /// <p>The customer router configuration.</p>
     #[doc(hidden)]
     pub customer_router_config: std::option::Option<std::string::String>,
-    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500</p>
     #[doc(hidden)]
     pub mtu: std::option::Option<i32>,
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
@@ -171,7 +171,7 @@ impl CreatePublicVirtualInterfaceOutput {
     pub fn customer_router_config(&self) -> std::option::Option<&str> {
         self.customer_router_config.as_deref()
     }
-    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500</p>
     pub fn mtu(&self) -> std::option::Option<i32> {
         self.mtu
     }
@@ -454,12 +454,12 @@ impl CreatePublicVirtualInterfaceOutputBuilder {
         self.customer_router_config = input;
         self
     }
-    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500</p>
     pub fn mtu(mut self, input: i32) -> Self {
         self.mtu = Some(input);
         self
     }
-    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
+    /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500. The default value is 1500</p>
     pub fn set_mtu(mut self, input: std::option::Option<i32>) -> Self {
         self.mtu = input;
         self

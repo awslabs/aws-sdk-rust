@@ -7,10 +7,10 @@ pub struct OracleParameters {
     /// <p>An Oracle host.</p>
     #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
-    /// <p>Port.</p>
+    /// <p>The port.</p>
     #[doc(hidden)]
     pub port: i32,
-    /// <p>Database.</p>
+    /// <p>The database.</p>
     #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
 }
@@ -19,11 +19,11 @@ impl OracleParameters {
     pub fn host(&self) -> std::option::Option<&str> {
         self.host.as_deref()
     }
-    /// <p>Port.</p>
+    /// <p>The port.</p>
     pub fn port(&self) -> i32 {
         self.port
     }
-    /// <p>Database.</p>
+    /// <p>The database.</p>
     pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
     }
@@ -54,22 +54,22 @@ impl OracleParametersBuilder {
         self.host = input;
         self
     }
-    /// <p>Port.</p>
+    /// <p>The port.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = Some(input);
         self
     }
-    /// <p>Port.</p>
+    /// <p>The port.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }
-    /// <p>Database.</p>
+    /// <p>The database.</p>
     pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
         self.database = Some(input.into());
         self
     }
-    /// <p>Database.</p>
+    /// <p>The database.</p>
     pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.database = input;
         self

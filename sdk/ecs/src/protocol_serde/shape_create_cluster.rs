@@ -73,6 +73,23 @@ pub fn de_create_cluster_http_error(
                 tmp
             })
         }
+        "NamespaceNotFoundException" => {
+            crate::operation::create_cluster::CreateClusterError::NamespaceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::types::error::builders::NamespaceNotFoundExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_namespace_not_found_exception::de_namespace_not_found_exception_json_err(_response_body, output).map_err(crate::operation::create_cluster::CreateClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ServerException" => {
             crate::operation::create_cluster::CreateClusterError::ServerException({
                 #[allow(unused_mut)]

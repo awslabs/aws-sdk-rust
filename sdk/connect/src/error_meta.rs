@@ -962,12 +962,65 @@ impl From<crate::operation::create_participant::CreateParticipantError> for Erro
     fn from(err: crate::operation::create_participant::CreateParticipantError) -> Self {
         match err {
             crate::operation::create_participant::CreateParticipantError::InternalServiceException(inner) => Error::InternalServiceException(inner),
-            crate::operation::create_participant::CreateParticipantError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::create_participant::CreateParticipantError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::create_participant::CreateParticipantError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::create_participant::CreateParticipantError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::create_participant::CreateParticipantError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_participant::CreateParticipantError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::create_prompt::CreatePromptError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::create_prompt::CreatePromptError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::create_prompt::CreatePromptError> for Error {
+    fn from(err: crate::operation::create_prompt::CreatePromptError) -> Self {
+        match err {
+            crate::operation::create_prompt::CreatePromptError::DuplicateResourceException(
+                inner,
+            ) => Error::DuplicateResourceException(inner),
+            crate::operation::create_prompt::CreatePromptError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::create_prompt::CreatePromptError::InvalidParameterException(
+                inner,
+            ) => Error::InvalidParameterException(inner),
+            crate::operation::create_prompt::CreatePromptError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::create_prompt::CreatePromptError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_prompt::CreatePromptError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_prompt::CreatePromptError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1843,6 +1896,57 @@ impl From<crate::operation::delete_integration_association::DeleteIntegrationAss
             crate::operation::delete_integration_association::DeleteIntegrationAssociationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_integration_association::DeleteIntegrationAssociationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_integration_association::DeleteIntegrationAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::delete_prompt::DeletePromptError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::delete_prompt::DeletePromptError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::delete_prompt::DeletePromptError> for Error {
+    fn from(err: crate::operation::delete_prompt::DeletePromptError) -> Self {
+        match err {
+            crate::operation::delete_prompt::DeletePromptError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::delete_prompt::DeletePromptError::InvalidParameterException(
+                inner,
+            ) => Error::InvalidParameterException(inner),
+            crate::operation::delete_prompt::DeletePromptError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_prompt::DeletePromptError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_prompt::DeletePromptError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_prompt::DeletePromptError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -2733,6 +2837,61 @@ impl From<crate::operation::describe_phone_number::DescribePhoneNumberError> for
             crate::operation::describe_phone_number::DescribePhoneNumberError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::describe_phone_number::DescribePhoneNumberError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::describe_phone_number::DescribePhoneNumberError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_prompt::DescribePromptError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::describe_prompt::DescribePromptError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::describe_prompt::DescribePromptError> for Error {
+    fn from(err: crate::operation::describe_prompt::DescribePromptError) -> Self {
+        match err {
+            crate::operation::describe_prompt::DescribePromptError::InternalServiceException(
+                inner,
+            ) => Error::InternalServiceException(inner),
+            crate::operation::describe_prompt::DescribePromptError::InvalidParameterException(
+                inner,
+            ) => Error::InvalidParameterException(inner),
+            crate::operation::describe_prompt::DescribePromptError::InvalidRequestException(
+                inner,
+            ) => Error::InvalidRequestException(inner),
+            crate::operation::describe_prompt::DescribePromptError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_prompt::DescribePromptError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_prompt::DescribePromptError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -3809,6 +3968,58 @@ impl From<crate::operation::get_metric_data_v2::GetMetricDataV2Error> for Error 
             crate::operation::get_metric_data_v2::GetMetricDataV2Error::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_metric_data_v2::GetMetricDataV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_metric_data_v2::GetMetricDataV2Error::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<crate::operation::get_prompt_file::GetPromptFileError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_prompt_file::GetPromptFileError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::get_prompt_file::GetPromptFileError> for Error {
+    fn from(err: crate::operation::get_prompt_file::GetPromptFileError) -> Self {
+        match err {
+            crate::operation::get_prompt_file::GetPromptFileError::InternalServiceException(
+                inner,
+            ) => Error::InternalServiceException(inner),
+            crate::operation::get_prompt_file::GetPromptFileError::InvalidParameterException(
+                inner,
+            ) => Error::InvalidParameterException(inner),
+            crate::operation::get_prompt_file::GetPromptFileError::InvalidRequestException(
+                inner,
+            ) => Error::InvalidRequestException(inner),
+            crate::operation::get_prompt_file::GetPromptFileError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_prompt_file::GetPromptFileError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_prompt_file::GetPromptFileError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -7263,6 +7474,57 @@ impl From<crate::operation::update_phone_number::UpdatePhoneNumberError> for Err
             crate::operation::update_phone_number::UpdatePhoneNumberError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_phone_number::UpdatePhoneNumberError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_phone_number::UpdatePhoneNumberError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<aws_smithy_http::result::SdkError<crate::operation::update_prompt::UpdatePromptError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_prompt::UpdatePromptError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
+        }
+    }
+}
+impl From<crate::operation::update_prompt::UpdatePromptError> for Error {
+    fn from(err: crate::operation::update_prompt::UpdatePromptError) -> Self {
+        match err {
+            crate::operation::update_prompt::UpdatePromptError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_prompt::UpdatePromptError::InvalidParameterException(
+                inner,
+            ) => Error::InvalidParameterException(inner),
+            crate::operation::update_prompt::UpdatePromptError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_prompt::UpdatePromptError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_prompt::UpdatePromptError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_prompt::UpdatePromptError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

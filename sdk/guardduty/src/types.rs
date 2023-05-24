@@ -207,6 +207,8 @@ pub use crate::types::_lineage_object::LineageObject;
 
 pub use crate::types::_ebs_volume_scan_details::EbsVolumeScanDetails;
 
+pub use crate::types::_scan_type::ScanType;
+
 pub use crate::types::_scan_detections::ScanDetections;
 
 pub use crate::types::_threat_detected_by_name::ThreatDetectedByName;
@@ -730,6 +732,8 @@ mod _scan_result_details;
 mod _scan_status;
 
 mod _scan_threat_name;
+
+mod _scan_type;
 
 mod _scanned_item_count;
 

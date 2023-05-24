@@ -5,12 +5,12 @@
 pub struct GetInvitationsCountOutput {
     /// <p>The total number of invitations that were received by the account, not including the currently accepted invitation.</p>
     #[doc(hidden)]
-    pub invitations_count: i64,
+    pub invitations_count: std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl GetInvitationsCountOutput {
     /// <p>The total number of invitations that were received by the account, not including the currently accepted invitation.</p>
-    pub fn invitations_count(&self) -> i64 {
+    pub fn invitations_count(&self) -> std::option::Option<i64> {
         self.invitations_count
     }
 }
@@ -58,7 +58,7 @@ impl GetInvitationsCountOutputBuilder {
     /// Consumes the builder and constructs a [`GetInvitationsCountOutput`](crate::operation::get_invitations_count::GetInvitationsCountOutput).
     pub fn build(self) -> crate::operation::get_invitations_count::GetInvitationsCountOutput {
         crate::operation::get_invitations_count::GetInvitationsCountOutput {
-            invitations_count: self.invitations_count.unwrap_or_default(),
+            invitations_count: self.invitations_count,
             _request_id: self._request_id,
         }
     }

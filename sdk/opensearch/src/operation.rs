@@ -55,6 +55,12 @@ pub mod describe_domain_change_progress;
 /// Types for the `DescribeDomainConfig` operation.
 pub mod describe_domain_config;
 
+/// Types for the `DescribeDomainHealth` operation.
+pub mod describe_domain_health;
+
+/// Types for the `DescribeDomainNodes` operation.
+pub mod describe_domain_nodes;
+
 /// Types for the `DescribeDomains` operation.
 pub mod describe_domains;
 

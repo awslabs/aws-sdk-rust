@@ -115,22 +115,11 @@ mod test {
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let endpoint =
-            endpoint.expect("Expected valid endpoint: https://global.health.amazonaws.com");
+            endpoint.expect("Expected valid endpoint: https://health.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://global.health.amazonaws.com")
-                .property(
-                    "authSchemes",
-                    vec![aws_smithy_types::Document::from({
-                        let mut out =
-                            std::collections::HashMap::<String, aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "health".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out
-                    })]
-                )
+                .url("https://health.us-east-1.amazonaws.com")
                 .build()
         );
     }
@@ -252,25 +241,11 @@ mod test {
         let resolver = crate::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
         let endpoint =
-            endpoint.expect("Expected valid endpoint: https://global.health.amazonaws.com.cn");
+            endpoint.expect("Expected valid endpoint: https://health.cn-north-1.amazonaws.com.cn");
         assert_eq!(
             endpoint,
             aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://global.health.amazonaws.com.cn")
-                .property(
-                    "authSchemes",
-                    vec![aws_smithy_types::Document::from({
-                        let mut out =
-                            std::collections::HashMap::<String, aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "health".to_string().into());
-                        out.insert(
-                            "signingRegion".to_string(),
-                            "cn-northwest-1".to_string().into(),
-                        );
-                        out
-                    })]
-                )
+                .url("https://health.cn-north-1.amazonaws.com.cn")
                 .build()
         );
     }

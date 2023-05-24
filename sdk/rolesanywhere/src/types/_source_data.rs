@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum SourceData {
-    /// <p>The root certificate of the Certificate Manager Private Certificate Authority specified by this ARN is used in trust validation for <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operations. Included for trust anchors of type <code>AWS_ACM_PCA</code>. </p>
+    /// <p> The root certificate of the Private Certificate Authority specified by this ARN is used in trust validation for temporary credential requests. Included for trust anchors of type <code>AWS_ACM_PCA</code>. </p>
     AcmPcaArn(std::string::String),
     /// <p>The PEM-encoded data for the certificate anchor. Included for trust anchors of type <code>CERTIFICATE_BUNDLE</code>. </p>
     X509CertificateData(std::string::String),

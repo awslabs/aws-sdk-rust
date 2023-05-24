@@ -73,6 +73,8 @@ pub use crate::types::_firewall_policy_response::FirewallPolicyResponseBuilder;
 
 pub use crate::types::_firewall_policy::FirewallPolicyBuilder;
 
+pub use crate::types::_policy_variables::PolicyVariablesBuilder;
+
 pub use crate::types::_stateful_engine_options::StatefulEngineOptionsBuilder;
 
 pub use crate::types::_stateful_rule_group_reference::StatefulRuleGroupReferenceBuilder;

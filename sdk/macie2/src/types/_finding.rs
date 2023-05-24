@@ -9,7 +9,7 @@ pub struct Finding {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the finding is archived (suppressed).</p>
     #[doc(hidden)]
-    pub archived: bool,
+    pub archived: std::option::Option<bool>,
     /// <p>The category of the finding. Possible values are: CLASSIFICATION, for a sensitive data finding; and, POLICY, for a policy finding.</p>
     #[doc(hidden)]
     pub category: std::option::Option<crate::types::FindingCategory>,
@@ -18,7 +18,7 @@ pub struct Finding {
     pub classification_details: std::option::Option<crate::types::ClassificationDetails>,
     /// <p>The total number of occurrences of the finding. For sensitive data findings, this value is always 1. All sensitive data findings are considered unique.</p>
     #[doc(hidden)]
-    pub count: i64,
+    pub count: std::option::Option<i64>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie created the finding.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -42,7 +42,7 @@ pub struct Finding {
     pub resources_affected: std::option::Option<crate::types::ResourcesAffected>,
     /// <p>Specifies whether the finding is a sample finding. A <i>sample finding</i> is a finding that uses example data to demonstrate what a finding might contain.</p>
     #[doc(hidden)]
-    pub sample: bool,
+    pub sample: std::option::Option<bool>,
     /// <p>The version of the schema that was used to define the data structures in the finding.</p>
     #[doc(hidden)]
     pub schema_version: std::option::Option<std::string::String>,
@@ -65,7 +65,7 @@ impl Finding {
         self.account_id.as_deref()
     }
     /// <p>Specifies whether the finding is archived (suppressed).</p>
-    pub fn archived(&self) -> bool {
+    pub fn archived(&self) -> std::option::Option<bool> {
         self.archived
     }
     /// <p>The category of the finding. Possible values are: CLASSIFICATION, for a sensitive data finding; and, POLICY, for a policy finding.</p>
@@ -79,7 +79,7 @@ impl Finding {
         self.classification_details.as_ref()
     }
     /// <p>The total number of occurrences of the finding. For sensitive data findings, this value is always 1. All sensitive data findings are considered unique.</p>
-    pub fn count(&self) -> i64 {
+    pub fn count(&self) -> std::option::Option<i64> {
         self.count
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie created the finding.</p>
@@ -111,7 +111,7 @@ impl Finding {
         self.resources_affected.as_ref()
     }
     /// <p>Specifies whether the finding is a sample finding. A <i>sample finding</i> is a finding that uses example data to demonstrate what a finding might contain.</p>
-    pub fn sample(&self) -> bool {
+    pub fn sample(&self) -> std::option::Option<bool> {
         self.sample
     }
     /// <p>The version of the schema that was used to define the data structures in the finding.</p>
@@ -368,10 +368,10 @@ impl FindingBuilder {
     pub fn build(self) -> crate::types::Finding {
         crate::types::Finding {
             account_id: self.account_id,
-            archived: self.archived.unwrap_or_default(),
+            archived: self.archived,
             category: self.category,
             classification_details: self.classification_details,
-            count: self.count.unwrap_or_default(),
+            count: self.count,
             created_at: self.created_at,
             description: self.description,
             id: self.id,
@@ -379,7 +379,7 @@ impl FindingBuilder {
             policy_details: self.policy_details,
             region: self.region,
             resources_affected: self.resources_affected,
-            sample: self.sample.unwrap_or_default(),
+            sample: self.sample,
             schema_version: self.schema_version,
             severity: self.severity,
             title: self.title,

@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`device_id(impl Into<String>)`](crate::operation::update_device_state::builders::UpdateDeviceStateFluentBuilder::device_id) / [`set_device_id(Option<String>)`](crate::operation::update_device_state::builders::UpdateDeviceStateFluentBuilder::set_device_id): <p>The unique identifier of the device.</p>
-    ///   - [`enabled(bool)`](crate::operation::update_device_state::builders::UpdateDeviceStateFluentBuilder::enabled) / [`set_enabled(bool)`](crate::operation::update_device_state::builders::UpdateDeviceStateFluentBuilder::set_enabled): <p>If true, the device is enabled. If false, the device is disabled.</p>
+    ///   - [`enabled(bool)`](crate::operation::update_device_state::builders::UpdateDeviceStateFluentBuilder::enabled) / [`set_enabled(Option<bool>)`](crate::operation::update_device_state::builders::UpdateDeviceStateFluentBuilder::set_enabled): <p>If true, the device is enabled. If false, the device is disabled.</p>
     /// - On success, responds with [`UpdateDeviceStateOutput`](crate::operation::update_device_state::UpdateDeviceStateOutput)
     /// - On failure, responds with [`SdkError<UpdateDeviceStateError>`](crate::operation::update_device_state::UpdateDeviceStateError)
     pub fn update_device_state(

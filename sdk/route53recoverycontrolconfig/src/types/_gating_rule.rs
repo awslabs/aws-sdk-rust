@@ -28,7 +28,7 @@ pub struct GatingRule {
     pub target_controls: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     #[doc(hidden)]
-    pub wait_period_ms: i32,
+    pub wait_period_ms: std::option::Option<i32>,
 }
 impl GatingRule {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
@@ -60,7 +60,7 @@ impl GatingRule {
         self.target_controls.as_deref()
     }
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
-    pub fn wait_period_ms(&self) -> i32 {
+    pub fn wait_period_ms(&self) -> std::option::Option<i32> {
         self.wait_period_ms
     }
 }
@@ -196,7 +196,7 @@ impl GatingRuleBuilder {
             safety_rule_arn: self.safety_rule_arn,
             status: self.status,
             target_controls: self.target_controls,
-            wait_period_ms: self.wait_period_ms.unwrap_or_default(),
+            wait_period_ms: self.wait_period_ms,
         }
     }
 }

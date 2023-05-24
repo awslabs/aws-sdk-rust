@@ -18,22 +18,22 @@ pub fn ser_rtmp_group_settings(
     if let Some(var_5) = &input.cache_full_behavior {
         object.key("cacheFullBehavior").string(var_5.as_str());
     }
-    if input.cache_length != 0 {
+    if let Some(var_6) = &input.cache_length {
         object.key("cacheLength").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.cache_length).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_6) = &input.caption_data {
-        object.key("captionData").string(var_6.as_str());
+    if let Some(var_7) = &input.caption_data {
+        object.key("captionData").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.input_loss_action {
-        object.key("inputLossAction").string(var_7.as_str());
+    if let Some(var_8) = &input.input_loss_action {
+        object.key("inputLossAction").string(var_8.as_str());
     }
-    if input.restart_delay != 0 {
+    if let Some(var_9) = &input.restart_delay {
         object.key("restartDelay").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.restart_delay).into()),
+            aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
     Ok(())

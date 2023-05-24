@@ -6,7 +6,7 @@
 pub struct FrameCaptureSettings {
     /// The frequency at which to capture frames for inclusion in the output. May be specified in either seconds or milliseconds, as specified by captureIntervalUnits.
     #[doc(hidden)]
-    pub capture_interval: i32,
+    pub capture_interval: std::option::Option<i32>,
     /// Unit for the frame capture interval.
     #[doc(hidden)]
     pub capture_interval_units: std::option::Option<crate::types::FrameCaptureIntervalUnit>,
@@ -16,7 +16,7 @@ pub struct FrameCaptureSettings {
 }
 impl FrameCaptureSettings {
     /// The frequency at which to capture frames for inclusion in the output. May be specified in either seconds or milliseconds, as specified by captureIntervalUnits.
-    pub fn capture_interval(&self) -> i32 {
+    pub fn capture_interval(&self) -> std::option::Option<i32> {
         self.capture_interval
     }
     /// Unit for the frame capture interval.
@@ -87,7 +87,7 @@ impl FrameCaptureSettingsBuilder {
     /// Consumes the builder and constructs a [`FrameCaptureSettings`](crate::types::FrameCaptureSettings).
     pub fn build(self) -> crate::types::FrameCaptureSettings {
         crate::types::FrameCaptureSettings {
-            capture_interval: self.capture_interval.unwrap_or_default(),
+            capture_interval: self.capture_interval,
             capture_interval_units: self.capture_interval_units,
             timecode_burnin_settings: self.timecode_burnin_settings,
         }

@@ -169,6 +169,12 @@ pub use crate::types::_domain_status::DomainStatusBuilder;
 
 pub use crate::types::_auto_tune_options_output::AutoTuneOptionsOutputBuilder;
 
+pub use crate::types::_domain_nodes_status::DomainNodesStatusBuilder;
+
+pub use crate::types::_environment_info::EnvironmentInfoBuilder;
+
+pub use crate::types::_availability_zone_info::AvailabilityZoneInfoBuilder;
+
 pub use crate::types::_change_progress_status_details::ChangeProgressStatusDetailsBuilder;
 
 pub use crate::types::_change_progress_stage::ChangeProgressStageBuilder;

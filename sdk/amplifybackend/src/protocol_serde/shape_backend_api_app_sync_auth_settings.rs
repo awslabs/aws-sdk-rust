@@ -9,26 +9,26 @@ pub fn ser_backend_api_app_sync_auth_settings(
     if let Some(var_2) = &input.description {
         object.key("description").string(var_2.as_str());
     }
-    if input.expiration_time != 0.0 {
+    if let Some(var_3) = &input.expiration_time {
         object.key("expirationTime").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.expiration_time).into()),
+            aws_smithy_types::Number::Float((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.open_id_auth_ttl {
-        object.key("openIDAuthTTL").string(var_3.as_str());
+    if let Some(var_4) = &input.open_id_auth_ttl {
+        object.key("openIDAuthTTL").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.open_id_client_id {
-        object.key("openIDClientId").string(var_4.as_str());
+    if let Some(var_5) = &input.open_id_client_id {
+        object.key("openIDClientId").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.open_id_iat_ttl {
-        object.key("openIDIatTTL").string(var_5.as_str());
+    if let Some(var_6) = &input.open_id_iat_ttl {
+        object.key("openIDIatTTL").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.open_id_issue_url {
-        object.key("openIDIssueURL").string(var_6.as_str());
+    if let Some(var_7) = &input.open_id_issue_url {
+        object.key("openIDIssueURL").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.open_id_provider_name {
-        object.key("openIDProviderName").string(var_7.as_str());
+    if let Some(var_8) = &input.open_id_provider_name {
+        object.key("openIDProviderName").string(var_8.as_str());
     }
     Ok(())
 }

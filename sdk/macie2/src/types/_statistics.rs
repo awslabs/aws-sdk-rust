@@ -6,18 +6,18 @@
 pub struct Statistics {
     /// <p>The approximate number of objects that the job has yet to process during its current run.</p>
     #[doc(hidden)]
-    pub approximate_number_of_objects_to_process: f64,
+    pub approximate_number_of_objects_to_process: std::option::Option<f64>,
     /// <p>The number of times that the job has run.</p>
     #[doc(hidden)]
-    pub number_of_runs: f64,
+    pub number_of_runs: std::option::Option<f64>,
 }
 impl Statistics {
     /// <p>The approximate number of objects that the job has yet to process during its current run.</p>
-    pub fn approximate_number_of_objects_to_process(&self) -> f64 {
+    pub fn approximate_number_of_objects_to_process(&self) -> std::option::Option<f64> {
         self.approximate_number_of_objects_to_process
     }
     /// <p>The number of times that the job has run.</p>
-    pub fn number_of_runs(&self) -> f64 {
+    pub fn number_of_runs(&self) -> std::option::Option<f64> {
         self.number_of_runs
     }
 }
@@ -62,10 +62,8 @@ impl StatisticsBuilder {
     /// Consumes the builder and constructs a [`Statistics`](crate::types::Statistics).
     pub fn build(self) -> crate::types::Statistics {
         crate::types::Statistics {
-            approximate_number_of_objects_to_process: self
-                .approximate_number_of_objects_to_process
-                .unwrap_or_default(),
-            number_of_runs: self.number_of_runs.unwrap_or_default(),
+            approximate_number_of_objects_to_process: self.approximate_number_of_objects_to_process,
+            number_of_runs: self.number_of_runs,
         }
     }
 }

@@ -119,33 +119,31 @@ pub fn ser_dash_package(
         crate::protocol_serde::shape_dash_encryption::ser_dash_encryption(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if input.include_encoder_configuration_in_segments {
+    if let Some(var_7) = &input.include_encoder_configuration_in_segments {
         object
             .key("includeEncoderConfigurationInSegments")
-            .boolean(input.include_encoder_configuration_in_segments);
+            .boolean(*var_7);
     }
-    if input.include_iframe_only_stream {
-        object
-            .key("includeIframeOnlyStream")
-            .boolean(input.include_iframe_only_stream);
+    if let Some(var_8) = &input.include_iframe_only_stream {
+        object.key("includeIframeOnlyStream").boolean(*var_8);
     }
-    if let Some(var_7) = &input.period_triggers {
-        let mut array_8 = object.key("periodTriggers").start_array();
-        for item_9 in var_7 {
+    if let Some(var_9) = &input.period_triggers {
+        let mut array_10 = object.key("periodTriggers").start_array();
+        for item_11 in var_9 {
             {
-                array_8.value().string(item_9.as_str());
+                array_10.value().string(item_11.as_str());
             }
         }
-        array_8.finish();
+        array_10.finish();
     }
-    if input.segment_duration_seconds != 0 {
+    if let Some(var_12) = &input.segment_duration_seconds {
         object.key("segmentDurationSeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.segment_duration_seconds).into()),
+            aws_smithy_types::Number::NegInt((*var_12).into()),
         );
     }
-    if let Some(var_10) = &input.segment_template_format {
-        object.key("segmentTemplateFormat").string(var_10.as_str());
+    if let Some(var_13) = &input.segment_template_format {
+        object.key("segmentTemplateFormat").string(var_13.as_str());
     }
     Ok(())
 }

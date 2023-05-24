@@ -5,11 +5,11 @@
 pub struct Unauthenticated {
     /// <p>Specifies whether you want to turn on or turn off unauthenticated traffic to your cluster.</p>
     #[doc(hidden)]
-    pub enabled: bool,
+    pub enabled: std::option::Option<bool>,
 }
 impl Unauthenticated {
     /// <p>Specifies whether you want to turn on or turn off unauthenticated traffic to your cluster.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
 }
@@ -40,7 +40,7 @@ impl UnauthenticatedBuilder {
     /// Consumes the builder and constructs a [`Unauthenticated`](crate::types::Unauthenticated).
     pub fn build(self) -> crate::types::Unauthenticated {
         crate::types::Unauthenticated {
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled,
         }
     }
 }

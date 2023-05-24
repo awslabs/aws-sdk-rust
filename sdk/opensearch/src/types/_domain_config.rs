@@ -36,7 +36,7 @@ pub struct DomainConfig {
     /// <p>Key-value pairs to specify advanced configuration options. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced options</a>.</p>
     #[doc(hidden)]
     pub advanced_options: std::option::Option<crate::types::AdvancedOptionsStatus>,
-    /// <p>Key-value pairs to configure slow log publishing.</p>
+    /// <p>Key-value pairs to configure log publishing.</p>
     #[doc(hidden)]
     pub log_publishing_options: std::option::Option<crate::types::LogPublishingOptionsStatus>,
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
@@ -103,7 +103,7 @@ impl DomainConfig {
     pub fn advanced_options(&self) -> std::option::Option<&crate::types::AdvancedOptionsStatus> {
         self.advanced_options.as_ref()
     }
-    /// <p>Key-value pairs to configure slow log publishing.</p>
+    /// <p>Key-value pairs to configure log publishing.</p>
     pub fn log_publishing_options(
         &self,
     ) -> std::option::Option<&crate::types::LogPublishingOptionsStatus> {
@@ -317,7 +317,7 @@ impl DomainConfigBuilder {
         self.advanced_options = input;
         self
     }
-    /// <p>Key-value pairs to configure slow log publishing.</p>
+    /// <p>Key-value pairs to configure log publishing.</p>
     pub fn log_publishing_options(
         mut self,
         input: crate::types::LogPublishingOptionsStatus,
@@ -325,7 +325,7 @@ impl DomainConfigBuilder {
         self.log_publishing_options = Some(input);
         self
     }
-    /// <p>Key-value pairs to configure slow log publishing.</p>
+    /// <p>Key-value pairs to configure log publishing.</p>
     pub fn set_log_publishing_options(
         mut self,
         input: std::option::Option<crate::types::LogPublishingOptionsStatus>,

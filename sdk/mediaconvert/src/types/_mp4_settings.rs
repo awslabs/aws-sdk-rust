@@ -12,7 +12,7 @@ pub struct Mp4Settings {
     pub cslg_atom: std::option::Option<crate::types::Mp4CslgAtom>,
     /// Ignore this setting unless compliance to the CTTS box version specification matters in your workflow. Specify a value of 1 to set your CTTS box version to 1 and make your output compliant with the specification. When you specify a value of 1, you must also set CSLG atom (cslgAtom) to the value INCLUDE. Keep the default value 0 to set your CTTS box version to 0. This can provide backward compatibility for some players and packagers.
     #[doc(hidden)]
-    pub ctts_version: i32,
+    pub ctts_version: std::option::Option<i32>,
     /// Inserts a free-space box immediately after the moov box.
     #[doc(hidden)]
     pub free_space_box: std::option::Option<crate::types::Mp4FreeSpaceBox>,
@@ -33,7 +33,7 @@ impl Mp4Settings {
         self.cslg_atom.as_ref()
     }
     /// Ignore this setting unless compliance to the CTTS box version specification matters in your workflow. Specify a value of 1 to set your CTTS box version to 1 and make your output compliant with the specification. When you specify a value of 1, you must also set CSLG atom (cslgAtom) to the value INCLUDE. Keep the default value 0 to set your CTTS box version to 0. This can provide backward compatibility for some players and packagers.
-    pub fn ctts_version(&self) -> i32 {
+    pub fn ctts_version(&self) -> std::option::Option<i32> {
         self.ctts_version
     }
     /// Inserts a free-space box immediately after the moov box.
@@ -142,7 +142,7 @@ impl Mp4SettingsBuilder {
         crate::types::Mp4Settings {
             audio_duration: self.audio_duration,
             cslg_atom: self.cslg_atom,
-            ctts_version: self.ctts_version.unwrap_or_default(),
+            ctts_version: self.ctts_version,
             free_space_box: self.free_space_box,
             moov_placement: self.moov_placement,
             mp4_major_brand: self.mp4_major_brand,

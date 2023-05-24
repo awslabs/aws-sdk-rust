@@ -223,6 +223,20 @@ pub(crate) fn de_describe_simulation(
                             crate::protocol_serde::shape_s3_location::de_s3_location(tokens)?,
                         );
                     }
+                    "SnapshotS3Location" => {
+                        builder = builder.set_snapshot_s3_location(
+                            crate::protocol_serde::shape_s3_location::de_s3_location(tokens)?,
+                        );
+                    }
+                    "StartError" => {
+                        builder = builder.set_start_error(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     "Status" => {
                         builder = builder.set_status(
                             aws_smithy_json::deserialize::token::expect_string_or_null(

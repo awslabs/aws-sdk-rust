@@ -5,7 +5,7 @@
 pub struct CreateDeploymentOutput {
     /// <p>Specifies whether a deployment was automatically released.</p>
     #[doc(hidden)]
-    pub auto_deployed: bool,
+    pub auto_deployed: std::option::Option<bool>,
     /// <p>The date and time when the Deployment resource was created.</p>
     #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -25,7 +25,7 @@ pub struct CreateDeploymentOutput {
 }
 impl CreateDeploymentOutput {
     /// <p>Specifies whether a deployment was automatically released.</p>
-    pub fn auto_deployed(&self) -> bool {
+    pub fn auto_deployed(&self) -> std::option::Option<bool> {
         self.auto_deployed
     }
     /// <p>The date and time when the Deployment resource was created.</p>
@@ -156,7 +156,7 @@ impl CreateDeploymentOutputBuilder {
     /// Consumes the builder and constructs a [`CreateDeploymentOutput`](crate::operation::create_deployment::CreateDeploymentOutput).
     pub fn build(self) -> crate::operation::create_deployment::CreateDeploymentOutput {
         crate::operation::create_deployment::CreateDeploymentOutput {
-            auto_deployed: self.auto_deployed.unwrap_or_default(),
+            auto_deployed: self.auto_deployed,
             created_date: self.created_date,
             deployment_id: self.deployment_id,
             deployment_status: self.deployment_status,

@@ -6,7 +6,7 @@
 pub struct UserPendingChanges {
     /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
     #[doc(hidden)]
-    pub console_access: bool,
+    pub console_access: std::option::Option<bool>,
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16,7 +16,7 @@ pub struct UserPendingChanges {
 }
 impl UserPendingChanges {
     /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
-    pub fn console_access(&self) -> bool {
+    pub fn console_access(&self) -> std::option::Option<bool> {
         self.console_access
     }
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
@@ -89,7 +89,7 @@ impl UserPendingChangesBuilder {
     /// Consumes the builder and constructs a [`UserPendingChanges`](crate::types::UserPendingChanges).
     pub fn build(self) -> crate::types::UserPendingChanges {
         crate::types::UserPendingChanges {
-            console_access: self.console_access.unwrap_or_default(),
+            console_access: self.console_access,
             groups: self.groups,
             pending_change: self.pending_change,
         }

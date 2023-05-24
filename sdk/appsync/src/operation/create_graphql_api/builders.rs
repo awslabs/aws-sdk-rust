@@ -193,4 +193,17 @@ impl CreateGraphqlApiFluentBuilder {
         self.inner = self.inner.set_lambda_authorizer_config(input);
         self
     }
+    /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
+    pub fn visibility(mut self, input: crate::types::GraphQlApiVisibility) -> Self {
+        self.inner = self.inner.visibility(input);
+        self
+    }
+    /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
+    pub fn set_visibility(
+        mut self,
+        input: std::option::Option<crate::types::GraphQlApiVisibility>,
+    ) -> Self {
+        self.inner = self.inner.set_visibility(input);
+        self
+    }
 }

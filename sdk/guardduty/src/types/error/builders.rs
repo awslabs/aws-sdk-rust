@@ -2,3 +2,7 @@
 pub use crate::types::error::_internal_server_error_exception::InternalServerErrorExceptionBuilder;
 
 pub use crate::types::error::_bad_request_exception::BadRequestExceptionBuilder;
+
+pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;
+
+pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;

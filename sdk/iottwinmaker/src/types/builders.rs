@@ -49,6 +49,8 @@ pub use crate::types::_status::StatusBuilder;
 
 pub use crate::types::_component_type_summary::ComponentTypeSummaryBuilder;
 
+pub use crate::types::_scene_error::SceneErrorBuilder;
+
 pub use crate::types::_property_value_history::PropertyValueHistoryBuilder;
 
 pub use crate::types::_property_value::PropertyValueBuilder;

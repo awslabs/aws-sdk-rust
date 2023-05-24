@@ -11,7 +11,6 @@ pub struct DescribeScheduledInstanceAvailabilityInput {
     /// <ul>
     /// <li> <p> <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).</p> </li>
     /// <li> <p> <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).</p> </li>
-    /// <li> <p> <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p> </li>
     /// <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p> </li>
     /// </ul>
     #[doc(hidden)]
@@ -44,7 +43,6 @@ impl DescribeScheduledInstanceAvailabilityInput {
     /// <ul>
     /// <li> <p> <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).</p> </li>
     /// <li> <p> <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).</p> </li>
-    /// <li> <p> <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p> </li>
     /// <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p> </li>
     /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
@@ -119,7 +117,6 @@ impl DescribeScheduledInstanceAvailabilityInputBuilder {
     /// <ul>
     /// <li> <p> <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).</p> </li>
     /// <li> <p> <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).</p> </li>
-    /// <li> <p> <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p> </li>
     /// <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
@@ -132,7 +129,6 @@ impl DescribeScheduledInstanceAvailabilityInputBuilder {
     /// <ul>
     /// <li> <p> <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).</p> </li>
     /// <li> <p> <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).</p> </li>
-    /// <li> <p> <code>network-platform</code> - The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p> </li>
     /// <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p> </li>
     /// </ul>
     pub fn set_filters(

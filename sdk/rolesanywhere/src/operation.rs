@@ -64,6 +64,12 @@ pub mod list_tags_for_resource;
 /// Types for the `ListTrustAnchors` operation.
 pub mod list_trust_anchors;
 
+/// Types for the `PutNotificationSettings` operation.
+pub mod put_notification_settings;
+
+/// Types for the `ResetNotificationSettings` operation.
+pub mod reset_notification_settings;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 

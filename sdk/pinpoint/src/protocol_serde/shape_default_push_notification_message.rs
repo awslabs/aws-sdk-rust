@@ -19,30 +19,30 @@ pub fn ser_default_push_notification_message(
         }
         object_4.finish();
     }
-    if input.silent_push {
-        object.key("SilentPush").boolean(input.silent_push);
+    if let Some(var_7) = &input.silent_push {
+        object.key("SilentPush").boolean(*var_7);
     }
-    if let Some(var_7) = &input.substitutions {
+    if let Some(var_8) = &input.substitutions {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("Substitutions").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_9 = object.key("Substitutions").start_object();
+        for (key_10, value_11) in var_8 {
             {
-                let mut array_11 = object_8.key(key_9.as_str()).start_array();
-                for item_12 in value_10 {
+                let mut array_12 = object_9.key(key_10.as_str()).start_array();
+                for item_13 in value_11 {
                     {
-                        array_11.value().string(item_12.as_str());
+                        array_12.value().string(item_13.as_str());
                     }
                 }
-                array_11.finish();
+                array_12.finish();
             }
         }
-        object_8.finish();
+        object_9.finish();
     }
-    if let Some(var_13) = &input.title {
-        object.key("Title").string(var_13.as_str());
+    if let Some(var_14) = &input.title {
+        object.key("Title").string(var_14.as_str());
     }
-    if let Some(var_14) = &input.url {
-        object.key("Url").string(var_14.as_str());
+    if let Some(var_15) = &input.url {
+        object.key("Url").string(var_15.as_str());
     }
     Ok(())
 }

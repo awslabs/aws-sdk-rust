@@ -4,14 +4,12 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateApiKeyOutput {
     /// <p>The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration. </p>
-    /// <p>For information about how to use this in your CAPTCHA JavaScript integration, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
     #[doc(hidden)]
     pub api_key: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateApiKeyOutput {
     /// <p>The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration. </p>
-    /// <p>For information about how to use this in your CAPTCHA JavaScript integration, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn api_key(&self) -> std::option::Option<&str> {
         self.api_key.as_deref()
     }
@@ -37,13 +35,11 @@ pub struct CreateApiKeyOutputBuilder {
 }
 impl CreateApiKeyOutputBuilder {
     /// <p>The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration. </p>
-    /// <p>For information about how to use this in your CAPTCHA JavaScript integration, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn api_key(mut self, input: impl Into<std::string::String>) -> Self {
         self.api_key = Some(input.into());
         self
     }
     /// <p>The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration. </p>
-    /// <p>For information about how to use this in your CAPTCHA JavaScript integration, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn set_api_key(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.api_key = input;
         self

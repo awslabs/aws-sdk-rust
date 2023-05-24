@@ -12,16 +12,16 @@ pub struct SmsChannelResponse {
     pub creation_date: std::option::Option<std::string::String>,
     /// <p>Specifies whether the SMS channel is enabled for the application.</p>
     #[doc(hidden)]
-    pub enabled: bool,
+    pub enabled: std::option::Option<bool>,
     /// <p>(Not used) This property is retained only for backward compatibility.</p>
     #[doc(hidden)]
-    pub has_credential: bool,
+    pub has_credential: std::option::Option<bool>,
     /// <p>(Deprecated) An identifier for the SMS channel. This property is retained only for backward compatibility.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the SMS channel is archived.</p>
     #[doc(hidden)]
-    pub is_archived: bool,
+    pub is_archived: std::option::Option<bool>,
     /// <p>The user who last modified the SMS channel.</p>
     #[doc(hidden)]
     pub last_modified_by: std::option::Option<std::string::String>,
@@ -33,7 +33,7 @@ pub struct SmsChannelResponse {
     pub platform: std::option::Option<std::string::String>,
     /// <p>The maximum number of promotional messages that you can send through the SMS channel each second.</p>
     #[doc(hidden)]
-    pub promotional_messages_per_second: i32,
+    pub promotional_messages_per_second: std::option::Option<i32>,
     /// <p>The identity that displays on recipients' devices when they receive messages from the SMS channel.</p>
     #[doc(hidden)]
     pub sender_id: std::option::Option<std::string::String>,
@@ -42,10 +42,10 @@ pub struct SmsChannelResponse {
     pub short_code: std::option::Option<std::string::String>,
     /// <p>The maximum number of transactional messages that you can send through the SMS channel each second.</p>
     #[doc(hidden)]
-    pub transactional_messages_per_second: i32,
+    pub transactional_messages_per_second: std::option::Option<i32>,
     /// <p>The current version of the SMS channel.</p>
     #[doc(hidden)]
-    pub version: i32,
+    pub version: std::option::Option<i32>,
 }
 impl SmsChannelResponse {
     /// <p>The unique identifier for the application that the SMS channel applies to.</p>
@@ -57,11 +57,11 @@ impl SmsChannelResponse {
         self.creation_date.as_deref()
     }
     /// <p>Specifies whether the SMS channel is enabled for the application.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
     /// <p>(Not used) This property is retained only for backward compatibility.</p>
-    pub fn has_credential(&self) -> bool {
+    pub fn has_credential(&self) -> std::option::Option<bool> {
         self.has_credential
     }
     /// <p>(Deprecated) An identifier for the SMS channel. This property is retained only for backward compatibility.</p>
@@ -69,7 +69,7 @@ impl SmsChannelResponse {
         self.id.as_deref()
     }
     /// <p>Specifies whether the SMS channel is archived.</p>
-    pub fn is_archived(&self) -> bool {
+    pub fn is_archived(&self) -> std::option::Option<bool> {
         self.is_archived
     }
     /// <p>The user who last modified the SMS channel.</p>
@@ -85,7 +85,7 @@ impl SmsChannelResponse {
         self.platform.as_deref()
     }
     /// <p>The maximum number of promotional messages that you can send through the SMS channel each second.</p>
-    pub fn promotional_messages_per_second(&self) -> i32 {
+    pub fn promotional_messages_per_second(&self) -> std::option::Option<i32> {
         self.promotional_messages_per_second
     }
     /// <p>The identity that displays on recipients' devices when they receive messages from the SMS channel.</p>
@@ -97,11 +97,11 @@ impl SmsChannelResponse {
         self.short_code.as_deref()
     }
     /// <p>The maximum number of transactional messages that you can send through the SMS channel each second.</p>
-    pub fn transactional_messages_per_second(&self) -> i32 {
+    pub fn transactional_messages_per_second(&self) -> std::option::Option<i32> {
         self.transactional_messages_per_second
     }
     /// <p>The current version of the SMS channel.</p>
-    pub fn version(&self) -> i32 {
+    pub fn version(&self) -> std::option::Option<i32> {
         self.version
     }
 }
@@ -283,22 +283,18 @@ impl SmsChannelResponseBuilder {
         crate::types::SmsChannelResponse {
             application_id: self.application_id,
             creation_date: self.creation_date,
-            enabled: self.enabled.unwrap_or_default(),
-            has_credential: self.has_credential.unwrap_or_default(),
+            enabled: self.enabled,
+            has_credential: self.has_credential,
             id: self.id,
-            is_archived: self.is_archived.unwrap_or_default(),
+            is_archived: self.is_archived,
             last_modified_by: self.last_modified_by,
             last_modified_date: self.last_modified_date,
             platform: self.platform,
-            promotional_messages_per_second: self
-                .promotional_messages_per_second
-                .unwrap_or_default(),
+            promotional_messages_per_second: self.promotional_messages_per_second,
             sender_id: self.sender_id,
             short_code: self.short_code,
-            transactional_messages_per_second: self
-                .transactional_messages_per_second
-                .unwrap_or_default(),
-            version: self.version.unwrap_or_default(),
+            transactional_messages_per_second: self.transactional_messages_per_second,
+            version: self.version,
         }
     }
 }

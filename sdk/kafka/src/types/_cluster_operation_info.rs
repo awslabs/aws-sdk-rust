@@ -37,6 +37,9 @@ pub struct ClusterOperationInfo {
     /// <p>Information about cluster attributes after a cluster is updated.</p>
     #[doc(hidden)]
     pub target_cluster_info: std::option::Option<crate::types::MutableClusterInfo>,
+    /// <p>Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection operations.</p>
+    #[doc(hidden)]
+    pub vpc_connection_info: std::option::Option<crate::types::VpcConnectionInfo>,
 }
 impl ClusterOperationInfo {
     /// <p>The ID of the API request that triggered this operation.</p>
@@ -83,6 +86,10 @@ impl ClusterOperationInfo {
     pub fn target_cluster_info(&self) -> std::option::Option<&crate::types::MutableClusterInfo> {
         self.target_cluster_info.as_ref()
     }
+    /// <p>Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection operations.</p>
+    pub fn vpc_connection_info(&self) -> std::option::Option<&crate::types::VpcConnectionInfo> {
+        self.vpc_connection_info.as_ref()
+    }
 }
 impl ClusterOperationInfo {
     /// Creates a new builder-style object to manufacture [`ClusterOperationInfo`](crate::types::ClusterOperationInfo).
@@ -107,6 +114,7 @@ pub struct ClusterOperationInfoBuilder {
     pub(crate) operation_type: std::option::Option<std::string::String>,
     pub(crate) source_cluster_info: std::option::Option<crate::types::MutableClusterInfo>,
     pub(crate) target_cluster_info: std::option::Option<crate::types::MutableClusterInfo>,
+    pub(crate) vpc_connection_info: std::option::Option<crate::types::VpcConnectionInfo>,
 }
 impl ClusterOperationInfoBuilder {
     /// <p>The ID of the API request that triggered this operation.</p>
@@ -240,6 +248,19 @@ impl ClusterOperationInfoBuilder {
         self.target_cluster_info = input;
         self
     }
+    /// <p>Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection operations.</p>
+    pub fn vpc_connection_info(mut self, input: crate::types::VpcConnectionInfo) -> Self {
+        self.vpc_connection_info = Some(input);
+        self
+    }
+    /// <p>Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection operations.</p>
+    pub fn set_vpc_connection_info(
+        mut self,
+        input: std::option::Option<crate::types::VpcConnectionInfo>,
+    ) -> Self {
+        self.vpc_connection_info = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ClusterOperationInfo`](crate::types::ClusterOperationInfo).
     pub fn build(self) -> crate::types::ClusterOperationInfo {
         crate::types::ClusterOperationInfo {
@@ -254,6 +275,7 @@ impl ClusterOperationInfoBuilder {
             operation_type: self.operation_type,
             source_cluster_info: self.source_cluster_info,
             target_cluster_info: self.target_cluster_info,
+            vpc_connection_info: self.vpc_connection_info,
         }
     }
 }

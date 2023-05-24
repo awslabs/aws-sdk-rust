@@ -17,75 +17,75 @@ pub fn ser_xavc_settings(
             .key("framerateConversionAlgorithm")
             .string(var_4.as_str());
     }
-    if input.framerate_denominator != 0 {
+    if let Some(var_5) = &input.framerate_denominator {
         object.key("framerateDenominator").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.framerate_denominator).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if input.framerate_numerator != 0 {
+    if let Some(var_6) = &input.framerate_numerator {
         object.key("framerateNumerator").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.framerate_numerator).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_5) = &input.profile {
-        object.key("profile").string(var_5.as_str());
+    if let Some(var_7) = &input.profile {
+        object.key("profile").string(var_7.as_str());
     }
-    if let Some(var_6) = &input.slow_pal {
-        object.key("slowPal").string(var_6.as_str());
+    if let Some(var_8) = &input.slow_pal {
+        object.key("slowPal").string(var_8.as_str());
     }
-    if input.softness != 0 {
+    if let Some(var_9) = &input.softness {
         object.key("softness").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.softness).into()),
+            aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_7) = &input.spatial_adaptive_quantization {
+    if let Some(var_10) = &input.spatial_adaptive_quantization {
         object
             .key("spatialAdaptiveQuantization")
-            .string(var_7.as_str());
+            .string(var_10.as_str());
     }
-    if let Some(var_8) = &input.temporal_adaptive_quantization {
+    if let Some(var_11) = &input.temporal_adaptive_quantization {
         object
             .key("temporalAdaptiveQuantization")
-            .string(var_8.as_str());
+            .string(var_11.as_str());
     }
-    if let Some(var_9) = &input.xavc4k_intra_cbg_profile_settings {
+    if let Some(var_12) = &input.xavc4k_intra_cbg_profile_settings {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("xavc4kIntraCbgProfileSettings").start_object();
-        crate::protocol_serde::shape_xavc4k_intra_cbg_profile_settings::ser_xavc4k_intra_cbg_profile_settings(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_13 = object.key("xavc4kIntraCbgProfileSettings").start_object();
+        crate::protocol_serde::shape_xavc4k_intra_cbg_profile_settings::ser_xavc4k_intra_cbg_profile_settings(&mut object_13, var_12)?;
+        object_13.finish();
     }
-    if let Some(var_11) = &input.xavc4k_intra_vbr_profile_settings {
+    if let Some(var_14) = &input.xavc4k_intra_vbr_profile_settings {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("xavc4kIntraVbrProfileSettings").start_object();
-        crate::protocol_serde::shape_xavc4k_intra_vbr_profile_settings::ser_xavc4k_intra_vbr_profile_settings(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_15 = object.key("xavc4kIntraVbrProfileSettings").start_object();
+        crate::protocol_serde::shape_xavc4k_intra_vbr_profile_settings::ser_xavc4k_intra_vbr_profile_settings(&mut object_15, var_14)?;
+        object_15.finish();
     }
-    if let Some(var_13) = &input.xavc4k_profile_settings {
+    if let Some(var_16) = &input.xavc4k_profile_settings {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("xavc4kProfileSettings").start_object();
+        let mut object_17 = object.key("xavc4kProfileSettings").start_object();
         crate::protocol_serde::shape_xavc4k_profile_settings::ser_xavc4k_profile_settings(
-            &mut object_14,
-            var_13,
+            &mut object_17,
+            var_16,
         )?;
-        object_14.finish();
+        object_17.finish();
     }
-    if let Some(var_15) = &input.xavc_hd_intra_cbg_profile_settings {
+    if let Some(var_18) = &input.xavc_hd_intra_cbg_profile_settings {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("xavcHdIntraCbgProfileSettings").start_object();
-        crate::protocol_serde::shape_xavc_hd_intra_cbg_profile_settings::ser_xavc_hd_intra_cbg_profile_settings(&mut object_16, var_15)?;
-        object_16.finish();
+        let mut object_19 = object.key("xavcHdIntraCbgProfileSettings").start_object();
+        crate::protocol_serde::shape_xavc_hd_intra_cbg_profile_settings::ser_xavc_hd_intra_cbg_profile_settings(&mut object_19, var_18)?;
+        object_19.finish();
     }
-    if let Some(var_17) = &input.xavc_hd_profile_settings {
+    if let Some(var_20) = &input.xavc_hd_profile_settings {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("xavcHdProfileSettings").start_object();
+        let mut object_21 = object.key("xavcHdProfileSettings").start_object();
         crate::protocol_serde::shape_xavc_hd_profile_settings::ser_xavc_hd_profile_settings(
-            &mut object_18,
-            var_17,
+            &mut object_21,
+            var_20,
         )?;
-        object_18.finish();
+        object_21.finish();
     }
     Ok(())
 }

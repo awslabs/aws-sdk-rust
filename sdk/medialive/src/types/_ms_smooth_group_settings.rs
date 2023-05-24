@@ -16,7 +16,7 @@ pub struct MsSmoothGroupSettings {
     pub certificate_mode: std::option::Option<crate::types::SmoothGroupCertificateMode>,
     /// Number of seconds to wait before retrying connection to the IIS server if the connection is lost. Content will be cached during this time and the cache will be be delivered to the IIS server once the connection is re-established.
     #[doc(hidden)]
-    pub connection_retry_interval: i32,
+    pub connection_retry_interval: std::option::Option<i32>,
     /// Smooth Streaming publish point on an IIS server. Elemental Live acts as a "Push" encoder to IIS.
     #[doc(hidden)]
     pub destination: std::option::Option<crate::types::OutputLocationRef>,
@@ -31,25 +31,25 @@ pub struct MsSmoothGroupSettings {
     pub event_stop_behavior: std::option::Option<crate::types::SmoothGroupEventStopBehavior>,
     /// Size in seconds of file cache for streaming outputs.
     #[doc(hidden)]
-    pub filecache_duration: i32,
+    pub filecache_duration: std::option::Option<i32>,
     /// Length of mp4 fragments to generate (in seconds). Fragment length must be compatible with GOP size and framerate.
     #[doc(hidden)]
-    pub fragment_length: i32,
+    pub fragment_length: std::option::Option<i32>,
     /// Parameter that control output group behavior on input loss.
     #[doc(hidden)]
     pub input_loss_action: std::option::Option<crate::types::InputLossActionForMsSmoothOut>,
     /// Number of retry attempts.
     #[doc(hidden)]
-    pub num_retries: i32,
+    pub num_retries: std::option::Option<i32>,
     /// Number of seconds before initiating a restart due to output failure, due to exhausting the numRetries on one segment, or exceeding filecacheDuration.
     #[doc(hidden)]
-    pub restart_delay: i32,
+    pub restart_delay: std::option::Option<i32>,
     /// useInputSegmentation has been deprecated. The configured segment size is always used.
     #[doc(hidden)]
     pub segmentation_mode: std::option::Option<crate::types::SmoothGroupSegmentationMode>,
     /// Number of milliseconds to delay the output from the second pipeline.
     #[doc(hidden)]
-    pub send_delay_ms: i32,
+    pub send_delay_ms: std::option::Option<i32>,
     /// Identifies the type of data to place in the sparse track: - SCTE35: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame to start a new segment. - SCTE35_WITHOUT_SEGMENTATION: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame but don't start a new segment. - NONE: Don't generate a sparse track for any outputs in this output group.
     #[doc(hidden)]
     pub sparse_track_type: std::option::Option<crate::types::SmoothGroupSparseTrackType>,
@@ -82,7 +82,7 @@ impl MsSmoothGroupSettings {
         self.certificate_mode.as_ref()
     }
     /// Number of seconds to wait before retrying connection to the IIS server if the connection is lost. Content will be cached during this time and the cache will be be delivered to the IIS server once the connection is re-established.
-    pub fn connection_retry_interval(&self) -> i32 {
+    pub fn connection_retry_interval(&self) -> std::option::Option<i32> {
         self.connection_retry_interval
     }
     /// Smooth Streaming publish point on an IIS server. Elemental Live acts as a "Push" encoder to IIS.
@@ -104,11 +104,11 @@ impl MsSmoothGroupSettings {
         self.event_stop_behavior.as_ref()
     }
     /// Size in seconds of file cache for streaming outputs.
-    pub fn filecache_duration(&self) -> i32 {
+    pub fn filecache_duration(&self) -> std::option::Option<i32> {
         self.filecache_duration
     }
     /// Length of mp4 fragments to generate (in seconds). Fragment length must be compatible with GOP size and framerate.
-    pub fn fragment_length(&self) -> i32 {
+    pub fn fragment_length(&self) -> std::option::Option<i32> {
         self.fragment_length
     }
     /// Parameter that control output group behavior on input loss.
@@ -118,11 +118,11 @@ impl MsSmoothGroupSettings {
         self.input_loss_action.as_ref()
     }
     /// Number of retry attempts.
-    pub fn num_retries(&self) -> i32 {
+    pub fn num_retries(&self) -> std::option::Option<i32> {
         self.num_retries
     }
     /// Number of seconds before initiating a restart due to output failure, due to exhausting the numRetries on one segment, or exceeding filecacheDuration.
-    pub fn restart_delay(&self) -> i32 {
+    pub fn restart_delay(&self) -> std::option::Option<i32> {
         self.restart_delay
     }
     /// useInputSegmentation has been deprecated. The configured segment size is always used.
@@ -132,7 +132,7 @@ impl MsSmoothGroupSettings {
         self.segmentation_mode.as_ref()
     }
     /// Number of milliseconds to delay the output from the second pipeline.
-    pub fn send_delay_ms(&self) -> i32 {
+    pub fn send_delay_ms(&self) -> std::option::Option<i32> {
         self.send_delay_ms
     }
     /// Identifies the type of data to place in the sparse track: - SCTE35: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame to start a new segment. - SCTE35_WITHOUT_SEGMENTATION: Insert SCTE-35 messages from the source content. With each message, insert an IDR frame but don't start a new segment. - NONE: Don't generate a sparse track for any outputs in this output group.
@@ -434,18 +434,18 @@ impl MsSmoothGroupSettingsBuilder {
             acquisition_point_id: self.acquisition_point_id,
             audio_only_timecode_control: self.audio_only_timecode_control,
             certificate_mode: self.certificate_mode,
-            connection_retry_interval: self.connection_retry_interval.unwrap_or_default(),
+            connection_retry_interval: self.connection_retry_interval,
             destination: self.destination,
             event_id: self.event_id,
             event_id_mode: self.event_id_mode,
             event_stop_behavior: self.event_stop_behavior,
-            filecache_duration: self.filecache_duration.unwrap_or_default(),
-            fragment_length: self.fragment_length.unwrap_or_default(),
+            filecache_duration: self.filecache_duration,
+            fragment_length: self.fragment_length,
             input_loss_action: self.input_loss_action,
-            num_retries: self.num_retries.unwrap_or_default(),
-            restart_delay: self.restart_delay.unwrap_or_default(),
+            num_retries: self.num_retries,
+            restart_delay: self.restart_delay,
             segmentation_mode: self.segmentation_mode,
-            send_delay_ms: self.send_delay_ms.unwrap_or_default(),
+            send_delay_ms: self.send_delay_ms,
             sparse_track_type: self.sparse_track_type,
             stream_manifest_behavior: self.stream_manifest_behavior,
             timestamp_offset: self.timestamp_offset,

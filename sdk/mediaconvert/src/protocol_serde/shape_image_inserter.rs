@@ -18,10 +18,10 @@ pub fn ser_image_inserter(
         }
         array_2.finish();
     }
-    if input.sdr_reference_white_level != 0 {
+    if let Some(var_5) = &input.sdr_reference_white_level {
         object.key("sdrReferenceWhiteLevel").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.sdr_reference_white_level).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
     Ok(())

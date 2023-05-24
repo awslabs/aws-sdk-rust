@@ -12,8 +12,8 @@ pub fn ser_tls(
         }
         array_2.finish();
     }
-    if input.enabled {
-        object.key("enabled").boolean(input.enabled);
+    if let Some(var_4) = &input.enabled {
+        object.key("enabled").boolean(*var_4);
     }
     Ok(())
 }

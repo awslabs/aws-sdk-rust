@@ -11,7 +11,7 @@ pub struct DescribeInputDeviceThumbnailOutput {
     pub content_type: std::option::Option<crate::types::ContentType>,
     /// The length of the content.
     #[doc(hidden)]
-    pub content_length: i64,
+    pub content_length: std::option::Option<i64>,
     /// The unique, cacheable version of this thumbnail.
     #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
@@ -30,7 +30,7 @@ impl DescribeInputDeviceThumbnailOutput {
         self.content_type.as_ref()
     }
     /// The length of the content.
-    pub fn content_length(&self) -> i64 {
+    pub fn content_length(&self) -> std::option::Option<i64> {
         self.content_length
     }
     /// The unique, cacheable version of this thumbnail.
@@ -141,7 +141,7 @@ impl DescribeInputDeviceThumbnailOutputBuilder {
         crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailOutput {
             body: self.body.unwrap_or_default(),
             content_type: self.content_type,
-            content_length: self.content_length.unwrap_or_default(),
+            content_length: self.content_length,
             e_tag: self.e_tag,
             last_modified: self.last_modified,
             _request_id: self._request_id,

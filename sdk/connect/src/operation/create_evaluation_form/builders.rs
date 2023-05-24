@@ -5,7 +5,7 @@ pub use crate::operation::create_evaluation_form::_create_evaluation_form_input:
 
 /// Fluent builder constructing a request to `CreateEvaluationForm`.
 ///
-/// <p>Creates an evaluation form in the specified Amazon Connect instance. The form can be used to define questions related to agent performance, and create sections to organize such questions. An evaluation form must have a unique title within an instance. Question and section identifiers cannot be duplicated within the same evaluation form.</p>
+/// <p>Creates an evaluation form in the specified Amazon Connect instance. The form can be used to define questions related to agent performance, and create sections to organize such questions. Question and section identifiers cannot be duplicated within the same evaluation form.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateEvaluationFormFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -78,12 +78,12 @@ impl CreateEvaluationFormFluentBuilder {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p>A unique title of the evaluation form.</p>
+    /// <p>A title of the evaluation form.</p>
     pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.title(input.into());
         self
     }
-    /// <p>A unique title of the evaluation form.</p>
+    /// <p>A title of the evaluation form.</p>
     pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_title(input);
         self

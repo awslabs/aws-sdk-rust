@@ -6,50 +6,50 @@
 pub struct StaticImageActivateScheduleActionSettings {
     /// The duration in milliseconds for the image to remain on the video. If omitted or set to 0 the duration is unlimited and the image will remain until it is explicitly deactivated.
     #[doc(hidden)]
-    pub duration: i32,
+    pub duration: std::option::Option<i32>,
     /// The time in milliseconds for the image to fade in. The fade-in starts at the start time of the overlay. Default is 0 (no fade-in).
     #[doc(hidden)]
-    pub fade_in: i32,
+    pub fade_in: std::option::Option<i32>,
     /// Applies only if a duration is specified. The time in milliseconds for the image to fade out. The fade-out starts when the duration time is hit, so it effectively extends the duration. Default is 0 (no fade-out).
     #[doc(hidden)]
-    pub fade_out: i32,
+    pub fade_out: std::option::Option<i32>,
     /// The height of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the specified height. Leave blank to use the native height of the overlay.
     #[doc(hidden)]
-    pub height: i32,
+    pub height: std::option::Option<i32>,
     /// The location and filename of the image file to overlay on the video. The file must be a 32-bit BMP, PNG, or TGA file, and must not be larger (in pixels) than the input video.
     #[doc(hidden)]
     pub image: std::option::Option<crate::types::InputLocation>,
     /// Placement of the left edge of the overlay relative to the left edge of the video frame, in pixels. 0 (the default) is the left edge of the frame. If the placement causes the overlay to extend beyond the right edge of the underlying video, then the overlay is cropped on the right.
     #[doc(hidden)]
-    pub image_x: i32,
+    pub image_x: std::option::Option<i32>,
     /// Placement of the top edge of the overlay relative to the top edge of the video frame, in pixels. 0 (the default) is the top edge of the frame. If the placement causes the overlay to extend beyond the bottom edge of the underlying video, then the overlay is cropped on the bottom.
     #[doc(hidden)]
-    pub image_y: i32,
+    pub image_y: std::option::Option<i32>,
     /// The number of the layer, 0 to 7. There are 8 layers that can be overlaid on the video, each layer with a different image. The layers are in Z order, which means that overlays with higher values of layer are inserted on top of overlays with lower values of layer. Default is 0.
     #[doc(hidden)]
-    pub layer: i32,
+    pub layer: std::option::Option<i32>,
     /// Opacity of image where 0 is transparent and 100 is fully opaque. Default is 100.
     #[doc(hidden)]
-    pub opacity: i32,
+    pub opacity: std::option::Option<i32>,
     /// The width of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the specified width. Leave blank to use the native width of the overlay.
     #[doc(hidden)]
-    pub width: i32,
+    pub width: std::option::Option<i32>,
 }
 impl StaticImageActivateScheduleActionSettings {
     /// The duration in milliseconds for the image to remain on the video. If omitted or set to 0 the duration is unlimited and the image will remain until it is explicitly deactivated.
-    pub fn duration(&self) -> i32 {
+    pub fn duration(&self) -> std::option::Option<i32> {
         self.duration
     }
     /// The time in milliseconds for the image to fade in. The fade-in starts at the start time of the overlay. Default is 0 (no fade-in).
-    pub fn fade_in(&self) -> i32 {
+    pub fn fade_in(&self) -> std::option::Option<i32> {
         self.fade_in
     }
     /// Applies only if a duration is specified. The time in milliseconds for the image to fade out. The fade-out starts when the duration time is hit, so it effectively extends the duration. Default is 0 (no fade-out).
-    pub fn fade_out(&self) -> i32 {
+    pub fn fade_out(&self) -> std::option::Option<i32> {
         self.fade_out
     }
     /// The height of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the specified height. Leave blank to use the native height of the overlay.
-    pub fn height(&self) -> i32 {
+    pub fn height(&self) -> std::option::Option<i32> {
         self.height
     }
     /// The location and filename of the image file to overlay on the video. The file must be a 32-bit BMP, PNG, or TGA file, and must not be larger (in pixels) than the input video.
@@ -57,23 +57,23 @@ impl StaticImageActivateScheduleActionSettings {
         self.image.as_ref()
     }
     /// Placement of the left edge of the overlay relative to the left edge of the video frame, in pixels. 0 (the default) is the left edge of the frame. If the placement causes the overlay to extend beyond the right edge of the underlying video, then the overlay is cropped on the right.
-    pub fn image_x(&self) -> i32 {
+    pub fn image_x(&self) -> std::option::Option<i32> {
         self.image_x
     }
     /// Placement of the top edge of the overlay relative to the top edge of the video frame, in pixels. 0 (the default) is the top edge of the frame. If the placement causes the overlay to extend beyond the bottom edge of the underlying video, then the overlay is cropped on the bottom.
-    pub fn image_y(&self) -> i32 {
+    pub fn image_y(&self) -> std::option::Option<i32> {
         self.image_y
     }
     /// The number of the layer, 0 to 7. There are 8 layers that can be overlaid on the video, each layer with a different image. The layers are in Z order, which means that overlays with higher values of layer are inserted on top of overlays with lower values of layer. Default is 0.
-    pub fn layer(&self) -> i32 {
+    pub fn layer(&self) -> std::option::Option<i32> {
         self.layer
     }
     /// Opacity of image where 0 is transparent and 100 is fully opaque. Default is 100.
-    pub fn opacity(&self) -> i32 {
+    pub fn opacity(&self) -> std::option::Option<i32> {
         self.opacity
     }
     /// The width of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the specified width. Leave blank to use the native width of the overlay.
-    pub fn width(&self) -> i32 {
+    pub fn width(&self) -> std::option::Option<i32> {
         self.width
     }
 }
@@ -203,16 +203,16 @@ impl StaticImageActivateScheduleActionSettingsBuilder {
     /// Consumes the builder and constructs a [`StaticImageActivateScheduleActionSettings`](crate::types::StaticImageActivateScheduleActionSettings).
     pub fn build(self) -> crate::types::StaticImageActivateScheduleActionSettings {
         crate::types::StaticImageActivateScheduleActionSettings {
-            duration: self.duration.unwrap_or_default(),
-            fade_in: self.fade_in.unwrap_or_default(),
-            fade_out: self.fade_out.unwrap_or_default(),
-            height: self.height.unwrap_or_default(),
+            duration: self.duration,
+            fade_in: self.fade_in,
+            fade_out: self.fade_out,
+            height: self.height,
             image: self.image,
-            image_x: self.image_x.unwrap_or_default(),
-            image_y: self.image_y.unwrap_or_default(),
-            layer: self.layer.unwrap_or_default(),
-            opacity: self.opacity.unwrap_or_default(),
-            width: self.width.unwrap_or_default(),
+            image_x: self.image_x,
+            image_y: self.image_y,
+            layer: self.layer,
+            opacity: self.opacity,
+            width: self.width,
         }
     }
 }

@@ -110,4 +110,14 @@ impl ListRunsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
+    /// <p> The status of a run. </p>
+    pub fn status(mut self, input: crate::types::RunStatus) -> Self {
+        self.inner = self.inner.status(input);
+        self
+    }
+    /// <p> The status of a run. </p>
+    pub fn set_status(mut self, input: std::option::Option<crate::types::RunStatus>) -> Self {
+        self.inner = self.inner.set_status(input);
+        self
+    }
 }

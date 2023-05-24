@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_domain_names::builders::ListDomainNamesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_domain_names::builders::ListDomainNamesFluentBuilder::set_next_token): <p>The API token.</p>
-    ///   - [`max_results(i32)`](crate::operation::list_domain_names::builders::ListDomainNamesFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_domain_names::builders::ListDomainNamesFluentBuilder::set_max_results): <p>The maximum number of results that you want the request to return.</p>
+    ///   - [`max_results(i32)`](crate::operation::list_domain_names::builders::ListDomainNamesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_domain_names::builders::ListDomainNamesFluentBuilder::set_max_results): <p>The maximum number of results that you want the request to return.</p>
     /// - On success, responds with [`ListDomainNamesOutput`](crate::operation::list_domain_names::ListDomainNamesOutput) with field(s):
     ///   - [`domain_name_configs(Option<Vec<DomainNameConfig>>)`](crate::operation::list_domain_names::ListDomainNamesOutput::domain_name_configs): <p>Lists configurations for multiple domain names.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_domain_names::ListDomainNamesOutput::next_token): <p>The API token.</p>

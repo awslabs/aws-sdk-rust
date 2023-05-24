@@ -39,6 +39,18 @@ pub fn ser_dynamic_transform(
     if let Some(var_12) = &input.version {
         object.key("Version").string(var_12.as_str());
     }
+    if let Some(var_13) = &input.output_schemas {
+        let mut array_14 = object.key("OutputSchemas").start_array();
+        for item_15 in var_13 {
+            {
+                #[allow(unused_mut)]
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_glue_schema::ser_glue_schema(&mut object_16, item_15)?;
+                object_16.finish();
+            }
+        }
+        array_14.finish();
+    }
     Ok(())
 }
 
@@ -119,6 +131,13 @@ where
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            "OutputSchemas" => {
+                                builder = builder.set_output_schemas(
+                                    crate::protocol_serde::shape_glue_schemas::de_glue_schemas(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

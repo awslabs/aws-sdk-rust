@@ -62,6 +62,10 @@ pub enum Error {
     ),
     /// <p>WAF couldn’t retrieve a resource that you specified for this operation. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
     WafUnavailableEntityException(crate::types::error::WafUnavailableEntityException),
+    /// <p>The rule that you've named doesn't aggregate solely on the IP address or solely on the forwarded IP address. This call is only available for rate-based rules with an <code>AggregateKeyType</code> setting of <code>IP</code> or <code>FORWARDED_IP</code>.</p>
+    WafUnsupportedAggregateKeyTypeException(
+        crate::types::error::WafUnsupportedAggregateKeyTypeException,
+    ),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -86,6 +90,7 @@ impl std::fmt::Display for Error {
             Error::WafTagOperationException(inner) => inner.fmt(f),
             Error::WafTagOperationInternalErrorException(inner) => inner.fmt(f),
             Error::WafUnavailableEntityException(inner) => inner.fmt(f),
+            Error::WafUnsupportedAggregateKeyTypeException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
         }
     }
@@ -1113,6 +1118,7 @@ impl From<crate::operation::get_rate_based_statement_managed_keys::GetRateBasedS
             crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysError::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
             crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysError::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
             crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysError::WafUnsupportedAggregateKeyTypeException(inner) => Error::WafUnsupportedAggregateKeyTypeException(inner),
             crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2271,6 +2277,7 @@ impl std::error::Error for Error {
             Error::WafTagOperationException(inner) => inner.source(),
             Error::WafTagOperationInternalErrorException(inner) => inner.source(),
             Error::WafUnavailableEntityException(inner) => inner.source(),
+            Error::WafUnsupportedAggregateKeyTypeException(inner) => inner.source(),
             Error::Unhandled(inner) => inner.source(),
         }
     }
@@ -2296,6 +2303,7 @@ impl aws_http::request_id::RequestId for Error {
             Self::WafTagOperationException(e) => e.request_id(),
             Self::WafTagOperationInternalErrorException(e) => e.request_id(),
             Self::WafUnavailableEntityException(e) => e.request_id(),
+            Self::WafUnsupportedAggregateKeyTypeException(e) => e.request_id(),
             Self::Unhandled(e) => e.request_id(),
         }
     }

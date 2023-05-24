@@ -9,7 +9,7 @@ pub struct NielsenNaesIiNw {
     pub check_digit_string: std::option::Option<std::string::String>,
     /// Enter the Nielsen Source ID (SID) to include in the watermark
     #[doc(hidden)]
-    pub sid: f64,
+    pub sid: std::option::Option<f64>,
     /// Choose the timezone for the time stamps in the watermark. If not provided, the timestamps will be in Coordinated Universal Time (UTC)
     #[doc(hidden)]
     pub timezone: std::option::Option<crate::types::NielsenWatermarkTimezones>,
@@ -20,7 +20,7 @@ impl NielsenNaesIiNw {
         self.check_digit_string.as_deref()
     }
     /// Enter the Nielsen Source ID (SID) to include in the watermark
-    pub fn sid(&self) -> f64 {
+    pub fn sid(&self) -> std::option::Option<f64> {
         self.sid
     }
     /// Choose the timezone for the time stamps in the watermark. If not provided, the timestamps will be in Coordinated Universal Time (UTC)
@@ -84,7 +84,7 @@ impl NielsenNaesIiNwBuilder {
     pub fn build(self) -> crate::types::NielsenNaesIiNw {
         crate::types::NielsenNaesIiNw {
             check_digit_string: self.check_digit_string,
-            sid: self.sid.unwrap_or_default(),
+            sid: self.sid,
             timezone: self.timezone,
         }
     }

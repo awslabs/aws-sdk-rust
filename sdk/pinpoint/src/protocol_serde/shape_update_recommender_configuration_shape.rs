@@ -44,10 +44,10 @@ pub fn ser_update_recommender_configuration_shape(
             .key("RecommendationsDisplayName")
             .string(var_11.as_str());
     }
-    if input.recommendations_per_message != 0 {
+    if let Some(var_12) = &input.recommendations_per_message {
         object.key("RecommendationsPerMessage").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.recommendations_per_message).into()),
+            aws_smithy_types::Number::NegInt((*var_12).into()),
         );
     }
     Ok(())

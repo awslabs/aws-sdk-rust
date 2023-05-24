@@ -3,22 +3,22 @@ pub fn ser_aiff_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AiffSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.bit_depth != 0 {
+    if let Some(var_1) = &input.bit_depth {
         object.key("bitDepth").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.bit_depth).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.channels != 0 {
+    if let Some(var_2) = &input.channels {
         object.key("channels").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.channels).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.sample_rate != 0 {
+    if let Some(var_3) = &input.sample_rate {
         object.key("sampleRate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.sample_rate).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())

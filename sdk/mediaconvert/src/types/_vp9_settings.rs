@@ -6,7 +6,7 @@
 pub struct Vp9Settings {
     /// Target bitrate in bits/second. For example, enter five megabits per second as 5000000.
     #[doc(hidden)]
-    pub bitrate: i32,
+    pub bitrate: std::option::Option<i32>,
     /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
     #[doc(hidden)]
     pub framerate_control: std::option::Option<crate::types::Vp9FramerateControl>,
@@ -16,28 +16,28 @@ pub struct Vp9Settings {
         std::option::Option<crate::types::Vp9FramerateConversionAlgorithm>,
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     #[doc(hidden)]
-    pub framerate_denominator: i32,
+    pub framerate_denominator: std::option::Option<i32>,
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     #[doc(hidden)]
-    pub framerate_numerator: i32,
+    pub framerate_numerator: std::option::Option<i32>,
     /// GOP Length (keyframe interval) in frames. Must be greater than zero.
     #[doc(hidden)]
-    pub gop_size: f64,
+    pub gop_size: std::option::Option<f64>,
     /// Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000.
     #[doc(hidden)]
-    pub hrd_buffer_size: i32,
+    pub hrd_buffer_size: std::option::Option<i32>,
     /// Ignore this setting unless you set qualityTuningLevel to MULTI_PASS. Optional. Specify the maximum bitrate in bits/second. For example, enter five megabits per second as 5000000. The default behavior uses twice the target bitrate as the maximum bitrate.
     #[doc(hidden)]
-    pub max_bitrate: i32,
+    pub max_bitrate: std::option::Option<i32>,
     /// Optional. Specify how the service determines the pixel aspect ratio for this output. The default behavior is to use the same pixel aspect ratio as your input video.
     #[doc(hidden)]
     pub par_control: std::option::Option<crate::types::Vp9ParControl>,
     /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parDenominator is 33.
     #[doc(hidden)]
-    pub par_denominator: i32,
+    pub par_denominator: std::option::Option<i32>,
     /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parNumerator is 40.
     #[doc(hidden)]
-    pub par_numerator: i32,
+    pub par_numerator: std::option::Option<i32>,
     /// Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, multi-pass encoding.
     #[doc(hidden)]
     pub quality_tuning_level: std::option::Option<crate::types::Vp9QualityTuningLevel>,
@@ -47,7 +47,7 @@ pub struct Vp9Settings {
 }
 impl Vp9Settings {
     /// Target bitrate in bits/second. For example, enter five megabits per second as 5000000.
-    pub fn bitrate(&self) -> i32 {
+    pub fn bitrate(&self) -> std::option::Option<i32> {
         self.bitrate
     }
     /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
@@ -61,23 +61,23 @@ impl Vp9Settings {
         self.framerate_conversion_algorithm.as_ref()
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
-    pub fn framerate_denominator(&self) -> i32 {
+    pub fn framerate_denominator(&self) -> std::option::Option<i32> {
         self.framerate_denominator
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
-    pub fn framerate_numerator(&self) -> i32 {
+    pub fn framerate_numerator(&self) -> std::option::Option<i32> {
         self.framerate_numerator
     }
     /// GOP Length (keyframe interval) in frames. Must be greater than zero.
-    pub fn gop_size(&self) -> f64 {
+    pub fn gop_size(&self) -> std::option::Option<f64> {
         self.gop_size
     }
     /// Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000.
-    pub fn hrd_buffer_size(&self) -> i32 {
+    pub fn hrd_buffer_size(&self) -> std::option::Option<i32> {
         self.hrd_buffer_size
     }
     /// Ignore this setting unless you set qualityTuningLevel to MULTI_PASS. Optional. Specify the maximum bitrate in bits/second. For example, enter five megabits per second as 5000000. The default behavior uses twice the target bitrate as the maximum bitrate.
-    pub fn max_bitrate(&self) -> i32 {
+    pub fn max_bitrate(&self) -> std::option::Option<i32> {
         self.max_bitrate
     }
     /// Optional. Specify how the service determines the pixel aspect ratio for this output. The default behavior is to use the same pixel aspect ratio as your input video.
@@ -85,11 +85,11 @@ impl Vp9Settings {
         self.par_control.as_ref()
     }
     /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parDenominator is 33.
-    pub fn par_denominator(&self) -> i32 {
+    pub fn par_denominator(&self) -> std::option::Option<i32> {
         self.par_denominator
     }
     /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parNumerator is 40.
-    pub fn par_numerator(&self) -> i32 {
+    pub fn par_numerator(&self) -> std::option::Option<i32> {
         self.par_numerator
     }
     /// Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, multi-pass encoding.
@@ -281,17 +281,17 @@ impl Vp9SettingsBuilder {
     /// Consumes the builder and constructs a [`Vp9Settings`](crate::types::Vp9Settings).
     pub fn build(self) -> crate::types::Vp9Settings {
         crate::types::Vp9Settings {
-            bitrate: self.bitrate.unwrap_or_default(),
+            bitrate: self.bitrate,
             framerate_control: self.framerate_control,
             framerate_conversion_algorithm: self.framerate_conversion_algorithm,
-            framerate_denominator: self.framerate_denominator.unwrap_or_default(),
-            framerate_numerator: self.framerate_numerator.unwrap_or_default(),
-            gop_size: self.gop_size.unwrap_or_default(),
-            hrd_buffer_size: self.hrd_buffer_size.unwrap_or_default(),
-            max_bitrate: self.max_bitrate.unwrap_or_default(),
+            framerate_denominator: self.framerate_denominator,
+            framerate_numerator: self.framerate_numerator,
+            gop_size: self.gop_size,
+            hrd_buffer_size: self.hrd_buffer_size,
+            max_bitrate: self.max_bitrate,
             par_control: self.par_control,
-            par_denominator: self.par_denominator.unwrap_or_default(),
-            par_numerator: self.par_numerator.unwrap_or_default(),
+            par_denominator: self.par_denominator,
+            par_numerator: self.par_numerator,
             quality_tuning_level: self.quality_tuning_level,
             rate_control_mode: self.rate_control_mode,
         }

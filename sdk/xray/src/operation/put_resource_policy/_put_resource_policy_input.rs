@@ -19,7 +19,7 @@ pub struct PutResourcePolicyInput {
     /// <p>Use this parameter only when you include a policy in the request and you intend to prevent the principal that is making the request from making a subsequent <code>PutResourcePolicy</code> request.</p>
     /// <p>The default value is false.</p>
     #[doc(hidden)]
-    pub bypass_policy_lockout_check: bool,
+    pub bypass_policy_lockout_check: std::option::Option<bool>,
 }
 impl PutResourcePolicyInput {
     /// <p>The name of the resource policy. Must be unique within a specific Amazon Web Services account.</p>
@@ -40,7 +40,7 @@ impl PutResourcePolicyInput {
     /// </important>
     /// <p>Use this parameter only when you include a policy in the request and you intend to prevent the principal that is making the request from making a subsequent <code>PutResourcePolicy</code> request.</p>
     /// <p>The default value is false.</p>
-    pub fn bypass_policy_lockout_check(&self) -> bool {
+    pub fn bypass_policy_lockout_check(&self) -> std::option::Option<bool> {
         self.bypass_policy_lockout_check
     }
 }
@@ -127,7 +127,7 @@ impl PutResourcePolicyInputBuilder {
                 policy_name: self.policy_name,
                 policy_document: self.policy_document,
                 policy_revision_id: self.policy_revision_id,
-                bypass_policy_lockout_check: self.bypass_policy_lockout_check.unwrap_or_default(),
+                bypass_policy_lockout_check: self.bypass_policy_lockout_check,
             },
         )
     }

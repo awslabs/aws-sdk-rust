@@ -10,6 +10,12 @@ pub mod batch_get_prepared_statement;
 /// Types for the `BatchGetQueryExecution` operation.
 pub mod batch_get_query_execution;
 
+/// Types for the `CancelCapacityReservation` operation.
+pub mod cancel_capacity_reservation;
+
+/// Types for the `CreateCapacityReservation` operation.
+pub mod create_capacity_reservation;
+
 /// Types for the `CreateDataCatalog` operation.
 pub mod create_data_catalog;
 
@@ -54,6 +60,12 @@ pub mod get_calculation_execution_code;
 
 /// Types for the `GetCalculationExecutionStatus` operation.
 pub mod get_calculation_execution_status;
+
+/// Types for the `GetCapacityAssignmentConfiguration` operation.
+pub mod get_capacity_assignment_configuration;
+
+/// Types for the `GetCapacityReservation` operation.
+pub mod get_capacity_reservation;
 
 /// Types for the `GetDataCatalog` operation.
 pub mod get_data_catalog;
@@ -100,6 +112,9 @@ pub mod list_application_dpu_sizes;
 /// Types for the `ListCalculationExecutions` operation.
 pub mod list_calculation_executions;
 
+/// Types for the `ListCapacityReservations` operation.
+pub mod list_capacity_reservations;
+
 /// Types for the `ListDataCatalogs` operation.
 pub mod list_data_catalogs;
 
@@ -139,6 +154,9 @@ pub mod list_tags_for_resource;
 /// Types for the `ListWorkGroups` operation.
 pub mod list_work_groups;
 
+/// Types for the `PutCapacityAssignmentConfiguration` operation.
+pub mod put_capacity_assignment_configuration;
+
 /// Types for the `StartCalculationExecution` operation.
 pub mod start_calculation_execution;
 
@@ -162,6 +180,9 @@ pub mod terminate_session;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateCapacityReservation` operation.
+pub mod update_capacity_reservation;
 
 /// Types for the `UpdateDataCatalog` operation.
 pub mod update_data_catalog;

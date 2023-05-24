@@ -104,6 +104,11 @@ where
                                     crate::protocol_serde::shape_mutable_cluster_info::de_mutable_cluster_info(tokens)?
                                 );
                             }
+                            "vpcConnectionInfo" => {
+                                builder = builder.set_vpc_connection_info(
+                                    crate::protocol_serde::shape_vpc_connection_info::de_vpc_connection_info(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

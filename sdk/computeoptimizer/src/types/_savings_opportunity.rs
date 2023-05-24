@@ -10,7 +10,7 @@ pub struct SavingsOpportunity {
     /// <p>The estimated monthly savings possible as a percentage of monthly cost by adopting Compute Optimizer recommendations for a given resource.</p>
     #[doc(hidden)]
     pub savings_opportunity_percentage: f64,
-    /// <p>An object that describes the estimated monthly savings amount possible, based on On-Demand instance pricing, by adopting Compute Optimizer recommendations for a given resource.</p>
+    /// <p>An object that describes the estimated monthly savings amount possible by adopting Compute Optimizer recommendations for a given resource. This is based on the On-Demand instance pricing..</p>
     #[doc(hidden)]
     pub estimated_monthly_savings: std::option::Option<crate::types::EstimatedMonthlySavings>,
 }
@@ -19,7 +19,7 @@ impl SavingsOpportunity {
     pub fn savings_opportunity_percentage(&self) -> f64 {
         self.savings_opportunity_percentage
     }
-    /// <p>An object that describes the estimated monthly savings amount possible, based on On-Demand instance pricing, by adopting Compute Optimizer recommendations for a given resource.</p>
+    /// <p>An object that describes the estimated monthly savings amount possible by adopting Compute Optimizer recommendations for a given resource. This is based on the On-Demand instance pricing..</p>
     pub fn estimated_monthly_savings(
         &self,
     ) -> std::option::Option<&crate::types::EstimatedMonthlySavings> {
@@ -52,7 +52,7 @@ impl SavingsOpportunityBuilder {
         self.savings_opportunity_percentage = input;
         self
     }
-    /// <p>An object that describes the estimated monthly savings amount possible, based on On-Demand instance pricing, by adopting Compute Optimizer recommendations for a given resource.</p>
+    /// <p>An object that describes the estimated monthly savings amount possible by adopting Compute Optimizer recommendations for a given resource. This is based on the On-Demand instance pricing..</p>
     pub fn estimated_monthly_savings(
         mut self,
         input: crate::types::EstimatedMonthlySavings,
@@ -60,7 +60,7 @@ impl SavingsOpportunityBuilder {
         self.estimated_monthly_savings = Some(input);
         self
     }
-    /// <p>An object that describes the estimated monthly savings amount possible, based on On-Demand instance pricing, by adopting Compute Optimizer recommendations for a given resource.</p>
+    /// <p>An object that describes the estimated monthly savings amount possible by adopting Compute Optimizer recommendations for a given resource. This is based on the On-Demand instance pricing..</p>
     pub fn set_estimated_monthly_savings(
         mut self,
         input: std::option::Option<crate::types::EstimatedMonthlySavings>,

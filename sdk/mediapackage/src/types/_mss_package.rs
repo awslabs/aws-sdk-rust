@@ -9,10 +9,10 @@ pub struct MssPackage {
     pub encryption: std::option::Option<crate::types::MssEncryption>,
     /// The time window (in seconds) contained in each manifest.
     #[doc(hidden)]
-    pub manifest_window_seconds: i32,
+    pub manifest_window_seconds: std::option::Option<i32>,
     /// The duration (in seconds) of each segment.
     #[doc(hidden)]
-    pub segment_duration_seconds: i32,
+    pub segment_duration_seconds: std::option::Option<i32>,
     /// A StreamSelection configuration.
     #[doc(hidden)]
     pub stream_selection: std::option::Option<crate::types::StreamSelection>,
@@ -23,11 +23,11 @@ impl MssPackage {
         self.encryption.as_ref()
     }
     /// The time window (in seconds) contained in each manifest.
-    pub fn manifest_window_seconds(&self) -> i32 {
+    pub fn manifest_window_seconds(&self) -> std::option::Option<i32> {
         self.manifest_window_seconds
     }
     /// The duration (in seconds) of each segment.
-    pub fn segment_duration_seconds(&self) -> i32 {
+    pub fn segment_duration_seconds(&self) -> std::option::Option<i32> {
         self.segment_duration_seconds
     }
     /// A StreamSelection configuration.
@@ -102,8 +102,8 @@ impl MssPackageBuilder {
     pub fn build(self) -> crate::types::MssPackage {
         crate::types::MssPackage {
             encryption: self.encryption,
-            manifest_window_seconds: self.manifest_window_seconds.unwrap_or_default(),
-            segment_duration_seconds: self.segment_duration_seconds.unwrap_or_default(),
+            manifest_window_seconds: self.manifest_window_seconds,
+            segment_duration_seconds: self.segment_duration_seconds,
             stream_selection: self.stream_selection,
         }
     }

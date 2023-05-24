@@ -6,7 +6,7 @@ pub struct GetBucketMetricsConfigurationInput {
     /// <p>The name of the bucket containing the metrics configuration to retrieve.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The ID used to identify the metrics configuration.</p>
+    /// <p>The ID used to identify the metrics configuration. The ID has a 64 character limit and can only contain letters, numbers, periods, dashes, and underscores.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
@@ -18,7 +18,7 @@ impl GetBucketMetricsConfigurationInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The ID used to identify the metrics configuration.</p>
+    /// <p>The ID used to identify the metrics configuration. The ID has a 64 character limit and can only contain letters, numbers, periods, dashes, and underscores.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -53,12 +53,12 @@ impl GetBucketMetricsConfigurationInputBuilder {
         self.bucket = input;
         self
     }
-    /// <p>The ID used to identify the metrics configuration.</p>
+    /// <p>The ID used to identify the metrics configuration. The ID has a 64 character limit and can only contain letters, numbers, periods, dashes, and underscores.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
         self.id = Some(input.into());
         self
     }
-    /// <p>The ID used to identify the metrics configuration.</p>
+    /// <p>The ID used to identify the metrics configuration. The ID has a 64 character limit and can only contain letters, numbers, periods, dashes, and underscores.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.id = input;
         self

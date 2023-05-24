@@ -9,6 +9,16 @@ pub(crate) fn reflens_list_access_tokens_output_next_token(
     Some(input)
 }
 
+pub(crate) fn reflens_list_dev_environment_sessions_output_next_token(
+    input: &crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsOutput,
+) -> std::option::Option<&std::string::String> {
+    let input = match &input.next_token {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
 pub(crate) fn reflens_list_dev_environments_output_next_token(
     input: &crate::operation::list_dev_environments::ListDevEnvironmentsOutput,
 ) -> std::option::Option<&std::string::String> {
@@ -72,6 +82,16 @@ pub(crate) fn reflens_list_spaces_output_next_token(
 pub(crate) fn lens_list_access_tokens_output_items(
     input: crate::operation::list_access_tokens::ListAccessTokensOutput,
 ) -> std::option::Option<std::vec::Vec<crate::types::AccessTokenSummary>> {
+    let input = match input.items {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_list_dev_environment_sessions_output_items(
+    input: crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::DevEnvironmentSessionSummary>> {
     let input = match input.items {
         None => return None,
         Some(t) => t,

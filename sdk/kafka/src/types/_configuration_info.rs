@@ -9,7 +9,7 @@ pub struct ConfigurationInfo {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The revision of the configuration to use.</p>
     #[doc(hidden)]
-    pub revision: i64,
+    pub revision: std::option::Option<i64>,
 }
 impl ConfigurationInfo {
     /// <p>ARN of the configuration to use.</p>
@@ -17,7 +17,7 @@ impl ConfigurationInfo {
         self.arn.as_deref()
     }
     /// <p>The revision of the configuration to use.</p>
-    pub fn revision(&self) -> i64 {
+    pub fn revision(&self) -> std::option::Option<i64> {
         self.revision
     }
 }
@@ -60,7 +60,7 @@ impl ConfigurationInfoBuilder {
     pub fn build(self) -> crate::types::ConfigurationInfo {
         crate::types::ConfigurationInfo {
             arn: self.arn,
-            revision: self.revision.unwrap_or_default(),
+            revision: self.revision,
         }
     }
 }

@@ -15,14 +15,20 @@ pub fn ser_update_run_group_input(
             aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_3) = &input.max_runs {
-        object.key("maxRuns").number(
+    if let Some(var_3) = &input.max_gpus {
+        object.key("maxGpus").number(
             #[allow(clippy::useless_conversion)]
             aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_4) = &input.name {
-        object.key("name").string(var_4.as_str());
+    if let Some(var_4) = &input.max_runs {
+        object.key("maxRuns").number(
+            #[allow(clippy::useless_conversion)]
+            aws_smithy_types::Number::NegInt((*var_4).into()),
+        );
+    }
+    if let Some(var_5) = &input.name {
+        object.key("name").string(var_5.as_str());
     }
     Ok(())
 }

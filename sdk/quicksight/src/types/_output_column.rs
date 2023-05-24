@@ -10,7 +10,7 @@ pub struct OutputColumn {
     /// <p>A description for a column.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>Type.</p>
+    /// <p>The type.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::ColumnDataType>,
 }
@@ -23,7 +23,7 @@ impl OutputColumn {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Type.</p>
+    /// <p>The type.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::types::ColumnDataType> {
         self.r#type.as_ref()
     }
@@ -64,12 +64,12 @@ impl OutputColumnBuilder {
         self.description = input;
         self
     }
-    /// <p>Type.</p>
+    /// <p>The type.</p>
     pub fn r#type(mut self, input: crate::types::ColumnDataType) -> Self {
         self.r#type = Some(input);
         self
     }
-    /// <p>Type.</p>
+    /// <p>The type.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::ColumnDataType>) -> Self {
         self.r#type = input;
         self

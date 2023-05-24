@@ -35,6 +35,9 @@ pub struct GetSceneOutput {
     #[doc(hidden)]
     pub generated_scene_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The SceneResponse error.</p>
+    #[doc(hidden)]
+    pub error: std::option::Option<crate::types::SceneError>,
     _request_id: Option<String>,
 }
 impl GetSceneOutput {
@@ -84,6 +87,10 @@ impl GetSceneOutput {
     {
         self.generated_scene_metadata.as_ref()
     }
+    /// <p>The SceneResponse error.</p>
+    pub fn error(&self) -> std::option::Option<&crate::types::SceneError> {
+        self.error.as_ref()
+    }
 }
 impl aws_http::request_id::RequestId for GetSceneOutput {
     fn request_id(&self) -> Option<&str> {
@@ -113,6 +120,7 @@ pub struct GetSceneOutputBuilder {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) generated_scene_metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) error: std::option::Option<crate::types::SceneError>,
     _request_id: Option<String>,
 }
 impl GetSceneOutputBuilder {
@@ -261,6 +269,16 @@ impl GetSceneOutputBuilder {
         self.generated_scene_metadata = input;
         self
     }
+    /// <p>The SceneResponse error.</p>
+    pub fn error(mut self, input: crate::types::SceneError) -> Self {
+        self.error = Some(input);
+        self
+    }
+    /// <p>The SceneResponse error.</p>
+    pub fn set_error(mut self, input: std::option::Option<crate::types::SceneError>) -> Self {
+        self.error = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -283,6 +301,7 @@ impl GetSceneOutputBuilder {
             capabilities: self.capabilities,
             scene_metadata: self.scene_metadata,
             generated_scene_metadata: self.generated_scene_metadata,
+            error: self.error,
             _request_id: self._request_id,
         }
     }

@@ -12,13 +12,13 @@ pub struct HlsPackage {
     pub hls_manifests: std::option::Option<std::vec::Vec<crate::types::HlsManifest>>,
     /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
     #[doc(hidden)]
-    pub include_dvb_subtitles: bool,
+    pub include_dvb_subtitles: std::option::Option<bool>,
     /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
     #[doc(hidden)]
-    pub segment_duration_seconds: i32,
+    pub segment_duration_seconds: std::option::Option<i32>,
     /// When enabled, audio streams will be placed in rendition groups in the output.
     #[doc(hidden)]
-    pub use_audio_rendition_group: bool,
+    pub use_audio_rendition_group: std::option::Option<bool>,
 }
 impl HlsPackage {
     /// An HTTP Live Streaming (HLS) encryption configuration.
@@ -30,15 +30,15 @@ impl HlsPackage {
         self.hls_manifests.as_deref()
     }
     /// When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.
-    pub fn include_dvb_subtitles(&self) -> bool {
+    pub fn include_dvb_subtitles(&self) -> std::option::Option<bool> {
         self.include_dvb_subtitles
     }
     /// Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source fragment duration.
-    pub fn segment_duration_seconds(&self) -> i32 {
+    pub fn segment_duration_seconds(&self) -> std::option::Option<i32> {
         self.segment_duration_seconds
     }
     /// When enabled, audio streams will be placed in rendition groups in the output.
-    pub fn use_audio_rendition_group(&self) -> bool {
+    pub fn use_audio_rendition_group(&self) -> std::option::Option<bool> {
         self.use_audio_rendition_group
     }
 }
@@ -127,9 +127,9 @@ impl HlsPackageBuilder {
         crate::types::HlsPackage {
             encryption: self.encryption,
             hls_manifests: self.hls_manifests,
-            include_dvb_subtitles: self.include_dvb_subtitles.unwrap_or_default(),
-            segment_duration_seconds: self.segment_duration_seconds.unwrap_or_default(),
-            use_audio_rendition_group: self.use_audio_rendition_group.unwrap_or_default(),
+            include_dvb_subtitles: self.include_dvb_subtitles,
+            segment_duration_seconds: self.segment_duration_seconds,
+            use_audio_rendition_group: self.use_audio_rendition_group,
         }
     }
 }

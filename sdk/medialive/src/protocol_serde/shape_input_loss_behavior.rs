@@ -3,28 +3,28 @@ pub fn ser_input_loss_behavior(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InputLossBehavior,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.black_frame_msec != 0 {
+    if let Some(var_1) = &input.black_frame_msec {
         object.key("blackFrameMsec").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.black_frame_msec).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.input_loss_image_color {
-        object.key("inputLossImageColor").string(var_1.as_str());
+    if let Some(var_2) = &input.input_loss_image_color {
+        object.key("inputLossImageColor").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.input_loss_image_slate {
+    if let Some(var_3) = &input.input_loss_image_slate {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("inputLossImageSlate").start_object();
-        crate::protocol_serde::shape_input_location::ser_input_location(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_4 = object.key("inputLossImageSlate").start_object();
+        crate::protocol_serde::shape_input_location::ser_input_location(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_4) = &input.input_loss_image_type {
-        object.key("inputLossImageType").string(var_4.as_str());
+    if let Some(var_5) = &input.input_loss_image_type {
+        object.key("inputLossImageType").string(var_5.as_str());
     }
-    if input.repeat_frame_msec != 0 {
+    if let Some(var_6) = &input.repeat_frame_msec {
         object.key("repeatFrameMsec").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.repeat_frame_msec).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
     Ok(())

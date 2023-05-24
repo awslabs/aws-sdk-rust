@@ -3,34 +3,34 @@ pub fn ser_campaign_limits(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CampaignLimits,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.daily != 0 {
+    if let Some(var_1) = &input.daily {
         object.key("Daily").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.daily).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.maximum_duration != 0 {
+    if let Some(var_2) = &input.maximum_duration {
         object.key("MaximumDuration").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.maximum_duration).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.messages_per_second != 0 {
+    if let Some(var_3) = &input.messages_per_second {
         object.key("MessagesPerSecond").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.messages_per_second).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if input.total != 0 {
+    if let Some(var_4) = &input.total {
         object.key("Total").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.total).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if input.session != 0 {
+    if let Some(var_5) = &input.session {
         object.key("Session").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.session).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
     Ok(())

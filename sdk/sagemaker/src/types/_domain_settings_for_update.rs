@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DomainSettingsForUpdate {
-    /// <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to update.</p>
+    /// <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to update. A single <code>RStudioServerPro</code> application is created for a domain.</p>
     #[doc(hidden)]
     pub r_studio_server_pro_domain_settings_for_update:
         std::option::Option<crate::types::RStudioServerProDomainSettingsForUpdate>,
@@ -17,7 +17,7 @@ pub struct DomainSettingsForUpdate {
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DomainSettingsForUpdate {
-    /// <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to update.</p>
+    /// <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to update. A single <code>RStudioServerPro</code> application is created for a domain.</p>
     pub fn r_studio_server_pro_domain_settings_for_update(
         &self,
     ) -> std::option::Option<&crate::types::RStudioServerProDomainSettingsForUpdate> {
@@ -52,7 +52,7 @@ pub struct DomainSettingsForUpdateBuilder {
     pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DomainSettingsForUpdateBuilder {
-    /// <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to update.</p>
+    /// <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to update. A single <code>RStudioServerPro</code> application is created for a domain.</p>
     pub fn r_studio_server_pro_domain_settings_for_update(
         mut self,
         input: crate::types::RStudioServerProDomainSettingsForUpdate,
@@ -60,7 +60,7 @@ impl DomainSettingsForUpdateBuilder {
         self.r_studio_server_pro_domain_settings_for_update = Some(input);
         self
     }
-    /// <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to update.</p>
+    /// <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to update. A single <code>RStudioServerPro</code> application is created for a domain.</p>
     pub fn set_r_studio_server_pro_domain_settings_for_update(
         mut self,
         input: std::option::Option<crate::types::RStudioServerProDomainSettingsForUpdate>,

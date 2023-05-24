@@ -3,8 +3,8 @@ pub fn ser_parameter_constraints(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ParameterConstraints,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.required {
-        object.key("required").boolean(input.required);
+    if let Some(var_1) = &input.required {
+        object.key("required").boolean(*var_1);
     }
     Ok(())
 }

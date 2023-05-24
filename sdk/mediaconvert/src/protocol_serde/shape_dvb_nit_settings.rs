@@ -3,19 +3,19 @@ pub fn ser_dvb_nit_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DvbNitSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.network_id != 0 {
+    if let Some(var_1) = &input.network_id {
         object.key("networkId").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.network_id).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.network_name {
-        object.key("networkName").string(var_1.as_str());
+    if let Some(var_2) = &input.network_name {
+        object.key("networkName").string(var_2.as_str());
     }
-    if input.nit_interval != 0 {
+    if let Some(var_3) = &input.nit_interval {
         object.key("nitInterval").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.nit_interval).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())

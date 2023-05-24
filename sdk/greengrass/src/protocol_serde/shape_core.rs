@@ -9,11 +9,11 @@ pub fn ser_core(
     if let Some(var_2) = &input.id {
         object.key("Id").string(var_2.as_str());
     }
-    if input.sync_shadow {
-        object.key("SyncShadow").boolean(input.sync_shadow);
+    if let Some(var_3) = &input.sync_shadow {
+        object.key("SyncShadow").boolean(*var_3);
     }
-    if let Some(var_3) = &input.thing_arn {
-        object.key("ThingArn").string(var_3.as_str());
+    if let Some(var_4) = &input.thing_arn {
+        object.key("ThingArn").string(var_4.as_str());
     }
     Ok(())
 }

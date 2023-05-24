@@ -176,47 +176,44 @@ pub fn ser_hls_package(
         crate::protocol_serde::shape_hls_encryption::ser_hls_encryption(&mut object_7, var_6)?;
         object_7.finish();
     }
-    if input.include_dvb_subtitles {
-        object
-            .key("includeDvbSubtitles")
-            .boolean(input.include_dvb_subtitles);
+    if let Some(var_8) = &input.include_dvb_subtitles {
+        object.key("includeDvbSubtitles").boolean(*var_8);
     }
-    if input.include_iframe_only_stream {
-        object
-            .key("includeIframeOnlyStream")
-            .boolean(input.include_iframe_only_stream);
+    if let Some(var_9) = &input.include_iframe_only_stream {
+        object.key("includeIframeOnlyStream").boolean(*var_9);
     }
-    if let Some(var_8) = &input.playlist_type {
-        object.key("playlistType").string(var_8.as_str());
+    if let Some(var_10) = &input.playlist_type {
+        object.key("playlistType").string(var_10.as_str());
     }
-    if input.playlist_window_seconds != 0 {
+    if let Some(var_11) = &input.playlist_window_seconds {
         object.key("playlistWindowSeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.playlist_window_seconds).into()),
+            aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if input.program_date_time_interval_seconds != 0 {
+    if let Some(var_12) = &input.program_date_time_interval_seconds {
         object.key("programDateTimeIntervalSeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.program_date_time_interval_seconds).into()),
+            aws_smithy_types::Number::NegInt((*var_12).into()),
         );
     }
-    if input.segment_duration_seconds != 0 {
+    if let Some(var_13) = &input.segment_duration_seconds {
         object.key("segmentDurationSeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.segment_duration_seconds).into()),
+            aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
-    if let Some(var_9) = &input.stream_selection {
+    if let Some(var_14) = &input.stream_selection {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("streamSelection").start_object();
-        crate::protocol_serde::shape_stream_selection::ser_stream_selection(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_15 = object.key("streamSelection").start_object();
+        crate::protocol_serde::shape_stream_selection::ser_stream_selection(
+            &mut object_15,
+            var_14,
+        )?;
+        object_15.finish();
     }
-    if input.use_audio_rendition_group {
-        object
-            .key("useAudioRenditionGroup")
-            .boolean(input.use_audio_rendition_group);
+    if let Some(var_16) = &input.use_audio_rendition_group {
+        object.key("useAudioRenditionGroup").boolean(*var_16);
     }
     Ok(())
 }

@@ -53,6 +53,9 @@ pub struct CreateDataSetInput {
     /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
     #[doc(hidden)]
     pub data_set_usage_configuration: std::option::Option<crate::types::DataSetUsageConfiguration>,
+    /// <p>The parameter declarations of the dataset.</p>
+    #[doc(hidden)]
+    pub dataset_parameters: std::option::Option<std::vec::Vec<crate::types::DatasetParameter>>,
 }
 impl CreateDataSetInput {
     /// <p>The Amazon Web Services account ID.</p>
@@ -131,6 +134,10 @@ impl CreateDataSetInput {
     ) -> std::option::Option<&crate::types::DataSetUsageConfiguration> {
         self.data_set_usage_configuration.as_ref()
     }
+    /// <p>The parameter declarations of the dataset.</p>
+    pub fn dataset_parameters(&self) -> std::option::Option<&[crate::types::DatasetParameter]> {
+        self.dataset_parameters.as_deref()
+    }
 }
 impl CreateDataSetInput {
     /// Creates a new builder-style object to manufacture [`CreateDataSetInput`](crate::operation::create_data_set::CreateDataSetInput).
@@ -167,6 +174,8 @@ pub struct CreateDataSetInputBuilder {
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     pub(crate) data_set_usage_configuration:
         std::option::Option<crate::types::DataSetUsageConfiguration>,
+    pub(crate) dataset_parameters:
+        std::option::Option<std::vec::Vec<crate::types::DatasetParameter>>,
 }
 impl CreateDataSetInputBuilder {
     /// <p>The Amazon Web Services account ID.</p>
@@ -414,6 +423,25 @@ impl CreateDataSetInputBuilder {
         self.data_set_usage_configuration = input;
         self
     }
+    /// Appends an item to `dataset_parameters`.
+    ///
+    /// To override the contents of this collection use [`set_dataset_parameters`](Self::set_dataset_parameters).
+    ///
+    /// <p>The parameter declarations of the dataset.</p>
+    pub fn dataset_parameters(mut self, input: crate::types::DatasetParameter) -> Self {
+        let mut v = self.dataset_parameters.unwrap_or_default();
+        v.push(input);
+        self.dataset_parameters = Some(v);
+        self
+    }
+    /// <p>The parameter declarations of the dataset.</p>
+    pub fn set_dataset_parameters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DatasetParameter>>,
+    ) -> Self {
+        self.dataset_parameters = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateDataSetInput`](crate::operation::create_data_set::CreateDataSetInput).
     pub fn build(
         self,
@@ -436,6 +464,7 @@ impl CreateDataSetInputBuilder {
             column_level_permission_rules: self.column_level_permission_rules,
             tags: self.tags,
             data_set_usage_configuration: self.data_set_usage_configuration,
+            dataset_parameters: self.dataset_parameters,
         })
     }
 }

@@ -27,20 +27,20 @@ pub fn ser_message(
     if let Some(var_8) = &input.raw_content {
         object.key("RawContent").string(var_8.as_str());
     }
-    if input.silent_push {
-        object.key("SilentPush").boolean(input.silent_push);
+    if let Some(var_9) = &input.silent_push {
+        object.key("SilentPush").boolean(*var_9);
     }
-    if input.time_to_live != 0 {
+    if let Some(var_10) = &input.time_to_live {
         object.key("TimeToLive").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.time_to_live).into()),
+            aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_9) = &input.title {
-        object.key("Title").string(var_9.as_str());
+    if let Some(var_11) = &input.title {
+        object.key("Title").string(var_11.as_str());
     }
-    if let Some(var_10) = &input.url {
-        object.key("Url").string(var_10.as_str());
+    if let Some(var_12) = &input.url {
+        object.key("Url").string(var_12.as_str());
     }
     Ok(())
 }

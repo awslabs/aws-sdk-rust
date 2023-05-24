@@ -15,6 +15,11 @@ pub fn ser_identity_provider_details(
     if let Some(var_4) = &input.function {
         object.key("Function").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.sftp_authentication_methods {
+        object
+            .key("SftpAuthenticationMethods")
+            .string(var_5.as_str());
+    }
     Ok(())
 }
 
@@ -75,6 +80,21 @@ where
                                         tokens.next(),
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "SftpAuthenticationMethods" => {
+                                builder = builder.set_sftp_authentication_methods(
+                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::types::SftpAuthenticationMethods::from(
+                                                u.as_ref(),
+                                            )
+                                        })
+                                    })
                                     .transpose()?,
                                 );
                             }

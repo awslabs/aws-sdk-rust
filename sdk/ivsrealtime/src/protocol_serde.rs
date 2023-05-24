@@ -18,7 +18,17 @@ pub(crate) mod shape_delete_stage;
 
 pub(crate) mod shape_disconnect_participant;
 
+pub(crate) mod shape_get_participant;
+
 pub(crate) mod shape_get_stage;
+
+pub(crate) mod shape_get_stage_session;
+
+pub(crate) mod shape_list_participant_events;
+
+pub(crate) mod shape_list_participants;
+
+pub(crate) mod shape_list_stage_sessions;
 
 pub(crate) mod shape_list_stages;
 
@@ -50,9 +60,19 @@ pub(crate) mod shape_delete_stage_input;
 
 pub(crate) mod shape_disconnect_participant_input;
 
+pub(crate) mod shape_get_participant_input;
+
 pub(crate) mod shape_get_stage_input;
 
+pub(crate) mod shape_get_stage_session_input;
+
 pub(crate) mod shape_internal_server_exception;
+
+pub(crate) mod shape_list_participant_events_input;
+
+pub(crate) mod shape_list_participants_input;
+
+pub(crate) mod shape_list_stage_sessions_input;
 
 pub(crate) mod shape_list_stages_input;
 
@@ -68,6 +88,12 @@ pub(crate) mod shape_update_stage_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_event_list;
+
+pub(crate) mod shape_participant;
+
+pub(crate) mod shape_participant_list;
+
 pub(crate) mod shape_participant_token;
 
 pub(crate) mod shape_participant_token_configuration;
@@ -76,12 +102,24 @@ pub(crate) mod shape_participant_token_list;
 
 pub(crate) mod shape_stage;
 
+pub(crate) mod shape_stage_session;
+
+pub(crate) mod shape_stage_session_list;
+
 pub(crate) mod shape_stage_summary_list;
 
 pub(crate) mod shape_tags;
 
+pub(crate) mod shape_event;
+
+pub(crate) mod shape_participant_attributes;
+
+pub(crate) mod shape_participant_summary;
+
 pub(crate) mod shape_participant_token_attributes;
 
 pub(crate) mod shape_participant_token_capabilities;
+
+pub(crate) mod shape_stage_session_summary;
 
 pub(crate) mod shape_stage_summary;

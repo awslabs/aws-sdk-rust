@@ -18,3 +18,23 @@ pub(crate) fn reflens_list_entities_output_next_token(
     };
     Some(input)
 }
+
+pub(crate) fn lens_list_change_sets_output_change_set_summary_list(
+    input: crate::operation::list_change_sets::ListChangeSetsOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::ChangeSetSummaryListItem>> {
+    let input = match input.change_set_summary_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}
+
+pub(crate) fn lens_list_entities_output_entity_summary_list(
+    input: crate::operation::list_entities::ListEntitiesOutput,
+) -> std::option::Option<std::vec::Vec<crate::types::EntitySummary>> {
+    let input = match input.entity_summary_list {
+        None => return None,
+        Some(t) => t,
+    };
+    Some(input)
+}

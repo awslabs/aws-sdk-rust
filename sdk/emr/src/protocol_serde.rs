@@ -290,7 +290,11 @@ pub(crate) mod shape_notebook_execution;
 
 pub(crate) mod shape_notebook_execution_summary_list;
 
+pub(crate) mod shape_notebook_s3_location_from_input;
+
 pub(crate) mod shape_os_release_list;
+
+pub(crate) mod shape_output_notebook_s3_location_from_input;
 
 pub(crate) mod shape_placement_group_config;
 
@@ -342,6 +346,8 @@ pub(crate) mod shape_ebs_configuration;
 
 pub(crate) mod shape_ec2_instance_attributes;
 
+pub(crate) mod shape_environment_variables_map;
+
 pub(crate) mod shape_hadoop_jar_step_config;
 
 pub(crate) mod shape_hadoop_step_config;
@@ -362,7 +368,11 @@ pub(crate) mod shape_job_flow_detail;
 
 pub(crate) mod shape_notebook_execution_summary;
 
+pub(crate) mod shape_notebook_s3_location_for_output;
+
 pub(crate) mod shape_os_release;
+
+pub(crate) mod shape_output_notebook_s3_location_for_output;
 
 pub(crate) mod shape_placement_group_config_list;
 

@@ -5,7 +5,7 @@ pub use crate::operation::get_bucket_logging::_get_bucket_logging_input::GetBuck
 
 /// Fluent builder constructing a request to `GetBucketLogging`.
 ///
-/// <p>Returns the logging status of a bucket and the permissions users have to view and modify that status. To use GET, you must be the bucket owner.</p>
+/// <p>Returns the logging status of a bucket and the permissions users have to view and modify that status.</p>
 /// <p>The following operations are related to <code>GetBucketLogging</code>:</p>
 /// <ul>
 /// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a> </p> </li>

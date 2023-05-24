@@ -3,42 +3,42 @@ pub fn ser_function_configuration_environment(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FunctionConfigurationEnvironment,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.access_sysfs {
-        object.key("AccessSysfs").boolean(input.access_sysfs);
+    if let Some(var_1) = &input.access_sysfs {
+        object.key("AccessSysfs").boolean(*var_1);
     }
-    if let Some(var_1) = &input.execution {
+    if let Some(var_2) = &input.execution {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("Execution").start_object();
+        let mut object_3 = object.key("Execution").start_object();
         crate::protocol_serde::shape_function_execution_config::ser_function_execution_config(
-            &mut object_2,
-            var_1,
+            &mut object_3,
+            var_2,
         )?;
-        object_2.finish();
+        object_3.finish();
     }
-    if let Some(var_3) = &input.resource_access_policies {
-        let mut array_4 = object.key("ResourceAccessPolicies").start_array();
-        for item_5 in var_3 {
+    if let Some(var_4) = &input.resource_access_policies {
+        let mut array_5 = object.key("ResourceAccessPolicies").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
+                let mut object_7 = array_5.value().start_object();
                 crate::protocol_serde::shape_resource_access_policy::ser_resource_access_policy(
-                    &mut object_6,
-                    item_5,
+                    &mut object_7,
+                    item_6,
                 )?;
-                object_6.finish();
+                object_7.finish();
             }
         }
-        array_4.finish();
+        array_5.finish();
     }
-    if let Some(var_7) = &input.variables {
+    if let Some(var_8) = &input.variables {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("Variables").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_9 = object.key("Variables").start_object();
+        for (key_10, value_11) in var_8 {
             {
-                object_8.key(key_9.as_str()).string(value_10.as_str());
+                object_9.key(key_10.as_str()).string(value_11.as_str());
             }
         }
-        object_8.finish();
+        object_9.finish();
     }
     Ok(())
 }

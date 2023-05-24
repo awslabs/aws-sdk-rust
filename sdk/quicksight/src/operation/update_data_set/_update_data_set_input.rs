@@ -47,6 +47,9 @@ pub struct UpdateDataSetInput {
     /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
     #[doc(hidden)]
     pub data_set_usage_configuration: std::option::Option<crate::types::DataSetUsageConfiguration>,
+    /// <p>The parameter declarations of the dataset.</p>
+    #[doc(hidden)]
+    pub dataset_parameters: std::option::Option<std::vec::Vec<crate::types::DatasetParameter>>,
 }
 impl UpdateDataSetInput {
     /// <p>The Amazon Web Services account ID.</p>
@@ -117,6 +120,10 @@ impl UpdateDataSetInput {
     ) -> std::option::Option<&crate::types::DataSetUsageConfiguration> {
         self.data_set_usage_configuration.as_ref()
     }
+    /// <p>The parameter declarations of the dataset.</p>
+    pub fn dataset_parameters(&self) -> std::option::Option<&[crate::types::DatasetParameter]> {
+        self.dataset_parameters.as_deref()
+    }
 }
 impl UpdateDataSetInput {
     /// Creates a new builder-style object to manufacture [`UpdateDataSetInput`](crate::operation::update_data_set::UpdateDataSetInput).
@@ -151,6 +158,8 @@ pub struct UpdateDataSetInputBuilder {
         std::option::Option<std::vec::Vec<crate::types::ColumnLevelPermissionRule>>,
     pub(crate) data_set_usage_configuration:
         std::option::Option<crate::types::DataSetUsageConfiguration>,
+    pub(crate) dataset_parameters:
+        std::option::Option<std::vec::Vec<crate::types::DatasetParameter>>,
 }
 impl UpdateDataSetInputBuilder {
     /// <p>The Amazon Web Services account ID.</p>
@@ -360,6 +369,25 @@ impl UpdateDataSetInputBuilder {
         self.data_set_usage_configuration = input;
         self
     }
+    /// Appends an item to `dataset_parameters`.
+    ///
+    /// To override the contents of this collection use [`set_dataset_parameters`](Self::set_dataset_parameters).
+    ///
+    /// <p>The parameter declarations of the dataset.</p>
+    pub fn dataset_parameters(mut self, input: crate::types::DatasetParameter) -> Self {
+        let mut v = self.dataset_parameters.unwrap_or_default();
+        v.push(input);
+        self.dataset_parameters = Some(v);
+        self
+    }
+    /// <p>The parameter declarations of the dataset.</p>
+    pub fn set_dataset_parameters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DatasetParameter>>,
+    ) -> Self {
+        self.dataset_parameters = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateDataSetInput`](crate::operation::update_data_set::UpdateDataSetInput).
     pub fn build(
         self,
@@ -380,6 +408,7 @@ impl UpdateDataSetInputBuilder {
             row_level_permission_tag_configuration: self.row_level_permission_tag_configuration,
             column_level_permission_rules: self.column_level_permission_rules,
             data_set_usage_configuration: self.data_set_usage_configuration,
+            dataset_parameters: self.dataset_parameters,
         })
     }
 }

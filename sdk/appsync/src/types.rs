@@ -33,6 +33,8 @@ pub use crate::types::_resolver_kind::ResolverKind;
 
 pub use crate::types::_graphql_api::GraphqlApi;
 
+pub use crate::types::_graph_ql_api_visibility::GraphQlApiVisibility;
+
 pub use crate::types::_lambda_authorizer_config::LambdaAuthorizerConfig;
 
 pub use crate::types::_additional_authentication_provider::AdditionalAuthenticationProvider;
@@ -172,6 +174,8 @@ mod _event_bridge_data_source_config;
 mod _field_log_level;
 
 mod _function_configuration;
+
+mod _graph_ql_api_visibility;
 
 mod _graphql_api;
 

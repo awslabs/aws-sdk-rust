@@ -107,7 +107,7 @@ impl DescribeDBClusterBacktracksFluentBuilder {
     /// <p>If specified, this value is the backtrack identifier of the backtrack to be described.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain a valid universally unique identifier (UUID). For more information about UUIDs, see <a href="http://www.ietf.org/rfc/rfc4122.txt">A Universally Unique Identifier (UUID) URN Namespace</a>.</p> </li>
+    /// <li> <p>Must contain a valid universally unique identifier (UUID). For more information about UUIDs, see <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally unique identifier</a>.</p> </li>
     /// </ul>
     /// <p>Example: <code>123e4567-e89b-12d3-a456-426655440000</code> </p>
     pub fn backtrack_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,7 +117,7 @@ impl DescribeDBClusterBacktracksFluentBuilder {
     /// <p>If specified, this value is the backtrack identifier of the backtrack to be described.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li> <p>Must contain a valid universally unique identifier (UUID). For more information about UUIDs, see <a href="http://www.ietf.org/rfc/rfc4122.txt">A Universally Unique Identifier (UUID) URN Namespace</a>.</p> </li>
+    /// <li> <p>Must contain a valid universally unique identifier (UUID). For more information about UUIDs, see <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally unique identifier</a>.</p> </li>
     /// </ul>
     /// <p>Example: <code>123e4567-e89b-12d3-a456-426655440000</code> </p>
     pub fn set_backtrack_identifier(

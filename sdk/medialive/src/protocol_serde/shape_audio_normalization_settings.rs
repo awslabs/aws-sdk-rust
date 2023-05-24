@@ -9,10 +9,10 @@ pub fn ser_audio_normalization_settings(
     if let Some(var_2) = &input.algorithm_control {
         object.key("algorithmControl").string(var_2.as_str());
     }
-    if input.target_lkfs != 0.0 {
+    if let Some(var_3) = &input.target_lkfs {
         object.key("targetLkfs").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.target_lkfs).into()),
+            aws_smithy_types::Number::Float((*var_3).into()),
         );
     }
     Ok(())

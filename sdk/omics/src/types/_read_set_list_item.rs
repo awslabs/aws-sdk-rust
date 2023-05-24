@@ -40,6 +40,9 @@ pub struct ReadSetListItem {
     /// <p>When the read set was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p> The status for a read set. It provides more detail as to why the read set has a status. </p>
+    #[doc(hidden)]
+    pub status_message: std::option::Option<std::string::String>,
 }
 impl ReadSetListItem {
     /// <p>The read set's ID.</p>
@@ -90,6 +93,10 @@ impl ReadSetListItem {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
+    /// <p> The status for a read set. It provides more detail as to why the read set has a status. </p>
+    pub fn status_message(&self) -> std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
 }
 impl ReadSetListItem {
     /// Creates a new builder-style object to manufacture [`ReadSetListItem`](crate::types::ReadSetListItem).
@@ -114,6 +121,7 @@ pub struct ReadSetListItemBuilder {
     pub(crate) file_type: std::option::Option<crate::types::FileType>,
     pub(crate) sequence_information: std::option::Option<crate::types::SequenceInformation>,
     pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) status_message: std::option::Option<std::string::String>,
 }
 impl ReadSetListItemBuilder {
     /// <p>The read set's ID.</p>
@@ -245,6 +253,16 @@ impl ReadSetListItemBuilder {
         self.creation_time = input;
         self
     }
+    /// <p> The status for a read set. It provides more detail as to why the read set has a status. </p>
+    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
+        self.status_message = Some(input.into());
+        self
+    }
+    /// <p> The status for a read set. It provides more detail as to why the read set has a status. </p>
+    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.status_message = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ReadSetListItem`](crate::types::ReadSetListItem).
     pub fn build(self) -> crate::types::ReadSetListItem {
         crate::types::ReadSetListItem {
@@ -260,6 +278,7 @@ impl ReadSetListItemBuilder {
             file_type: self.file_type,
             sequence_information: self.sequence_information,
             creation_time: self.creation_time,
+            status_message: self.status_message,
         }
     }
 }

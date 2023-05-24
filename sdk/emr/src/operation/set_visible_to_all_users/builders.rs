@@ -6,11 +6,11 @@ pub use crate::operation::set_visible_to_all_users::_set_visible_to_all_users_in
 /// Fluent builder constructing a request to `SetVisibleToAllUsers`.
 ///
 /// <important>
-/// <p>The SetVisibleToAllUsers parameter is no longer supported. Your cluster may be visible to all users in your account. To restrict cluster access using an IAM policy, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html">Identity and Access Management for EMR</a>. </p>
+/// <p>The SetVisibleToAllUsers parameter is no longer supported. Your cluster may be visible to all users in your account. To restrict cluster access using an IAM policy, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-IAM.html">Identity and Access Management for Amazon EMR</a>. </p>
 /// </important>
-/// <p>Sets the <code>Cluster$VisibleToAllUsers</code> value for an EMR cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions on the cluster, regardless of IAM permissions policies attached to other IAM principals.</p>
+/// <p>Sets the <code>Cluster$VisibleToAllUsers</code> value for an Amazon EMR cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform Amazon EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform Amazon EMR actions on the cluster, regardless of IAM permissions policies attached to other IAM principals.</p>
 /// <p>This action works on running clusters. When you create a cluster, use the <code>RunJobFlowInput$VisibleToAllUsers</code> parameter.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_IAM_emr-with-IAM.html#security_set_visible_to_all_users">Understanding the Amazon EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SetVisibleToAllUsersFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -90,12 +90,12 @@ impl SetVisibleToAllUsersFluentBuilder {
         self.inner = self.inner.set_job_flow_ids(input);
         self
     }
-    /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
+    /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform Amazon EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform Amazon EMR actions on the cluster.</p>
     pub fn visible_to_all_users(mut self, input: bool) -> Self {
         self.inner = self.inner.visible_to_all_users(input);
         self
     }
-    /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
+    /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform Amazon EMR actions on the cluster that the IAM policies attached to the principal allow. A value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform Amazon EMR actions on the cluster.</p>
     pub fn set_visible_to_all_users(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_visible_to_all_users(input);
         self

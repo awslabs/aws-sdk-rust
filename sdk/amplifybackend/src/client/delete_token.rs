@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`app_id(impl Into<String>)`](crate::operation::delete_token::builders::DeleteTokenFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::delete_token::builders::DeleteTokenFluentBuilder::set_app_id): <p>The app ID.</p>
     ///   - [`session_id(impl Into<String>)`](crate::operation::delete_token::builders::DeleteTokenFluentBuilder::session_id) / [`set_session_id(Option<String>)`](crate::operation::delete_token::builders::DeleteTokenFluentBuilder::set_session_id): <p>The session ID.</p>
     /// - On success, responds with [`DeleteTokenOutput`](crate::operation::delete_token::DeleteTokenOutput) with field(s):
-    ///   - [`is_success(bool)`](crate::operation::delete_token::DeleteTokenOutput::is_success): <p>Indicates whether the request succeeded or failed.</p>
+    ///   - [`is_success(Option<bool>)`](crate::operation::delete_token::DeleteTokenOutput::is_success): <p>Indicates whether the request succeeded or failed.</p>
     /// - On failure, responds with [`SdkError<DeleteTokenError>`](crate::operation::delete_token::DeleteTokenError)
     pub fn delete_token(
         &self,

@@ -12,19 +12,19 @@ pub fn ser_add_bridge_network_output_request(
     if let Some(var_3) = &input.network_name {
         object.key("networkName").string(var_3.as_str());
     }
-    {
+    if let Some(var_4) = &input.port {
         object.key("port").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.port).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_4) = &input.protocol {
-        object.key("protocol").string(var_4.as_str());
+    if let Some(var_5) = &input.protocol {
+        object.key("protocol").string(var_5.as_str());
     }
-    {
+    if let Some(var_6) = &input.ttl {
         object.key("ttl").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.ttl).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
     Ok(())

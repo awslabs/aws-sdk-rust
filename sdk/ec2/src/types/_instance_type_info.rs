@@ -72,7 +72,7 @@ pub struct InstanceTypeInfo {
     /// <p>Indicates whether Dedicated Hosts are supported on the instance type.</p>
     #[doc(hidden)]
     pub dedicated_hosts_supported: std::option::Option<bool>,
-    /// <p>Indicates whether auto recovery is supported.</p>
+    /// <p>Indicates whether Amazon CloudWatch action based recovery is supported.</p>
     #[doc(hidden)]
     pub auto_recovery_supported: std::option::Option<bool>,
     /// <p>The supported boot modes. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -174,7 +174,7 @@ impl InstanceTypeInfo {
     pub fn dedicated_hosts_supported(&self) -> std::option::Option<bool> {
         self.dedicated_hosts_supported
     }
-    /// <p>Indicates whether auto recovery is supported.</p>
+    /// <p>Indicates whether Amazon CloudWatch action based recovery is supported.</p>
     pub fn auto_recovery_supported(&self) -> std::option::Option<bool> {
         self.auto_recovery_supported
     }
@@ -498,12 +498,12 @@ impl InstanceTypeInfoBuilder {
         self.dedicated_hosts_supported = input;
         self
     }
-    /// <p>Indicates whether auto recovery is supported.</p>
+    /// <p>Indicates whether Amazon CloudWatch action based recovery is supported.</p>
     pub fn auto_recovery_supported(mut self, input: bool) -> Self {
         self.auto_recovery_supported = Some(input);
         self
     }
-    /// <p>Indicates whether auto recovery is supported.</p>
+    /// <p>Indicates whether Amazon CloudWatch action based recovery is supported.</p>
     pub fn set_auto_recovery_supported(mut self, input: std::option::Option<bool>) -> Self {
         self.auto_recovery_supported = input;
         self

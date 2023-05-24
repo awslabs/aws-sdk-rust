@@ -179,7 +179,9 @@ pub enum PutEventSelectorsError {
     /// <p>The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
     /// <p>The following is the format of a channel ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
     CloudTrailArnInvalidException(crate::types::error::CloudTrailArnInvalidException),
-    /// <p>This exception is thrown when the IAM user or role that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>
+    /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a resource before CloudTrail has time to fully load the resource, or because another operation is modifying the resource. If this exception occurs, wait a few minutes, and then try the operation again.</p>
+    ConflictException(crate::types::error::ConflictException),
+    /// <p>This exception is thrown when the IAM identity that is used to create the organization resource lacks one or more required permissions for creating an organization resource in a required service.</p>
     InsufficientDependencyServiceAccessPermissionException(
         crate::types::error::InsufficientDependencyServiceAccessPermissionException,
     ),
@@ -236,6 +238,7 @@ impl std::fmt::Display for PutEventSelectorsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Self::CloudTrailArnInvalidException(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InsufficientDependencyServiceAccessPermissionException(_inner) => _inner.fmt(f),
             Self::InvalidEventSelectorsException(_inner) => _inner.fmt(f),
             Self::InvalidHomeRegionException(_inner) => _inner.fmt(f),
@@ -253,6 +256,9 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for PutEventSelecto
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::CloudTrailArnInvalidException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ConflictException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::InsufficientDependencyServiceAccessPermissionException(_inner) => {
@@ -330,6 +336,7 @@ impl PutEventSelectorsError {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
             Self::CloudTrailArnInvalidException(e) => e.meta(),
+            Self::ConflictException(e) => e.meta(),
             Self::InsufficientDependencyServiceAccessPermissionException(e) => e.meta(),
             Self::InvalidEventSelectorsException(e) => e.meta(),
             Self::InvalidHomeRegionException(e) => e.meta(),
@@ -345,6 +352,10 @@ impl PutEventSelectorsError {
     /// Returns `true` if the error kind is `PutEventSelectorsError::CloudTrailArnInvalidException`.
     pub fn is_cloud_trail_arn_invalid_exception(&self) -> bool {
         matches!(self, Self::CloudTrailArnInvalidException(_))
+    }
+    /// Returns `true` if the error kind is `PutEventSelectorsError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `PutEventSelectorsError::InsufficientDependencyServiceAccessPermissionException`.
     pub fn is_insufficient_dependency_service_access_permission_exception(&self) -> bool {
@@ -390,6 +401,7 @@ impl std::error::Error for PutEventSelectorsError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
             Self::CloudTrailArnInvalidException(_inner) => Some(_inner),
+            Self::ConflictException(_inner) => Some(_inner),
             Self::InsufficientDependencyServiceAccessPermissionException(_inner) => Some(_inner),
             Self::InvalidEventSelectorsException(_inner) => Some(_inner),
             Self::InvalidHomeRegionException(_inner) => Some(_inner),

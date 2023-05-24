@@ -6,23 +6,23 @@ pub fn ser_esam(
     if let Some(var_1) = &input.acquisition_point_id {
         object.key("acquisitionPointId").string(var_1.as_str());
     }
-    if input.ad_avail_offset != 0 {
+    if let Some(var_2) = &input.ad_avail_offset {
         object.key("adAvailOffset").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.ad_avail_offset).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.password_param {
-        object.key("passwordParam").string(var_2.as_str());
+    if let Some(var_3) = &input.password_param {
+        object.key("passwordParam").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.pois_endpoint {
-        object.key("poisEndpoint").string(var_3.as_str());
+    if let Some(var_4) = &input.pois_endpoint {
+        object.key("poisEndpoint").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.username {
-        object.key("username").string(var_4.as_str());
+    if let Some(var_5) = &input.username {
+        object.key("username").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.zone_identity {
-        object.key("zoneIdentity").string(var_5.as_str());
+    if let Some(var_6) = &input.zone_identity {
+        object.key("zoneIdentity").string(var_6.as_str());
     }
     Ok(())
 }

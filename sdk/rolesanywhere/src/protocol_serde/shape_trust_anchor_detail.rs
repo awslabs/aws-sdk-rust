@@ -78,6 +78,11 @@ where
                                     )?,
                                 );
                             }
+                            "notificationSettings" => {
+                                builder = builder.set_notification_settings(
+                                    crate::protocol_serde::shape_notification_setting_details::de_notification_setting_details(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

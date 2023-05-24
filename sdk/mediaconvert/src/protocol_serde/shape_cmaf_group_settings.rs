@@ -48,87 +48,87 @@ pub fn ser_cmaf_group_settings(
         )?;
         object_13.finish();
     }
-    if input.fragment_length != 0 {
+    if let Some(var_14) = &input.fragment_length {
         object.key("fragmentLength").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.fragment_length).into()),
+            aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
-    if let Some(var_14) = &input.image_based_trick_play {
-        object.key("imageBasedTrickPlay").string(var_14.as_str());
+    if let Some(var_15) = &input.image_based_trick_play {
+        object.key("imageBasedTrickPlay").string(var_15.as_str());
     }
-    if let Some(var_15) = &input.image_based_trick_play_settings {
+    if let Some(var_16) = &input.image_based_trick_play_settings {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("imageBasedTrickPlaySettings").start_object();
-        crate::protocol_serde::shape_cmaf_image_based_trick_play_settings::ser_cmaf_image_based_trick_play_settings(&mut object_16, var_15)?;
-        object_16.finish();
+        let mut object_17 = object.key("imageBasedTrickPlaySettings").start_object();
+        crate::protocol_serde::shape_cmaf_image_based_trick_play_settings::ser_cmaf_image_based_trick_play_settings(&mut object_17, var_16)?;
+        object_17.finish();
     }
-    if let Some(var_17) = &input.manifest_compression {
-        object.key("manifestCompression").string(var_17.as_str());
+    if let Some(var_18) = &input.manifest_compression {
+        object.key("manifestCompression").string(var_18.as_str());
     }
-    if let Some(var_18) = &input.manifest_duration_format {
-        object.key("manifestDurationFormat").string(var_18.as_str());
+    if let Some(var_19) = &input.manifest_duration_format {
+        object.key("manifestDurationFormat").string(var_19.as_str());
     }
-    if input.min_buffer_time != 0 {
+    if let Some(var_20) = &input.min_buffer_time {
         object.key("minBufferTime").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.min_buffer_time).into()),
+            aws_smithy_types::Number::NegInt((*var_20).into()),
         );
     }
-    if input.min_final_segment_length != 0.0 {
+    if let Some(var_21) = &input.min_final_segment_length {
         object.key("minFinalSegmentLength").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.min_final_segment_length).into()),
+            aws_smithy_types::Number::Float((*var_21).into()),
         );
     }
-    if let Some(var_19) = &input.mpd_manifest_bandwidth_type {
+    if let Some(var_22) = &input.mpd_manifest_bandwidth_type {
         object
             .key("mpdManifestBandwidthType")
-            .string(var_19.as_str());
+            .string(var_22.as_str());
     }
-    if let Some(var_20) = &input.mpd_profile {
-        object.key("mpdProfile").string(var_20.as_str());
+    if let Some(var_23) = &input.mpd_profile {
+        object.key("mpdProfile").string(var_23.as_str());
     }
-    if let Some(var_21) = &input.pts_offset_handling_for_b_frames {
+    if let Some(var_24) = &input.pts_offset_handling_for_b_frames {
         object
             .key("ptsOffsetHandlingForBFrames")
-            .string(var_21.as_str());
+            .string(var_24.as_str());
     }
-    if let Some(var_22) = &input.segment_control {
-        object.key("segmentControl").string(var_22.as_str());
+    if let Some(var_25) = &input.segment_control {
+        object.key("segmentControl").string(var_25.as_str());
     }
-    if input.segment_length != 0 {
+    if let Some(var_26) = &input.segment_length {
         object.key("segmentLength").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.segment_length).into()),
+            aws_smithy_types::Number::NegInt((*var_26).into()),
         );
     }
-    if let Some(var_23) = &input.segment_length_control {
-        object.key("segmentLengthControl").string(var_23.as_str());
+    if let Some(var_27) = &input.segment_length_control {
+        object.key("segmentLengthControl").string(var_27.as_str());
     }
-    if let Some(var_24) = &input.stream_inf_resolution {
-        object.key("streamInfResolution").string(var_24.as_str());
+    if let Some(var_28) = &input.stream_inf_resolution {
+        object.key("streamInfResolution").string(var_28.as_str());
     }
-    if let Some(var_25) = &input.target_duration_compatibility_mode {
+    if let Some(var_29) = &input.target_duration_compatibility_mode {
         object
             .key("targetDurationCompatibilityMode")
-            .string(var_25.as_str());
+            .string(var_29.as_str());
     }
-    if let Some(var_26) = &input.video_composition_offsets {
+    if let Some(var_30) = &input.video_composition_offsets {
         object
             .key("videoCompositionOffsets")
-            .string(var_26.as_str());
+            .string(var_30.as_str());
     }
-    if let Some(var_27) = &input.write_dash_manifest {
-        object.key("writeDashManifest").string(var_27.as_str());
+    if let Some(var_31) = &input.write_dash_manifest {
+        object.key("writeDashManifest").string(var_31.as_str());
     }
-    if let Some(var_28) = &input.write_hls_manifest {
-        object.key("writeHlsManifest").string(var_28.as_str());
+    if let Some(var_32) = &input.write_hls_manifest {
+        object.key("writeHlsManifest").string(var_32.as_str());
     }
-    if let Some(var_29) = &input.write_segment_timeline_in_representation {
+    if let Some(var_33) = &input.write_segment_timeline_in_representation {
         object
             .key("writeSegmentTimelineInRepresentation")
-            .string(var_29.as_str());
+            .string(var_33.as_str());
     }
     Ok(())
 }

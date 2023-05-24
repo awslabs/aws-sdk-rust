@@ -8,7 +8,7 @@ pub struct ReimportApiOutput {
     pub api_endpoint: std::option::Option<std::string::String>,
     /// <p>Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API Gateway. A managed API can be deleted only through the tooling or service that created it.</p>
     #[doc(hidden)]
-    pub api_gateway_managed: bool,
+    pub api_gateway_managed: std::option::Option<bool>,
     /// <p>The API ID.</p>
     #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
@@ -26,10 +26,10 @@ pub struct ReimportApiOutput {
     pub description: std::option::Option<std::string::String>,
     /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
     #[doc(hidden)]
-    pub disable_schema_validation: bool,
+    pub disable_schema_validation: std::option::Option<bool>,
     /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     #[doc(hidden)]
-    pub disable_execute_api_endpoint: bool,
+    pub disable_execute_api_endpoint: std::option::Option<bool>,
     /// <p>The validation information during API import. This may include particular properties of your OpenAPI definition which are ignored during import. Supported only for HTTP APIs.</p>
     #[doc(hidden)]
     pub import_info: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -60,7 +60,7 @@ impl ReimportApiOutput {
         self.api_endpoint.as_deref()
     }
     /// <p>Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API Gateway. A managed API can be deleted only through the tooling or service that created it.</p>
-    pub fn api_gateway_managed(&self) -> bool {
+    pub fn api_gateway_managed(&self) -> std::option::Option<bool> {
         self.api_gateway_managed
     }
     /// <p>The API ID.</p>
@@ -84,11 +84,11 @@ impl ReimportApiOutput {
         self.description.as_deref()
     }
     /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
-    pub fn disable_schema_validation(&self) -> bool {
+    pub fn disable_schema_validation(&self) -> std::option::Option<bool> {
         self.disable_schema_validation
     }
     /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
-    pub fn disable_execute_api_endpoint(&self) -> bool {
+    pub fn disable_execute_api_endpoint(&self) -> std::option::Option<bool> {
         self.disable_execute_api_endpoint
     }
     /// <p>The validation information during API import. This may include particular properties of your OpenAPI definition which are ignored during import. Supported only for HTTP APIs.</p>
@@ -380,14 +380,14 @@ impl ReimportApiOutputBuilder {
     pub fn build(self) -> crate::operation::reimport_api::ReimportApiOutput {
         crate::operation::reimport_api::ReimportApiOutput {
             api_endpoint: self.api_endpoint,
-            api_gateway_managed: self.api_gateway_managed.unwrap_or_default(),
+            api_gateway_managed: self.api_gateway_managed,
             api_id: self.api_id,
             api_key_selection_expression: self.api_key_selection_expression,
             cors_configuration: self.cors_configuration,
             created_date: self.created_date,
             description: self.description,
-            disable_schema_validation: self.disable_schema_validation.unwrap_or_default(),
-            disable_execute_api_endpoint: self.disable_execute_api_endpoint.unwrap_or_default(),
+            disable_schema_validation: self.disable_schema_validation,
+            disable_execute_api_endpoint: self.disable_execute_api_endpoint,
             import_info: self.import_info,
             name: self.name,
             protocol_type: self.protocol_type,

@@ -6,14 +6,14 @@ pub fn ser_ancillary_source_settings(
     if let Some(var_1) = &input.convert608_to708 {
         object.key("convert608To708").string(var_1.as_str());
     }
-    if input.source_ancillary_channel_number != 0 {
+    if let Some(var_2) = &input.source_ancillary_channel_number {
         object.key("sourceAncillaryChannelNumber").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.source_ancillary_channel_number).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.terminate_captions {
-        object.key("terminateCaptions").string(var_2.as_str());
+    if let Some(var_3) = &input.terminate_captions {
+        object.key("terminateCaptions").string(var_3.as_str());
     }
     Ok(())
 }

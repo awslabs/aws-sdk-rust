@@ -11,6 +11,9 @@ pub struct Suggestion {
     /// <p>The value is the text string of a suggestion.</p>
     #[doc(hidden)]
     pub value: std::option::Option<crate::types::SuggestionValue>,
+    /// <p>The list of document IDs and their fields/attributes that are used for a single query suggestion, if document fields set to use for query suggestions.</p>
+    #[doc(hidden)]
+    pub source_documents: std::option::Option<std::vec::Vec<crate::types::SourceDocument>>,
 }
 impl Suggestion {
     /// <p>The UUID (universally unique identifier) of a single query suggestion.</p>
@@ -21,6 +24,10 @@ impl Suggestion {
     /// <p>The value is the text string of a suggestion.</p>
     pub fn value(&self) -> std::option::Option<&crate::types::SuggestionValue> {
         self.value.as_ref()
+    }
+    /// <p>The list of document IDs and their fields/attributes that are used for a single query suggestion, if document fields set to use for query suggestions.</p>
+    pub fn source_documents(&self) -> std::option::Option<&[crate::types::SourceDocument]> {
+        self.source_documents.as_deref()
     }
 }
 impl Suggestion {
@@ -36,6 +43,7 @@ impl Suggestion {
 pub struct SuggestionBuilder {
     pub(crate) id: std::option::Option<std::string::String>,
     pub(crate) value: std::option::Option<crate::types::SuggestionValue>,
+    pub(crate) source_documents: std::option::Option<std::vec::Vec<crate::types::SourceDocument>>,
 }
 impl SuggestionBuilder {
     /// <p>The UUID (universally unique identifier) of a single query suggestion.</p>
@@ -60,11 +68,31 @@ impl SuggestionBuilder {
         self.value = input;
         self
     }
+    /// Appends an item to `source_documents`.
+    ///
+    /// To override the contents of this collection use [`set_source_documents`](Self::set_source_documents).
+    ///
+    /// <p>The list of document IDs and their fields/attributes that are used for a single query suggestion, if document fields set to use for query suggestions.</p>
+    pub fn source_documents(mut self, input: crate::types::SourceDocument) -> Self {
+        let mut v = self.source_documents.unwrap_or_default();
+        v.push(input);
+        self.source_documents = Some(v);
+        self
+    }
+    /// <p>The list of document IDs and their fields/attributes that are used for a single query suggestion, if document fields set to use for query suggestions.</p>
+    pub fn set_source_documents(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SourceDocument>>,
+    ) -> Self {
+        self.source_documents = input;
+        self
+    }
     /// Consumes the builder and constructs a [`Suggestion`](crate::types::Suggestion).
     pub fn build(self) -> crate::types::Suggestion {
         crate::types::Suggestion {
             id: self.id,
             value: self.value,
+            source_documents: self.source_documents,
         }
     }
 }

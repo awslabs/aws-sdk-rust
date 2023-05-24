@@ -18,7 +18,7 @@ pub struct LdapServerMetadataOutput {
     pub role_search_matching: std::option::Option<std::string::String>,
     /// <p>The directory search scope for the role. If set to true, scope is to search the entire subtree.</p>
     #[doc(hidden)]
-    pub role_search_subtree: bool,
+    pub role_search_subtree: std::option::Option<bool>,
     /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
     #[doc(hidden)]
     pub service_account_username: std::option::Option<std::string::String>,
@@ -33,7 +33,7 @@ pub struct LdapServerMetadataOutput {
     pub user_search_matching: std::option::Option<std::string::String>,
     /// <p>The directory search scope for the user. If set to true, scope is to search the entire subtree.</p>
     #[doc(hidden)]
-    pub user_search_subtree: bool,
+    pub user_search_subtree: std::option::Option<bool>,
 }
 impl LdapServerMetadataOutput {
     /// <p>Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional failover server.</p>
@@ -53,7 +53,7 @@ impl LdapServerMetadataOutput {
         self.role_search_matching.as_deref()
     }
     /// <p>The directory search scope for the role. If set to true, scope is to search the entire subtree.</p>
-    pub fn role_search_subtree(&self) -> bool {
+    pub fn role_search_subtree(&self) -> std::option::Option<bool> {
         self.role_search_subtree
     }
     /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
@@ -73,7 +73,7 @@ impl LdapServerMetadataOutput {
         self.user_search_matching.as_deref()
     }
     /// <p>The directory search scope for the user. If set to true, scope is to search the entire subtree.</p>
-    pub fn user_search_subtree(&self) -> bool {
+    pub fn user_search_subtree(&self) -> std::option::Option<bool> {
         self.user_search_subtree
     }
 }
@@ -225,12 +225,12 @@ impl LdapServerMetadataOutputBuilder {
             role_base: self.role_base,
             role_name: self.role_name,
             role_search_matching: self.role_search_matching,
-            role_search_subtree: self.role_search_subtree.unwrap_or_default(),
+            role_search_subtree: self.role_search_subtree,
             service_account_username: self.service_account_username,
             user_base: self.user_base,
             user_role_name: self.user_role_name,
             user_search_matching: self.user_search_matching,
-            user_search_subtree: self.user_search_subtree.unwrap_or_default(),
+            user_search_subtree: self.user_search_subtree,
         }
     }
 }

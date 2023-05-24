@@ -5,7 +5,10 @@ pub use crate::operation::describe_execution::_describe_execution_input::Describ
 
 /// Fluent builder constructing a request to `DescribeExecution`.
 ///
-/// <p>You can use <code>DescribeExecution</code> to check the details of the execution of the specified workflow.</p>
+/// <p>You can use <code>DescribeExecution</code> to check the details of the execution of the specified workflow.</p> <note>
+/// <p>This API call only returns details for in-progress workflows.</p>
+/// <p> If you provide an ID for an execution that is not in progress, or if the execution doesn't match the specified workflow ID, you receive a <code>ResourceNotFound</code> exception.</p>
+/// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeExecutionFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

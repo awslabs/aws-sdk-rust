@@ -33,6 +33,8 @@ pub use crate::types::error::_waf_service_linked_role_error_exception::WafServic
 
 pub use crate::types::error::_waf_log_destination_permission_issue_exception::WafLogDestinationPermissionIssueException;
 
+pub use crate::types::error::_waf_unsupported_aggregate_key_type_exception::WafUnsupportedAggregateKeyTypeException;
+
 pub use crate::types::error::_waf_associated_item_exception::WafAssociatedItemException;
 
 mod _waf_associated_item_exception;
@@ -70,6 +72,8 @@ mod _waf_tag_operation_exception;
 mod _waf_tag_operation_internal_error_exception;
 
 mod _waf_unavailable_entity_exception;
+
+mod _waf_unsupported_aggregate_key_type_exception;
 
 /// Builders
 pub mod builders;

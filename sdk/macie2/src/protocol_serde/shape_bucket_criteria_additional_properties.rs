@@ -12,41 +12,41 @@ pub fn ser_bucket_criteria_additional_properties(
         }
         array_2.finish();
     }
-    if input.gt != 0 {
+    if let Some(var_4) = &input.gt {
         object.key("gt").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.gt).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if input.gte != 0 {
+    if let Some(var_5) = &input.gte {
         object.key("gte").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.gte).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if input.lt != 0 {
+    if let Some(var_6) = &input.lt {
         object.key("lt").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.lt).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if input.lte != 0 {
+    if let Some(var_7) = &input.lte {
         object.key("lte").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.lte).into()),
+            aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_4) = &input.neq {
-        let mut array_5 = object.key("neq").start_array();
-        for item_6 in var_4 {
+    if let Some(var_8) = &input.neq {
+        let mut array_9 = object.key("neq").start_array();
+        for item_10 in var_8 {
             {
-                array_5.value().string(item_6.as_str());
+                array_9.value().string(item_10.as_str());
             }
         }
-        array_5.finish();
+        array_9.finish();
     }
-    if let Some(var_7) = &input.prefix {
-        object.key("prefix").string(var_7.as_str());
+    if let Some(var_11) = &input.prefix {
+        object.key("prefix").string(var_11.as_str());
     }
     Ok(())
 }

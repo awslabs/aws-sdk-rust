@@ -12,8 +12,20 @@
 /// ```text
 /// # let attribute = unimplemented!();
 /// match attribute {
+///     Attribute::AgeRange => { /* ... */ },
 ///     Attribute::All => { /* ... */ },
+///     Attribute::Beard => { /* ... */ },
 ///     Attribute::Default => { /* ... */ },
+///     Attribute::Emotions => { /* ... */ },
+///     Attribute::Eyeglasses => { /* ... */ },
+///     Attribute::EyesOpen => { /* ... */ },
+///     Attribute::EyeDirection => { /* ... */ },
+///     Attribute::FaceOccluded => { /* ... */ },
+///     Attribute::Gender => { /* ... */ },
+///     Attribute::MouthOpen => { /* ... */ },
+///     Attribute::Mustache => { /* ... */ },
+///     Attribute::Smile => { /* ... */ },
+///     Attribute::Sunglasses => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,17 +60,53 @@
 )]
 pub enum Attribute {
     #[allow(missing_docs)] // documentation missing in model
+    AgeRange,
+    #[allow(missing_docs)] // documentation missing in model
     All,
     #[allow(missing_docs)] // documentation missing in model
+    Beard,
+    #[allow(missing_docs)] // documentation missing in model
     Default,
+    #[allow(missing_docs)] // documentation missing in model
+    Emotions,
+    #[allow(missing_docs)] // documentation missing in model
+    Eyeglasses,
+    #[allow(missing_docs)] // documentation missing in model
+    EyesOpen,
+    #[allow(missing_docs)] // documentation missing in model
+    EyeDirection,
+    #[allow(missing_docs)] // documentation missing in model
+    FaceOccluded,
+    #[allow(missing_docs)] // documentation missing in model
+    Gender,
+    #[allow(missing_docs)] // documentation missing in model
+    MouthOpen,
+    #[allow(missing_docs)] // documentation missing in model
+    Mustache,
+    #[allow(missing_docs)] // documentation missing in model
+    Smile,
+    #[allow(missing_docs)] // documentation missing in model
+    Sunglasses,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Attribute {
     fn from(s: &str) -> Self {
         match s {
+            "AGE_RANGE" => Attribute::AgeRange,
             "ALL" => Attribute::All,
+            "BEARD" => Attribute::Beard,
             "DEFAULT" => Attribute::Default,
+            "EMOTIONS" => Attribute::Emotions,
+            "EYEGLASSES" => Attribute::Eyeglasses,
+            "EYES_OPEN" => Attribute::EyesOpen,
+            "EYE_DIRECTION" => Attribute::EyeDirection,
+            "FACE_OCCLUDED" => Attribute::FaceOccluded,
+            "GENDER" => Attribute::Gender,
+            "MOUTH_OPEN" => Attribute::MouthOpen,
+            "MUSTACHE" => Attribute::Mustache,
+            "SMILE" => Attribute::Smile,
+            "SUNGLASSES" => Attribute::Sunglasses,
             other => Attribute::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -74,14 +122,41 @@ impl Attribute {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            Attribute::AgeRange => "AGE_RANGE",
             Attribute::All => "ALL",
+            Attribute::Beard => "BEARD",
             Attribute::Default => "DEFAULT",
+            Attribute::Emotions => "EMOTIONS",
+            Attribute::Eyeglasses => "EYEGLASSES",
+            Attribute::EyesOpen => "EYES_OPEN",
+            Attribute::EyeDirection => "EYE_DIRECTION",
+            Attribute::FaceOccluded => "FACE_OCCLUDED",
+            Attribute::Gender => "GENDER",
+            Attribute::MouthOpen => "MOUTH_OPEN",
+            Attribute::Mustache => "MUSTACHE",
+            Attribute::Smile => "SMILE",
+            Attribute::Sunglasses => "SUNGLASSES",
             Attribute::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALL", "DEFAULT"]
+        &[
+            "AGE_RANGE",
+            "ALL",
+            "BEARD",
+            "DEFAULT",
+            "EMOTIONS",
+            "EYEGLASSES",
+            "EYES_OPEN",
+            "EYE_DIRECTION",
+            "FACE_OCCLUDED",
+            "GENDER",
+            "MOUTH_OPEN",
+            "MUSTACHE",
+            "SMILE",
+            "SUNGLASSES",
+        ]
     }
 }
 impl AsRef<str> for Attribute {

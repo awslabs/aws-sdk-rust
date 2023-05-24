@@ -34,6 +34,12 @@ pub struct NotebookExecutionSummary {
     /// <p>The timestamp when notebook execution started.</p>
     #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    /// <p>The Amazon S3 location that stores the notebook execution input.</p>
+    #[doc(hidden)]
+    pub notebook_s3_location: std::option::Option<crate::types::NotebookS3LocationForOutput>,
+    /// <p>The unique ID of the execution engine for the notebook execution.</p>
+    #[doc(hidden)]
+    pub execution_engine_id: std::option::Option<std::string::String>,
 }
 impl NotebookExecutionSummary {
     /// <p>The unique identifier of the notebook execution.</p>
@@ -72,6 +78,16 @@ impl NotebookExecutionSummary {
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
+    /// <p>The Amazon S3 location that stores the notebook execution input.</p>
+    pub fn notebook_s3_location(
+        &self,
+    ) -> std::option::Option<&crate::types::NotebookS3LocationForOutput> {
+        self.notebook_s3_location.as_ref()
+    }
+    /// <p>The unique ID of the execution engine for the notebook execution.</p>
+    pub fn execution_engine_id(&self) -> std::option::Option<&str> {
+        self.execution_engine_id.as_deref()
+    }
 }
 impl NotebookExecutionSummary {
     /// Creates a new builder-style object to manufacture [`NotebookExecutionSummary`](crate::types::NotebookExecutionSummary).
@@ -90,6 +106,8 @@ pub struct NotebookExecutionSummaryBuilder {
     pub(crate) status: std::option::Option<crate::types::NotebookExecutionStatus>,
     pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) notebook_s3_location: std::option::Option<crate::types::NotebookS3LocationForOutput>,
+    pub(crate) execution_engine_id: std::option::Option<std::string::String>,
 }
 impl NotebookExecutionSummaryBuilder {
     /// <p>The unique identifier of the notebook execution.</p>
@@ -188,6 +206,35 @@ impl NotebookExecutionSummaryBuilder {
         self.end_time = input;
         self
     }
+    /// <p>The Amazon S3 location that stores the notebook execution input.</p>
+    pub fn notebook_s3_location(
+        mut self,
+        input: crate::types::NotebookS3LocationForOutput,
+    ) -> Self {
+        self.notebook_s3_location = Some(input);
+        self
+    }
+    /// <p>The Amazon S3 location that stores the notebook execution input.</p>
+    pub fn set_notebook_s3_location(
+        mut self,
+        input: std::option::Option<crate::types::NotebookS3LocationForOutput>,
+    ) -> Self {
+        self.notebook_s3_location = input;
+        self
+    }
+    /// <p>The unique ID of the execution engine for the notebook execution.</p>
+    pub fn execution_engine_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.execution_engine_id = Some(input.into());
+        self
+    }
+    /// <p>The unique ID of the execution engine for the notebook execution.</p>
+    pub fn set_execution_engine_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.execution_engine_id = input;
+        self
+    }
     /// Consumes the builder and constructs a [`NotebookExecutionSummary`](crate::types::NotebookExecutionSummary).
     pub fn build(self) -> crate::types::NotebookExecutionSummary {
         crate::types::NotebookExecutionSummary {
@@ -197,6 +244,8 @@ impl NotebookExecutionSummaryBuilder {
             status: self.status,
             start_time: self.start_time,
             end_time: self.end_time,
+            notebook_s3_location: self.notebook_s3_location,
+            execution_engine_id: self.execution_engine_id,
         }
     }
 }

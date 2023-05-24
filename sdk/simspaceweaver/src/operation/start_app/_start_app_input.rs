@@ -18,7 +18,7 @@ pub struct StartAppInput {
     /// <p>The description of the app.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>Options that apply when the app starts. These optiAons override default behavior.</p>
+    /// <p>Options that apply when the app starts. These options override default behavior.</p>
     #[doc(hidden)]
     pub launch_overrides: std::option::Option<crate::types::LaunchOverrides>,
 }
@@ -43,7 +43,7 @@ impl StartAppInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Options that apply when the app starts. These optiAons override default behavior.</p>
+    /// <p>Options that apply when the app starts. These options override default behavior.</p>
     pub fn launch_overrides(&self) -> std::option::Option<&crate::types::LaunchOverrides> {
         self.launch_overrides.as_ref()
     }
@@ -129,12 +129,12 @@ impl StartAppInputBuilder {
         self.description = input;
         self
     }
-    /// <p>Options that apply when the app starts. These optiAons override default behavior.</p>
+    /// <p>Options that apply when the app starts. These options override default behavior.</p>
     pub fn launch_overrides(mut self, input: crate::types::LaunchOverrides) -> Self {
         self.launch_overrides = Some(input);
         self
     }
-    /// <p>Options that apply when the app starts. These optiAons override default behavior.</p>
+    /// <p>Options that apply when the app starts. These options override default behavior.</p>
     pub fn set_launch_overrides(
         mut self,
         input: std::option::Option<crate::types::LaunchOverrides>,

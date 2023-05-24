@@ -4,8 +4,8 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationFluentBuilder::send) it.
     /// - On success, responds with [`DescribeOrganizationConfigurationOutput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput) with field(s):
-    ///   - [`auto_enable(bool)`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput::auto_enable): <p>Specifies whether Amazon Macie is enabled automatically for accounts that are added to the organization.</p>
-    ///   - [`max_account_limit_reached(bool)`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput::max_account_limit_reached): <p>Specifies whether the maximum number of Amazon Macie member accounts are part of the organization.</p>
+    ///   - [`auto_enable(Option<bool>)`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput::auto_enable): <p>Specifies whether Amazon Macie is enabled automatically for accounts that are added to the organization.</p>
+    ///   - [`max_account_limit_reached(Option<bool>)`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput::max_account_limit_reached): <p>Specifies whether the maximum number of Amazon Macie member accounts are part of the organization.</p>
     /// - On failure, responds with [`SdkError<DescribeOrganizationConfigurationError>`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationError)
     pub fn describe_organization_configuration(&self) -> crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationFluentBuilder{
         crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationFluentBuilder::new(self.handle.clone())

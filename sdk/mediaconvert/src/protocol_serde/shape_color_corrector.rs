@@ -3,55 +3,55 @@ pub fn ser_color_corrector(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ColorCorrector,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.brightness != 0 {
+    if let Some(var_1) = &input.brightness {
         object.key("brightness").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.brightness).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.clip_limits {
+    if let Some(var_2) = &input.clip_limits {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("clipLimits").start_object();
-        crate::protocol_serde::shape_clip_limits::ser_clip_limits(&mut object_2, var_1)?;
-        object_2.finish();
+        let mut object_3 = object.key("clipLimits").start_object();
+        crate::protocol_serde::shape_clip_limits::ser_clip_limits(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_3) = &input.color_space_conversion {
-        object.key("colorSpaceConversion").string(var_3.as_str());
+    if let Some(var_4) = &input.color_space_conversion {
+        object.key("colorSpaceConversion").string(var_4.as_str());
     }
-    if input.contrast != 0 {
+    if let Some(var_5) = &input.contrast {
         object.key("contrast").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.contrast).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_4) = &input.hdr10_metadata {
+    if let Some(var_6) = &input.hdr10_metadata {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("hdr10Metadata").start_object();
-        crate::protocol_serde::shape_hdr10_metadata::ser_hdr10_metadata(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_7 = object.key("hdr10Metadata").start_object();
+        crate::protocol_serde::shape_hdr10_metadata::ser_hdr10_metadata(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_6) = &input.hdr_to_sdr_tone_mapper {
-        object.key("hdrToSdrToneMapper").string(var_6.as_str());
+    if let Some(var_8) = &input.hdr_to_sdr_tone_mapper {
+        object.key("hdrToSdrToneMapper").string(var_8.as_str());
     }
-    if input.hue != 0 {
+    if let Some(var_9) = &input.hue {
         object.key("hue").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.hue).into()),
+            aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_7) = &input.sample_range_conversion {
-        object.key("sampleRangeConversion").string(var_7.as_str());
+    if let Some(var_10) = &input.sample_range_conversion {
+        object.key("sampleRangeConversion").string(var_10.as_str());
     }
-    if input.saturation != 0 {
+    if let Some(var_11) = &input.saturation {
         object.key("saturation").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.saturation).into()),
+            aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if input.sdr_reference_white_level != 0 {
+    if let Some(var_12) = &input.sdr_reference_white_level {
         object.key("sdrReferenceWhiteLevel").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.sdr_reference_white_level).into()),
+            aws_smithy_types::Number::NegInt((*var_12).into()),
         );
     }
     Ok(())

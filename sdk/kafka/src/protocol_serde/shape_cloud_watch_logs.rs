@@ -3,11 +3,11 @@ pub fn ser_cloud_watch_logs(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CloudWatchLogs,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("enabled").boolean(input.enabled);
+    if let Some(var_1) = &input.enabled {
+        object.key("enabled").boolean(*var_1);
     }
-    if let Some(var_1) = &input.log_group {
-        object.key("logGroup").string(var_1.as_str());
+    if let Some(var_2) = &input.log_group {
+        object.key("logGroup").string(var_2.as_str());
     }
     Ok(())
 }

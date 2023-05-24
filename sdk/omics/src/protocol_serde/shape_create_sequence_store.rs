@@ -210,6 +210,15 @@ pub(crate) fn de_create_sequence_store(
                             .transpose()?,
                         );
                     }
+                    "fallbackLocation" => {
+                        builder = builder.set_fallback_location(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     "id" => {
                         builder = builder.set_id(
                             aws_smithy_json::deserialize::token::expect_string_or_null(

@@ -935,6 +935,20 @@ pub fn de_db_cluster(
                 builder = builder.set_master_user_secret(var_71);
             }
             ,
+            s if s.matches("IOOptimizedNextAllowedModificationTime") /* IOOptimizedNextAllowedModificationTime com.amazonaws.rds#DBCluster$IOOptimizedNextAllowedModificationTime */ =>  {
+                let var_72 =
+                    Some(
+                        aws_smithy_types::DateTime::from_str(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        )
+                        .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.rds#TStamp`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_io_optimized_next_allowed_modification_time(var_72);
+            }
+            ,
             _ => {}
         }
     }

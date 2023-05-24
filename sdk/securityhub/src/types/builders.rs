@@ -1073,6 +1073,14 @@ pub use crate::types::_severity::SeverityBuilder;
 
 pub use crate::types::_sort_criterion::SortCriterionBuilder;
 
+pub use crate::types::_finding_history_record::FindingHistoryRecordBuilder;
+
+pub use crate::types::_finding_history_update::FindingHistoryUpdateBuilder;
+
+pub use crate::types::_finding_history_update_source::FindingHistoryUpdateSourceBuilder;
+
+pub use crate::types::_aws_security_finding_identifier::AwsSecurityFindingIdentifierBuilder;
+
 pub use crate::types::_standards_subscription::StandardsSubscriptionBuilder;
 
 pub use crate::types::_standards_status_reason::StandardsStatusReasonBuilder;
@@ -1094,8 +1102,6 @@ pub use crate::types::_unprocessed_standards_control_association_update::Unproce
 pub use crate::types::_standards_control_association_update::StandardsControlAssociationUpdateBuilder;
 
 pub use crate::types::_batch_update_findings_unprocessed_finding::BatchUpdateFindingsUnprocessedFindingBuilder;
-
-pub use crate::types::_aws_security_finding_identifier::AwsSecurityFindingIdentifierBuilder;
 
 pub use crate::types::_workflow_update::WorkflowUpdateBuilder;
 

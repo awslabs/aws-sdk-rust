@@ -312,4 +312,16 @@ impl CreateWorkspaceFluentBuilder {
         self.inner = self.inner.set_network_access_control(input);
         self
     }
+    /// <p>Specifies the version of Grafana to support in the new workspace.</p>
+    /// <p>Supported values are <code>8.4</code> and <code>9.4</code>.</p>
+    pub fn grafana_version(mut self, input: impl Into<std::string::String>) -> Self {
+        self.inner = self.inner.grafana_version(input.into());
+        self
+    }
+    /// <p>Specifies the version of Grafana to support in the new workspace.</p>
+    /// <p>Supported values are <code>8.4</code> and <code>9.4</code>.</p>
+    pub fn set_grafana_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.inner = self.inner.set_grafana_version(input);
+        self
+    }
 }

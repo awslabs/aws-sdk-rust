@@ -9,7 +9,7 @@ pub struct EventDestination {
     pub cloud_watch_logs_destination: std::option::Option<crate::types::CloudWatchLogsDestination>,
     /// Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.
     #[doc(hidden)]
-    pub enabled: bool,
+    pub enabled: std::option::Option<bool>,
     /// An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose.
     #[doc(hidden)]
     pub kinesis_firehose_destination: std::option::Option<crate::types::KinesisFirehoseDestination>,
@@ -31,7 +31,7 @@ impl EventDestination {
         self.cloud_watch_logs_destination.as_ref()
     }
     /// Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
     /// An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose.
@@ -162,7 +162,7 @@ impl EventDestinationBuilder {
     pub fn build(self) -> crate::types::EventDestination {
         crate::types::EventDestination {
             cloud_watch_logs_destination: self.cloud_watch_logs_destination,
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled,
             kinesis_firehose_destination: self.kinesis_firehose_destination,
             matching_event_types: self.matching_event_types,
             name: self.name,

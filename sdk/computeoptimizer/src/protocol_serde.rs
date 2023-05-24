@@ -208,6 +208,10 @@ pub(crate) mod shape_effective_recommendation_preferences;
 
 pub(crate) mod shape_export_destination;
 
+pub(crate) mod shape_external_metric_status;
+
+pub(crate) mod shape_inferred_workload_savings;
+
 pub(crate) mod shape_inferred_workload_types;
 
 pub(crate) mod shape_instance_recommendation_finding_reason_codes;
@@ -229,6 +233,8 @@ pub(crate) mod shape_savings_opportunity;
 pub(crate) mod shape_service_configuration;
 
 pub(crate) mod shape_summaries;
+
+pub(crate) mod shape_tags;
 
 pub(crate) mod shape_utilization_metrics;
 
@@ -252,6 +258,8 @@ pub(crate) mod shape_ecs_service_utilization_metric;
 
 pub(crate) mod shape_estimated_monthly_savings;
 
+pub(crate) mod shape_inferred_workload_saving;
+
 pub(crate) mod shape_instance_recommendation_option;
 
 pub(crate) mod shape_lambda_function_memory_recommendation_option;
@@ -263,6 +271,8 @@ pub(crate) mod shape_projected_metric;
 pub(crate) mod shape_recommendation_source;
 
 pub(crate) mod shape_summary;
+
+pub(crate) mod shape_tag;
 
 pub(crate) mod shape_utilization_metric;
 

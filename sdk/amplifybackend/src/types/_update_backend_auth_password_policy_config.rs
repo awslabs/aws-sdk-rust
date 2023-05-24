@@ -10,7 +10,7 @@ pub struct UpdateBackendAuthPasswordPolicyConfig {
         std::option::Option<std::vec::Vec<crate::types::AdditionalConstraintsElement>>,
     /// <p>Describes the minimum length of the password required to sign in to the auth resource, configured as a part of your Amplify project.</p>
     #[doc(hidden)]
-    pub minimum_length: f64,
+    pub minimum_length: std::option::Option<f64>,
 }
 impl UpdateBackendAuthPasswordPolicyConfig {
     /// <p>Describes additional constraints on password requirements to sign in to the auth resource, configured as a part of your Amplify project.</p>
@@ -20,7 +20,7 @@ impl UpdateBackendAuthPasswordPolicyConfig {
         self.additional_constraints.as_deref()
     }
     /// <p>Describes the minimum length of the password required to sign in to the auth resource, configured as a part of your Amplify project.</p>
-    pub fn minimum_length(&self) -> f64 {
+    pub fn minimum_length(&self) -> std::option::Option<f64> {
         self.minimum_length
     }
 }
@@ -76,7 +76,7 @@ impl UpdateBackendAuthPasswordPolicyConfigBuilder {
     pub fn build(self) -> crate::types::UpdateBackendAuthPasswordPolicyConfig {
         crate::types::UpdateBackendAuthPasswordPolicyConfig {
             additional_constraints: self.additional_constraints,
-            minimum_length: self.minimum_length.unwrap_or_default(),
+            minimum_length: self.minimum_length,
         }
     }
 }

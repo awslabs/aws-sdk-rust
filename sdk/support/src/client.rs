@@ -252,9 +252,13 @@ mod describe_cases;
 
 mod describe_communications;
 
+mod describe_create_case_options;
+
 mod describe_services;
 
 mod describe_severity_levels;
+
+mod describe_supported_languages;
 
 mod describe_trusted_advisor_check_refresh_statuses;
 

@@ -12,7 +12,7 @@ pub struct Core {
     pub id: std::option::Option<std::string::String>,
     /// If true, the core's local shadow is automatically synced with the cloud.
     #[doc(hidden)]
-    pub sync_shadow: bool,
+    pub sync_shadow: std::option::Option<bool>,
     /// The ARN of the thing which is the core.
     #[doc(hidden)]
     pub thing_arn: std::option::Option<std::string::String>,
@@ -27,7 +27,7 @@ impl Core {
         self.id.as_deref()
     }
     /// If true, the core's local shadow is automatically synced with the cloud.
-    pub fn sync_shadow(&self) -> bool {
+    pub fn sync_shadow(&self) -> std::option::Option<bool> {
         self.sync_shadow
     }
     /// The ARN of the thing which is the core.
@@ -97,7 +97,7 @@ impl CoreBuilder {
         crate::types::Core {
             certificate_arn: self.certificate_arn,
             id: self.id,
-            sync_shadow: self.sync_shadow.unwrap_or_default(),
+            sync_shadow: self.sync_shadow,
             thing_arn: self.thing_arn,
         }
     }

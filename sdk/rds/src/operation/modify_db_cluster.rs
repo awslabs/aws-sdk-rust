@@ -194,6 +194,8 @@ pub enum ModifyDBClusterError {
     InvalidVpcNetworkStateFault(crate::types::error::InvalidVpcNetworkStateFault),
     /// <p>The request would result in the user exceeding the allowed amount of storage available across all DB instances.</p>
     StorageQuotaExceededFault(crate::types::error::StorageQuotaExceededFault),
+    /// <p>The <code>aurora-iopt1</code> storage type isn't available, because you modified the DB cluster to use this storage type less than one month ago.</p>
+    StorageTypeNotAvailableFault(crate::types::error::StorageTypeNotAvailableFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(aws_smithy_types::error::Unhandled),
 }
@@ -225,6 +227,7 @@ impl std::fmt::Display for ModifyDBClusterError {
             Self::InvalidSubnet(_inner) => _inner.fmt(f),
             Self::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
             Self::StorageQuotaExceededFault(_inner) => _inner.fmt(f),
+            Self::StorageTypeNotAvailableFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -269,6 +272,9 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ModifyDBCluster
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::StorageQuotaExceededFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::StorageTypeNotAvailableFault(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::Unhandled(_inner) => {
@@ -329,6 +335,7 @@ impl ModifyDBClusterError {
             Self::InvalidSubnet(e) => e.meta(),
             Self::InvalidVpcNetworkStateFault(e) => e.meta(),
             Self::StorageQuotaExceededFault(e) => e.meta(),
+            Self::StorageTypeNotAvailableFault(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
     }
@@ -384,6 +391,10 @@ impl ModifyDBClusterError {
     pub fn is_storage_quota_exceeded_fault(&self) -> bool {
         matches!(self, Self::StorageQuotaExceededFault(_))
     }
+    /// Returns `true` if the error kind is `ModifyDBClusterError::StorageTypeNotAvailableFault`.
+    pub fn is_storage_type_not_available_fault(&self) -> bool {
+        matches!(self, Self::StorageTypeNotAvailableFault(_))
+    }
 }
 impl std::error::Error for ModifyDBClusterError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
@@ -401,6 +412,7 @@ impl std::error::Error for ModifyDBClusterError {
             Self::InvalidSubnet(_inner) => Some(_inner),
             Self::InvalidVpcNetworkStateFault(_inner) => Some(_inner),
             Self::StorageQuotaExceededFault(_inner) => Some(_inner),
+            Self::StorageTypeNotAvailableFault(_inner) => Some(_inner),
             Self::Unhandled(_inner) => Some(_inner),
         }
     }

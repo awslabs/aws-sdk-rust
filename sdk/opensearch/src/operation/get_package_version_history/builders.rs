@@ -5,7 +5,7 @@ pub use crate::operation::get_package_version_history::_get_package_version_hist
 
 /// Fluent builder constructing a request to `GetPackageVersionHistory`.
 ///
-/// <p>Returns a list of Amazon OpenSearch Service package versions, along with their creation time and commit message. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages for Amazon OpenSearch Service</a>.</p>
+/// <p>Returns a list of Amazon OpenSearch Service package versions, along with their creation time, commit message, and plugin properties (if the package is a zip plugin package). For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages for Amazon OpenSearch Service</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetPackageVersionHistoryFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

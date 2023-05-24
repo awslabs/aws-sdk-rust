@@ -3,81 +3,81 @@ pub fn ser_eac3_atmos_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Eac3AtmosSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.bitrate != 0 {
+    if let Some(var_1) = &input.bitrate {
         object.key("bitrate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.bitrate).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.bitstream_mode {
-        object.key("bitstreamMode").string(var_1.as_str());
+    if let Some(var_2) = &input.bitstream_mode {
+        object.key("bitstreamMode").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.coding_mode {
-        object.key("codingMode").string(var_2.as_str());
+    if let Some(var_3) = &input.coding_mode {
+        object.key("codingMode").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.dialogue_intelligence {
-        object.key("dialogueIntelligence").string(var_3.as_str());
+    if let Some(var_4) = &input.dialogue_intelligence {
+        object.key("dialogueIntelligence").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.downmix_control {
-        object.key("downmixControl").string(var_4.as_str());
+    if let Some(var_5) = &input.downmix_control {
+        object.key("downmixControl").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.dynamic_range_compression_line {
+    if let Some(var_6) = &input.dynamic_range_compression_line {
         object
             .key("dynamicRangeCompressionLine")
-            .string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.dynamic_range_compression_rf {
-        object
-            .key("dynamicRangeCompressionRf")
             .string(var_6.as_str());
     }
-    if let Some(var_7) = &input.dynamic_range_control {
-        object.key("dynamicRangeControl").string(var_7.as_str());
+    if let Some(var_7) = &input.dynamic_range_compression_rf {
+        object
+            .key("dynamicRangeCompressionRf")
+            .string(var_7.as_str());
     }
-    if input.lo_ro_center_mix_level != 0.0 {
+    if let Some(var_8) = &input.dynamic_range_control {
+        object.key("dynamicRangeControl").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.lo_ro_center_mix_level {
         object.key("loRoCenterMixLevel").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.lo_ro_center_mix_level).into()),
+            aws_smithy_types::Number::Float((*var_9).into()),
         );
     }
-    if input.lo_ro_surround_mix_level != 0.0 {
+    if let Some(var_10) = &input.lo_ro_surround_mix_level {
         object.key("loRoSurroundMixLevel").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.lo_ro_surround_mix_level).into()),
+            aws_smithy_types::Number::Float((*var_10).into()),
         );
     }
-    if input.lt_rt_center_mix_level != 0.0 {
+    if let Some(var_11) = &input.lt_rt_center_mix_level {
         object.key("ltRtCenterMixLevel").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.lt_rt_center_mix_level).into()),
+            aws_smithy_types::Number::Float((*var_11).into()),
         );
     }
-    if input.lt_rt_surround_mix_level != 0.0 {
+    if let Some(var_12) = &input.lt_rt_surround_mix_level {
         object.key("ltRtSurroundMixLevel").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.lt_rt_surround_mix_level).into()),
+            aws_smithy_types::Number::Float((*var_12).into()),
         );
     }
-    if let Some(var_8) = &input.metering_mode {
-        object.key("meteringMode").string(var_8.as_str());
+    if let Some(var_13) = &input.metering_mode {
+        object.key("meteringMode").string(var_13.as_str());
     }
-    if input.sample_rate != 0 {
+    if let Some(var_14) = &input.sample_rate {
         object.key("sampleRate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.sample_rate).into()),
+            aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
-    if input.speech_threshold != 0 {
+    if let Some(var_15) = &input.speech_threshold {
         object.key("speechThreshold").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.speech_threshold).into()),
+            aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
-    if let Some(var_9) = &input.stereo_downmix {
-        object.key("stereoDownmix").string(var_9.as_str());
+    if let Some(var_16) = &input.stereo_downmix {
+        object.key("stereoDownmix").string(var_16.as_str());
     }
-    if let Some(var_10) = &input.surround_ex_mode {
-        object.key("surroundExMode").string(var_10.as_str());
+    if let Some(var_17) = &input.surround_ex_mode {
+        object.key("surroundExMode").string(var_17.as_str());
     }
     Ok(())
 }

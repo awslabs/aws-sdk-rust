@@ -6,10 +6,10 @@ pub fn ser_mxf_xavc_profile_settings(
     if let Some(var_1) = &input.duration_mode {
         object.key("durationMode").string(var_1.as_str());
     }
-    if input.max_anc_data_size != 0 {
+    if let Some(var_2) = &input.max_anc_data_size {
         object.key("maxAncDataSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_anc_data_size).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

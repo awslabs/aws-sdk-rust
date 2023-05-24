@@ -6,32 +6,32 @@
 pub struct BucketCountByEffectivePermission {
     /// <p>The total number of buckets that allow the general public to have read or write access to the bucket.</p>
     #[doc(hidden)]
-    pub publicly_accessible: i64,
+    pub publicly_accessible: std::option::Option<i64>,
     /// <p>The total number of buckets that allow the general public to have read access to the bucket.</p>
     #[doc(hidden)]
-    pub publicly_readable: i64,
+    pub publicly_readable: std::option::Option<i64>,
     /// <p>The total number of buckets that allow the general public to have write access to the bucket.</p>
     #[doc(hidden)]
-    pub publicly_writable: i64,
+    pub publicly_writable: std::option::Option<i64>,
     /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. Macie can't determine whether these buckets are publicly accessible.</p>
     #[doc(hidden)]
-    pub unknown: i64,
+    pub unknown: std::option::Option<i64>,
 }
 impl BucketCountByEffectivePermission {
     /// <p>The total number of buckets that allow the general public to have read or write access to the bucket.</p>
-    pub fn publicly_accessible(&self) -> i64 {
+    pub fn publicly_accessible(&self) -> std::option::Option<i64> {
         self.publicly_accessible
     }
     /// <p>The total number of buckets that allow the general public to have read access to the bucket.</p>
-    pub fn publicly_readable(&self) -> i64 {
+    pub fn publicly_readable(&self) -> std::option::Option<i64> {
         self.publicly_readable
     }
     /// <p>The total number of buckets that allow the general public to have write access to the bucket.</p>
-    pub fn publicly_writable(&self) -> i64 {
+    pub fn publicly_writable(&self) -> std::option::Option<i64> {
         self.publicly_writable
     }
     /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. Macie can't determine whether these buckets are publicly accessible.</p>
-    pub fn unknown(&self) -> i64 {
+    pub fn unknown(&self) -> std::option::Option<i64> {
         self.unknown
     }
 }
@@ -95,10 +95,10 @@ impl BucketCountByEffectivePermissionBuilder {
     /// Consumes the builder and constructs a [`BucketCountByEffectivePermission`](crate::types::BucketCountByEffectivePermission).
     pub fn build(self) -> crate::types::BucketCountByEffectivePermission {
         crate::types::BucketCountByEffectivePermission {
-            publicly_accessible: self.publicly_accessible.unwrap_or_default(),
-            publicly_readable: self.publicly_readable.unwrap_or_default(),
-            publicly_writable: self.publicly_writable.unwrap_or_default(),
-            unknown: self.unknown.unwrap_or_default(),
+            publicly_accessible: self.publicly_accessible,
+            publicly_readable: self.publicly_readable,
+            publicly_writable: self.publicly_writable,
+            unknown: self.unknown,
         }
     }
 }

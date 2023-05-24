@@ -204,6 +204,8 @@ pub(crate) mod shape_rows;
 
 pub(crate) mod shape_scene_capabilities;
 
+pub(crate) mod shape_scene_error;
+
 pub(crate) mod shape_scene_metadata_map;
 
 pub(crate) mod shape_scene_summaries;

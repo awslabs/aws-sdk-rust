@@ -62,6 +62,10 @@ pub struct CreateWorkspaceInput {
     /// <p>If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed. Standard Grafana authentication and authorization will still be required.</p>
     #[doc(hidden)]
     pub network_access_control: std::option::Option<crate::types::NetworkAccessConfiguration>,
+    /// <p>Specifies the version of Grafana to support in the new workspace.</p>
+    /// <p>Supported values are <code>8.4</code> and <code>9.4</code>.</p>
+    #[doc(hidden)]
+    pub grafana_version: std::option::Option<std::string::String>,
 }
 impl CreateWorkspaceInput {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
@@ -145,6 +149,11 @@ impl CreateWorkspaceInput {
     ) -> std::option::Option<&crate::types::NetworkAccessConfiguration> {
         self.network_access_control.as_ref()
     }
+    /// <p>Specifies the version of Grafana to support in the new workspace.</p>
+    /// <p>Supported values are <code>8.4</code> and <code>9.4</code>.</p>
+    pub fn grafana_version(&self) -> std::option::Option<&str> {
+        self.grafana_version.as_deref()
+    }
 }
 impl std::fmt::Debug for CreateWorkspaceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -171,6 +180,7 @@ impl std::fmt::Debug for CreateWorkspaceInput {
         formatter.field("vpc_configuration", &self.vpc_configuration);
         formatter.field("configuration", &self.configuration);
         formatter.field("network_access_control", &self.network_access_control);
+        formatter.field("grafana_version", &self.grafana_version);
         formatter.finish()
     }
 }
@@ -207,6 +217,7 @@ pub struct CreateWorkspaceInputBuilder {
     pub(crate) configuration: std::option::Option<std::string::String>,
     pub(crate) network_access_control:
         std::option::Option<crate::types::NetworkAccessConfiguration>,
+    pub(crate) grafana_version: std::option::Option<std::string::String>,
 }
 impl CreateWorkspaceInputBuilder {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
@@ -466,6 +477,18 @@ impl CreateWorkspaceInputBuilder {
         self.network_access_control = input;
         self
     }
+    /// <p>Specifies the version of Grafana to support in the new workspace.</p>
+    /// <p>Supported values are <code>8.4</code> and <code>9.4</code>.</p>
+    pub fn grafana_version(mut self, input: impl Into<std::string::String>) -> Self {
+        self.grafana_version = Some(input.into());
+        self
+    }
+    /// <p>Specifies the version of Grafana to support in the new workspace.</p>
+    /// <p>Supported values are <code>8.4</code> and <code>9.4</code>.</p>
+    pub fn set_grafana_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.grafana_version = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateWorkspaceInput`](crate::operation::create_workspace::CreateWorkspaceInput).
     pub fn build(
         self,
@@ -490,6 +513,7 @@ impl CreateWorkspaceInputBuilder {
             vpc_configuration: self.vpc_configuration,
             configuration: self.configuration,
             network_access_control: self.network_access_control,
+            grafana_version: self.grafana_version,
         })
     }
 }
@@ -518,6 +542,7 @@ impl std::fmt::Debug for CreateWorkspaceInputBuilder {
         formatter.field("vpc_configuration", &self.vpc_configuration);
         formatter.field("configuration", &self.configuration);
         formatter.field("network_access_control", &self.network_access_control);
+        formatter.field("grafana_version", &self.grafana_version);
         formatter.finish()
     }
 }

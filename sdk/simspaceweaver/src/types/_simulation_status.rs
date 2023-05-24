@@ -15,6 +15,7 @@
 ///     SimulationStatus::Deleted => { /* ... */ },
 ///     SimulationStatus::Deleting => { /* ... */ },
 ///     SimulationStatus::Failed => { /* ... */ },
+///     SimulationStatus::SnapshotInProgress => { /* ... */ },
 ///     SimulationStatus::Started => { /* ... */ },
 ///     SimulationStatus::Starting => { /* ... */ },
 ///     SimulationStatus::Stopped => { /* ... */ },
@@ -60,6 +61,8 @@ pub enum SimulationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
+    SnapshotInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Started,
     #[allow(missing_docs)] // documentation missing in model
     Starting,
@@ -78,6 +81,7 @@ impl std::convert::From<&str> for SimulationStatus {
             "DELETED" => SimulationStatus::Deleted,
             "DELETING" => SimulationStatus::Deleting,
             "FAILED" => SimulationStatus::Failed,
+            "SNAPSHOT_IN_PROGRESS" => SimulationStatus::SnapshotInProgress,
             "STARTED" => SimulationStatus::Started,
             "STARTING" => SimulationStatus::Starting,
             "STOPPED" => SimulationStatus::Stopped,
@@ -103,6 +107,7 @@ impl SimulationStatus {
             SimulationStatus::Deleted => "DELETED",
             SimulationStatus::Deleting => "DELETING",
             SimulationStatus::Failed => "FAILED",
+            SimulationStatus::SnapshotInProgress => "SNAPSHOT_IN_PROGRESS",
             SimulationStatus::Started => "STARTED",
             SimulationStatus::Starting => "STARTING",
             SimulationStatus::Stopped => "STOPPED",
@@ -114,7 +119,14 @@ impl SimulationStatus {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DELETED", "DELETING", "FAILED", "STARTED", "STARTING", "STOPPED", "STOPPING",
+            "DELETED",
+            "DELETING",
+            "FAILED",
+            "SNAPSHOT_IN_PROGRESS",
+            "STARTED",
+            "STARTING",
+            "STOPPED",
+            "STOPPING",
             "UNKNOWN",
         ]
     }

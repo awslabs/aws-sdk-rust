@@ -17,7 +17,7 @@ pub struct DescribeOutboundCrossClusterSearchConnectionsInput {
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p> NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -36,7 +36,7 @@ impl DescribeOutboundCrossClusterSearchConnectionsInput {
         self.filters.as_deref()
     }
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p> NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
@@ -122,7 +122,6 @@ impl DescribeOutboundCrossClusterSearchConnectionsInputBuilder {
                 filters: self.filters
                 ,
                 max_results: self.max_results
-                    .unwrap_or_default()
                 ,
                 next_token: self.next_token
                 ,

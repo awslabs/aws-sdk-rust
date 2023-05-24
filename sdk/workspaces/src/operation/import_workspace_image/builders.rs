@@ -5,7 +5,7 @@ pub use crate::operation::import_workspace_image::_import_workspace_image_input:
 
 /// Fluent builder constructing a request to `ImportWorkspaceImage`.
 ///
-/// <p>Imports the specified Windows 10 Bring Your Own License (BYOL) image into Amazon WorkSpaces. The image must be an already licensed Amazon EC2 image that is in your Amazon Web Services account, and you must own the image. For more information about creating BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p>
+/// <p>Imports the specified Windows 10 or 11 Bring Your Own License (BYOL) image into Amazon WorkSpaces. The image must be an already licensed Amazon EC2 image that is in your Amazon Web Services account, and you must own the image. For more information about creating BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportWorkspaceImageFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -144,15 +144,21 @@ impl ImportWorkspaceImageFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_applications`](Self::set_applications).
     ///
-    /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>
-    /// <p>Although this parameter is an array, only one item is allowed at this time.</p>
+    /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 and 11 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>
+    /// <ul>
+    /// <li> <p>Although this parameter is an array, only one item is allowed at this time.</p> </li>
+    /// <li> <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p> </li>
+    /// </ul>
     /// </note>
     pub fn applications(mut self, input: crate::types::Application) -> Self {
         self.inner = self.inner.applications(input);
         self
     }
-    /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>
-    /// <p>Although this parameter is an array, only one item is allowed at this time.</p>
+    /// <p>If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 and 11 BYOL images. For more information about subscribing to Office for BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p> <note>
+    /// <ul>
+    /// <li> <p>Although this parameter is an array, only one item is allowed at this time.</p> </li>
+    /// <li> <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p> </li>
+    /// </ul>
     /// </note>
     pub fn set_applications(
         mut self,

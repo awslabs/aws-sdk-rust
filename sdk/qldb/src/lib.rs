@@ -15,7 +15,7 @@
 //! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 //! feedback purposes only. Do not use this SDK for production workloads.**
 //!
-//! The control plane for Amazon QLDB
+//! The resource management API for Amazon QLDB
 //!
 //! ## Getting Started
 //!
@@ -29,7 +29,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.55.2"
-//! aws-sdk-qldb = "0.27.0"
+//! aws-sdk-qldb = "0.28.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

@@ -3,26 +3,36 @@ pub fn ser_start_variant_import_job_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_variant_import_job::StartVariantImportJobInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.destination_name {
-        object.key("destinationName").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.items {
-        let mut array_3 = object.key("items").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.annotation_fields {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("annotationFields").start_object();
+        for (key_3, value_4) in var_1 {
             {
-                #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_variant_import_item_source::ser_variant_import_item_source(&mut object_5, item_4)?;
-                object_5.finish();
+                object_2.key(key_3.as_str()).string(value_4.as_str());
             }
         }
-        array_3.finish();
+        object_2.finish();
     }
-    if let Some(var_6) = &input.role_arn {
-        object.key("roleArn").string(var_6.as_str());
+    if let Some(var_5) = &input.destination_name {
+        object.key("destinationName").string(var_5.as_str());
     }
-    if let Some(var_7) = &input.run_left_normalization {
-        object.key("runLeftNormalization").boolean(*var_7);
+    if let Some(var_6) = &input.items {
+        let mut array_7 = object.key("items").start_array();
+        for item_8 in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_variant_import_item_source::ser_variant_import_item_source(&mut object_9, item_8)?;
+                object_9.finish();
+            }
+        }
+        array_7.finish();
+    }
+    if let Some(var_10) = &input.role_arn {
+        object.key("roleArn").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.run_left_normalization {
+        object.key("runLeftNormalization").boolean(*var_11);
     }
     Ok(())
 }

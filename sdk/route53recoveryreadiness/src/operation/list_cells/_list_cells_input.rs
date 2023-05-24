@@ -5,14 +5,14 @@
 pub struct ListCellsInput {
     /// <p>The number of objects that you want to return with this call.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>The token that identifies which batch of results you want to see.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCellsInput {
     /// <p>The number of objects that you want to return with this call.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
@@ -63,7 +63,7 @@ impl ListCellsInputBuilder {
         aws_smithy_http::operation::error::BuildError,
     > {
         Ok(crate::operation::list_cells::ListCellsInput {
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

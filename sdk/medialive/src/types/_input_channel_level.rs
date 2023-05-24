@@ -6,18 +6,18 @@
 pub struct InputChannelLevel {
     /// Remixing value. Units are in dB and acceptable values are within the range from -60 (mute) and 6 dB.
     #[doc(hidden)]
-    pub gain: i32,
+    pub gain: std::option::Option<i32>,
     /// The index of the input channel used as a source.
     #[doc(hidden)]
-    pub input_channel: i32,
+    pub input_channel: std::option::Option<i32>,
 }
 impl InputChannelLevel {
     /// Remixing value. Units are in dB and acceptable values are within the range from -60 (mute) and 6 dB.
-    pub fn gain(&self) -> i32 {
+    pub fn gain(&self) -> std::option::Option<i32> {
         self.gain
     }
     /// The index of the input channel used as a source.
-    pub fn input_channel(&self) -> i32 {
+    pub fn input_channel(&self) -> std::option::Option<i32> {
         self.input_channel
     }
 }
@@ -59,8 +59,8 @@ impl InputChannelLevelBuilder {
     /// Consumes the builder and constructs a [`InputChannelLevel`](crate::types::InputChannelLevel).
     pub fn build(self) -> crate::types::InputChannelLevel {
         crate::types::InputChannelLevel {
-            gain: self.gain.unwrap_or_default(),
-            input_channel: self.input_channel.unwrap_or_default(),
+            gain: self.gain,
+            input_channel: self.input_channel,
         }
     }
 }

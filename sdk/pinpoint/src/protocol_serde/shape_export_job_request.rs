@@ -12,10 +12,10 @@ pub fn ser_export_job_request(
     if let Some(var_3) = &input.segment_id {
         object.key("SegmentId").string(var_3.as_str());
     }
-    if input.segment_version != 0 {
+    if let Some(var_4) = &input.segment_version {
         object.key("SegmentVersion").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.segment_version).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     Ok(())

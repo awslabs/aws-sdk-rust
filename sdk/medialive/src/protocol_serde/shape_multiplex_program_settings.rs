@@ -8,26 +8,26 @@ pub fn ser_multiplex_program_settings(
             .key("preferredChannelPipeline")
             .string(var_1.as_str());
     }
-    {
+    if let Some(var_2) = &input.program_number {
         object.key("programNumber").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.program_number).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.service_descriptor {
+    if let Some(var_3) = &input.service_descriptor {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("serviceDescriptor").start_object();
-        crate::protocol_serde::shape_multiplex_program_service_descriptor::ser_multiplex_program_service_descriptor(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_4 = object.key("serviceDescriptor").start_object();
+        crate::protocol_serde::shape_multiplex_program_service_descriptor::ser_multiplex_program_service_descriptor(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_4) = &input.video_settings {
+    if let Some(var_5) = &input.video_settings {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("videoSettings").start_object();
+        let mut object_6 = object.key("videoSettings").start_object();
         crate::protocol_serde::shape_multiplex_video_settings::ser_multiplex_video_settings(
-            &mut object_5,
-            var_4,
+            &mut object_6,
+            var_5,
         )?;
-        object_5.finish();
+        object_6.finish();
     }
     Ok(())
 }

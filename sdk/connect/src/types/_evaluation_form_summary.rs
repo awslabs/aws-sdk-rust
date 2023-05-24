@@ -10,7 +10,7 @@ pub struct EvaluationFormSummary {
     /// <p>The Amazon Resource Name (ARN) for the evaluation form resource.</p>
     #[doc(hidden)]
     pub evaluation_form_arn: std::option::Option<std::string::String>,
-    /// <p>A unique title of the evaluation form.</p>
+    /// <p>A title of the evaluation form.</p>
     #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the evaluation form was created.</p>
@@ -47,7 +47,7 @@ impl EvaluationFormSummary {
     pub fn evaluation_form_arn(&self) -> std::option::Option<&str> {
         self.evaluation_form_arn.as_deref()
     }
-    /// <p>A unique title of the evaluation form.</p>
+    /// <p>A title of the evaluation form.</p>
     pub fn title(&self) -> std::option::Option<&str> {
         self.title.as_deref()
     }
@@ -134,12 +134,12 @@ impl EvaluationFormSummaryBuilder {
         self.evaluation_form_arn = input;
         self
     }
-    /// <p>A unique title of the evaluation form.</p>
+    /// <p>A title of the evaluation form.</p>
     pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
         self.title = Some(input.into());
         self
     }
-    /// <p>A unique title of the evaluation form.</p>
+    /// <p>A title of the evaluation form.</p>
     pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.title = input;
         self

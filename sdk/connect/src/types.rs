@@ -453,6 +453,8 @@ pub use crate::types::_rule_trigger_event_source::RuleTriggerEventSource;
 
 pub use crate::types::_quick_connect::QuickConnect;
 
+pub use crate::types::_prompt::Prompt;
+
 pub use crate::types::_claimed_phone_number_summary::ClaimedPhoneNumberSummary;
 
 pub use crate::types::_phone_number_status::PhoneNumberStatus;
@@ -800,6 +802,8 @@ mod _phone_number_workflow_status;
 mod _phone_type;
 
 mod _problem_detail;
+
+mod _prompt;
 
 mod _prompt_summary;
 

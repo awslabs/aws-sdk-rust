@@ -18,38 +18,40 @@ pub fn ser_update_resolver_input(
     if let Some(var_5) = &input.kind {
         object.key("kind").string(var_5.as_str());
     }
-    if input.max_batch_size != 0 {
+    if let Some(var_6) = &input.max_batch_size {
         object.key("maxBatchSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_batch_size).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_6) = &input.pipeline_config {
+    if let Some(var_7) = &input.pipeline_config {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("pipelineConfig").start_object();
-        crate::protocol_serde::shape_pipeline_config::ser_pipeline_config(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_8 = object.key("pipelineConfig").start_object();
+        crate::protocol_serde::shape_pipeline_config::ser_pipeline_config(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_8) = &input.request_mapping_template {
-        object.key("requestMappingTemplate").string(var_8.as_str());
+    if let Some(var_9) = &input.request_mapping_template {
+        object.key("requestMappingTemplate").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.response_mapping_template {
-        object.key("responseMappingTemplate").string(var_9.as_str());
+    if let Some(var_10) = &input.response_mapping_template {
+        object
+            .key("responseMappingTemplate")
+            .string(var_10.as_str());
     }
-    if let Some(var_10) = &input.runtime {
+    if let Some(var_11) = &input.runtime {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("runtime").start_object();
+        let mut object_12 = object.key("runtime").start_object();
         crate::protocol_serde::shape_app_sync_runtime::ser_app_sync_runtime(
-            &mut object_11,
-            var_10,
+            &mut object_12,
+            var_11,
         )?;
-        object_11.finish();
+        object_12.finish();
     }
-    if let Some(var_12) = &input.sync_config {
+    if let Some(var_13) = &input.sync_config {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("syncConfig").start_object();
-        crate::protocol_serde::shape_sync_config::ser_sync_config(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_14 = object.key("syncConfig").start_object();
+        crate::protocol_serde::shape_sync_config::ser_sync_config(&mut object_14, var_13)?;
+        object_14.finish();
     }
     Ok(())
 }

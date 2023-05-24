@@ -9,60 +9,60 @@ pub fn ser_scte35_segmentation_descriptor(
         crate::protocol_serde::shape_scte35_delivery_restrictions::ser_scte35_delivery_restrictions(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if input.segment_num != 0 {
+    if let Some(var_3) = &input.segment_num {
         object.key("segmentNum").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.segment_num).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.segmentation_cancel_indicator {
+    if let Some(var_4) = &input.segmentation_cancel_indicator {
         object
             .key("segmentationCancelIndicator")
-            .string(var_3.as_str());
+            .string(var_4.as_str());
     }
-    if input.segmentation_duration != 0 {
+    if let Some(var_5) = &input.segmentation_duration {
         object.key("segmentationDuration").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.segmentation_duration).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    {
+    if let Some(var_6) = &input.segmentation_event_id {
         object.key("segmentationEventId").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.segmentation_event_id).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if input.segmentation_type_id != 0 {
+    if let Some(var_7) = &input.segmentation_type_id {
         object.key("segmentationTypeId").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.segmentation_type_id).into()),
+            aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_4) = &input.segmentation_upid {
-        object.key("segmentationUpid").string(var_4.as_str());
+    if let Some(var_8) = &input.segmentation_upid {
+        object.key("segmentationUpid").string(var_8.as_str());
     }
-    if input.segmentation_upid_type != 0 {
+    if let Some(var_9) = &input.segmentation_upid_type {
         object.key("segmentationUpidType").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.segmentation_upid_type).into()),
+            aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if input.segments_expected != 0 {
+    if let Some(var_10) = &input.segments_expected {
         object.key("segmentsExpected").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.segments_expected).into()),
+            aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if input.sub_segment_num != 0 {
+    if let Some(var_11) = &input.sub_segment_num {
         object.key("subSegmentNum").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.sub_segment_num).into()),
+            aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if input.sub_segments_expected != 0 {
+    if let Some(var_12) = &input.sub_segments_expected {
         object.key("subSegmentsExpected").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.sub_segments_expected).into()),
+            aws_smithy_types::Number::NegInt((*var_12).into()),
         );
     }
     Ok(())

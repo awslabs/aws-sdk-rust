@@ -17,6 +17,7 @@
 ///     ResourceType::Appsync => { /* ... */ },
 ///     ResourceType::AppRunnerService => { /* ... */ },
 ///     ResourceType::CognitioUserPool => { /* ... */ },
+///     ResourceType::VerifiedAccessInstance => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -60,6 +61,8 @@ pub enum ResourceType {
     AppRunnerService,
     #[allow(missing_docs)] // documentation missing in model
     CognitioUserPool,
+    #[allow(missing_docs)] // documentation missing in model
+    VerifiedAccessInstance,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -71,6 +74,7 @@ impl std::convert::From<&str> for ResourceType {
             "APPSYNC" => ResourceType::Appsync,
             "APP_RUNNER_SERVICE" => ResourceType::AppRunnerService,
             "COGNITO_USER_POOL" => ResourceType::CognitioUserPool,
+            "VERIFIED_ACCESS_INSTANCE" => ResourceType::VerifiedAccessInstance,
             other => {
                 ResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
@@ -93,6 +97,7 @@ impl ResourceType {
             ResourceType::Appsync => "APPSYNC",
             ResourceType::AppRunnerService => "APP_RUNNER_SERVICE",
             ResourceType::CognitioUserPool => "COGNITO_USER_POOL",
+            ResourceType::VerifiedAccessInstance => "VERIFIED_ACCESS_INSTANCE",
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
@@ -104,6 +109,7 @@ impl ResourceType {
             "APPSYNC",
             "APP_RUNNER_SERVICE",
             "COGNITO_USER_POOL",
+            "VERIFIED_ACCESS_INSTANCE",
         ]
     }
 }

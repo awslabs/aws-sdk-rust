@@ -5,7 +5,7 @@ pub use crate::operation::list_iam_policy_assignments_for_user::_list_iam_policy
 
 /// Fluent builder constructing a request to `ListIAMPolicyAssignmentsForUser`.
 ///
-/// <p>Lists all the IAM policy assignments, including the Amazon Resource Names (ARNs) for the IAM policies assigned to the specified user and group or groups that the user belongs to.</p>
+/// <p>Lists all of the IAM policy assignments, including the Amazon Resource Names (ARNs), for the IAM policies assigned to the specified user and group, or groups that the user belongs to.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListIAMPolicyAssignmentsForUserFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

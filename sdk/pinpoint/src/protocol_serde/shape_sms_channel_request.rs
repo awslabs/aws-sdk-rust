@@ -3,14 +3,14 @@ pub fn ser_sms_channel_request(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SmsChannelRequest,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.enabled {
-        object.key("Enabled").boolean(input.enabled);
+    if let Some(var_1) = &input.enabled {
+        object.key("Enabled").boolean(*var_1);
     }
-    if let Some(var_1) = &input.sender_id {
-        object.key("SenderId").string(var_1.as_str());
+    if let Some(var_2) = &input.sender_id {
+        object.key("SenderId").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.short_code {
-        object.key("ShortCode").string(var_2.as_str());
+    if let Some(var_3) = &input.short_code {
+        object.key("ShortCode").string(var_3.as_str());
     }
     Ok(())
 }

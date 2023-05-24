@@ -9,6 +9,12 @@ pub fn ser_connectivity_info(
         crate::protocol_serde::shape_public_access::ser_public_access(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.vpc_connectivity {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("vpcConnectivity").start_object();
+        crate::protocol_serde::shape_vpc_connectivity::ser_vpc_connectivity(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -41,6 +47,11 @@ where
                                     crate::protocol_serde::shape_public_access::de_public_access(
                                         tokens,
                                     )?,
+                                );
+                            }
+                            "vpcConnectivity" => {
+                                builder = builder.set_vpc_connectivity(
+                                    crate::protocol_serde::shape_vpc_connectivity::de_vpc_connectivity(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

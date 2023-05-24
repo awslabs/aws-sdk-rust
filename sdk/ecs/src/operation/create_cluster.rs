@@ -177,6 +177,8 @@ pub enum CreateClusterError {
     ClientException(crate::types::error::ClientException),
     /// <p>The specified parameter isn't valid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
+    /// <p>The specified namespace wasn't found.</p>
+    NamespaceNotFoundException(crate::types::error::NamespaceNotFoundException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::types::error::ServerException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -199,6 +201,7 @@ impl std::fmt::Display for CreateClusterError {
         match self {
             Self::ClientException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
+            Self::NamespaceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServerException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -211,6 +214,9 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateClusterEr
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::InvalidParameterException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::NamespaceNotFoundException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ServerException(_inner) => {
@@ -263,6 +269,7 @@ impl CreateClusterError {
         match self {
             Self::ClientException(e) => e.meta(),
             Self::InvalidParameterException(e) => e.meta(),
+            Self::NamespaceNotFoundException(e) => e.meta(),
             Self::ServerException(e) => e.meta(),
             Self::Unhandled(e) => e.meta(),
         }
@@ -275,6 +282,10 @@ impl CreateClusterError {
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(self, Self::InvalidParameterException(_))
     }
+    /// Returns `true` if the error kind is `CreateClusterError::NamespaceNotFoundException`.
+    pub fn is_namespace_not_found_exception(&self) -> bool {
+        matches!(self, Self::NamespaceNotFoundException(_))
+    }
     /// Returns `true` if the error kind is `CreateClusterError::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(self, Self::ServerException(_))
@@ -285,6 +296,7 @@ impl std::error::Error for CreateClusterError {
         match self {
             Self::ClientException(_inner) => Some(_inner),
             Self::InvalidParameterException(_inner) => Some(_inner),
+            Self::NamespaceNotFoundException(_inner) => Some(_inner),
             Self::ServerException(_inner) => Some(_inner),
             Self::Unhandled(_inner) => Some(_inner),
         }

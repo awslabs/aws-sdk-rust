@@ -115,6 +115,19 @@ pub fn de_cluster_pending_modified_values(
                 builder = builder.set_iops(var_8);
             }
             ,
+            s if s.matches("StorageType") /* StorageType com.amazonaws.rds#ClusterPendingModifiedValues$StorageType */ =>  {
+                let var_9 =
+                    Some(
+                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_storage_type(var_9);
+            }
+            ,
             _ => {}
         }
     }

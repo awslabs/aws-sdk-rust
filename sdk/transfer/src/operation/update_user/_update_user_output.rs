@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct UpdateUserOutput {
-    /// <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
+    /// <p>A system-assigned unique identifier for a Transfer Family server instance that the account is assigned to.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for a user that is assigned to a server instance that was specified in the request.</p>
@@ -13,7 +13,7 @@ pub struct UpdateUserOutput {
     _request_id: Option<String>,
 }
 impl UpdateUserOutput {
-    /// <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
+    /// <p>A system-assigned unique identifier for a Transfer Family server instance that the account is assigned to.</p>
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
@@ -43,12 +43,12 @@ pub struct UpdateUserOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateUserOutputBuilder {
-    /// <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
+    /// <p>A system-assigned unique identifier for a Transfer Family server instance that the account is assigned to.</p>
     pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.server_id = Some(input.into());
         self
     }
-    /// <p>A system-assigned unique identifier for a server instance that the user account is assigned to.</p>
+    /// <p>A system-assigned unique identifier for a Transfer Family server instance that the account is assigned to.</p>
     pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.server_id = input;
         self

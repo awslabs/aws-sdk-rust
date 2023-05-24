@@ -6,10 +6,10 @@ pub fn ser_create_api_key_input(
     if let Some(var_1) = &input.description {
         object.key("description").string(var_1.as_str());
     }
-    if input.expires != 0 {
+    if let Some(var_2) = &input.expires {
         object.key("expires").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.expires).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

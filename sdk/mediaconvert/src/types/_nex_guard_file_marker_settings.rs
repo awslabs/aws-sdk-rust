@@ -9,7 +9,7 @@ pub struct NexGuardFileMarkerSettings {
     pub license: std::option::Option<std::string::String>,
     /// Specify the payload ID that you want associated with this output. Valid values vary depending on your Nagra NexGuard forensic watermarking workflow. Required when you include Nagra NexGuard File Marker watermarking (NexGuardWatermarkingSettings) in your job. For PreRelease Content (NGPR/G2), specify an integer from 1 through 4,194,303. You must generate a unique ID for each asset you watermark, and keep a record of which ID you have assigned to each asset. Neither Nagra nor MediaConvert keep track of the relationship between output files and your IDs. For OTT Streaming, create two adaptive bitrate (ABR) stacks for each asset. Do this by setting up two output groups. For one output group, set the value of Payload ID (payload) to 0 in every output. For the other output group, set Payload ID (payload) to 1 in every output.
     #[doc(hidden)]
-    pub payload: i32,
+    pub payload: std::option::Option<i32>,
     /// Enter one of the watermarking preset strings that Nagra provides you. Required when you include Nagra NexGuard File Marker watermarking (NexGuardWatermarkingSettings) in your job.
     #[doc(hidden)]
     pub preset: std::option::Option<std::string::String>,
@@ -23,7 +23,7 @@ impl NexGuardFileMarkerSettings {
         self.license.as_deref()
     }
     /// Specify the payload ID that you want associated with this output. Valid values vary depending on your Nagra NexGuard forensic watermarking workflow. Required when you include Nagra NexGuard File Marker watermarking (NexGuardWatermarkingSettings) in your job. For PreRelease Content (NGPR/G2), specify an integer from 1 through 4,194,303. You must generate a unique ID for each asset you watermark, and keep a record of which ID you have assigned to each asset. Neither Nagra nor MediaConvert keep track of the relationship between output files and your IDs. For OTT Streaming, create two adaptive bitrate (ABR) stacks for each asset. Do this by setting up two output groups. For one output group, set the value of Payload ID (payload) to 0 in every output. For the other output group, set Payload ID (payload) to 1 in every output.
-    pub fn payload(&self) -> i32 {
+    pub fn payload(&self) -> std::option::Option<i32> {
         self.payload
     }
     /// Enter one of the watermarking preset strings that Nagra provides you. Required when you include Nagra NexGuard File Marker watermarking (NexGuardWatermarkingSettings) in your job.
@@ -99,7 +99,7 @@ impl NexGuardFileMarkerSettingsBuilder {
     pub fn build(self) -> crate::types::NexGuardFileMarkerSettings {
         crate::types::NexGuardFileMarkerSettings {
             license: self.license,
-            payload: self.payload.unwrap_or_default(),
+            payload: self.payload,
             preset: self.preset,
             strength: self.strength,
         }

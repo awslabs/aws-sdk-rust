@@ -3,16 +3,16 @@ pub fn ser_motion_image_insertion_framerate(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MotionImageInsertionFramerate,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.framerate_denominator != 0 {
+    if let Some(var_1) = &input.framerate_denominator {
         object.key("framerateDenominator").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.framerate_denominator).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.framerate_numerator != 0 {
+    if let Some(var_2) = &input.framerate_numerator {
         object.key("framerateNumerator").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.framerate_numerator).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

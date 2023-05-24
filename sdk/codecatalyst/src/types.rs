@@ -27,6 +27,8 @@ pub use crate::types::_instance_type::InstanceType;
 
 pub use crate::types::_ide_configuration::IdeConfiguration;
 
+pub use crate::types::_dev_environment_session_summary::DevEnvironmentSessionSummary;
+
 pub use crate::types::_dev_environment_summary::DevEnvironmentSummary;
 
 pub use crate::types::_persistent_storage::PersistentStorage;
@@ -66,6 +68,8 @@ mod _dev_environment_access_details;
 mod _dev_environment_repository_summary;
 
 mod _dev_environment_session_configuration;
+
+mod _dev_environment_session_summary;
 
 mod _dev_environment_session_type;
 

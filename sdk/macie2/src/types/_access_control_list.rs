@@ -6,18 +6,18 @@
 pub struct AccessControlList {
     /// <p>Specifies whether the ACL grants the general public with read access permissions for the bucket.</p>
     #[doc(hidden)]
-    pub allows_public_read_access: bool,
+    pub allows_public_read_access: std::option::Option<bool>,
     /// <p>Specifies whether the ACL grants the general public with write access permissions for the bucket.</p>
     #[doc(hidden)]
-    pub allows_public_write_access: bool,
+    pub allows_public_write_access: std::option::Option<bool>,
 }
 impl AccessControlList {
     /// <p>Specifies whether the ACL grants the general public with read access permissions for the bucket.</p>
-    pub fn allows_public_read_access(&self) -> bool {
+    pub fn allows_public_read_access(&self) -> std::option::Option<bool> {
         self.allows_public_read_access
     }
     /// <p>Specifies whether the ACL grants the general public with write access permissions for the bucket.</p>
-    pub fn allows_public_write_access(&self) -> bool {
+    pub fn allows_public_write_access(&self) -> std::option::Option<bool> {
         self.allows_public_write_access
     }
 }
@@ -59,8 +59,8 @@ impl AccessControlListBuilder {
     /// Consumes the builder and constructs a [`AccessControlList`](crate::types::AccessControlList).
     pub fn build(self) -> crate::types::AccessControlList {
         crate::types::AccessControlList {
-            allows_public_read_access: self.allows_public_read_access.unwrap_or_default(),
-            allows_public_write_access: self.allows_public_write_access.unwrap_or_default(),
+            allows_public_read_access: self.allows_public_read_access,
+            allows_public_write_access: self.allows_public_write_access,
         }
     }
 }

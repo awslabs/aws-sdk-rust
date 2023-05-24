@@ -3,10 +3,10 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct TestIdentityProviderOutput {
-    /// <p>The response that is returned from your API Gateway.</p>
+    /// <p>The response that is returned from your API Gateway or your Lambda function.</p>
     #[doc(hidden)]
     pub response: std::option::Option<std::string::String>,
-    /// <p>The HTTP status code that is the response from your API Gateway.</p>
+    /// <p>The HTTP status code that is the response from your API Gateway or your Lambda function.</p>
     #[doc(hidden)]
     pub status_code: i32,
     /// <p>A message that indicates whether the test was successful or not.</p> <note>
@@ -20,11 +20,11 @@ pub struct TestIdentityProviderOutput {
     _request_id: Option<String>,
 }
 impl TestIdentityProviderOutput {
-    /// <p>The response that is returned from your API Gateway.</p>
+    /// <p>The response that is returned from your API Gateway or your Lambda function.</p>
     pub fn response(&self) -> std::option::Option<&str> {
         self.response.as_deref()
     }
-    /// <p>The HTTP status code that is the response from your API Gateway.</p>
+    /// <p>The HTTP status code that is the response from your API Gateway or your Lambda function.</p>
     pub fn status_code(&self) -> i32 {
         self.status_code
     }
@@ -63,22 +63,22 @@ pub struct TestIdentityProviderOutputBuilder {
     _request_id: Option<String>,
 }
 impl TestIdentityProviderOutputBuilder {
-    /// <p>The response that is returned from your API Gateway.</p>
+    /// <p>The response that is returned from your API Gateway or your Lambda function.</p>
     pub fn response(mut self, input: impl Into<std::string::String>) -> Self {
         self.response = Some(input.into());
         self
     }
-    /// <p>The response that is returned from your API Gateway.</p>
+    /// <p>The response that is returned from your API Gateway or your Lambda function.</p>
     pub fn set_response(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.response = input;
         self
     }
-    /// <p>The HTTP status code that is the response from your API Gateway.</p>
+    /// <p>The HTTP status code that is the response from your API Gateway or your Lambda function.</p>
     pub fn status_code(mut self, input: i32) -> Self {
         self.status_code = Some(input);
         self
     }
-    /// <p>The HTTP status code that is the response from your API Gateway.</p>
+    /// <p>The HTTP status code that is the response from your API Gateway or your Lambda function.</p>
     pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
         self.status_code = input;
         self

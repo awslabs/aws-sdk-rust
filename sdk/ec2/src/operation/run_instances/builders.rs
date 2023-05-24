@@ -8,10 +8,8 @@ pub use crate::operation::run_instances::_run_instances_input::RunInstancesInput
 /// <p>Launches the specified number of instances using an AMI for which you have permissions.</p>
 /// <p>You can specify a number of options, or leave the default options. The following rules apply:</p>
 /// <ul>
-/// <li> <p>[EC2-VPC] If you don't specify a subnet ID, we choose a default subnet from your default VPC for you. If you don't have a default VPC, you must specify a subnet ID in the request.</p> </li>
-/// <li> <p>[EC2-Classic] If don't specify an Availability Zone, we choose one for you.</p> </li>
-/// <li> <p>Some instance types must be launched into a VPC. If you do not have a default VPC, or if you do not specify a subnet ID, the request fails. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance types available only in a VPC</a>.</p> </li>
-/// <li> <p>[EC2-VPC] All instances have a network interface with a primary private IPv4 address. If you don't specify this address, we choose one from the IPv4 range of your subnet.</p> </li>
+/// <li> <p>If you don't specify a subnet ID, we choose a default subnet from your default VPC for you. If you don't have a default VPC, you must specify a subnet ID in the request.</p> </li>
+/// <li> <p>All instances have a network interface with a primary private IPv4 address. If you don't specify this address, we choose one from the IPv4 range of your subnet.</p> </li>
 /// <li> <p>Not all instance types support IPv6 addresses. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a>.</p> </li>
 /// <li> <p>If you don't specify a security group ID, we use the default security group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security groups</a>.</p> </li>
 /// <li> <p>If any of the AMIs have a product code attached for which the user has not subscribed, the request fails.</p> </li>
@@ -20,9 +18,7 @@ pub use crate::operation::run_instances::_run_instances_input::RunInstancesInput
 /// <p>To ensure faster instance launches, break up large requests into smaller batches. For example, create five separate launch requests for 100 instances each instead of one launch request for 500 instances.</p>
 /// <p>An instance is ready for you to use when it's in the <code>running</code> state. You can check the state of your instance using <code>DescribeInstances</code>. You can tag instances and EBS volumes during launch, after launch, or both. For more information, see <code>CreateTags</code> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a>.</p>
 /// <p>Linux instances have access to the public key of the key pair at boot. You can use this key to provide secure access to the instance. Amazon EC2 public images use this feature to provide secure access without passwords. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key pairs</a>.</p>
-/// <p>For troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What to do if an instance immediately terminates</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting connecting to your instance</a>.</p> <note>
-/// <p>We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.</p>
-/// </note>
+/// <p>For troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What to do if an instance immediately terminates</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting connecting to your instance</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RunInstancesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -123,13 +119,13 @@ impl RunInstancesFluentBuilder {
         self.inner = self.inner.set_instance_type(input);
         self
     }
-    /// <p>[EC2-VPC] The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of instances to launch.</p>
+    /// <p>The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of instances to launch.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
     pub fn ipv6_address_count(mut self, input: i32) -> Self {
         self.inner = self.inner.ipv6_address_count(input);
         self
     }
-    /// <p>[EC2-VPC] The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of instances to launch.</p>
+    /// <p>The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of instances to launch.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
     pub fn set_ipv6_address_count(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_ipv6_address_count(input);
@@ -139,13 +135,13 @@ impl RunInstancesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_ipv6_addresses`](Self::set_ipv6_addresses).
     ///
-    /// <p>[EC2-VPC] The IPv6 addresses from the range of the subnet to associate with the primary network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify this option if you've specified a minimum number of instances to launch.</p>
+    /// <p>The IPv6 addresses from the range of the subnet to associate with the primary network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify this option if you've specified a minimum number of instances to launch.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
     pub fn ipv6_addresses(mut self, input: crate::types::InstanceIpv6Address) -> Self {
         self.inner = self.inner.ipv6_addresses(input);
         self
     }
-    /// <p>[EC2-VPC] The IPv6 addresses from the range of the subnet to associate with the primary network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify this option if you've specified a minimum number of instances to launch.</p>
+    /// <p>The IPv6 addresses from the range of the subnet to associate with the primary network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify this option if you've specified a minimum number of instances to launch.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
     pub fn set_ipv6_addresses(
         mut self,
@@ -266,14 +262,14 @@ impl RunInstancesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
-    /// <p>[EC2-Classic, default VPC] The names of the security groups.</p>
+    /// <p>[Default VPC] The names of the security groups.</p>
     /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
     /// <p>Default: Amazon EC2 uses the default security group.</p>
     pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.security_groups(input.into());
         self
     }
-    /// <p>[EC2-Classic, default VPC] The names of the security groups.</p>
+    /// <p>[Default VPC] The names of the security groups.</p>
     /// <p>If you specify a network interface, you must specify any security groups as part of the network interface.</p>
     /// <p>Default: Amazon EC2 uses the default security group.</p>
     pub fn set_security_groups(
@@ -283,13 +279,13 @@ impl RunInstancesFluentBuilder {
         self.inner = self.inner.set_security_groups(input);
         self
     }
-    /// <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
+    /// <p>The ID of the subnet to launch the instance into.</p>
     /// <p>If you specify a network interface, you must specify any subnets as part of the network interface.</p>
     pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.subnet_id(input.into());
         self
     }
-    /// <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
+    /// <p>The ID of the subnet to launch the instance into.</p>
     /// <p>If you specify a network interface, you must specify any subnets as part of the network interface.</p>
     pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_subnet_id(input);
@@ -419,14 +415,14 @@ impl RunInstancesFluentBuilder {
         self.inner = self.inner.set_network_interfaces(input);
         self
     }
-    /// <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.</p>
+    /// <p>The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.</p>
     /// <p>Only one private IP address can be designated as primary. You can't specify this option if you've specified the option to designate a private IP address as the primary IP address in a network interface specification. You cannot specify this option if you're launching more than one instance in the request.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
     pub fn private_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.private_ip_address(input.into());
         self
     }
-    /// <p>[EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.</p>
+    /// <p>The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.</p>
     /// <p>Only one private IP address can be designated as primary. You can't specify this option if you've specified the option to designate a private IP address as the primary IP address in a network interface specification. You cannot specify this option if you're launching more than one instance in the request.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
     pub fn set_private_ip_address(

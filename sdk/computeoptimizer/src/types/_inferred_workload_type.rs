@@ -20,6 +20,7 @@
 ///     InferredWorkloadType::Nginx => { /* ... */ },
 ///     InferredWorkloadType::PostgreSql => { /* ... */ },
 ///     InferredWorkloadType::Redis => { /* ... */ },
+///     InferredWorkloadType::Sqlserver => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -69,6 +70,8 @@ pub enum InferredWorkloadType {
     PostgreSql,
     #[allow(missing_docs)] // documentation missing in model
     Redis,
+    #[allow(missing_docs)] // documentation missing in model
+    Sqlserver,
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
@@ -83,6 +86,7 @@ impl std::convert::From<&str> for InferredWorkloadType {
             "Nginx" => InferredWorkloadType::Nginx,
             "PostgreSql" => InferredWorkloadType::PostgreSql,
             "Redis" => InferredWorkloadType::Redis,
+            "SQLServer" => InferredWorkloadType::Sqlserver,
             other => InferredWorkloadType::Unknown(crate::primitives::UnknownVariantValue(
                 other.to_owned(),
             )),
@@ -108,6 +112,7 @@ impl InferredWorkloadType {
             InferredWorkloadType::Nginx => "Nginx",
             InferredWorkloadType::PostgreSql => "PostgreSql",
             InferredWorkloadType::Redis => "Redis",
+            InferredWorkloadType::Sqlserver => "SQLServer",
             InferredWorkloadType::Unknown(value) => value.as_str(),
         }
     }
@@ -122,6 +127,7 @@ impl InferredWorkloadType {
             "Nginx",
             "PostgreSql",
             "Redis",
+            "SQLServer",
         ]
     }
 }

@@ -13,8 +13,23 @@ pub mod delete_stage;
 /// Types for the `DisconnectParticipant` operation.
 pub mod disconnect_participant;
 
+/// Types for the `GetParticipant` operation.
+pub mod get_participant;
+
 /// Types for the `GetStage` operation.
 pub mod get_stage;
+
+/// Types for the `GetStageSession` operation.
+pub mod get_stage_session;
+
+/// Types for the `ListParticipantEvents` operation.
+pub mod list_participant_events;
+
+/// Types for the `ListParticipants` operation.
+pub mod list_participants;
+
+/// Types for the `ListStageSessions` operation.
+pub mod list_stage_sessions;
 
 /// Types for the `ListStages` operation.
 pub mod list_stages;

@@ -6,32 +6,32 @@
 pub struct FrameCaptureSettings {
     /// Frame capture will encode the first frame of the output stream, then one frame every framerateDenominator/framerateNumerator seconds. For example, settings of framerateNumerator = 1 and framerateDenominator = 3 (a rate of 1/3 frame per second) will capture the first frame, then 1 frame every 3s. Files will be named as filename.n.jpg where n is the 0-based sequence number of each Capture.
     #[doc(hidden)]
-    pub framerate_denominator: i32,
+    pub framerate_denominator: std::option::Option<i32>,
     /// Frame capture will encode the first frame of the output stream, then one frame every framerateDenominator/framerateNumerator seconds. For example, settings of framerateNumerator = 1 and framerateDenominator = 3 (a rate of 1/3 frame per second) will capture the first frame, then 1 frame every 3s. Files will be named as filename.NNNNNNN.jpg where N is the 0-based frame sequence number zero padded to 7 decimal places.
     #[doc(hidden)]
-    pub framerate_numerator: i32,
+    pub framerate_numerator: std::option::Option<i32>,
     /// Maximum number of captures (encoded jpg output files).
     #[doc(hidden)]
-    pub max_captures: i32,
+    pub max_captures: std::option::Option<i32>,
     /// JPEG Quality - a higher value equals higher quality.
     #[doc(hidden)]
-    pub quality: i32,
+    pub quality: std::option::Option<i32>,
 }
 impl FrameCaptureSettings {
     /// Frame capture will encode the first frame of the output stream, then one frame every framerateDenominator/framerateNumerator seconds. For example, settings of framerateNumerator = 1 and framerateDenominator = 3 (a rate of 1/3 frame per second) will capture the first frame, then 1 frame every 3s. Files will be named as filename.n.jpg where n is the 0-based sequence number of each Capture.
-    pub fn framerate_denominator(&self) -> i32 {
+    pub fn framerate_denominator(&self) -> std::option::Option<i32> {
         self.framerate_denominator
     }
     /// Frame capture will encode the first frame of the output stream, then one frame every framerateDenominator/framerateNumerator seconds. For example, settings of framerateNumerator = 1 and framerateDenominator = 3 (a rate of 1/3 frame per second) will capture the first frame, then 1 frame every 3s. Files will be named as filename.NNNNNNN.jpg where N is the 0-based frame sequence number zero padded to 7 decimal places.
-    pub fn framerate_numerator(&self) -> i32 {
+    pub fn framerate_numerator(&self) -> std::option::Option<i32> {
         self.framerate_numerator
     }
     /// Maximum number of captures (encoded jpg output files).
-    pub fn max_captures(&self) -> i32 {
+    pub fn max_captures(&self) -> std::option::Option<i32> {
         self.max_captures
     }
     /// JPEG Quality - a higher value equals higher quality.
-    pub fn quality(&self) -> i32 {
+    pub fn quality(&self) -> std::option::Option<i32> {
         self.quality
     }
 }
@@ -95,10 +95,10 @@ impl FrameCaptureSettingsBuilder {
     /// Consumes the builder and constructs a [`FrameCaptureSettings`](crate::types::FrameCaptureSettings).
     pub fn build(self) -> crate::types::FrameCaptureSettings {
         crate::types::FrameCaptureSettings {
-            framerate_denominator: self.framerate_denominator.unwrap_or_default(),
-            framerate_numerator: self.framerate_numerator.unwrap_or_default(),
-            max_captures: self.max_captures.unwrap_or_default(),
-            quality: self.quality.unwrap_or_default(),
+            framerate_denominator: self.framerate_denominator,
+            framerate_numerator: self.framerate_numerator,
+            max_captures: self.max_captures,
+            quality: self.quality,
         }
     }
 }

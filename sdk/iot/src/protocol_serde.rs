@@ -1000,6 +1000,8 @@ pub(crate) mod shape_thing_type_properties;
 
 pub(crate) mod shape_timeout_config;
 
+pub(crate) mod shape_tls_config;
+
 pub(crate) mod shape_tls_context;
 
 pub(crate) mod shape_topic_rule;

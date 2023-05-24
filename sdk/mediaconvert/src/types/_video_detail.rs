@@ -6,18 +6,18 @@
 pub struct VideoDetail {
     /// Height in pixels for the output
     #[doc(hidden)]
-    pub height_in_px: i32,
+    pub height_in_px: std::option::Option<i32>,
     /// Width in pixels for the output
     #[doc(hidden)]
-    pub width_in_px: i32,
+    pub width_in_px: std::option::Option<i32>,
 }
 impl VideoDetail {
     /// Height in pixels for the output
-    pub fn height_in_px(&self) -> i32 {
+    pub fn height_in_px(&self) -> std::option::Option<i32> {
         self.height_in_px
     }
     /// Width in pixels for the output
-    pub fn width_in_px(&self) -> i32 {
+    pub fn width_in_px(&self) -> std::option::Option<i32> {
         self.width_in_px
     }
 }
@@ -59,8 +59,8 @@ impl VideoDetailBuilder {
     /// Consumes the builder and constructs a [`VideoDetail`](crate::types::VideoDetail).
     pub fn build(self) -> crate::types::VideoDetail {
         crate::types::VideoDetail {
-            height_in_px: self.height_in_px.unwrap_or_default(),
-            width_in_px: self.width_in_px.unwrap_or_default(),
+            height_in_px: self.height_in_px,
+            width_in_px: self.width_in_px,
         }
     }
 }

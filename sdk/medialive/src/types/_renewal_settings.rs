@@ -9,7 +9,7 @@ pub struct RenewalSettings {
     pub automatic_renewal: std::option::Option<crate::types::ReservationAutomaticRenewal>,
     /// Count for the reservation renewal
     #[doc(hidden)]
-    pub renewal_count: i32,
+    pub renewal_count: std::option::Option<i32>,
 }
 impl RenewalSettings {
     /// Automatic renewal status for the reservation
@@ -19,7 +19,7 @@ impl RenewalSettings {
         self.automatic_renewal.as_ref()
     }
     /// Count for the reservation renewal
-    pub fn renewal_count(&self) -> i32 {
+    pub fn renewal_count(&self) -> std::option::Option<i32> {
         self.renewal_count
     }
 }
@@ -65,7 +65,7 @@ impl RenewalSettingsBuilder {
     pub fn build(self) -> crate::types::RenewalSettings {
         crate::types::RenewalSettings {
             automatic_renewal: self.automatic_renewal,
-            renewal_count: self.renewal_count.unwrap_or_default(),
+            renewal_count: self.renewal_count,
         }
     }
 }

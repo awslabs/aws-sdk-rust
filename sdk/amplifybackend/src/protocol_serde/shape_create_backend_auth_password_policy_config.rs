@@ -12,10 +12,10 @@ pub fn ser_create_backend_auth_password_policy_config(
         }
         array_2.finish();
     }
-    {
+    if let Some(var_4) = &input.minimum_length {
         object.key("minimumLength").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.minimum_length).into()),
+            aws_smithy_types::Number::Float((*var_4).into()),
         );
     }
     Ok(())

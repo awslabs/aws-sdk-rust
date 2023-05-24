@@ -10,8 +10,8 @@ pub struct Communication {
     /// <p>The text of the communication between the customer and Amazon Web Services Support.</p>
     #[doc(hidden)]
     pub body: std::option::Option<std::string::String>,
-    /// <p>The identity of the account that submitted, or responded to, the support case. Customer entries include the role or IAM user as well as the email address. For example, "AdminRole (Role) <janedoe@example.com>
-    /// . Entries from the Amazon Web Services Support team display "Amazon Web Services," and don't show an email address.
+    /// <p>The identity of the account that submitted, or responded to, the support case. Customer entries include the IAM role as well as the email address (for example, "AdminRole (Role) <janedoe@example.com>
+    /// ). Entries from the Amazon Web Services Support team display "Amazon Web Services," and don't show an email address.
     /// </janedoe@example.com></p>
     #[doc(hidden)]
     pub submitted_by: std::option::Option<std::string::String>,
@@ -31,8 +31,8 @@ impl Communication {
     pub fn body(&self) -> std::option::Option<&str> {
         self.body.as_deref()
     }
-    /// <p>The identity of the account that submitted, or responded to, the support case. Customer entries include the role or IAM user as well as the email address. For example, "AdminRole (Role) <janedoe@example.com>
-    /// . Entries from the Amazon Web Services Support team display "Amazon Web Services," and don't show an email address.
+    /// <p>The identity of the account that submitted, or responded to, the support case. Customer entries include the IAM role as well as the email address (for example, "AdminRole (Role) <janedoe@example.com>
+    /// ). Entries from the Amazon Web Services Support team display "Amazon Web Services," and don't show an email address.
     /// </janedoe@example.com></p>
     pub fn submitted_by(&self) -> std::option::Option<&str> {
         self.submitted_by.as_deref()
@@ -84,15 +84,15 @@ impl CommunicationBuilder {
         self.body = input;
         self
     }
-    /// <p>The identity of the account that submitted, or responded to, the support case. Customer entries include the role or IAM user as well as the email address. For example, "AdminRole (Role) <janedoe@example.com>
-    /// . Entries from the Amazon Web Services Support team display "Amazon Web Services," and don't show an email address.
+    /// <p>The identity of the account that submitted, or responded to, the support case. Customer entries include the IAM role as well as the email address (for example, "AdminRole (Role) <janedoe@example.com>
+    /// ). Entries from the Amazon Web Services Support team display "Amazon Web Services," and don't show an email address.
     /// </janedoe@example.com></p>
     pub fn submitted_by(mut self, input: impl Into<std::string::String>) -> Self {
         self.submitted_by = Some(input.into());
         self
     }
-    /// <p>The identity of the account that submitted, or responded to, the support case. Customer entries include the role or IAM user as well as the email address. For example, "AdminRole (Role) <janedoe@example.com>
-    /// . Entries from the Amazon Web Services Support team display "Amazon Web Services," and don't show an email address.
+    /// <p>The identity of the account that submitted, or responded to, the support case. Customer entries include the IAM role as well as the email address (for example, "AdminRole (Role) <janedoe@example.com>
+    /// ). Entries from the Amazon Web Services Support team display "Amazon Web Services," and don't show an email address.
     /// </janedoe@example.com></p>
     pub fn set_submitted_by(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.submitted_by = input;

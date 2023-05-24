@@ -18,10 +18,10 @@ pub fn ser_audio_channel_mapping(
         }
         array_2.finish();
     }
-    {
+    if let Some(var_5) = &input.output_channel {
         object.key("outputChannel").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.output_channel).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
     Ok(())

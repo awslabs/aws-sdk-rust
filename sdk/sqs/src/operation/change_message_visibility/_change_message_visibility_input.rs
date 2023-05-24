@@ -12,7 +12,7 @@ pub struct ChangeMessageVisibilityInput {
     pub receipt_handle: std::option::Option<std::string::String>,
     /// <p>The new value for the message's visibility timeout (in seconds). Values range: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
     #[doc(hidden)]
-    pub visibility_timeout: i32,
+    pub visibility_timeout: std::option::Option<i32>,
 }
 impl ChangeMessageVisibilityInput {
     /// <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p>
@@ -25,7 +25,7 @@ impl ChangeMessageVisibilityInput {
         self.receipt_handle.as_deref()
     }
     /// <p>The new value for the message's visibility timeout (in seconds). Values range: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
-    pub fn visibility_timeout(&self) -> i32 {
+    pub fn visibility_timeout(&self) -> std::option::Option<i32> {
         self.visibility_timeout
     }
 }
@@ -90,7 +90,7 @@ impl ChangeMessageVisibilityInputBuilder {
             crate::operation::change_message_visibility::ChangeMessageVisibilityInput {
                 queue_url: self.queue_url,
                 receipt_handle: self.receipt_handle,
-                visibility_timeout: self.visibility_timeout.unwrap_or_default(),
+                visibility_timeout: self.visibility_timeout,
             },
         )
     }

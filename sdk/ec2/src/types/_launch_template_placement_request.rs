@@ -16,7 +16,7 @@ pub struct LaunchTemplatePlacementRequest {
     /// <p>The ID of the Dedicated Host for the instance.</p>
     #[doc(hidden)]
     pub host_id: std::option::Option<std::string::String>,
-    /// <p>The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of dedicated runs on single-tenant hardware.</p>
+    /// <p>The tenancy of the instance. An instance with a tenancy of dedicated runs on single-tenant hardware.</p>
     #[doc(hidden)]
     pub tenancy: std::option::Option<crate::types::Tenancy>,
     /// <p>Reserved for future use.</p>
@@ -49,7 +49,7 @@ impl LaunchTemplatePlacementRequest {
     pub fn host_id(&self) -> std::option::Option<&str> {
         self.host_id.as_deref()
     }
-    /// <p>The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of dedicated runs on single-tenant hardware.</p>
+    /// <p>The tenancy of the instance. An instance with a tenancy of dedicated runs on single-tenant hardware.</p>
     pub fn tenancy(&self) -> std::option::Option<&crate::types::Tenancy> {
         self.tenancy.as_ref()
     }
@@ -135,12 +135,12 @@ impl LaunchTemplatePlacementRequestBuilder {
         self.host_id = input;
         self
     }
-    /// <p>The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of dedicated runs on single-tenant hardware.</p>
+    /// <p>The tenancy of the instance. An instance with a tenancy of dedicated runs on single-tenant hardware.</p>
     pub fn tenancy(mut self, input: crate::types::Tenancy) -> Self {
         self.tenancy = Some(input);
         self
     }
-    /// <p>The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of dedicated runs on single-tenant hardware.</p>
+    /// <p>The tenancy of the instance. An instance with a tenancy of dedicated runs on single-tenant hardware.</p>
     pub fn set_tenancy(mut self, input: std::option::Option<crate::types::Tenancy>) -> Self {
         self.tenancy = input;
         self

@@ -32,6 +32,10 @@ pub struct UpdateQuerySuggestionsConfigInput {
     /// <p>How you tune this setting depends on your specific needs.</p>
     #[doc(hidden)]
     pub minimum_query_count: std::option::Option<i32>,
+    /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
+    #[doc(hidden)]
+    pub attribute_suggestions_config:
+        std::option::Option<crate::types::AttributeSuggestionsUpdateConfig>,
 }
 impl UpdateQuerySuggestionsConfigInput {
     /// <p> The identifier of the index with query suggestions you want to update.</p>
@@ -69,6 +73,12 @@ impl UpdateQuerySuggestionsConfigInput {
     pub fn minimum_query_count(&self) -> std::option::Option<i32> {
         self.minimum_query_count
     }
+    /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
+    pub fn attribute_suggestions_config(
+        &self,
+    ) -> std::option::Option<&crate::types::AttributeSuggestionsUpdateConfig> {
+        self.attribute_suggestions_config.as_ref()
+    }
 }
 impl UpdateQuerySuggestionsConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateQuerySuggestionsConfigInput`](crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigInput).
@@ -87,6 +97,8 @@ pub struct UpdateQuerySuggestionsConfigInputBuilder {
     pub(crate) include_queries_without_user_information: std::option::Option<bool>,
     pub(crate) minimum_number_of_querying_users: std::option::Option<i32>,
     pub(crate) minimum_query_count: std::option::Option<i32>,
+    pub(crate) attribute_suggestions_config:
+        std::option::Option<crate::types::AttributeSuggestionsUpdateConfig>,
 }
 impl UpdateQuerySuggestionsConfigInputBuilder {
     /// <p> The identifier of the index with query suggestions you want to update.</p>
@@ -177,6 +189,22 @@ impl UpdateQuerySuggestionsConfigInputBuilder {
         self.minimum_query_count = input;
         self
     }
+    /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
+    pub fn attribute_suggestions_config(
+        mut self,
+        input: crate::types::AttributeSuggestionsUpdateConfig,
+    ) -> Self {
+        self.attribute_suggestions_config = Some(input);
+        self
+    }
+    /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
+    pub fn set_attribute_suggestions_config(
+        mut self,
+        input: std::option::Option<crate::types::AttributeSuggestionsUpdateConfig>,
+    ) -> Self {
+        self.attribute_suggestions_config = input;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateQuerySuggestionsConfigInput`](crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigInput).
     pub fn build(
         self,
@@ -193,6 +221,7 @@ impl UpdateQuerySuggestionsConfigInputBuilder {
                     .include_queries_without_user_information,
                 minimum_number_of_querying_users: self.minimum_number_of_querying_users,
                 minimum_query_count: self.minimum_query_count,
+                attribute_suggestions_config: self.attribute_suggestions_config,
             },
         )
     }

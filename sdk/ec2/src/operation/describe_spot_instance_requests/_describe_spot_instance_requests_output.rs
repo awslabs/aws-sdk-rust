@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct DescribeSpotInstanceRequestsOutput {
-    /// <p>One or more Spot Instance requests.</p>
+    /// <p>The Spot Instance requests.</p>
     #[doc(hidden)]
     pub spot_instance_requests:
         std::option::Option<std::vec::Vec<crate::types::SpotInstanceRequest>>,
@@ -14,7 +14,7 @@ pub struct DescribeSpotInstanceRequestsOutput {
     _request_id: Option<String>,
 }
 impl DescribeSpotInstanceRequestsOutput {
-    /// <p>One or more Spot Instance requests.</p>
+    /// <p>The Spot Instance requests.</p>
     pub fn spot_instance_requests(
         &self,
     ) -> std::option::Option<&[crate::types::SpotInstanceRequest]> {
@@ -51,14 +51,14 @@ impl DescribeSpotInstanceRequestsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_spot_instance_requests`](Self::set_spot_instance_requests).
     ///
-    /// <p>One or more Spot Instance requests.</p>
+    /// <p>The Spot Instance requests.</p>
     pub fn spot_instance_requests(mut self, input: crate::types::SpotInstanceRequest) -> Self {
         let mut v = self.spot_instance_requests.unwrap_or_default();
         v.push(input);
         self.spot_instance_requests = Some(v);
         self
     }
-    /// <p>One or more Spot Instance requests.</p>
+    /// <p>The Spot Instance requests.</p>
     pub fn set_spot_instance_requests(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::SpotInstanceRequest>>,

@@ -3,19 +3,19 @@ pub fn ser_mp2_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Mp2Settings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.bitrate != 0.0 {
+    if let Some(var_1) = &input.bitrate {
         object.key("bitrate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.bitrate).into()),
+            aws_smithy_types::Number::Float((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.coding_mode {
-        object.key("codingMode").string(var_1.as_str());
+    if let Some(var_2) = &input.coding_mode {
+        object.key("codingMode").string(var_2.as_str());
     }
-    if input.sample_rate != 0.0 {
+    if let Some(var_3) = &input.sample_rate {
         object.key("sampleRate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.sample_rate).into()),
+            aws_smithy_types::Number::Float((*var_3).into()),
         );
     }
     Ok(())

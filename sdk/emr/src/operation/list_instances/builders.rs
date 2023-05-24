@@ -5,7 +5,7 @@ pub use crate::operation::list_instances::_list_instances_input::ListInstancesIn
 
 /// Fluent builder constructing a request to `ListInstances`.
 ///
-/// <p>Provides information for all active EC2 instances and EC2 instances terminated in the last 30 days, up to a maximum of 2,000. EC2 instances in any of the following states are considered active: AWAITING_FULFILLMENT, PROVISIONING, BOOTSTRAPPING, RUNNING.</p>
+/// <p>Provides information for all active Amazon EC2 instances and Amazon EC2 instances terminated in the last 30 days, up to a maximum of 2,000. Amazon EC2 instances in any of the following states are considered active: AWAITING_FULFILLMENT, PROVISIONING, BOOTSTRAPPING, RUNNING.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListInstancesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

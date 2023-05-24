@@ -22,5 +22,8 @@ pub fn ser_list_notebook_executions_input(
     if let Some(var_5) = &input.marker {
         object.key("Marker").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.execution_engine_id {
+        object.key("ExecutionEngineId").string(var_6.as_str());
+    }
     Ok(())
 }

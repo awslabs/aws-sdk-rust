@@ -74,12 +74,12 @@ impl CreatePackageFluentBuilder {
         self.inner = self.inner.set_package_name(input);
         self
     }
-    /// <p>Type of package.</p>
+    /// <p>The type of package.</p>
     pub fn package_type(mut self, input: crate::types::PackageType) -> Self {
         self.inner = self.inner.package_type(input);
         self
     }
-    /// <p>Type of package.</p>
+    /// <p>The type of package.</p>
     pub fn set_package_type(
         mut self,
         input: std::option::Option<crate::types::PackageType>,

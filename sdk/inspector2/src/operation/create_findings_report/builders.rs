@@ -5,7 +5,7 @@ pub use crate::operation::create_findings_report::_create_findings_report_input:
 
 /// Fluent builder constructing a request to `CreateFindingsReport`.
 ///
-/// <p>Creates a finding report.</p>
+/// <p>Creates a finding report. By default only <code>ACTIVE</code> findings are returned in the report. To see <code>SUPRESSED</code> or <code>CLOSED</code> findings you must specify a value for the <code>findingStatus</code> filter criteria. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateFindingsReportFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,

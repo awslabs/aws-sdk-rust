@@ -3,26 +3,26 @@ pub fn ser_journey_limits(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JourneyLimits,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.daily_cap != 0 {
+    if let Some(var_1) = &input.daily_cap {
         object.key("DailyCap").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.daily_cap).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.endpoint_reentry_cap != 0 {
+    if let Some(var_2) = &input.endpoint_reentry_cap {
         object.key("EndpointReentryCap").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.endpoint_reentry_cap).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.messages_per_second != 0 {
+    if let Some(var_3) = &input.messages_per_second {
         object.key("MessagesPerSecond").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.messages_per_second).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_1) = &input.endpoint_reentry_interval {
-        object.key("EndpointReentryInterval").string(var_1.as_str());
+    if let Some(var_4) = &input.endpoint_reentry_interval {
+        object.key("EndpointReentryInterval").string(var_4.as_str());
     }
     Ok(())
 }

@@ -8,7 +8,7 @@ pub struct UpdateDeviceStateInput {
     pub device_id: std::option::Option<std::string::String>,
     /// <p>If true, the device is enabled. If false, the device is disabled.</p>
     #[doc(hidden)]
-    pub enabled: bool,
+    pub enabled: std::option::Option<bool>,
 }
 impl UpdateDeviceStateInput {
     /// <p>The unique identifier of the device.</p>
@@ -16,7 +16,7 @@ impl UpdateDeviceStateInput {
         self.device_id.as_deref()
     }
     /// <p>If true, the device is enabled. If false, the device is disabled.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
 }
@@ -66,7 +66,7 @@ impl UpdateDeviceStateInputBuilder {
         Ok(
             crate::operation::update_device_state::UpdateDeviceStateInput {
                 device_id: self.device_id,
-                enabled: self.enabled.unwrap_or_default(),
+                enabled: self.enabled,
             },
         )
     }

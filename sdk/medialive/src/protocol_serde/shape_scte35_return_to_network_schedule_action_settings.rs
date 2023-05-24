@@ -61,10 +61,10 @@ pub fn ser_scte35_return_to_network_schedule_action_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Scte35ReturnToNetworkScheduleActionSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    {
+    if let Some(var_1) = &input.splice_event_id {
         object.key("spliceEventId").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.splice_event_id).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
     Ok(())

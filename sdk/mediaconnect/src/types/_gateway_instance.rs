@@ -27,7 +27,7 @@ pub struct GatewayInstance {
     pub instance_state: std::option::Option<crate::types::InstanceState>,
     /// The running bridge count.
     #[doc(hidden)]
-    pub running_bridge_count: i32,
+    pub running_bridge_count: std::option::Option<i32>,
 }
 impl GatewayInstance {
     /// The availability of the instance to host new bridges. The bridgePlacement property can be LOCKED or AVAILABLE. If it is LOCKED, no new bridges can be deployed to this instance. If it is AVAILABLE, new bridges can be added to this instance.
@@ -59,7 +59,7 @@ impl GatewayInstance {
         self.instance_state.as_ref()
     }
     /// The running bridge count.
-    pub fn running_bridge_count(&self) -> i32 {
+    pub fn running_bridge_count(&self) -> std::option::Option<i32> {
         self.running_bridge_count
     }
 }
@@ -194,7 +194,7 @@ impl GatewayInstanceBuilder {
             instance_id: self.instance_id,
             instance_messages: self.instance_messages,
             instance_state: self.instance_state,
-            running_bridge_count: self.running_bridge_count.unwrap_or_default(),
+            running_bridge_count: self.running_bridge_count,
         }
     }
 }

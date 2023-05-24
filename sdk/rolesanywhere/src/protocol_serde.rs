@@ -52,6 +52,10 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_trust_anchors;
 
+pub(crate) mod shape_put_notification_settings;
+
+pub(crate) mod shape_reset_notification_settings;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
@@ -78,6 +82,10 @@ pub(crate) mod shape_create_trust_anchor_input;
 
 pub(crate) mod shape_import_crl_input;
 
+pub(crate) mod shape_put_notification_settings_input;
+
+pub(crate) mod shape_reset_notification_settings_input;
+
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_tag_resource_input;
@@ -97,6 +105,10 @@ pub(crate) mod shape_validation_exception;
 pub(crate) mod shape_crl_detail;
 
 pub(crate) mod shape_crl_details;
+
+pub(crate) mod shape_notification_setting;
+
+pub(crate) mod shape_notification_setting_key;
 
 pub(crate) mod shape_profile_detail;
 
@@ -122,6 +134,8 @@ pub(crate) mod shape_instance_properties;
 
 pub(crate) mod shape_managed_policy_list;
 
+pub(crate) mod shape_notification_setting_details;
+
 pub(crate) mod shape_role_arn_list;
 
 pub(crate) mod shape_source_data;
@@ -131,5 +145,7 @@ pub(crate) mod shape_subject_summary;
 pub(crate) mod shape_credential_summary;
 
 pub(crate) mod shape_instance_property;
+
+pub(crate) mod shape_notification_setting_detail;
 
 pub(crate) mod shape_instance_property_map;

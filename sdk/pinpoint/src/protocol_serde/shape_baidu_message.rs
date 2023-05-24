@@ -31,42 +31,42 @@ pub fn ser_baidu_message(
     if let Some(var_10) = &input.raw_content {
         object.key("RawContent").string(var_10.as_str());
     }
-    if input.silent_push {
-        object.key("SilentPush").boolean(input.silent_push);
+    if let Some(var_11) = &input.silent_push {
+        object.key("SilentPush").boolean(*var_11);
     }
-    if let Some(var_11) = &input.small_image_icon_url {
-        object.key("SmallImageIconUrl").string(var_11.as_str());
+    if let Some(var_12) = &input.small_image_icon_url {
+        object.key("SmallImageIconUrl").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.sound {
-        object.key("Sound").string(var_12.as_str());
+    if let Some(var_13) = &input.sound {
+        object.key("Sound").string(var_13.as_str());
     }
-    if let Some(var_13) = &input.substitutions {
+    if let Some(var_14) = &input.substitutions {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("Substitutions").start_object();
-        for (key_15, value_16) in var_13 {
+        let mut object_15 = object.key("Substitutions").start_object();
+        for (key_16, value_17) in var_14 {
             {
-                let mut array_17 = object_14.key(key_15.as_str()).start_array();
-                for item_18 in value_16 {
+                let mut array_18 = object_15.key(key_16.as_str()).start_array();
+                for item_19 in value_17 {
                     {
-                        array_17.value().string(item_18.as_str());
+                        array_18.value().string(item_19.as_str());
                     }
                 }
-                array_17.finish();
+                array_18.finish();
             }
         }
-        object_14.finish();
+        object_15.finish();
     }
-    if input.time_to_live != 0 {
+    if let Some(var_20) = &input.time_to_live {
         object.key("TimeToLive").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.time_to_live).into()),
+            aws_smithy_types::Number::NegInt((*var_20).into()),
         );
     }
-    if let Some(var_19) = &input.title {
-        object.key("Title").string(var_19.as_str());
+    if let Some(var_21) = &input.title {
+        object.key("Title").string(var_21.as_str());
     }
-    if let Some(var_20) = &input.url {
-        object.key("Url").string(var_20.as_str());
+    if let Some(var_22) = &input.url {
+        object.key("Url").string(var_22.as_str());
     }
     Ok(())
 }

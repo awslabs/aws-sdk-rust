@@ -32,11 +32,6 @@ where
                                     .transpose()?,
                                 );
                             }
-                            "DataSourceConfig" => {
-                                builder = builder.set_data_source_config(
-                                    crate::protocol_serde::shape_eoj_data_source_config_input::de_eoj_data_source_config_input(tokens)?
-                                );
-                            }
                             "RasterDataCollectionQuery" => {
                                 builder = builder.set_raster_data_collection_query(
                                     crate::protocol_serde::shape_raster_data_collection_query_output::de_raster_data_collection_query_output(tokens)?

@@ -5,7 +5,7 @@ pub use crate::operation::list_notebook_executions::_list_notebook_executions_in
 
 /// Fluent builder constructing a request to `ListNotebookExecutions`.
 ///
-/// <p>Provides summaries of all notebook executions. You can filter the list based on multiple criteria such as status, time range, and editor id. Returns a maximum of 50 notebook executions and a marker to track the paging of a longer notebook execution list across multiple <code>ListNotebookExecution</code> calls.</p>
+/// <p>Provides summaries of all notebook executions. You can filter the list based on multiple criteria such as status, time range, and editor id. Returns a maximum of 50 notebook executions and a marker to track the paging of a longer notebook execution list across multiple <code>ListNotebookExecutions</code> calls.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListNotebookExecutionsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
@@ -155,6 +155,19 @@ impl ListNotebookExecutionsFluentBuilder {
     /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call, that indicates the start of the list for this <code>ListNotebookExecutions</code> call.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
+        self
+    }
+    /// <p>The unique ID of the execution engine.</p>
+    pub fn execution_engine_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.inner = self.inner.execution_engine_id(input.into());
+        self
+    }
+    /// <p>The unique ID of the execution engine.</p>
+    pub fn set_execution_engine_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.set_execution_engine_id(input);
         self
     }
 }

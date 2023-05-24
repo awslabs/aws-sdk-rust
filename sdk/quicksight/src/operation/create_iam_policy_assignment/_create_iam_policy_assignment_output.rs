@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct CreateIamPolicyAssignmentOutput {
-    /// <p>The name of the assignment. This name must be unique within the Amazon Web Services account.</p>
+    /// <p>The name of the assignment. The name must be unique within the Amazon Web Services account.</p>
     #[doc(hidden)]
     pub assignment_name: std::option::Option<std::string::String>,
     /// <p>The ID for the assignment.</p>
@@ -34,7 +34,7 @@ pub struct CreateIamPolicyAssignmentOutput {
     _request_id: Option<String>,
 }
 impl CreateIamPolicyAssignmentOutput {
-    /// <p>The name of the assignment. This name must be unique within the Amazon Web Services account.</p>
+    /// <p>The name of the assignment. The name must be unique within the Amazon Web Services account.</p>
     pub fn assignment_name(&self) -> std::option::Option<&str> {
         self.assignment_name.as_deref()
     }
@@ -100,12 +100,12 @@ pub struct CreateIamPolicyAssignmentOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateIamPolicyAssignmentOutputBuilder {
-    /// <p>The name of the assignment. This name must be unique within the Amazon Web Services account.</p>
+    /// <p>The name of the assignment. The name must be unique within the Amazon Web Services account.</p>
     pub fn assignment_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.assignment_name = Some(input.into());
         self
     }
-    /// <p>The name of the assignment. This name must be unique within the Amazon Web Services account.</p>
+    /// <p>The name of the assignment. The name must be unique within the Amazon Web Services account.</p>
     pub fn set_assignment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.assignment_name = input;
         self

@@ -13,7 +13,7 @@ pub struct MutableClusterInfo {
     pub configuration_info: std::option::Option<crate::types::ConfigurationInfo>,
     /// <p>The number of broker nodes in the cluster.</p>
     #[doc(hidden)]
-    pub number_of_broker_nodes: i32,
+    pub number_of_broker_nodes: std::option::Option<i32>,
     /// <p>Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.</p>
     #[doc(hidden)]
     pub enhanced_monitoring: std::option::Option<crate::types::EnhancedMonitoring>,
@@ -54,7 +54,7 @@ impl MutableClusterInfo {
         self.configuration_info.as_ref()
     }
     /// <p>The number of broker nodes in the cluster.</p>
-    pub fn number_of_broker_nodes(&self) -> i32 {
+    pub fn number_of_broker_nodes(&self) -> std::option::Option<i32> {
         self.number_of_broker_nodes
     }
     /// <p>Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.</p>
@@ -280,7 +280,7 @@ impl MutableClusterInfoBuilder {
         crate::types::MutableClusterInfo {
             broker_ebs_volume_info: self.broker_ebs_volume_info,
             configuration_info: self.configuration_info,
-            number_of_broker_nodes: self.number_of_broker_nodes.unwrap_or_default(),
+            number_of_broker_nodes: self.number_of_broker_nodes,
             enhanced_monitoring: self.enhanced_monitoring,
             open_monitoring: self.open_monitoring,
             kafka_version: self.kafka_version,

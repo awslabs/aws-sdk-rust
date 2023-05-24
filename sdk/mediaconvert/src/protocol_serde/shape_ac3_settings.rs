@@ -3,49 +3,49 @@ pub fn ser_ac3_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Ac3Settings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.bitrate != 0 {
+    if let Some(var_1) = &input.bitrate {
         object.key("bitrate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.bitrate).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.bitstream_mode {
-        object.key("bitstreamMode").string(var_1.as_str());
+    if let Some(var_2) = &input.bitstream_mode {
+        object.key("bitstreamMode").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.coding_mode {
-        object.key("codingMode").string(var_2.as_str());
+    if let Some(var_3) = &input.coding_mode {
+        object.key("codingMode").string(var_3.as_str());
     }
-    if input.dialnorm != 0 {
+    if let Some(var_4) = &input.dialnorm {
         object.key("dialnorm").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.dialnorm).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_3) = &input.dynamic_range_compression_line {
+    if let Some(var_5) = &input.dynamic_range_compression_line {
         object
             .key("dynamicRangeCompressionLine")
-            .string(var_3.as_str());
-    }
-    if let Some(var_4) = &input.dynamic_range_compression_profile {
-        object
-            .key("dynamicRangeCompressionProfile")
-            .string(var_4.as_str());
-    }
-    if let Some(var_5) = &input.dynamic_range_compression_rf {
-        object
-            .key("dynamicRangeCompressionRf")
             .string(var_5.as_str());
     }
-    if let Some(var_6) = &input.lfe_filter {
-        object.key("lfeFilter").string(var_6.as_str());
+    if let Some(var_6) = &input.dynamic_range_compression_profile {
+        object
+            .key("dynamicRangeCompressionProfile")
+            .string(var_6.as_str());
     }
-    if let Some(var_7) = &input.metadata_control {
-        object.key("metadataControl").string(var_7.as_str());
+    if let Some(var_7) = &input.dynamic_range_compression_rf {
+        object
+            .key("dynamicRangeCompressionRf")
+            .string(var_7.as_str());
     }
-    if input.sample_rate != 0 {
+    if let Some(var_8) = &input.lfe_filter {
+        object.key("lfeFilter").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.metadata_control {
+        object.key("metadataControl").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.sample_rate {
         object.key("sampleRate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.sample_rate).into()),
+            aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
     Ok(())

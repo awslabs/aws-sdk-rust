@@ -256,6 +256,11 @@ pub fn ser_create_replication_group_input_input(
     if let Some(var_98) = &input.transit_encryption_mode {
         scope_97.string(var_98.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_99 = writer.prefix("ClusterMode");
+    if let Some(var_100) = &input.cluster_mode {
+        scope_99.string(var_100.as_str());
+    }
     writer.finish();
     Ok(aws_smithy_http::body::SdkBody::from(out))
 }

@@ -6,21 +6,21 @@
 pub struct StreamSelection {
     /// The maximum video bitrate (bps) to include in output.
     #[doc(hidden)]
-    pub max_video_bits_per_second: i32,
+    pub max_video_bits_per_second: std::option::Option<i32>,
     /// The minimum video bitrate (bps) to include in output.
     #[doc(hidden)]
-    pub min_video_bits_per_second: i32,
+    pub min_video_bits_per_second: std::option::Option<i32>,
     /// A directive that determines the order of streams in the output.
     #[doc(hidden)]
     pub stream_order: std::option::Option<crate::types::StreamOrder>,
 }
 impl StreamSelection {
     /// The maximum video bitrate (bps) to include in output.
-    pub fn max_video_bits_per_second(&self) -> i32 {
+    pub fn max_video_bits_per_second(&self) -> std::option::Option<i32> {
         self.max_video_bits_per_second
     }
     /// The minimum video bitrate (bps) to include in output.
-    pub fn min_video_bits_per_second(&self) -> i32 {
+    pub fn min_video_bits_per_second(&self) -> std::option::Option<i32> {
         self.min_video_bits_per_second
     }
     /// A directive that determines the order of streams in the output.
@@ -80,8 +80,8 @@ impl StreamSelectionBuilder {
     /// Consumes the builder and constructs a [`StreamSelection`](crate::types::StreamSelection).
     pub fn build(self) -> crate::types::StreamSelection {
         crate::types::StreamSelection {
-            max_video_bits_per_second: self.max_video_bits_per_second.unwrap_or_default(),
-            min_video_bits_per_second: self.min_video_bits_per_second.unwrap_or_default(),
+            max_video_bits_per_second: self.max_video_bits_per_second,
+            min_video_bits_per_second: self.min_video_bits_per_second,
             stream_order: self.stream_order,
         }
     }

@@ -5,11 +5,11 @@
 pub struct AddEgressGatewayBridgeRequest {
     /// The maximum expected bitrate (in bps).
     #[doc(hidden)]
-    pub max_bitrate: i32,
+    pub max_bitrate: std::option::Option<i32>,
 }
 impl AddEgressGatewayBridgeRequest {
     /// The maximum expected bitrate (in bps).
-    pub fn max_bitrate(&self) -> i32 {
+    pub fn max_bitrate(&self) -> std::option::Option<i32> {
         self.max_bitrate
     }
 }
@@ -40,7 +40,7 @@ impl AddEgressGatewayBridgeRequestBuilder {
     /// Consumes the builder and constructs a [`AddEgressGatewayBridgeRequest`](crate::types::AddEgressGatewayBridgeRequest).
     pub fn build(self) -> crate::types::AddEgressGatewayBridgeRequest {
         crate::types::AddEgressGatewayBridgeRequest {
-            max_bitrate: self.max_bitrate.unwrap_or_default(),
+            max_bitrate: self.max_bitrate,
         }
     }
 }

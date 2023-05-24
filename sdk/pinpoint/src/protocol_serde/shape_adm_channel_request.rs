@@ -9,8 +9,8 @@ pub fn ser_adm_channel_request(
     if let Some(var_2) = &input.client_secret {
         object.key("ClientSecret").string(var_2.as_str());
     }
-    if input.enabled {
-        object.key("Enabled").boolean(input.enabled);
+    if let Some(var_3) = &input.enabled {
+        object.key("Enabled").boolean(*var_3);
     }
     Ok(())
 }

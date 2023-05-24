@@ -20,6 +20,10 @@ pub struct RecommendationSummary {
     #[doc(hidden)]
     pub current_performance_risk_ratings:
         std::option::Option<crate::types::CurrentPerformanceRiskRatings>,
+    /// <p> An array of objects that describes the estimated monthly saving amounts for the instances running on the specified <code>inferredWorkloadTypes</code>. The array contains the top three savings opportunites for the instances running inferred workload types. </p>
+    #[doc(hidden)]
+    pub inferred_workload_savings:
+        std::option::Option<std::vec::Vec<crate::types::InferredWorkloadSaving>>,
 }
 impl RecommendationSummary {
     /// <p>An array of objects that describe a recommendation summary.</p>
@@ -46,6 +50,12 @@ impl RecommendationSummary {
     ) -> std::option::Option<&crate::types::CurrentPerformanceRiskRatings> {
         self.current_performance_risk_ratings.as_ref()
     }
+    /// <p> An array of objects that describes the estimated monthly saving amounts for the instances running on the specified <code>inferredWorkloadTypes</code>. The array contains the top three savings opportunites for the instances running inferred workload types. </p>
+    pub fn inferred_workload_savings(
+        &self,
+    ) -> std::option::Option<&[crate::types::InferredWorkloadSaving]> {
+        self.inferred_workload_savings.as_deref()
+    }
 }
 impl RecommendationSummary {
     /// Creates a new builder-style object to manufacture [`RecommendationSummary`](crate::types::RecommendationSummary).
@@ -65,6 +75,8 @@ pub struct RecommendationSummaryBuilder {
     pub(crate) savings_opportunity: std::option::Option<crate::types::SavingsOpportunity>,
     pub(crate) current_performance_risk_ratings:
         std::option::Option<crate::types::CurrentPerformanceRiskRatings>,
+    pub(crate) inferred_workload_savings:
+        std::option::Option<std::vec::Vec<crate::types::InferredWorkloadSaving>>,
 }
 impl RecommendationSummaryBuilder {
     /// Appends an item to `summaries`.
@@ -141,6 +153,28 @@ impl RecommendationSummaryBuilder {
         self.current_performance_risk_ratings = input;
         self
     }
+    /// Appends an item to `inferred_workload_savings`.
+    ///
+    /// To override the contents of this collection use [`set_inferred_workload_savings`](Self::set_inferred_workload_savings).
+    ///
+    /// <p> An array of objects that describes the estimated monthly saving amounts for the instances running on the specified <code>inferredWorkloadTypes</code>. The array contains the top three savings opportunites for the instances running inferred workload types. </p>
+    pub fn inferred_workload_savings(
+        mut self,
+        input: crate::types::InferredWorkloadSaving,
+    ) -> Self {
+        let mut v = self.inferred_workload_savings.unwrap_or_default();
+        v.push(input);
+        self.inferred_workload_savings = Some(v);
+        self
+    }
+    /// <p> An array of objects that describes the estimated monthly saving amounts for the instances running on the specified <code>inferredWorkloadTypes</code>. The array contains the top three savings opportunites for the instances running inferred workload types. </p>
+    pub fn set_inferred_workload_savings(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InferredWorkloadSaving>>,
+    ) -> Self {
+        self.inferred_workload_savings = input;
+        self
+    }
     /// Consumes the builder and constructs a [`RecommendationSummary`](crate::types::RecommendationSummary).
     pub fn build(self) -> crate::types::RecommendationSummary {
         crate::types::RecommendationSummary {
@@ -149,6 +183,7 @@ impl RecommendationSummaryBuilder {
             account_id: self.account_id,
             savings_opportunity: self.savings_opportunity,
             current_performance_risk_ratings: self.current_performance_risk_ratings,
+            inferred_workload_savings: self.inferred_workload_savings,
         }
     }
 }

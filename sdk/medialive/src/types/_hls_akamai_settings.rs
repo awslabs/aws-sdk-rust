@@ -6,19 +6,19 @@
 pub struct HlsAkamaiSettings {
     /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
     #[doc(hidden)]
-    pub connection_retry_interval: i32,
+    pub connection_retry_interval: std::option::Option<i32>,
     /// Size in seconds of file cache for streaming outputs.
     #[doc(hidden)]
-    pub filecache_duration: i32,
+    pub filecache_duration: std::option::Option<i32>,
     /// Specify whether or not to use chunked transfer encoding to Akamai. User should contact Akamai to enable this feature.
     #[doc(hidden)]
     pub http_transfer_mode: std::option::Option<crate::types::HlsAkamaiHttpTransferMode>,
     /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
     #[doc(hidden)]
-    pub num_retries: i32,
+    pub num_retries: std::option::Option<i32>,
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
     #[doc(hidden)]
-    pub restart_delay: i32,
+    pub restart_delay: std::option::Option<i32>,
     /// Salt for authenticated Akamai.
     #[doc(hidden)]
     pub salt: std::option::Option<std::string::String>,
@@ -28,11 +28,11 @@ pub struct HlsAkamaiSettings {
 }
 impl HlsAkamaiSettings {
     /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
-    pub fn connection_retry_interval(&self) -> i32 {
+    pub fn connection_retry_interval(&self) -> std::option::Option<i32> {
         self.connection_retry_interval
     }
     /// Size in seconds of file cache for streaming outputs.
-    pub fn filecache_duration(&self) -> i32 {
+    pub fn filecache_duration(&self) -> std::option::Option<i32> {
         self.filecache_duration
     }
     /// Specify whether or not to use chunked transfer encoding to Akamai. User should contact Akamai to enable this feature.
@@ -42,11 +42,11 @@ impl HlsAkamaiSettings {
         self.http_transfer_mode.as_ref()
     }
     /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
-    pub fn num_retries(&self) -> i32 {
+    pub fn num_retries(&self) -> std::option::Option<i32> {
         self.num_retries
     }
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
-    pub fn restart_delay(&self) -> i32 {
+    pub fn restart_delay(&self) -> std::option::Option<i32> {
         self.restart_delay
     }
     /// Salt for authenticated Akamai.
@@ -154,11 +154,11 @@ impl HlsAkamaiSettingsBuilder {
     /// Consumes the builder and constructs a [`HlsAkamaiSettings`](crate::types::HlsAkamaiSettings).
     pub fn build(self) -> crate::types::HlsAkamaiSettings {
         crate::types::HlsAkamaiSettings {
-            connection_retry_interval: self.connection_retry_interval.unwrap_or_default(),
-            filecache_duration: self.filecache_duration.unwrap_or_default(),
+            connection_retry_interval: self.connection_retry_interval,
+            filecache_duration: self.filecache_duration,
             http_transfer_mode: self.http_transfer_mode,
-            num_retries: self.num_retries.unwrap_or_default(),
-            restart_delay: self.restart_delay.unwrap_or_default(),
+            num_retries: self.num_retries,
+            restart_delay: self.restart_delay,
             salt: self.salt,
             token: self.token,
         }

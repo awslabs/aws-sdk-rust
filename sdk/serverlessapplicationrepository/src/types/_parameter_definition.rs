@@ -24,22 +24,22 @@ pub struct ParameterDefinition {
     pub description: std::option::Option<std::string::String>,
     /// <p>An integer value that determines the largest number of characters that you want to allow for String types.</p>
     #[doc(hidden)]
-    pub max_length: i32,
+    pub max_length: std::option::Option<i32>,
     /// <p>A numeric value that determines the largest numeric value that you want to allow for Number types.</p>
     #[doc(hidden)]
-    pub max_value: i32,
+    pub max_value: std::option::Option<i32>,
     /// <p>An integer value that determines the smallest number of characters that you want to allow for String types.</p>
     #[doc(hidden)]
-    pub min_length: i32,
+    pub min_length: std::option::Option<i32>,
     /// <p>A numeric value that determines the smallest numeric value that you want to allow for Number types.</p>
     #[doc(hidden)]
-    pub min_value: i32,
+    pub min_value: std::option::Option<i32>,
     /// <p>The name of the parameter.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>Whether to mask the parameter value whenever anyone makes a call that describes the stack. If you set the value to true, the parameter value is masked with asterisks (*****).</p>
     #[doc(hidden)]
-    pub no_echo: bool,
+    pub no_echo: std::option::Option<bool>,
     /// <p>A list of AWS SAM resources that use this parameter.</p>
     #[doc(hidden)]
     pub referenced_by_resources: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -81,19 +81,19 @@ impl ParameterDefinition {
         self.description.as_deref()
     }
     /// <p>An integer value that determines the largest number of characters that you want to allow for String types.</p>
-    pub fn max_length(&self) -> i32 {
+    pub fn max_length(&self) -> std::option::Option<i32> {
         self.max_length
     }
     /// <p>A numeric value that determines the largest numeric value that you want to allow for Number types.</p>
-    pub fn max_value(&self) -> i32 {
+    pub fn max_value(&self) -> std::option::Option<i32> {
         self.max_value
     }
     /// <p>An integer value that determines the smallest number of characters that you want to allow for String types.</p>
-    pub fn min_length(&self) -> i32 {
+    pub fn min_length(&self) -> std::option::Option<i32> {
         self.min_length
     }
     /// <p>A numeric value that determines the smallest numeric value that you want to allow for Number types.</p>
-    pub fn min_value(&self) -> i32 {
+    pub fn min_value(&self) -> std::option::Option<i32> {
         self.min_value
     }
     /// <p>The name of the parameter.</p>
@@ -101,7 +101,7 @@ impl ParameterDefinition {
         self.name.as_deref()
     }
     /// <p>Whether to mask the parameter value whenever anyone makes a call that describes the stack. If you set the value to true, the parameter value is masked with asterisks (*****).</p>
-    pub fn no_echo(&self) -> bool {
+    pub fn no_echo(&self) -> std::option::Option<bool> {
         self.no_echo
     }
     /// <p>A list of AWS SAM resources that use this parameter.</p>
@@ -331,12 +331,12 @@ impl ParameterDefinitionBuilder {
             constraint_description: self.constraint_description,
             default_value: self.default_value,
             description: self.description,
-            max_length: self.max_length.unwrap_or_default(),
-            max_value: self.max_value.unwrap_or_default(),
-            min_length: self.min_length.unwrap_or_default(),
-            min_value: self.min_value.unwrap_or_default(),
+            max_length: self.max_length,
+            max_value: self.max_value,
+            min_length: self.min_length,
+            min_value: self.min_value,
             name: self.name,
-            no_echo: self.no_echo.unwrap_or_default(),
+            no_echo: self.no_echo,
             referenced_by_resources: self.referenced_by_resources,
             r#type: self.r#type,
         }

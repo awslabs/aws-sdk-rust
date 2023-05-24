@@ -8,7 +8,7 @@ pub struct UpdateOrganizationConfigurationInput {
     pub graph_arn: std::option::Option<std::string::String>,
     /// <p>Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.</p>
     #[doc(hidden)]
-    pub auto_enable: bool,
+    pub auto_enable: std::option::Option<bool>,
 }
 impl UpdateOrganizationConfigurationInput {
     /// <p>The ARN of the organization behavior graph.</p>
@@ -16,7 +16,7 @@ impl UpdateOrganizationConfigurationInput {
         self.graph_arn.as_deref()
     }
     /// <p>Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.</p>
-    pub fn auto_enable(&self) -> bool {
+    pub fn auto_enable(&self) -> std::option::Option<bool> {
         self.auto_enable
     }
 }
@@ -67,7 +67,6 @@ impl UpdateOrganizationConfigurationInputBuilder {
                 graph_arn: self.graph_arn
                 ,
                 auto_enable: self.auto_enable
-                    .unwrap_or_default()
                 ,
             }
         )

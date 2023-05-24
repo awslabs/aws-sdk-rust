@@ -2,7 +2,7 @@
 
 /// <p>Details about the import snapshot task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnapshotTaskDetail {
     /// <p>The description of the snapshot.</p>
     #[doc(hidden)]
@@ -84,6 +84,23 @@ impl SnapshotTaskDetail {
         self.user_bucket.as_ref()
     }
 }
+impl std::fmt::Debug for SnapshotTaskDetail {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SnapshotTaskDetail");
+        formatter.field("description", &self.description);
+        formatter.field("disk_image_size", &self.disk_image_size);
+        formatter.field("encrypted", &self.encrypted);
+        formatter.field("format", &self.format);
+        formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.field("progress", &self.progress);
+        formatter.field("snapshot_id", &self.snapshot_id);
+        formatter.field("status", &self.status);
+        formatter.field("status_message", &self.status_message);
+        formatter.field("url", &"*** Sensitive Data Redacted ***");
+        formatter.field("user_bucket", &self.user_bucket);
+        formatter.finish()
+    }
+}
 impl SnapshotTaskDetail {
     /// Creates a new builder-style object to manufacture [`SnapshotTaskDetail`](crate::types::SnapshotTaskDetail).
     pub fn builder() -> crate::types::builders::SnapshotTaskDetailBuilder {
@@ -93,7 +110,7 @@ impl SnapshotTaskDetail {
 
 /// A builder for [`SnapshotTaskDetail`](crate::types::SnapshotTaskDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct SnapshotTaskDetailBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) disk_image_size: std::option::Option<f64>,
@@ -236,5 +253,22 @@ impl SnapshotTaskDetailBuilder {
             url: self.url,
             user_bucket: self.user_bucket,
         }
+    }
+}
+impl std::fmt::Debug for SnapshotTaskDetailBuilder {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SnapshotTaskDetailBuilder");
+        formatter.field("description", &self.description);
+        formatter.field("disk_image_size", &self.disk_image_size);
+        formatter.field("encrypted", &self.encrypted);
+        formatter.field("format", &self.format);
+        formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.field("progress", &self.progress);
+        formatter.field("snapshot_id", &self.snapshot_id);
+        formatter.field("status", &self.status);
+        formatter.field("status_message", &self.status_message);
+        formatter.field("url", &"*** Sensitive Data Redacted ***");
+        formatter.field("user_bucket", &self.user_bucket);
+        formatter.finish()
     }
 }

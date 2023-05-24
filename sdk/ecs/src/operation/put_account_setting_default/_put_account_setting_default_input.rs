@@ -7,7 +7,7 @@ pub struct PutAccountSettingDefaultInput {
     /// <p>When you specify <code>fargateFIPSMode</code> for the <code>name</code> and <code>enabled</code> for the <code>value</code>, Fargate uses FIPS-140 compliant cryptographic algorithms on your tasks. For more information about FIPS-140 compliance with Fargate, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-fips-compliance.html"> Amazon Web Services Fargate Federal Information Processing Standard (FIPS) 140-2 compliance</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::SettingName>,
-    /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code> and <code>disabled</code>.</p>
+    /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and <code>off</code>.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
@@ -17,7 +17,7 @@ impl PutAccountSettingDefaultInput {
     pub fn name(&self) -> std::option::Option<&crate::types::SettingName> {
         self.name.as_ref()
     }
-    /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code> and <code>disabled</code>.</p>
+    /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and <code>off</code>.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -51,12 +51,12 @@ impl PutAccountSettingDefaultInputBuilder {
         self.name = input;
         self
     }
-    /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code> and <code>disabled</code>.</p>
+    /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and <code>off</code>.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
         self.value = Some(input.into());
         self
     }
-    /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code> and <code>disabled</code>.</p>
+    /// <p>The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and <code>off</code>.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.value = input;
         self

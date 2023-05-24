@@ -3,16 +3,16 @@ pub fn ser_video_black_failover_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VideoBlackFailoverSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.black_detect_threshold != 0.0 {
+    if let Some(var_1) = &input.black_detect_threshold {
         object.key("blackDetectThreshold").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.black_detect_threshold).into()),
+            aws_smithy_types::Number::Float((*var_1).into()),
         );
     }
-    if input.video_black_threshold_msec != 0 {
+    if let Some(var_2) = &input.video_black_threshold_msec {
         object.key("videoBlackThresholdMsec").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.video_black_threshold_msec).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

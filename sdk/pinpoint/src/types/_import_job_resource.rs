@@ -6,7 +6,7 @@
 pub struct ImportJobResource {
     /// <p>Specifies whether the import job creates a segment that contains the endpoints, when the endpoint definitions are imported.</p>
     #[doc(hidden)]
-    pub define_segment: bool,
+    pub define_segment: std::option::Option<bool>,
     /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when importing endpoint definitions, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
     #[doc(hidden)]
     pub external_id: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct ImportJobResource {
     pub format: std::option::Option<crate::types::Format>,
     /// <p>Specifies whether the import job registers the endpoints with Amazon Pinpoint, when the endpoint definitions are imported.</p>
     #[doc(hidden)]
-    pub register_endpoints: bool,
+    pub register_endpoints: std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to access the Amazon S3 location to import endpoint definitions from.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -39,7 +39,7 @@ pub struct ImportJobResource {
 }
 impl ImportJobResource {
     /// <p>Specifies whether the import job creates a segment that contains the endpoints, when the endpoint definitions are imported.</p>
-    pub fn define_segment(&self) -> bool {
+    pub fn define_segment(&self) -> std::option::Option<bool> {
         self.define_segment
     }
     /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when importing endpoint definitions, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
@@ -52,7 +52,7 @@ impl ImportJobResource {
         self.format.as_ref()
     }
     /// <p>Specifies whether the import job registers the endpoints with Amazon Pinpoint, when the endpoint definitions are imported.</p>
-    pub fn register_endpoints(&self) -> bool {
+    pub fn register_endpoints(&self) -> std::option::Option<bool> {
         self.register_endpoints
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to access the Amazon S3 location to import endpoint definitions from.</p>
@@ -199,10 +199,10 @@ impl ImportJobResourceBuilder {
     /// Consumes the builder and constructs a [`ImportJobResource`](crate::types::ImportJobResource).
     pub fn build(self) -> crate::types::ImportJobResource {
         crate::types::ImportJobResource {
-            define_segment: self.define_segment.unwrap_or_default(),
+            define_segment: self.define_segment,
             external_id: self.external_id,
             format: self.format,
-            register_endpoints: self.register_endpoints.unwrap_or_default(),
+            register_endpoints: self.register_endpoints,
             role_arn: self.role_arn,
             s3_url: self.s3_url,
             segment_id: self.segment_id,

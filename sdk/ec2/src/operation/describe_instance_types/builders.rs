@@ -112,7 +112,7 @@ impl DescribeInstanceTypesFluentBuilder {
     ///
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li> <p> <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported (<code>true</code> | <code>false</code>).</p> </li>
+    /// <li> <p> <code>auto-recovery-supported</code> - Indicates whether Amazon CloudWatch action based recovery is supported (<code>true</code> | <code>false</code>).</p> </li>
     /// <li> <p> <code>bare-metal</code> - Indicates whether it is a bare metal instance type (<code>true</code> | <code>false</code>).</p> </li>
     /// <li> <p> <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance type (<code>true</code> | <code>false</code>).</p> </li>
     /// <li> <p> <code>current-generation</code> - Indicates whether this instance type is the latest generation instance type of an instance family (<code>true</code> | <code>false</code>).</p> </li>
@@ -165,7 +165,7 @@ impl DescribeInstanceTypesFluentBuilder {
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li> <p> <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported (<code>true</code> | <code>false</code>).</p> </li>
+    /// <li> <p> <code>auto-recovery-supported</code> - Indicates whether Amazon CloudWatch action based recovery is supported (<code>true</code> | <code>false</code>).</p> </li>
     /// <li> <p> <code>bare-metal</code> - Indicates whether it is a bare metal instance type (<code>true</code> | <code>false</code>).</p> </li>
     /// <li> <p> <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance type (<code>true</code> | <code>false</code>).</p> </li>
     /// <li> <p> <code>current-generation</code> - Indicates whether this instance type is the latest generation instance type of an instance family (<code>true</code> | <code>false</code>).</p> </li>

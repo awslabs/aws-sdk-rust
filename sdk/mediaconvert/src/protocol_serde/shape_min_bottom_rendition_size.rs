@@ -3,16 +3,16 @@ pub fn ser_min_bottom_rendition_size(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MinBottomRenditionSize,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.height != 0 {
+    if let Some(var_1) = &input.height {
         object.key("height").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.height).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.width != 0 {
+    if let Some(var_2) = &input.width {
         object.key("width").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.width).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

@@ -18,7 +18,6 @@ pub use crate::operation::put_bucket_notification_configuration::_put_bucket_not
 /// <p>By default, only the bucket owner can configure notifications on a bucket. However, bucket owners can use a bucket policy to grant permission to other users to set this configuration with <code>s3:PutBucketNotification</code> permission.</p> <note>
 /// <p>The PUT notification is an atomic operation. For example, suppose your notification configuration includes SNS topic, SQS queue, and Lambda function configurations. When you send a PUT request with this configuration, Amazon S3 sends test messages to your SNS topic. If the message fails, the entire PUT action will fail, and Amazon S3 will not add the configuration to your bucket.</p>
 /// </note>
-/// <p> <b>Responses</b> </p>
 /// <p>If the configuration in the request body includes only one <code>TopicConfiguration</code> specifying only the <code>s3:ReducedRedundancyLostObject</code> event type, the response will also include the <code>x-amz-sns-test-message-id</code> header containing the message ID of the test notification sent to the topic.</p>
 /// <p>The following action is related to <code>PutBucketNotificationConfiguration</code>:</p>
 /// <ul>

@@ -152,12 +152,12 @@ impl CreateCaseFluentBuilder {
         self.inner = self.inner.set_cc_email_addresses(input);
         self
     }
-    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.language(input.into());
         self
     }
-    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_language(input);
         self

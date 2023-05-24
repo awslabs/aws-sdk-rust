@@ -173,8 +173,6 @@ pub type CreateParticipantErrorKind = CreateParticipantError;
 pub enum CreateParticipantError {
     /// <p>Request processing failed because of an error or failure with the service.</p>
     InternalServiceException(crate::types::error::InternalServiceException),
-    /// <p>One or more of the specified parameters are not valid.</p>
-    InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The request is not valid.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The specified resource was not found.</p>
@@ -202,7 +200,6 @@ impl std::fmt::Display for CreateParticipantError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Self::InternalServiceException(_inner) => _inner.fmt(f),
-            Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::InvalidRequestException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
@@ -215,9 +212,6 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateParticipa
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InternalServiceException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidParameterException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::InvalidRequestException(_inner) => {
@@ -280,7 +274,6 @@ impl CreateParticipantError {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
             Self::InternalServiceException(e) => e.meta(),
-            Self::InvalidParameterException(e) => e.meta(),
             Self::InvalidRequestException(e) => e.meta(),
             Self::ResourceNotFoundException(e) => e.meta(),
             Self::ServiceQuotaExceededException(e) => e.meta(),
@@ -291,10 +284,6 @@ impl CreateParticipantError {
     /// Returns `true` if the error kind is `CreateParticipantError::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
         matches!(self, Self::InternalServiceException(_))
-    }
-    /// Returns `true` if the error kind is `CreateParticipantError::InvalidParameterException`.
-    pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(self, Self::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `CreateParticipantError::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
@@ -317,7 +306,6 @@ impl std::error::Error for CreateParticipantError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
             Self::InternalServiceException(_inner) => Some(_inner),
-            Self::InvalidParameterException(_inner) => Some(_inner),
             Self::InvalidRequestException(_inner) => Some(_inner),
             Self::ResourceNotFoundException(_inner) => Some(_inner),
             Self::ServiceQuotaExceededException(_inner) => Some(_inner),

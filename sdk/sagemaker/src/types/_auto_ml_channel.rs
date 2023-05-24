@@ -22,6 +22,11 @@ pub struct AutoMlChannel {
     /// <p>The channel type (optional) is an <code>enum</code> string. The default value is <code>training</code>. Channels for training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>. For information on specifying training and validation channel types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation">How to specify training and validation datasets</a>.</p>
     #[doc(hidden)]
     pub channel_type: std::option::Option<crate::types::AutoMlChannelType>,
+    /// <p>If specified, this column name indicates which column of the dataset should be treated as sample weights for use by the objective metric during the training, evaluation, and the selection of the best model. This column is not considered as a predictive feature. For more information on Autopilot metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">Metrics and validation</a>.</p>
+    /// <p>Sample weights should be numeric, non-negative, with larger values indicating which rows are more important than others. Data points that have invalid or no weight value are excluded.</p>
+    /// <p>Support for sample weights is available in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">Ensembling</a> mode only.</p>
+    #[doc(hidden)]
+    pub sample_weight_attribute_name: std::option::Option<std::string::String>,
 }
 impl AutoMlChannel {
     /// <p>The data source for an AutoML channel.</p>
@@ -44,6 +49,12 @@ impl AutoMlChannel {
     pub fn channel_type(&self) -> std::option::Option<&crate::types::AutoMlChannelType> {
         self.channel_type.as_ref()
     }
+    /// <p>If specified, this column name indicates which column of the dataset should be treated as sample weights for use by the objective metric during the training, evaluation, and the selection of the best model. This column is not considered as a predictive feature. For more information on Autopilot metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">Metrics and validation</a>.</p>
+    /// <p>Sample weights should be numeric, non-negative, with larger values indicating which rows are more important than others. Data points that have invalid or no weight value are excluded.</p>
+    /// <p>Support for sample weights is available in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">Ensembling</a> mode only.</p>
+    pub fn sample_weight_attribute_name(&self) -> std::option::Option<&str> {
+        self.sample_weight_attribute_name.as_deref()
+    }
 }
 impl AutoMlChannel {
     /// Creates a new builder-style object to manufacture [`AutoMlChannel`](crate::types::AutoMlChannel).
@@ -61,6 +72,7 @@ pub struct AutoMlChannelBuilder {
     pub(crate) target_attribute_name: std::option::Option<std::string::String>,
     pub(crate) content_type: std::option::Option<std::string::String>,
     pub(crate) channel_type: std::option::Option<crate::types::AutoMlChannelType>,
+    pub(crate) sample_weight_attribute_name: std::option::Option<std::string::String>,
 }
 impl AutoMlChannelBuilder {
     /// <p>The data source for an AutoML channel.</p>
@@ -125,6 +137,23 @@ impl AutoMlChannelBuilder {
         self.channel_type = input;
         self
     }
+    /// <p>If specified, this column name indicates which column of the dataset should be treated as sample weights for use by the objective metric during the training, evaluation, and the selection of the best model. This column is not considered as a predictive feature. For more information on Autopilot metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">Metrics and validation</a>.</p>
+    /// <p>Sample weights should be numeric, non-negative, with larger values indicating which rows are more important than others. Data points that have invalid or no weight value are excluded.</p>
+    /// <p>Support for sample weights is available in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">Ensembling</a> mode only.</p>
+    pub fn sample_weight_attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+        self.sample_weight_attribute_name = Some(input.into());
+        self
+    }
+    /// <p>If specified, this column name indicates which column of the dataset should be treated as sample weights for use by the objective metric during the training, evaluation, and the selection of the best model. This column is not considered as a predictive feature. For more information on Autopilot metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">Metrics and validation</a>.</p>
+    /// <p>Sample weights should be numeric, non-negative, with larger values indicating which rows are more important than others. Data points that have invalid or no weight value are excluded.</p>
+    /// <p>Support for sample weights is available in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">Ensembling</a> mode only.</p>
+    pub fn set_sample_weight_attribute_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.sample_weight_attribute_name = input;
+        self
+    }
     /// Consumes the builder and constructs a [`AutoMlChannel`](crate::types::AutoMlChannel).
     pub fn build(self) -> crate::types::AutoMlChannel {
         crate::types::AutoMlChannel {
@@ -133,6 +162,7 @@ impl AutoMlChannelBuilder {
             target_attribute_name: self.target_attribute_name,
             content_type: self.content_type,
             channel_type: self.channel_type,
+            sample_weight_attribute_name: self.sample_weight_attribute_name,
         }
     }
 }

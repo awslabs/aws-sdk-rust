@@ -46,6 +46,13 @@ pub struct GraphqlApi {
     /// <p>Configuration for Lambda function authorization.</p>
     #[doc(hidden)]
     pub lambda_authorizer_config: std::option::Option<crate::types::LambdaAuthorizerConfig>,
+    /// <p>The DNS records for the API.</p>
+    #[doc(hidden)]
+    pub dns:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
+    #[doc(hidden)]
+    pub visibility: std::option::Option<crate::types::GraphQlApiVisibility>,
 }
 impl GraphqlApi {
     /// <p>The API name.</p>
@@ -112,6 +119,17 @@ impl GraphqlApi {
     ) -> std::option::Option<&crate::types::LambdaAuthorizerConfig> {
         self.lambda_authorizer_config.as_ref()
     }
+    /// <p>The DNS records for the API.</p>
+    pub fn dns(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.dns.as_ref()
+    }
+    /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
+    pub fn visibility(&self) -> std::option::Option<&crate::types::GraphQlApiVisibility> {
+        self.visibility.as_ref()
+    }
 }
 impl GraphqlApi {
     /// Creates a new builder-style object to manufacture [`GraphqlApi`](crate::types::GraphqlApi).
@@ -140,6 +158,9 @@ pub struct GraphqlApiBuilder {
     pub(crate) xray_enabled: std::option::Option<bool>,
     pub(crate) waf_web_acl_arn: std::option::Option<std::string::String>,
     pub(crate) lambda_authorizer_config: std::option::Option<crate::types::LambdaAuthorizerConfig>,
+    pub(crate) dns:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) visibility: std::option::Option<crate::types::GraphQlApiVisibility>,
 }
 impl GraphqlApiBuilder {
     /// <p>The API name.</p>
@@ -326,6 +347,44 @@ impl GraphqlApiBuilder {
         self.lambda_authorizer_config = input;
         self
     }
+    /// Adds a key-value pair to `dns`.
+    ///
+    /// To override the contents of this collection use [`set_dns`](Self::set_dns).
+    ///
+    /// <p>The DNS records for the API.</p>
+    pub fn dns(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.dns.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.dns = Some(hash_map);
+        self
+    }
+    /// <p>The DNS records for the API.</p>
+    pub fn set_dns(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.dns = input;
+        self
+    }
+    /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
+    pub fn visibility(mut self, input: crate::types::GraphQlApiVisibility) -> Self {
+        self.visibility = Some(input);
+        self
+    }
+    /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
+    pub fn set_visibility(
+        mut self,
+        input: std::option::Option<crate::types::GraphQlApiVisibility>,
+    ) -> Self {
+        self.visibility = input;
+        self
+    }
     /// Consumes the builder and constructs a [`GraphqlApi`](crate::types::GraphqlApi).
     pub fn build(self) -> crate::types::GraphqlApi {
         crate::types::GraphqlApi {
@@ -342,6 +401,8 @@ impl GraphqlApiBuilder {
             xray_enabled: self.xray_enabled.unwrap_or_default(),
             waf_web_acl_arn: self.waf_web_acl_arn,
             lambda_authorizer_config: self.lambda_authorizer_config,
+            dns: self.dns,
+            visibility: self.visibility,
         }
     }
 }

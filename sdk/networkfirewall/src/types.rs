@@ -97,6 +97,8 @@ pub use crate::types::_firewall_policy_response::FirewallPolicyResponse;
 
 pub use crate::types::_firewall_policy::FirewallPolicy;
 
+pub use crate::types::_policy_variables::PolicyVariables;
+
 pub use crate::types::_stateful_engine_options::StatefulEngineOptions;
 
 pub use crate::types::_stream_exception_policy::StreamExceptionPolicy;
@@ -212,6 +214,8 @@ mod _override_action;
 mod _per_object_status;
 
 mod _per_object_sync_status;
+
+mod _policy_variables;
 
 mod _port_range;
 

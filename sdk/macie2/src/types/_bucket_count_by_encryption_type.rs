@@ -6,32 +6,32 @@
 pub struct BucketCountByEncryptionType {
     /// <p>The total number of buckets whose default encryption settings are configured to encrypt new objects with an Amazon Web Services managed KMS key or a customer managed KMS key. By default, these buckets encrypt new objects automatically using SSE-KMS encryption.</p>
     #[doc(hidden)]
-    pub kms_managed: i64,
+    pub kms_managed: std::option::Option<i64>,
     /// <p>The total number of buckets whose default encryption settings are configured to encrypt new objects with an Amazon S3 managed key. By default, these buckets encrypt new objects automatically using SSE-S3 encryption.</p>
     #[doc(hidden)]
-    pub s3_managed: i64,
+    pub s3_managed: std::option::Option<i64>,
     /// <p>The total number of buckets that don't specify default server-side encryption behavior for new objects. Default encryption settings aren't configured for these buckets.</p>
     #[doc(hidden)]
-    pub unencrypted: i64,
+    pub unencrypted: std::option::Option<i64>,
     /// <p>The total number of buckets that Amazon Macie doesn't have current encryption metadata for. Macie can't provide current data about the default encryption settings for these buckets.</p>
     #[doc(hidden)]
-    pub unknown: i64,
+    pub unknown: std::option::Option<i64>,
 }
 impl BucketCountByEncryptionType {
     /// <p>The total number of buckets whose default encryption settings are configured to encrypt new objects with an Amazon Web Services managed KMS key or a customer managed KMS key. By default, these buckets encrypt new objects automatically using SSE-KMS encryption.</p>
-    pub fn kms_managed(&self) -> i64 {
+    pub fn kms_managed(&self) -> std::option::Option<i64> {
         self.kms_managed
     }
     /// <p>The total number of buckets whose default encryption settings are configured to encrypt new objects with an Amazon S3 managed key. By default, these buckets encrypt new objects automatically using SSE-S3 encryption.</p>
-    pub fn s3_managed(&self) -> i64 {
+    pub fn s3_managed(&self) -> std::option::Option<i64> {
         self.s3_managed
     }
     /// <p>The total number of buckets that don't specify default server-side encryption behavior for new objects. Default encryption settings aren't configured for these buckets.</p>
-    pub fn unencrypted(&self) -> i64 {
+    pub fn unencrypted(&self) -> std::option::Option<i64> {
         self.unencrypted
     }
     /// <p>The total number of buckets that Amazon Macie doesn't have current encryption metadata for. Macie can't provide current data about the default encryption settings for these buckets.</p>
-    pub fn unknown(&self) -> i64 {
+    pub fn unknown(&self) -> std::option::Option<i64> {
         self.unknown
     }
 }
@@ -95,10 +95,10 @@ impl BucketCountByEncryptionTypeBuilder {
     /// Consumes the builder and constructs a [`BucketCountByEncryptionType`](crate::types::BucketCountByEncryptionType).
     pub fn build(self) -> crate::types::BucketCountByEncryptionType {
         crate::types::BucketCountByEncryptionType {
-            kms_managed: self.kms_managed.unwrap_or_default(),
-            s3_managed: self.s3_managed.unwrap_or_default(),
-            unencrypted: self.unencrypted.unwrap_or_default(),
-            unknown: self.unknown.unwrap_or_default(),
+            kms_managed: self.kms_managed,
+            s3_managed: self.s3_managed,
+            unencrypted: self.unencrypted,
+            unknown: self.unknown,
         }
     }
 }

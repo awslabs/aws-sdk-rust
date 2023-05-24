@@ -101,21 +101,22 @@ impl ExportApiInput {
                         );
                     }
                 }
-                if _input.include_extensions {
-                    query.push_kv(
-                        "includeExtensions",
-                        aws_smithy_types::primitive::Encoder::from(_input.include_extensions)
-                            .encode(),
-                    );
+                if let Some(inner_4) = &_input.include_extensions {
+                    if *inner_4 {
+                        query.push_kv(
+                            "includeExtensions",
+                            aws_smithy_types::primitive::Encoder::from(*inner_4).encode(),
+                        );
+                    }
                 }
-                let inner_4 = &_input.output_type;
-                let inner_4 = inner_4.as_ref().ok_or_else(|| {
+                let inner_5 = &_input.output_type;
+                let inner_5 = inner_5.as_ref().ok_or_else(|| {
                     aws_smithy_http::operation::error::BuildError::missing_field(
                         "output_type",
                         "cannot be empty or unset",
                     )
                 })?;
-                if inner_4.is_empty() {
+                if inner_5.is_empty() {
                     return Err(
                         aws_smithy_http::operation::error::BuildError::missing_field(
                             "output_type",
@@ -123,10 +124,10 @@ impl ExportApiInput {
                         ),
                     );
                 }
-                query.push_kv("outputType", &aws_smithy_http::query::fmt_string(&inner_4));
-                if let Some(inner_5) = &_input.stage_name {
+                query.push_kv("outputType", &aws_smithy_http::query::fmt_string(&inner_5));
+                if let Some(inner_6) = &_input.stage_name {
                     {
-                        query.push_kv("stageName", &aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("stageName", &aws_smithy_http::query::fmt_string(&inner_6));
                     }
                 }
                 Ok(())

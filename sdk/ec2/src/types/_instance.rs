@@ -34,8 +34,8 @@ pub struct Instance {
     /// <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
     #[doc(hidden)]
     pub platform: std::option::Option<crate::types::PlatformValues>,
-    /// <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the <code>running</code> state. </p>
-    /// <p>[EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
+    /// <p>[IPv4 only] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the <code>running</code> state. </p>
+    /// <p>The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
     #[doc(hidden)]
     pub private_dns_name: std::option::Option<std::string::String>,
     /// <p>The private IPv4 address assigned to the instance.</p>
@@ -44,7 +44,7 @@ pub struct Instance {
     /// <p>The product codes attached to this instance, if applicable.</p>
     #[doc(hidden)]
     pub product_codes: std::option::Option<std::vec::Vec<crate::types::ProductCode>>,
-    /// <p>(IPv4 only) The public DNS name assigned to the instance. This name is not available until the instance enters the <code>running</code> state. For EC2-VPC, this name is only available if you've enabled DNS hostnames for your VPC.</p>
+    /// <p>[IPv4 only] The public DNS name assigned to the instance. This name is not available until the instance enters the <code>running</code> state. This name is only available if you've enabled DNS hostnames for your VPC.</p>
     #[doc(hidden)]
     pub public_dns_name: std::option::Option<std::string::String>,
     /// <p>The public IPv4 address, or the Carrier IP address assigned to the instance, if applicable.</p>
@@ -60,10 +60,10 @@ pub struct Instance {
     /// <p>The reason for the most recent state transition. This might be an empty string.</p>
     #[doc(hidden)]
     pub state_transition_reason: std::option::Option<std::string::String>,
-    /// <p>[EC2-VPC] The ID of the subnet in which the instance is running.</p>
+    /// <p>The ID of the subnet in which the instance is running.</p>
     #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
-    /// <p>[EC2-VPC] The ID of the VPC in which the instance is running.</p>
+    /// <p>The ID of the VPC in which the instance is running.</p>
     #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The architecture of the image.</p>
@@ -99,7 +99,7 @@ pub struct Instance {
     #[doc(hidden)]
     pub elastic_inference_accelerator_associations:
         std::option::Option<std::vec::Vec<crate::types::ElasticInferenceAcceleratorAssociation>>,
-    /// <p>[EC2-VPC] The network interfaces for the instance.</p>
+    /// <p>The network interfaces for the instance.</p>
     #[doc(hidden)]
     pub network_interfaces:
         std::option::Option<std::vec::Vec<crate::types::InstanceNetworkInterface>>,
@@ -227,8 +227,8 @@ impl Instance {
     pub fn platform(&self) -> std::option::Option<&crate::types::PlatformValues> {
         self.platform.as_ref()
     }
-    /// <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the <code>running</code> state. </p>
-    /// <p>[EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
+    /// <p>[IPv4 only] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the <code>running</code> state. </p>
+    /// <p>The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
     pub fn private_dns_name(&self) -> std::option::Option<&str> {
         self.private_dns_name.as_deref()
     }
@@ -240,7 +240,7 @@ impl Instance {
     pub fn product_codes(&self) -> std::option::Option<&[crate::types::ProductCode]> {
         self.product_codes.as_deref()
     }
-    /// <p>(IPv4 only) The public DNS name assigned to the instance. This name is not available until the instance enters the <code>running</code> state. For EC2-VPC, this name is only available if you've enabled DNS hostnames for your VPC.</p>
+    /// <p>[IPv4 only] The public DNS name assigned to the instance. This name is not available until the instance enters the <code>running</code> state. This name is only available if you've enabled DNS hostnames for your VPC.</p>
     pub fn public_dns_name(&self) -> std::option::Option<&str> {
         self.public_dns_name.as_deref()
     }
@@ -261,11 +261,11 @@ impl Instance {
     pub fn state_transition_reason(&self) -> std::option::Option<&str> {
         self.state_transition_reason.as_deref()
     }
-    /// <p>[EC2-VPC] The ID of the subnet in which the instance is running.</p>
+    /// <p>The ID of the subnet in which the instance is running.</p>
     pub fn subnet_id(&self) -> std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
-    /// <p>[EC2-VPC] The ID of the VPC in which the instance is running.</p>
+    /// <p>The ID of the VPC in which the instance is running.</p>
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
@@ -315,7 +315,7 @@ impl Instance {
     ) -> std::option::Option<&[crate::types::ElasticInferenceAcceleratorAssociation]> {
         self.elastic_inference_accelerator_associations.as_deref()
     }
-    /// <p>[EC2-VPC] The network interfaces for the instance.</p>
+    /// <p>The network interfaces for the instance.</p>
     pub fn network_interfaces(
         &self,
     ) -> std::option::Option<&[crate::types::InstanceNetworkInterface]> {
@@ -625,14 +625,14 @@ impl InstanceBuilder {
         self.platform = input;
         self
     }
-    /// <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the <code>running</code> state. </p>
-    /// <p>[EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
+    /// <p>[IPv4 only] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the <code>running</code> state. </p>
+    /// <p>The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
     pub fn private_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.private_dns_name = Some(input.into());
         self
     }
-    /// <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the <code>running</code> state. </p>
-    /// <p>[EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
+    /// <p>[IPv4 only] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the <code>running</code> state. </p>
+    /// <p>The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
     pub fn set_private_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.private_dns_name = input;
         self
@@ -669,12 +669,12 @@ impl InstanceBuilder {
         self.product_codes = input;
         self
     }
-    /// <p>(IPv4 only) The public DNS name assigned to the instance. This name is not available until the instance enters the <code>running</code> state. For EC2-VPC, this name is only available if you've enabled DNS hostnames for your VPC.</p>
+    /// <p>[IPv4 only] The public DNS name assigned to the instance. This name is not available until the instance enters the <code>running</code> state. This name is only available if you've enabled DNS hostnames for your VPC.</p>
     pub fn public_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.public_dns_name = Some(input.into());
         self
     }
-    /// <p>(IPv4 only) The public DNS name assigned to the instance. This name is not available until the instance enters the <code>running</code> state. For EC2-VPC, this name is only available if you've enabled DNS hostnames for your VPC.</p>
+    /// <p>[IPv4 only] The public DNS name assigned to the instance. This name is not available until the instance enters the <code>running</code> state. This name is only available if you've enabled DNS hostnames for your VPC.</p>
     pub fn set_public_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.public_dns_name = input;
         self
@@ -727,22 +727,22 @@ impl InstanceBuilder {
         self.state_transition_reason = input;
         self
     }
-    /// <p>[EC2-VPC] The ID of the subnet in which the instance is running.</p>
+    /// <p>The ID of the subnet in which the instance is running.</p>
     pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.subnet_id = Some(input.into());
         self
     }
-    /// <p>[EC2-VPC] The ID of the subnet in which the instance is running.</p>
+    /// <p>The ID of the subnet in which the instance is running.</p>
     pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.subnet_id = input;
         self
     }
-    /// <p>[EC2-VPC] The ID of the VPC in which the instance is running.</p>
+    /// <p>The ID of the VPC in which the instance is running.</p>
     pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.vpc_id = Some(input.into());
         self
     }
-    /// <p>[EC2-VPC] The ID of the VPC in which the instance is running.</p>
+    /// <p>The ID of the VPC in which the instance is running.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.vpc_id = input;
         self
@@ -900,14 +900,14 @@ impl InstanceBuilder {
     ///
     /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
     ///
-    /// <p>[EC2-VPC] The network interfaces for the instance.</p>
+    /// <p>The network interfaces for the instance.</p>
     pub fn network_interfaces(mut self, input: crate::types::InstanceNetworkInterface) -> Self {
         let mut v = self.network_interfaces.unwrap_or_default();
         v.push(input);
         self.network_interfaces = Some(v);
         self
     }
-    /// <p>[EC2-VPC] The network interfaces for the instance.</p>
+    /// <p>The network interfaces for the instance.</p>
     pub fn set_network_interfaces(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::InstanceNetworkInterface>>,

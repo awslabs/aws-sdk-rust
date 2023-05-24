@@ -6,17 +6,17 @@
 pub struct ServiceLimit {
     /// <p>Specifies whether the account has met the quota that corresponds to the metric specified by the UsageByAccount.type field in the response.</p>
     #[doc(hidden)]
-    pub is_service_limited: bool,
+    pub is_service_limited: std::option::Option<bool>,
     /// <p>The unit of measurement for the value specified by the value field.</p>
     #[doc(hidden)]
     pub unit: std::option::Option<crate::types::Unit>,
     /// <p>The value for the metric specified by the UsageByAccount.type field in the response.</p>
     #[doc(hidden)]
-    pub value: i64,
+    pub value: std::option::Option<i64>,
 }
 impl ServiceLimit {
     /// <p>Specifies whether the account has met the quota that corresponds to the metric specified by the UsageByAccount.type field in the response.</p>
-    pub fn is_service_limited(&self) -> bool {
+    pub fn is_service_limited(&self) -> std::option::Option<bool> {
         self.is_service_limited
     }
     /// <p>The unit of measurement for the value specified by the value field.</p>
@@ -24,7 +24,7 @@ impl ServiceLimit {
         self.unit.as_ref()
     }
     /// <p>The value for the metric specified by the UsageByAccount.type field in the response.</p>
-    pub fn value(&self) -> i64 {
+    pub fn value(&self) -> std::option::Option<i64> {
         self.value
     }
 }
@@ -77,9 +77,9 @@ impl ServiceLimitBuilder {
     /// Consumes the builder and constructs a [`ServiceLimit`](crate::types::ServiceLimit).
     pub fn build(self) -> crate::types::ServiceLimit {
         crate::types::ServiceLimit {
-            is_service_limited: self.is_service_limited.unwrap_or_default(),
+            is_service_limited: self.is_service_limited,
             unit: self.unit,
-            value: self.value.unwrap_or_default(),
+            value: self.value,
         }
     }
 }

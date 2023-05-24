@@ -15,6 +15,8 @@ pub use crate::types::error::_conflict_exception::ConflictException;
 
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
+pub use crate::types::error::_not_supported_operation_exception::NotSupportedOperationException;
+
 pub use crate::types::error::_range_not_satisfiable_exception::RangeNotSatisfiableException;
 
 mod _access_denied_exception;
@@ -22,6 +24,8 @@ mod _access_denied_exception;
 mod _conflict_exception;
 
 mod _internal_server_exception;
+
+mod _not_supported_operation_exception;
 
 mod _range_not_satisfiable_exception;
 

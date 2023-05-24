@@ -250,6 +250,12 @@ mod create_theme;
 
 mod create_theme_alias;
 
+mod create_topic;
+
+mod create_topic_refresh_schedule;
+
+mod create_vpc_connection;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -314,9 +320,15 @@ mod delete_theme;
 
 mod delete_theme_alias;
 
+mod delete_topic;
+
+mod delete_topic_refresh_schedule;
+
 mod delete_user;
 
 mod delete_user_by_principal_id;
+
+mod delete_vpc_connection;
 
 mod describe_account_customization;
 
@@ -380,7 +392,17 @@ mod describe_theme_alias;
 
 mod describe_theme_permissions;
 
+mod describe_topic;
+
+mod describe_topic_permissions;
+
+mod describe_topic_refresh;
+
+mod describe_topic_refresh_schedule;
+
 mod describe_user;
+
+mod describe_vpc_connection;
 
 mod generate_embed_url_for_anonymous_user;
 
@@ -432,9 +454,15 @@ mod list_theme_versions;
 
 mod list_themes;
 
+mod list_topic_refresh_schedules;
+
+mod list_topics;
+
 mod list_user_groups;
 
 mod list_users;
+
+mod list_vpc_connections;
 
 mod put_data_set_refresh_properties;
 
@@ -506,4 +534,12 @@ mod update_theme_alias;
 
 mod update_theme_permissions;
 
+mod update_topic;
+
+mod update_topic_permissions;
+
+mod update_topic_refresh_schedule;
+
 mod update_user;
+
+mod update_vpc_connection;

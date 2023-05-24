@@ -3,68 +3,68 @@ pub fn ser_update_route_input(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_route::UpdateRouteInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.api_key_required {
-        object.key("apiKeyRequired").boolean(input.api_key_required);
+    if let Some(var_1) = &input.api_key_required {
+        object.key("apiKeyRequired").boolean(*var_1);
     }
-    if let Some(var_1) = &input.authorization_scopes {
-        let mut array_2 = object.key("authorizationScopes").start_array();
-        for item_3 in var_1 {
+    if let Some(var_2) = &input.authorization_scopes {
+        let mut array_3 = object.key("authorizationScopes").start_array();
+        for item_4 in var_2 {
             {
-                array_2.value().string(item_3.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_2.finish();
+        array_3.finish();
     }
-    if let Some(var_4) = &input.authorization_type {
-        object.key("authorizationType").string(var_4.as_str());
+    if let Some(var_5) = &input.authorization_type {
+        object.key("authorizationType").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.authorizer_id {
-        object.key("authorizerId").string(var_5.as_str());
+    if let Some(var_6) = &input.authorizer_id {
+        object.key("authorizerId").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.model_selection_expression {
+    if let Some(var_7) = &input.model_selection_expression {
         object
             .key("modelSelectionExpression")
-            .string(var_6.as_str());
+            .string(var_7.as_str());
     }
-    if let Some(var_7) = &input.operation_name {
-        object.key("operationName").string(var_7.as_str());
+    if let Some(var_8) = &input.operation_name {
+        object.key("operationName").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.request_models {
+    if let Some(var_9) = &input.request_models {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("requestModels").start_object();
-        for (key_10, value_11) in var_8 {
+        let mut object_10 = object.key("requestModels").start_object();
+        for (key_11, value_12) in var_9 {
             {
-                object_9.key(key_10.as_str()).string(value_11.as_str());
+                object_10.key(key_11.as_str()).string(value_12.as_str());
             }
         }
-        object_9.finish();
+        object_10.finish();
     }
-    if let Some(var_12) = &input.request_parameters {
+    if let Some(var_13) = &input.request_parameters {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("requestParameters").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_14 = object.key("requestParameters").start_object();
+        for (key_15, value_16) in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = object_13.key(key_14.as_str()).start_object();
+                let mut object_17 = object_14.key(key_15.as_str()).start_object();
                 crate::protocol_serde::shape_parameter_constraints::ser_parameter_constraints(
-                    &mut object_16,
-                    value_15,
+                    &mut object_17,
+                    value_16,
                 )?;
-                object_16.finish();
+                object_17.finish();
             }
         }
-        object_13.finish();
+        object_14.finish();
     }
-    if let Some(var_17) = &input.route_key {
-        object.key("routeKey").string(var_17.as_str());
+    if let Some(var_18) = &input.route_key {
+        object.key("routeKey").string(var_18.as_str());
     }
-    if let Some(var_18) = &input.route_response_selection_expression {
+    if let Some(var_19) = &input.route_response_selection_expression {
         object
             .key("routeResponseSelectionExpression")
-            .string(var_18.as_str());
+            .string(var_19.as_str());
     }
-    if let Some(var_19) = &input.target {
-        object.key("target").string(var_19.as_str());
+    if let Some(var_20) = &input.target {
+        object.key("target").string(var_20.as_str());
     }
     Ok(())
 }

@@ -33,6 +33,11 @@ where
                                     crate::protocol_serde::shape_salesforce_data_transfer_api_list::de_salesforce_data_transfer_api_list(tokens)?
                                 );
                             }
+                            "oauth2GrantTypesSupported" => {
+                                builder = builder.set_oauth2_grant_types_supported(
+                                    crate::protocol_serde::shape_o_auth2_grant_type_supported_list::de_o_auth2_grant_type_supported_list(tokens)?
+                                );
+                            }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

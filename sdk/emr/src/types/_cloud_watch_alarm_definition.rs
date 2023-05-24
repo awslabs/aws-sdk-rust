@@ -16,7 +16,7 @@ pub struct CloudWatchAlarmDefinition {
     /// <p>The namespace for the CloudWatch metric. The default is <code>AWS/ElasticMapReduce</code>.</p>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
-    /// <p>The period, in seconds, over which the statistic is applied. EMR CloudWatch metrics are emitted every five minutes (300 seconds), so if an EMR CloudWatch metric is specified, specify <code>300</code>.</p>
+    /// <p>The period, in seconds, over which the statistic is applied. CloudWatch metrics for Amazon EMR are emitted every five minutes (300 seconds), so if you specify a CloudWatch metric, specify <code>300</code>.</p>
     #[doc(hidden)]
     pub period: std::option::Option<i32>,
     /// <p>The statistic to apply to the metric associated with the alarm. The default is <code>AVERAGE</code>.</p>
@@ -49,7 +49,7 @@ impl CloudWatchAlarmDefinition {
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>The period, in seconds, over which the statistic is applied. EMR CloudWatch metrics are emitted every five minutes (300 seconds), so if an EMR CloudWatch metric is specified, specify <code>300</code>.</p>
+    /// <p>The period, in seconds, over which the statistic is applied. CloudWatch metrics for Amazon EMR are emitted every five minutes (300 seconds), so if you specify a CloudWatch metric, specify <code>300</code>.</p>
     pub fn period(&self) -> std::option::Option<i32> {
         self.period
     }
@@ -135,12 +135,12 @@ impl CloudWatchAlarmDefinitionBuilder {
         self.namespace = input;
         self
     }
-    /// <p>The period, in seconds, over which the statistic is applied. EMR CloudWatch metrics are emitted every five minutes (300 seconds), so if an EMR CloudWatch metric is specified, specify <code>300</code>.</p>
+    /// <p>The period, in seconds, over which the statistic is applied. CloudWatch metrics for Amazon EMR are emitted every five minutes (300 seconds), so if you specify a CloudWatch metric, specify <code>300</code>.</p>
     pub fn period(mut self, input: i32) -> Self {
         self.period = Some(input);
         self
     }
-    /// <p>The period, in seconds, over which the statistic is applied. EMR CloudWatch metrics are emitted every five minutes (300 seconds), so if an EMR CloudWatch metric is specified, specify <code>300</code>.</p>
+    /// <p>The period, in seconds, over which the statistic is applied. CloudWatch metrics for Amazon EMR are emitted every five minutes (300 seconds), so if you specify a CloudWatch metric, specify <code>300</code>.</p>
     pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
         self.period = input;
         self

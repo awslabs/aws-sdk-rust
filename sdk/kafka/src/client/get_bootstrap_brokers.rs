@@ -12,6 +12,9 @@ impl super::Client {
     ///   - [`bootstrap_broker_string_public_tls(Option<String>)`](crate::operation::get_bootstrap_brokers::GetBootstrapBrokersOutput::bootstrap_broker_string_public_tls): <p>A string containing one or more DNS names (or IP) and TLS port pairs.</p>
     ///   - [`bootstrap_broker_string_public_sasl_scram(Option<String>)`](crate::operation::get_bootstrap_brokers::GetBootstrapBrokersOutput::bootstrap_broker_string_public_sasl_scram): <p>A string containing one or more DNS names (or IP) and Sasl Scram port pairs.</p>
     ///   - [`bootstrap_broker_string_public_sasl_iam(Option<String>)`](crate::operation::get_bootstrap_brokers::GetBootstrapBrokersOutput::bootstrap_broker_string_public_sasl_iam): <p>A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.</p>
+    ///   - [`bootstrap_broker_string_vpc_connectivity_tls(Option<String>)`](crate::operation::get_bootstrap_brokers::GetBootstrapBrokersOutput::bootstrap_broker_string_vpc_connectivity_tls): <p>A string containing one or more DNS names (or IP) and TLS port pairs for VPC connectivity.</p>
+    ///   - [`bootstrap_broker_string_vpc_connectivity_sasl_scram(Option<String>)`](crate::operation::get_bootstrap_brokers::GetBootstrapBrokersOutput::bootstrap_broker_string_vpc_connectivity_sasl_scram): <p>A string containing one or more DNS names (or IP) and SASL/SCRAM port pairs for VPC connectivity.</p>
+    ///   - [`bootstrap_broker_string_vpc_connectivity_sasl_iam(Option<String>)`](crate::operation::get_bootstrap_brokers::GetBootstrapBrokersOutput::bootstrap_broker_string_vpc_connectivity_sasl_iam): <p>A string containing one or more DNS names (or IP) and SASL/IAM port pairs for VPC connectivity.</p>
     /// - On failure, responds with [`SdkError<GetBootstrapBrokersError>`](crate::operation::get_bootstrap_brokers::GetBootstrapBrokersError)
     pub fn get_bootstrap_brokers(
         &self,

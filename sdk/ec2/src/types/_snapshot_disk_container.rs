@@ -2,7 +2,7 @@
 
 /// <p>The disk container object for the import snapshot request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnapshotDiskContainer {
     /// <p>The description of the disk image being imported.</p>
     #[doc(hidden)]
@@ -37,6 +37,16 @@ impl SnapshotDiskContainer {
         self.user_bucket.as_ref()
     }
 }
+impl std::fmt::Debug for SnapshotDiskContainer {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SnapshotDiskContainer");
+        formatter.field("description", &self.description);
+        formatter.field("format", &self.format);
+        formatter.field("url", &"*** Sensitive Data Redacted ***");
+        formatter.field("user_bucket", &self.user_bucket);
+        formatter.finish()
+    }
+}
 impl SnapshotDiskContainer {
     /// Creates a new builder-style object to manufacture [`SnapshotDiskContainer`](crate::types::SnapshotDiskContainer).
     pub fn builder() -> crate::types::builders::SnapshotDiskContainerBuilder {
@@ -46,7 +56,7 @@ impl SnapshotDiskContainer {
 
 /// A builder for [`SnapshotDiskContainer`](crate::types::SnapshotDiskContainer).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct SnapshotDiskContainerBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) format: std::option::Option<std::string::String>,
@@ -104,5 +114,15 @@ impl SnapshotDiskContainerBuilder {
             url: self.url,
             user_bucket: self.user_bucket,
         }
+    }
+}
+impl std::fmt::Debug for SnapshotDiskContainerBuilder {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SnapshotDiskContainerBuilder");
+        formatter.field("description", &self.description);
+        formatter.field("format", &self.format);
+        formatter.field("url", &"*** Sensitive Data Redacted ***");
+        formatter.field("user_bucket", &self.user_bucket);
+        formatter.finish()
     }
 }

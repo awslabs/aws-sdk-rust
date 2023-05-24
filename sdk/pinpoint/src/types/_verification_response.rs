@@ -6,11 +6,11 @@
 pub struct VerificationResponse {
     /// <p>Specifies whether the OTP is valid or not.</p>
     #[doc(hidden)]
-    pub valid: bool,
+    pub valid: std::option::Option<bool>,
 }
 impl VerificationResponse {
     /// <p>Specifies whether the OTP is valid or not.</p>
-    pub fn valid(&self) -> bool {
+    pub fn valid(&self) -> std::option::Option<bool> {
         self.valid
     }
 }
@@ -40,8 +40,6 @@ impl VerificationResponseBuilder {
     }
     /// Consumes the builder and constructs a [`VerificationResponse`](crate::types::VerificationResponse).
     pub fn build(self) -> crate::types::VerificationResponse {
-        crate::types::VerificationResponse {
-            valid: self.valid.unwrap_or_default(),
-        }
+        crate::types::VerificationResponse { valid: self.valid }
     }
 }

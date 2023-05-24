@@ -6,34 +6,34 @@ pub fn ser_dash_iso_image_based_trick_play_settings(
     if let Some(var_1) = &input.interval_cadence {
         object.key("intervalCadence").string(var_1.as_str());
     }
-    if input.thumbnail_height != 0 {
+    if let Some(var_2) = &input.thumbnail_height {
         object.key("thumbnailHeight").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.thumbnail_height).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.thumbnail_interval != 0.0 {
+    if let Some(var_3) = &input.thumbnail_interval {
         object.key("thumbnailInterval").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.thumbnail_interval).into()),
+            aws_smithy_types::Number::Float((*var_3).into()),
         );
     }
-    if input.thumbnail_width != 0 {
+    if let Some(var_4) = &input.thumbnail_width {
         object.key("thumbnailWidth").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.thumbnail_width).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if input.tile_height != 0 {
+    if let Some(var_5) = &input.tile_height {
         object.key("tileHeight").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.tile_height).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if input.tile_width != 0 {
+    if let Some(var_6) = &input.tile_width {
         object.key("tileWidth").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.tile_width).into()),
+            aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
     Ok(())

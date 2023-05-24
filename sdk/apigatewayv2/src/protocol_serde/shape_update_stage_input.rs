@@ -12,49 +12,49 @@ pub fn ser_update_stage_input(
         )?;
         object_2.finish();
     }
-    if input.auto_deploy {
-        object.key("autoDeploy").boolean(input.auto_deploy);
+    if let Some(var_3) = &input.auto_deploy {
+        object.key("autoDeploy").boolean(*var_3);
     }
-    if let Some(var_3) = &input.client_certificate_id {
-        object.key("clientCertificateId").string(var_3.as_str());
+    if let Some(var_4) = &input.client_certificate_id {
+        object.key("clientCertificateId").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.default_route_settings {
+    if let Some(var_5) = &input.default_route_settings {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("defaultRouteSettings").start_object();
-        crate::protocol_serde::shape_route_settings::ser_route_settings(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_6 = object.key("defaultRouteSettings").start_object();
+        crate::protocol_serde::shape_route_settings::ser_route_settings(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_6) = &input.deployment_id {
-        object.key("deploymentId").string(var_6.as_str());
+    if let Some(var_7) = &input.deployment_id {
+        object.key("deploymentId").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.description {
-        object.key("description").string(var_7.as_str());
+    if let Some(var_8) = &input.description {
+        object.key("description").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.route_settings {
+    if let Some(var_9) = &input.route_settings {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("routeSettings").start_object();
-        for (key_10, value_11) in var_8 {
+        let mut object_10 = object.key("routeSettings").start_object();
+        for (key_11, value_12) in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = object_9.key(key_10.as_str()).start_object();
+                let mut object_13 = object_10.key(key_11.as_str()).start_object();
                 crate::protocol_serde::shape_route_settings::ser_route_settings(
-                    &mut object_12,
-                    value_11,
+                    &mut object_13,
+                    value_12,
                 )?;
-                object_12.finish();
+                object_13.finish();
             }
         }
-        object_9.finish();
+        object_10.finish();
     }
-    if let Some(var_13) = &input.stage_variables {
+    if let Some(var_14) = &input.stage_variables {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("stageVariables").start_object();
-        for (key_15, value_16) in var_13 {
+        let mut object_15 = object.key("stageVariables").start_object();
+        for (key_16, value_17) in var_14 {
             {
-                object_14.key(key_15.as_str()).string(value_16.as_str());
+                object_15.key(key_16.as_str()).string(value_17.as_str());
             }
         }
-        object_14.finish();
+        object_15.finish();
     }
     Ok(())
 }

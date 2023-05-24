@@ -50,6 +50,8 @@ pub(crate) mod shape_create_integration_association;
 
 pub(crate) mod shape_create_participant;
 
+pub(crate) mod shape_create_prompt;
+
 pub(crate) mod shape_create_queue;
 
 pub(crate) mod shape_create_quick_connect;
@@ -87,6 +89,8 @@ pub(crate) mod shape_delete_hours_of_operation;
 pub(crate) mod shape_delete_instance;
 
 pub(crate) mod shape_delete_integration_association;
+
+pub(crate) mod shape_delete_prompt;
 
 pub(crate) mod shape_delete_quick_connect;
 
@@ -127,6 +131,8 @@ pub(crate) mod shape_describe_instance_attribute;
 pub(crate) mod shape_describe_instance_storage_config;
 
 pub(crate) mod shape_describe_phone_number;
+
+pub(crate) mod shape_describe_prompt;
 
 pub(crate) mod shape_describe_queue;
 
@@ -179,6 +185,8 @@ pub(crate) mod shape_get_federation_token;
 pub(crate) mod shape_get_metric_data;
 
 pub(crate) mod shape_get_metric_data_v2;
+
+pub(crate) mod shape_get_prompt_file;
 
 pub(crate) mod shape_get_task_template;
 
@@ -336,6 +344,8 @@ pub(crate) mod shape_update_participant_role_config;
 
 pub(crate) mod shape_update_phone_number;
 
+pub(crate) mod shape_update_prompt;
+
 pub(crate) mod shape_update_queue_hours_of_operation;
 
 pub(crate) mod shape_update_queue_max_contacts;
@@ -433,6 +443,8 @@ pub(crate) mod shape_create_instance_input;
 pub(crate) mod shape_create_integration_association_input;
 
 pub(crate) mod shape_create_participant_input;
+
+pub(crate) mod shape_create_prompt_input;
 
 pub(crate) mod shape_create_queue_input;
 
@@ -589,6 +601,8 @@ pub(crate) mod shape_update_instance_storage_config_input;
 pub(crate) mod shape_update_participant_role_config_input;
 
 pub(crate) mod shape_update_phone_number_input;
+
+pub(crate) mod shape_update_prompt_input;
 
 pub(crate) mod shape_update_queue_hours_of_operation_input;
 
@@ -763,6 +777,8 @@ pub(crate) mod shape_persistent_chat;
 pub(crate) mod shape_phone_number_summary_list;
 
 pub(crate) mod shape_problems;
+
+pub(crate) mod shape_prompt;
 
 pub(crate) mod shape_prompt_summary_list;
 

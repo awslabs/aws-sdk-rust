@@ -5,7 +5,7 @@ pub use crate::operation::describe_event_types::_describe_event_types_input::Des
 
 /// Fluent builder constructing a request to `DescribeEventTypes`.
 ///
-/// <p>Returns the event types that meet the specified filter criteria. You can use this API operation to find information about the Health event, such as the category, Amazon Web Services service, and event code. The metadata for each event appears in the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventType.html">EventType</a> object. </p>
+/// <p>Returns the event types that meet the specified filter criteria. You can use this API operation to find information about the Health event, such as the category, Amazon Web Service, and event code. The metadata for each event appears in the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventType.html">EventType</a> object. </p>
 /// <p>If you don't specify a filter criteria, the API operation returns all event types, in no particular order. </p> <note>
 /// <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the next request to return more results.</p>
 /// </note>
@@ -112,12 +112,16 @@ impl DescribeEventTypesFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p> <note>
+    /// <p>If you don't specify the <code>maxResults</code> parameter, this operation returns a maximum of 30 items by default.</p>
+    /// </note>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
+    /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p> <note>
+    /// <p>If you don't specify the <code>maxResults</code> parameter, this operation returns a maximum of 30 items by default.</p>
+    /// </note>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self

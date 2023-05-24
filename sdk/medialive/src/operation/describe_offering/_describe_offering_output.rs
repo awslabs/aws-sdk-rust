@@ -12,13 +12,13 @@ pub struct DescribeOfferingOutput {
     pub currency_code: std::option::Option<std::string::String>,
     /// Lease duration, e.g. '12'
     #[doc(hidden)]
-    pub duration: i32,
+    pub duration: std::option::Option<i32>,
     /// Units for duration, e.g. 'MONTHS'
     #[doc(hidden)]
     pub duration_units: std::option::Option<crate::types::OfferingDurationUnits>,
     /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
     #[doc(hidden)]
-    pub fixed_price: f64,
+    pub fixed_price: std::option::Option<f64>,
     /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
     #[doc(hidden)]
     pub offering_description: std::option::Option<std::string::String>,
@@ -36,7 +36,7 @@ pub struct DescribeOfferingOutput {
     pub resource_specification: std::option::Option<crate::types::ReservationResourceSpecification>,
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
     #[doc(hidden)]
-    pub usage_price: f64,
+    pub usage_price: std::option::Option<f64>,
     _request_id: Option<String>,
 }
 impl DescribeOfferingOutput {
@@ -49,7 +49,7 @@ impl DescribeOfferingOutput {
         self.currency_code.as_deref()
     }
     /// Lease duration, e.g. '12'
-    pub fn duration(&self) -> i32 {
+    pub fn duration(&self) -> std::option::Option<i32> {
         self.duration
     }
     /// Units for duration, e.g. 'MONTHS'
@@ -57,7 +57,7 @@ impl DescribeOfferingOutput {
         self.duration_units.as_ref()
     }
     /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
-    pub fn fixed_price(&self) -> f64 {
+    pub fn fixed_price(&self) -> std::option::Option<f64> {
         self.fixed_price
     }
     /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
@@ -83,7 +83,7 @@ impl DescribeOfferingOutput {
         self.resource_specification.as_ref()
     }
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
-    pub fn usage_price(&self) -> f64 {
+    pub fn usage_price(&self) -> std::option::Option<f64> {
         self.usage_price
     }
 }
@@ -258,15 +258,15 @@ impl DescribeOfferingOutputBuilder {
         crate::operation::describe_offering::DescribeOfferingOutput {
             arn: self.arn,
             currency_code: self.currency_code,
-            duration: self.duration.unwrap_or_default(),
+            duration: self.duration,
             duration_units: self.duration_units,
-            fixed_price: self.fixed_price.unwrap_or_default(),
+            fixed_price: self.fixed_price,
             offering_description: self.offering_description,
             offering_id: self.offering_id,
             offering_type: self.offering_type,
             region: self.region,
             resource_specification: self.resource_specification,
-            usage_price: self.usage_price.unwrap_or_default(),
+            usage_price: self.usage_price,
             _request_id: self._request_id,
         }
     }

@@ -75,6 +75,11 @@ impl ListRunsInput {
                         );
                     }
                 }
+                if let Some(inner_5) = &_input.status {
+                    {
+                        query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_5));
+                    }
+                }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

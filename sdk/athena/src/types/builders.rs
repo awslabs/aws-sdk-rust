@@ -25,6 +25,8 @@ pub use crate::types::_query_execution_context::QueryExecutionContextBuilder;
 
 pub use crate::types::_calculation_configuration::CalculationConfigurationBuilder;
 
+pub use crate::types::_capacity_assignment::CapacityAssignmentBuilder;
+
 pub use crate::types::_work_group_summary::WorkGroupSummaryBuilder;
 
 pub use crate::types::_table_metadata::TableMetadataBuilder;
@@ -48,6 +50,10 @@ pub use crate::types::_executors_summary::ExecutorsSummaryBuilder;
 pub use crate::types::_data_catalog_summary::DataCatalogSummaryBuilder;
 
 pub use crate::types::_database::DatabaseBuilder;
+
+pub use crate::types::_capacity_reservation::CapacityReservationBuilder;
+
+pub use crate::types::_capacity_allocation::CapacityAllocationBuilder;
 
 pub use crate::types::_calculation_summary::CalculationSummaryBuilder;
 
@@ -98,6 +104,8 @@ pub use crate::types::_prepared_statement::PreparedStatementBuilder;
 pub use crate::types::_named_query::NamedQueryBuilder;
 
 pub use crate::types::_data_catalog::DataCatalogBuilder;
+
+pub use crate::types::_capacity_assignment_configuration::CapacityAssignmentConfigurationBuilder;
 
 pub use crate::types::_calculation_statistics::CalculationStatisticsBuilder;
 

@@ -54,12 +54,13 @@ impl ImportApiInput {
                         query.push_kv("basepath", &aws_smithy_http::query::fmt_string(&inner_1));
                     }
                 }
-                if _input.fail_on_warnings {
-                    query.push_kv(
-                        "failOnWarnings",
-                        aws_smithy_types::primitive::Encoder::from(_input.fail_on_warnings)
-                            .encode(),
-                    );
+                if let Some(inner_2) = &_input.fail_on_warnings {
+                    if *inner_2 {
+                        query.push_kv(
+                            "failOnWarnings",
+                            aws_smithy_types::primitive::Encoder::from(*inner_2).encode(),
+                        );
+                    }
                 }
                 Ok(())
             }

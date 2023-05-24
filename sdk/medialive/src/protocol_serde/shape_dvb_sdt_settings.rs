@@ -6,17 +6,17 @@ pub fn ser_dvb_sdt_settings(
     if let Some(var_1) = &input.output_sdt {
         object.key("outputSdt").string(var_1.as_str());
     }
-    if input.rep_interval != 0 {
+    if let Some(var_2) = &input.rep_interval {
         object.key("repInterval").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.rep_interval).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.service_name {
-        object.key("serviceName").string(var_2.as_str());
+    if let Some(var_3) = &input.service_name {
+        object.key("serviceName").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.service_provider_name {
-        object.key("serviceProviderName").string(var_3.as_str());
+    if let Some(var_4) = &input.service_provider_name {
+        object.key("serviceProviderName").string(var_4.as_str());
     }
     Ok(())
 }

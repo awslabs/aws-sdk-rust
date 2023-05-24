@@ -5,6 +5,8 @@
 pub enum Error {
     /// <p>This is an internal server exception.</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p>The request throttled.</p>
+    RequestThrottledException(crate::types::error::RequestThrottledException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>There are invalid parameters in the client request.</p>
@@ -16,6 +18,7 @@ impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::InternalServerException(inner) => inner.fmt(f),
+            Error::RequestThrottledException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
@@ -481,6 +484,30 @@ impl From<crate::operation::describe_virtual_cluster::DescribeVirtualClusterErro
         }
     }
 }
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsError, R>) -> Self {
+        match err {
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
+        }
+    }
+}
+impl From<crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsError> for Error {
+    fn from(err: crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsError) -> Self {
+        match err {
+            crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsError::RequestThrottledException(inner) => Error::RequestThrottledException(inner),
+            crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<aws_smithy_http::result::SdkError<crate::operation::list_job_runs::ListJobRunsError, R>>
     for Error
@@ -819,6 +846,7 @@ impl std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
             Error::InternalServerException(inner) => inner.source(),
+            Error::RequestThrottledException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => inner.source(),
@@ -829,6 +857,7 @@ impl aws_http::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::InternalServerException(e) => e.request_id(),
+            Self::RequestThrottledException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.request_id(),

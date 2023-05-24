@@ -9,10 +9,10 @@ pub struct RemixSettings {
     pub channel_mapping: std::option::Option<crate::types::ChannelMapping>,
     /// Specify the number of audio channels from your input that you want to use in your output. With remixing, you might combine or split the data in these channels, so the number of channels in your final output might be different. If you are doing both input channel mapping and output channel mapping, the number of output channels in your input mapping must be the same as the number of input channels in your output mapping.
     #[doc(hidden)]
-    pub channels_in: i32,
+    pub channels_in: std::option::Option<i32>,
     /// Specify the number of channels in this output after remixing. Valid values: 1, 2, 4, 6, 8... 64. (1 and even numbers to 64.) If you are doing both input channel mapping and output channel mapping, the number of output channels in your input mapping must be the same as the number of input channels in your output mapping.
     #[doc(hidden)]
-    pub channels_out: i32,
+    pub channels_out: std::option::Option<i32>,
 }
 impl RemixSettings {
     /// Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each channel, in dB. Specify remix values to indicate how much of the content from your input audio channel you want in your output audio channels. Each instance of the InputChannels or InputChannelsFineTune array specifies these values for one output channel. Use one instance of this array for each output channel. In the console, each array corresponds to a column in the graphical depiction of the mapping matrix. The rows of the graphical matrix correspond to input channels. Valid values are within the range from -60 (mute) through 6. A setting of 0 passes the input channel unchanged to the output channel (no attenuation or amplification). Use InputChannels or InputChannelsFineTune to specify your remix values. Don't use both.
@@ -20,11 +20,11 @@ impl RemixSettings {
         self.channel_mapping.as_ref()
     }
     /// Specify the number of audio channels from your input that you want to use in your output. With remixing, you might combine or split the data in these channels, so the number of channels in your final output might be different. If you are doing both input channel mapping and output channel mapping, the number of output channels in your input mapping must be the same as the number of input channels in your output mapping.
-    pub fn channels_in(&self) -> i32 {
+    pub fn channels_in(&self) -> std::option::Option<i32> {
         self.channels_in
     }
     /// Specify the number of channels in this output after remixing. Valid values: 1, 2, 4, 6, 8... 64. (1 and even numbers to 64.) If you are doing both input channel mapping and output channel mapping, the number of output channels in your input mapping must be the same as the number of input channels in your output mapping.
-    pub fn channels_out(&self) -> i32 {
+    pub fn channels_out(&self) -> std::option::Option<i32> {
         self.channels_out
     }
 }
@@ -81,8 +81,8 @@ impl RemixSettingsBuilder {
     pub fn build(self) -> crate::types::RemixSettings {
         crate::types::RemixSettings {
             channel_mapping: self.channel_mapping,
-            channels_in: self.channels_in.unwrap_or_default(),
-            channels_out: self.channels_out.unwrap_or_default(),
+            channels_in: self.channels_in,
+            channels_out: self.channels_out,
         }
     }
 }

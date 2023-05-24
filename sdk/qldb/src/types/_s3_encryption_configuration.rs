@@ -8,7 +8,7 @@ pub struct S3EncryptionConfiguration {
     /// <p>To learn more about server-side encryption options in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data Using Server-Side Encryption</a> in the <i>Amazon S3 Developer Guide</i>.</p>
     #[doc(hidden)]
     pub object_encryption_type: std::option::Option<crate::types::S3ObjectEncryptionType>,
-    /// <p>The Amazon Resource Name (ARN) of a symmetric key in Key Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p>
+    /// <p>The Amazon Resource Name (ARN) of a symmetric encryption key in Key Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p>
     /// <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p>
     /// <p> <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the <code>ObjectEncryptionType</code>.</p>
     #[doc(hidden)]
@@ -22,7 +22,7 @@ impl S3EncryptionConfiguration {
     ) -> std::option::Option<&crate::types::S3ObjectEncryptionType> {
         self.object_encryption_type.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a symmetric key in Key Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p>
+    /// <p>The Amazon Resource Name (ARN) of a symmetric encryption key in Key Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p>
     /// <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p>
     /// <p> <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the <code>ObjectEncryptionType</code>.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
@@ -59,14 +59,14 @@ impl S3EncryptionConfigurationBuilder {
         self.object_encryption_type = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of a symmetric key in Key Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p>
+    /// <p>The Amazon Resource Name (ARN) of a symmetric encryption key in Key Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p>
     /// <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p>
     /// <p> <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the <code>ObjectEncryptionType</code>.</p>
     pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.kms_key_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of a symmetric key in Key Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p>
+    /// <p>The Amazon Resource Name (ARN) of a symmetric encryption key in Key Management Service (KMS). Amazon S3 does not support asymmetric KMS keys.</p>
     /// <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p>
     /// <p> <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the <code>ObjectEncryptionType</code>.</p>
     pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {

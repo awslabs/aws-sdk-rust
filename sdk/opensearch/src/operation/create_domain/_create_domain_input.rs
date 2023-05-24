@@ -45,7 +45,7 @@ pub struct CreateDomainInput {
     #[doc(hidden)]
     pub advanced_options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Key-value pairs to configure slow log publishing.</p>
+    /// <p>Key-value pairs to configure log publishing.</p>
     #[doc(hidden)]
     pub log_publishing_options: std::option::Option<
         std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
@@ -128,7 +128,7 @@ impl CreateDomainInput {
     {
         self.advanced_options.as_ref()
     }
-    /// <p>Key-value pairs to configure slow log publishing.</p>
+    /// <p>Key-value pairs to configure log publishing.</p>
     pub fn log_publishing_options(
         &self,
     ) -> std::option::Option<
@@ -370,7 +370,7 @@ impl CreateDomainInputBuilder {
     ///
     /// To override the contents of this collection use [`set_log_publishing_options`](Self::set_log_publishing_options).
     ///
-    /// <p>Key-value pairs to configure slow log publishing.</p>
+    /// <p>Key-value pairs to configure log publishing.</p>
     pub fn log_publishing_options(
         mut self,
         k: crate::types::LogType,
@@ -381,7 +381,7 @@ impl CreateDomainInputBuilder {
         self.log_publishing_options = Some(hash_map);
         self
     }
-    /// <p>Key-value pairs to configure slow log publishing.</p>
+    /// <p>Key-value pairs to configure log publishing.</p>
     pub fn set_log_publishing_options(
         mut self,
         input: std::option::Option<

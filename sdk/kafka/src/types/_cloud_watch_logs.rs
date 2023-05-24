@@ -5,14 +5,14 @@
 pub struct CloudWatchLogs {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub enabled: bool,
+    pub enabled: std::option::Option<bool>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub log_group: std::option::Option<std::string::String>,
 }
 impl CloudWatchLogs {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -58,7 +58,7 @@ impl CloudWatchLogsBuilder {
     /// Consumes the builder and constructs a [`CloudWatchLogs`](crate::types::CloudWatchLogs).
     pub fn build(self) -> crate::types::CloudWatchLogs {
         crate::types::CloudWatchLogs {
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled,
             log_group: self.log_group,
         }
     }

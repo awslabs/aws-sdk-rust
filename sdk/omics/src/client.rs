@@ -194,6 +194,8 @@ impl Client {
     }
 }
 
+mod abort_multipart_read_set_upload;
+
 mod batch_delete_read_set;
 
 mod cancel_annotation_import_job;
@@ -202,7 +204,11 @@ mod cancel_run;
 
 mod cancel_variant_import_job;
 
+mod complete_multipart_read_set_upload;
+
 mod create_annotation_store;
+
+mod create_multipart_read_set_upload;
 
 mod create_reference_store;
 
@@ -274,11 +280,15 @@ mod list_annotation_import_jobs;
 
 mod list_annotation_stores;
 
+mod list_multipart_read_set_uploads;
+
 mod list_read_set_activation_jobs;
 
 mod list_read_set_export_jobs;
 
 mod list_read_set_import_jobs;
+
+mod list_read_set_upload_parts;
 
 mod list_read_sets;
 
@@ -329,3 +339,5 @@ mod update_run_group;
 mod update_variant_store;
 
 mod update_workflow;
+
+mod upload_read_set_part;

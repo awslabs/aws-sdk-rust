@@ -140,7 +140,7 @@ pub struct DbCluster {
     /// <p>For more information about Aurora Serverless v1, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
     #[doc(hidden)]
     pub capacity: std::option::Option<i32>,
-    /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
+    /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html"> CreateDBCluster</a>.</p>
     #[doc(hidden)]
     pub engine_mode: std::option::Option<std::string::String>,
@@ -195,7 +195,6 @@ pub struct DbCluster {
     #[doc(hidden)]
     pub db_cluster_instance_class: std::option::Option<std::string::String>,
     /// <p>The storage type associated with the DB cluster.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     #[doc(hidden)]
     pub storage_type: std::option::Option<std::string::String>,
     /// <p>The Provisioned IOPS (I/O operations per second) value.</p>
@@ -269,6 +268,11 @@ pub struct DbCluster {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
     #[doc(hidden)]
     pub master_user_secret: std::option::Option<crate::types::MasterUserSecret>,
+    /// <p>The next time you can modify the DB cluster to use the <code>aurora-iopt1</code> storage type.</p>
+    /// <p>This setting is only for Aurora DB clusters.</p>
+    #[doc(hidden)]
+    pub io_optimized_next_allowed_modification_time:
+        std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DbCluster {
     /// <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
@@ -447,7 +451,7 @@ impl DbCluster {
     pub fn capacity(&self) -> std::option::Option<i32> {
         self.capacity
     }
-    /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
+    /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html"> CreateDBCluster</a>.</p>
     pub fn engine_mode(&self) -> std::option::Option<&str> {
         self.engine_mode.as_deref()
@@ -526,7 +530,6 @@ impl DbCluster {
         self.db_cluster_instance_class.as_deref()
     }
     /// <p>The storage type associated with the DB cluster.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub fn storage_type(&self) -> std::option::Option<&str> {
         self.storage_type.as_deref()
     }
@@ -613,6 +616,13 @@ impl DbCluster {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
     pub fn master_user_secret(&self) -> std::option::Option<&crate::types::MasterUserSecret> {
         self.master_user_secret.as_ref()
+    }
+    /// <p>The next time you can modify the DB cluster to use the <code>aurora-iopt1</code> storage type.</p>
+    /// <p>This setting is only for Aurora DB clusters.</p>
+    pub fn io_optimized_next_allowed_modification_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+        self.io_optimized_next_allowed_modification_time.as_ref()
     }
 }
 impl DbCluster {
@@ -706,6 +716,8 @@ pub struct DbClusterBuilder {
     pub(crate) network_type: std::option::Option<std::string::String>,
     pub(crate) db_system_id: std::option::Option<std::string::String>,
     pub(crate) master_user_secret: std::option::Option<crate::types::MasterUserSecret>,
+    pub(crate) io_optimized_next_allowed_modification_time:
+        std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DbClusterBuilder {
     /// <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
@@ -1256,13 +1268,13 @@ impl DbClusterBuilder {
         self.capacity = input;
         self
     }
-    /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
+    /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html"> CreateDBCluster</a>.</p>
     pub fn engine_mode(mut self, input: impl Into<std::string::String>) -> Self {
         self.engine_mode = Some(input.into());
         self
     }
-    /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
+    /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html"> CreateDBCluster</a>.</p>
     pub fn set_engine_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.engine_mode = input;
@@ -1486,13 +1498,11 @@ impl DbClusterBuilder {
         self
     }
     /// <p>The storage type associated with the DB cluster.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.storage_type = Some(input.into());
         self
     }
     /// <p>The storage type associated with the DB cluster.</p>
-    /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.storage_type = input;
         self
@@ -1706,6 +1716,24 @@ impl DbClusterBuilder {
         self.master_user_secret = input;
         self
     }
+    /// <p>The next time you can modify the DB cluster to use the <code>aurora-iopt1</code> storage type.</p>
+    /// <p>This setting is only for Aurora DB clusters.</p>
+    pub fn io_optimized_next_allowed_modification_time(
+        mut self,
+        input: aws_smithy_types::DateTime,
+    ) -> Self {
+        self.io_optimized_next_allowed_modification_time = Some(input);
+        self
+    }
+    /// <p>The next time you can modify the DB cluster to use the <code>aurora-iopt1</code> storage type.</p>
+    /// <p>This setting is only for Aurora DB clusters.</p>
+    pub fn set_io_optimized_next_allowed_modification_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.io_optimized_next_allowed_modification_time = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DbCluster`](crate::types::DbCluster).
     pub fn build(self) -> crate::types::DbCluster {
         crate::types::DbCluster {
@@ -1780,6 +1808,8 @@ impl DbClusterBuilder {
             network_type: self.network_type,
             db_system_id: self.db_system_id,
             master_user_secret: self.master_user_secret,
+            io_optimized_next_allowed_modification_time: self
+                .io_optimized_next_allowed_modification_time,
         }
     }
 }

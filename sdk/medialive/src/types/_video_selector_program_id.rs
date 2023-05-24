@@ -6,11 +6,11 @@
 pub struct VideoSelectorProgramId {
     /// Selects a specific program from within a multi-program transport stream. If the program doesn't exist, the first program within the transport stream will be selected by default.
     #[doc(hidden)]
-    pub program_id: i32,
+    pub program_id: std::option::Option<i32>,
 }
 impl VideoSelectorProgramId {
     /// Selects a specific program from within a multi-program transport stream. If the program doesn't exist, the first program within the transport stream will be selected by default.
-    pub fn program_id(&self) -> i32 {
+    pub fn program_id(&self) -> std::option::Option<i32> {
         self.program_id
     }
 }
@@ -41,7 +41,7 @@ impl VideoSelectorProgramIdBuilder {
     /// Consumes the builder and constructs a [`VideoSelectorProgramId`](crate::types::VideoSelectorProgramId).
     pub fn build(self) -> crate::types::VideoSelectorProgramId {
         crate::types::VideoSelectorProgramId {
-            program_id: self.program_id.unwrap_or_default(),
+            program_id: self.program_id,
         }
     }
 }

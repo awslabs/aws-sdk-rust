@@ -173,6 +173,8 @@ pub type RemoveTagsErrorKind = RemoveTagsError;
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveTagsError {
+    /// <p>This exception is thrown when the specified value of <code>ChannelARN</code> is not valid.</p>
+    ChannelArnInvalidException(crate::types::error::ChannelArnInvalidException),
     /// <p>This exception is thrown when CloudTrail cannot find the specified channel.</p>
     ChannelNotFoundException(crate::types::error::ChannelNotFoundException),
     /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
@@ -181,6 +183,8 @@ pub enum RemoveTagsError {
     /// <p>The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
     /// <p>The following is the format of a channel ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
     CloudTrailArnInvalidException(crate::types::error::CloudTrailArnInvalidException),
+    /// <p>The specified event data store ARN is not valid or does not map to an event data store in your account.</p>
+    EventDataStoreArnInvalidException(crate::types::error::EventDataStoreArnInvalidException),
     /// <p>The specified event data store was not found.</p>
     EventDataStoreNotFoundException(crate::types::error::EventDataStoreNotFoundException),
     /// <p>The event data store is inactive.</p>
@@ -230,8 +234,10 @@ impl aws_smithy_http::result::CreateUnhandledError for RemoveTagsError {
 impl std::fmt::Display for RemoveTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Self::ChannelArnInvalidException(_inner) => _inner.fmt(f),
             Self::ChannelNotFoundException(_inner) => _inner.fmt(f),
             Self::CloudTrailArnInvalidException(_inner) => _inner.fmt(f),
+            Self::EventDataStoreArnInvalidException(_inner) => _inner.fmt(f),
             Self::EventDataStoreNotFoundException(_inner) => _inner.fmt(f),
             Self::InactiveEventDataStoreException(_inner) => _inner.fmt(f),
             Self::InvalidTagParameterException(_inner) => _inner.fmt(f),
@@ -249,10 +255,16 @@ impl std::fmt::Display for RemoveTagsError {
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for RemoveTagsError {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ChannelArnInvalidException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::ChannelNotFoundException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::CloudTrailArnInvalidException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::EventDataStoreArnInvalidException(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::EventDataStoreNotFoundException(_inner) => {
@@ -330,8 +342,10 @@ impl RemoveTagsError {
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
+            Self::ChannelArnInvalidException(e) => e.meta(),
             Self::ChannelNotFoundException(e) => e.meta(),
             Self::CloudTrailArnInvalidException(e) => e.meta(),
+            Self::EventDataStoreArnInvalidException(e) => e.meta(),
             Self::EventDataStoreNotFoundException(e) => e.meta(),
             Self::InactiveEventDataStoreException(e) => e.meta(),
             Self::InvalidTagParameterException(e) => e.meta(),
@@ -345,6 +359,10 @@ impl RemoveTagsError {
             Self::Unhandled(e) => e.meta(),
         }
     }
+    /// Returns `true` if the error kind is `RemoveTagsError::ChannelArnInvalidException`.
+    pub fn is_channel_arn_invalid_exception(&self) -> bool {
+        matches!(self, Self::ChannelArnInvalidException(_))
+    }
     /// Returns `true` if the error kind is `RemoveTagsError::ChannelNotFoundException`.
     pub fn is_channel_not_found_exception(&self) -> bool {
         matches!(self, Self::ChannelNotFoundException(_))
@@ -352,6 +370,10 @@ impl RemoveTagsError {
     /// Returns `true` if the error kind is `RemoveTagsError::CloudTrailArnInvalidException`.
     pub fn is_cloud_trail_arn_invalid_exception(&self) -> bool {
         matches!(self, Self::CloudTrailArnInvalidException(_))
+    }
+    /// Returns `true` if the error kind is `RemoveTagsError::EventDataStoreArnInvalidException`.
+    pub fn is_event_data_store_arn_invalid_exception(&self) -> bool {
+        matches!(self, Self::EventDataStoreArnInvalidException(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsError::EventDataStoreNotFoundException`.
     pub fn is_event_data_store_not_found_exception(&self) -> bool {
@@ -397,8 +419,10 @@ impl RemoveTagsError {
 impl std::error::Error for RemoveTagsError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
+            Self::ChannelArnInvalidException(_inner) => Some(_inner),
             Self::ChannelNotFoundException(_inner) => Some(_inner),
             Self::CloudTrailArnInvalidException(_inner) => Some(_inner),
+            Self::EventDataStoreArnInvalidException(_inner) => Some(_inner),
             Self::EventDataStoreNotFoundException(_inner) => Some(_inner),
             Self::InactiveEventDataStoreException(_inner) => Some(_inner),
             Self::InvalidTagParameterException(_inner) => Some(_inner),

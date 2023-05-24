@@ -14,6 +14,8 @@
 /// match attachmentstatus {
 ///     AttachmentStatus::Creating => { /* ... */ },
 ///     AttachmentStatus::Deleting => { /* ... */ },
+///     AttachmentStatus::Error => { /* ... */ },
+///     AttachmentStatus::Failed => { /* ... */ },
 ///     AttachmentStatus::Ready => { /* ... */ },
 ///     AttachmentStatus::Scaling => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -54,6 +56,10 @@ pub enum AttachmentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
+    Error,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Ready,
     #[allow(missing_docs)] // documentation missing in model
     Scaling,
@@ -65,6 +71,8 @@ impl std::convert::From<&str> for AttachmentStatus {
         match s {
             "CREATING" => AttachmentStatus::Creating,
             "DELETING" => AttachmentStatus::Deleting,
+            "ERROR" => AttachmentStatus::Error,
+            "FAILED" => AttachmentStatus::Failed,
             "READY" => AttachmentStatus::Ready,
             "SCALING" => AttachmentStatus::Scaling,
             other => {
@@ -86,6 +94,8 @@ impl AttachmentStatus {
         match self {
             AttachmentStatus::Creating => "CREATING",
             AttachmentStatus::Deleting => "DELETING",
+            AttachmentStatus::Error => "ERROR",
+            AttachmentStatus::Failed => "FAILED",
             AttachmentStatus::Ready => "READY",
             AttachmentStatus::Scaling => "SCALING",
             AttachmentStatus::Unknown(value) => value.as_str(),
@@ -93,7 +103,9 @@ impl AttachmentStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATING", "DELETING", "READY", "SCALING"]
+        &[
+            "CREATING", "DELETING", "ERROR", "FAILED", "READY", "SCALING",
+        ]
     }
 }
 impl AsRef<str> for AttachmentStatus {

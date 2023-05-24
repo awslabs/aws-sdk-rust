@@ -68,12 +68,12 @@ impl CreateLagFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
-    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG.</p>
+    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1G or 10G, or two when the port speed is 100G. </p>
     pub fn number_of_connections(mut self, input: i32) -> Self {
         self.inner = self.inner.number_of_connections(input);
         self
     }
-    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG.</p>
+    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1G or 10G, or two when the port speed is 100G. </p>
     pub fn set_number_of_connections(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_number_of_connections(input);
         self

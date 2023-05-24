@@ -199,9 +199,9 @@ pub enum ListScheduledActionsError {
     BaseException(crate::types::error::BaseException),
     /// <p>Request processing failed because of an unknown error, exception, or internal failure.</p>
     InternalException(crate::types::error::InternalException),
-    /// <p>The request processing has failed because you provided an invalid pagination token.</p>
+    /// <p>Request processing failed because you provided an invalid pagination token.</p>
     InvalidPaginationTokenException(crate::types::error::InvalidPaginationTokenException),
-    /// <p>An exception for accessing or deleting a resource that does not exist..</p>
+    /// <p>An exception for accessing or deleting a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>An exception for accessing or deleting a resource that doesn't exist.</p>
     ValidationException(crate::types::error::ValidationException),

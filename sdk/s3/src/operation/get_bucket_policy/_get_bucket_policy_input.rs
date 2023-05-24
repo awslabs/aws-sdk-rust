@@ -4,6 +4,8 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct GetBucketPolicyInput {
     /// <p>The bucket name for which to get the bucket policy.</p>
+    /// <p>To use this API operation against an access point, provide the alias of the access point in place of the bucket name.</p>
+    /// <p>To use this API operation against an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <code>InvalidAccessPointAliasError</code> is returned. For more information about <code>InvalidAccessPointAliasError</code>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
@@ -12,6 +14,8 @@ pub struct GetBucketPolicyInput {
 }
 impl GetBucketPolicyInput {
     /// <p>The bucket name for which to get the bucket policy.</p>
+    /// <p>To use this API operation against an access point, provide the alias of the access point in place of the bucket name.</p>
+    /// <p>To use this API operation against an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <code>InvalidAccessPointAliasError</code> is returned. For more information about <code>InvalidAccessPointAliasError</code>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -36,11 +40,15 @@ pub struct GetBucketPolicyInputBuilder {
 }
 impl GetBucketPolicyInputBuilder {
     /// <p>The bucket name for which to get the bucket policy.</p>
+    /// <p>To use this API operation against an access point, provide the alias of the access point in place of the bucket name.</p>
+    /// <p>To use this API operation against an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <code>InvalidAccessPointAliasError</code> is returned. For more information about <code>InvalidAccessPointAliasError</code>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>.</p>
     pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
         self.bucket = Some(input.into());
         self
     }
     /// <p>The bucket name for which to get the bucket policy.</p>
+    /// <p>To use this API operation against an access point, provide the alias of the access point in place of the bucket name.</p>
+    /// <p>To use this API operation against an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <code>InvalidAccessPointAliasError</code> is returned. For more information about <code>InvalidAccessPointAliasError</code>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.bucket = input;
         self

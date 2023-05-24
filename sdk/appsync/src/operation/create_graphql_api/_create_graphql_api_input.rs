@@ -28,10 +28,13 @@ pub struct CreateGraphqlApiInput {
         std::option::Option<std::vec::Vec<crate::types::AdditionalAuthenticationProvider>>,
     /// <p>A flag indicating whether to use X-Ray tracing for the <code>GraphqlApi</code>.</p>
     #[doc(hidden)]
-    pub xray_enabled: bool,
+    pub xray_enabled: std::option::Option<bool>,
     /// <p>Configuration for Lambda function authorization.</p>
     #[doc(hidden)]
     pub lambda_authorizer_config: std::option::Option<crate::types::LambdaAuthorizerConfig>,
+    /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
+    #[doc(hidden)]
+    pub visibility: std::option::Option<crate::types::GraphQlApiVisibility>,
 }
 impl CreateGraphqlApiInput {
     /// <p>A user-supplied name for the <code>GraphqlApi</code>.</p>
@@ -70,7 +73,7 @@ impl CreateGraphqlApiInput {
         self.additional_authentication_providers.as_deref()
     }
     /// <p>A flag indicating whether to use X-Ray tracing for the <code>GraphqlApi</code>.</p>
-    pub fn xray_enabled(&self) -> bool {
+    pub fn xray_enabled(&self) -> std::option::Option<bool> {
         self.xray_enabled
     }
     /// <p>Configuration for Lambda function authorization.</p>
@@ -78,6 +81,10 @@ impl CreateGraphqlApiInput {
         &self,
     ) -> std::option::Option<&crate::types::LambdaAuthorizerConfig> {
         self.lambda_authorizer_config.as_ref()
+    }
+    /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
+    pub fn visibility(&self) -> std::option::Option<&crate::types::GraphQlApiVisibility> {
+        self.visibility.as_ref()
     }
 }
 impl CreateGraphqlApiInput {
@@ -103,6 +110,7 @@ pub struct CreateGraphqlApiInputBuilder {
         std::option::Option<std::vec::Vec<crate::types::AdditionalAuthenticationProvider>>,
     pub(crate) xray_enabled: std::option::Option<bool>,
     pub(crate) lambda_authorizer_config: std::option::Option<crate::types::LambdaAuthorizerConfig>,
+    pub(crate) visibility: std::option::Option<crate::types::GraphQlApiVisibility>,
 }
 impl CreateGraphqlApiInputBuilder {
     /// <p>A user-supplied name for the <code>GraphqlApi</code>.</p>
@@ -234,6 +242,19 @@ impl CreateGraphqlApiInputBuilder {
         self.lambda_authorizer_config = input;
         self
     }
+    /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
+    pub fn visibility(mut self, input: crate::types::GraphQlApiVisibility) -> Self {
+        self.visibility = Some(input);
+        self
+    }
+    /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
+    pub fn set_visibility(
+        mut self,
+        input: std::option::Option<crate::types::GraphQlApiVisibility>,
+    ) -> Self {
+        self.visibility = input;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateGraphqlApiInput`](crate::operation::create_graphql_api::CreateGraphqlApiInput).
     pub fn build(
         self,
@@ -250,8 +271,9 @@ impl CreateGraphqlApiInputBuilder {
                 open_id_connect_config: self.open_id_connect_config,
                 tags: self.tags,
                 additional_authentication_providers: self.additional_authentication_providers,
-                xray_enabled: self.xray_enabled.unwrap_or_default(),
+                xray_enabled: self.xray_enabled,
                 lambda_authorizer_config: self.lambda_authorizer_config,
+                visibility: self.visibility,
             },
         )
     }

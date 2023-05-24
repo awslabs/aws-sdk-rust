@@ -21,6 +21,7 @@
 ///     ParameterExceptionField::ChallengeConfig => { /* ... */ },
 ///     ParameterExceptionField::ChangePropagationStatus => { /* ... */ },
 ///     ParameterExceptionField::CookieMatchPattern => { /* ... */ },
+///     ParameterExceptionField::CustomKeys => { /* ... */ },
 ///     ParameterExceptionField::CustomRequestHandling => { /* ... */ },
 ///     ParameterExceptionField::CustomResponse => { /* ... */ },
 ///     ParameterExceptionField::CustomResponseBody => { /* ... */ },
@@ -67,6 +68,7 @@
 ///     ParameterExceptionField::RuleAction => { /* ... */ },
 ///     ParameterExceptionField::RuleGroup => { /* ... */ },
 ///     ParameterExceptionField::RuleGroupReferenceStatement => { /* ... */ },
+///     ParameterExceptionField::ScopeDown => { /* ... */ },
 ///     ParameterExceptionField::ScopeValue => { /* ... */ },
 ///     ParameterExceptionField::SingleHeader => { /* ... */ },
 ///     ParameterExceptionField::SingleQueryArgument => { /* ... */ },
@@ -130,6 +132,8 @@ pub enum ParameterExceptionField {
     ChangePropagationStatus,
     #[allow(missing_docs)] // documentation missing in model
     CookieMatchPattern,
+    #[allow(missing_docs)] // documentation missing in model
+    CustomKeys,
     #[allow(missing_docs)] // documentation missing in model
     CustomRequestHandling,
     #[allow(missing_docs)] // documentation missing in model
@@ -223,6 +227,8 @@ pub enum ParameterExceptionField {
     #[allow(missing_docs)] // documentation missing in model
     RuleGroupReferenceStatement,
     #[allow(missing_docs)] // documentation missing in model
+    ScopeDown,
+    #[allow(missing_docs)] // documentation missing in model
     ScopeValue,
     #[allow(missing_docs)] // documentation missing in model
     SingleHeader,
@@ -265,6 +271,7 @@ impl std::convert::From<&str> for ParameterExceptionField {
             "CHALLENGE_CONFIG" => ParameterExceptionField::ChallengeConfig,
             "CHANGE_PROPAGATION_STATUS" => ParameterExceptionField::ChangePropagationStatus,
             "COOKIE_MATCH_PATTERN" => ParameterExceptionField::CookieMatchPattern,
+            "CUSTOM_KEYS" => ParameterExceptionField::CustomKeys,
             "CUSTOM_REQUEST_HANDLING" => ParameterExceptionField::CustomRequestHandling,
             "CUSTOM_RESPONSE" => ParameterExceptionField::CustomResponse,
             "CUSTOM_RESPONSE_BODY" => ParameterExceptionField::CustomResponseBody,
@@ -315,6 +322,7 @@ impl std::convert::From<&str> for ParameterExceptionField {
             "RULE_GROUP_REFERENCE_STATEMENT" => {
                 ParameterExceptionField::RuleGroupReferenceStatement
             }
+            "SCOPE_DOWN" => ParameterExceptionField::ScopeDown,
             "SCOPE_VALUE" => ParameterExceptionField::ScopeValue,
             "SINGLE_HEADER" => ParameterExceptionField::SingleHeader,
             "SINGLE_QUERY_ARGUMENT" => ParameterExceptionField::SingleQueryArgument,
@@ -357,6 +365,7 @@ impl ParameterExceptionField {
             ParameterExceptionField::ChallengeConfig => "CHALLENGE_CONFIG",
             ParameterExceptionField::ChangePropagationStatus => "CHANGE_PROPAGATION_STATUS",
             ParameterExceptionField::CookieMatchPattern => "COOKIE_MATCH_PATTERN",
+            ParameterExceptionField::CustomKeys => "CUSTOM_KEYS",
             ParameterExceptionField::CustomRequestHandling => "CUSTOM_REQUEST_HANDLING",
             ParameterExceptionField::CustomResponse => "CUSTOM_RESPONSE",
             ParameterExceptionField::CustomResponseBody => "CUSTOM_RESPONSE_BODY",
@@ -407,6 +416,7 @@ impl ParameterExceptionField {
             ParameterExceptionField::RuleGroupReferenceStatement => {
                 "RULE_GROUP_REFERENCE_STATEMENT"
             }
+            ParameterExceptionField::ScopeDown => "SCOPE_DOWN",
             ParameterExceptionField::ScopeValue => "SCOPE_VALUE",
             ParameterExceptionField::SingleHeader => "SINGLE_HEADER",
             ParameterExceptionField::SingleQueryArgument => "SINGLE_QUERY_ARGUMENT",
@@ -434,6 +444,7 @@ impl ParameterExceptionField {
             "CHALLENGE_CONFIG",
             "CHANGE_PROPAGATION_STATUS",
             "COOKIE_MATCH_PATTERN",
+            "CUSTOM_KEYS",
             "CUSTOM_REQUEST_HANDLING",
             "CUSTOM_RESPONSE",
             "CUSTOM_RESPONSE_BODY",
@@ -480,6 +491,7 @@ impl ParameterExceptionField {
             "RULE_ACTION",
             "RULE_GROUP",
             "RULE_GROUP_REFERENCE_STATEMENT",
+            "SCOPE_DOWN",
             "SCOPE_VALUE",
             "SINGLE_HEADER",
             "SINGLE_QUERY_ARGUMENT",

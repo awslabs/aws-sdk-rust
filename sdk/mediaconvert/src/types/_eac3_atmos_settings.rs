@@ -6,7 +6,7 @@
 pub struct Eac3AtmosSettings {
     /// Specify the average bitrate for this output in bits per second. Valid values: 384k, 448k, 576k, 640k, 768k, 1024k Default value: 448k Note that MediaConvert supports 384k only with channel-based immersive (CBI) 7.1.4 and 5.1.4 inputs. For CBI 9.1.6 and other input types, MediaConvert automatically increases your output bitrate to 448k.
     #[doc(hidden)]
-    pub bitrate: i32,
+    pub bitrate: std::option::Option<i32>,
     /// Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E).
     #[doc(hidden)]
     pub bitstream_mode: std::option::Option<crate::types::Eac3AtmosBitstreamMode>,
@@ -32,25 +32,25 @@ pub struct Eac3AtmosSettings {
     pub dynamic_range_control: std::option::Option<crate::types::Eac3AtmosDynamicRangeControl>,
     /// Specify a value for the following Dolby Atmos setting: Left only/Right only center mix (Lo/Ro center). MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, and -6.0. Related setting: How the service uses this value depends on the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise, MediaConvert ignores Left only/Right only center (LoRoCenterMixLevel).
     #[doc(hidden)]
-    pub lo_ro_center_mix_level: f64,
+    pub lo_ro_center_mix_level: std::option::Option<f64>,
     /// Specify a value for the following Dolby Atmos setting: Left only/Right only (Lo/Ro surround). MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB). Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. Related setting: How the service uses this value depends on the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise, MediaConvert ignores Left only/Right only surround (LoRoSurroundMixLevel).
     #[doc(hidden)]
-    pub lo_ro_surround_mix_level: f64,
+    pub lo_ro_surround_mix_level: std::option::Option<f64>,
     /// Specify a value for the following Dolby Atmos setting: Left total/Right total center mix (Lt/Rt center). MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB) Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, and -6.0. Related setting: How the service uses this value depends on the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise, MediaConvert ignores Left total/Right total center (LtRtCenterMixLevel).
     #[doc(hidden)]
-    pub lt_rt_center_mix_level: f64,
+    pub lt_rt_center_mix_level: std::option::Option<f64>,
     /// Specify a value for the following Dolby Atmos setting: Left total/Right total surround mix (Lt/Rt surround). MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB) Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. Related setting: How the service uses this value depends on the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise, the service ignores Left total/Right total surround (LtRtSurroundMixLevel).
     #[doc(hidden)]
-    pub lt_rt_surround_mix_level: f64,
+    pub lt_rt_surround_mix_level: std::option::Option<f64>,
     /// Choose how the service meters the loudness of your audio.
     #[doc(hidden)]
     pub metering_mode: std::option::Option<crate::types::Eac3AtmosMeteringMode>,
     /// This value is always 48000. It represents the sample rate in Hz.
     #[doc(hidden)]
-    pub sample_rate: i32,
+    pub sample_rate: std::option::Option<i32>,
     /// Specify the percentage of audio content, from 0% to 100%, that must be speech in order for the encoder to use the measured speech loudness as the overall program loudness. Default value: 15%
     #[doc(hidden)]
-    pub speech_threshold: i32,
+    pub speech_threshold: std::option::Option<i32>,
     /// Choose how the service does stereo downmixing. Default value: Not indicated (ATMOS_STORAGE_DDP_DMIXMOD_NOT_INDICATED) Related setting: To have MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise, MediaConvert ignores Stereo downmix (StereoDownmix).
     #[doc(hidden)]
     pub stereo_downmix: std::option::Option<crate::types::Eac3AtmosStereoDownmix>,
@@ -60,7 +60,7 @@ pub struct Eac3AtmosSettings {
 }
 impl Eac3AtmosSettings {
     /// Specify the average bitrate for this output in bits per second. Valid values: 384k, 448k, 576k, 640k, 768k, 1024k Default value: 448k Note that MediaConvert supports 384k only with channel-based immersive (CBI) 7.1.4 and 5.1.4 inputs. For CBI 9.1.6 and other input types, MediaConvert automatically increases your output bitrate to 448k.
-    pub fn bitrate(&self) -> i32 {
+    pub fn bitrate(&self) -> std::option::Option<i32> {
         self.bitrate
     }
     /// Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E).
@@ -100,19 +100,19 @@ impl Eac3AtmosSettings {
         self.dynamic_range_control.as_ref()
     }
     /// Specify a value for the following Dolby Atmos setting: Left only/Right only center mix (Lo/Ro center). MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, and -6.0. Related setting: How the service uses this value depends on the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise, MediaConvert ignores Left only/Right only center (LoRoCenterMixLevel).
-    pub fn lo_ro_center_mix_level(&self) -> f64 {
+    pub fn lo_ro_center_mix_level(&self) -> std::option::Option<f64> {
         self.lo_ro_center_mix_level
     }
     /// Specify a value for the following Dolby Atmos setting: Left only/Right only (Lo/Ro surround). MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB). Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. Related setting: How the service uses this value depends on the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise, MediaConvert ignores Left only/Right only surround (LoRoSurroundMixLevel).
-    pub fn lo_ro_surround_mix_level(&self) -> f64 {
+    pub fn lo_ro_surround_mix_level(&self) -> std::option::Option<f64> {
         self.lo_ro_surround_mix_level
     }
     /// Specify a value for the following Dolby Atmos setting: Left total/Right total center mix (Lt/Rt center). MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB) Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, and -6.0. Related setting: How the service uses this value depends on the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise, MediaConvert ignores Left total/Right total center (LtRtCenterMixLevel).
-    pub fn lt_rt_center_mix_level(&self) -> f64 {
+    pub fn lt_rt_center_mix_level(&self) -> std::option::Option<f64> {
         self.lt_rt_center_mix_level
     }
     /// Specify a value for the following Dolby Atmos setting: Left total/Right total surround mix (Lt/Rt surround). MediaConvert uses this value for downmixing. Default value: -3 dB (ATMOS_STORAGE_DDP_MIXLEV_MINUS_3_DB) Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. Related setting: How the service uses this value depends on the value that you choose for Stereo downmix (Eac3AtmosStereoDownmix). Related setting: To have MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise, the service ignores Left total/Right total surround (LtRtSurroundMixLevel).
-    pub fn lt_rt_surround_mix_level(&self) -> f64 {
+    pub fn lt_rt_surround_mix_level(&self) -> std::option::Option<f64> {
         self.lt_rt_surround_mix_level
     }
     /// Choose how the service meters the loudness of your audio.
@@ -120,11 +120,11 @@ impl Eac3AtmosSettings {
         self.metering_mode.as_ref()
     }
     /// This value is always 48000. It represents the sample rate in Hz.
-    pub fn sample_rate(&self) -> i32 {
+    pub fn sample_rate(&self) -> std::option::Option<i32> {
         self.sample_rate
     }
     /// Specify the percentage of audio content, from 0% to 100%, that must be speech in order for the encoder to use the measured speech loudness as the overall program loudness. Default value: 15%
-    pub fn speech_threshold(&self) -> i32 {
+    pub fn speech_threshold(&self) -> std::option::Option<i32> {
         self.speech_threshold
     }
     /// Choose how the service does stereo downmixing. Default value: Not indicated (ATMOS_STORAGE_DDP_DMIXMOD_NOT_INDICATED) Related setting: To have MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise, MediaConvert ignores Stereo downmix (StereoDownmix).
@@ -385,7 +385,7 @@ impl Eac3AtmosSettingsBuilder {
     /// Consumes the builder and constructs a [`Eac3AtmosSettings`](crate::types::Eac3AtmosSettings).
     pub fn build(self) -> crate::types::Eac3AtmosSettings {
         crate::types::Eac3AtmosSettings {
-            bitrate: self.bitrate.unwrap_or_default(),
+            bitrate: self.bitrate,
             bitstream_mode: self.bitstream_mode,
             coding_mode: self.coding_mode,
             dialogue_intelligence: self.dialogue_intelligence,
@@ -393,13 +393,13 @@ impl Eac3AtmosSettingsBuilder {
             dynamic_range_compression_line: self.dynamic_range_compression_line,
             dynamic_range_compression_rf: self.dynamic_range_compression_rf,
             dynamic_range_control: self.dynamic_range_control,
-            lo_ro_center_mix_level: self.lo_ro_center_mix_level.unwrap_or_default(),
-            lo_ro_surround_mix_level: self.lo_ro_surround_mix_level.unwrap_or_default(),
-            lt_rt_center_mix_level: self.lt_rt_center_mix_level.unwrap_or_default(),
-            lt_rt_surround_mix_level: self.lt_rt_surround_mix_level.unwrap_or_default(),
+            lo_ro_center_mix_level: self.lo_ro_center_mix_level,
+            lo_ro_surround_mix_level: self.lo_ro_surround_mix_level,
+            lt_rt_center_mix_level: self.lt_rt_center_mix_level,
+            lt_rt_surround_mix_level: self.lt_rt_surround_mix_level,
             metering_mode: self.metering_mode,
-            sample_rate: self.sample_rate.unwrap_or_default(),
-            speech_threshold: self.speech_threshold.unwrap_or_default(),
+            sample_rate: self.sample_rate,
+            speech_threshold: self.speech_threshold,
             stereo_downmix: self.stereo_downmix,
             surround_ex_mode: self.surround_ex_mode,
         }

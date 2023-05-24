@@ -308,6 +308,12 @@ pub(crate) mod shape_associate_entities_to_experience_failed_entity_list;
 
 pub(crate) mod shape_attribute_filter;
 
+pub(crate) mod shape_attribute_suggestions_describe_config;
+
+pub(crate) mod shape_attribute_suggestions_get_config;
+
+pub(crate) mod shape_attribute_suggestions_update_config;
+
 pub(crate) mod shape_batch_delete_document_response_failed_documents;
 
 pub(crate) mod shape_batch_delete_featured_results_set_errors;
@@ -556,6 +562,10 @@ pub(crate) mod shape_status;
 
 pub(crate) mod shape_subnet_id_list;
 
+pub(crate) mod shape_suggestable_config;
+
+pub(crate) mod shape_suggestable_config_list;
+
 pub(crate) mod shape_suggestion;
 
 pub(crate) mod shape_template_configuration;
@@ -674,6 +684,8 @@ pub(crate) mod shape_share_point_url_list;
 
 pub(crate) mod shape_slack_entity_list;
 
+pub(crate) mod shape_source_documents;
+
 pub(crate) mod shape_sql_configuration;
 
 pub(crate) mod shape_string_list;
@@ -734,6 +746,8 @@ pub(crate) mod shape_seed_url_configuration;
 
 pub(crate) mod shape_site_maps_configuration;
 
+pub(crate) mod shape_source_document;
+
 pub(crate) mod shape_suggestion_text_with_highlights;
 
 pub(crate) mod shape_table_row_list;
@@ -741,6 +755,8 @@ pub(crate) mod shape_table_row_list;
 pub(crate) mod shape_value_importance_map;
 
 pub(crate) mod shape_additional_result_attribute_value;
+
+pub(crate) mod shape_document_attribute_key_list;
 
 pub(crate) mod shape_document_attribute_string_list_value;
 

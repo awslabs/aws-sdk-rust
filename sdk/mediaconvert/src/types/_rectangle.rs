@@ -6,32 +6,32 @@
 pub struct Rectangle {
     /// Height of rectangle in pixels. Specify only even numbers.
     #[doc(hidden)]
-    pub height: i32,
+    pub height: std::option::Option<i32>,
     /// Width of rectangle in pixels. Specify only even numbers.
     #[doc(hidden)]
-    pub width: i32,
+    pub width: std::option::Option<i32>,
     /// The distance, in pixels, between the rectangle and the left edge of the video frame. Specify only even numbers.
     #[doc(hidden)]
-    pub x: i32,
+    pub x: std::option::Option<i32>,
     /// The distance, in pixels, between the rectangle and the top edge of the video frame. Specify only even numbers.
     #[doc(hidden)]
-    pub y: i32,
+    pub y: std::option::Option<i32>,
 }
 impl Rectangle {
     /// Height of rectangle in pixels. Specify only even numbers.
-    pub fn height(&self) -> i32 {
+    pub fn height(&self) -> std::option::Option<i32> {
         self.height
     }
     /// Width of rectangle in pixels. Specify only even numbers.
-    pub fn width(&self) -> i32 {
+    pub fn width(&self) -> std::option::Option<i32> {
         self.width
     }
     /// The distance, in pixels, between the rectangle and the left edge of the video frame. Specify only even numbers.
-    pub fn x(&self) -> i32 {
+    pub fn x(&self) -> std::option::Option<i32> {
         self.x
     }
     /// The distance, in pixels, between the rectangle and the top edge of the video frame. Specify only even numbers.
-    pub fn y(&self) -> i32 {
+    pub fn y(&self) -> std::option::Option<i32> {
         self.y
     }
 }
@@ -95,10 +95,10 @@ impl RectangleBuilder {
     /// Consumes the builder and constructs a [`Rectangle`](crate::types::Rectangle).
     pub fn build(self) -> crate::types::Rectangle {
         crate::types::Rectangle {
-            height: self.height.unwrap_or_default(),
-            width: self.width.unwrap_or_default(),
-            x: self.x.unwrap_or_default(),
-            y: self.y.unwrap_or_default(),
+            height: self.height,
+            width: self.width,
+            x: self.x,
+            y: self.y,
         }
     }
 }

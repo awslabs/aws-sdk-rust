@@ -6,7 +6,7 @@
 pub struct Entitlement {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
     #[doc(hidden)]
-    pub data_transfer_subscriber_fee_percent: i32,
+    pub data_transfer_subscriber_fee_percent: std::option::Option<i32>,
     /// A description of the entitlement.
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -28,7 +28,7 @@ pub struct Entitlement {
 }
 impl Entitlement {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
-    pub fn data_transfer_subscriber_fee_percent(&self) -> i32 {
+    pub fn data_transfer_subscriber_fee_percent(&self) -> std::option::Option<i32> {
         self.data_transfer_subscriber_fee_percent
     }
     /// A description of the entitlement.
@@ -164,9 +164,7 @@ impl EntitlementBuilder {
     /// Consumes the builder and constructs a [`Entitlement`](crate::types::Entitlement).
     pub fn build(self) -> crate::types::Entitlement {
         crate::types::Entitlement {
-            data_transfer_subscriber_fee_percent: self
-                .data_transfer_subscriber_fee_percent
-                .unwrap_or_default(),
+            data_transfer_subscriber_fee_percent: self.data_transfer_subscriber_fee_percent,
             description: self.description,
             encryption: self.encryption,
             entitlement_arn: self.entitlement_arn,

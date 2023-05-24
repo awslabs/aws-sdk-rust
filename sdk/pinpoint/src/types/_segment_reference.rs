@@ -9,7 +9,7 @@ pub struct SegmentReference {
     pub id: std::option::Option<std::string::String>,
     /// <p>The version number of the segment.</p>
     #[doc(hidden)]
-    pub version: i32,
+    pub version: std::option::Option<i32>,
 }
 impl SegmentReference {
     /// <p>The unique identifier for the segment.</p>
@@ -17,7 +17,7 @@ impl SegmentReference {
         self.id.as_deref()
     }
     /// <p>The version number of the segment.</p>
-    pub fn version(&self) -> i32 {
+    pub fn version(&self) -> std::option::Option<i32> {
         self.version
     }
 }
@@ -60,7 +60,7 @@ impl SegmentReferenceBuilder {
     pub fn build(self) -> crate::types::SegmentReference {
         crate::types::SegmentReference {
             id: self.id,
-            version: self.version.unwrap_or_default(),
+            version: self.version,
         }
     }
 }

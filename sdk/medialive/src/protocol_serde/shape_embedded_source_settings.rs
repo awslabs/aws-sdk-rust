@@ -9,16 +9,16 @@ pub fn ser_embedded_source_settings(
     if let Some(var_2) = &input.scte20_detection {
         object.key("scte20Detection").string(var_2.as_str());
     }
-    if input.source608_channel_number != 0 {
+    if let Some(var_3) = &input.source608_channel_number {
         object.key("source608ChannelNumber").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.source608_channel_number).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if input.source608_track_number != 0 {
+    if let Some(var_4) = &input.source608_track_number {
         object.key("source608TrackNumber").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.source608_track_number).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     Ok(())

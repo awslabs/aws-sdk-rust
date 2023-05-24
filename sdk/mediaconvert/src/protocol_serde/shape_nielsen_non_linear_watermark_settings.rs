@@ -24,20 +24,20 @@ pub fn ser_nielsen_non_linear_watermark_settings(
     if let Some(var_7) = &input.metadata_destination {
         object.key("metadataDestination").string(var_7.as_str());
     }
-    if input.source_id != 0 {
+    if let Some(var_8) = &input.source_id {
         object.key("sourceId").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.source_id).into()),
+            aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_8) = &input.source_watermark_status {
-        object.key("sourceWatermarkStatus").string(var_8.as_str());
+    if let Some(var_9) = &input.source_watermark_status {
+        object.key("sourceWatermarkStatus").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.tic_server_url {
-        object.key("ticServerUrl").string(var_9.as_str());
+    if let Some(var_10) = &input.tic_server_url {
+        object.key("ticServerUrl").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.unique_tic_per_audio_track {
-        object.key("uniqueTicPerAudioTrack").string(var_10.as_str());
+    if let Some(var_11) = &input.unique_tic_per_audio_track {
+        object.key("uniqueTicPerAudioTrack").string(var_11.as_str());
     }
     Ok(())
 }

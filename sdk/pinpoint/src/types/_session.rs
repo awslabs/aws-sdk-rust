@@ -6,7 +6,7 @@
 pub struct Session {
     /// <p>The duration of the session, in milliseconds.</p>
     #[doc(hidden)]
-    pub duration: i32,
+    pub duration: std::option::Option<i32>,
     /// <p>The unique identifier for the session.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ pub struct Session {
 }
 impl Session {
     /// <p>The duration of the session, in milliseconds.</p>
-    pub fn duration(&self) -> i32 {
+    pub fn duration(&self) -> std::option::Option<i32> {
         self.duration
     }
     /// <p>The unique identifier for the session.</p>
@@ -95,7 +95,7 @@ impl SessionBuilder {
     /// Consumes the builder and constructs a [`Session`](crate::types::Session).
     pub fn build(self) -> crate::types::Session {
         crate::types::Session {
-            duration: self.duration.unwrap_or_default(),
+            duration: self.duration,
             id: self.id,
             start_timestamp: self.start_timestamp,
             stop_timestamp: self.stop_timestamp,

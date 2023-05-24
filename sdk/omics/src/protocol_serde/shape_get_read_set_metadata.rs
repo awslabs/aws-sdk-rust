@@ -276,6 +276,15 @@ pub(crate) fn de_get_read_set_metadata(
                             .transpose()?,
                         );
                     }
+                    "statusMessage" => {
+                        builder = builder.set_status_message(
+                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                                tokens.next(),
+                            )?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                        );
+                    }
                     "subjectId" => {
                         builder = builder.set_subject_id(
                             aws_smithy_json::deserialize::token::expect_string_or_null(

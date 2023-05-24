@@ -9,7 +9,7 @@ pub struct CreateBrokerInput {
     pub authentication_strategy: std::option::Option<crate::types::AuthenticationStrategy>,
     /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot. Set to true by default, if no value is specified.</p>
     #[doc(hidden)]
-    pub auto_minor_version_upgrade: bool,
+    pub auto_minor_version_upgrade: std::option::Option<bool>,
     /// <p>Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
     #[doc(hidden)]
     pub broker_name: std::option::Option<std::string::String>,
@@ -45,7 +45,7 @@ pub struct CreateBrokerInput {
     pub maintenance_window_start_time: std::option::Option<crate::types::WeeklyStartTime>,
     /// <p>Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by default, if no value is provided.</p>
     #[doc(hidden)]
-    pub publicly_accessible: bool,
+    pub publicly_accessible: std::option::Option<bool>,
     /// <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
     #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -76,7 +76,7 @@ impl CreateBrokerInput {
         self.authentication_strategy.as_ref()
     }
     /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot. Set to true by default, if no value is specified.</p>
-    pub fn auto_minor_version_upgrade(&self) -> bool {
+    pub fn auto_minor_version_upgrade(&self) -> std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
     /// <p>Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
@@ -128,7 +128,7 @@ impl CreateBrokerInput {
         self.maintenance_window_start_time.as_ref()
     }
     /// <p>Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by default, if no value is provided.</p>
-    pub fn publicly_accessible(&self) -> bool {
+    pub fn publicly_accessible(&self) -> std::option::Option<bool> {
         self.publicly_accessible
     }
     /// <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
@@ -471,7 +471,7 @@ impl CreateBrokerInputBuilder {
     > {
         Ok(crate::operation::create_broker::CreateBrokerInput {
             authentication_strategy: self.authentication_strategy,
-            auto_minor_version_upgrade: self.auto_minor_version_upgrade.unwrap_or_default(),
+            auto_minor_version_upgrade: self.auto_minor_version_upgrade,
             broker_name: self.broker_name,
             configuration: self.configuration,
             creator_request_id: self.creator_request_id,
@@ -483,7 +483,7 @@ impl CreateBrokerInputBuilder {
             ldap_server_metadata: self.ldap_server_metadata,
             logs: self.logs,
             maintenance_window_start_time: self.maintenance_window_start_time,
-            publicly_accessible: self.publicly_accessible.unwrap_or_default(),
+            publicly_accessible: self.publicly_accessible,
             security_groups: self.security_groups,
             storage_type: self.storage_type,
             subnet_ids: self.subnet_ids,

@@ -248,7 +248,17 @@ mod delete_stage;
 
 mod disconnect_participant;
 
+mod get_participant;
+
 mod get_stage;
+
+mod get_stage_session;
+
+mod list_participant_events;
+
+mod list_participants;
+
+mod list_stage_sessions;
 
 mod list_stages;
 

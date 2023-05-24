@@ -5,12 +5,12 @@
 pub struct TestCustomDataIdentifierOutput {
     /// <p>The number of occurrences of sample text that matched the criteria specified by the custom data identifier.</p>
     #[doc(hidden)]
-    pub match_count: i32,
+    pub match_count: std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl TestCustomDataIdentifierOutput {
     /// <p>The number of occurrences of sample text that matched the criteria specified by the custom data identifier.</p>
-    pub fn match_count(&self) -> i32 {
+    pub fn match_count(&self) -> std::option::Option<i32> {
         self.match_count
     }
 }
@@ -58,7 +58,7 @@ impl TestCustomDataIdentifierOutputBuilder {
         self,
     ) -> crate::operation::test_custom_data_identifier::TestCustomDataIdentifierOutput {
         crate::operation::test_custom_data_identifier::TestCustomDataIdentifierOutput {
-            match_count: self.match_count.unwrap_or_default(),
+            match_count: self.match_count,
             _request_id: self._request_id,
         }
     }

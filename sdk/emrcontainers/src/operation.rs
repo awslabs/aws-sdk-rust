@@ -34,6 +34,9 @@ pub mod describe_managed_endpoint;
 /// Types for the `DescribeVirtualCluster` operation.
 pub mod describe_virtual_cluster;
 
+/// Types for the `GetManagedEndpointSessionCredentials` operation.
+pub mod get_managed_endpoint_session_credentials;
+
 /// Types for the `ListJobRuns` operation.
 pub mod list_job_runs;
 

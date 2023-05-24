@@ -3,70 +3,70 @@ pub fn ser_vp8_settings(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Vp8Settings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.bitrate != 0 {
+    if let Some(var_1) = &input.bitrate {
         object.key("bitrate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.bitrate).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.framerate_control {
-        object.key("framerateControl").string(var_1.as_str());
+    if let Some(var_2) = &input.framerate_control {
+        object.key("framerateControl").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.framerate_conversion_algorithm {
+    if let Some(var_3) = &input.framerate_conversion_algorithm {
         object
             .key("framerateConversionAlgorithm")
-            .string(var_2.as_str());
+            .string(var_3.as_str());
     }
-    if input.framerate_denominator != 0 {
+    if let Some(var_4) = &input.framerate_denominator {
         object.key("framerateDenominator").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.framerate_denominator).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if input.framerate_numerator != 0 {
+    if let Some(var_5) = &input.framerate_numerator {
         object.key("framerateNumerator").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.framerate_numerator).into()),
+            aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if input.gop_size != 0.0 {
+    if let Some(var_6) = &input.gop_size {
         object.key("gopSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.gop_size).into()),
+            aws_smithy_types::Number::Float((*var_6).into()),
         );
     }
-    if input.hrd_buffer_size != 0 {
+    if let Some(var_7) = &input.hrd_buffer_size {
         object.key("hrdBufferSize").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.hrd_buffer_size).into()),
+            aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if input.max_bitrate != 0 {
+    if let Some(var_8) = &input.max_bitrate {
         object.key("maxBitrate").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_bitrate).into()),
+            aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_3) = &input.par_control {
-        object.key("parControl").string(var_3.as_str());
+    if let Some(var_9) = &input.par_control {
+        object.key("parControl").string(var_9.as_str());
     }
-    if input.par_denominator != 0 {
+    if let Some(var_10) = &input.par_denominator {
         object.key("parDenominator").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.par_denominator).into()),
+            aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if input.par_numerator != 0 {
+    if let Some(var_11) = &input.par_numerator {
         object.key("parNumerator").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.par_numerator).into()),
+            aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_4) = &input.quality_tuning_level {
-        object.key("qualityTuningLevel").string(var_4.as_str());
+    if let Some(var_12) = &input.quality_tuning_level {
+        object.key("qualityTuningLevel").string(var_12.as_str());
     }
-    if let Some(var_5) = &input.rate_control_mode {
-        object.key("rateControlMode").string(var_5.as_str());
+    if let Some(var_13) = &input.rate_control_mode {
+        object.key("rateControlMode").string(var_13.as_str());
     }
     Ok(())
 }

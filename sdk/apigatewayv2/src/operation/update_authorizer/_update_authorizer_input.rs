@@ -18,7 +18,7 @@ pub struct UpdateAuthorizerInput {
     pub authorizer_payload_format_version: std::option::Option<std::string::String>,
     /// <p>The time to live (TTL) for cached authorizer results, in seconds. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway caches authorizer responses. The maximum value is 3600, or 1 hour. Supported only for HTTP API Lambda authorizers.</p>
     #[doc(hidden)]
-    pub authorizer_result_ttl_in_seconds: i32,
+    pub authorizer_result_ttl_in_seconds: std::option::Option<i32>,
     /// <p>The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).</p>
     #[doc(hidden)]
     pub authorizer_type: std::option::Option<crate::types::AuthorizerType>,
@@ -35,7 +35,7 @@ pub struct UpdateAuthorizerInput {
     pub authorizer_uri: std::option::Option<std::string::String>,
     /// <p>Specifies whether a Lambda authorizer returns a response in a simple format. By default, a Lambda authorizer must return an IAM policy. If enabled, the Lambda authorizer can return a boolean value instead of an IAM policy. Supported only for HTTP APIs. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a></p>
     #[doc(hidden)]
-    pub enable_simple_responses: bool,
+    pub enable_simple_responses: std::option::Option<bool>,
     /// <p>The identity source for which authorization is requested.</p>
     /// <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
     /// <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
@@ -69,7 +69,7 @@ impl UpdateAuthorizerInput {
         self.authorizer_payload_format_version.as_deref()
     }
     /// <p>The time to live (TTL) for cached authorizer results, in seconds. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway caches authorizer responses. The maximum value is 3600, or 1 hour. Supported only for HTTP API Lambda authorizers.</p>
-    pub fn authorizer_result_ttl_in_seconds(&self) -> i32 {
+    pub fn authorizer_result_ttl_in_seconds(&self) -> std::option::Option<i32> {
         self.authorizer_result_ttl_in_seconds
     }
     /// <p>The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).</p>
@@ -89,7 +89,7 @@ impl UpdateAuthorizerInput {
         self.authorizer_uri.as_deref()
     }
     /// <p>Specifies whether a Lambda authorizer returns a response in a simple format. By default, a Lambda authorizer must return an IAM policy. If enabled, the Lambda authorizer can return a boolean value instead of an IAM policy. Supported only for HTTP APIs. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a></p>
-    pub fn enable_simple_responses(&self) -> bool {
+    pub fn enable_simple_responses(&self) -> std::option::Option<bool> {
         self.enable_simple_responses
     }
     /// <p>The identity source for which authorization is requested.</p>
@@ -316,12 +316,10 @@ impl UpdateAuthorizerInputBuilder {
             authorizer_credentials_arn: self.authorizer_credentials_arn,
             authorizer_id: self.authorizer_id,
             authorizer_payload_format_version: self.authorizer_payload_format_version,
-            authorizer_result_ttl_in_seconds: self
-                .authorizer_result_ttl_in_seconds
-                .unwrap_or_default(),
+            authorizer_result_ttl_in_seconds: self.authorizer_result_ttl_in_seconds,
             authorizer_type: self.authorizer_type,
             authorizer_uri: self.authorizer_uri,
-            enable_simple_responses: self.enable_simple_responses.unwrap_or_default(),
+            enable_simple_responses: self.enable_simple_responses,
             identity_source: self.identity_source,
             identity_validation_expression: self.identity_validation_expression,
             jwt_configuration: self.jwt_configuration,

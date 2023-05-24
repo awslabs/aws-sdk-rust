@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`arn(impl Into<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_stage::builders::GetStageFluentBuilder::set_arn): <p>ARN of the stage for which the information is to be retrieved.</p>
     /// - On success, responds with [`GetStageOutput`](crate::operation::get_stage::GetStageOutput) with field(s):
-    ///   - [`stage(Option<Stage>)`](crate::operation::get_stage::GetStageOutput::stage): <p></p>
+    ///   - [`stage(Option<Stage>)`](crate::operation::get_stage::GetStageOutput::stage): <p>The stage that is returned.</p>
     /// - On failure, responds with [`SdkError<GetStageError>`](crate::operation::get_stage::GetStageError)
     pub fn get_stage(&self) -> crate::operation::get_stage::builders::GetStageFluentBuilder {
         crate::operation::get_stage::builders::GetStageFluentBuilder::new(self.handle.clone())

@@ -3,13 +3,11 @@ pub fn ser_group_owner_setting(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GroupOwnerSetting,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.auto_add_group_owner {
-        object
-            .key("AutoAddGroupOwner")
-            .boolean(input.auto_add_group_owner);
+    if let Some(var_1) = &input.auto_add_group_owner {
+        object.key("AutoAddGroupOwner").boolean(*var_1);
     }
-    if let Some(var_1) = &input.group_owner {
-        object.key("GroupOwner").string(var_1.as_str());
+    if let Some(var_2) = &input.group_owner {
+        object.key("GroupOwner").string(var_2.as_str());
     }
     Ok(())
 }

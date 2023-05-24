@@ -7,10 +7,8 @@
 pub mod credentials {
     use aws_credential_types::cache::SharedCredentialsCache;
     use aws_smithy_http::property_bag::PropertyBag;
-    use aws_smithy_runtime_api::client::identity::Identity;
-    use aws_smithy_runtime_api::client::orchestrator::{
-        BoxError, BoxFallibleFut, IdentityResolver,
-    };
+    use aws_smithy_runtime_api::client::identity::{Identity, IdentityResolver};
+    use aws_smithy_runtime_api::client::orchestrator::{BoxError, Future};
 
     /// Smithy identity resolver for AWS credentials.
     #[derive(Debug)]
@@ -26,13 +24,13 @@ pub mod credentials {
     }
 
     impl IdentityResolver for CredentialsIdentityResolver {
-        fn resolve_identity(&self, _identity_properties: &PropertyBag) -> BoxFallibleFut<Identity> {
+        fn resolve_identity(&self, _identity_properties: &PropertyBag) -> Future<Identity> {
             let cache = self.credentials_cache.clone();
-            Box::pin(async move {
+            Future::new(Box::pin(async move {
                 let credentials = cache.as_ref().provide_cached_credentials().await?;
                 let expiration = credentials.expiry();
                 Result::<_, BoxError>::Ok(Identity::new(credentials, expiration))
-            })
+            }))
         }
     }
 }

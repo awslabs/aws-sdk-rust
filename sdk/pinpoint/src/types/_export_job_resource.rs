@@ -19,7 +19,7 @@ pub struct ExportJobResource {
     pub segment_id: std::option::Option<std::string::String>,
     /// <p>The version of the segment that the endpoint definitions were exported from.</p>
     #[doc(hidden)]
-    pub segment_version: i32,
+    pub segment_version: std::option::Option<i32>,
 }
 impl ExportJobResource {
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorized Amazon Pinpoint to access the Amazon S3 location where the endpoint definitions were exported to.</p>
@@ -39,7 +39,7 @@ impl ExportJobResource {
         self.segment_id.as_deref()
     }
     /// <p>The version of the segment that the endpoint definitions were exported from.</p>
-    pub fn segment_version(&self) -> i32 {
+    pub fn segment_version(&self) -> std::option::Option<i32> {
         self.segment_version
     }
 }
@@ -114,7 +114,7 @@ impl ExportJobResourceBuilder {
             role_arn: self.role_arn,
             s3_url_prefix: self.s3_url_prefix,
             segment_id: self.segment_id,
-            segment_version: self.segment_version.unwrap_or_default(),
+            segment_version: self.segment_version,
         }
     }
 }

@@ -3,7 +3,7 @@
 **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 feedback purposes only. Do not use this SDK for production workloads.**
 
-This is the _Amazon Omics API Reference_. For an introduction to the service, see [What is Amazon Omics?](https://docs.aws.amazon.com/omics/latest/dev/) in the _Amazon Omics Developer Guide_.
+This is the _Amazon Omics API Reference_. For an introduction to the service, see [What is Amazon Omics?](https://docs.aws.amazon.com/omics/latest/dev/) in the _Amazon Omics User Guide_.
 
 ## Getting Started
 
@@ -17,7 +17,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.55.2"
-aws-sdk-omics = "0.5.0"
+aws-sdk-omics = "0.6.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

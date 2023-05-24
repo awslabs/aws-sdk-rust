@@ -3,16 +3,16 @@ pub fn ser_gps_coordinates(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GpsCoordinates,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    {
+    if let Some(var_1) = &input.latitude {
         object.key("Latitude").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.latitude).into()),
+            aws_smithy_types::Number::Float((*var_1).into()),
         );
     }
-    {
+    if let Some(var_2) = &input.longitude {
         object.key("Longitude").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::Float((input.longitude).into()),
+            aws_smithy_types::Number::Float((*var_2).into()),
         );
     }
     Ok(())

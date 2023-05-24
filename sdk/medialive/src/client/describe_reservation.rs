@@ -6,12 +6,12 @@ impl super::Client {
     ///   - [`reservation_id(impl Into<String>)`](crate::operation::describe_reservation::builders::DescribeReservationFluentBuilder::reservation_id) / [`set_reservation_id(Option<String>)`](crate::operation::describe_reservation::builders::DescribeReservationFluentBuilder::set_reservation_id): Unique reservation ID, e.g. '1234567'
     /// - On success, responds with [`DescribeReservationOutput`](crate::operation::describe_reservation::DescribeReservationOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_reservation::DescribeReservationOutput::arn): Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
-    ///   - [`count(i32)`](crate::operation::describe_reservation::DescribeReservationOutput::count): Number of reserved resources
+    ///   - [`count(Option<i32>)`](crate::operation::describe_reservation::DescribeReservationOutput::count): Number of reserved resources
     ///   - [`currency_code(Option<String>)`](crate::operation::describe_reservation::DescribeReservationOutput::currency_code): Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
-    ///   - [`duration(i32)`](crate::operation::describe_reservation::DescribeReservationOutput::duration): Lease duration, e.g. '12'
+    ///   - [`duration(Option<i32>)`](crate::operation::describe_reservation::DescribeReservationOutput::duration): Lease duration, e.g. '12'
     ///   - [`duration_units(Option<OfferingDurationUnits>)`](crate::operation::describe_reservation::DescribeReservationOutput::duration_units): Units for duration, e.g. 'MONTHS'
     ///   - [`end(Option<String>)`](crate::operation::describe_reservation::DescribeReservationOutput::end): Reservation UTC end date and time in ISO-8601 format, e.g. '2019-03-01T00:00:00'
-    ///   - [`fixed_price(f64)`](crate::operation::describe_reservation::DescribeReservationOutput::fixed_price): One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
+    ///   - [`fixed_price(Option<f64>)`](crate::operation::describe_reservation::DescribeReservationOutput::fixed_price): One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
     ///   - [`name(Option<String>)`](crate::operation::describe_reservation::DescribeReservationOutput::name): User specified reservation name
     ///   - [`offering_description(Option<String>)`](crate::operation::describe_reservation::DescribeReservationOutput::offering_description): Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
     ///   - [`offering_id(Option<String>)`](crate::operation::describe_reservation::DescribeReservationOutput::offering_id): Unique offering ID, e.g. '87654321'
@@ -23,7 +23,7 @@ impl super::Client {
     ///   - [`start(Option<String>)`](crate::operation::describe_reservation::DescribeReservationOutput::start): Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
     ///   - [`state(Option<ReservationState>)`](crate::operation::describe_reservation::DescribeReservationOutput::state): Current state of reservation, e.g. 'ACTIVE'
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::describe_reservation::DescribeReservationOutput::tags): A collection of key-value pairs
-    ///   - [`usage_price(f64)`](crate::operation::describe_reservation::DescribeReservationOutput::usage_price): Recurring usage charge for each reserved resource, e.g. '157.0'
+    ///   - [`usage_price(Option<f64>)`](crate::operation::describe_reservation::DescribeReservationOutput::usage_price): Recurring usage charge for each reserved resource, e.g. '157.0'
     /// - On failure, responds with [`SdkError<DescribeReservationError>`](crate::operation::describe_reservation::DescribeReservationError)
     pub fn describe_reservation(
         &self,

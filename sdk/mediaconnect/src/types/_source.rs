@@ -6,7 +6,7 @@
 pub struct Source {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
     #[doc(hidden)]
-    pub data_transfer_subscriber_fee_percent: i32,
+    pub data_transfer_subscriber_fee_percent: std::option::Option<i32>,
     /// The type of encryption that is used on the content ingested from this source.
     #[doc(hidden)]
     pub decryption: std::option::Option<crate::types::Encryption>,
@@ -21,7 +21,7 @@ pub struct Source {
     pub ingest_ip: std::option::Option<std::string::String>,
     /// The port that the flow will be listening on for incoming content.
     #[doc(hidden)]
-    pub ingest_port: i32,
+    pub ingest_port: std::option::Option<i32>,
     /// The media streams that are associated with the source, and the parameters for those associations.
     #[doc(hidden)]
     pub media_stream_source_configurations:
@@ -31,7 +31,7 @@ pub struct Source {
     pub name: std::option::Option<std::string::String>,
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
     #[doc(hidden)]
-    pub sender_control_port: i32,
+    pub sender_control_port: std::option::Option<i32>,
     /// The IP address that the flow communicates with to initiate connection with the sender.
     #[doc(hidden)]
     pub sender_ip_address: std::option::Option<std::string::String>,
@@ -53,7 +53,7 @@ pub struct Source {
 }
 impl Source {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
-    pub fn data_transfer_subscriber_fee_percent(&self) -> i32 {
+    pub fn data_transfer_subscriber_fee_percent(&self) -> std::option::Option<i32> {
         self.data_transfer_subscriber_fee_percent
     }
     /// The type of encryption that is used on the content ingested from this source.
@@ -73,7 +73,7 @@ impl Source {
         self.ingest_ip.as_deref()
     }
     /// The port that the flow will be listening on for incoming content.
-    pub fn ingest_port(&self) -> i32 {
+    pub fn ingest_port(&self) -> std::option::Option<i32> {
         self.ingest_port
     }
     /// The media streams that are associated with the source, and the parameters for those associations.
@@ -87,7 +87,7 @@ impl Source {
         self.name.as_deref()
     }
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
-    pub fn sender_control_port(&self) -> i32 {
+    pub fn sender_control_port(&self) -> std::option::Option<i32> {
         self.sender_control_port
     }
     /// The IP address that the flow communicates with to initiate connection with the sender.
@@ -321,17 +321,15 @@ impl SourceBuilder {
     /// Consumes the builder and constructs a [`Source`](crate::types::Source).
     pub fn build(self) -> crate::types::Source {
         crate::types::Source {
-            data_transfer_subscriber_fee_percent: self
-                .data_transfer_subscriber_fee_percent
-                .unwrap_or_default(),
+            data_transfer_subscriber_fee_percent: self.data_transfer_subscriber_fee_percent,
             decryption: self.decryption,
             description: self.description,
             entitlement_arn: self.entitlement_arn,
             ingest_ip: self.ingest_ip,
-            ingest_port: self.ingest_port.unwrap_or_default(),
+            ingest_port: self.ingest_port,
             media_stream_source_configurations: self.media_stream_source_configurations,
             name: self.name,
-            sender_control_port: self.sender_control_port.unwrap_or_default(),
+            sender_control_port: self.sender_control_port,
             sender_ip_address: self.sender_ip_address,
             source_arn: self.source_arn,
             transport: self.transport,

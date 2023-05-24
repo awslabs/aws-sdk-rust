@@ -23,7 +23,7 @@ pub struct CreateApplicationVersionOutput {
     pub required_capabilities: std::option::Option<std::vec::Vec<crate::types::Capability>>,
     /// <p>Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved.</p>
     #[doc(hidden)]
-    pub resources_supported: bool,
+    pub resources_supported: std::option::Option<bool>,
     /// <p>The semantic version of the application:</p>
     /// <p> <a href="https://semver.org/">https://semver.org/</a> </p>
     #[doc(hidden)]
@@ -65,7 +65,7 @@ impl CreateApplicationVersionOutput {
         self.required_capabilities.as_deref()
     }
     /// <p>Whether all of the AWS resources contained in this application are supported in the region in which it is being retrieved.</p>
-    pub fn resources_supported(&self) -> bool {
+    pub fn resources_supported(&self) -> std::option::Option<bool> {
         self.resources_supported
     }
     /// <p>The semantic version of the application:</p>
@@ -261,7 +261,7 @@ impl CreateApplicationVersionOutputBuilder {
             creation_time: self.creation_time,
             parameter_definitions: self.parameter_definitions,
             required_capabilities: self.required_capabilities,
-            resources_supported: self.resources_supported.unwrap_or_default(),
+            resources_supported: self.resources_supported,
             semantic_version: self.semantic_version,
             source_code_archive_url: self.source_code_archive_url,
             source_code_url: self.source_code_url,

@@ -82,7 +82,7 @@ impl DescribeSpotPriceHistoryFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>availability-zone</code> - The Availability Zone for which prices should be returned.</p> </li>
     /// <li> <p> <code>instance-type</code> - The type of instance (for example, <code>m3.medium</code>).</p> </li>
@@ -94,7 +94,7 @@ impl DescribeSpotPriceHistoryFluentBuilder {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>One or more filters.</p>
+    /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>availability-zone</code> - The Availability Zone for which prices should be returned.</p> </li>
     /// <li> <p> <code>instance-type</code> - The type of instance (for example, <code>m3.medium</code>).</p> </li>

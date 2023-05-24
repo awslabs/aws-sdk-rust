@@ -16,11 +16,20 @@ pub mod create_cluster_v2;
 /// Types for the `CreateConfiguration` operation.
 pub mod create_configuration;
 
+/// Types for the `CreateVpcConnection` operation.
+pub mod create_vpc_connection;
+
 /// Types for the `DeleteCluster` operation.
 pub mod delete_cluster;
 
+/// Types for the `DeleteClusterPolicy` operation.
+pub mod delete_cluster_policy;
+
 /// Types for the `DeleteConfiguration` operation.
 pub mod delete_configuration;
+
+/// Types for the `DeleteVpcConnection` operation.
+pub mod delete_vpc_connection;
 
 /// Types for the `DescribeCluster` operation.
 pub mod describe_cluster;
@@ -37,11 +46,20 @@ pub mod describe_configuration;
 /// Types for the `DescribeConfigurationRevision` operation.
 pub mod describe_configuration_revision;
 
+/// Types for the `DescribeVpcConnection` operation.
+pub mod describe_vpc_connection;
+
 /// Types for the `GetBootstrapBrokers` operation.
 pub mod get_bootstrap_brokers;
 
+/// Types for the `GetClusterPolicy` operation.
+pub mod get_cluster_policy;
+
 /// Types for the `GetCompatibleKafkaVersions` operation.
 pub mod get_compatible_kafka_versions;
+
+/// Types for the `ListClientVpcConnections` operation.
+pub mod list_client_vpc_connections;
 
 /// Types for the `ListClusterOperations` operation.
 pub mod list_cluster_operations;
@@ -70,8 +88,17 @@ pub mod list_scram_secrets;
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
+/// Types for the `ListVpcConnections` operation.
+pub mod list_vpc_connections;
+
+/// Types for the `PutClusterPolicy` operation.
+pub mod put_cluster_policy;
+
 /// Types for the `RebootBroker` operation.
 pub mod reboot_broker;
+
+/// Types for the `RejectClientVpcConnection` operation.
+pub mod reject_client_vpc_connection;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

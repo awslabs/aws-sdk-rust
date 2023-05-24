@@ -10,7 +10,7 @@ pub struct HoldoutActivity {
     /// <p>The percentage of participants who shouldn't continue the journey.</p>
     /// <p>To determine which participants are held out, Amazon Pinpoint applies a probability-based algorithm to the percentage that you specify. Therefore, the actual percentage of participants who are held out may not be equal to the percentage that you specify.</p>
     #[doc(hidden)]
-    pub percentage: i32,
+    pub percentage: std::option::Option<i32>,
 }
 impl HoldoutActivity {
     /// <p>The unique identifier for the next activity to perform, after performing the holdout activity.</p>
@@ -19,7 +19,7 @@ impl HoldoutActivity {
     }
     /// <p>The percentage of participants who shouldn't continue the journey.</p>
     /// <p>To determine which participants are held out, Amazon Pinpoint applies a probability-based algorithm to the percentage that you specify. Therefore, the actual percentage of participants who are held out may not be equal to the percentage that you specify.</p>
-    pub fn percentage(&self) -> i32 {
+    pub fn percentage(&self) -> std::option::Option<i32> {
         self.percentage
     }
 }
@@ -64,7 +64,7 @@ impl HoldoutActivityBuilder {
     pub fn build(self) -> crate::types::HoldoutActivity {
         crate::types::HoldoutActivity {
             next_activity: self.next_activity,
-            percentage: self.percentage.unwrap_or_default(),
+            percentage: self.percentage,
         }
     }
 }

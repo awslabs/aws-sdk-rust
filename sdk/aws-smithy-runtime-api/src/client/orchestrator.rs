@@ -3,25 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use super::identity::{IdentityResolver, IdentityResolvers};
 use crate::client::identity::Identity;
 use crate::client::interceptors::context::{Input, OutputOrError};
 use crate::client::interceptors::InterceptorContext;
 use crate::config_bag::ConfigBag;
 use crate::type_erasure::{TypeErasedBox, TypedBox};
+use aws_smithy_async::future::now_or_later::NowOrLater;
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::endpoint::EndpointPrefix;
 use aws_smithy_http::property_bag::PropertyBag;
 use std::any::Any;
 use std::borrow::Cow;
 use std::fmt::Debug;
-use std::future::Future;
+use std::future::Future as StdFuture;
 use std::pin::Pin;
 use std::sync::Arc;
+use std::time::SystemTime;
 
 pub type HttpRequest = http::Request<SdkBody>;
 pub type HttpResponse = http::Response<SdkBody>;
 pub type BoxError = Box<dyn std::error::Error + Send + Sync + 'static>;
-pub type BoxFallibleFut<T> = Pin<Box<dyn Future<Output = Result<T, BoxError>>>>;
+pub type BoxFuture<T> = Pin<Box<dyn StdFuture<Output = Result<T, BoxError>>>>;
+pub type Future<T> = NowOrLater<Result<T, BoxError>, BoxFuture<T>>;
 
 pub trait TraceProbe: Send + Sync + Debug {
     fn dispatch_events(&self);
@@ -41,11 +45,11 @@ pub trait ResponseDeserializer: Send + Sync + Debug {
 }
 
 pub trait Connection: Send + Sync + Debug {
-    fn call(&self, request: HttpRequest) -> BoxFallibleFut<HttpResponse>;
+    fn call(&self, request: HttpRequest) -> BoxFuture<HttpResponse>;
 }
 
 impl Connection for Box<dyn Connection> {
-    fn call(&self, request: HttpRequest) -> BoxFallibleFut<HttpResponse> {
+    fn call(&self, request: HttpRequest) -> BoxFuture<HttpResponse> {
         (**self).call(request)
     }
 }
@@ -109,28 +113,6 @@ impl HttpAuthOption {
 
     pub fn properties(&self) -> &PropertyBag {
         &self.properties
-    }
-}
-
-pub trait IdentityResolver: Send + Sync + Debug {
-    fn resolve_identity(&self, identity_properties: &PropertyBag) -> BoxFallibleFut<Identity>;
-}
-
-#[derive(Debug)]
-pub struct IdentityResolvers {
-    identity_resolvers: Vec<(&'static str, Box<dyn IdentityResolver>)>,
-}
-
-impl IdentityResolvers {
-    pub fn builder() -> builders::IdentityResolversBuilder {
-        builders::IdentityResolversBuilder::new()
-    }
-
-    pub fn identity_resolver(&self, identity_type: &'static str) -> Option<&dyn IdentityResolver> {
-        self.identity_resolvers
-            .iter()
-            .find(|resolver| resolver.0 == identity_type)
-            .map(|resolver| &*resolver.1)
     }
 }
 
@@ -202,6 +184,29 @@ pub trait EndpointResolver: Send + Sync + Debug {
     ) -> Result<(), BoxError>;
 }
 
+/// Time that the request is being made (so that time can be overridden in the [`ConfigBag`]).
+#[non_exhaustive]
+#[derive(Copy, Clone, Debug, Eq, PartialEq)]
+pub struct RequestTime(SystemTime);
+
+impl Default for RequestTime {
+    fn default() -> Self {
+        Self(SystemTime::now())
+    }
+}
+
+impl RequestTime {
+    /// Create a new [`RequestTime`].
+    pub fn new(time: SystemTime) -> Self {
+        Self(time)
+    }
+
+    /// Returns the request time as a [`SystemTime`].
+    pub fn system_time(&self) -> SystemTime {
+        self.0
+    }
+}
+
 pub trait ConfigBagAccessors {
     fn auth_option_resolver_params(&self) -> &AuthOptionResolverParams;
     fn set_auth_option_resolver_params(
@@ -241,6 +246,9 @@ pub trait ConfigBagAccessors {
 
     fn trace_probe(&self) -> &dyn TraceProbe;
     fn set_trace_probe(&mut self, trace_probe: impl TraceProbe + 'static);
+
+    fn request_time(&self) -> Option<RequestTime>;
+    fn set_request_time(&mut self, request_time: RequestTime);
 }
 
 impl ConfigBagAccessors for ConfigBag {
@@ -358,37 +366,18 @@ impl ConfigBagAccessors for ConfigBag {
     fn set_trace_probe(&mut self, trace_probe: impl TraceProbe + 'static) {
         self.put::<Box<dyn TraceProbe>>(Box::new(trace_probe));
     }
+
+    fn request_time(&self) -> Option<RequestTime> {
+        self.get::<RequestTime>().cloned()
+    }
+
+    fn set_request_time(&mut self, request_time: RequestTime) {
+        self.put::<RequestTime>(request_time);
+    }
 }
 
 pub mod builders {
     use super::*;
-
-    #[derive(Debug, Default)]
-    pub struct IdentityResolversBuilder {
-        identity_resolvers: Vec<(&'static str, Box<dyn IdentityResolver>)>,
-    }
-
-    impl IdentityResolversBuilder {
-        pub fn new() -> Self {
-            Default::default()
-        }
-
-        pub fn identity_resolver(
-            mut self,
-            name: &'static str,
-            resolver: impl IdentityResolver + 'static,
-        ) -> Self {
-            self.identity_resolvers
-                .push((name, Box::new(resolver) as _));
-            self
-        }
-
-        pub fn build(self) -> IdentityResolvers {
-            IdentityResolvers {
-                identity_resolvers: self.identity_resolvers,
-            }
-        }
-    }
 
     #[derive(Debug, Default)]
     pub struct HttpAuthSchemesBuilder {

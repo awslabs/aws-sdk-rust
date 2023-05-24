@@ -140,8 +140,6 @@ pub(crate) mod shape_cloud_masking_config_input;
 
 pub(crate) mod shape_cloud_removal_config_input;
 
-pub(crate) mod shape_eoj_data_source_config_input;
-
 pub(crate) mod shape_export_error_details_output;
 
 pub(crate) mod shape_export_s3_data_input;
@@ -201,8 +199,6 @@ pub(crate) mod shape_output_resolution_stack_input;
 pub(crate) mod shape_properties;
 
 pub(crate) mod shape_property_filter;
-
-pub(crate) mod shape_s3_data_input;
 
 pub(crate) mod shape_string_list_input;
 

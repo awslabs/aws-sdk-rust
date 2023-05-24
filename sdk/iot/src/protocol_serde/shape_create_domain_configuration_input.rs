@@ -39,10 +39,16 @@ pub fn ser_create_domain_configuration_input(
         }
         array_9.finish();
     }
-    if let Some(var_12) = &input.validation_certificate_arn {
+    if let Some(var_12) = &input.tls_config {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("tlsConfig").start_object();
+        crate::protocol_serde::shape_tls_config::ser_tls_config(&mut object_13, var_12)?;
+        object_13.finish();
+    }
+    if let Some(var_14) = &input.validation_certificate_arn {
         object
             .key("validationCertificateArn")
-            .string(var_12.as_str());
+            .string(var_14.as_str());
     }
     Ok(())
 }

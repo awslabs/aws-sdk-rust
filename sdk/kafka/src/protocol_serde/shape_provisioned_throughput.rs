@@ -3,13 +3,13 @@ pub fn ser_provisioned_throughput(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProvisionedThroughput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.enabled {
-        object.key("enabled").boolean(input.enabled);
+    if let Some(var_1) = &input.enabled {
+        object.key("enabled").boolean(*var_1);
     }
-    if input.volume_throughput != 0 {
+    if let Some(var_2) = &input.volume_throughput {
         object.key("volumeThroughput").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.volume_throughput).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
     Ok(())

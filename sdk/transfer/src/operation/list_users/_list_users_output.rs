@@ -9,7 +9,7 @@ pub struct ListUsersOutput {
     /// <p>A system-assigned unique identifier for a server that the users are assigned to.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>Returns the user accounts and their properties for the <code>ServerId</code> value that you specify.</p>
+    /// <p>Returns the Transfer Family users and their properties for the <code>ServerId</code> value that you specify.</p>
     #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::types::ListedUser>>,
     _request_id: Option<String>,
@@ -23,7 +23,7 @@ impl ListUsersOutput {
     pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
-    /// <p>Returns the user accounts and their properties for the <code>ServerId</code> value that you specify.</p>
+    /// <p>Returns the Transfer Family users and their properties for the <code>ServerId</code> value that you specify.</p>
     pub fn users(&self) -> std::option::Option<&[crate::types::ListedUser]> {
         self.users.as_deref()
     }
@@ -74,14 +74,14 @@ impl ListUsersOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_users`](Self::set_users).
     ///
-    /// <p>Returns the user accounts and their properties for the <code>ServerId</code> value that you specify.</p>
+    /// <p>Returns the Transfer Family users and their properties for the <code>ServerId</code> value that you specify.</p>
     pub fn users(mut self, input: crate::types::ListedUser) -> Self {
         let mut v = self.users.unwrap_or_default();
         v.push(input);
         self.users = Some(v);
         self
     }
-    /// <p>Returns the user accounts and their properties for the <code>ServerId</code> value that you specify.</p>
+    /// <p>Returns the Transfer Family users and their properties for the <code>ServerId</code> value that you specify.</p>
     pub fn set_users(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::ListedUser>>,

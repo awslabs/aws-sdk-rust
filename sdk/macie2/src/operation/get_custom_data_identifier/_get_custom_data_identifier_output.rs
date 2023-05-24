@@ -11,7 +11,7 @@ pub struct GetCustomDataIdentifierOutput {
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies whether the custom data identifier was deleted. If you delete a custom data identifier, Amazon Macie doesn't delete it permanently. Instead, it soft deletes the identifier.</p>
     #[doc(hidden)]
-    pub deleted: bool,
+    pub deleted: std::option::Option<bool>,
     /// <p>The custom description of the custom data identifier.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -26,7 +26,7 @@ pub struct GetCustomDataIdentifierOutput {
     pub keywords: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. Otherwise, Macie excludes the result.</p>
     #[doc(hidden)]
-    pub maximum_match_distance: i32,
+    pub maximum_match_distance: std::option::Option<i32>,
     /// <p>The custom name of the custom data identifier.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -52,7 +52,7 @@ impl GetCustomDataIdentifierOutput {
         self.created_at.as_ref()
     }
     /// <p>Specifies whether the custom data identifier was deleted. If you delete a custom data identifier, Amazon Macie doesn't delete it permanently. Instead, it soft deletes the identifier.</p>
-    pub fn deleted(&self) -> bool {
+    pub fn deleted(&self) -> std::option::Option<bool> {
         self.deleted
     }
     /// <p>The custom description of the custom data identifier.</p>
@@ -72,7 +72,7 @@ impl GetCustomDataIdentifierOutput {
         self.keywords.as_deref()
     }
     /// <p>The maximum number of characters that can exist between the end of at least one complete character sequence specified by the keywords array and the end of the text that matches the regex pattern. If a complete keyword precedes all the text that matches the pattern and the keyword is within the specified distance, Amazon Macie includes the result. Otherwise, Macie excludes the result.</p>
-    pub fn maximum_match_distance(&self) -> i32 {
+    pub fn maximum_match_distance(&self) -> std::option::Option<i32> {
         self.maximum_match_distance
     }
     /// <p>The custom name of the custom data identifier.</p>
@@ -310,12 +310,12 @@ impl GetCustomDataIdentifierOutputBuilder {
         crate::operation::get_custom_data_identifier::GetCustomDataIdentifierOutput {
             arn: self.arn,
             created_at: self.created_at,
-            deleted: self.deleted.unwrap_or_default(),
+            deleted: self.deleted,
             description: self.description,
             id: self.id,
             ignore_words: self.ignore_words,
             keywords: self.keywords,
-            maximum_match_distance: self.maximum_match_distance.unwrap_or_default(),
+            maximum_match_distance: self.maximum_match_distance,
             name: self.name,
             regex: self.regex,
             severity_levels: self.severity_levels,

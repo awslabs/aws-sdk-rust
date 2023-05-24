@@ -246,6 +246,13 @@ pub(crate) fn de_generate_data_key(
                             .transpose()?,
                         );
                     }
+                    "CiphertextForRecipient" => {
+                        builder = builder.set_ciphertext_for_recipient(
+                            aws_smithy_json::deserialize::token::expect_blob_or_null(
+                                tokens.next(),
+                            )?,
+                        );
+                    }
                     _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

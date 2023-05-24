@@ -91,15 +91,15 @@ pub fn ser_cmaf_package(
         }
         array_4.finish();
     }
-    if input.include_encoder_configuration_in_segments {
+    if let Some(var_7) = &input.include_encoder_configuration_in_segments {
         object
             .key("includeEncoderConfigurationInSegments")
-            .boolean(input.include_encoder_configuration_in_segments);
+            .boolean(*var_7);
     }
-    if input.segment_duration_seconds != 0 {
+    if let Some(var_8) = &input.segment_duration_seconds {
         object.key("segmentDurationSeconds").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.segment_duration_seconds).into()),
+            aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
     Ok(())

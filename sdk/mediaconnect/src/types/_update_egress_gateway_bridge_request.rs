@@ -5,11 +5,11 @@
 pub struct UpdateEgressGatewayBridgeRequest {
     /// Update an existing egress-type bridge.
     #[doc(hidden)]
-    pub max_bitrate: i32,
+    pub max_bitrate: std::option::Option<i32>,
 }
 impl UpdateEgressGatewayBridgeRequest {
     /// Update an existing egress-type bridge.
-    pub fn max_bitrate(&self) -> i32 {
+    pub fn max_bitrate(&self) -> std::option::Option<i32> {
         self.max_bitrate
     }
 }
@@ -40,7 +40,7 @@ impl UpdateEgressGatewayBridgeRequestBuilder {
     /// Consumes the builder and constructs a [`UpdateEgressGatewayBridgeRequest`](crate::types::UpdateEgressGatewayBridgeRequest).
     pub fn build(self) -> crate::types::UpdateEgressGatewayBridgeRequest {
         crate::types::UpdateEgressGatewayBridgeRequest {
-            max_bitrate: self.max_bitrate.unwrap_or_default(),
+            max_bitrate: self.max_bitrate,
         }
     }
 }

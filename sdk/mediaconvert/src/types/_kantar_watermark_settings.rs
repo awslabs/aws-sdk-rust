@@ -15,10 +15,10 @@ pub struct KantarWatermarkSettings {
     pub credentials_secret_name: std::option::Option<std::string::String>,
     /// Optional. Specify an offset, in whole seconds, from the start of your output and the beginning of the watermarking. When you don't specify an offset, Kantar defaults to zero.
     #[doc(hidden)]
-    pub file_offset: f64,
+    pub file_offset: std::option::Option<f64>,
     /// Provide your Kantar license ID number. You should get this number from Kantar.
     #[doc(hidden)]
-    pub kantar_license_id: i32,
+    pub kantar_license_id: std::option::Option<i32>,
     /// Provide the HTTPS endpoint to the Kantar server. You should get this endpoint from Kantar.
     #[doc(hidden)]
     pub kantar_server_url: std::option::Option<std::string::String>,
@@ -58,11 +58,11 @@ impl KantarWatermarkSettings {
         self.credentials_secret_name.as_deref()
     }
     /// Optional. Specify an offset, in whole seconds, from the start of your output and the beginning of the watermarking. When you don't specify an offset, Kantar defaults to zero.
-    pub fn file_offset(&self) -> f64 {
+    pub fn file_offset(&self) -> std::option::Option<f64> {
         self.file_offset
     }
     /// Provide your Kantar license ID number. You should get this number from Kantar.
-    pub fn kantar_license_id(&self) -> i32 {
+    pub fn kantar_license_id(&self) -> std::option::Option<i32> {
         self.kantar_license_id
     }
     /// Provide the HTTPS endpoint to the Kantar server. You should get this endpoint from Kantar.
@@ -269,8 +269,8 @@ impl KantarWatermarkSettingsBuilder {
             channel_name: self.channel_name,
             content_reference: self.content_reference,
             credentials_secret_name: self.credentials_secret_name,
-            file_offset: self.file_offset.unwrap_or_default(),
-            kantar_license_id: self.kantar_license_id.unwrap_or_default(),
+            file_offset: self.file_offset,
+            kantar_license_id: self.kantar_license_id,
             kantar_server_url: self.kantar_server_url,
             log_destination: self.log_destination,
             metadata3: self.metadata3,

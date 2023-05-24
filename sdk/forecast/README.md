@@ -17,7 +17,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = "0.55.2"
-aws-sdk-forecast = "0.27.0"
+aws-sdk-forecast = "0.28.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

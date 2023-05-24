@@ -6,7 +6,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct EventType {
-    /// <p>The Amazon Web Services service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    /// <p>The Amazon Web Service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     #[doc(hidden)]
     pub service: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
@@ -17,7 +17,7 @@ pub struct EventType {
     pub category: std::option::Option<crate::types::EventTypeCategory>,
 }
 impl EventType {
-    /// <p>The Amazon Web Services service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    /// <p>The Amazon Web Service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     pub fn service(&self) -> std::option::Option<&str> {
         self.service.as_deref()
     }
@@ -46,12 +46,12 @@ pub struct EventTypeBuilder {
     pub(crate) category: std::option::Option<crate::types::EventTypeCategory>,
 }
 impl EventTypeBuilder {
-    /// <p>The Amazon Web Services service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    /// <p>The Amazon Web Service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     pub fn service(mut self, input: impl Into<std::string::String>) -> Self {
         self.service = Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
+    /// <p>The Amazon Web Service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
     pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.service = input;
         self

@@ -94,12 +94,12 @@ impl PutBucketMetricsConfigurationFluentBuilder {
         self.inner = self.inner.set_bucket(input);
         self
     }
-    /// <p>The ID used to identify the metrics configuration.</p>
+    /// <p>The ID used to identify the metrics configuration. The ID has a 64 character limit and can only contain letters, numbers, periods, dashes, and underscores.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
         self
     }
-    /// <p>The ID used to identify the metrics configuration.</p>
+    /// <p>The ID used to identify the metrics configuration. The ID has a 64 character limit and can only contain letters, numbers, periods, dashes, and underscores.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self

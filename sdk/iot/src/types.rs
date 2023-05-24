@@ -117,6 +117,8 @@ pub use crate::types::_configuration::Configuration;
 
 pub use crate::types::_event_type::EventType;
 
+pub use crate::types::_tls_config::TlsConfig;
+
 pub use crate::types::_domain_configuration_status::DomainConfigurationStatus;
 
 pub use crate::types::_authorizer_config::AuthorizerConfig;
@@ -1044,6 +1046,8 @@ mod _timestream_action;
 mod _timestream_dimension;
 
 mod _timestream_timestamp;
+
+mod _tls_config;
 
 mod _tls_context;
 

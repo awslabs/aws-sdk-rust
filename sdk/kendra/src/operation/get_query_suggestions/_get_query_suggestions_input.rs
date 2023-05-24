@@ -14,6 +14,15 @@ pub struct GetQuerySuggestionsInput {
     /// <p>The maximum number of query suggestions you want to show to your users.</p>
     #[doc(hidden)]
     pub max_suggestions_count: std::option::Option<i32>,
+    /// <p>The suggestions type to base query suggestions on. The suggestion types are query history or document fields/attributes. You can set one type or the other.</p>
+    /// <p>If you set query history as your suggestions type, Amazon Kendra suggests queries relevant to your users based on popular queries in the query history.</p>
+    /// <p>If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to your users based on the contents of document fields.</p>
+    #[doc(hidden)]
+    pub suggestion_types: std::option::Option<std::vec::Vec<crate::types::SuggestionType>>,
+    /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
+    #[doc(hidden)]
+    pub attribute_suggestions_config:
+        std::option::Option<crate::types::AttributeSuggestionsGetConfig>,
 }
 impl GetQuerySuggestionsInput {
     /// <p>The identifier of the index you want to get query suggestions from.</p>
@@ -29,6 +38,18 @@ impl GetQuerySuggestionsInput {
     /// <p>The maximum number of query suggestions you want to show to your users.</p>
     pub fn max_suggestions_count(&self) -> std::option::Option<i32> {
         self.max_suggestions_count
+    }
+    /// <p>The suggestions type to base query suggestions on. The suggestion types are query history or document fields/attributes. You can set one type or the other.</p>
+    /// <p>If you set query history as your suggestions type, Amazon Kendra suggests queries relevant to your users based on popular queries in the query history.</p>
+    /// <p>If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to your users based on the contents of document fields.</p>
+    pub fn suggestion_types(&self) -> std::option::Option<&[crate::types::SuggestionType]> {
+        self.suggestion_types.as_deref()
+    }
+    /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
+    pub fn attribute_suggestions_config(
+        &self,
+    ) -> std::option::Option<&crate::types::AttributeSuggestionsGetConfig> {
+        self.attribute_suggestions_config.as_ref()
     }
 }
 impl GetQuerySuggestionsInput {
@@ -47,6 +68,9 @@ pub struct GetQuerySuggestionsInputBuilder {
     pub(crate) index_id: std::option::Option<std::string::String>,
     pub(crate) query_text: std::option::Option<std::string::String>,
     pub(crate) max_suggestions_count: std::option::Option<i32>,
+    pub(crate) suggestion_types: std::option::Option<std::vec::Vec<crate::types::SuggestionType>>,
+    pub(crate) attribute_suggestions_config:
+        std::option::Option<crate::types::AttributeSuggestionsGetConfig>,
 }
 impl GetQuerySuggestionsInputBuilder {
     /// <p>The identifier of the index you want to get query suggestions from.</p>
@@ -83,6 +107,45 @@ impl GetQuerySuggestionsInputBuilder {
         self.max_suggestions_count = input;
         self
     }
+    /// Appends an item to `suggestion_types`.
+    ///
+    /// To override the contents of this collection use [`set_suggestion_types`](Self::set_suggestion_types).
+    ///
+    /// <p>The suggestions type to base query suggestions on. The suggestion types are query history or document fields/attributes. You can set one type or the other.</p>
+    /// <p>If you set query history as your suggestions type, Amazon Kendra suggests queries relevant to your users based on popular queries in the query history.</p>
+    /// <p>If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to your users based on the contents of document fields.</p>
+    pub fn suggestion_types(mut self, input: crate::types::SuggestionType) -> Self {
+        let mut v = self.suggestion_types.unwrap_or_default();
+        v.push(input);
+        self.suggestion_types = Some(v);
+        self
+    }
+    /// <p>The suggestions type to base query suggestions on. The suggestion types are query history or document fields/attributes. You can set one type or the other.</p>
+    /// <p>If you set query history as your suggestions type, Amazon Kendra suggests queries relevant to your users based on popular queries in the query history.</p>
+    /// <p>If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to your users based on the contents of document fields.</p>
+    pub fn set_suggestion_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SuggestionType>>,
+    ) -> Self {
+        self.suggestion_types = input;
+        self
+    }
+    /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
+    pub fn attribute_suggestions_config(
+        mut self,
+        input: crate::types::AttributeSuggestionsGetConfig,
+    ) -> Self {
+        self.attribute_suggestions_config = Some(input);
+        self
+    }
+    /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
+    pub fn set_attribute_suggestions_config(
+        mut self,
+        input: std::option::Option<crate::types::AttributeSuggestionsGetConfig>,
+    ) -> Self {
+        self.attribute_suggestions_config = input;
+        self
+    }
     /// Consumes the builder and constructs a [`GetQuerySuggestionsInput`](crate::operation::get_query_suggestions::GetQuerySuggestionsInput).
     pub fn build(
         self,
@@ -95,6 +158,8 @@ impl GetQuerySuggestionsInputBuilder {
                 index_id: self.index_id,
                 query_text: self.query_text,
                 max_suggestions_count: self.max_suggestions_count,
+                suggestion_types: self.suggestion_types,
+                attribute_suggestions_config: self.attribute_suggestions_config,
             },
         )
     }

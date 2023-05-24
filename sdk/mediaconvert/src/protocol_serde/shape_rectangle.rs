@@ -3,28 +3,28 @@ pub fn ser_rectangle(
     object: &mut aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Rectangle,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    if input.height != 0 {
+    if let Some(var_1) = &input.height {
         object.key("height").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.height).into()),
+            aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if input.width != 0 {
+    if let Some(var_2) = &input.width {
         object.key("width").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.width).into()),
+            aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if input.x != 0 {
+    if let Some(var_3) = &input.x {
         object.key("x").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.x).into()),
+            aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if input.y != 0 {
+    if let Some(var_4) = &input.y {
         object.key("y").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.y).into()),
+            aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     Ok(())

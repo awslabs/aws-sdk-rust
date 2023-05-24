@@ -8,7 +8,7 @@ pub struct Firehose {
     pub delivery_stream: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub enabled: bool,
+    pub enabled: std::option::Option<bool>,
 }
 impl Firehose {
     #[allow(missing_docs)] // documentation missing in model
@@ -16,7 +16,7 @@ impl Firehose {
         self.delivery_stream.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
 }
@@ -59,7 +59,7 @@ impl FirehoseBuilder {
     pub fn build(self) -> crate::types::Firehose {
         crate::types::Firehose {
             delivery_stream: self.delivery_stream,
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled,
         }
     }
 }

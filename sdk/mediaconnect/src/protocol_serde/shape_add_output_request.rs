@@ -24,68 +24,68 @@ pub fn ser_add_output_request(
         crate::protocol_serde::shape_encryption::ser_encryption(&mut object_7, var_6)?;
         object_7.finish();
     }
-    if input.max_latency != 0 {
+    if let Some(var_8) = &input.max_latency {
         object.key("maxLatency").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.max_latency).into()),
+            aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_8) = &input.media_stream_output_configurations {
-        let mut array_9 = object.key("mediaStreamOutputConfigurations").start_array();
-        for item_10 in var_8 {
+    if let Some(var_9) = &input.media_stream_output_configurations {
+        let mut array_10 = object.key("mediaStreamOutputConfigurations").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_media_stream_output_configuration_request::ser_media_stream_output_configuration_request(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_media_stream_output_configuration_request::ser_media_stream_output_configuration_request(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
-    if input.min_latency != 0 {
+    if let Some(var_13) = &input.min_latency {
         object.key("minLatency").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.min_latency).into()),
+            aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
-    if let Some(var_12) = &input.name {
-        object.key("name").string(var_12.as_str());
+    if let Some(var_14) = &input.name {
+        object.key("name").string(var_14.as_str());
     }
-    if input.port != 0 {
+    if let Some(var_15) = &input.port {
         object.key("port").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.port).into()),
+            aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
-    if let Some(var_13) = &input.protocol {
-        object.key("protocol").string(var_13.as_str());
+    if let Some(var_16) = &input.protocol {
+        object.key("protocol").string(var_16.as_str());
     }
-    if let Some(var_14) = &input.remote_id {
-        object.key("remoteId").string(var_14.as_str());
+    if let Some(var_17) = &input.remote_id {
+        object.key("remoteId").string(var_17.as_str());
     }
-    if input.sender_control_port != 0 {
+    if let Some(var_18) = &input.sender_control_port {
         object.key("senderControlPort").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.sender_control_port).into()),
+            aws_smithy_types::Number::NegInt((*var_18).into()),
         );
     }
-    if input.smoothing_latency != 0 {
+    if let Some(var_19) = &input.smoothing_latency {
         object.key("smoothingLatency").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.smoothing_latency).into()),
+            aws_smithy_types::Number::NegInt((*var_19).into()),
         );
     }
-    if let Some(var_15) = &input.stream_id {
-        object.key("streamId").string(var_15.as_str());
+    if let Some(var_20) = &input.stream_id {
+        object.key("streamId").string(var_20.as_str());
     }
-    if let Some(var_16) = &input.vpc_interface_attachment {
+    if let Some(var_21) = &input.vpc_interface_attachment {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("vpcInterfaceAttachment").start_object();
+        let mut object_22 = object.key("vpcInterfaceAttachment").start_object();
         crate::protocol_serde::shape_vpc_interface_attachment::ser_vpc_interface_attachment(
-            &mut object_17,
-            var_16,
+            &mut object_22,
+            var_21,
         )?;
-        object_17.finish();
+        object_22.finish();
     }
     Ok(())
 }

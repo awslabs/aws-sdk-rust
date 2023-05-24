@@ -29,7 +29,7 @@ pub struct ModifyInstanceAttributeInput {
     /// <p>This option is supported only for HVM instances. Specifying this option with a PV instance can make it unreachable.</p>
     #[doc(hidden)]
     pub ena_support: std::option::Option<crate::types::AttributeBooleanValue>,
-    /// <p>[EC2-VPC] Replaces the security groups of the instance with the specified security groups. You must specify at least one security group, even if it's just the default security group for the VPC. You must specify the security group ID, not the security group name.</p>
+    /// <p>Replaces the security groups of the instance with the specified security groups. You must specify the ID of at least one security group, even if it's just the default security group for the VPC.</p>
     #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the instance.</p>
@@ -100,7 +100,7 @@ impl ModifyInstanceAttributeInput {
     pub fn ena_support(&self) -> std::option::Option<&crate::types::AttributeBooleanValue> {
         self.ena_support.as_ref()
     }
-    /// <p>[EC2-VPC] Replaces the security groups of the instance with the specified security groups. You must specify at least one security group, even if it's just the default security group for the VPC. You must specify the security group ID, not the security group name.</p>
+    /// <p>Replaces the security groups of the instance with the specified security groups. You must specify the ID of at least one security group, even if it's just the default security group for the VPC.</p>
     pub fn groups(&self) -> std::option::Option<&[std::string::String]> {
         self.groups.as_deref()
     }
@@ -291,14 +291,14 @@ impl ModifyInstanceAttributeInputBuilder {
     ///
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
     ///
-    /// <p>[EC2-VPC] Replaces the security groups of the instance with the specified security groups. You must specify at least one security group, even if it's just the default security group for the VPC. You must specify the security group ID, not the security group name.</p>
+    /// <p>Replaces the security groups of the instance with the specified security groups. You must specify the ID of at least one security group, even if it's just the default security group for the VPC.</p>
     pub fn groups(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.groups.unwrap_or_default();
         v.push(input.into());
         self.groups = Some(v);
         self
     }
-    /// <p>[EC2-VPC] Replaces the security groups of the instance with the specified security groups. You must specify at least one security group, even if it's just the default security group for the VPC. You must specify the security group ID, not the security group name.</p>
+    /// <p>Replaces the security groups of the instance with the specified security groups. You must specify the ID of at least one security group, even if it's just the default security group for the VPC.</p>
     pub fn set_groups(
         mut self,
         input: std::option::Option<std::vec::Vec<std::string::String>>,

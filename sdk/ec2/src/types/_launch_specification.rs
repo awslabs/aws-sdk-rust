@@ -7,13 +7,13 @@ pub struct LaunchSpecification {
     /// <p>The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.</p>
     #[doc(hidden)]
     pub user_data: std::option::Option<std::string::String>,
-    /// <p>One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+    /// <p>The IDs of the security groups.</p>
     #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<crate::types::GroupIdentifier>>,
     /// <p>Deprecated.</p>
     #[doc(hidden)]
     pub addressing_type: std::option::Option<std::string::String>,
-    /// <p>One or more block device mapping entries.</p>
+    /// <p>The block device mapping entries.</p>
     #[doc(hidden)]
     pub block_device_mappings: std::option::Option<std::vec::Vec<crate::types::BlockDeviceMapping>>,
     /// <p>Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
@@ -35,7 +35,7 @@ pub struct LaunchSpecification {
     /// <p>The name of the key pair.</p>
     #[doc(hidden)]
     pub key_name: std::option::Option<std::string::String>,
-    /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p>
+    /// <p>The network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p>
     #[doc(hidden)]
     pub network_interfaces:
         std::option::Option<std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
@@ -57,7 +57,7 @@ impl LaunchSpecification {
     pub fn user_data(&self) -> std::option::Option<&str> {
         self.user_data.as_deref()
     }
-    /// <p>One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+    /// <p>The IDs of the security groups.</p>
     pub fn security_groups(&self) -> std::option::Option<&[crate::types::GroupIdentifier]> {
         self.security_groups.as_deref()
     }
@@ -65,7 +65,7 @@ impl LaunchSpecification {
     pub fn addressing_type(&self) -> std::option::Option<&str> {
         self.addressing_type.as_deref()
     }
-    /// <p>One or more block device mapping entries.</p>
+    /// <p>The block device mapping entries.</p>
     pub fn block_device_mappings(
         &self,
     ) -> std::option::Option<&[crate::types::BlockDeviceMapping]> {
@@ -98,7 +98,7 @@ impl LaunchSpecification {
     pub fn key_name(&self) -> std::option::Option<&str> {
         self.key_name.as_deref()
     }
-    /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p>
+    /// <p>The network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p>
     pub fn network_interfaces(
         &self,
     ) -> std::option::Option<&[crate::types::InstanceNetworkInterfaceSpecification]> {
@@ -187,14 +187,14 @@ impl LaunchSpecificationBuilder {
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
-    /// <p>One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+    /// <p>The IDs of the security groups.</p>
     pub fn security_groups(mut self, input: crate::types::GroupIdentifier) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input);
         self.security_groups = Some(v);
         self
     }
-    /// <p>One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+    /// <p>The IDs of the security groups.</p>
     pub fn set_security_groups(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::GroupIdentifier>>,
@@ -216,14 +216,14 @@ impl LaunchSpecificationBuilder {
     ///
     /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
     ///
-    /// <p>One or more block device mapping entries.</p>
+    /// <p>The block device mapping entries.</p>
     pub fn block_device_mappings(mut self, input: crate::types::BlockDeviceMapping) -> Self {
         let mut v = self.block_device_mappings.unwrap_or_default();
         v.push(input);
         self.block_device_mappings = Some(v);
         self
     }
-    /// <p>One or more block device mapping entries.</p>
+    /// <p>The block device mapping entries.</p>
     pub fn set_block_device_mappings(
         mut self,
         input: std::option::Option<std::vec::Vec<crate::types::BlockDeviceMapping>>,
@@ -306,7 +306,7 @@ impl LaunchSpecificationBuilder {
     ///
     /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
     ///
-    /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p>
+    /// <p>The network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p>
     pub fn network_interfaces(
         mut self,
         input: crate::types::InstanceNetworkInterfaceSpecification,
@@ -316,7 +316,7 @@ impl LaunchSpecificationBuilder {
         self.network_interfaces = Some(v);
         self
     }
-    /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p>
+    /// <p>The network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p>
     pub fn set_network_interfaces(
         mut self,
         input: std::option::Option<

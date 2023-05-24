@@ -48,6 +48,36 @@ pub fn ser_scatter_plot_unaggregated_field_wells(
         }
         array_10.finish();
     }
+    if let Some(var_13) = &input.category {
+        let mut array_14 = object.key("Category").start_array();
+        for item_15 in var_13 {
+            {
+                #[allow(unused_mut)]
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_dimension_field::ser_dimension_field(
+                    &mut object_16,
+                    item_15,
+                )?;
+                object_16.finish();
+            }
+        }
+        array_14.finish();
+    }
+    if let Some(var_17) = &input.label {
+        let mut array_18 = object.key("Label").start_array();
+        for item_19 in var_17 {
+            {
+                #[allow(unused_mut)]
+                let mut object_20 = array_18.value().start_object();
+                crate::protocol_serde::shape_dimension_field::ser_dimension_field(
+                    &mut object_20,
+                    item_19,
+                )?;
+                object_20.finish();
+            }
+        }
+        array_18.finish();
+    }
     Ok(())
 }
 
@@ -89,6 +119,16 @@ where
                             "Size" => {
                                 builder = builder.set_size(
                                     crate::protocol_serde::shape_measure_field_list::de_measure_field_list(tokens)?
+                                );
+                            }
+                            "Category" => {
+                                builder = builder.set_category(
+                                    crate::protocol_serde::shape_dimension_field_list::de_dimension_field_list(tokens)?
+                                );
+                            }
+                            "Label" => {
+                                builder = builder.set_label(
+                                    crate::protocol_serde::shape_dimension_field_list::de_dimension_field_list(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

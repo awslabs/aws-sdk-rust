@@ -22,6 +22,19 @@ pub struct GetContentModerationOutput {
     /// <p>Version number of the moderation detection model that was used to detect inappropriate, unwanted, or offensive content.</p>
     #[doc(hidden)]
     pub moderation_model_version: std::option::Option<std::string::String>,
+    /// <p>Job identifier for the content moderation operation for which you want to obtain results. The job identifer is returned by an initial call to StartContentModeration.</p>
+    #[doc(hidden)]
+    pub job_id: std::option::Option<std::string::String>,
+    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    #[doc(hidden)]
+    pub video: std::option::Option<crate::types::Video>,
+    /// <p>A job identifier specified in the call to StartContentModeration and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
+    #[doc(hidden)]
+    pub job_tag: std::option::Option<std::string::String>,
+    /// <p>Information about the paramters used when getting a response. Includes information on aggregation and sorting methods.</p>
+    #[doc(hidden)]
+    pub get_request_metadata:
+        std::option::Option<crate::types::GetContentModerationRequestMetadata>,
     _request_id: Option<String>,
 }
 impl GetContentModerationOutput {
@@ -51,6 +64,24 @@ impl GetContentModerationOutput {
     pub fn moderation_model_version(&self) -> std::option::Option<&str> {
         self.moderation_model_version.as_deref()
     }
+    /// <p>Job identifier for the content moderation operation for which you want to obtain results. The job identifer is returned by an initial call to StartContentModeration.</p>
+    pub fn job_id(&self) -> std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
+    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    pub fn video(&self) -> std::option::Option<&crate::types::Video> {
+        self.video.as_ref()
+    }
+    /// <p>A job identifier specified in the call to StartContentModeration and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
+    pub fn job_tag(&self) -> std::option::Option<&str> {
+        self.job_tag.as_deref()
+    }
+    /// <p>Information about the paramters used when getting a response. Includes information on aggregation and sorting methods.</p>
+    pub fn get_request_metadata(
+        &self,
+    ) -> std::option::Option<&crate::types::GetContentModerationRequestMetadata> {
+        self.get_request_metadata.as_ref()
+    }
 }
 impl aws_http::request_id::RequestId for GetContentModerationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -76,6 +107,11 @@ pub struct GetContentModerationOutputBuilder {
         std::option::Option<std::vec::Vec<crate::types::ContentModerationDetection>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     pub(crate) moderation_model_version: std::option::Option<std::string::String>,
+    pub(crate) job_id: std::option::Option<std::string::String>,
+    pub(crate) video: std::option::Option<crate::types::Video>,
+    pub(crate) job_tag: std::option::Option<std::string::String>,
+    pub(crate) get_request_metadata:
+        std::option::Option<crate::types::GetContentModerationRequestMetadata>,
     _request_id: Option<String>,
 }
 impl GetContentModerationOutputBuilder {
@@ -157,6 +193,52 @@ impl GetContentModerationOutputBuilder {
         self.moderation_model_version = input;
         self
     }
+    /// <p>Job identifier for the content moderation operation for which you want to obtain results. The job identifer is returned by an initial call to StartContentModeration.</p>
+    pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.job_id = Some(input.into());
+        self
+    }
+    /// <p>Job identifier for the content moderation operation for which you want to obtain results. The job identifer is returned by an initial call to StartContentModeration.</p>
+    pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.job_id = input;
+        self
+    }
+    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    pub fn video(mut self, input: crate::types::Video) -> Self {
+        self.video = Some(input);
+        self
+    }
+    /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
+    pub fn set_video(mut self, input: std::option::Option<crate::types::Video>) -> Self {
+        self.video = input;
+        self
+    }
+    /// <p>A job identifier specified in the call to StartContentModeration and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
+    pub fn job_tag(mut self, input: impl Into<std::string::String>) -> Self {
+        self.job_tag = Some(input.into());
+        self
+    }
+    /// <p>A job identifier specified in the call to StartContentModeration and returned in the job completion notification sent to your Amazon Simple Notification Service topic.</p>
+    pub fn set_job_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.job_tag = input;
+        self
+    }
+    /// <p>Information about the paramters used when getting a response. Includes information on aggregation and sorting methods.</p>
+    pub fn get_request_metadata(
+        mut self,
+        input: crate::types::GetContentModerationRequestMetadata,
+    ) -> Self {
+        self.get_request_metadata = Some(input);
+        self
+    }
+    /// <p>Information about the paramters used when getting a response. Includes information on aggregation and sorting methods.</p>
+    pub fn set_get_request_metadata(
+        mut self,
+        input: std::option::Option<crate::types::GetContentModerationRequestMetadata>,
+    ) -> Self {
+        self.get_request_metadata = input;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -175,6 +257,10 @@ impl GetContentModerationOutputBuilder {
             moderation_labels: self.moderation_labels,
             next_token: self.next_token,
             moderation_model_version: self.moderation_model_version,
+            job_id: self.job_id,
+            video: self.video,
+            job_tag: self.job_tag,
+            get_request_metadata: self.get_request_metadata,
             _request_id: self._request_id,
         }
     }

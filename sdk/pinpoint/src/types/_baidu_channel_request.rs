@@ -9,7 +9,7 @@ pub struct BaiduChannelRequest {
     pub api_key: std::option::Option<std::string::String>,
     /// <p>Specifies whether to enable the Baidu channel for the application.</p>
     #[doc(hidden)]
-    pub enabled: bool,
+    pub enabled: std::option::Option<bool>,
     /// <p>The secret key that you received from the Baidu Cloud Push service to communicate with the service.</p>
     #[doc(hidden)]
     pub secret_key: std::option::Option<std::string::String>,
@@ -20,7 +20,7 @@ impl BaiduChannelRequest {
         self.api_key.as_deref()
     }
     /// <p>Specifies whether to enable the Baidu channel for the application.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
     /// <p>The secret key that you received from the Baidu Cloud Push service to communicate with the service.</p>
@@ -78,7 +78,7 @@ impl BaiduChannelRequestBuilder {
     pub fn build(self) -> crate::types::BaiduChannelRequest {
         crate::types::BaiduChannelRequest {
             api_key: self.api_key,
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled,
             secret_key: self.secret_key,
         }
     }

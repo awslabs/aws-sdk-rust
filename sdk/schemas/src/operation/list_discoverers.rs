@@ -57,22 +57,24 @@ impl ListDiscoverersInput {
                         );
                     }
                 }
-                if _input.limit != 0 {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(_input.limit).encode(),
-                    );
-                }
-                if let Some(inner_2) = &_input.next_token {
-                    {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_2));
+                if let Some(inner_2) = &_input.limit {
+                    if *inner_2 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_2).encode(),
+                        );
                     }
                 }
-                if let Some(inner_3) = &_input.source_arn_prefix {
+                if let Some(inner_3) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_3));
+                    }
+                }
+                if let Some(inner_4) = &_input.source_arn_prefix {
                     {
                         query.push_kv(
                             "sourceArnPrefix",
-                            &aws_smithy_http::query::fmt_string(&inner_3),
+                            &aws_smithy_http::query::fmt_string(&inner_4),
                         );
                     }
                 }

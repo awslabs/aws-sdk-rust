@@ -55,6 +55,12 @@ impl GetNetworkInsightsAccessScopeAnalysisFindingsFluentBuilder {
             .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::get_network_insights_access_scope_analysis_findings::paginator::GetNetworkInsightsAccessScopeAnalysisFindingsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::get_network_insights_access_scope_analysis_findings::paginator::GetNetworkInsightsAccessScopeAnalysisFindingsPaginator{
+        crate::operation::get_network_insights_access_scope_analysis_findings::paginator::GetNetworkInsightsAccessScopeAnalysisFindingsPaginator::new(self.handle, self.inner)
+    }
     /// <p>The ID of the Network Access Scope analysis.</p>
     pub fn network_insights_access_scope_analysis_id(
         mut self,

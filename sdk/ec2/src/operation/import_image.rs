@@ -155,6 +155,9 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportImage {
             )
         }
     }
+    fn sensitive(&self) -> bool {
+        true
+    }
 }
 
 /// Do not use this.

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub struct ListCrlsOutput {
-    /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
+    /// <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of certificate revocation lists (CRL). </p>
@@ -12,7 +12,7 @@ pub struct ListCrlsOutput {
     _request_id: Option<String>,
 }
 impl ListCrlsOutput {
-    /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
+    /// <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -42,12 +42,12 @@ pub struct ListCrlsOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListCrlsOutputBuilder {
-    /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
+    /// <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
+    /// <p>A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.next_token = input;
         self

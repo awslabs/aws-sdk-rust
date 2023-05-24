@@ -9,7 +9,11 @@ pub use crate::operation::put_bucket_logging::_put_bucket_logging_input::PutBuck
 /// <p>The bucket owner is automatically granted FULL_CONTROL to all logs. You use the <code>Grantee</code> request element to grant access to other people. The <code>Permissions</code> request element specifies the kind of access the grantee has to the logs.</p> <important>
 /// <p>If the target bucket for log delivery uses the bucket owner enforced setting for S3 Object Ownership, you can't use the <code>Grantee</code> request element to grant access to others. Permissions can only be granted using policies. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions for server access log delivery</a> in the <i>Amazon S3 User Guide</i>.</p>
 /// </important>
-/// <p> <b>Grantee Values</b> </p>
+/// <dl>
+/// <dt>
+/// Grantee Values
+/// </dt>
+/// <dd>
 /// <p>You can specify the person (grantee) to whom you're assigning access rights (using request elements) in the following ways:</p>
 /// <ul>
 /// <li> <p>By the person's ID:</p> <p> <code>
@@ -34,6 +38,8 @@ pub use crate::operation::put_bucket_logging::_put_bucket_logging_input::PutBuck
 /// </uri>
 /// </grantee></code> </p> </li>
 /// </ul>
+/// </dd>
+/// </dl>
 /// <p>To enable logging, you use LoggingEnabled and its children request elements. To disable logging, you use an empty BucketLoggingStatus request element:</p>
 /// <p> <code>
 /// <bucketloggingstatus xmlns="http://doc.s3.amazonaws.com/2006-03-01" /></code> </p>

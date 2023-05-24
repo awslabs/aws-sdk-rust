@@ -160,6 +160,9 @@ pub mod list_tags_for_resource;
 /// Types for the `ListThreatIntelSets` operation.
 pub mod list_threat_intel_sets;
 
+/// Types for the `StartMalwareScan` operation.
+pub mod start_malware_scan;
+
 /// Types for the `StartMonitoringMembers` operation.
 pub mod start_monitoring_members;
 

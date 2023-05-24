@@ -21,8 +21,8 @@ pub struct CreateLedgerInput {
     /// </note>
     #[doc(hidden)]
     pub permissions_mode: std::option::Option<crate::types::PermissionsMode>,
-    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
-    /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+    /// <p>Specifies whether the ledger is protected from being deleted by any user. If not defined during ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+    /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.</p>
     #[doc(hidden)]
     pub deletion_protection: std::option::Option<bool>,
     /// <p>The key in Key Management Service (KMS) to use for encryption of data at rest in the ledger. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
@@ -30,7 +30,7 @@ pub struct CreateLedgerInput {
     /// <ul>
     /// <li> <p> <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by Amazon Web Services on your behalf.</p> </li>
     /// <li> <p> <b>Undefined</b>: By default, use an Amazon Web Services owned KMS key.</p> </li>
-    /// <li> <p> <b>A valid symmetric customer managed KMS key</b>: Use the specified KMS key in your account that you create, own, and manage.</p> <p>Amazon QLDB does not support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
+    /// <li> <p> <b>A valid symmetric customer managed KMS key</b>: Use the specified symmetric encryption KMS key in your account that you create, own, and manage.</p> <p>Amazon QLDB does not support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
     /// </ul>
     /// <p>To specify a customer managed KMS key, you can use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
@@ -68,8 +68,8 @@ impl CreateLedgerInput {
     pub fn permissions_mode(&self) -> std::option::Option<&crate::types::PermissionsMode> {
         self.permissions_mode.as_ref()
     }
-    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
-    /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+    /// <p>Specifies whether the ledger is protected from being deleted by any user. If not defined during ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+    /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.</p>
     pub fn deletion_protection(&self) -> std::option::Option<bool> {
         self.deletion_protection
     }
@@ -78,7 +78,7 @@ impl CreateLedgerInput {
     /// <ul>
     /// <li> <p> <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by Amazon Web Services on your behalf.</p> </li>
     /// <li> <p> <b>Undefined</b>: By default, use an Amazon Web Services owned KMS key.</p> </li>
-    /// <li> <p> <b>A valid symmetric customer managed KMS key</b>: Use the specified KMS key in your account that you create, own, and manage.</p> <p>Amazon QLDB does not support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
+    /// <li> <p> <b>A valid symmetric customer managed KMS key</b>: Use the specified symmetric encryption KMS key in your account that you create, own, and manage.</p> <p>Amazon QLDB does not support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
     /// </ul>
     /// <p>To specify a customer managed KMS key, you can use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
@@ -178,14 +178,14 @@ impl CreateLedgerInputBuilder {
         self.permissions_mode = input;
         self
     }
-    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
-    /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+    /// <p>Specifies whether the ledger is protected from being deleted by any user. If not defined during ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+    /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.deletion_protection = Some(input);
         self
     }
-    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
-    /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+    /// <p>Specifies whether the ledger is protected from being deleted by any user. If not defined during ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+    /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.</p>
     pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
         self.deletion_protection = input;
         self
@@ -195,7 +195,7 @@ impl CreateLedgerInputBuilder {
     /// <ul>
     /// <li> <p> <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by Amazon Web Services on your behalf.</p> </li>
     /// <li> <p> <b>Undefined</b>: By default, use an Amazon Web Services owned KMS key.</p> </li>
-    /// <li> <p> <b>A valid symmetric customer managed KMS key</b>: Use the specified KMS key in your account that you create, own, and manage.</p> <p>Amazon QLDB does not support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
+    /// <li> <p> <b>A valid symmetric customer managed KMS key</b>: Use the specified symmetric encryption KMS key in your account that you create, own, and manage.</p> <p>Amazon QLDB does not support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
     /// </ul>
     /// <p>To specify a customer managed KMS key, you can use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
@@ -215,7 +215,7 @@ impl CreateLedgerInputBuilder {
     /// <ul>
     /// <li> <p> <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by Amazon Web Services on your behalf.</p> </li>
     /// <li> <p> <b>Undefined</b>: By default, use an Amazon Web Services owned KMS key.</p> </li>
-    /// <li> <p> <b>A valid symmetric customer managed KMS key</b>: Use the specified KMS key in your account that you create, own, and manage.</p> <p>Amazon QLDB does not support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
+    /// <li> <p> <b>A valid symmetric customer managed KMS key</b>: Use the specified symmetric encryption KMS key in your account that you create, own, and manage.</p> <p>Amazon QLDB does not support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
     /// </ul>
     /// <p>To specify a customer managed KMS key, you can use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>

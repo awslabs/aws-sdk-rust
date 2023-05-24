@@ -9,10 +9,10 @@ pub struct EmbeddedSourceSettings {
     pub convert608_to708: std::option::Option<crate::types::EmbeddedConvert608To708>,
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
     #[doc(hidden)]
-    pub source608_channel_number: i32,
+    pub source608_channel_number: std::option::Option<i32>,
     /// Specifies the video track index used for extracting captions. The system only supports one input video track, so this should always be set to '1'.
     #[doc(hidden)]
-    pub source608_track_number: i32,
+    pub source608_track_number: std::option::Option<i32>,
     /// By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
     #[doc(hidden)]
     pub terminate_captions: std::option::Option<crate::types::EmbeddedTerminateCaptions>,
@@ -23,11 +23,11 @@ impl EmbeddedSourceSettings {
         self.convert608_to708.as_ref()
     }
     /// Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
-    pub fn source608_channel_number(&self) -> i32 {
+    pub fn source608_channel_number(&self) -> std::option::Option<i32> {
         self.source608_channel_number
     }
     /// Specifies the video track index used for extracting captions. The system only supports one input video track, so this should always be set to '1'.
-    pub fn source608_track_number(&self) -> i32 {
+    pub fn source608_track_number(&self) -> std::option::Option<i32> {
         self.source608_track_number
     }
     /// By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
@@ -104,8 +104,8 @@ impl EmbeddedSourceSettingsBuilder {
     pub fn build(self) -> crate::types::EmbeddedSourceSettings {
         crate::types::EmbeddedSourceSettings {
             convert608_to708: self.convert608_to708,
-            source608_channel_number: self.source608_channel_number.unwrap_or_default(),
-            source608_track_number: self.source608_track_number.unwrap_or_default(),
+            source608_channel_number: self.source608_channel_number,
+            source608_track_number: self.source608_track_number,
             terminate_captions: self.terminate_captions,
         }
     }

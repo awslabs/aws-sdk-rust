@@ -89,15 +89,17 @@ impl SearchSchemasInput {
                     );
                 }
                 query.push_kv("keywords", &aws_smithy_http::query::fmt_string(&inner_2));
-                if _input.limit != 0 {
-                    query.push_kv(
-                        "limit",
-                        aws_smithy_types::primitive::Encoder::from(_input.limit).encode(),
-                    );
+                if let Some(inner_3) = &_input.limit {
+                    if *inner_3 != 0 {
+                        query.push_kv(
+                            "limit",
+                            aws_smithy_types::primitive::Encoder::from(*inner_3).encode(),
+                        );
+                    }
                 }
-                if let Some(inner_3) = &_input.next_token {
+                if let Some(inner_4) = &_input.next_token {
                     {
-                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_4));
                     }
                 }
                 Ok(())

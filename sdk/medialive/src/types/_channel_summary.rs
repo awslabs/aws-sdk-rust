@@ -39,7 +39,7 @@ pub struct ChannelSummary {
     pub name: std::option::Option<std::string::String>,
     /// The number of currently healthy pipelines.
     #[doc(hidden)]
-    pub pipelines_running_count: i32,
+    pub pipelines_running_count: std::option::Option<i32>,
     /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -102,7 +102,7 @@ impl ChannelSummary {
         self.name.as_deref()
     }
     /// The number of currently healthy pipelines.
-    pub fn pipelines_running_count(&self) -> i32 {
+    pub fn pipelines_running_count(&self) -> std::option::Option<i32> {
         self.pipelines_running_count
     }
     /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
@@ -387,7 +387,7 @@ impl ChannelSummaryBuilder {
             log_level: self.log_level,
             maintenance: self.maintenance,
             name: self.name,
-            pipelines_running_count: self.pipelines_running_count.unwrap_or_default(),
+            pipelines_running_count: self.pipelines_running_count,
             role_arn: self.role_arn,
             state: self.state,
             tags: self.tags,

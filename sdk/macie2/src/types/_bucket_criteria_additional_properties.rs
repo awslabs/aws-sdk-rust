@@ -9,16 +9,16 @@ pub struct BucketCriteriaAdditionalProperties {
     pub eq: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The value for the property is greater than the specified value.</p>
     #[doc(hidden)]
-    pub gt: i64,
+    pub gt: std::option::Option<i64>,
     /// <p>The value for the property is greater than or equal to the specified value.</p>
     #[doc(hidden)]
-    pub gte: i64,
+    pub gte: std::option::Option<i64>,
     /// <p>The value for the property is less than the specified value.</p>
     #[doc(hidden)]
-    pub lt: i64,
+    pub lt: std::option::Option<i64>,
     /// <p>The value for the property is less than or equal to the specified value.</p>
     #[doc(hidden)]
-    pub lte: i64,
+    pub lte: std::option::Option<i64>,
     /// <p>The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values, Amazon Macie uses OR logic to join the values.</p>
     #[doc(hidden)]
     pub neq: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -32,19 +32,19 @@ impl BucketCriteriaAdditionalProperties {
         self.eq.as_deref()
     }
     /// <p>The value for the property is greater than the specified value.</p>
-    pub fn gt(&self) -> i64 {
+    pub fn gt(&self) -> std::option::Option<i64> {
         self.gt
     }
     /// <p>The value for the property is greater than or equal to the specified value.</p>
-    pub fn gte(&self) -> i64 {
+    pub fn gte(&self) -> std::option::Option<i64> {
         self.gte
     }
     /// <p>The value for the property is less than the specified value.</p>
-    pub fn lt(&self) -> i64 {
+    pub fn lt(&self) -> std::option::Option<i64> {
         self.lt
     }
     /// <p>The value for the property is less than or equal to the specified value.</p>
-    pub fn lte(&self) -> i64 {
+    pub fn lte(&self) -> std::option::Option<i64> {
         self.lte
     }
     /// <p>The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values, Amazon Macie uses OR logic to join the values.</p>
@@ -168,10 +168,10 @@ impl BucketCriteriaAdditionalPropertiesBuilder {
     pub fn build(self) -> crate::types::BucketCriteriaAdditionalProperties {
         crate::types::BucketCriteriaAdditionalProperties {
             eq: self.eq,
-            gt: self.gt.unwrap_or_default(),
-            gte: self.gte.unwrap_or_default(),
-            lt: self.lt.unwrap_or_default(),
-            lte: self.lte.unwrap_or_default(),
+            gt: self.gt,
+            gte: self.gte,
+            lt: self.lt,
+            lte: self.lte,
             neq: self.neq,
             prefix: self.prefix,
         }

@@ -63,6 +63,21 @@ pub fn ser_scatter_plot_categorically_aggregated_field_wells(
         }
         array_14.finish();
     }
+    if let Some(var_17) = &input.label {
+        let mut array_18 = object.key("Label").start_array();
+        for item_19 in var_17 {
+            {
+                #[allow(unused_mut)]
+                let mut object_20 = array_18.value().start_object();
+                crate::protocol_serde::shape_dimension_field::ser_dimension_field(
+                    &mut object_20,
+                    item_19,
+                )?;
+                object_20.finish();
+            }
+        }
+        array_18.finish();
+    }
     Ok(())
 }
 
@@ -108,6 +123,11 @@ where
                             "Size" => {
                                 builder = builder.set_size(
                                     crate::protocol_serde::shape_measure_field_list::de_measure_field_list(tokens)?
+                                );
+                            }
+                            "Label" => {
+                                builder = builder.set_label(
+                                    crate::protocol_serde::shape_dimension_field_list::de_dimension_field_list(tokens)?
                                 );
                             }
                             _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,

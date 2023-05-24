@@ -9,7 +9,7 @@ pub struct GcmChannelRequest {
     pub api_key: std::option::Option<std::string::String>,
     /// <p>Specifies whether to enable the GCM channel for the application.</p>
     #[doc(hidden)]
-    pub enabled: bool,
+    pub enabled: std::option::Option<bool>,
 }
 impl GcmChannelRequest {
     /// <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>, that you received from Google to communicate with Google services.</p>
@@ -17,7 +17,7 @@ impl GcmChannelRequest {
         self.api_key.as_deref()
     }
     /// <p>Specifies whether to enable the GCM channel for the application.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
 }
@@ -60,7 +60,7 @@ impl GcmChannelRequestBuilder {
     pub fn build(self) -> crate::types::GcmChannelRequest {
         crate::types::GcmChannelRequest {
             api_key: self.api_key,
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled,
         }
     }
 }

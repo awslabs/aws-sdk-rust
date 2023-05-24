@@ -9,6 +9,10 @@ pub struct ListCustomEntityTypesInput {
     /// <p>The maximum number of results to return.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
+    /// <p>A list of key-value pair tags.</p>
+    #[doc(hidden)]
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListCustomEntityTypesInput {
     /// <p>A paginated token to offset the results.</p>
@@ -18,6 +22,13 @@ impl ListCustomEntityTypesInput {
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>A list of key-value pair tags.</p>
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
+        self.tags.as_ref()
     }
 }
 impl ListCustomEntityTypesInput {
@@ -35,6 +46,8 @@ impl ListCustomEntityTypesInput {
 pub struct ListCustomEntityTypesInputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
     pub(crate) max_results: std::option::Option<i32>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListCustomEntityTypesInputBuilder {
     /// <p>A paginated token to offset the results.</p>
@@ -57,6 +70,31 @@ impl ListCustomEntityTypesInputBuilder {
         self.max_results = input;
         self
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A list of key-value pair tags.</p>
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
+    }
+    /// <p>A list of key-value pair tags.</p>
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ListCustomEntityTypesInput`](crate::operation::list_custom_entity_types::ListCustomEntityTypesInput).
     pub fn build(
         self,
@@ -68,6 +106,7 @@ impl ListCustomEntityTypesInputBuilder {
             crate::operation::list_custom_entity_types::ListCustomEntityTypesInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
+                tags: self.tags,
             },
         )
     }

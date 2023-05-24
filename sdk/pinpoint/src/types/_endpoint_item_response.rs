@@ -9,7 +9,7 @@ pub struct EndpointItemResponse {
     pub message: std::option::Option<std::string::String>,
     /// <p>The status code that's returned in the response as a result of processing the endpoint data.</p>
     #[doc(hidden)]
-    pub status_code: i32,
+    pub status_code: std::option::Option<i32>,
 }
 impl EndpointItemResponse {
     /// <p>The custom message that's returned in the response as a result of processing the endpoint data.</p>
@@ -17,7 +17,7 @@ impl EndpointItemResponse {
         self.message.as_deref()
     }
     /// <p>The status code that's returned in the response as a result of processing the endpoint data.</p>
-    pub fn status_code(&self) -> i32 {
+    pub fn status_code(&self) -> std::option::Option<i32> {
         self.status_code
     }
 }
@@ -60,7 +60,7 @@ impl EndpointItemResponseBuilder {
     pub fn build(self) -> crate::types::EndpointItemResponse {
         crate::types::EndpointItemResponse {
             message: self.message,
-            status_code: self.status_code.unwrap_or_default(),
+            status_code: self.status_code,
         }
     }
 }

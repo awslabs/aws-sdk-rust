@@ -6,8 +6,8 @@ pub fn ser_firehose(
     if let Some(var_1) = &input.delivery_stream {
         object.key("deliveryStream").string(var_1.as_str());
     }
-    {
-        object.key("enabled").boolean(input.enabled);
+    if let Some(var_2) = &input.enabled {
+        object.key("enabled").boolean(*var_2);
     }
     Ok(())
 }

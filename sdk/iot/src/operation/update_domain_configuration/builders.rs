@@ -121,4 +121,14 @@ impl UpdateDomainConfigurationFluentBuilder {
         self.inner = self.inner.set_remove_authorizer_config(input);
         self
     }
+    /// <p>An object that specifies the TLS configuration for a domain.</p>
+    pub fn tls_config(mut self, input: crate::types::TlsConfig) -> Self {
+        self.inner = self.inner.tls_config(input);
+        self
+    }
+    /// <p>An object that specifies the TLS configuration for a domain.</p>
+    pub fn set_tls_config(mut self, input: std::option::Option<crate::types::TlsConfig>) -> Self {
+        self.inner = self.inner.set_tls_config(input);
+        self
+    }
 }

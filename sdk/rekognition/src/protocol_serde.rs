@@ -380,6 +380,10 @@ pub(crate) mod shape_face_model_version_list;
 
 pub(crate) mod shape_face_record_list;
 
+pub(crate) mod shape_get_content_moderation_request_metadata;
+
+pub(crate) mod shape_get_label_detection_request_metadata;
+
 pub(crate) mod shape_human_loop_activation_output;
 
 pub(crate) mod shape_human_loop_config;
@@ -594,9 +598,13 @@ pub(crate) mod shape_emotions;
 
 pub(crate) mod shape_evaluation_result;
 
+pub(crate) mod shape_eye_direction;
+
 pub(crate) mod shape_eye_open;
 
 pub(crate) mod shape_eyeglasses;
+
+pub(crate) mod shape_face_occluded;
 
 pub(crate) mod shape_gender;
 

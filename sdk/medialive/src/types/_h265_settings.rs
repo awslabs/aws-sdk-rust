@@ -16,10 +16,10 @@ pub struct H265Settings {
         std::option::Option<crate::types::H265AlternativeTransferFunction>,
     /// Average bitrate in bits/second. Required when the rate control mode is VBR or CBR. Not used for QVBR. In an MS Smooth output group, each output must have a unique value when its bitrate is rounded down to the nearest multiple of 1000.
     #[doc(hidden)]
-    pub bitrate: i32,
+    pub bitrate: std::option::Option<i32>,
     /// Size of buffer (HRD buffer model) in bits.
     #[doc(hidden)]
-    pub buf_size: i32,
+    pub buf_size: std::option::Option<i32>,
     /// Includes colorspace metadata in the output.
     #[doc(hidden)]
     pub color_metadata: std::option::Option<crate::types::H265ColorMetadata>,
@@ -37,16 +37,16 @@ pub struct H265Settings {
     pub flicker_aq: std::option::Option<crate::types::H265FlickerAq>,
     /// Framerate denominator.
     #[doc(hidden)]
-    pub framerate_denominator: i32,
+    pub framerate_denominator: std::option::Option<i32>,
     /// Framerate numerator - framerate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
     #[doc(hidden)]
-    pub framerate_numerator: i32,
+    pub framerate_numerator: std::option::Option<i32>,
     /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
     #[doc(hidden)]
-    pub gop_closed_cadence: i32,
+    pub gop_closed_cadence: std::option::Option<i32>,
     /// GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. If gopSizeUnits is frames, gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds, gopSize must be greater than 0, but need not be an integer.
     #[doc(hidden)]
-    pub gop_size: f64,
+    pub gop_size: std::option::Option<f64>,
     /// Indicates if the gopSize is specified in frames or seconds. If seconds the system will convert the gopSize into a frame count at run time.
     #[doc(hidden)]
     pub gop_size_units: std::option::Option<crate::types::H265GopSizeUnits>,
@@ -58,22 +58,22 @@ pub struct H265Settings {
     pub look_ahead_rate_control: std::option::Option<crate::types::H265LookAheadRateControl>,
     /// For QVBR: See the tooltip for Quality level
     #[doc(hidden)]
-    pub max_bitrate: i32,
+    pub max_bitrate: std::option::Option<i32>,
     /// Only meaningful if sceneChangeDetect is set to enabled. Defaults to 5 if multiplex rate control is used. Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
     #[doc(hidden)]
-    pub min_i_interval: i32,
+    pub min_i_interval: std::option::Option<i32>,
     /// Pixel Aspect Ratio denominator.
     #[doc(hidden)]
-    pub par_denominator: i32,
+    pub par_denominator: std::option::Option<i32>,
     /// Pixel Aspect Ratio numerator.
     #[doc(hidden)]
-    pub par_numerator: i32,
+    pub par_numerator: std::option::Option<i32>,
     /// H.265 Profile.
     #[doc(hidden)]
     pub profile: std::option::Option<crate::types::H265Profile>,
     /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. Set values for the QVBR quality level field and Max bitrate field that suit your most important viewing devices. Recommended values are: - Primary screen: Quality level: 8 to 10. Max bitrate: 4M - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M
     #[doc(hidden)]
-    pub qvbr_quality_level: i32,
+    pub qvbr_quality_level: std::option::Option<i32>,
     /// Rate control mode. QVBR: Quality will match the specified quality level except when it is constrained by the maximum bitrate. Recommended if you or your viewers pay for bandwidth. CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices that cannot handle variable bitrates. Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the Multiplex Program.
     #[doc(hidden)]
     pub rate_control_mode: std::option::Option<crate::types::H265RateControlMode>,
@@ -85,7 +85,7 @@ pub struct H265Settings {
     pub scene_change_detect: std::option::Option<crate::types::H265SceneChangeDetect>,
     /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures. This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
     #[doc(hidden)]
-    pub slices: i32,
+    pub slices: std::option::Option<i32>,
     /// H.265 Tier.
     #[doc(hidden)]
     pub tier: std::option::Option<crate::types::H265Tier>,
@@ -114,11 +114,11 @@ impl H265Settings {
         self.alternative_transfer_function.as_ref()
     }
     /// Average bitrate in bits/second. Required when the rate control mode is VBR or CBR. Not used for QVBR. In an MS Smooth output group, each output must have a unique value when its bitrate is rounded down to the nearest multiple of 1000.
-    pub fn bitrate(&self) -> i32 {
+    pub fn bitrate(&self) -> std::option::Option<i32> {
         self.bitrate
     }
     /// Size of buffer (HRD buffer model) in bits.
-    pub fn buf_size(&self) -> i32 {
+    pub fn buf_size(&self) -> std::option::Option<i32> {
         self.buf_size
     }
     /// Includes colorspace metadata in the output.
@@ -144,19 +144,19 @@ impl H265Settings {
         self.flicker_aq.as_ref()
     }
     /// Framerate denominator.
-    pub fn framerate_denominator(&self) -> i32 {
+    pub fn framerate_denominator(&self) -> std::option::Option<i32> {
         self.framerate_denominator
     }
     /// Framerate numerator - framerate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
-    pub fn framerate_numerator(&self) -> i32 {
+    pub fn framerate_numerator(&self) -> std::option::Option<i32> {
         self.framerate_numerator
     }
     /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
-    pub fn gop_closed_cadence(&self) -> i32 {
+    pub fn gop_closed_cadence(&self) -> std::option::Option<i32> {
         self.gop_closed_cadence
     }
     /// GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. If gopSizeUnits is frames, gopSize must be an integer and must be greater than or equal to 1. If gopSizeUnits is seconds, gopSize must be greater than 0, but need not be an integer.
-    pub fn gop_size(&self) -> f64 {
+    pub fn gop_size(&self) -> std::option::Option<f64> {
         self.gop_size
     }
     /// Indicates if the gopSize is specified in frames or seconds. If seconds the system will convert the gopSize into a frame count at run time.
@@ -174,19 +174,19 @@ impl H265Settings {
         self.look_ahead_rate_control.as_ref()
     }
     /// For QVBR: See the tooltip for Quality level
-    pub fn max_bitrate(&self) -> i32 {
+    pub fn max_bitrate(&self) -> std::option::Option<i32> {
         self.max_bitrate
     }
     /// Only meaningful if sceneChangeDetect is set to enabled. Defaults to 5 if multiplex rate control is used. Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
-    pub fn min_i_interval(&self) -> i32 {
+    pub fn min_i_interval(&self) -> std::option::Option<i32> {
         self.min_i_interval
     }
     /// Pixel Aspect Ratio denominator.
-    pub fn par_denominator(&self) -> i32 {
+    pub fn par_denominator(&self) -> std::option::Option<i32> {
         self.par_denominator
     }
     /// Pixel Aspect Ratio numerator.
-    pub fn par_numerator(&self) -> i32 {
+    pub fn par_numerator(&self) -> std::option::Option<i32> {
         self.par_numerator
     }
     /// H.265 Profile.
@@ -194,7 +194,7 @@ impl H265Settings {
         self.profile.as_ref()
     }
     /// Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. Set values for the QVBR quality level field and Max bitrate field that suit your most important viewing devices. Recommended values are: - Primary screen: Quality level: 8 to 10. Max bitrate: 4M - PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M - Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M
-    pub fn qvbr_quality_level(&self) -> i32 {
+    pub fn qvbr_quality_level(&self) -> std::option::Option<i32> {
         self.qvbr_quality_level
     }
     /// Rate control mode. QVBR: Quality will match the specified quality level except when it is constrained by the maximum bitrate. Recommended if you or your viewers pay for bandwidth. CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices that cannot handle variable bitrates. Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the Multiplex Program.
@@ -210,7 +210,7 @@ impl H265Settings {
         self.scene_change_detect.as_ref()
     }
     /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures. This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
-    pub fn slices(&self) -> i32 {
+    pub fn slices(&self) -> std::option::Option<i32> {
         self.slices
     }
     /// H.265 Tier.
@@ -628,30 +628,30 @@ impl H265SettingsBuilder {
             adaptive_quantization: self.adaptive_quantization,
             afd_signaling: self.afd_signaling,
             alternative_transfer_function: self.alternative_transfer_function,
-            bitrate: self.bitrate.unwrap_or_default(),
-            buf_size: self.buf_size.unwrap_or_default(),
+            bitrate: self.bitrate,
+            buf_size: self.buf_size,
             color_metadata: self.color_metadata,
             color_space_settings: self.color_space_settings,
             filter_settings: self.filter_settings,
             fixed_afd: self.fixed_afd,
             flicker_aq: self.flicker_aq,
-            framerate_denominator: self.framerate_denominator.unwrap_or_default(),
-            framerate_numerator: self.framerate_numerator.unwrap_or_default(),
-            gop_closed_cadence: self.gop_closed_cadence.unwrap_or_default(),
-            gop_size: self.gop_size.unwrap_or_default(),
+            framerate_denominator: self.framerate_denominator,
+            framerate_numerator: self.framerate_numerator,
+            gop_closed_cadence: self.gop_closed_cadence,
+            gop_size: self.gop_size,
             gop_size_units: self.gop_size_units,
             level: self.level,
             look_ahead_rate_control: self.look_ahead_rate_control,
-            max_bitrate: self.max_bitrate.unwrap_or_default(),
-            min_i_interval: self.min_i_interval.unwrap_or_default(),
-            par_denominator: self.par_denominator.unwrap_or_default(),
-            par_numerator: self.par_numerator.unwrap_or_default(),
+            max_bitrate: self.max_bitrate,
+            min_i_interval: self.min_i_interval,
+            par_denominator: self.par_denominator,
+            par_numerator: self.par_numerator,
             profile: self.profile,
-            qvbr_quality_level: self.qvbr_quality_level.unwrap_or_default(),
+            qvbr_quality_level: self.qvbr_quality_level,
             rate_control_mode: self.rate_control_mode,
             scan_type: self.scan_type,
             scene_change_detect: self.scene_change_detect,
-            slices: self.slices.unwrap_or_default(),
+            slices: self.slices,
             tier: self.tier,
             timecode_insertion: self.timecode_insertion,
             timecode_burnin_settings: self.timecode_burnin_settings,

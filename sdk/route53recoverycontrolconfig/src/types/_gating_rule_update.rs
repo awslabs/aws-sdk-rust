@@ -12,7 +12,7 @@ pub struct GatingRuleUpdate {
     pub safety_rule_arn: std::option::Option<std::string::String>,
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
     #[doc(hidden)]
-    pub wait_period_ms: i32,
+    pub wait_period_ms: std::option::Option<i32>,
 }
 impl GatingRuleUpdate {
     /// <p>The name for the gating rule. You can use any non-white space character in the name.</p>
@@ -24,7 +24,7 @@ impl GatingRuleUpdate {
         self.safety_rule_arn.as_deref()
     }
     /// <p>An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent "flapping" of state. The wait period is 5000 ms by default, but you can choose a custom value.</p>
-    pub fn wait_period_ms(&self) -> i32 {
+    pub fn wait_period_ms(&self) -> std::option::Option<i32> {
         self.wait_period_ms
     }
 }
@@ -79,7 +79,7 @@ impl GatingRuleUpdateBuilder {
         crate::types::GatingRuleUpdate {
             name: self.name,
             safety_rule_arn: self.safety_rule_arn,
-            wait_period_ms: self.wait_period_ms.unwrap_or_default(),
+            wait_period_ms: self.wait_period_ms,
         }
     }
 }

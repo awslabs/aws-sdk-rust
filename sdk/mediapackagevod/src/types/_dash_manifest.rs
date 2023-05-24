@@ -12,7 +12,7 @@ pub struct DashManifest {
     pub manifest_name: std::option::Option<std::string::String>,
     /// Minimum duration (in seconds) that a player will buffer media before starting the presentation.
     #[doc(hidden)]
-    pub min_buffer_time_seconds: i32,
+    pub min_buffer_time_seconds: std::option::Option<i32>,
     /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
     #[doc(hidden)]
     pub profile: std::option::Option<crate::types::Profile>,
@@ -33,7 +33,7 @@ impl DashManifest {
         self.manifest_name.as_deref()
     }
     /// Minimum duration (in seconds) that a player will buffer media before starting the presentation.
-    pub fn min_buffer_time_seconds(&self) -> i32 {
+    pub fn min_buffer_time_seconds(&self) -> std::option::Option<i32> {
         self.min_buffer_time_seconds
     }
     /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
@@ -142,7 +142,7 @@ impl DashManifestBuilder {
         crate::types::DashManifest {
             manifest_layout: self.manifest_layout,
             manifest_name: self.manifest_name,
-            min_buffer_time_seconds: self.min_buffer_time_seconds.unwrap_or_default(),
+            min_buffer_time_seconds: self.min_buffer_time_seconds,
             profile: self.profile,
             scte_markers_source: self.scte_markers_source,
             stream_selection: self.stream_selection,

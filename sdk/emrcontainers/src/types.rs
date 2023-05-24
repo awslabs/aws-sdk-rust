@@ -61,6 +61,8 @@ pub use crate::types::_retry_policy_execution::RetryPolicyExecution;
 
 pub use crate::types::_job_run_state::JobRunState;
 
+pub use crate::types::_credentials::Credentials;
+
 mod _certificate;
 
 mod _cloud_watch_monitoring_configuration;
@@ -74,6 +76,8 @@ mod _container_info;
 mod _container_provider;
 
 mod _container_provider_type;
+
+mod _credentials;
 
 mod _eks_info;
 

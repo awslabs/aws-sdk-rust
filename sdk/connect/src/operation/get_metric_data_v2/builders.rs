@@ -6,7 +6,7 @@ pub use crate::operation::get_metric_data_v2::_get_metric_data_v2_input::GetMetr
 /// Fluent builder constructing a request to `GetMetricDataV2`.
 ///
 /// <p>Gets metric data from the specified Amazon Connect instance. </p>
-/// <p> <code>GetMetricDataV2</code> offers more features than <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricData.html">GetMetricData</a>, the previous version of this API. It has new metrics, offers filtering at a metric level, and offers the ability to filter and group data by channels, queues, routing profiles, agents, and agent hierarchy levels. It can retrieve historical data for the last 14 days, in 24-hour intervals.</p>
+/// <p> <code>GetMetricDataV2</code> offers more features than <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricData.html">GetMetricData</a>, the previous version of this API. It has new metrics, offers filtering at a metric level, and offers the ability to filter and group data by channels, queues, routing profiles, agents, and agent hierarchy levels. It can retrieve historical data for the last 35 days, in 24-hour intervals.</p>
 /// <p>For a description of the historical metrics that are supported by <code>GetMetricDataV2</code> and <code>GetMetricData</code>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical metrics definitions</a> in the <i>Amazon Connect Administrator's Guide</i>. </p>
 /// <p>This API is not available in the Amazon Web Services GovCloud (US) Regions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -92,12 +92,12 @@ impl GetMetricDataV2FluentBuilder {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be before the end time timestamp. The time range between the start and end time must be less than 24 hours. The start time cannot be earlier than 14 days before the time of the request. Historical metrics are available for 14 days.</p>
+    /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be before the end time timestamp. The time range between the start and end time must be less than 24 hours. The start time cannot be earlier than 35 days before the time of the request. Historical metrics are available for 35 days.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
-    /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be before the end time timestamp. The time range between the start and end time must be less than 24 hours. The start time cannot be earlier than 14 days before the time of the request. Historical metrics are available for 14 days.</p>
+    /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be before the end time timestamp. The time range between the start and end time must be less than 24 hours. The start time cannot be earlier than 35 days before the time of the request. Historical metrics are available for 35 days.</p>
     pub fn set_start_time(
         mut self,
         input: std::option::Option<aws_smithy_types::DateTime>,

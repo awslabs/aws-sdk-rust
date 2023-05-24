@@ -7,13 +7,13 @@ pub struct PollForDecisionTaskInput {
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>Specifies the task list to poll for decision tasks.</p>
-    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     #[doc(hidden)]
     pub task_list: std::option::Option<crate::types::TaskList>,
     /// <p>Identity of the decider making the request, which is recorded in the DecisionTaskStarted event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
     #[doc(hidden)]
     pub identity: std::option::Option<std::string::String>,
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note>
     /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p>
     /// </note>
@@ -26,6 +26,9 @@ pub struct PollForDecisionTaskInput {
     /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimestamp</code> of the events.</p>
     #[doc(hidden)]
     pub reverse_order: std::option::Option<bool>,
+    /// <p>When set to <code>true</code>, returns the events with <code>eventTimestamp</code> greater than or equal to <code>eventTimestamp</code> of the most recent <code>DecisionTaskStarted</code> event. By default, this parameter is set to <code>false</code>.</p>
+    #[doc(hidden)]
+    pub start_at_previous_started_event: std::option::Option<bool>,
 }
 impl PollForDecisionTaskInput {
     /// <p>The name of the domain containing the task lists to poll.</p>
@@ -33,7 +36,7 @@ impl PollForDecisionTaskInput {
         self.domain.as_deref()
     }
     /// <p>Specifies the task list to poll for decision tasks.</p>
-    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     pub fn task_list(&self) -> std::option::Option<&crate::types::TaskList> {
         self.task_list.as_ref()
     }
@@ -41,7 +44,7 @@ impl PollForDecisionTaskInput {
     pub fn identity(&self) -> std::option::Option<&str> {
         self.identity.as_deref()
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note>
     /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p>
     /// </note>
@@ -56,6 +59,10 @@ impl PollForDecisionTaskInput {
     /// <p>When set to <code>true</code>, returns the events in reverse order. By default the results are returned in ascending order of the <code>eventTimestamp</code> of the events.</p>
     pub fn reverse_order(&self) -> std::option::Option<bool> {
         self.reverse_order
+    }
+    /// <p>When set to <code>true</code>, returns the events with <code>eventTimestamp</code> greater than or equal to <code>eventTimestamp</code> of the most recent <code>DecisionTaskStarted</code> event. By default, this parameter is set to <code>false</code>.</p>
+    pub fn start_at_previous_started_event(&self) -> std::option::Option<bool> {
+        self.start_at_previous_started_event
     }
 }
 impl PollForDecisionTaskInput {
@@ -77,6 +84,7 @@ pub struct PollForDecisionTaskInputBuilder {
     pub(crate) next_page_token: std::option::Option<std::string::String>,
     pub(crate) maximum_page_size: std::option::Option<i32>,
     pub(crate) reverse_order: std::option::Option<bool>,
+    pub(crate) start_at_previous_started_event: std::option::Option<bool>,
 }
 impl PollForDecisionTaskInputBuilder {
     /// <p>The name of the domain containing the task lists to poll.</p>
@@ -90,13 +98,13 @@ impl PollForDecisionTaskInputBuilder {
         self
     }
     /// <p>Specifies the task list to poll for decision tasks.</p>
-    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     pub fn task_list(mut self, input: crate::types::TaskList) -> Self {
         self.task_list = Some(input);
         self
     }
     /// <p>Specifies the task list to poll for decision tasks.</p>
-    /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.</p>
+    /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
     pub fn set_task_list(mut self, input: std::option::Option<crate::types::TaskList>) -> Self {
         self.task_list = input;
         self
@@ -111,7 +119,7 @@ impl PollForDecisionTaskInputBuilder {
         self.identity = input;
         self
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note>
     /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p>
     /// </note>
@@ -119,7 +127,7 @@ impl PollForDecisionTaskInputBuilder {
         self.next_page_token = Some(input.into());
         self
     }
-    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
+    /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p> <note>
     /// <p>The <code>nextPageToken</code> returned by this action cannot be used with <code>GetWorkflowExecutionHistory</code> to get the next page. You must call <code>PollForDecisionTask</code> again (with the <code>nextPageToken</code>) to retrieve the next page of history records. Calling <code>PollForDecisionTask</code> with a <code>nextPageToken</code> doesn't return a new decision task.</p>
     /// </note>
@@ -149,6 +157,16 @@ impl PollForDecisionTaskInputBuilder {
         self.reverse_order = input;
         self
     }
+    /// <p>When set to <code>true</code>, returns the events with <code>eventTimestamp</code> greater than or equal to <code>eventTimestamp</code> of the most recent <code>DecisionTaskStarted</code> event. By default, this parameter is set to <code>false</code>.</p>
+    pub fn start_at_previous_started_event(mut self, input: bool) -> Self {
+        self.start_at_previous_started_event = Some(input);
+        self
+    }
+    /// <p>When set to <code>true</code>, returns the events with <code>eventTimestamp</code> greater than or equal to <code>eventTimestamp</code> of the most recent <code>DecisionTaskStarted</code> event. By default, this parameter is set to <code>false</code>.</p>
+    pub fn set_start_at_previous_started_event(mut self, input: std::option::Option<bool>) -> Self {
+        self.start_at_previous_started_event = input;
+        self
+    }
     /// Consumes the builder and constructs a [`PollForDecisionTaskInput`](crate::operation::poll_for_decision_task::PollForDecisionTaskInput).
     pub fn build(
         self,
@@ -164,6 +182,7 @@ impl PollForDecisionTaskInputBuilder {
                 next_page_token: self.next_page_token,
                 maximum_page_size: self.maximum_page_size,
                 reverse_order: self.reverse_order,
+                start_at_previous_started_event: self.start_at_previous_started_event,
             },
         )
     }

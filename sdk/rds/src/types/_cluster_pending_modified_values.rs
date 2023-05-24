@@ -29,6 +29,9 @@ pub struct ClusterPendingModifiedValues {
     /// <p>The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     #[doc(hidden)]
     pub iops: std::option::Option<i32>,
+    /// <p>The storage type for the DB cluster.</p>
+    #[doc(hidden)]
+    pub storage_type: std::option::Option<std::string::String>,
 }
 impl ClusterPendingModifiedValues {
     /// <p>A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated.</p>
@@ -65,6 +68,10 @@ impl ClusterPendingModifiedValues {
     pub fn iops(&self) -> std::option::Option<i32> {
         self.iops
     }
+    /// <p>The storage type for the DB cluster.</p>
+    pub fn storage_type(&self) -> std::option::Option<&str> {
+        self.storage_type.as_deref()
+    }
 }
 impl ClusterPendingModifiedValues {
     /// Creates a new builder-style object to manufacture [`ClusterPendingModifiedValues`](crate::types::ClusterPendingModifiedValues).
@@ -86,6 +93,7 @@ pub struct ClusterPendingModifiedValuesBuilder {
     pub(crate) backup_retention_period: std::option::Option<i32>,
     pub(crate) allocated_storage: std::option::Option<i32>,
     pub(crate) iops: std::option::Option<i32>,
+    pub(crate) storage_type: std::option::Option<std::string::String>,
 }
 impl ClusterPendingModifiedValuesBuilder {
     /// <p>A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated.</p>
@@ -183,6 +191,16 @@ impl ClusterPendingModifiedValuesBuilder {
         self.iops = input;
         self
     }
+    /// <p>The storage type for the DB cluster.</p>
+    pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+        self.storage_type = Some(input.into());
+        self
+    }
+    /// <p>The storage type for the DB cluster.</p>
+    pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.storage_type = input;
+        self
+    }
     /// Consumes the builder and constructs a [`ClusterPendingModifiedValues`](crate::types::ClusterPendingModifiedValues).
     pub fn build(self) -> crate::types::ClusterPendingModifiedValues {
         crate::types::ClusterPendingModifiedValues {
@@ -194,6 +212,7 @@ impl ClusterPendingModifiedValuesBuilder {
             backup_retention_period: self.backup_retention_period,
             allocated_storage: self.allocated_storage,
             iops: self.iops,
+            storage_type: self.storage_type,
         }
     }
 }

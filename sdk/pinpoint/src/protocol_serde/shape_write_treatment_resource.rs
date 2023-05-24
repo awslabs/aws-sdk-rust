@@ -24,26 +24,26 @@ pub fn ser_write_treatment_resource(
         crate::protocol_serde::shape_schedule::ser_schedule(&mut object_6, var_5)?;
         object_6.finish();
     }
-    {
+    if let Some(var_7) = &input.size_percent {
         object.key("SizePercent").number(
             #[allow(clippy::useless_conversion)]
-            aws_smithy_types::Number::NegInt((input.size_percent).into()),
+            aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_7) = &input.template_configuration {
+    if let Some(var_8) = &input.template_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("TemplateConfiguration").start_object();
+        let mut object_9 = object.key("TemplateConfiguration").start_object();
         crate::protocol_serde::shape_template_configuration::ser_template_configuration(
-            &mut object_8,
-            var_7,
+            &mut object_9,
+            var_8,
         )?;
-        object_8.finish();
+        object_9.finish();
     }
-    if let Some(var_9) = &input.treatment_description {
-        object.key("TreatmentDescription").string(var_9.as_str());
+    if let Some(var_10) = &input.treatment_description {
+        object.key("TreatmentDescription").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.treatment_name {
-        object.key("TreatmentName").string(var_10.as_str());
+    if let Some(var_11) = &input.treatment_name {
+        object.key("TreatmentName").string(var_11.as_str());
     }
     Ok(())
 }

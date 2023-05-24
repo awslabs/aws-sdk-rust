@@ -9,7 +9,7 @@ pub struct DvbSdtSettings {
     pub output_sdt: std::option::Option<crate::types::DvbSdtOutputSdt>,
     /// The number of milliseconds between instances of this table in the output transport stream.
     #[doc(hidden)]
-    pub rep_interval: i32,
+    pub rep_interval: std::option::Option<i32>,
     /// The service name placed in the serviceDescriptor in the Service Description Table. Maximum length is 256 characters.
     #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
@@ -23,7 +23,7 @@ impl DvbSdtSettings {
         self.output_sdt.as_ref()
     }
     /// The number of milliseconds between instances of this table in the output transport stream.
-    pub fn rep_interval(&self) -> i32 {
+    pub fn rep_interval(&self) -> std::option::Option<i32> {
         self.rep_interval
     }
     /// The service name placed in the serviceDescriptor in the Service Description Table. Maximum length is 256 characters.
@@ -102,7 +102,7 @@ impl DvbSdtSettingsBuilder {
     pub fn build(self) -> crate::types::DvbSdtSettings {
         crate::types::DvbSdtSettings {
             output_sdt: self.output_sdt,
-            rep_interval: self.rep_interval.unwrap_or_default(),
+            rep_interval: self.rep_interval,
             service_name: self.service_name,
             service_provider_name: self.service_provider_name,
         }

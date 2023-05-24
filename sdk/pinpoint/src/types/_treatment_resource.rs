@@ -19,7 +19,7 @@ pub struct TreatmentResource {
     pub schedule: std::option::Option<crate::types::Schedule>,
     /// <p>The allocated percentage of users (segment members) that the treatment is sent to.</p>
     #[doc(hidden)]
-    pub size_percent: i32,
+    pub size_percent: std::option::Option<i32>,
     /// <p>The current status of the treatment.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::CampaignState>,
@@ -55,7 +55,7 @@ impl TreatmentResource {
         self.schedule.as_ref()
     }
     /// <p>The allocated percentage of users (segment members) that the treatment is sent to.</p>
-    pub fn size_percent(&self) -> i32 {
+    pub fn size_percent(&self) -> std::option::Option<i32> {
         self.size_percent
     }
     /// <p>The current status of the treatment.</p>
@@ -212,7 +212,7 @@ impl TreatmentResourceBuilder {
             id: self.id,
             message_configuration: self.message_configuration,
             schedule: self.schedule,
-            size_percent: self.size_percent.unwrap_or_default(),
+            size_percent: self.size_percent,
             state: self.state,
             template_configuration: self.template_configuration,
             treatment_description: self.treatment_description,

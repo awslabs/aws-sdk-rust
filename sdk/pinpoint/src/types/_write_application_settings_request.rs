@@ -11,10 +11,10 @@ pub struct WriteApplicationSettingsRequest {
     pub campaign_hook: std::option::Option<crate::types::CampaignHook>,
     /// <p>Specifies whether to enable application-related alarms in Amazon CloudWatch.</p>
     #[doc(hidden)]
-    pub cloud_watch_metrics_enabled: bool,
+    pub cloud_watch_metrics_enabled: std::option::Option<bool>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub event_tagging_enabled: bool,
+    pub event_tagging_enabled: std::option::Option<bool>,
     /// <p>The default sending limits for campaigns in the application. To override these limits and define custom limits for a specific campaign or journey, use the
     /// <link linkend="apps-application-id-campaigns-campaign-id">Campaign resource or the
     /// <link linkend="apps-application-id-journeys-journey-id">Journey resource, respectively.</p>
@@ -41,11 +41,11 @@ impl WriteApplicationSettingsRequest {
         self.campaign_hook.as_ref()
     }
     /// <p>Specifies whether to enable application-related alarms in Amazon CloudWatch.</p>
-    pub fn cloud_watch_metrics_enabled(&self) -> bool {
+    pub fn cloud_watch_metrics_enabled(&self) -> std::option::Option<bool> {
         self.cloud_watch_metrics_enabled
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn event_tagging_enabled(&self) -> bool {
+    pub fn event_tagging_enabled(&self) -> std::option::Option<bool> {
         self.event_tagging_enabled
     }
     /// <p>The default sending limits for campaigns in the application. To override these limits and define custom limits for a specific campaign or journey, use the
@@ -169,8 +169,8 @@ impl WriteApplicationSettingsRequestBuilder {
     pub fn build(self) -> crate::types::WriteApplicationSettingsRequest {
         crate::types::WriteApplicationSettingsRequest {
             campaign_hook: self.campaign_hook,
-            cloud_watch_metrics_enabled: self.cloud_watch_metrics_enabled.unwrap_or_default(),
-            event_tagging_enabled: self.event_tagging_enabled.unwrap_or_default(),
+            cloud_watch_metrics_enabled: self.cloud_watch_metrics_enabled,
+            event_tagging_enabled: self.event_tagging_enabled,
             limits: self.limits,
             quiet_time: self.quiet_time,
         }

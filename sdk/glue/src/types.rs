@@ -79,6 +79,16 @@ pub use crate::types::_execution_class::ExecutionClass;
 
 pub use crate::types::_code_gen_configuration_node::CodeGenConfigurationNode;
 
+pub use crate::types::_amazon_redshift_target::AmazonRedshiftTarget;
+
+pub use crate::types::_amazon_redshift_node_data::AmazonRedshiftNodeData;
+
+pub use crate::types::_option::Option;
+
+pub use crate::types::_amazon_redshift_advanced_option::AmazonRedshiftAdvancedOption;
+
+pub use crate::types::_amazon_redshift_source::AmazonRedshiftSource;
+
 pub use crate::types::_s3_delta_direct_target::S3DeltaDirectTarget;
 
 pub use crate::types::_direct_schema_change_policy::DirectSchemaChangePolicy;
@@ -725,6 +735,14 @@ mod _aggregate;
 
 mod _aggregate_operation;
 
+mod _amazon_redshift_advanced_option;
+
+mod _amazon_redshift_node_data;
+
+mod _amazon_redshift_source;
+
+mod _amazon_redshift_target;
+
 mod _apply_mapping;
 
 mod _athena_connector_source;
@@ -1138,6 +1156,8 @@ mod _notification_property;
 mod _null_check_box_list;
 
 mod _null_value_field;
+
+mod _option;
 
 mod _oracle_sql_catalog_source;
 

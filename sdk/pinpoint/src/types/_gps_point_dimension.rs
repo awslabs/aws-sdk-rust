@@ -9,7 +9,7 @@ pub struct GpsPointDimension {
     pub coordinates: std::option::Option<crate::types::GpsCoordinates>,
     /// <p>The range, in kilometers, from the GPS coordinates.</p>
     #[doc(hidden)]
-    pub range_in_kilometers: f64,
+    pub range_in_kilometers: std::option::Option<f64>,
 }
 impl GpsPointDimension {
     /// <p>The GPS coordinates to measure distance from.</p>
@@ -17,7 +17,7 @@ impl GpsPointDimension {
         self.coordinates.as_ref()
     }
     /// <p>The range, in kilometers, from the GPS coordinates.</p>
-    pub fn range_in_kilometers(&self) -> f64 {
+    pub fn range_in_kilometers(&self) -> std::option::Option<f64> {
         self.range_in_kilometers
     }
 }
@@ -63,7 +63,7 @@ impl GpsPointDimensionBuilder {
     pub fn build(self) -> crate::types::GpsPointDimension {
         crate::types::GpsPointDimension {
             coordinates: self.coordinates,
-            range_in_kilometers: self.range_in_kilometers.unwrap_or_default(),
+            range_in_kilometers: self.range_in_kilometers,
         }
     }
 }

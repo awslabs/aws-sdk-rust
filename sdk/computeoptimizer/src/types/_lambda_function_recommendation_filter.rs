@@ -8,6 +8,9 @@ pub struct LambdaFunctionRecommendationFilter {
     /// <p>The name of the filter.</p>
     /// <p>Specify <code>Finding</code> to return recommendations with a specific finding classification (for example, <code>NotOptimized</code>).</p>
     /// <p>Specify <code>FindingReasonCode</code> to return recommendations with a specific finding reason code (for example, <code>MemoryUnderprovisioned</code>).</p>
+    /// <p>You can filter your Lambda function recommendations by <code>tag:key</code> and <code>tag-key</code> tags.</p>
+    /// <p>A <code>tag:key</code> is a key and value combination of a tag assigned to your Lambda function recommendations. Use the tag key in the filter name and the tag value as the filter value. For example, to find all Lambda function recommendations that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
+    /// <p>A <code>tag-key</code> is the key of a tag assigned to your Lambda function recommendations. Use this filter to find all of your Lambda function recommendations that have a tag with a specific key. This doesn’t consider the tag value. For example, you can find your Lambda function recommendations with a tag key value of <code>Owner</code> or without any tag keys assigned.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::LambdaFunctionRecommendationFilterName>,
     /// <p>The value of the filter.</p>
@@ -23,6 +26,9 @@ impl LambdaFunctionRecommendationFilter {
     /// <p>The name of the filter.</p>
     /// <p>Specify <code>Finding</code> to return recommendations with a specific finding classification (for example, <code>NotOptimized</code>).</p>
     /// <p>Specify <code>FindingReasonCode</code> to return recommendations with a specific finding reason code (for example, <code>MemoryUnderprovisioned</code>).</p>
+    /// <p>You can filter your Lambda function recommendations by <code>tag:key</code> and <code>tag-key</code> tags.</p>
+    /// <p>A <code>tag:key</code> is a key and value combination of a tag assigned to your Lambda function recommendations. Use the tag key in the filter name and the tag value as the filter value. For example, to find all Lambda function recommendations that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
+    /// <p>A <code>tag-key</code> is the key of a tag assigned to your Lambda function recommendations. Use this filter to find all of your Lambda function recommendations that have a tag with a specific key. This doesn’t consider the tag value. For example, you can find your Lambda function recommendations with a tag key value of <code>Owner</code> or without any tag keys assigned.</p>
     pub fn name(
         &self,
     ) -> std::option::Option<&crate::types::LambdaFunctionRecommendationFilterName> {
@@ -56,6 +62,9 @@ impl LambdaFunctionRecommendationFilterBuilder {
     /// <p>The name of the filter.</p>
     /// <p>Specify <code>Finding</code> to return recommendations with a specific finding classification (for example, <code>NotOptimized</code>).</p>
     /// <p>Specify <code>FindingReasonCode</code> to return recommendations with a specific finding reason code (for example, <code>MemoryUnderprovisioned</code>).</p>
+    /// <p>You can filter your Lambda function recommendations by <code>tag:key</code> and <code>tag-key</code> tags.</p>
+    /// <p>A <code>tag:key</code> is a key and value combination of a tag assigned to your Lambda function recommendations. Use the tag key in the filter name and the tag value as the filter value. For example, to find all Lambda function recommendations that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
+    /// <p>A <code>tag-key</code> is the key of a tag assigned to your Lambda function recommendations. Use this filter to find all of your Lambda function recommendations that have a tag with a specific key. This doesn’t consider the tag value. For example, you can find your Lambda function recommendations with a tag key value of <code>Owner</code> or without any tag keys assigned.</p>
     pub fn name(mut self, input: crate::types::LambdaFunctionRecommendationFilterName) -> Self {
         self.name = Some(input);
         self
@@ -63,6 +72,9 @@ impl LambdaFunctionRecommendationFilterBuilder {
     /// <p>The name of the filter.</p>
     /// <p>Specify <code>Finding</code> to return recommendations with a specific finding classification (for example, <code>NotOptimized</code>).</p>
     /// <p>Specify <code>FindingReasonCode</code> to return recommendations with a specific finding reason code (for example, <code>MemoryUnderprovisioned</code>).</p>
+    /// <p>You can filter your Lambda function recommendations by <code>tag:key</code> and <code>tag-key</code> tags.</p>
+    /// <p>A <code>tag:key</code> is a key and value combination of a tag assigned to your Lambda function recommendations. Use the tag key in the filter name and the tag value as the filter value. For example, to find all Lambda function recommendations that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
+    /// <p>A <code>tag-key</code> is the key of a tag assigned to your Lambda function recommendations. Use this filter to find all of your Lambda function recommendations that have a tag with a specific key. This doesn’t consider the tag value. For example, you can find your Lambda function recommendations with a tag key value of <code>Owner</code> or without any tag keys assigned.</p>
     pub fn set_name(
         mut self,
         input: std::option::Option<crate::types::LambdaFunctionRecommendationFilterName>,

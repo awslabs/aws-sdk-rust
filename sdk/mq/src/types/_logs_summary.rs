@@ -6,13 +6,13 @@
 pub struct LogsSummary {
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.</p>
     #[doc(hidden)]
-    pub audit: bool,
+    pub audit: std::option::Option<bool>,
     /// <p>The location of the CloudWatch Logs log group where audit logs are sent.</p>
     #[doc(hidden)]
     pub audit_log_group: std::option::Option<std::string::String>,
     /// <p>Enables general logging.</p>
     #[doc(hidden)]
-    pub general: bool,
+    pub general: std::option::Option<bool>,
     /// <p>The location of the CloudWatch Logs log group where general logs are sent.</p>
     #[doc(hidden)]
     pub general_log_group: std::option::Option<std::string::String>,
@@ -22,7 +22,7 @@ pub struct LogsSummary {
 }
 impl LogsSummary {
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.</p>
-    pub fn audit(&self) -> bool {
+    pub fn audit(&self) -> std::option::Option<bool> {
         self.audit
     }
     /// <p>The location of the CloudWatch Logs log group where audit logs are sent.</p>
@@ -30,7 +30,7 @@ impl LogsSummary {
         self.audit_log_group.as_deref()
     }
     /// <p>Enables general logging.</p>
-    pub fn general(&self) -> bool {
+    pub fn general(&self) -> std::option::Option<bool> {
         self.general
     }
     /// <p>The location of the CloudWatch Logs log group where general logs are sent.</p>
@@ -116,9 +116,9 @@ impl LogsSummaryBuilder {
     /// Consumes the builder and constructs a [`LogsSummary`](crate::types::LogsSummary).
     pub fn build(self) -> crate::types::LogsSummary {
         crate::types::LogsSummary {
-            audit: self.audit.unwrap_or_default(),
+            audit: self.audit,
             audit_log_group: self.audit_log_group,
-            general: self.general.unwrap_or_default(),
+            general: self.general,
             general_log_group: self.general_log_group,
             pending: self.pending,
         }

@@ -5,7 +5,7 @@ pub use crate::operation::describe_affected_entities_for_organization::_describe
 
 /// Fluent builder constructing a request to `DescribeAffectedEntitiesForOrganization`.
 ///
-/// <p>Returns a list of entities that have been affected by one or more events for one or more accounts in your organization in Organizations, based on the filter criteria. Entities can refer to individual customer resources, groups of customer resources, or any other construct, depending on the Amazon Web Services service.</p>
+/// <p>Returns a list of entities that have been affected by one or more events for one or more accounts in your organization in Organizations, based on the filter criteria. Entities can refer to individual customer resources, groups of customer resources, or any other construct, depending on the Amazon Web Service.</p>
 /// <p>At least one event Amazon Resource Name (ARN) and account ID are required.</p>
 /// <p>Before you can call this operation, you must first enable Health to work with Organizations. To do this, call the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a> operation from your organization's management account.</p> <note>
 /// <ul>

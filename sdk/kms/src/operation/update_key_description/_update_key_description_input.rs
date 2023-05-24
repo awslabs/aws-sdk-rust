@@ -13,7 +13,9 @@ pub struct UpdateKeyDescriptionInput {
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
-    /// <p>New description for the KMS key.</p>
+    /// <p>New description for the KMS key.</p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
@@ -29,7 +31,9 @@ impl UpdateKeyDescriptionInput {
     pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
     }
-    /// <p>New description for the KMS key.</p>
+    /// <p>New description for the KMS key.</p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -74,12 +78,16 @@ impl UpdateKeyDescriptionInputBuilder {
         self.key_id = input;
         self
     }
-    /// <p>New description for the KMS key.</p>
+    /// <p>New description for the KMS key.</p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.description = Some(input.into());
         self
     }
-    /// <p>New description for the KMS key.</p>
+    /// <p>New description for the KMS key.</p> <important>
+    /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
+    /// </important>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.description = input;
         self

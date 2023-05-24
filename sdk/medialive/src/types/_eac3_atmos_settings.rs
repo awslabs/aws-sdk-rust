@@ -6,13 +6,13 @@
 pub struct Eac3AtmosSettings {
     /// Average bitrate in bits/second. Valid bitrates depend on the coding mode. // * @affectsRightSizing true
     #[doc(hidden)]
-    pub bitrate: f64,
+    pub bitrate: std::option::Option<f64>,
     /// Dolby Digital Plus with Dolby Atmos coding mode. Determines number of channels.
     #[doc(hidden)]
     pub coding_mode: std::option::Option<crate::types::Eac3AtmosCodingMode>,
     /// Sets the dialnorm for the output. Default 23.
     #[doc(hidden)]
-    pub dialnorm: i32,
+    pub dialnorm: std::option::Option<i32>,
     /// Sets the Dolby dynamic range compression profile.
     #[doc(hidden)]
     pub drc_line: std::option::Option<crate::types::Eac3AtmosDrcLine>,
@@ -21,14 +21,14 @@ pub struct Eac3AtmosSettings {
     pub drc_rf: std::option::Option<crate::types::Eac3AtmosDrcRf>,
     /// Height dimensional trim. Sets the maximum amount to attenuate the height channels when the downstream player isn??t configured to handle Dolby Digital Plus with Dolby Atmos and must remix the channels.
     #[doc(hidden)]
-    pub height_trim: f64,
+    pub height_trim: std::option::Option<f64>,
     /// Surround dimensional trim. Sets the maximum amount to attenuate the surround channels when the downstream player isn't configured to handle Dolby Digital Plus with Dolby Atmos and must remix the channels.
     #[doc(hidden)]
-    pub surround_trim: f64,
+    pub surround_trim: std::option::Option<f64>,
 }
 impl Eac3AtmosSettings {
     /// Average bitrate in bits/second. Valid bitrates depend on the coding mode. // * @affectsRightSizing true
-    pub fn bitrate(&self) -> f64 {
+    pub fn bitrate(&self) -> std::option::Option<f64> {
         self.bitrate
     }
     /// Dolby Digital Plus with Dolby Atmos coding mode. Determines number of channels.
@@ -36,7 +36,7 @@ impl Eac3AtmosSettings {
         self.coding_mode.as_ref()
     }
     /// Sets the dialnorm for the output. Default 23.
-    pub fn dialnorm(&self) -> i32 {
+    pub fn dialnorm(&self) -> std::option::Option<i32> {
         self.dialnorm
     }
     /// Sets the Dolby dynamic range compression profile.
@@ -48,11 +48,11 @@ impl Eac3AtmosSettings {
         self.drc_rf.as_ref()
     }
     /// Height dimensional trim. Sets the maximum amount to attenuate the height channels when the downstream player isn??t configured to handle Dolby Digital Plus with Dolby Atmos and must remix the channels.
-    pub fn height_trim(&self) -> f64 {
+    pub fn height_trim(&self) -> std::option::Option<f64> {
         self.height_trim
     }
     /// Surround dimensional trim. Sets the maximum amount to attenuate the surround channels when the downstream player isn't configured to handle Dolby Digital Plus with Dolby Atmos and must remix the channels.
-    pub fn surround_trim(&self) -> f64 {
+    pub fn surround_trim(&self) -> std::option::Option<f64> {
         self.surround_trim
     }
 }
@@ -155,13 +155,13 @@ impl Eac3AtmosSettingsBuilder {
     /// Consumes the builder and constructs a [`Eac3AtmosSettings`](crate::types::Eac3AtmosSettings).
     pub fn build(self) -> crate::types::Eac3AtmosSettings {
         crate::types::Eac3AtmosSettings {
-            bitrate: self.bitrate.unwrap_or_default(),
+            bitrate: self.bitrate,
             coding_mode: self.coding_mode,
-            dialnorm: self.dialnorm.unwrap_or_default(),
+            dialnorm: self.dialnorm,
             drc_line: self.drc_line,
             drc_rf: self.drc_rf,
-            height_trim: self.height_trim.unwrap_or_default(),
-            surround_trim: self.surround_trim.unwrap_or_default(),
+            height_trim: self.height_trim,
+            surround_trim: self.surround_trim,
         }
     }
 }

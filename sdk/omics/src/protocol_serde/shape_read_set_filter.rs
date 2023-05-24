@@ -22,5 +22,14 @@ pub fn ser_read_set_filter(
             .key("createdBefore")
             .date_time(var_5, aws_smithy_types::date_time::Format::DateTime)?;
     }
+    if let Some(var_6) = &input.sample_id {
+        object.key("sampleId").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.subject_id {
+        object.key("subjectId").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.generated_from {
+        object.key("generatedFrom").string(var_8.as_str());
+    }
     Ok(())
 }

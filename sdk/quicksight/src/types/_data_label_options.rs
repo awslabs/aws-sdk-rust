@@ -31,6 +31,9 @@ pub struct DataLabelOptions {
     /// <p>Determines whether overlap is enabled or disabled for the data labels.</p>
     #[doc(hidden)]
     pub overlap: std::option::Option<crate::types::DataLabelOverlap>,
+    /// <p>Determines the visibility of the total.</p>
+    #[doc(hidden)]
+    pub totals_visibility: std::option::Option<crate::types::Visibility>,
 }
 impl DataLabelOptions {
     /// <p>Determines the visibility of the data labels.</p>
@@ -71,6 +74,10 @@ impl DataLabelOptions {
     pub fn overlap(&self) -> std::option::Option<&crate::types::DataLabelOverlap> {
         self.overlap.as_ref()
     }
+    /// <p>Determines the visibility of the total.</p>
+    pub fn totals_visibility(&self) -> std::option::Option<&crate::types::Visibility> {
+        self.totals_visibility.as_ref()
+    }
 }
 impl DataLabelOptions {
     /// Creates a new builder-style object to manufacture [`DataLabelOptions`](crate::types::DataLabelOptions).
@@ -92,6 +99,7 @@ pub struct DataLabelOptionsBuilder {
     pub(crate) label_font_configuration: std::option::Option<crate::types::FontConfiguration>,
     pub(crate) label_color: std::option::Option<std::string::String>,
     pub(crate) overlap: std::option::Option<crate::types::DataLabelOverlap>,
+    pub(crate) totals_visibility: std::option::Option<crate::types::Visibility>,
 }
 impl DataLabelOptionsBuilder {
     /// <p>Determines the visibility of the data labels.</p>
@@ -211,6 +219,19 @@ impl DataLabelOptionsBuilder {
         self.overlap = input;
         self
     }
+    /// <p>Determines the visibility of the total.</p>
+    pub fn totals_visibility(mut self, input: crate::types::Visibility) -> Self {
+        self.totals_visibility = Some(input);
+        self
+    }
+    /// <p>Determines the visibility of the total.</p>
+    pub fn set_totals_visibility(
+        mut self,
+        input: std::option::Option<crate::types::Visibility>,
+    ) -> Self {
+        self.totals_visibility = input;
+        self
+    }
     /// Consumes the builder and constructs a [`DataLabelOptions`](crate::types::DataLabelOptions).
     pub fn build(self) -> crate::types::DataLabelOptions {
         crate::types::DataLabelOptions {
@@ -223,6 +244,7 @@ impl DataLabelOptionsBuilder {
             label_font_configuration: self.label_font_configuration,
             label_color: self.label_color,
             overlap: self.overlap,
+            totals_visibility: self.totals_visibility,
         }
     }
 }

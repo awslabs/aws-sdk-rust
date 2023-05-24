@@ -15,7 +15,7 @@ pub struct ListBackendJobsInput {
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results that you want in the response.</p>
     #[doc(hidden)]
-    pub max_results: i32,
+    pub max_results: std::option::Option<i32>,
     /// <p>The token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -40,7 +40,7 @@ impl ListBackendJobsInput {
         self.job_id.as_deref()
     }
     /// <p>The maximum number of results that you want in the response.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token for the next set of results.</p>
@@ -160,7 +160,7 @@ impl ListBackendJobsInputBuilder {
             app_id: self.app_id,
             backend_environment_name: self.backend_environment_name,
             job_id: self.job_id,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
             operation: self.operation,
             status: self.status,

@@ -21,30 +21,26 @@ pub fn ser_ldap_server_metadata_input(
     if let Some(var_6) = &input.role_search_matching {
         object.key("roleSearchMatching").string(var_6.as_str());
     }
-    if input.role_search_subtree {
-        object
-            .key("roleSearchSubtree")
-            .boolean(input.role_search_subtree);
+    if let Some(var_7) = &input.role_search_subtree {
+        object.key("roleSearchSubtree").boolean(*var_7);
     }
-    if let Some(var_7) = &input.service_account_password {
-        object.key("serviceAccountPassword").string(var_7.as_str());
+    if let Some(var_8) = &input.service_account_password {
+        object.key("serviceAccountPassword").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.service_account_username {
-        object.key("serviceAccountUsername").string(var_8.as_str());
+    if let Some(var_9) = &input.service_account_username {
+        object.key("serviceAccountUsername").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.user_base {
-        object.key("userBase").string(var_9.as_str());
+    if let Some(var_10) = &input.user_base {
+        object.key("userBase").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.user_role_name {
-        object.key("userRoleName").string(var_10.as_str());
+    if let Some(var_11) = &input.user_role_name {
+        object.key("userRoleName").string(var_11.as_str());
     }
-    if let Some(var_11) = &input.user_search_matching {
-        object.key("userSearchMatching").string(var_11.as_str());
+    if let Some(var_12) = &input.user_search_matching {
+        object.key("userSearchMatching").string(var_12.as_str());
     }
-    if input.user_search_subtree {
-        object
-            .key("userSearchSubtree")
-            .boolean(input.user_search_subtree);
+    if let Some(var_13) = &input.user_search_subtree {
+        object.key("userSearchSubtree").boolean(*var_13);
     }
     Ok(())
 }

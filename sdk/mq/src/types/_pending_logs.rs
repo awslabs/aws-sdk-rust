@@ -6,18 +6,18 @@
 pub struct PendingLogs {
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.</p>
     #[doc(hidden)]
-    pub audit: bool,
+    pub audit: std::option::Option<bool>,
     /// <p>Enables general logging.</p>
     #[doc(hidden)]
-    pub general: bool,
+    pub general: std::option::Option<bool>,
 }
 impl PendingLogs {
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.</p>
-    pub fn audit(&self) -> bool {
+    pub fn audit(&self) -> std::option::Option<bool> {
         self.audit
     }
     /// <p>Enables general logging.</p>
-    pub fn general(&self) -> bool {
+    pub fn general(&self) -> std::option::Option<bool> {
         self.general
     }
 }
@@ -59,8 +59,8 @@ impl PendingLogsBuilder {
     /// Consumes the builder and constructs a [`PendingLogs`](crate::types::PendingLogs).
     pub fn build(self) -> crate::types::PendingLogs {
         crate::types::PendingLogs {
-            audit: self.audit.unwrap_or_default(),
-            general: self.general.unwrap_or_default(),
+            audit: self.audit,
+            general: self.general,
         }
     }
 }
