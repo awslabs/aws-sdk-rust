@@ -183,7 +183,7 @@ mod tests {
 
         let api_metadata = ApiMetadata::new("some-service", "some-version");
         let mut config = ConfigBag::base();
-        config.put(api_metadata.clone());
+        config.put(api_metadata);
         config.put(AppName::new("my_awesome_app").unwrap());
 
         let interceptor = UserAgentInterceptor::new();

@@ -638,9 +638,7 @@ mod test {
         }
         expected.reverse();
         assert_eq!(
-            bag.load::<TestItem>()
-                .map(|i| i.clone())
-                .collect::<Vec<_>>(),
+            bag.load::<TestItem>().cloned().collect::<Vec<_>>(),
             expected
         );
     }

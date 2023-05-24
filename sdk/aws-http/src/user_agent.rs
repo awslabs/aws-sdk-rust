@@ -778,7 +778,7 @@ mod test {
             .get(USER_AGENT)
             .expect("UA header should be set");
         req.headers()
-            .get(&X_AMZ_USER_AGENT)
+            .get(X_AMZ_USER_AGENT)
             .expect("UA header should be set");
     }
 }

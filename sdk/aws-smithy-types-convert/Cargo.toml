@@ -21,7 +21,7 @@ optional = true
 version = "0.55.2"
 
 [dependencies.chrono]
-version = "0.4.19"
+version = "0.4.23"
 optional = true
 default-features = false
 features = ["std"]
