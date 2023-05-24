@@ -18,7 +18,11 @@ use aws_smithy_http::body::SdkBody;
 use crate::dvr::{self, Action, BodyData, ConnectionId, Direction, Error, NetworkTraffic, Version};
 
 use super::Event;
+use crate::conns::Https;
+use crate::hyper_ext::Adapter;
 use std::fmt::Display;
+use std::io;
+use std::path::Path;
 
 /// Recording Connection Wrapper
 ///
@@ -30,13 +34,13 @@ pub struct RecordingConnection<S> {
     pub(crate) inner: S,
 }
 
-impl RecordingConnection<crate::conns::Https> {
+impl RecordingConnection<Adapter<Https>> {
     /// Construct a recording connection wrapping a default HTTPS implementation
-    #[cfg(feature = "hyper-rustls")]
+    #[cfg(feature = "rustls")]
     pub fn https() -> Self {
         Self {
             data: Default::default(),
-            inner: crate::conns::https(),
+            inner: crate::hyper_ext::Adapter::builder().build(crate::conns::https()),
             num_events: Arc::new(AtomicUsize::new(0)),
         }
     }
@@ -64,6 +68,14 @@ impl<S> RecordingConnection<S> {
             docs: Some("todo docs".into()),
             version: Version::V0,
         }
+    }
+
+    /// Dump the network traffic to a file
+    pub fn dump_to_file(&self, path: impl AsRef<Path>) -> Result<(), io::Error> {
+        std::fs::write(
+            path,
+            serde_json::to_string(&self.network_traffic()).unwrap(),
+        )
     }
 
     fn next_id(&self) -> ConnectionId {

@@ -3,6 +3,7 @@ allowed_external_types = [
     "aws_smithy_http::*",
     "aws_smithy_http_tower::*",
     "aws_smithy_types::*",
+    "aws_smithy_protocol_test::MediaType",
     "http::header::name::HeaderName",
     "http::request::Request",
     "http::response::Response",

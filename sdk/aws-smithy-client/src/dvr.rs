@@ -14,6 +14,7 @@ use std::collections::HashMap;
 use bytes::Bytes;
 use serde::{Deserialize, Serialize};
 
+pub use aws_smithy_protocol_test::MediaType;
 use aws_smithy_types::base64;
 pub use record::RecordingConnection;
 pub use replay::ReplayingConnection;

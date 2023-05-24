@@ -6,6 +6,7 @@
 use std::collections::{HashMap, VecDeque};
 use std::error::Error;
 use std::ops::DerefMut;
+use std::path::Path;
 use std::sync::atomic::{AtomicUsize, Ordering};
 use std::sync::{Arc, Mutex};
 use std::task::{Context, Poll};
@@ -17,8 +18,9 @@ use tokio::task::JoinHandle;
 
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::result::ConnectorError;
+use aws_smithy_protocol_test::MediaType;
 
-use crate::dvr::{Action, ConnectionId, Direction, Event};
+use crate::dvr::{Action, ConnectionId, Direction, Event, NetworkTraffic};
 
 /// Wrapper type to enable optionally waiting for a future to complete
 #[derive(Debug)]
@@ -59,10 +61,32 @@ impl ReplayingConnection {
         ConnectionId(self.num_events.fetch_add(1, Ordering::Relaxed))
     }
 
+    /// Validate all headers and bodies
+    pub async fn full_validate(self, media_type: MediaType) -> Result<(), Box<dyn Error>> {
+        self.validate_base(None, |b1, b2| {
+            aws_smithy_protocol_test::validate_body(
+                b1,
+                std::str::from_utf8(b2).unwrap(),
+                media_type.clone(),
+            )
+            .map_err(|e| Box::new(e) as _)
+        })
+        .await
+    }
+
     /// Validate actual requests against expected requests
     pub async fn validate(
         self,
         checked_headers: &[&str],
+        body_comparer: impl Fn(&[u8], &[u8]) -> Result<(), Box<dyn Error>>,
+    ) -> Result<(), Box<dyn Error>> {
+        self.validate_base(Some(checked_headers), body_comparer)
+            .await
+    }
+
+    async fn validate_base(
+        self,
+        checked_headers: Option<&[&str]>,
         body_comparer: impl Fn(&[u8], &[u8]) -> Result<(), Box<dyn Error>>,
     ) -> Result<(), Box<dyn Error>> {
         let mut actual_requests =
@@ -80,15 +104,21 @@ impl ReplayingConnection {
                 .await;
             aws_smithy_protocol_test::assert_uris_match(actual.uri(), expected.uri());
             body_comparer(expected.body().as_ref(), actual.body().as_ref())?;
-            let expected_headers = checked_headers
-                .iter()
+            let expected_headers = expected
+                .headers()
+                .keys()
+                .map(|k| k.as_str())
+                .filter(|k| match checked_headers {
+                    Some(list) => list.contains(k),
+                    None => true,
+                })
                 .flat_map(|key| {
-                    let _ = expected.headers().get(*key)?;
+                    let _ = expected.headers().get(key)?;
                     Some((
-                        *key,
+                        key,
                         expected
                             .headers()
-                            .get_all(*key)
+                            .get_all(key)
                             .iter()
                             .map(|h| h.to_str().unwrap())
                             .collect::<Vec<_>>()
@@ -116,6 +146,13 @@ impl ReplayingConnection {
             )
         }
         out
+    }
+
+    /// Build a replay connection from a JSON file
+    pub fn from_file(path: impl AsRef<Path>) -> Result<Self, Box<dyn Error>> {
+        let events: NetworkTraffic =
+            serde_json::from_str(&std::fs::read_to_string(path.as_ref())?)?;
+        Ok(Self::new(events.events))
     }
 
     /// Build a replay connection from a sequence of events

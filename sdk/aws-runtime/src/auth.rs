@@ -196,6 +196,7 @@ pub mod sigv4 {
             &self,
             request: &mut HttpRequest,
             identity: &Identity,
+            // TODO(enableNewSmithyRuntime): should this be the config bag?
             signing_properties: &PropertyBag,
         ) -> Result<(), BoxError> {
             let operation_config = signing_properties

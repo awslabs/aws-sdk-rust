@@ -11,12 +11,9 @@ pub trait RuntimePlugin {
     fn configure(&self, cfg: &mut ConfigBag) -> Result<(), BoxError>;
 }
 
-impl<T> From<T> for Box<dyn RuntimePlugin>
-where
-    T: RuntimePlugin + 'static,
-{
-    fn from(t: T) -> Self {
-        Box::new(t) as _
+impl RuntimePlugin for Box<dyn RuntimePlugin> {
+    fn configure(&self, cfg: &mut ConfigBag) -> Result<(), BoxError> {
+        self.as_ref().configure(cfg)
     }
 }
 
@@ -31,19 +28,13 @@ impl RuntimePlugins {
         Default::default()
     }
 
-    pub fn with_client_plugin(
-        mut self,
-        plugin: impl Into<Box<dyn RuntimePlugin + 'static>>,
-    ) -> Self {
-        self.client_plugins.push(plugin.into());
+    pub fn with_client_plugin(mut self, plugin: impl RuntimePlugin + 'static) -> Self {
+        self.client_plugins.push(Box::new(plugin));
         self
     }
 
-    pub fn with_operation_plugin(
-        mut self,
-        plugin: impl Into<Box<dyn RuntimePlugin + 'static>>,
-    ) -> Self {
-        self.operation_plugins.push(plugin.into());
+    pub fn with_operation_plugin(mut self, plugin: impl RuntimePlugin + 'static) -> Self {
+        self.operation_plugins.push(Box::new(plugin));
         self
     }
 

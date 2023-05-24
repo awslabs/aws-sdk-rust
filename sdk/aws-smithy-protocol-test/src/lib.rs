@@ -276,6 +276,7 @@ pub fn require_headers(
     Ok(())
 }
 
+#[derive(Clone)]
 pub enum MediaType {
     /// Json media types are deserialized and compared
     Json,

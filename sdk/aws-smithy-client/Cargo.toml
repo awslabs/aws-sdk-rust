@@ -18,7 +18,7 @@ rustdoc-args = ["--cfg", "docsrs"]
 
 [features]
 rt-tokio = ["aws-smithy-async/rt-tokio"]
-test-util = ["dep:aws-smithy-protocol-test", "dep:hyper", "hyper?/server", "hyper?/h2", "dep:serde", "serde?/derive", "rustls", "tokio/full"]
+test-util = ["dep:aws-smithy-protocol-test", "dep:hyper", "hyper?/server", "hyper?/h2", "dep:serde", "dep:serde_json", "serde?/derive", "rustls", "tokio/full"]
 native-tls = ["dep:hyper-tls", "client-hyper", "rt-tokio"]
 rustls = ["dep:hyper-rustls", "dep:lazy_static", "dep:rustls", "client-hyper", "rt-tokio"]
 client-hyper = ["dep:hyper"]
@@ -78,6 +78,10 @@ optional = true
 [dependencies.serde]
 version = "1"
 features = ["derive"]
+optional = true
+
+[dependencies.serde_json]
+version = "1"
 optional = true
 
 [dependencies.tokio]
