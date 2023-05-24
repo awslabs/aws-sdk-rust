@@ -161,6 +161,7 @@ mod describe_compute_environments_request_test {
     /// This test case validates a bug where unboxed primitives were incorrectly marked as required
     /// Test ID: DeserializeDescribeCompute
     #[::tokio::test]
+    #[allow(unused_mut)]
     async fn deserialize_describe_compute_response() {
         let expected_output =crate::operation::describe_compute_environments::DescribeComputeEnvironmentsOutput::builder()
         .set_compute_environments(

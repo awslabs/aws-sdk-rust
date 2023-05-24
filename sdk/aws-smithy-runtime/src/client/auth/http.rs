@@ -8,7 +8,9 @@ use aws_smithy_runtime_api::client::auth::http::{
     HTTP_API_KEY_AUTH_SCHEME_ID, HTTP_BASIC_AUTH_SCHEME_ID, HTTP_BEARER_AUTH_SCHEME_ID,
     HTTP_DIGEST_AUTH_SCHEME_ID,
 };
-use aws_smithy_runtime_api::client::auth::{AuthSchemeId, HttpAuthScheme, HttpRequestSigner};
+use aws_smithy_runtime_api::client::auth::{
+    AuthSchemeEndpointConfig, AuthSchemeId, HttpAuthScheme, HttpRequestSigner,
+};
 use aws_smithy_runtime_api::client::identity::http::{Login, Token};
 use aws_smithy_runtime_api::client::identity::{Identity, IdentityResolver, IdentityResolvers};
 use aws_smithy_runtime_api::client::orchestrator::{BoxError, HttpRequest};
@@ -76,6 +78,7 @@ impl HttpRequestSigner for ApiKeySigner {
         &self,
         request: &mut HttpRequest,
         identity: &Identity,
+        _auth_scheme_endpoint_config: AuthSchemeEndpointConfig<'_>,
         _config_bag: &ConfigBag,
     ) -> Result<(), BoxError> {
         let api_key = identity
@@ -141,6 +144,7 @@ impl HttpRequestSigner for BasicAuthSigner {
         &self,
         request: &mut HttpRequest,
         identity: &Identity,
+        _auth_scheme_endpoint_config: AuthSchemeEndpointConfig<'_>,
         _config_bag: &ConfigBag,
     ) -> Result<(), BoxError> {
         let login = identity
@@ -198,6 +202,7 @@ impl HttpRequestSigner for BearerAuthSigner {
         &self,
         request: &mut HttpRequest,
         identity: &Identity,
+        _auth_scheme_endpoint_config: AuthSchemeEndpointConfig<'_>,
         _config_bag: &ConfigBag,
     ) -> Result<(), BoxError> {
         let token = identity
@@ -253,6 +258,7 @@ impl HttpRequestSigner for DigestAuthSigner {
         &self,
         _request: &mut HttpRequest,
         _identity: &Identity,
+        _auth_scheme_endpoint_config: AuthSchemeEndpointConfig<'_>,
         _config_bag: &ConfigBag,
     ) -> Result<(), BoxError> {
         unimplemented!(
@@ -281,7 +287,12 @@ mod tests {
             .body(SdkBody::empty())
             .unwrap();
         signer
-            .sign_request(&mut request, &identity, &config_bag)
+            .sign_request(
+                &mut request,
+                &identity,
+                AuthSchemeEndpointConfig::empty(),
+                &config_bag,
+            )
             .expect("success");
         assert_eq!(
             "SomeSchemeName some-token",
@@ -304,7 +315,12 @@ mod tests {
             .body(SdkBody::empty())
             .unwrap();
         signer
-            .sign_request(&mut request, &identity, &config_bag)
+            .sign_request(
+                &mut request,
+                &identity,
+                AuthSchemeEndpointConfig::empty(),
+                &config_bag,
+            )
             .expect("success");
         assert!(request.headers().get("some-query-name").is_none());
         assert_eq!(
@@ -321,7 +337,12 @@ mod tests {
         let mut request = http::Request::builder().body(SdkBody::empty()).unwrap();
 
         signer
-            .sign_request(&mut request, &identity, &config_bag)
+            .sign_request(
+                &mut request,
+                &identity,
+                AuthSchemeEndpointConfig::empty(),
+                &config_bag,
+            )
             .expect("success");
         assert_eq!(
             "Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==",
@@ -337,7 +358,12 @@ mod tests {
         let identity = Identity::new(Token::new("some-token", None), None);
         let mut request = http::Request::builder().body(SdkBody::empty()).unwrap();
         signer
-            .sign_request(&mut request, &identity, &config_bag)
+            .sign_request(
+                &mut request,
+                &identity,
+                AuthSchemeEndpointConfig::empty(),
+                &config_bag,
+            )
             .expect("success");
         assert_eq!(
             "Bearer some-token",

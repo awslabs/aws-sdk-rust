@@ -202,6 +202,7 @@ mod list_objects_request_test {
     /// This test validates that parsing respects whitespace
     /// Test ID: KeysWithWhitespace
     #[::tokio::test]
+    #[allow(unused_mut)]
     async fn keys_with_whitespace_response() {
         let expected_output = crate::operation::list_objects::ListObjectsOutput::builder()
             .set_max_keys(::std::option::Option::Some(1000))

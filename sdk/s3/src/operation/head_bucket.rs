@@ -162,6 +162,7 @@ mod head_bucket_request_test {
     /// This test case validates https://github.com/awslabs/smithy-rs/issues/456
     /// Test ID: HeadObjectEmptyBody
     #[::tokio::test]
+    #[allow(unused_mut)]
     async fn head_object_empty_body_response() {
         let expected_output = crate::types::error::NotFound::builder().build();
         let http_response = ::http::response::Builder::new()

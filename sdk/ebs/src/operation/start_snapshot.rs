@@ -171,6 +171,7 @@ mod start_snapshot_request_test {
     /// This test case validates case insensitive parsing of `message`
     /// Test ID: LowercaseMessage
     #[::tokio::test]
+    #[allow(unused_mut)]
     async fn lowercase_message_response() {
         let expected_output = crate::types::error::ValidationException::builder()
             .set_message(::std::option::Option::Some(
@@ -224,6 +225,7 @@ mod start_snapshot_request_test {
     /// This test case validates case insensitive parsing of `message`
     /// Test ID: UppercaseMessage
     #[::tokio::test]
+    #[allow(unused_mut)]
     async fn uppercase_message_response() {
         let expected_output = crate::types::error::ValidationException::builder()
             .set_message(::std::option::Option::Some(

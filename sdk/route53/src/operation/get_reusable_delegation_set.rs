@@ -167,23 +167,29 @@ mod get_reusable_delegation_set_request_test {
     /// This test validates that delegation set id is correctly trimmed
     /// Test ID: GetReusableDelegationSetTrimDelegationSetId
     #[::tokio::test]
+    #[allow(unused_mut)]
     async fn get_reusable_delegation_set_trim_delegation_set_id_request() {
-        let builder = crate::config::Config::builder()
+        let (conn, request_receiver) = ::aws_smithy_client::test_connection::capture_request(None);
+        let config_builder = crate::config::Config::builder()
             .with_test_defaults()
             .endpoint_resolver("https://example.com");
-        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
-        let config = builder.build();
-        let input =
-            crate::operation::get_reusable_delegation_set::GetReusableDelegationSetInput::builder()
-                .set_id(::std::option::Option::Some(
-                    "/delegationset/DELEGATIONSETID".to_owned(),
-                ))
-                .build()
-                .unwrap()
-                .make_operation(&config)
-                .await
-                .expect("operation failed to build");
-        let (http_request, parts) = input.into_request_response().0.into_parts();
+        let config_builder = config_builder.region(::aws_types::region::Region::new("us-east-1"));
+        // If the test case was missing endpoint parameters, default a region so it doesn't fail
+        let mut config_builder = config_builder;
+        if config_builder.region.is_none() {
+            config_builder.set_region(Some(crate::config::Region::new("us-east-1")));
+        }
+        let config = config_builder.http_connector(conn).build();
+        let client = crate::Client::from_conf(config);
+        let result = client
+            .get_reusable_delegation_set()
+            .set_id(::std::option::Option::Some(
+                "/delegationset/DELEGATIONSETID".to_owned(),
+            ))
+            .send()
+            .await;
+        let _ = dbg!(result);
+        let http_request = request_receiver.expect_request();
         ::pretty_assertions::assert_eq!(http_request.method(), "GET");
         ::pretty_assertions::assert_eq!(
             http_request.uri().path(),

@@ -443,22 +443,29 @@ mod put_object_request_test {
     /// This test validates that if a content-type is specified, that only one content-type header is sent
     /// Test ID: DontSendDuplicateContentType
     #[::tokio::test]
+    #[allow(unused_mut)]
     async fn dont_send_duplicate_content_type_request() {
-        let builder = crate::config::Config::builder()
+        let (conn, request_receiver) = ::aws_smithy_client::test_connection::capture_request(None);
+        let config_builder = crate::config::Config::builder()
             .with_test_defaults()
             .endpoint_resolver("https://example.com");
-        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
-        let config = builder.build();
-        let input = crate::operation::put_object::PutObjectInput::builder()
+        let config_builder = config_builder.region(::aws_types::region::Region::new("us-east-1"));
+        // If the test case was missing endpoint parameters, default a region so it doesn't fail
+        let mut config_builder = config_builder;
+        if config_builder.region.is_none() {
+            config_builder.set_region(Some(crate::config::Region::new("us-east-1")));
+        }
+        let config = config_builder.http_connector(conn).build();
+        let client = crate::Client::from_conf(config);
+        let result = client
+            .put_object()
             .set_bucket(::std::option::Option::Some("test-bucket".to_owned()))
             .set_key(::std::option::Option::Some("test-key".to_owned()))
             .set_content_type(::std::option::Option::Some("text/html".to_owned()))
-            .build()
-            .unwrap()
-            .make_operation(&config)
-            .await
-            .expect("operation failed to build");
-        let (http_request, parts) = input.into_request_response().0.into_parts();
+            .send()
+            .await;
+        let _ = dbg!(result);
+        let http_request = request_receiver.expect_request();
         ::pretty_assertions::assert_eq!(http_request.method(), "PUT");
         ::pretty_assertions::assert_eq!(http_request.uri().path(), "/test-key");
         let expected_headers = [("content-type", "text/html")];
@@ -470,25 +477,32 @@ mod put_object_request_test {
     /// This test validates that if a content-length is specified, that only one content-length header is sent
     /// Test ID: DontSendDuplicateContentLength
     #[::tokio::test]
+    #[allow(unused_mut)]
     async fn dont_send_duplicate_content_length_request() {
-        let builder = crate::config::Config::builder()
+        let (conn, request_receiver) = ::aws_smithy_client::test_connection::capture_request(None);
+        let config_builder = crate::config::Config::builder()
             .with_test_defaults()
             .endpoint_resolver("https://example.com");
-        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
-        let config = builder.build();
-        let input = crate::operation::put_object::PutObjectInput::builder()
+        let config_builder = config_builder.region(::aws_types::region::Region::new("us-east-1"));
+        // If the test case was missing endpoint parameters, default a region so it doesn't fail
+        let mut config_builder = config_builder;
+        if config_builder.region.is_none() {
+            config_builder.set_region(Some(crate::config::Region::new("us-east-1")));
+        }
+        let config = config_builder.http_connector(conn).build();
+        let client = crate::Client::from_conf(config);
+        let result = client
+            .put_object()
             .set_bucket(::std::option::Option::Some("test-bucket".to_owned()))
             .set_key(::std::option::Option::Some("test-key".to_owned()))
             .set_content_length(::std::option::Option::Some(2))
             .set_body(::std::option::Option::Some(
                 ::aws_smithy_http::byte_stream::ByteStream::from_static(b"ab"),
             ))
-            .build()
-            .unwrap()
-            .make_operation(&config)
-            .await
-            .expect("operation failed to build");
-        let (http_request, parts) = input.into_request_response().0.into_parts();
+            .send()
+            .await;
+        let _ = dbg!(result);
+        let http_request = request_receiver.expect_request();
         ::pretty_assertions::assert_eq!(http_request.method(), "PUT");
         ::pretty_assertions::assert_eq!(http_request.uri().path(), "/test-key");
         let expected_headers = [("content-length", "2")];

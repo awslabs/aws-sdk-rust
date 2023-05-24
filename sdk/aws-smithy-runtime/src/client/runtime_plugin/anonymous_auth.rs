@@ -10,7 +10,7 @@ use aws_smithy_runtime_api::client::auth::option_resolver::{
     StaticAuthOptionResolver, StaticAuthOptionResolverParams,
 };
 use aws_smithy_runtime_api::client::auth::{
-    AuthSchemeId, HttpAuthScheme, HttpAuthSchemes, HttpRequestSigner,
+    AuthSchemeEndpointConfig, AuthSchemeId, HttpAuthScheme, HttpAuthSchemes, HttpRequestSigner,
 };
 use aws_smithy_runtime_api::client::identity::{Identity, IdentityResolver, IdentityResolvers};
 use aws_smithy_runtime_api::client::interceptors::InterceptorRegistrar;
@@ -83,6 +83,7 @@ impl HttpRequestSigner for AnonymousSigner {
         &self,
         _request: &mut HttpRequest,
         _identity: &Identity,
+        _auth_scheme_endpoint_config: AuthSchemeEndpointConfig<'_>,
         _config_bag: &ConfigBag,
     ) -> Result<(), BoxError> {
         Ok(())

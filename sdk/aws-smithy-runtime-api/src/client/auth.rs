@@ -7,6 +7,7 @@ use crate::client::identity::{Identity, IdentityResolver, IdentityResolvers};
 use crate::client::orchestrator::{BoxError, HttpRequest};
 use crate::config_bag::ConfigBag;
 use crate::type_erasure::{TypeErasedBox, TypedBox};
+use aws_smithy_types::Document;
 use std::borrow::Cow;
 use std::fmt;
 use std::sync::Arc;
@@ -31,6 +32,12 @@ impl AuthSchemeId {
     /// Returns the string equivalent of this auth scheme ID.
     pub const fn as_str(&self) -> &'static str {
         self.scheme_id
+    }
+}
+
+impl From<&'static str> for AuthSchemeId {
+    fn from(scheme_id: &'static str) -> Self {
+        Self::new(scheme_id)
     }
 }
 
@@ -105,8 +112,32 @@ pub trait HttpRequestSigner: Send + Sync + fmt::Debug {
         &self,
         request: &mut HttpRequest,
         identity: &Identity,
+        auth_scheme_endpoint_config: AuthSchemeEndpointConfig<'_>,
         config_bag: &ConfigBag,
     ) -> Result<(), BoxError>;
+}
+
+/// Endpoint configuration for the selected auth scheme.
+///
+/// This struct gets added to the request state by the auth orchestrator.
+#[non_exhaustive]
+#[derive(Clone, Debug)]
+pub struct AuthSchemeEndpointConfig<'a>(Option<&'a Document>);
+
+impl<'a> AuthSchemeEndpointConfig<'a> {
+    /// Creates a new [`AuthSchemeEndpointConfig`].
+    pub fn new(config: Option<&'a Document>) -> Self {
+        Self(config)
+    }
+
+    /// Creates an empty AuthSchemeEndpointConfig.
+    pub fn empty() -> Self {
+        Self(None)
+    }
+
+    pub fn config(&self) -> Option<&'a Document> {
+        self.0
+    }
 }
 
 pub mod builders {

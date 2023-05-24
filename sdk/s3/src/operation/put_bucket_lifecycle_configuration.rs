@@ -196,58 +196,44 @@ mod put_bucket_lifecycle_configuration_request_test {
     /// This test validates that the content md5 header is set correctly
     /// Test ID: PutBucketLifecycleConfiguration
     #[::tokio::test]
+    #[allow(unused_mut)]
     async fn put_bucket_lifecycle_configuration_request() {
-        let builder = crate::config::Config::builder()
+        let (conn, request_receiver) = ::aws_smithy_client::test_connection::capture_request(None);
+        let config_builder = crate::config::Config::builder()
             .with_test_defaults()
             .endpoint_resolver("https://example.com");
-        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
-        let config = builder.build();
-        let input =crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationInput::builder()
-        .set_bucket(
-            ::std::option::Option::Some(
-                "test-bucket".to_owned()
-            )
-        )
-        .set_lifecycle_configuration(
-            ::std::option::Option::Some(
+        let config_builder = config_builder.region(::aws_types::region::Region::new("us-east-1"));
+        // If the test case was missing endpoint parameters, default a region so it doesn't fail
+        let mut config_builder = config_builder;
+        if config_builder.region.is_none() {
+            config_builder.set_region(Some(crate::config::Region::new("us-east-1")));
+        }
+        let config = config_builder.http_connector(conn).build();
+        let client = crate::Client::from_conf(config);
+        let result = client
+            .put_bucket_lifecycle_configuration()
+            .set_bucket(::std::option::Option::Some("test-bucket".to_owned()))
+            .set_lifecycle_configuration(::std::option::Option::Some(
                 crate::types::BucketLifecycleConfiguration::builder()
-                .set_rules(
-                    ::std::option::Option::Some(
-                        vec![
-                            crate::types::LifecycleRule::builder()
-                            .set_expiration(
-                                ::std::option::Option::Some(
-                                    crate::types::LifecycleExpiration::builder()
-                                    .set_days(
-                                        ::std::option::Option::Some(
-                                            1
-                                        )
-                                    )
-                                    .build()
-                                )
-                            )
-                            .set_status(
-                                ::std::option::Option::Some(
-                                    crate::types::ExpirationStatus::from("Enabled")
-                                )
-                            )
-                            .set_id(
-                                ::std::option::Option::Some(
-                                    "Expire".to_owned()
-                                )
-                            )
-                            .build()
-                            ,
-                        ]
-                    )
-                )
-                .build()
-            )
-        )
-        .build()
-        .unwrap()
-        .make_operation(&config).await.expect("operation failed to build");
-        let (http_request, parts) = input.into_request_response().0.into_parts();
+                    .set_rules(::std::option::Option::Some(vec![
+                        crate::types::LifecycleRule::builder()
+                            .set_expiration(::std::option::Option::Some(
+                                crate::types::LifecycleExpiration::builder()
+                                    .set_days(::std::option::Option::Some(1))
+                                    .build(),
+                            ))
+                            .set_status(::std::option::Option::Some(
+                                crate::types::ExpirationStatus::from("Enabled"),
+                            ))
+                            .set_id(::std::option::Option::Some("Expire".to_owned()))
+                            .build(),
+                    ]))
+                    .build(),
+            ))
+            .send()
+            .await;
+        let _ = dbg!(result);
+        let http_request = request_receiver.expect_request();
         ::pretty_assertions::assert_eq!(http_request.method(), "PUT");
         ::pretty_assertions::assert_eq!(http_request.uri().path(), "/");
         let expected_headers = [("content-md5", "JP8DTuCSH6yDC8wNGg4+mA==")];

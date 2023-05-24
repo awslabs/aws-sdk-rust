@@ -240,25 +240,32 @@ mod upload_multipart_part_request_test {
     /// Glacier requires checksum headers that are cumbersome to provide.
     /// Test ID: GlacierMultipartChecksums
     #[::tokio::test]
+    #[allow(unused_mut)]
     async fn glacier_multipart_checksums_request() {
-        let builder = crate::config::Config::builder()
+        let (conn, request_receiver) = ::aws_smithy_client::test_connection::capture_request(None);
+        let config_builder = crate::config::Config::builder()
             .with_test_defaults()
             .endpoint_resolver("https://example.com");
-        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
-        let config = builder.build();
-        let input = crate::operation::upload_multipart_part::UploadMultipartPartInput::builder()
+        let config_builder = config_builder.region(::aws_types::region::Region::new("us-east-1"));
+        // If the test case was missing endpoint parameters, default a region so it doesn't fail
+        let mut config_builder = config_builder;
+        if config_builder.region.is_none() {
+            config_builder.set_region(Some(crate::config::Region::new("us-east-1")));
+        }
+        let config = config_builder.http_connector(conn).build();
+        let client = crate::Client::from_conf(config);
+        let result = client
+            .upload_multipart_part()
             .set_account_id(::std::option::Option::Some("foo".to_owned()))
             .set_vault_name(::std::option::Option::Some("bar".to_owned()))
             .set_upload_id(::std::option::Option::Some("baz".to_owned()))
             .set_body(::std::option::Option::Some(
                 ::aws_smithy_http::byte_stream::ByteStream::from_static(b"hello world"),
             ))
-            .build()
-            .unwrap()
-            .make_operation(&config)
-            .await
-            .expect("operation failed to build");
-        let (http_request, parts) = input.into_request_response().0.into_parts();
+            .send()
+            .await;
+        let _ = dbg!(result);
+        let http_request = request_receiver.expect_request();
         ::pretty_assertions::assert_eq!(http_request.method(), "PUT");
         ::pretty_assertions::assert_eq!(
             http_request.uri().path(),

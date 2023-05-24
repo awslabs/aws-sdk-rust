@@ -160,25 +160,31 @@ mod change_message_visibility_request_test {
     /// This test case validates a bug found here: https://github.com/aws/aws-sdk-go-v2/issues/1087
     /// Test ID: SqsSetVisibilityZero
     #[::tokio::test]
+    #[allow(unused_mut)]
     async fn sqs_set_visibility_zero_request() {
-        let builder = crate::config::Config::builder()
+        let (conn, request_receiver) = ::aws_smithy_client::test_connection::capture_request(None);
+        let config_builder = crate::config::Config::builder()
             .with_test_defaults()
             .endpoint_resolver("https://example.com");
 
-        let config = builder.build();
-        let input =
-            crate::operation::change_message_visibility::ChangeMessageVisibilityInput::builder()
-                .set_queue_url(::std::option::Option::Some(
-                    "http://somequeue.amazon.com".to_owned(),
-                ))
-                .set_receipt_handle(::std::option::Option::Some("handlehandle".to_owned()))
-                .set_visibility_timeout(::std::option::Option::Some(0))
-                .build()
-                .unwrap()
-                .make_operation(&config)
-                .await
-                .expect("operation failed to build");
-        let (http_request, parts) = input.into_request_response().0.into_parts();
+        // If the test case was missing endpoint parameters, default a region so it doesn't fail
+        let mut config_builder = config_builder;
+        if config_builder.region.is_none() {
+            config_builder.set_region(Some(crate::config::Region::new("us-east-1")));
+        }
+        let config = config_builder.http_connector(conn).build();
+        let client = crate::Client::from_conf(config);
+        let result = client
+            .change_message_visibility()
+            .set_queue_url(::std::option::Option::Some(
+                "http://somequeue.amazon.com".to_owned(),
+            ))
+            .set_receipt_handle(::std::option::Option::Some("handlehandle".to_owned()))
+            .set_visibility_timeout(::std::option::Option::Some(0))
+            .send()
+            .await;
+        let _ = dbg!(result);
+        let http_request = request_receiver.expect_request();
         ::pretty_assertions::assert_eq!(http_request.method(), "POST");
         ::pretty_assertions::assert_eq!(http_request.uri().path(), "/");
         let body = http_request.body().bytes().expect("body should be strict");

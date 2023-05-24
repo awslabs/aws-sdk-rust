@@ -87,6 +87,11 @@ path = "../aws-credential-types"
 features = ["test-util"]
 version = "0.55.2"
 
+[dev-dependencies.aws-smithy-client]
+path = "../aws-smithy-client"
+features = ["test-util"]
+version = "0.55.2"
+
 [dev-dependencies.pretty_assertions]
 version = "1.3.0"
 

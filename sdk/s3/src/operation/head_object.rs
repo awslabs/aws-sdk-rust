@@ -411,27 +411,35 @@ mod head_object_request_test {
     /// https://github.com/awslabs/aws-sdk-rust/issues/331
     /// Test ID: HeadObjectUriEncoding
     #[::tokio::test]
+    #[allow(unused_mut)]
     async fn head_object_uri_encoding_request() {
-        let builder = crate::config::Config::builder()
+        let (conn, request_receiver) = ::aws_smithy_client::test_connection::capture_request(None);
+        let config_builder = crate::config::Config::builder()
             .with_test_defaults()
             .endpoint_resolver("https://example.com");
-        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
-        let config = builder.build();
-        let input = crate::operation::head_object::HeadObjectInput::builder()
+        let config_builder = config_builder.region(::aws_types::region::Region::new("us-east-1"));
+        // If the test case was missing endpoint parameters, default a region so it doesn't fail
+        let mut config_builder = config_builder;
+        if config_builder.region.is_none() {
+            config_builder.set_region(Some(crate::config::Region::new("us-east-1")));
+        }
+        let config = config_builder.http_connector(conn).build();
+        let client = crate::Client::from_conf(config);
+        let result = client
+            .head_object()
             .set_bucket(::std::option::Option::Some("test-bucket".to_owned()))
             .set_key(::std::option::Option::Some("<> `?🐱".to_owned()))
-            .build()
-            .unwrap()
-            .make_operation(&config)
-            .await
-            .expect("operation failed to build");
-        let (http_request, parts) = input.into_request_response().0.into_parts();
+            .send()
+            .await;
+        let _ = dbg!(result);
+        let http_request = request_receiver.expect_request();
         ::pretty_assertions::assert_eq!(http_request.method(), "HEAD");
         ::pretty_assertions::assert_eq!(http_request.uri().path(), "/%3C%3E%20%60%3F%F0%9F%90%B1");
     }
     /// This test case validates https://github.com/awslabs/smithy-rs/issues/456
     /// Test ID: HeadObjectEmptyBody
     #[::tokio::test]
+    #[allow(unused_mut)]
     async fn head_object_empty_body_response() {
         let expected_output = crate::types::error::NotFound::builder().build();
         let http_response = ::http::response::Builder::new()

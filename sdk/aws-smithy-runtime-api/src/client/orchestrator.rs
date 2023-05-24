@@ -16,7 +16,7 @@ use crate::type_erasure::{TypeErasedBox, TypedBox};
 use aws_smithy_async::future::now_or_later::NowOrLater;
 use aws_smithy_async::rt::sleep::AsyncSleep;
 use aws_smithy_http::body::SdkBody;
-use aws_smithy_http::endpoint::EndpointPrefix;
+use aws_smithy_types::endpoint::Endpoint;
 use std::fmt;
 use std::future::Future as StdFuture;
 use std::pin::Pin;
@@ -74,12 +74,7 @@ impl EndpointResolverParams {
 }
 
 pub trait EndpointResolver: Send + Sync + fmt::Debug {
-    fn resolve_and_apply_endpoint(
-        &self,
-        params: &EndpointResolverParams,
-        endpoint_prefix: Option<&EndpointPrefix>,
-        request: &mut HttpRequest,
-    ) -> Result<(), BoxError>;
+    fn resolve_endpoint(&self, params: &EndpointResolverParams) -> Result<Endpoint, BoxError>;
 }
 
 /// Time that the request is being made (so that time can be overridden in the [`ConfigBag`]).

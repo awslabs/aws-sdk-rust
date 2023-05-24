@@ -223,21 +223,28 @@ mod upload_archive_request_test {
     /// Glacier requires that a version header be set on all requests.
     /// Test ID: GlacierVersionHeader
     #[::tokio::test]
+    #[allow(unused_mut)]
     async fn glacier_version_header_request() {
-        let builder = crate::config::Config::builder()
+        let (conn, request_receiver) = ::aws_smithy_client::test_connection::capture_request(None);
+        let config_builder = crate::config::Config::builder()
             .with_test_defaults()
             .endpoint_resolver("https://example.com");
-        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
-        let config = builder.build();
-        let input = crate::operation::upload_archive::UploadArchiveInput::builder()
+        let config_builder = config_builder.region(::aws_types::region::Region::new("us-east-1"));
+        // If the test case was missing endpoint parameters, default a region so it doesn't fail
+        let mut config_builder = config_builder;
+        if config_builder.region.is_none() {
+            config_builder.set_region(Some(crate::config::Region::new("us-east-1")));
+        }
+        let config = config_builder.http_connector(conn).build();
+        let client = crate::Client::from_conf(config);
+        let result = client
+            .upload_archive()
             .set_account_id(::std::option::Option::Some("foo".to_owned()))
             .set_vault_name(::std::option::Option::Some("bar".to_owned()))
-            .build()
-            .unwrap()
-            .make_operation(&config)
-            .await
-            .expect("operation failed to build");
-        let (http_request, parts) = input.into_request_response().0.into_parts();
+            .send()
+            .await;
+        let _ = dbg!(result);
+        let http_request = request_receiver.expect_request();
         ::pretty_assertions::assert_eq!(http_request.method(), "POST");
         ::pretty_assertions::assert_eq!(http_request.uri().path(), "/foo/vaults/bar/archives");
         let expected_headers = [("X-Amz-Glacier-Version", "2012-06-01")];
@@ -252,24 +259,31 @@ mod upload_archive_request_test {
     /// Glacier requires checksum headers that are cumbersome to provide.
     /// Test ID: GlacierChecksums
     #[::tokio::test]
+    #[allow(unused_mut)]
     async fn glacier_checksums_request() {
-        let builder = crate::config::Config::builder()
+        let (conn, request_receiver) = ::aws_smithy_client::test_connection::capture_request(None);
+        let config_builder = crate::config::Config::builder()
             .with_test_defaults()
             .endpoint_resolver("https://example.com");
-        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
-        let config = builder.build();
-        let input = crate::operation::upload_archive::UploadArchiveInput::builder()
+        let config_builder = config_builder.region(::aws_types::region::Region::new("us-east-1"));
+        // If the test case was missing endpoint parameters, default a region so it doesn't fail
+        let mut config_builder = config_builder;
+        if config_builder.region.is_none() {
+            config_builder.set_region(Some(crate::config::Region::new("us-east-1")));
+        }
+        let config = config_builder.http_connector(conn).build();
+        let client = crate::Client::from_conf(config);
+        let result = client
+            .upload_archive()
             .set_account_id(::std::option::Option::Some("foo".to_owned()))
             .set_vault_name(::std::option::Option::Some("bar".to_owned()))
             .set_body(::std::option::Option::Some(
                 ::aws_smithy_http::byte_stream::ByteStream::from_static(b"hello world"),
             ))
-            .build()
-            .unwrap()
-            .make_operation(&config)
-            .await
-            .expect("operation failed to build");
-        let (http_request, parts) = input.into_request_response().0.into_parts();
+            .send()
+            .await;
+        let _ = dbg!(result);
+        let http_request = request_receiver.expect_request();
         ::pretty_assertions::assert_eq!(http_request.method(), "POST");
         ::pretty_assertions::assert_eq!(http_request.uri().path(), "/foo/vaults/bar/archives");
         let expected_headers = [
@@ -299,21 +313,28 @@ mod upload_archive_request_test {
     /// behavior if the customer provides a null or empty string.
     /// Test ID: GlacierAccountIdEmpty
     #[::tokio::test]
+    #[allow(unused_mut)]
     async fn glacier_account_id_empty_request() {
-        let builder = crate::config::Config::builder()
+        let (conn, request_receiver) = ::aws_smithy_client::test_connection::capture_request(None);
+        let config_builder = crate::config::Config::builder()
             .with_test_defaults()
             .endpoint_resolver("https://example.com");
-        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
-        let config = builder.build();
-        let input = crate::operation::upload_archive::UploadArchiveInput::builder()
+        let config_builder = config_builder.region(::aws_types::region::Region::new("us-east-1"));
+        // If the test case was missing endpoint parameters, default a region so it doesn't fail
+        let mut config_builder = config_builder;
+        if config_builder.region.is_none() {
+            config_builder.set_region(Some(crate::config::Region::new("us-east-1")));
+        }
+        let config = config_builder.http_connector(conn).build();
+        let client = crate::Client::from_conf(config);
+        let result = client
+            .upload_archive()
             .set_account_id(::std::option::Option::Some("".to_owned()))
             .set_vault_name(::std::option::Option::Some("bar".to_owned()))
-            .build()
-            .unwrap()
-            .make_operation(&config)
-            .await
-            .expect("operation failed to build");
-        let (http_request, parts) = input.into_request_response().0.into_parts();
+            .send()
+            .await;
+        let _ = dbg!(result);
+        let http_request = request_receiver.expect_request();
         ::pretty_assertions::assert_eq!(http_request.method(), "POST");
         ::pretty_assertions::assert_eq!(http_request.uri().path(), "/-/vaults/bar/archives");
         let expected_headers = [("X-Amz-Glacier-Version", "2012-06-01")];
@@ -330,21 +351,28 @@ mod upload_archive_request_test {
     /// behavior if the customer provides a null or empty string.
     /// Test ID: GlacierAccountIdUnset
     #[::tokio::test]
+    #[allow(unused_mut)]
     async fn glacier_account_id_unset_request() {
-        let builder = crate::config::Config::builder()
+        let (conn, request_receiver) = ::aws_smithy_client::test_connection::capture_request(None);
+        let config_builder = crate::config::Config::builder()
             .with_test_defaults()
             .endpoint_resolver("https://example.com");
-        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
-        let config = builder.build();
-        let input = crate::operation::upload_archive::UploadArchiveInput::builder()
+        let config_builder = config_builder.region(::aws_types::region::Region::new("us-east-1"));
+        // If the test case was missing endpoint parameters, default a region so it doesn't fail
+        let mut config_builder = config_builder;
+        if config_builder.region.is_none() {
+            config_builder.set_region(Some(crate::config::Region::new("us-east-1")));
+        }
+        let config = config_builder.http_connector(conn).build();
+        let client = crate::Client::from_conf(config);
+        let result = client
+            .upload_archive()
             .set_vault_name(::std::option::Option::Some("bar".to_owned()))
             .set_account_id(::std::option::Option::None)
-            .build()
-            .unwrap()
-            .make_operation(&config)
-            .await
-            .expect("operation failed to build");
-        let (http_request, parts) = input.into_request_response().0.into_parts();
+            .send()
+            .await;
+        let _ = dbg!(result);
+        let http_request = request_receiver.expect_request();
         ::pretty_assertions::assert_eq!(http_request.method(), "POST");
         ::pretty_assertions::assert_eq!(http_request.uri().path(), "/-/vaults/bar/archives");
         let expected_headers = [("X-Amz-Glacier-Version", "2012-06-01")];

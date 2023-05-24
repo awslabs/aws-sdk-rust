@@ -139,7 +139,7 @@ pub struct Builder {
     use_dual_stack: ::std::option::Option<::std::primitive::bool>,
     use_fips: ::std::option::Option<::std::primitive::bool>,
     http_connector: Option<::aws_smithy_client::http_connector::HttpConnector>,
-    region: Option<::aws_types::region::Region>,
+    pub(crate) region: Option<::aws_types::region::Region>,
     credentials_provider: Option<::aws_credential_types::provider::SharedCredentialsProvider>,
     credentials_cache: Option<::aws_credential_types::cache::CredentialsCache>,
 }
@@ -563,6 +563,12 @@ impl Builder {
     /// ```
     pub fn region(mut self, region: impl Into<Option<::aws_types::region::Region>>) -> Self {
         self.region = region.into();
+        self
+    }
+
+    /// Sets the AWS region to use when making requests.
+    pub fn set_region(&mut self, region: Option<::aws_types::region::Region>) -> &mut Self {
+        self.region = region;
         self
     }
     /// Sets the credentials provider for this service

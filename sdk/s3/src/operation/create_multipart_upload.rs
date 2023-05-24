@@ -189,22 +189,28 @@ mod create_multipart_upload_request_test {
     /// This test validates that the URI for CreateMultipartUpload is created correctly
     /// Test ID: CreateMultipartUploadUriConstruction
     #[::tokio::test]
+    #[allow(unused_mut)]
     async fn create_multipart_upload_uri_construction_request() {
-        let builder = crate::config::Config::builder()
+        let (conn, request_receiver) = ::aws_smithy_client::test_connection::capture_request(None);
+        let config_builder = crate::config::Config::builder()
             .with_test_defaults()
             .endpoint_resolver("https://example.com");
-        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
-        let config = builder.build();
-        let input =
-            crate::operation::create_multipart_upload::CreateMultipartUploadInput::builder()
-                .set_bucket(::std::option::Option::Some("test-bucket".to_owned()))
-                .set_key(::std::option::Option::Some("object.txt".to_owned()))
-                .build()
-                .unwrap()
-                .make_operation(&config)
-                .await
-                .expect("operation failed to build");
-        let (http_request, parts) = input.into_request_response().0.into_parts();
+        let config_builder = config_builder.region(::aws_types::region::Region::new("us-east-1"));
+        // If the test case was missing endpoint parameters, default a region so it doesn't fail
+        let mut config_builder = config_builder;
+        if config_builder.region.is_none() {
+            config_builder.set_region(Some(crate::config::Region::new("us-east-1")));
+        }
+        let config = config_builder.http_connector(conn).build();
+        let client = crate::Client::from_conf(config);
+        let result = client
+            .create_multipart_upload()
+            .set_bucket(::std::option::Option::Some("test-bucket".to_owned()))
+            .set_key(::std::option::Option::Some("object.txt".to_owned()))
+            .send()
+            .await;
+        let _ = dbg!(result);
+        let http_request = request_receiver.expect_request();
         ::pretty_assertions::assert_eq!(http_request.method(), "POST");
         ::pretty_assertions::assert_eq!(http_request.uri().path(), "/object.txt");
         let expected_query_params = &["uploads", "x-id=CreateMultipartUpload"];
