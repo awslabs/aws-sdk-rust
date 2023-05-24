@@ -19,9 +19,9 @@ impl CreateModelBiasJobDefinitionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
@@ -82,6 +82,22 @@ impl CreateModelBiasJobDefinitionFluentBuilder {
         >,
     > {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinition,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinitionError,
+        >,
+    > {
+        self.customize_middleware().await
     }
     /// <p>The name of the bias job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     pub fn job_definition_name(

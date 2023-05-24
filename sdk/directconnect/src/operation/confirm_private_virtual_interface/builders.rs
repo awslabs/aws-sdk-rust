@@ -20,9 +20,9 @@ impl ConfirmPrivateVirtualInterfaceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::confirm_private_virtual_interface::ConfirmPrivateVirtualInterface, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::confirm_private_virtual_interface::ConfirmPrivateVirtualInterfaceError>
     >{
@@ -64,6 +64,15 @@ impl ConfirmPrivateVirtualInterfaceFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::confirm_private_virtual_interface::ConfirmPrivateVirtualInterfaceOutput, ::aws_smithy_http::result::SdkError<crate::operation::confirm_private_virtual_interface::ConfirmPrivateVirtualInterfaceError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::confirm_private_virtual_interface::ConfirmPrivateVirtualInterface, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::confirm_private_virtual_interface::ConfirmPrivateVirtualInterfaceError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The ID of the virtual interface.</p>
     pub fn virtual_interface_id(

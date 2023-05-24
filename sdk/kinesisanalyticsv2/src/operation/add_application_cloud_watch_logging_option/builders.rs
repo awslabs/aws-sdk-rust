@@ -19,9 +19,9 @@ impl AddApplicationCloudWatchLoggingOptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOption, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError>
     >{
@@ -63,6 +63,15 @@ impl AddApplicationCloudWatchLoggingOptionFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOption, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The Kinesis Data Analytics application name.</p>
     pub fn application_name(

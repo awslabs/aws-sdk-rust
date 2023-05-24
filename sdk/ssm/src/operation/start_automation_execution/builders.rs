@@ -19,9 +19,9 @@ impl StartAutomationExecutionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
@@ -82,6 +82,22 @@ impl StartAutomationExecutionFluentBuilder {
         >,
     > {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_automation_execution::StartAutomationExecution,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_automation_execution::StartAutomationExecutionError,
+        >,
+    > {
+        self.customize_middleware().await
     }
     /// <p>The name of the SSM document to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn document_name(

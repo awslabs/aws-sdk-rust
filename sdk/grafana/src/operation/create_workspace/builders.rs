@@ -20,9 +20,9 @@ impl CreateWorkspaceFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
@@ -83,6 +83,22 @@ impl CreateWorkspaceFluentBuilder {
         >,
     > {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_workspace::CreateWorkspace,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_workspace::CreateWorkspaceError,
+        >,
+    > {
+        self.customize_middleware().await
     }
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
     pub fn account_access_type(mut self, input: crate::types::AccountAccessType) -> Self {

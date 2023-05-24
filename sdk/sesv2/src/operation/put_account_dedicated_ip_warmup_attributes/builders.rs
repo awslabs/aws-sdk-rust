@@ -19,9 +19,9 @@ impl PutAccountDedicatedIpWarmupAttributesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_account_dedicated_ip_warmup_attributes::PutAccountDedicatedIpWarmupAttributes, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::put_account_dedicated_ip_warmup_attributes::PutAccountDedicatedIpWarmupAttributesError>
     >{
@@ -63,6 +63,15 @@ impl PutAccountDedicatedIpWarmupAttributesFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::put_account_dedicated_ip_warmup_attributes::PutAccountDedicatedIpWarmupAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_account_dedicated_ip_warmup_attributes::PutAccountDedicatedIpWarmupAttributesError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::put_account_dedicated_ip_warmup_attributes::PutAccountDedicatedIpWarmupAttributes, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::put_account_dedicated_ip_warmup_attributes::PutAccountDedicatedIpWarmupAttributesError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon SES account in the current Amazon Web Services Region. Set to <code>true</code> to enable the automatic warm-up feature, or set to <code>false</code> to disable it.</p>
     pub fn auto_warmup_enabled(mut self, input: bool) -> Self {

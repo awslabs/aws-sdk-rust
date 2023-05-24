@@ -23,9 +23,9 @@ impl CreateGlobalReplicationGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
@@ -86,6 +86,22 @@ impl CreateGlobalReplicationGroupFluentBuilder {
         >,
     > {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_global_replication_group::CreateGlobalReplicationGroup,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_global_replication_group::CreateGlobalReplicationGroupError,
+        >,
+    > {
+        self.customize_middleware().await
     }
     /// <p>The suffix name of a Global datastore. Amazon ElastiCache automatically applies a prefix to the Global datastore ID when it is created. Each Amazon Region has its own prefix. For instance, a Global datastore ID created in the US-West-1 region will begin with "dsdfu" along with the suffix name you provide. The suffix, combined with the auto-generated prefix, guarantees uniqueness of the Global datastore name across multiple regions. </p>
     /// <p>For a full list of Amazon Regions and their respective Global datastore iD prefixes, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using the Amazon CLI with Global datastores </a>.</p>

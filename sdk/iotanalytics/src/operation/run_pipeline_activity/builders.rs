@@ -19,9 +19,9 @@ impl RunPipelineActivityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
@@ -82,6 +82,22 @@ impl RunPipelineActivityFluentBuilder {
         >,
     > {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::run_pipeline_activity::RunPipelineActivity,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::run_pipeline_activity::RunPipelineActivityError,
+        >,
+    > {
+        self.customize_middleware().await
     }
     /// <p>The pipeline activity that is run. This must not be a channel activity or a data store activity because these activities are used in a pipeline only to load the original message and to store the (possibly) transformed message. If a Lambda activity is specified, only short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be used.</p>
     pub fn pipeline_activity(mut self, input: crate::types::PipelineActivity) -> Self {

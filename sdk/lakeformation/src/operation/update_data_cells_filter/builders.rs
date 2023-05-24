@@ -19,9 +19,9 @@ impl UpdateDataCellsFilterFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
@@ -82,6 +82,22 @@ impl UpdateDataCellsFilterFluentBuilder {
         >,
     > {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_data_cells_filter::UpdateDataCellsFilter,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_data_cells_filter::UpdateDataCellsFilterError,
+        >,
+    > {
+        self.customize_middleware().await
     }
     /// <p>A <code>DataCellsFilter</code> structure containing information about the data cells filter.</p>
     pub fn table_data(mut self, input: crate::types::DataCellsFilter) -> Self {

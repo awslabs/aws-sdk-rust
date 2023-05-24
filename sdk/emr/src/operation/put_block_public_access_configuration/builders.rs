@@ -19,9 +19,9 @@ impl PutBlockPublicAccessConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationError>
     >{
@@ -63,6 +63,15 @@ impl PutBlockPublicAccessConfigurationFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>A configuration for Amazon EMR block public access. The configuration applies to all clusters created in your account for the current Region. The configuration specifies whether block public access is enabled. If block public access is enabled, security groups associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code> in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception, and public access is allowed on this port. You can change this by updating <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p> <note>
     /// <p>For accounts that created clusters in a Region before November 25, 2019, block public access is disabled by default in that Region. To use this feature, you must manually enable and configure it. For accounts that did not create an Amazon EMR cluster in a Region before this date, block public access is enabled by default in that Region.</p>

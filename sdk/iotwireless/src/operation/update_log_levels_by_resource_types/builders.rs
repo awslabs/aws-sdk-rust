@@ -19,9 +19,9 @@ impl UpdateLogLevelsByResourceTypesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypes, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesError>
     >{
@@ -63,6 +63,15 @@ impl UpdateLogLevelsByResourceTypesFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypes, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     pub fn default_log_level(mut self, input: crate::types::LogLevel) -> Self {

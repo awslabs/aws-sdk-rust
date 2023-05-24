@@ -19,9 +19,9 @@ impl UpdateEventConfigurationByResourceTypesFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypes, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesError>
     >{
@@ -63,6 +63,15 @@ impl UpdateEventConfigurationByResourceTypesFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypes, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>Device registration state resource type event configuration object for enabling and disabling wireless gateway topic.</p>
     pub fn device_registration_state(

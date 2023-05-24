@@ -19,9 +19,9 @@ impl CompleteMultipartReadSetUploadFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUpload, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadError>
     >{
@@ -63,6 +63,15 @@ impl CompleteMultipartReadSetUploadFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadOutput, ::aws_smithy_http::result::SdkError<crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUpload, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::complete_multipart_read_set_upload::CompleteMultipartReadSetUploadError>
+    >{
+        self.customize_middleware().await
     }
     /// <p> The sequence store ID for the store involved in the multipart upload. </p>
     pub fn sequence_store_id(

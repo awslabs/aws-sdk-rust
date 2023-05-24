@@ -19,9 +19,9 @@ impl RotateIngestEndpointCredentialsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentials, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsError>
     >{
@@ -63,6 +63,15 @@ impl RotateIngestEndpointCredentialsFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsOutput, ::aws_smithy_http::result::SdkError<crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentials, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsError>
+    >{
+        self.customize_middleware().await
     }
     /// The ID of the channel the IngestEndpoint is on.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

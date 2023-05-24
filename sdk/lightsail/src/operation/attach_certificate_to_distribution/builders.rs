@@ -23,9 +23,9 @@ impl AttachCertificateToDistributionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistribution, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError>
     >{
@@ -67,6 +67,15 @@ impl AttachCertificateToDistributionFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionOutput, ::aws_smithy_http::result::SdkError<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistribution, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistributionError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The name of the distribution that the certificate will be attached to.</p>
     /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you can specify.</p>

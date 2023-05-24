@@ -19,9 +19,9 @@ impl UpdateFirewallDeleteProtectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtection, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionError>
     >{
@@ -63,6 +63,15 @@ impl UpdateFirewallDeleteProtectionFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtection, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>

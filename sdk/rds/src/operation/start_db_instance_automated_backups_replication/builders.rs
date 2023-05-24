@@ -21,9 +21,9 @@ impl StartDBInstanceAutomatedBackupsReplicationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplication, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplicationError>
     >{
@@ -65,6 +65,15 @@ impl StartDBInstanceAutomatedBackupsReplicationFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::start_db_instance_automated_backups_replication::StartDbInstanceAutomatedBackupsReplicationOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplicationError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplication, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::start_db_instance_automated_backups_replication::StartDBInstanceAutomatedBackupsReplicationError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the source DB instance for the replicated automated backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
     pub fn source_db_instance_arn(

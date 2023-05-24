@@ -19,9 +19,9 @@ impl UpdateDatalakeExceptionsExpiryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_datalake_exceptions_expiry::UpdateDatalakeExceptionsExpiry, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::update_datalake_exceptions_expiry::UpdateDatalakeExceptionsExpiryError>
     >{
@@ -63,6 +63,15 @@ impl UpdateDatalakeExceptionsExpiryFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::update_datalake_exceptions_expiry::UpdateDatalakeExceptionsExpiryOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_datalake_exceptions_expiry::UpdateDatalakeExceptionsExpiryError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_datalake_exceptions_expiry::UpdateDatalakeExceptionsExpiry, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_datalake_exceptions_expiry::UpdateDatalakeExceptionsExpiryError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The time-to-live (TTL) for the exception message to remain.</p>
     pub fn exception_message_expiry(mut self, input: i64) -> Self {

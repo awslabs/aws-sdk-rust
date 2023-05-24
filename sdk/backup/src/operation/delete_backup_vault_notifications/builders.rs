@@ -19,9 +19,9 @@ impl DeleteBackupVaultNotificationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotifications, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotificationsError>
     >{
@@ -63,6 +63,15 @@ impl DeleteBackupVaultNotificationsFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotificationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotificationsError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotifications, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotificationsError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn backup_vault_name(

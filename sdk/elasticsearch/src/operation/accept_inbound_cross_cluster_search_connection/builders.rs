@@ -19,9 +19,9 @@ impl AcceptInboundCrossClusterSearchConnectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::accept_inbound_cross_cluster_search_connection::AcceptInboundCrossClusterSearchConnection, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::accept_inbound_cross_cluster_search_connection::AcceptInboundCrossClusterSearchConnectionError>
     >{
@@ -63,6 +63,15 @@ impl AcceptInboundCrossClusterSearchConnectionFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::accept_inbound_cross_cluster_search_connection::AcceptInboundCrossClusterSearchConnectionOutput, ::aws_smithy_http::result::SdkError<crate::operation::accept_inbound_cross_cluster_search_connection::AcceptInboundCrossClusterSearchConnectionError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::accept_inbound_cross_cluster_search_connection::AcceptInboundCrossClusterSearchConnection, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::accept_inbound_cross_cluster_search_connection::AcceptInboundCrossClusterSearchConnectionError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The id of the inbound connection that you want to accept.</p>
     pub fn cross_cluster_search_connection_id(

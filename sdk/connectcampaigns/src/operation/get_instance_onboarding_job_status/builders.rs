@@ -19,9 +19,9 @@ impl GetInstanceOnboardingJobStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_instance_onboarding_job_status::GetInstanceOnboardingJobStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::get_instance_onboarding_job_status::GetInstanceOnboardingJobStatusError>
     >{
@@ -63,6 +63,15 @@ impl GetInstanceOnboardingJobStatusFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::get_instance_onboarding_job_status::GetInstanceOnboardingJobStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_instance_onboarding_job_status::GetInstanceOnboardingJobStatusError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::get_instance_onboarding_job_status::GetInstanceOnboardingJobStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::get_instance_onboarding_job_status::GetInstanceOnboardingJobStatusError>
+    >{
+        self.customize_middleware().await
     }
     /// Amazon Connect Instance Id
     pub fn connect_instance_id(

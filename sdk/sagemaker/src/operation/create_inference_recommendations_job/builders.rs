@@ -19,9 +19,9 @@ impl CreateInferenceRecommendationsJobFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_inference_recommendations_job::CreateInferenceRecommendationsJob, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::create_inference_recommendations_job::CreateInferenceRecommendationsJobError>
     >{
@@ -63,6 +63,15 @@ impl CreateInferenceRecommendationsJobFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::create_inference_recommendations_job::CreateInferenceRecommendationsJobOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_inference_recommendations_job::CreateInferenceRecommendationsJobError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_inference_recommendations_job::CreateInferenceRecommendationsJob, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_inference_recommendations_job::CreateInferenceRecommendationsJobError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>A name for the recommendation job. The name must be unique within the Amazon Web Services Region and within your Amazon Web Services account. The job name is passed down to the resources created by the recommendation job. The names of resources (such as the model, endpoint configuration, endpoint, and compilation) that are prefixed with the job name are truncated at 40 characters.</p>
     pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -22,9 +22,9 @@ impl GetContextKeysForPrincipalPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicy, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyError>
     >{
@@ -66,6 +66,15 @@ impl GetContextKeysForPrincipalPolicyFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicy, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicyError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies that are attached to the user. The list also includes all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>

@@ -19,9 +19,9 @@ impl DescribeMaintenanceWindowExecutionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutions, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsError>
     >{
@@ -63,6 +63,15 @@ impl DescribeMaintenanceWindowExecutionsFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutions, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsError>
+    >{
+        self.customize_middleware().await
     }
     /// Create a paginator for this request
     ///

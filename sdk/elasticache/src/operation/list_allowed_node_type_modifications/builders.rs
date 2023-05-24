@@ -20,9 +20,9 @@ impl ListAllowedNodeTypeModificationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModifications, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsError>
     >{
@@ -64,6 +64,15 @@ impl ListAllowedNodeTypeModificationsFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModifications, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::list_allowed_node_type_modifications::ListAllowedNodeTypeModificationsError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The name of the cluster you want to scale up to a larger node instanced type. ElastiCache uses the cluster id to identify the current node type of this cluster and from that to create a list of node types you can scale up to.</p> <important>
     /// <p>You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.</p>

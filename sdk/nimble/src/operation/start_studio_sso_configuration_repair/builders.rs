@@ -22,9 +22,9 @@ impl StartStudioSSOConfigurationRepairFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_studio_sso_configuration_repair::StartStudioSSOConfigurationRepair, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::start_studio_sso_configuration_repair::StartStudioSSOConfigurationRepairError>
     >{
@@ -66,6 +66,15 @@ impl StartStudioSSOConfigurationRepairFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_studio_sso_configuration_repair::StartStudioSSOConfigurationRepairError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::start_studio_sso_configuration_repair::StartStudioSSOConfigurationRepair, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::start_studio_sso_configuration_repair::StartStudioSSOConfigurationRepairError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

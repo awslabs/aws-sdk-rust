@@ -19,9 +19,9 @@ impl CreateOutboundCrossClusterSearchConnectionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnection, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionError>
     >{
@@ -63,6 +63,15 @@ impl CreateOutboundCrossClusterSearchConnectionFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnection, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
     pub fn source_domain_info(mut self, input: crate::types::DomainInformation) -> Self {

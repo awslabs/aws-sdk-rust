@@ -20,9 +20,9 @@ impl DescribeProvisioningTemplateVersionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersion, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionError>
     >{
@@ -64,6 +64,15 @@ impl DescribeProvisioningTemplateVersionFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersion, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The template name.</p>
     pub fn template_name(

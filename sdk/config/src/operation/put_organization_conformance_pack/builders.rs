@@ -25,9 +25,9 @@ impl PutOrganizationConformancePackFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_organization_conformance_pack::PutOrganizationConformancePack, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError>
     >{
@@ -69,6 +69,15 @@ impl PutOrganizationConformancePackFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::put_organization_conformance_pack::PutOrganizationConformancePack, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>Name of the organization conformance pack you want to create.</p>
     pub fn organization_conformance_pack_name(

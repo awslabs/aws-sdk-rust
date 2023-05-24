@@ -20,9 +20,9 @@ impl DisassociateOriginationIdentityFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_origination_identity::DisassociateOriginationIdentity, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityError>
     >{
@@ -64,6 +64,15 @@ impl DisassociateOriginationIdentityFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::disassociate_origination_identity::DisassociateOriginationIdentity, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The unique identifier for the pool to disassociate with the origination identity. This value can be either the PoolId or PoolArn.</p>
     pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

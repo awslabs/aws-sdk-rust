@@ -19,9 +19,9 @@ impl ModifyNetworkInterfaceAttributeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttribute, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeError>
     >{
@@ -63,6 +63,15 @@ impl ModifyNetworkInterfaceAttributeFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttribute, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>Information about the interface attachment. If modifying the <code>delete on termination</code> attribute, you must specify the ID of the interface attachment.</p>
     pub fn attachment(mut self, input: crate::types::NetworkInterfaceAttachmentChanges) -> Self {

@@ -19,9 +19,9 @@ impl CreateCapacityReservationFleetFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleet, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetError>
     >{
@@ -63,6 +63,15 @@ impl CreateCapacityReservationFleetFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleet, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The strategy used by the Capacity Reservation Fleet to determine which of the specified instance types to use. Currently, only the <code>prioritized</code> allocation strategy is supported. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy"> Allocation strategy</a> in the Amazon EC2 User Guide.</p>
     /// <p>Valid values: <code>prioritized</code> </p>

@@ -19,9 +19,9 @@ impl UpdateNumberOfDomainControllersFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllers, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersError>
     >{
@@ -63,6 +63,15 @@ impl UpdateNumberOfDomainControllersFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllers, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>Identifier of the directory to which the domain controllers will be added or removed.</p>
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

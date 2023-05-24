@@ -26,9 +26,9 @@ impl DescribeMultiRegionAccessPointOperationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperation, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationError>
     >{
@@ -70,6 +70,15 @@ impl DescribeMultiRegionAccessPointOperationFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperation, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -24,9 +24,9 @@ impl AllocateConnectionOnInterconnectFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnect, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError>
     >{
@@ -68,6 +68,15 @@ impl AllocateConnectionOnInterconnectFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectOutput, ::aws_smithy_http::result::SdkError<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnect, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.</p>
     pub fn bandwidth(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

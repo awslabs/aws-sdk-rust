@@ -19,9 +19,9 @@ impl GetGrantFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
@@ -76,6 +76,20 @@ impl GetGrantFluentBuilder {
         ::aws_smithy_http::result::SdkError<crate::operation::get_grant::GetGrantError>,
     > {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_grant::GetGrant,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_grant::GetGrantError>,
+    > {
+        self.customize_middleware().await
     }
     /// <p>Amazon Resource Name (ARN) of the grant.</p>
     pub fn grant_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

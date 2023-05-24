@@ -23,9 +23,9 @@ impl ListActivatedRulesInRuleGroupFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroup, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupError>
     >{
@@ -67,6 +67,15 @@ impl ListActivatedRulesInRuleGroupFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroup, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want to get a list of <code>ActivatedRule</code> objects.</p>
     pub fn rule_group_id(

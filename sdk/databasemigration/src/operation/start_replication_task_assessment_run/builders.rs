@@ -20,9 +20,9 @@ impl StartReplicationTaskAssessmentRunFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRun, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError>
     >{
@@ -64,6 +64,15 @@ impl StartReplicationTaskAssessmentRunFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRun, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>Amazon Resource Name (ARN) of the migration task associated with the premigration assessment run that you want to start.</p>
     pub fn replication_task_arn(

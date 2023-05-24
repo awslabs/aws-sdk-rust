@@ -19,9 +19,9 @@ impl GetHealthCheckLastFailureReasonFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReason, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonError>
     >{
@@ -63,6 +63,15 @@ impl GetHealthCheckLastFailureReasonFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReason, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::get_health_check_last_failure_reason::GetHealthCheckLastFailureReasonError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The ID for the health check for which you want the last failure reason. When you created the health check, <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.</p> <note>
     /// <p>If you want to get the last failure reason for a calculated health check, you must use the Amazon Route 53 console or the CloudWatch console. You can't use <code>GetHealthCheckLastFailureReason</code> for a calculated health check.</p>

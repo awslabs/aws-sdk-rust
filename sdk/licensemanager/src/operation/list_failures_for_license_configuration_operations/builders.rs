@@ -19,9 +19,9 @@ impl ListFailuresForLicenseConfigurationOperationsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperations, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsError>
     >{
@@ -63,6 +63,15 @@ impl ListFailuresForLicenseConfigurationOperationsFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperations, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>Amazon Resource Name of the license configuration.</p>
     pub fn license_configuration_arn(

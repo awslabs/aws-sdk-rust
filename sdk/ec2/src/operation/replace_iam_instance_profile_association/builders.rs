@@ -20,9 +20,9 @@ impl ReplaceIamInstanceProfileAssociationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociation, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationError>
     >{
@@ -64,6 +64,15 @@ impl ReplaceIamInstanceProfileAssociationFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociation, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The IAM instance profile.</p>
     pub fn iam_instance_profile(

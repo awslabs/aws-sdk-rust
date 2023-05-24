@@ -28,9 +28,9 @@ impl ModifyVpcPeeringConnectionOptionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_vpc_peering_connection_options::ModifyVpcPeeringConnectionOptions, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::modify_vpc_peering_connection_options::ModifyVpcPeeringConnectionOptionsError>
     >{
@@ -72,6 +72,15 @@ impl ModifyVpcPeeringConnectionOptionsFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::modify_vpc_peering_connection_options::ModifyVpcPeeringConnectionOptionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_vpc_peering_connection_options::ModifyVpcPeeringConnectionOptionsError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::modify_vpc_peering_connection_options::ModifyVpcPeeringConnectionOptions, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::modify_vpc_peering_connection_options::ModifyVpcPeeringConnectionOptionsError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The VPC peering connection options for the accepter VPC.</p>
     pub fn accepter_peering_connection_options(

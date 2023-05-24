@@ -19,9 +19,9 @@ impl PurchaseReservedCacheNodesOfferingFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOffering, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingError>
     >{
@@ -63,6 +63,15 @@ impl PurchaseReservedCacheNodesOfferingFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingOutput, ::aws_smithy_http::result::SdkError<crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOffering, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::purchase_reserved_cache_nodes_offering::PurchaseReservedCacheNodesOfferingError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The ID of the reserved cache node offering to purchase.</p>
     /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>

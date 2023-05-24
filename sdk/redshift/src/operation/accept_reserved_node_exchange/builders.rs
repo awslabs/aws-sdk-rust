@@ -19,9 +19,9 @@ impl AcceptReservedNodeExchangeFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
@@ -82,6 +82,22 @@ impl AcceptReservedNodeExchangeFluentBuilder {
         >,
     > {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchange,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeError,
+        >,
+    > {
+        self.customize_middleware().await
     }
     /// <p>A string representing the node identifier of the DC1 Reserved Node to be exchanged.</p>
     pub fn reserved_node_id(

@@ -19,9 +19,9 @@ impl AddSourceIdentifierToSubscriptionFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscription, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionError>
     >{
@@ -63,6 +63,15 @@ impl AddSourceIdentifierToSubscriptionFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscription, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The name of the Amazon DocumentDB event notification subscription that you want to add a source identifier to.</p>
     pub fn subscription_name(

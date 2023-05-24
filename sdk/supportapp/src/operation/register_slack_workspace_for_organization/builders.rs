@@ -30,9 +30,9 @@ impl RegisterSlackWorkspaceForOrganizationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganization, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationError>
     >{
@@ -74,6 +74,15 @@ impl RegisterSlackWorkspaceForOrganizationFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganization, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>. Specify the Slack workspace that you want to use for your organization.</p>
     pub fn team_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

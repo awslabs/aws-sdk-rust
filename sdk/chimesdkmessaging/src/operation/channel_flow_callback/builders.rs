@@ -25,9 +25,9 @@ impl ChannelFlowCallbackFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
@@ -88,6 +88,22 @@ impl ChannelFlowCallbackFluentBuilder {
         >,
     > {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::channel_flow_callback::ChannelFlowCallback,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::channel_flow_callback::ChannelFlowCallbackError,
+        >,
+    > {
+        self.customize_middleware().await
     }
     /// <p>The identifier passed to the processor by the service when invoked. Use the identifier to call back the service.</p>
     pub fn callback_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

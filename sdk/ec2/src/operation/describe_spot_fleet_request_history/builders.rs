@@ -21,9 +21,9 @@ impl DescribeSpotFleetRequestHistoryFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistory, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryError>
     >{
@@ -65,6 +65,15 @@ impl DescribeSpotFleetRequestHistoryFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistory, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::describe_spot_fleet_request_history::DescribeSpotFleetRequestHistoryError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {

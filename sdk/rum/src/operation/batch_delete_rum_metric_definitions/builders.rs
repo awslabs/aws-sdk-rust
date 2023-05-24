@@ -21,9 +21,9 @@ impl BatchDeleteRumMetricDefinitionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitions, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsError>
     >{
@@ -65,6 +65,15 @@ impl BatchDeleteRumMetricDefinitionsFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitions, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The name of the CloudWatch RUM app monitor that is sending these metrics.</p>
     pub fn app_monitor_name(

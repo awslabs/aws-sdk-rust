@@ -23,9 +23,9 @@ impl AuthorizeDBSecurityGroupIngressFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngress, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngressError>
     >{
@@ -67,6 +67,15 @@ impl AuthorizeDBSecurityGroupIngressFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::authorize_db_security_group_ingress::AuthorizeDbSecurityGroupIngressOutput, ::aws_smithy_http::result::SdkError<crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngressError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngress, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngressError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The name of the DB security group to add authorization to.</p>
     pub fn db_security_group_name(

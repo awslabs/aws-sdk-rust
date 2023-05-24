@@ -22,9 +22,9 @@ impl UpdateStreamFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
@@ -79,6 +79,20 @@ impl UpdateStreamFluentBuilder {
         ::aws_smithy_http::result::SdkError<crate::operation::update_stream::UpdateStreamError>,
     > {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_stream::UpdateStream,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_stream::UpdateStreamError>,
+    > {
+        self.customize_middleware().await
     }
     /// <p>The name of the stream whose metadata you want to update.</p>
     /// <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>

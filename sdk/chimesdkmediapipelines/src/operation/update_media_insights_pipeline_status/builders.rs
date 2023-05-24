@@ -19,9 +19,9 @@ impl UpdateMediaInsightsPipelineStatusFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusError>
     >{
@@ -63,6 +63,15 @@ impl UpdateMediaInsightsPipelineStatusFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The unique identifier of the resource to be updated. Valid values include the ID and ARN of the media insights pipeline.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

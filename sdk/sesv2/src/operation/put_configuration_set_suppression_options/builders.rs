@@ -19,9 +19,9 @@ impl PutConfigurationSetSuppressionOptionsFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptions, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsError>
     >{
@@ -63,6 +63,15 @@ impl PutConfigurationSetSuppressionOptionsFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptions, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The name of the configuration set to change the suppression list preferences for.</p>
     pub fn configuration_set_name(

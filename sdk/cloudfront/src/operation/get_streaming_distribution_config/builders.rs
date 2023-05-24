@@ -19,9 +19,9 @@ impl GetStreamingDistributionConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfig, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigError>
     >{
@@ -63,6 +63,15 @@ impl GetStreamingDistributionConfigFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfig, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The streaming distribution's ID.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

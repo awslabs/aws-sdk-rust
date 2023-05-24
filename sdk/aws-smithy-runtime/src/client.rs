@@ -29,3 +29,6 @@ pub mod runtime_plugin;
 
 /// Smithy identity used by auth and signing.
 pub mod identity;
+
+/// Interceptors for Smithy clients.
+pub mod interceptor;

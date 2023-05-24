@@ -27,9 +27,9 @@ impl PromotePermissionCreatedFromPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicy, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyError>
     >{
@@ -71,6 +71,15 @@ impl PromotePermissionCreatedFromPolicyFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicy, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the <code>CREATED_FROM_POLICY</code> permission that you want to promote. You can get this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> by calling the <code>ListResourceSharePermissions</code> operation.</p>
     pub fn permission_arn(

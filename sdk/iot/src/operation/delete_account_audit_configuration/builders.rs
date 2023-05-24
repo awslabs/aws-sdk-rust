@@ -20,9 +20,9 @@ impl DeleteAccountAuditConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationError>
     >{
@@ -64,6 +64,15 @@ impl DeleteAccountAuditConfigurationFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::delete_account_audit_configuration::DeleteAccountAuditConfigurationError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>If true, all scheduled audits are deleted.</p>
     pub fn delete_scheduled_audits(mut self, input: bool) -> Self {

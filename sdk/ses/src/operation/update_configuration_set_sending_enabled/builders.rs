@@ -20,9 +20,9 @@ impl UpdateConfigurationSetSendingEnabledFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabled, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledError>
     >{
@@ -64,6 +64,15 @@ impl UpdateConfigurationSetSendingEnabledFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabled, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The name of the configuration set that you want to update.</p>
     pub fn configuration_set_name(

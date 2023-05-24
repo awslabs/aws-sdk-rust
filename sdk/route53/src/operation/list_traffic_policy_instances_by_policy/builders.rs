@@ -22,9 +22,9 @@ impl ListTrafficPolicyInstancesByPolicyFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_traffic_policy_instances_by_policy::ListTrafficPolicyInstancesByPolicy, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::list_traffic_policy_instances_by_policy::ListTrafficPolicyInstancesByPolicyError>
     >{
@@ -66,6 +66,15 @@ impl ListTrafficPolicyInstancesByPolicyFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::list_traffic_policy_instances_by_policy::ListTrafficPolicyInstancesByPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_traffic_policy_instances_by_policy::ListTrafficPolicyInstancesByPolicyError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::list_traffic_policy_instances_by_policy::ListTrafficPolicyInstancesByPolicy, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::list_traffic_policy_instances_by_policy::ListTrafficPolicyInstancesByPolicyError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The ID of the traffic policy for which you want to list traffic policy instances.</p>
     pub fn traffic_policy_id(

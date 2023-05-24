@@ -19,9 +19,9 @@ impl UpdateEc2DeepInspectionConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationError>
     >{
@@ -63,6 +63,15 @@ impl UpdateEc2DeepInspectionConfigurationFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>Specify <code>TRUE</code> to activate Amazon Inspector deep inspection in your account, or <code>FALSE</code> to deactivate. Member accounts in an organization cannot deactivate deep inspection, instead the delegated administrator for the organization can deactivate a member account using <a href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_BatchUpdateMemberEc2DeepInspectionStatus.html">BatchUpdateMemberEc2DeepInspectionStatus</a>.</p>
     pub fn activate_deep_inspection(mut self, input: bool) -> Self {

@@ -25,9 +25,9 @@ impl ImportImageFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
@@ -82,6 +82,20 @@ impl ImportImageFluentBuilder {
         ::aws_smithy_http::result::SdkError<crate::operation::import_image::ImportImageError>,
     > {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::import_image::ImportImage,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_image::ImportImageError>,
+    > {
+        self.customize_middleware().await
     }
     /// <p>The architecture of the virtual machine.</p>
     /// <p>Valid values: <code>i386</code> | <code>x86_64</code> </p>

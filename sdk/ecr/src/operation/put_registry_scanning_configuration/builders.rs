@@ -19,9 +19,9 @@ impl PutRegistryScanningConfigurationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationError>
     >{
@@ -63,6 +63,15 @@ impl PutRegistryScanningConfigurationFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The scanning type to set for the registry.</p>
     /// <p>When a registry scanning configuration is not defined, by default the <code>BASIC</code> scan type is used. When basic scanning is used, you may specify filters to determine which individual repositories, or all repositories, are scanned when new images are pushed to those repositories. Alternatively, you can do manual scans of images with basic scanning.</p>

@@ -19,9 +19,9 @@ impl RegisterCrossAccountAccessRoleFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRole, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleError>
     >{
@@ -63,6 +63,15 @@ impl RegisterCrossAccountAccessRoleFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRole, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments. </p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

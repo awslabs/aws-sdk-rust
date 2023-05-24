@@ -19,9 +19,9 @@ impl StartRecommendationReportGenerationFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_recommendation_report_generation::StartRecommendationReportGeneration, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationError>
     >{
@@ -63,6 +63,15 @@ impl StartRecommendationReportGenerationFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::start_recommendation_report_generation::StartRecommendationReportGeneration, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationError>
+    >{
+        self.customize_middleware().await
     }
     /// <p> The output format for the recommendation report file. The default format is Microsoft Excel. </p>
     pub fn output_format(mut self, input: crate::types::OutputFormat) -> Self {

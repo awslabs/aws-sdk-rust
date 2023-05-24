@@ -108,9 +108,9 @@ impl PutBucketAclFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+    pub async fn customize_middleware(
         self,
     ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
@@ -165,6 +165,20 @@ impl PutBucketAclFluentBuilder {
         ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_acl::PutBucketAclError>,
     > {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> ::std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_bucket_acl::PutBucketAcl,
+            ::aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_acl::PutBucketAclError>,
+    > {
+        self.customize_middleware().await
     }
     /// <p>The canned ACL to apply to the bucket.</p>
     pub fn acl(mut self, input: crate::types::BucketCannedAcl) -> Self {

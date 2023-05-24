@@ -19,9 +19,9 @@ impl CreateTransitGatewayPolicyTableFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_transit_gateway_policy_table::CreateTransitGatewayPolicyTable, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_policy_table::CreateTransitGatewayPolicyTableError>
     >{
@@ -63,6 +63,15 @@ impl CreateTransitGatewayPolicyTableFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::create_transit_gateway_policy_table::CreateTransitGatewayPolicyTableOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_policy_table::CreateTransitGatewayPolicyTableError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::create_transit_gateway_policy_table::CreateTransitGatewayPolicyTable, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_policy_table::CreateTransitGatewayPolicyTableError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The ID of the transit gateway used for the policy table.</p>
     pub fn transit_gateway_id(

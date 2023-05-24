@@ -20,9 +20,9 @@ impl GetResponseHeadersPolicyConfigFluentBuilder {
             inner: ::std::default::Default::default(),
         }
     }
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> ::std::result::Result<
+    // This function will go away in the near future. Do not rely on it.
+    #[doc(hidden)]
+                    pub async fn customize_middleware(self) -> ::std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_response_headers_policy_config::GetResponseHeadersPolicyConfig, ::aws_http::retry::AwsResponseRetryClassifier,>,
                         ::aws_smithy_http::result::SdkError<crate::operation::get_response_headers_policy_config::GetResponseHeadersPolicyConfigError>
     >{
@@ -64,6 +64,15 @@ impl GetResponseHeadersPolicyConfigFluentBuilder {
                         pub async fn send(self) -> ::std::result::Result<crate::operation::get_response_headers_policy_config::GetResponseHeadersPolicyConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_response_headers_policy_config::GetResponseHeadersPolicyConfigError>>
                          {
         self.send_middleware().await
+    }
+
+    /// Consumes this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+                        pub async fn customize(self) -> ::std::result::Result<
+                            crate::client::customize::CustomizableOperation<crate::operation::get_response_headers_policy_config::GetResponseHeadersPolicyConfig, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                            ::aws_smithy_http::result::SdkError<crate::operation::get_response_headers_policy_config::GetResponseHeadersPolicyConfigError>
+    >{
+        self.customize_middleware().await
     }
     /// <p>The identifier for the response headers policy.</p>
     /// <p>If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
