@@ -45,6 +45,10 @@ version = "0.55.2"
 path = "../aws-types"
 version = "0.55.2"
 
+[dependencies.uuid]
+version = "1"
+features = ["v4", "fast-rng"]
+
 [dev-dependencies]
 proptest = "1"
 serde_json = "1"
