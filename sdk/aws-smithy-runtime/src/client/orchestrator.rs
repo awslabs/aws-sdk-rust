@@ -73,10 +73,10 @@ pub async fn invoke(
     let context = InterceptorContext::<()>::new(input);
 
     // Client configuration
-    handle_err!(context => runtime_plugins.apply_client_configuration(cfg, &mut interceptors));
+    handle_err!(context => runtime_plugins.apply_client_configuration(cfg, interceptors.client_interceptors_mut()));
     handle_err!(context => interceptors.client_read_before_execution(&context, cfg));
     // Operation configuration
-    handle_err!(context => runtime_plugins.apply_operation_configuration(cfg, &mut interceptors));
+    handle_err!(context => runtime_plugins.apply_operation_configuration(cfg, interceptors.operation_interceptors_mut()));
     handle_err!(context => interceptors.operation_read_before_execution(&context, cfg));
 
     let operation_timeout_config = cfg.maybe_timeout_config(TimeoutKind::Operation);
@@ -216,7 +216,7 @@ async fn make_an_attempt(
     Ok(checkpoint)
 }
 
-#[cfg(all(test, feature = "test-util"))]
+#[cfg(all(test, feature = "test-util", feature = "anonymous-auth"))]
 mod tests {
     use super::invoke;
     use crate::client::orchestrator::endpoints::{
@@ -234,14 +234,13 @@ mod tests {
     };
     use aws_smithy_runtime_api::client::interceptors::context::{Error, Output};
     use aws_smithy_runtime_api::client::interceptors::{
-        Interceptor, InterceptorContext, Interceptors,
+        Interceptor, InterceptorContext, InterceptorRegistrar, SharedInterceptor,
     };
     use aws_smithy_runtime_api::client::orchestrator::ConfigBagAccessors;
     use aws_smithy_runtime_api::client::runtime_plugin::{BoxError, RuntimePlugin, RuntimePlugins};
     use aws_smithy_runtime_api::config_bag::ConfigBag;
     use aws_smithy_runtime_api::type_erasure::TypeErasedBox;
     use http::StatusCode;
-    use std::sync::Arc;
     use tracing_test::traced_test;
 
     fn new_request_serializer() -> CannedRequestSerializer {
@@ -269,7 +268,7 @@ mod tests {
         fn configure(
             &self,
             cfg: &mut ConfigBag,
-            _interceptors: &mut Interceptors,
+            _interceptors: &mut InterceptorRegistrar,
         ) -> Result<(), BoxError> {
             cfg.set_request_serializer(new_request_serializer());
             cfg.set_response_deserializer(new_response_deserializer());
@@ -318,11 +317,11 @@ mod tests {
                 fn configure(
                     &self,
                     _cfg: &mut ConfigBag,
-                    interceptors: &mut Interceptors,
+                    interceptors: &mut InterceptorRegistrar,
                 ) -> Result<(), BoxError> {
-                    interceptors.register_client_interceptor(Arc::new(FailingInterceptorA));
-                    interceptors.register_operation_interceptor(Arc::new(FailingInterceptorB));
-                    interceptors.register_operation_interceptor(Arc::new(FailingInterceptorC));
+                    interceptors.register(SharedInterceptor::new(FailingInterceptorA));
+                    interceptors.register(SharedInterceptor::new(FailingInterceptorB));
+                    interceptors.register(SharedInterceptor::new(FailingInterceptorC));
 
                     Ok(())
                 }

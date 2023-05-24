@@ -4,7 +4,7 @@
  */
 
 use aws_smithy_runtime_api::client::interceptors::context::Input;
-use aws_smithy_runtime_api::client::interceptors::Interceptors;
+use aws_smithy_runtime_api::client::interceptors::InterceptorRegistrar;
 use aws_smithy_runtime_api::client::orchestrator::{
     ConfigBagAccessors, HttpRequest, RequestSerializer,
 };
@@ -51,7 +51,7 @@ impl RuntimePlugin for CannedRequestSerializer {
     fn configure(
         &self,
         cfg: &mut ConfigBag,
-        _interceptors: &mut Interceptors,
+        _interceptors: &mut InterceptorRegistrar,
     ) -> Result<(), BoxError> {
         cfg.set_request_serializer(Self {
             inner: Mutex::new(self.take()),

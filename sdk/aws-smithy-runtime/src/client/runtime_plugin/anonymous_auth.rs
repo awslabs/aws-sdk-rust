@@ -13,7 +13,7 @@ use aws_smithy_runtime_api::client::auth::{
     AuthSchemeId, HttpAuthScheme, HttpAuthSchemes, HttpRequestSigner,
 };
 use aws_smithy_runtime_api::client::identity::{Identity, IdentityResolver, IdentityResolvers};
-use aws_smithy_runtime_api::client::interceptors::Interceptors;
+use aws_smithy_runtime_api::client::interceptors::InterceptorRegistrar;
 use aws_smithy_runtime_api::client::orchestrator::{BoxError, ConfigBagAccessors, HttpRequest};
 use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
 use aws_smithy_runtime_api::config_bag::ConfigBag;
@@ -43,7 +43,7 @@ impl RuntimePlugin for AnonymousAuthRuntimePlugin {
     fn configure(
         &self,
         cfg: &mut ConfigBag,
-        _interceptors: &mut Interceptors,
+        _interceptors: &mut InterceptorRegistrar,
     ) -> Result<(), BoxError> {
         cfg.set_auth_option_resolver_params(StaticAuthOptionResolverParams::new().into());
         cfg.set_auth_option_resolver(StaticAuthOptionResolver::new(vec![

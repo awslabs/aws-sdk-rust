@@ -13,6 +13,7 @@ use crate::config_bag::ConfigBag;
 use aws_smithy_types::error::display::DisplayErrorContext;
 pub use context::InterceptorContext;
 pub use error::{BoxError, InterceptorError};
+use std::ops::Deref;
 use std::sync::Arc;
 
 macro_rules! interceptor_trait_fn {
@@ -563,12 +564,58 @@ pub trait Interceptor: std::fmt::Debug {
     );
 }
 
-pub type SharedInterceptor = Arc<dyn Interceptor + Send + Sync>;
+/// Interceptor wrapper that may be shared
+#[derive(Debug, Clone)]
+pub struct SharedInterceptor(Arc<dyn Interceptor + Send + Sync>);
+
+impl SharedInterceptor {
+    /// Create a new `SharedInterceptor` from `Interceptor`
+    pub fn new(interceptor: impl Interceptor + Send + Sync + 'static) -> Self {
+        Self(Arc::new(interceptor))
+    }
+}
+
+impl AsRef<dyn Interceptor> for SharedInterceptor {
+    fn as_ref(&self) -> &(dyn Interceptor + 'static) {
+        self.0.as_ref()
+    }
+}
+
+impl From<Arc<dyn Interceptor + Send + Sync + 'static>> for SharedInterceptor {
+    fn from(interceptor: Arc<dyn Interceptor + Send + Sync + 'static>) -> Self {
+        SharedInterceptor(interceptor)
+    }
+}
+
+impl Deref for SharedInterceptor {
+    type Target = Arc<dyn Interceptor + Send + Sync>;
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+
+/// Collection of [`SharedInterceptor`] that allows for only registration
+#[derive(Debug, Clone, Default)]
+pub struct InterceptorRegistrar(Vec<SharedInterceptor>);
+
+impl InterceptorRegistrar {
+    pub fn register(&mut self, interceptor: SharedInterceptor) {
+        self.0.push(interceptor);
+    }
+}
+
+impl Extend<SharedInterceptor> for InterceptorRegistrar {
+    fn extend<T: IntoIterator<Item = SharedInterceptor>>(&mut self, iter: T) {
+        for interceptor in iter {
+            self.register(interceptor);
+        }
+    }
+}
 
 #[derive(Debug, Clone, Default)]
 pub struct Interceptors {
-    client_interceptors: Vec<SharedInterceptor>,
-    operation_interceptors: Vec<SharedInterceptor>,
+    client_interceptors: InterceptorRegistrar,
+    operation_interceptors: InterceptorRegistrar,
 }
 
 macro_rules! interceptor_impl_fn {
@@ -619,18 +666,17 @@ impl Interceptors {
         // Since interceptors can modify the interceptor list (since its in the config bag), copy the list ahead of time.
         // This should be cheap since the interceptors inside the list are Arcs.
         self.client_interceptors
+            .0
             .iter()
-            .chain(self.operation_interceptors.iter())
+            .chain(self.operation_interceptors.0.iter())
     }
 
-    pub fn register_client_interceptor(&mut self, interceptor: SharedInterceptor) -> &mut Self {
-        self.client_interceptors.push(interceptor);
-        self
+    pub fn client_interceptors_mut(&mut self) -> &mut InterceptorRegistrar {
+        &mut self.client_interceptors
     }
 
-    pub fn register_operation_interceptor(&mut self, interceptor: SharedInterceptor) -> &mut Self {
-        self.operation_interceptors.push(interceptor);
-        self
+    pub fn operation_interceptors_mut(&mut self) -> &mut InterceptorRegistrar {
+        &mut self.operation_interceptors
     }
 
     interceptor_impl_fn!(
@@ -675,4 +721,29 @@ impl Interceptors {
     interceptor_impl_fn!(context, read_after_attempt, AfterDeserialization);
     interceptor_impl_fn!(mut context, modify_before_completion, AfterDeserialization);
     interceptor_impl_fn!(context, read_after_execution, AfterDeserialization);
+}
+
+#[cfg(test)]
+mod tests {
+    use crate::client::interceptors::{Interceptor, InterceptorRegistrar, SharedInterceptor};
+
+    #[derive(Debug)]
+    struct TestInterceptor;
+    impl Interceptor for TestInterceptor {}
+
+    #[test]
+    fn register_interceptor() {
+        let mut registrar = InterceptorRegistrar::default();
+        registrar.register(SharedInterceptor::new(TestInterceptor));
+        assert_eq!(1, registrar.0.len());
+    }
+
+    #[test]
+    fn bulk_register_interceptors() {
+        let mut registrar = InterceptorRegistrar::default();
+        let number_of_interceptors = 3;
+        let interceptors = vec![SharedInterceptor::new(TestInterceptor); number_of_interceptors];
+        registrar.extend(interceptors);
+        assert_eq!(number_of_interceptors, registrar.0.len());
+    }
 }

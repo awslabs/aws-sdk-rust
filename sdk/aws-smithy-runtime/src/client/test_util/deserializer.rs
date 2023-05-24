@@ -4,7 +4,7 @@
  */
 
 use aws_smithy_runtime_api::client::interceptors::context::{Error, Output};
-use aws_smithy_runtime_api::client::interceptors::Interceptors;
+use aws_smithy_runtime_api::client::interceptors::InterceptorRegistrar;
 use aws_smithy_runtime_api::client::orchestrator::{
     ConfigBagAccessors, HttpResponse, ResponseDeserializer,
 };
@@ -44,7 +44,7 @@ impl RuntimePlugin for CannedResponseDeserializer {
     fn configure(
         &self,
         cfg: &mut ConfigBag,
-        _interceptors: &mut Interceptors,
+        _interceptors: &mut InterceptorRegistrar,
     ) -> Result<(), BoxError> {
         cfg.set_response_deserializer(Self {
             inner: Mutex::new(self.take()),
