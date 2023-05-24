@@ -330,16 +330,20 @@ impl fmt::Display for ConversionError {
 /// Formats for representing a `DateTime` in the Smithy protocols.
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]
 pub enum Format {
-    /// RFC-3339 Date Time. If the date time has an offset, an error will be returned
+    /// RFC-3339 Date Time. If the date time has an offset, an error will be returned.
+    /// e.g. `2019-12-16T23:48:18Z`
     DateTime,
 
-    /// RFC-3339 Date Time. Offsets are supported
+    /// RFC-3339 Date Time. Offsets are supported.
+    /// e.g. `2019-12-16T23:48:18+01:00`
     DateTimeWithOffset,
 
     /// Date format used by the HTTP `Date` header, specified in RFC-7231.
+    /// e.g. `Mon, 16 Dec 2019 23:48:18 GMT`
     HttpDate,
 
     /// Number of seconds since the Unix epoch formatted as a floating point.
+    /// e.g. `1576540098.52`
     EpochSeconds,
 }
 

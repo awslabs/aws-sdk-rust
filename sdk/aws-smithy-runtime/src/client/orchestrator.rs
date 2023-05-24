@@ -23,6 +23,7 @@ mod auth;
 /// Defines types that implement a trait for endpoint resolution
 pub mod endpoints;
 mod http;
+pub mod interceptors;
 
 #[doc(hidden)]
 #[macro_export]

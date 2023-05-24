@@ -23,7 +23,7 @@ http = "0.2.8"
 http-body = "0.4.5"
 pin-project-lite = "0.2.7"
 pin-utils = "0.1.0"
-tracing = "0.1"
+tracing = "0.1.37"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"

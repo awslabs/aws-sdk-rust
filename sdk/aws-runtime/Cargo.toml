@@ -33,6 +33,10 @@ version = "0.55.2"
 path = "../aws-smithy-http"
 version = "0.55.2"
 
+[dependencies.aws-smithy-runtime]
+path = "../aws-smithy-runtime"
+version = "0.55.2"
+
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 version = "0.55.2"

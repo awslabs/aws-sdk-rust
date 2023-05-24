@@ -1,4 +1,4 @@
-smithy_rs_revision = '295f854585940afc747011a559d6db6115a6dbb7'
+smithy_rs_revision = 'b7f514c33ff6e7194a787b0c81f2485d8d40b5b4'
 aws_doc_sdk_examples_revision = 'f4fc46139c2ea0784e31cadd19b430fcd2bbc21a'
 
 [manual_interventions]
@@ -31,7 +31,7 @@ source_hash = '5af5b63b3528ac874a7ecb6487f4e6c66d4d90a54116a1b0b5f5e477850bf503'
 [crates.aws-runtime]
 category = 'AwsRuntime'
 version = '0.55.2'
-source_hash = '5675df5681d23a4a0d85e37ed06b3d080212c7f79d0ead8e6bf1b0a831d5e356'
+source_hash = 'f4843672879ab15feeb222cf8d50ddc7297c9afdadc302f69791aac8d88cd160'
 
 [crates.aws-runtime-api]
 category = 'AwsRuntime'
@@ -2147,7 +2147,7 @@ source_hash = 'd12701f76780a15d39af40294ba0ad347e3060ec722b450d29db8ebbc097bd29'
 [crates.aws-smithy-runtime]
 category = 'SmithyRuntime'
 version = '0.55.2'
-source_hash = '714dd4ba46f0f8fd2a5690e896f4b240bb5c479cb419077660944690238ab9c3'
+source_hash = '9b5652cd8fb8cd129c3e1b6f708cc825044acea6c9696c3ae72d682912eea814'
 
 [crates.aws-smithy-runtime-api]
 category = 'SmithyRuntime'
@@ -2157,7 +2157,7 @@ source_hash = '93871284baf144dab114ea9be66f3504fc0bb3730ee92c69fe0a8df832452119'
 [crates.aws-smithy-types]
 category = 'SmithyRuntime'
 version = '0.55.2'
-source_hash = '397757caad8d4760d1e844acc52c5902fe47dbf4a2416960c75677c09664b79e'
+source_hash = '3232525cc838e69a934cfcb0b79384801b3a8622ecf98a46ac54a299b56595c4'
 
 [crates.aws-smithy-types-convert]
 category = 'SmithyRuntime'
