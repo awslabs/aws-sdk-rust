@@ -4,7 +4,6 @@
  */
 
 use aws_smithy_runtime_api::client::interceptors::{BoxError, Interceptor, InterceptorContext};
-use aws_smithy_runtime_api::client::orchestrator::{HttpRequest, HttpResponse};
 use aws_smithy_runtime_api::config_bag::ConfigBag;
 use aws_types::os_shim_internal::Env;
 use http::HeaderValue;
@@ -37,10 +36,10 @@ impl RecursionDetectionInterceptor {
     }
 }
 
-impl Interceptor<HttpRequest, HttpResponse> for RecursionDetectionInterceptor {
+impl Interceptor for RecursionDetectionInterceptor {
     fn modify_before_signing(
         &self,
-        context: &mut InterceptorContext<HttpRequest, HttpResponse>,
+        context: &mut InterceptorContext,
         _cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
         let request = context.request_mut()?;

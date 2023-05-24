@@ -10,7 +10,6 @@ use aws_smithy_http::endpoint::{
 use aws_smithy_runtime_api::client::interceptors::InterceptorContext;
 use aws_smithy_runtime_api::client::orchestrator::{
     BoxError, ConfigBagAccessors, EndpointResolver, EndpointResolverParams, HttpRequest,
-    HttpResponse,
 };
 use aws_smithy_runtime_api::config_bag::ConfigBag;
 use http::header::HeaderName;
@@ -113,7 +112,7 @@ where
 }
 
 pub(super) fn orchestrate_endpoint(
-    ctx: &mut InterceptorContext<HttpRequest, HttpResponse>,
+    ctx: &mut InterceptorContext,
     cfg: &ConfigBag,
 ) -> Result<(), BoxError> {
     let params = cfg.endpoint_resolver_params();

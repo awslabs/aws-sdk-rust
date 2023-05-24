@@ -5,7 +5,7 @@
 
 use crate::client::interceptors::context::Error;
 use crate::client::interceptors::InterceptorContext;
-use crate::client::orchestrator::{BoxError, HttpRequest, HttpResponse};
+use crate::client::orchestrator::BoxError;
 use crate::config_bag::ConfigBag;
 use aws_smithy_types::retry::ErrorKind;
 use std::fmt::Debug;
@@ -23,7 +23,7 @@ pub trait RetryStrategy: Send + Sync + Debug {
 
     fn should_attempt_retry(
         &self,
-        context: &InterceptorContext<HttpRequest, HttpResponse>,
+        context: &InterceptorContext,
         cfg: &ConfigBag,
     ) -> Result<ShouldAttempt, BoxError>;
 }

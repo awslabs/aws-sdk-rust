@@ -3,17 +3,26 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use crate::client::interceptors::Interceptors;
 use crate::config_bag::ConfigBag;
 
 pub type BoxError = Box<dyn std::error::Error + Send + Sync + 'static>;
 
 pub trait RuntimePlugin {
-    fn configure(&self, cfg: &mut ConfigBag) -> Result<(), BoxError>;
+    fn configure(
+        &self,
+        cfg: &mut ConfigBag,
+        interceptors: &mut Interceptors,
+    ) -> Result<(), BoxError>;
 }
 
 impl RuntimePlugin for Box<dyn RuntimePlugin> {
-    fn configure(&self, cfg: &mut ConfigBag) -> Result<(), BoxError> {
-        self.as_ref().configure(cfg)
+    fn configure(
+        &self,
+        cfg: &mut ConfigBag,
+        interceptors: &mut Interceptors,
+    ) -> Result<(), BoxError> {
+        self.as_ref().configure(cfg, interceptors)
     }
 }
 
@@ -38,17 +47,25 @@ impl RuntimePlugins {
         self
     }
 
-    pub fn apply_client_configuration(&self, cfg: &mut ConfigBag) -> Result<(), BoxError> {
+    pub fn apply_client_configuration(
+        &self,
+        cfg: &mut ConfigBag,
+        interceptors: &mut Interceptors,
+    ) -> Result<(), BoxError> {
         for plugin in self.client_plugins.iter() {
-            plugin.configure(cfg)?;
+            plugin.configure(cfg, interceptors)?;
         }
 
         Ok(())
     }
 
-    pub fn apply_operation_configuration(&self, cfg: &mut ConfigBag) -> Result<(), BoxError> {
+    pub fn apply_operation_configuration(
+        &self,
+        cfg: &mut ConfigBag,
+        interceptors: &mut Interceptors,
+    ) -> Result<(), BoxError> {
         for plugin in self.operation_plugins.iter() {
-            plugin.configure(cfg)?;
+            plugin.configure(cfg, interceptors)?;
         }
 
         Ok(())
@@ -58,12 +75,17 @@ impl RuntimePlugins {
 #[cfg(test)]
 mod tests {
     use super::{BoxError, RuntimePlugin, RuntimePlugins};
+    use crate::client::interceptors::Interceptors;
     use crate::config_bag::ConfigBag;
 
     struct SomeStruct;
 
     impl RuntimePlugin for SomeStruct {
-        fn configure(&self, _cfg: &mut ConfigBag) -> Result<(), BoxError> {
+        fn configure(
+            &self,
+            _cfg: &mut ConfigBag,
+            _inters: &mut Interceptors,
+        ) -> Result<(), BoxError> {
             todo!()
         }
     }

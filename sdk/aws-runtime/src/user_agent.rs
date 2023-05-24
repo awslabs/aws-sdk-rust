@@ -6,7 +6,6 @@
 use aws_http::user_agent::{ApiMetadata, AwsUserAgent};
 use aws_smithy_runtime_api::client::interceptors::error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::{Interceptor, InterceptorContext};
-use aws_smithy_runtime_api::client::orchestrator::{HttpRequest, HttpResponse};
 use aws_smithy_runtime_api::config_bag::ConfigBag;
 use aws_types::app_name::AppName;
 use aws_types::os_shim_internal::Env;
@@ -70,10 +69,10 @@ fn header_values(
     ))
 }
 
-impl Interceptor<HttpRequest, HttpResponse> for UserAgentInterceptor {
+impl Interceptor for UserAgentInterceptor {
     fn modify_before_signing(
         &self,
-        context: &mut InterceptorContext<HttpRequest, HttpResponse>,
+        context: &mut InterceptorContext,
         cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
         let api_metadata = cfg
@@ -113,10 +112,7 @@ mod tests {
     use aws_smithy_runtime_api::type_erasure::TypedBox;
     use aws_smithy_types::error::display::DisplayErrorContext;
 
-    fn expect_header<'a>(
-        context: &'a InterceptorContext<HttpRequest, HttpResponse>,
-        header_name: &str,
-    ) -> &'a str {
+    fn expect_header<'a>(context: &'a InterceptorContext, header_name: &str) -> &'a str {
         context
             .request()
             .unwrap()

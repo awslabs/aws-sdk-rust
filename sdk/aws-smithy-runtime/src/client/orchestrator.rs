@@ -10,9 +10,7 @@ use crate::client::orchestrator::phase::Phase;
 use aws_smithy_http::result::SdkError;
 use aws_smithy_runtime_api::client::interceptors::context::{Error, Input, Output};
 use aws_smithy_runtime_api::client::interceptors::{InterceptorContext, Interceptors};
-use aws_smithy_runtime_api::client::orchestrator::{
-    BoxError, ConfigBagAccessors, HttpRequest, HttpResponse,
-};
+use aws_smithy_runtime_api::client::orchestrator::{BoxError, ConfigBagAccessors, HttpResponse};
 use aws_smithy_runtime_api::client::retries::ShouldAttempt;
 use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins;
 use aws_smithy_runtime_api::config_bag::ConfigBag;
@@ -31,15 +29,14 @@ pub async fn invoke(
     let mut cfg = ConfigBag::base();
     let cfg = &mut cfg;
 
-    let interceptors = Interceptors::new();
-    cfg.put(interceptors.clone());
+    let mut interceptors = Interceptors::new();
 
     let context = Phase::construction(InterceptorContext::new(input))
         // Client configuration
-        .include(|_| runtime_plugins.apply_client_configuration(cfg))?
+        .include(|_| runtime_plugins.apply_client_configuration(cfg, &mut interceptors))?
         .include(|ctx| interceptors.client_read_before_execution(ctx, cfg))?
         // Operation configuration
-        .include(|_| runtime_plugins.apply_operation_configuration(cfg))?
+        .include(|_| runtime_plugins.apply_operation_configuration(cfg, &mut interceptors))?
         .include(|ctx| interceptors.operation_read_before_execution(ctx, cfg))?
         // Before serialization
         .include(|ctx| interceptors.read_before_serialization(ctx, cfg))?
@@ -117,7 +114,7 @@ pub async fn invoke(
 async fn make_an_attempt(
     dispatch_phase: Phase,
     cfg: &mut ConfigBag,
-    interceptors: &Interceptors<HttpRequest, HttpResponse>,
+    interceptors: &Interceptors,
 ) -> Result<Phase, SdkError<Error, HttpResponse>> {
     let dispatch_phase = dispatch_phase
         .include(|ctx| interceptors.read_before_attempt(ctx, cfg))?

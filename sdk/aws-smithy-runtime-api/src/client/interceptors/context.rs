@@ -4,6 +4,7 @@
  */
 
 use super::InterceptorError;
+use crate::client::orchestrator::{HttpRequest, HttpResponse};
 use crate::type_erasure::TypeErasedBox;
 
 pub type Input = TypeErasedBox;
@@ -11,8 +12,11 @@ pub type Output = TypeErasedBox;
 pub type Error = TypeErasedBox;
 pub type OutputOrError = Result<Output, Error>;
 
+type Request = HttpRequest;
+type Response = HttpResponse;
+
 /// A container for the data currently available to an interceptor.
-pub struct InterceptorContext<Request, Response> {
+pub struct InterceptorContext {
     input: Option<Input>,
     output_or_error: Option<OutputOrError>,
     request: Option<Request>,
@@ -21,7 +25,7 @@ pub struct InterceptorContext<Request, Response> {
 
 // TODO(interceptors) we could use types to ensure that people calling methods on interceptor context can't access
 //     field that haven't been set yet.
-impl<Request, Response> InterceptorContext<Request, Response> {
+impl InterceptorContext {
     pub fn new(input: Input) -> Self {
         Self {
             input: Some(input),

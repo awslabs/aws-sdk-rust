@@ -5,7 +5,6 @@
 
 use aws_smithy_runtime_api::client::interceptors::error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::{Interceptor, InterceptorContext};
-use aws_smithy_runtime_api::client::orchestrator::{HttpRequest, HttpResponse};
 use aws_smithy_runtime_api::config_bag::ConfigBag;
 use http::{HeaderName, HeaderValue};
 use uuid::Uuid;
@@ -35,10 +34,10 @@ impl Default for InvocationIdInterceptor {
     }
 }
 
-impl Interceptor<HttpRequest, HttpResponse> for InvocationIdInterceptor {
+impl Interceptor for InvocationIdInterceptor {
     fn modify_before_retry_loop(
         &self,
-        context: &mut InterceptorContext<HttpRequest, HttpResponse>,
+        context: &mut InterceptorContext,
         _cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
         let headers = context.request_mut()?.headers_mut();
@@ -74,15 +73,11 @@ mod tests {
     use crate::invocation_id::InvocationIdInterceptor;
     use aws_smithy_http::body::SdkBody;
     use aws_smithy_runtime_api::client::interceptors::{Interceptor, InterceptorContext};
-    use aws_smithy_runtime_api::client::orchestrator::{HttpRequest, HttpResponse};
     use aws_smithy_runtime_api::config_bag::ConfigBag;
     use aws_smithy_runtime_api::type_erasure::TypedBox;
     use http::HeaderValue;
 
-    fn expect_header<'a>(
-        context: &'a InterceptorContext<HttpRequest, HttpResponse>,
-        header_name: &str,
-    ) -> &'a HeaderValue {
+    fn expect_header<'a>(context: &'a InterceptorContext, header_name: &str) -> &'a HeaderValue {
         context
             .request()
             .unwrap()

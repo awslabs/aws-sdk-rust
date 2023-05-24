@@ -10,16 +10,12 @@ use crate::config_bag::ConfigBag;
 use aws_smithy_types::error::display::DisplayErrorContext;
 pub use context::InterceptorContext;
 pub use error::{BoxError, InterceptorError};
-use std::sync::{Arc, Mutex};
+use std::sync::Arc;
 
 macro_rules! interceptor_trait_fn {
     ($name:ident, $docs:tt) => {
         #[doc = $docs]
-        fn $name(
-            &self,
-            context: &InterceptorContext<TxReq, TxRes>,
-            cfg: &mut ConfigBag,
-        ) -> Result<(), BoxError> {
+        fn $name(&self, context: &InterceptorContext, cfg: &mut ConfigBag) -> Result<(), BoxError> {
             let _ctx = context;
             let _cfg = cfg;
             Ok(())
@@ -29,7 +25,7 @@ macro_rules! interceptor_trait_fn {
         #[doc = $docs]
         fn $name(
             &self,
-            context: &mut InterceptorContext<TxReq, TxRes>,
+            context: &mut InterceptorContext,
             cfg: &mut ConfigBag,
         ) -> Result<(), BoxError> {
             let _ctx = context;
@@ -49,7 +45,7 @@ macro_rules! interceptor_trait_fn {
 ///   of the SDK ’s request execution pipeline. Hooks are either "read" hooks, which make it possible
 ///   to read in-flight request or response messages, or "read/write" hooks, which make it possible
 ///   to modify in-flight request or output messages.
-pub trait Interceptor<TxReq, TxRes>: std::fmt::Debug {
+pub trait Interceptor: std::fmt::Debug {
     interceptor_trait_fn!(
         read_before_execution,
         "
@@ -541,47 +537,12 @@ pub trait Interceptor<TxReq, TxRes>: std::fmt::Debug {
     );
 }
 
-pub type SharedInterceptor<TxReq, TxRes> = Arc<dyn Interceptor<TxReq, TxRes> + Send + Sync>;
+pub type SharedInterceptor = Arc<dyn Interceptor + Send + Sync>;
 
-#[derive(Debug)]
-struct Inner<TxReq, TxRes> {
-    client_interceptors: Vec<SharedInterceptor<TxReq, TxRes>>,
-    operation_interceptors: Vec<SharedInterceptor<TxReq, TxRes>>,
-}
-
-// The compiler isn't smart enough to realize that TxReq and TxRes don't need to implement `Clone`
-impl<TxReq, TxRes> Clone for Inner<TxReq, TxRes> {
-    fn clone(&self) -> Self {
-        Self {
-            client_interceptors: self.client_interceptors.clone(),
-            operation_interceptors: self.operation_interceptors.clone(),
-        }
-    }
-}
-
-#[derive(Debug)]
-pub struct Interceptors<TxReq, TxRes> {
-    inner: Arc<Mutex<Inner<TxReq, TxRes>>>,
-}
-
-// The compiler isn't smart enough to realize that TxReq and TxRes don't need to implement `Clone`
-impl<TxReq, TxRes> Clone for Interceptors<TxReq, TxRes> {
-    fn clone(&self) -> Self {
-        Self {
-            inner: self.inner.clone(),
-        }
-    }
-}
-
-impl<TxReq, TxRes> Default for Interceptors<TxReq, TxRes> {
-    fn default() -> Self {
-        Self {
-            inner: Arc::new(Mutex::new(Inner {
-                client_interceptors: Vec::new(),
-                operation_interceptors: Vec::new(),
-            })),
-        }
-    }
+#[derive(Debug, Clone, Default)]
+pub struct Interceptors {
+    client_interceptors: Vec<SharedInterceptor>,
+    operation_interceptors: Vec<SharedInterceptor>,
 }
 
 macro_rules! interceptor_impl_fn {
@@ -592,16 +553,10 @@ macro_rules! interceptor_impl_fn {
         interceptor_impl_fn!(mut context, $name, $name);
     };
     (context, $outer_name:ident, $inner_name:ident) => {
-        interceptor_impl_fn!(
-            $outer_name,
-            $inner_name(context: &InterceptorContext<TxReq, TxRes>)
-        );
+        interceptor_impl_fn!($outer_name, $inner_name(context: &InterceptorContext));
     };
     (mut context, $outer_name:ident, $inner_name:ident) => {
-        interceptor_impl_fn!(
-            $outer_name,
-            $inner_name(context: &mut InterceptorContext<TxReq, TxRes>)
-        );
+        interceptor_impl_fn!($outer_name, $inner_name(context: &mut InterceptorContext));
     };
     ($outer_name:ident, $inner_name:ident ($context:ident : $context_ty:ty)) => {
         pub fn $outer_name(
@@ -623,48 +578,26 @@ macro_rules! interceptor_impl_fn {
     };
 }
 
-impl<TxReq, TxRes> Interceptors<TxReq, TxRes> {
+impl Interceptors {
     pub fn new() -> Self {
         Self::default()
     }
 
-    fn interceptors(&self) -> Vec<SharedInterceptor<TxReq, TxRes>> {
+    fn interceptors(&self) -> impl Iterator<Item = &SharedInterceptor> {
         // Since interceptors can modify the interceptor list (since its in the config bag), copy the list ahead of time.
         // This should be cheap since the interceptors inside the list are Arcs.
-        // TODO(enableNewSmithyRuntime): Remove the ability for interceptors to modify the interceptor list and then simplify this
-        let mut interceptors = self.inner.lock().unwrap().client_interceptors.clone();
-        interceptors.extend(
-            self.inner
-                .lock()
-                .unwrap()
-                .operation_interceptors
-                .iter()
-                .cloned(),
-        );
-        interceptors
+        self.client_interceptors
+            .iter()
+            .chain(self.operation_interceptors.iter())
     }
 
-    pub fn register_client_interceptor(
-        &self,
-        interceptor: SharedInterceptor<TxReq, TxRes>,
-    ) -> &Self {
-        self.inner
-            .lock()
-            .unwrap()
-            .client_interceptors
-            .push(interceptor);
+    pub fn register_client_interceptor(&mut self, interceptor: SharedInterceptor) -> &mut Self {
+        self.client_interceptors.push(interceptor);
         self
     }
 
-    pub fn register_operation_interceptor(
-        &self,
-        interceptor: SharedInterceptor<TxReq, TxRes>,
-    ) -> &Self {
-        self.inner
-            .lock()
-            .unwrap()
-            .operation_interceptors
-            .push(interceptor);
+    pub fn register_operation_interceptor(&mut self, interceptor: SharedInterceptor) -> &mut Self {
+        self.operation_interceptors.push(interceptor);
         self
     }
 

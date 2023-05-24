@@ -6,7 +6,7 @@
 use aws_smithy_http::result::{ConnectorError, SdkError};
 use aws_smithy_runtime_api::client::interceptors::context::{Error, Output};
 use aws_smithy_runtime_api::client::interceptors::InterceptorContext;
-use aws_smithy_runtime_api::client::orchestrator::{BoxError, HttpRequest, HttpResponse};
+use aws_smithy_runtime_api::client::orchestrator::{BoxError, HttpResponse};
 
 #[derive(Copy, Clone, Eq, PartialEq)]
 enum OrchestrationPhase {
@@ -17,26 +17,21 @@ enum OrchestrationPhase {
 
 pub(super) struct Phase {
     phase: OrchestrationPhase,
-    context: InterceptorContext<HttpRequest, HttpResponse>,
+    context: InterceptorContext,
 }
 
 impl Phase {
-    pub(crate) fn construction(context: InterceptorContext<HttpRequest, HttpResponse>) -> Self {
+    pub(crate) fn construction(context: InterceptorContext) -> Self {
         Self::start(OrchestrationPhase::Construction, context)
     }
-    pub(crate) fn dispatch(context: InterceptorContext<HttpRequest, HttpResponse>) -> Self {
+    pub(crate) fn dispatch(context: InterceptorContext) -> Self {
         Self::start(OrchestrationPhase::Dispatch, context)
     }
-    pub(crate) fn response_handling(
-        context: InterceptorContext<HttpRequest, HttpResponse>,
-    ) -> Self {
+    pub(crate) fn response_handling(context: InterceptorContext) -> Self {
         Self::start(OrchestrationPhase::ResponseHandling, context)
     }
 
-    fn start(
-        phase: OrchestrationPhase,
-        context: InterceptorContext<HttpRequest, HttpResponse>,
-    ) -> Self {
+    fn start(phase: OrchestrationPhase, context: InterceptorContext) -> Self {
         match phase {
             OrchestrationPhase::Construction => {}
             OrchestrationPhase::Dispatch => {}
@@ -47,7 +42,7 @@ impl Phase {
 
     pub(crate) fn include_mut<E: Into<BoxError>>(
         mut self,
-        c: impl FnOnce(&mut InterceptorContext<HttpRequest, HttpResponse>) -> Result<(), E>,
+        c: impl FnOnce(&mut InterceptorContext) -> Result<(), E>,
     ) -> Result<Self, SdkError<Error, HttpResponse>> {
         match c(&mut self.context) {
             Ok(_) => Ok(self),
@@ -57,7 +52,7 @@ impl Phase {
 
     pub(crate) fn include<E: Into<BoxError>>(
         self,
-        c: impl FnOnce(&InterceptorContext<HttpRequest, HttpResponse>) -> Result<(), E>,
+        c: impl FnOnce(&InterceptorContext) -> Result<(), E>,
     ) -> Result<Self, SdkError<Error, HttpResponse>> {
         match c(&self.context) {
             Ok(_) => Ok(self),
@@ -113,7 +108,7 @@ impl Phase {
         }
     }
 
-    pub(crate) fn finish(self) -> InterceptorContext<HttpRequest, HttpResponse> {
+    pub(crate) fn finish(self) -> InterceptorContext {
         self.context
     }
 }
